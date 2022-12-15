@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: l58O_yEXSo-SeJi19LXdzTU1tNJG3lmnIhCitRkM1tk
+langcode: en
+uuid: 8b187b50-276f-4848-a7e5-f1c218f62345
+name: UN-OCHA
+mail: unocha@test.test
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /user/login
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: ''

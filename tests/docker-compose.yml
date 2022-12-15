@@ -1,0 +1,69 @@
+version: "2.2"
+
+networks:
+  default:
+
+volumes:
+  unocha-test-site-database:
+  unocha-test-site-public:
+  unocha-test-site-private:
+
+services:
+  memcache:
+    restart: always
+    image: memcached:alpine
+    hostname: unocha-test-memcache
+    container_name: unocha-test-memcache
+    entrypoint: ["memcached", "-m", "64"]
+    ports:
+      - "11211"
+    networks:
+      - default
+
+  mysql:
+    image: mariadb:latest
+    hostname: unocha-test-mysql
+    container_name: unocha-test-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=unocha
+      - MYSQL_USER=unocha
+      - MYSQL_PASSWORD=unocha
+    volumes:
+      - "unocha-test-site-database:/var/lib/mysql:rw"
+    networks:
+      - default
+
+  drupal:
+    image: public.ecr.aws/unocha/unocha-site:local
+    hostname: unocha-test-site
+    container_name: unocha-test-site
+    depends_on:
+      - memcache
+      - mysql
+    volumes:
+      - "./settings:/srv/www/shared/settings:ro"
+      # Mount volumes for the private and public files.
+      - "unocha-test-site-public:/srv/www/html/sites/default/files:rw"
+      - "unocha-test-site-private:/srv/www/html/sites/default/private:rw"
+      # Mount the folders needed for the tests.
+      - "../phpcs.xml:/srv/www/phpcs.xml:ro"
+      - "../phpunit.xml:/srv/www/phpunit.xml:ro"
+      # Mount local custom code.
+      #- "../html/modules/custom:/srv/www/html/modules/custom:ro"
+      #- "../html/themes/custom:/srv/www/html/themes/custom:ro"
+    environment:
+      - TERM=xterm
+      - ENVIRONMENT=dev
+      - NGINX_SERVERNAME=unocha-test-site,localhost,127.0.0.1
+      - NGINX_OVERRIDE_PROTOCOL=HTTP,unocha-test-site,localhost,127.0.0.1
+      - DRUSH_OPTIONS_URI=http://unocha-test-site
+      - DRUPAL_DB_DATABASE=unocha
+      - DRUPAL_DB_USERNAME=unocha
+      - DRUPAL_DB_PASSWORD=unocha
+      - DRUPAL_DB_HOST=mysql
+      - DRUPAL_DB_DRIVER=mysql
+      - PHP_ENVIRONMENT=dev
+      - PHP_XDEBUG=true
+    networks:
+      - default

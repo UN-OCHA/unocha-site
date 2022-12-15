@@ -1,0 +1,25 @@
+uuid: 077c94ae-ff27-4a06-b2c5-b4fb80e2f208
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - common_design
+_core:
+  default_config_hash: sG8t_FghbUscJ-GrnQ8zs_vx5YM4bJCfntrK-J5HcAY
+id: common_design_branding
+theme: common_design
+region: header_top
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

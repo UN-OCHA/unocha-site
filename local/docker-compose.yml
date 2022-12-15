@@ -1,0 +1,86 @@
+version: "2.2"
+
+networks:
+  default:
+  proxy:
+    external:
+      name: ${PROXY:-proxy}
+
+volumes:
+  unocha-local-site-database:
+  unocha-local-site-public:
+  unocha-local-site-private:
+
+services:
+  memcache:
+    restart: always
+    image: memcached:alpine
+    hostname: unocha-local-memcache
+    container_name: unocha-local-memcache
+    entrypoint: ["memcached", "-m", "64"]
+    ports:
+      - "11211"
+    networks:
+      - default
+
+  mysql:
+    image: mariadb:latest
+    hostname: unocha-local-mysql
+    container_name: unocha-local-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=unocha
+      - MYSQL_USER=unocha
+      - MYSQL_PASSWORD=unocha
+    volumes:
+      - "unocha-local-site-database:/var/lib/mysql:rw"
+    networks:
+      - default
+
+  drupal:
+    image: public.ecr.aws/unocha/unocha-site:local
+    hostname: unocha-local-site
+    container_name: unocha-local-site
+    depends_on:
+      - memcache
+      - mysql
+    volumes:
+      - "./shared/settings:/srv/www/shared/settings:ro"
+      # Mount volumes for the private and public files.
+      - "unocha-local-site-public:/srv/www/html/sites/default/files:rw"
+      - "unocha-local-site-private:/srv/www/html/sites/default/private:rw"
+      # Mount the folders needed for the tests.
+      - "../phpcs.xml:/srv/www/phpcs.xml:ro"
+      - "../phpunit.xml:/srv/www/phpunit.xml:ro"
+      # Mount local custom code.
+      - "../html/modules/custom:/srv/www/html/modules/custom:rw"
+      - "../html/themes/custom:/srv/www/html/themes/custom:rw"
+      # Mount configuration and allow overriding it.
+      - "../config:/srv/www/config:rw"
+    environment:
+      - TERM=xterm
+      - ENVIRONMENT=dev
+      - NGINX_SERVERNAME=unocha-local.test
+      - NGINX_OVERRIDE_PROTOCOL=HTTP,unocha-local.test
+      - DRUSH_OPTIONS_URI=https://unocha-local.test
+      - DRUPAL_DB_DATABASE=unocha
+      - DRUPAL_DB_USERNAME=unocha
+      - DRUPAL_DB_PASSWORD=unocha
+      - DRUPAL_DB_HOST=mysql
+      - DRUPAL_DB_DRIVER=mysql
+      - PHP_ENVIRONMENT=dev
+      - PHP_XDEBUG=true
+      # Rate limiting.
+      - NGINX_LIMIT_HUMANS=1024r/s
+      - NGINX_BURST_HUMANS=1024
+      # Local proxy.
+      - VIRTUAL_HOST=unocha-local.test
+      - VIRTUAL_PORT=80
+      - VIRTUAL_NETWORK=${PROXY:-proxy}
+      - HTTPS_METHOD=noredirect
+    labels:
+      caddy: unocha-local.test
+      caddy.reverse_proxy: "{{upstreams}}"
+    networks:
+      - default
+      - proxy
