@@ -17,10 +17,6 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/orakili/composer-drupal-info-file-patch-helper.git"
         }
     ],
     "require": {
@@ -37,9 +33,12 @@
         "drupal/google_tag": "^1.6",
         "drupal/imageapi_optimize_binaries": "^1.0@alpha",
         "drupal/imagemagick": "^3.4",
+        "drupal/layout_paragraphs": "^2.0",
         "drupal/maintenance200": "^1.1",
         "drupal/memcache": "^2.5",
         "drupal/metatag": "^1.22",
+        "drupal/paragraphs": "^1.15",
+        "drupal/paragraphs_admin": "^1.4",
         "drupal/pathauto": "^1.8",
         "drupal/redirect": "^1.8",
         "drupal/social_auth_hid": "^3.2",
