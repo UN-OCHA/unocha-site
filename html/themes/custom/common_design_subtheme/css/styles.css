@@ -1,0 +1,93 @@
+body {
+  background: var(--brand-grey);
+}
+
+.cd-global-header {
+  background: var(--brand-grey);
+}
+
+.cd-header button,
+.cd-footer button {
+  color: var(--cd-default-text-color);
+}
+
+button[aria-expanded] .cd-icon--arrow-down {
+  fill: var(--cd-default-text-color);
+}
+
+.cd-ocha__logo {
+  fill: var(--cd-default-text-color);
+}
+
+.cd-global-header__dropdown {
+  background: var(--brand-grey);
+}
+
+.cd-ocha-dropdown__heading,
+.cd-global-header__dropdown a,
+.cd-global-header__dropdown a:hover {
+  color: var(--cd-default-text-color);
+}
+
+.cd-user-menu__dropdown li a {
+  color: var(--cd-default-text-color);
+}
+
+.cd-global-header button[aria-expanded="true"]::before {
+  border-color: transparent transparent var(--brand-grey);
+}
+
+.language-switcher-language-url ul li a {
+  color: var(--cd-default-text-color);
+}
+.language-switcher-language-url ul li a::before {
+  background: var(--cd-default-text-color);
+}
+
+.js .cd-global-header__language-switcher + .cd-global-header__user-menu::before {
+  background: var(--cd-default-text-color);
+}
+
+.cd-user-menu svg,
+.cd-global-header .menu svg {
+  fill: var(--cd-default-text-color);
+}
+
+.cd-user-menu__item,
+.cd-global-header .menu>li a,
+.cd-global-header .menu>li button {
+  color: var(--cd-default-text-color);
+}
+
+.cd-layout-highlighted {
+  background: var(--brand-primary);
+}
+
+#block-emergencies {
+  color: var(--cd-white);
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#block-emergencies h2 {
+  color: var(--cd-white);
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+#block-emergencies ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+}
+
+#block-emergencies ul li a {
+  color: var(--cd-white);
+  padding: 1rem 2rem;
+  display: block;
+}
