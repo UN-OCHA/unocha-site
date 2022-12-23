@@ -96,4 +96,7 @@ if [ "$install_site" = "yes" ]; then
     echo "Install the site from scratch."
     docker exec -it unocha-local-site drush -y si minimal install_configure_form.enable_update_status_emails=NULL
   fi
+
+  # Import the configuration.
+  docker exec -it unocha-local-site drush -y cim
 fi
