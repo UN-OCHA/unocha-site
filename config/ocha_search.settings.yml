@@ -1,0 +1,29 @@
+_core:
+  default_config_hash: NYqjYJoeQ_MnsghV9ZX8YrRat2pXfml8DW4p2EzoiG8
+type: config_object
+label: 'Ocha Search settings'
+mapping:
+  site_results_page_path:
+    type: text
+    label: 'Site results page path'
+  ocha_wide_results_page_path:
+    type: text
+    label: 'Ocha-wide results page path'
+  search_site_text:
+    type: text
+    label: 'Site search page text'
+  search_ocha_text:
+    type: text
+    label: 'OCHA-wide search page text'
+  site_gcse_id:
+    type: text
+    label: 'Site GCSE ID'
+  ocha_wide_gcse_id:
+    type: text
+    label: 'Ocha-wide GCSE ID'
+site_results_page_path: results
+ocha_wide_results_page_path: ocha-wide-results
+ocha_wide_gcse_id: 92f65997481234c49
+search_site_text: ''
+search_ocha_text: ''
+site_gcse_id: b670719a572174706
