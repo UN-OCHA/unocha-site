@@ -11,11 +11,7 @@ COPY . /srv/www
 WORKDIR /srv/www
 
 # Clean up previous composer installation and run new one.
-RUN rm -rf ./vendor && \
-    # Update composer to avoid issues with missing drupal files.
-    # @see https://github.com/drupal-composer/drupal-project/issues/282
-    composer selfupdate && \
-    composer install --no-interaction
+RUN rm -rf ./vendor && composer install --no-interaction
 
 # Copy settings to default site location.
 RUN cp -a docker/settings.php docker/services.yml docker/memcache.services.yml html/sites/default
@@ -46,10 +42,11 @@ LABEL info.humanitarianresponse.build.date=$BUILD_DATE \
       info.humanitarianresponse.build.vcs-url=$VCS_URL \
       info.humanitarianresponse.build.vcs-ref=$VCS_REF
 
-COPY --from=builder /srv/www/assets /srv/www/assets/
-COPY --from=builder /srv/www/config /srv/www/config/
-COPY --from=builder /srv/www/html /srv/www/html/
-COPY --from=builder /srv/www/vendor /srv/www/vendor/
+COPY --from=builder /srv/www/assets /srv/www/assets
+COPY --from=builder /srv/www/config /srv/www/config
+COPY --from=builder /srv/www/config_dev /srv/www/config_dev
+COPY --from=builder /srv/www/html /srv/www/html
+COPY --from=builder /srv/www/vendor /srv/www/vendor
 COPY --from=builder /srv/www/composer.json /srv/www/composer.json
 COPY --from=builder /srv/www/composer.patches.json /srv/www/composer.patches.json
 COPY --from=builder /srv/www/composer.lock /srv/www/composer.lock
