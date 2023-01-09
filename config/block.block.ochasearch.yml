@@ -1,0 +1,22 @@
+uuid: 8a0e8ae7-7e3e-4c96-825e-e5f5184a2268
+langcode: en
+status: true
+dependencies:
+  module:
+    - ocha_search
+  theme:
+    - common_design_subtheme
+_core:
+  default_config_hash: 8WyCxN22EpigRD00Is7yEYlxGEN8AYrbUMVYDQfHU_M
+id: ochasearch
+theme: common_design_subtheme
+region: header_search
+weight: 0
+provider: null
+plugin: ocha_search_block
+settings:
+  id: ocha_search_block
+  label: 'OCHA Search'
+  label_display: '0'
+  provider: ocha_search
+visibility: {  }
