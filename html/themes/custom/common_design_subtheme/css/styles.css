@@ -2,7 +2,8 @@ body {
   background: var(--brand-grey);
 }
 
-.cd-global-header {
+.cd-global-header,
+.js .cd-global-header__actions > * {
   background: var(--brand-grey);
 }
 
