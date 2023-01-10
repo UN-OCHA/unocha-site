@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "554e25f117de6c590ca889671e3a819b",
+    "content-hash": "27790a5023d418f90b3047969c625994",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -12155,6 +12155,38 @@
                 "source": "https://github.com/UN-OCHA/common_design/tree/v7.4.0"
             },
             "time": "2022-12-21T10:16:39+00:00"
+        },
+        {
+            "name": "unocha/ocha_search",
+            "version": "v1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/UN-OCHA/ocha_search.git",
+                "reference": "09beb11d8cfd4ec5a92e507fb6fdd83943cb97b8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/UN-OCHA/ocha_search/zipball/09beb11d8cfd4ec5a92e507fb6fdd83943cb97b8",
+                "reference": "09beb11d8cfd4ec5a92e507fb6fdd83943cb97b8",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1.7"
+            },
+            "require-dev": {
+                "drupal/coder": "^8.3",
+                "sebastian/phpcpd": "^6.0"
+            },
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-only"
+            ],
+            "support": {
+                "issues": "https://github.com/UN-OCHA/ocha_search/issues",
+                "source": "https://github.com/UN-OCHA/ocha_search/tree/v1.0.6"
+            },
+            "time": "2022-12-13T11:42:20+00:00"
         },
         {
             "name": "webflo/drupal-finder",
