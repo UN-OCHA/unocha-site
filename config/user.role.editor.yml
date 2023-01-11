@@ -1,0 +1,37 @@
+uuid: 646add94-3479-4a8b-b014-d9451a55e4aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.ckeditor
+    - node.type.basic
+  module:
+    - filter
+    - node
+    - path
+    - pathauto
+    - redirect
+    - system
+id: editor
+label: Editor
+weight: 3
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'administer menu'
+  - 'administer pathauto'
+  - 'administer redirect settings'
+  - 'administer redirects'
+  - 'administer url aliases'
+  - 'create basic content'
+  - 'create url aliases'
+  - 'delete any basic content'
+  - 'delete basic revisions'
+  - 'delete own basic content'
+  - 'edit any basic content'
+  - 'edit own basic content'
+  - 'notify of path changes'
+  - 'revert basic revisions'
+  - 'use text format ckeditor'
+  - 'view basic revisions'
+  - 'view own unpublished content'
