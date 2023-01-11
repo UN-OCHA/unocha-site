@@ -37,3 +37,4 @@ permissions:
   - 'use text format ckeditor'
   - 'view basic revisions'
   - 'view own unpublished content'
+  - 'view the administration theme'
