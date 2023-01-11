@@ -18,6 +18,7 @@ label: Editor
 weight: 3
 is_admin: null
 permissions:
+  - 'access administration pages'
   - 'access content overview'
   - 'access toolbar'
   - 'administer menu'
