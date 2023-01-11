@@ -12,12 +12,14 @@ dependencies:
     - pathauto
     - redirect
     - system
+    - toolbar
 id: editor
 label: Editor
 weight: 3
 is_admin: null
 permissions:
   - 'access content overview'
+  - 'access toolbar'
   - 'administer menu'
   - 'administer pathauto'
   - 'administer redirect settings'
