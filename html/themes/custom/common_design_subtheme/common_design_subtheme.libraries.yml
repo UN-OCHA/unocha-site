@@ -19,11 +19,17 @@ global-styling:
 # completely independent and style the custom content of your website, such as
 # a custom Paragraph type.
 #
-# custom-teaser:
-#   css:
-#     theme:
-#       components/custom-teaser/custom-teaser.css: {}
+cd-cards:
+  css:
+    component:
+      components/cd-cards/layout--cards.css: {}
 
+uno-embed:
+  css:
+    component:
+      components/uno-embed/uno-embed.css: {}
+  js:
+    components/uno-embed/uno-embed.js: {}
 ###
 # Define Drupal libraries for additional webfonts.
 #

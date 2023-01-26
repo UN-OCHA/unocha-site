@@ -1,0 +1,27 @@
+/*
+ * @file
+ * Provides the layout styles for layout_cards.
+ */
+
+.layout--cards,
+.paragraph--type--node-list .view .view-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.layout--cards > .layout__region,
+.paragraph--type--node-list .view .views-row {
+  flex: 0 1 100%;
+}
+
+@media screen and (min-width: 40em) {
+  .layout--cards > .layout__region--first,
+  .layout--cards > .layout__region--second,
+  .layout--cards > .layout__region--third {
+    flex: 0 1 33%;
+  }
+
+  .paragraph--type--node-list .view .views-row {
+    flex: 1 0 33%;
+  }
+}

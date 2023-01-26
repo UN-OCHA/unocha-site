@@ -1,0 +1,22 @@
+/**
+ * HR.info customizations to iFrame Paragraphs.
+ */
+.hri-iframe {
+  width: 100%;
+}
+
+.hri-iframe--ratio-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.hri-iframe--ratio-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+/* JS will handle this case */
+/* .hri-iframe--ratio-auto {} */
+
+.hri-iframe__iframe {
+  width: 100%;
+  height: 100%;
+}

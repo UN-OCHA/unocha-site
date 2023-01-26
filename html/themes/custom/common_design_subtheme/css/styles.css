@@ -88,3 +88,38 @@ button[aria-expanded] .cd-icon--arrow-down {
   padding: 1rem 2rem;
   display: block;
 }
+
+
+/* Paragraphs */
+.field__label {
+  font-weight: bold;
+  color: var(--cd-grey--dark);
+  text-transform: uppercase;
+  display: none;
+}
+
+.paragraph .field__label {
+  font-weight: bold;
+  color: var(--cd-grey--mid);
+  text-transform: initial;
+}
+
+.paragraph {
+  margin-bottom: 2rem;
+}
+.paragraph .field {
+  margin-bottom: 1rem;
+}
+
+/* Nodes and Terms */
+.layout + .layout {
+  margin-top: 2rem;
+}
+
+.paragraph--type--node-teaser>.field > .field__items > .field__item {
+  margin-bottom: 2rem;
+}
+
+.field--name-body + .field--name-field-custom-content {
+  margin-top: 2rem;
+}
