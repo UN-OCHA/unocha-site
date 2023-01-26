@@ -1,41 +1,47 @@
-uuid: 646add94-3479-4a8b-b014-d9451a55e4aa
+uuid: 64439777-35ef-4cb3-8097-90bccf80076d
 langcode: en
 status: true
 dependencies:
   config:
-    - filter.format.ckeditor
-    - node.type.basic
+    - filter.format.text_editor_simple
   module:
+    - content_translation
+    - file
     - filter
+    - media
+    - menu_link_content
     - node
+    - paragraphs
     - path
-    - pathauto
-    - redirect
-    - system
+    - taxonomy
     - toolbar
 id: editor
 label: Editor
 weight: 3
 is_admin: null
 permissions:
-  - 'access administration pages'
   - 'access content overview'
+  - 'access files overview'
+  - 'access media overview'
+  - 'access taxonomy overview'
   - 'access toolbar'
-  - 'administer menu'
-  - 'administer pathauto'
-  - 'administer redirect settings'
-  - 'administer redirects'
-  - 'administer url aliases'
-  - 'create basic content'
+  - 'administer taxonomy'
+  - 'create content translations'
+  - 'create media'
   - 'create url aliases'
-  - 'delete any basic content'
-  - 'delete basic revisions'
-  - 'delete own basic content'
-  - 'edit any basic content'
-  - 'edit own basic content'
-  - 'notify of path changes'
-  - 'revert basic revisions'
-  - 'use text format ckeditor'
-  - 'view basic revisions'
+  - 'delete any media'
+  - 'delete content translations'
+  - 'delete media'
+  - 'revert all revisions'
+  - 'translate any entity'
+  - 'translate editable entities'
+  - 'translate menu_link_content'
+  - 'update any media'
+  - 'update content translations'
+  - 'update media'
+  - 'use text format text_editor_simple'
+  - 'view all media revisions'
+  - 'view all revisions'
   - 'view own unpublished content'
-  - 'view the administration theme'
+  - 'view own unpublished media'
+  - 'view unpublished paragraphs'
