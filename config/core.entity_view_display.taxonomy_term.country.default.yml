@@ -1,0 +1,33 @@
+uuid: e99e67ea-59ba-4bfa-a6bf-6f379f5edbe6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.country.field_custom_content
+    - taxonomy.vocabulary.country
+  module:
+    - entity_reference_revisions
+    - text
+id: taxonomy_term.country.default
+targetEntityType: taxonomy_term
+bundle: country
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_custom_content:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

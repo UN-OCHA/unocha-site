@@ -6,6 +6,7 @@ dependencies:
     - filter.format.ckeditor
   module:
     - filter
+    - media
     - system
 _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
@@ -16,3 +17,4 @@ is_admin: false
 permissions:
   - 'access content'
   - 'use text format ckeditor'
+  - 'view media'

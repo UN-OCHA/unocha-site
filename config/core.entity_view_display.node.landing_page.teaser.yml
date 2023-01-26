@@ -1,18 +1,19 @@
-uuid: 566ae8a5-b3b4-4f96-a804-b6121dfb5be0
+uuid: bb7030cb-160a-4b18-8065-faae8d0e68f3
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.basic.body
-    - field.field.node.basic.field_custom_content
-    - node.type.basic
+    - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_custom_content
+    - field.field.node.landing_page.layout_builder__layout
+    - node.type.landing_page
   module:
     - text
     - user
-id: node.basic.teaser
+id: node.landing_page.teaser
 targetEntityType: node
-bundle: basic
+bundle: landing_page
 mode: teaser
 content:
   body:
@@ -31,3 +32,4 @@ content:
 hidden:
   field_custom_content: true
   langcode: true
+  layout_builder__layout: true

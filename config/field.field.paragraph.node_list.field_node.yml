@@ -1,0 +1,35 @@
+uuid: 90781d76-d2e2-42fd-948e-b4702019fe37
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_node
+    - node.type.article
+    - node.type.basic
+    - node.type.event
+    - node.type.landing_page
+    - paragraphs.paragraphs_type.node_list
+id: paragraph.node_list.field_node
+field_name: field_node
+entity_type: paragraph
+bundle: node_list
+label: Node
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      basic: basic
+      event: event
+      landing_page: landing_page
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: basic
+field_type: entity_reference

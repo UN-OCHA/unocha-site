@@ -1,0 +1,33 @@
+uuid: 46ef9edc-a4fe-4568-9619-60ab501c42d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.node_list.field_node
+    - field.field.paragraph.node_list.field_view
+    - paragraphs.paragraphs_type.node_list
+  module:
+    - viewsreference
+id: paragraph.node_list.default
+targetEntityType: paragraph
+bundle: node_list
+mode: default
+content:
+  field_node:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_view:
+    type: viewsreference_formatter
+    label: above
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

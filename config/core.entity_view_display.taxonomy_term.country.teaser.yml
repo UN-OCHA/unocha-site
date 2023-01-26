@@ -1,0 +1,31 @@
+uuid: fc1750bb-ac9b-47c3-8274-1b8e25c81fb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.teaser
+    - field.field.taxonomy_term.country.field_custom_content
+    - taxonomy.vocabulary.country
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: taxonomy_term.country.teaser
+targetEntityType: taxonomy_term
+bundle: country
+mode: teaser
+content:
+  description:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_custom_content: true
+  langcode: true

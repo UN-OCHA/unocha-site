@@ -1,0 +1,44 @@
+uuid: c2eeadc5-214b-431d-b0db-1b8aa9f6638c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_custom_content
+    - node.type.landing_page
+  module:
+    - entity_reference_revisions
+id: node.landing_page.field_custom_content
+field_name: field_custom_content
+entity_type: node
+bundle: landing_page
+label: 'Custom content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 0
+    target_bundles_drag_drop:
+      card:
+        weight: 7
+        enabled: false
+      embed:
+        weight: 8
+        enabled: false
+      from_library:
+        weight: 9
+        enabled: false
+      image_caption:
+        weight: 10
+        enabled: false
+      layout:
+        weight: 11
+        enabled: false
+      text:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

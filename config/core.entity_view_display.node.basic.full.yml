@@ -1,15 +1,14 @@
-uuid: 967371c1-a799-4850-bb3e-5b9e321bd625
+uuid: 34182677-c973-4e52-a302-5243d2d3a9d7
 langcode: en
-status: true
+status: false
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.basic.body
     - field.field.node.basic.field_custom_content
     - node.type.basic
   module:
     - layout_builder
-    - layout_builder_restrictions
-    - layout_discovery
     - layout_paragraphs
     - text
     - user
@@ -17,26 +16,10 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-  layout_builder_restrictions:
-    allowed_block_categories: {  }
-    entity_view_mode_restriction:
-      allowed_layouts:
-        - layout_twocol_section
-      denylisted_blocks: {  }
-      allowlisted_blocks: {  }
-      restricted_categories:
-        - 'Chaos Tools'
-        - 'Content fields'
-        - Forms
-        - Menus
-        - 'OCHA Search'
-        - 'Social Auth'
-        - System
-        - core
-id: node.basic.default
+id: node.basic.full
 targetEntityType: node
 bundle: basic
-mode: default
+mode: full
 content:
   body:
     type: text_default
