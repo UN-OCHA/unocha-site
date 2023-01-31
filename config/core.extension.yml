@@ -37,7 +37,6 @@ module:
   layout_builder_restrictions: 0
   layout_discovery: 0
   layout_paragraphs: 0
-  layout_paragraphs_library: 0
   link: 0
   locale: 0
   maintenance200: 0
@@ -52,7 +51,6 @@ module:
   ocha_search: 0
   options: 0
   page_cache: 0
-  paragraphs_library: 0
   path: 0
   path_alias: 0
   redirect: 0
