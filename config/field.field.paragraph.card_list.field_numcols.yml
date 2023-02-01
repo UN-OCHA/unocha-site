@@ -1,0 +1,21 @@
+uuid: a6531415-0ebb-47e4-aa3d-ad463cdbf5fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_numcols
+    - paragraphs.paragraphs_type.card_list
+  module:
+    - options
+id: paragraph.card_list.field_numcols
+field_name: field_numcols
+entity_type: paragraph
+bundle: card_list
+label: 'Number of columns'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

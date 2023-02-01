@@ -21,16 +21,16 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles: null
-    negate: 0
+    negate: 1
     target_bundles_drag_drop:
       card:
         weight: 8
         enabled: false
-      embed:
+      card_list:
         weight: 9
         enabled: false
-      from_library:
-        weight: 10
+      embed:
+        weight: 9
         enabled: false
       image_caption:
         weight: 11

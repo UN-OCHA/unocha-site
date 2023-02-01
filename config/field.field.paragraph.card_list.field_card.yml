@@ -1,47 +1,49 @@
-uuid: c2eeadc5-214b-431d-b0db-1b8aa9f6638c
+uuid: 7cace077-686a-4299-9d92-31d3afb50748
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_custom_content
-    - node.type.landing_page
+    - field.storage.paragraph.field_card
+    - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.card_list
   module:
     - entity_reference_revisions
-id: node.landing_page.field_custom_content
-field_name: field_custom_content
-entity_type: node
-bundle: landing_page
-label: 'Custom content'
+id: paragraph.card_list.field_card
+field_name: field_card
+entity_type: paragraph
+bundle: card_list
+label: Card
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles: null
-    negate: 1
+    target_bundles:
+      card: card
+    negate: 0
     target_bundles_drag_drop:
       card:
-        weight: 7
-        enabled: false
-      card_list:
         weight: 9
-        enabled: false
-      embed:
+        enabled: true
+      card_list:
         weight: 8
         enabled: false
-      image_caption:
+      embed:
         weight: 10
         enabled: false
-      layout:
+      image_caption:
         weight: 11
+        enabled: false
+      layout:
+        weight: 12
         enabled: false
       node_list:
         weight: 13
         enabled: false
       text:
-        weight: 12
+        weight: 14
         enabled: false
 field_type: entity_reference_revisions
