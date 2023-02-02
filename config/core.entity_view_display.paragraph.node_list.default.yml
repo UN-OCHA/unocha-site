@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.node_list.field_display_mode
     - field.field.paragraph.node_list.field_view
     - paragraphs.paragraphs_type.node_list
   module:
@@ -21,4 +22,5 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  field_display_mode: true

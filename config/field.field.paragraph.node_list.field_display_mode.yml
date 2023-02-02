@@ -1,0 +1,26 @@
+uuid: 722554c3-18c0-4d5b-af87-2e548271e1c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_display_mode
+    - paragraphs.paragraphs_type.node_list
+  module:
+    - entity_reference_display
+id: paragraph.node_list.field_display_mode
+field_name: field_display_mode
+entity_type: paragraph
+bundle: node_list
+label: 'Display mode'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  exclude:
+    card: card
+    teaser: teaser
+    title: title
+  negate: true
+field_type: entity_reference_display
