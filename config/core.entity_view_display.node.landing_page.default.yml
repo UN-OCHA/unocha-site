@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_article_image_caption
     - field.field.node.landing_page.field_custom_content
+    - field.field.node.landing_page.field_landing_page_image
     - field.field.node.landing_page.layout_builder__layout
     - node.type.landing_page
   module:
@@ -39,6 +41,42 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          c665fb41-e67e-45d9-ae59-bf4c93063a4b:
+            uuid: c665fb41-e67e-45d9-ae59-bf4c93063a4b
+            region: content
+            configuration:
+              id: 'field_block:node:landing_page:field_landing_page_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_entity_view
+                label: above
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          114a40c1-ecd8-4e93-b541-f94d92763f3a:
+            uuid: 114a40c1-ecd8-4e93-b541-f94d92763f3a
+            region: content
+            configuration:
+              id: 'field_block:node:landing_page:field_article_image_caption'
+              label: 'Image caption'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_onecol
@@ -51,15 +89,17 @@ third_party_settings:
             region: content
             configuration:
               id: 'field_block:node:landing_page:field_custom_content'
+              label: 'Custom content'
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: entity_reference_revisions_entity_view
-                label: above
+                label: hidden
                 settings:
                   view_mode: default
-                  link: ''
                 third_party_settings: {  }
             weight: 0
             additional: {  }
@@ -78,7 +118,9 @@ third_party_settings:
     allowed_block_categories:
       - 'Chaos Tools'
       - 'Content fields'
+      - Devel
       - Forms
+      - 'Lists (Views)'
       - Menus
       - 'OCHA Search'
       - 'Social Auth'
@@ -91,7 +133,9 @@ third_party_settings:
       allowlisted_blocks: {  }
       restricted_categories:
         - 'Chaos Tools'
+        - Devel
         - Forms
+        - 'Lists (Views)'
         - Menus
         - 'OCHA Search'
         - 'Social Auth'
@@ -109,6 +153,14 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  field_article_image_caption:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
   field_custom_content:
     type: entity_reference_revisions_entity_view
     label: above
@@ -117,6 +169,15 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_landing_page_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 103
     region: content
   links:
     settings: {  }

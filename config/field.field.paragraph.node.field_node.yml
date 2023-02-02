@@ -1,4 +1,4 @@
-uuid: 90781d76-d2e2-42fd-948e-b4702019fe37
+uuid: a11683be-56b4-45e1-9908-7e939fe2a66a
 langcode: en
 status: true
 dependencies:
@@ -8,15 +8,15 @@ dependencies:
     - node.type.basic
     - node.type.event
     - node.type.landing_page
-    - paragraphs.paragraphs_type.node_list
-id: paragraph.node_list.field_node
+    - paragraphs.paragraphs_type.node
+id: paragraph.node.field_node
 field_name: field_node
 entity_type: paragraph
-bundle: node_list
+bundle: node
 label: Node
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -31,5 +31,5 @@ settings:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: basic
+    auto_create_bundle: article
 field_type: entity_reference

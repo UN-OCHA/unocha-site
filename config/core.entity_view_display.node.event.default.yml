@@ -4,10 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
+    - field.field.node.event.field_article_image_caption
     - field.field.node.event.field_country
     - field.field.node.event.field_custom_content
     - field.field.node.event.field_event_date
-    - field.field.node.event.field_image
+    - field.field.node.event.field_event_image
     - node.type.event
   module:
     - datetime_range
@@ -24,48 +25,52 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
-    region: content
-  field_country:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
     weight: 4
     region: content
-  field_custom_content:
-    type: entity_reference_revisions_entity_view
-    label: above
+  field_article_image_caption:
+    type: string
+    label: hidden
     settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_event_date:
-    type: daterange_default
-    label: above
-    settings:
-      timezone_override: ''
-      format_type: medium
-      separator: '-'
+      link_to_entity: false
     third_party_settings: {  }
     weight: 1
     region: content
-  field_image:
+  field_country:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_custom_content:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     weight: 5
     region: content
-  links:
-    settings: {  }
+  field_event_date:
+    type: daterange_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: unocha
+      separator: '-'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_event_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
   langcode: true
+  links: true

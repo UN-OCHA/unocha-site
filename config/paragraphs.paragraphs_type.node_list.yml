@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: node_list
-label: 'Node list'
+label: 'Content list'
 icon_uuid: null
 icon_default: null
 description: ''

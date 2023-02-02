@@ -1,0 +1,30 @@
+uuid: 6892c0bf-89e2-4faa-9593-34b00869d160
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.article.field_media_image_2
+    - media.type.article
+    - responsive_image.styles.1x_article
+  module:
+    - responsive_image
+id: media.article.default
+targetEntityType: media
+bundle: article
+mode: default
+content:
+  field_media_image_2:
+    type: responsive_image
+    label: visually_hidden
+    settings:
+      responsive_image_style: 1x_article
+      image_link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

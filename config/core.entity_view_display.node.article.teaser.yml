@@ -6,7 +6,9 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.article.body
     - field.field.node.article.field_article_image
+    - field.field.node.article.field_article_image_caption
     - field.field.node.article.field_country
+    - field.field.node.article.field_story_type
     - node.type.article
   module:
     - text
@@ -20,23 +22,29 @@ content:
     type: text_trimmed
     label: hidden
     settings:
-      trim_length: 600
+      trim_length: 160
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
-  field_country:
-    type: entity_reference_label
-    label: above
+  field_article_image:
+    type: entity_reference_entity_view
+    label: hidden
     settings:
+      view_mode: default
       link: true
     third_party_settings: {  }
     weight: 0
     region: content
-  links:
-    settings: {  }
+  field_country:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
 hidden:
-  field_article_image: true
+  field_article_image_caption: true
+  field_story_type: true
   langcode: true
+  links: true

@@ -1,49 +1,29 @@
-uuid: 41a2a467-f7a4-474a-b510-8f019513ba4d
+uuid: b26e469b-e33c-4d76-a4e4-3fbcfd022777
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_article_image
+    - media.type.article
     - node.type.article
-    - paragraphs.paragraphs_type.image_caption
-  module:
-    - entity_reference_revisions
 id: node.article.field_article_image
 field_name: field_article_image
 entity_type: node
 bundle: article
-label: 'Image and caption'
+label: 'Article image'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:paragraph'
+  handler: 'default:media'
   handler_settings:
     target_bundles:
-      image_caption: image_caption
-    negate: 0
-    target_bundles_drag_drop:
-      card:
-        weight: 8
-        enabled: false
-      embed:
-        weight: 9
-        enabled: false
-      from_library:
-        weight: 10
-        enabled: false
-      image_caption:
-        weight: 11
-        enabled: true
-      layout:
-        weight: 12
-        enabled: false
-      node_list:
-        weight: 13
-        enabled: false
-      text:
-        weight: 14
-        enabled: false
-field_type: entity_reference_revisions
+      article: article
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

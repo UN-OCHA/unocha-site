@@ -1,0 +1,19 @@
+uuid: 8d63f266-336f-4ecf-9678-ed3479e8b305
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_image_caption
+    - node.type.landing_page
+id: node.landing_page.field_article_image_caption
+field_name: field_article_image_caption
+entity_type: node
+bundle: landing_page
+label: 'Image caption'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

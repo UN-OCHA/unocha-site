@@ -5,10 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.event.body
+    - field.field.node.event.field_article_image_caption
     - field.field.node.event.field_country
     - field.field.node.event.field_custom_content
     - field.field.node.event.field_event_date
-    - field.field.node.event.field_image
+    - field.field.node.event.field_event_image
     - node.type.event
   module:
     - datetime_range
@@ -25,25 +26,29 @@ content:
     settings:
       trim_length: 160
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
-  field_event_date:
-    type: daterange_default
-    label: above
+  field_country:
+    type: entity_reference_label
+    label: inline
     settings:
-      timezone_override: ''
-      format_type: medium
-      separator: '-'
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  links:
-    settings: {  }
+      link: true
     third_party_settings: {  }
     weight: 2
     region: content
+  field_event_date:
+    type: daterange_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: unocha
+      separator: '-'
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
-  field_country: true
+  field_article_image_caption: true
   field_custom_content: true
-  field_image: true
+  field_event_image: true
   langcode: true
+  links: true

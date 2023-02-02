@@ -1,18 +1,17 @@
-uuid: 5723f23b-c534-4902-9434-17b344b7b2de
+uuid: 8aaa100f-ebb9-4602-bf2c-fa9d27369991
 langcode: en
 status: true
 dependencies:
   module:
-    - entity_reference_revisions
+    - media
     - node
-    - paragraphs
 id: node.field_article_image
 field_name: field_article_image
 entity_type: node
-type: entity_reference_revisions
+type: entity_reference
 settings:
-  target_type: paragraph
-module: entity_reference_revisions
+  target_type: media
+module: core
 locked: false
 cardinality: 1
 translatable: true

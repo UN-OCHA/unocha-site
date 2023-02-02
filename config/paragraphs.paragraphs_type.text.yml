@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies: {  }
 id: text
-label: Text
+label: 'Text and image'
 icon_uuid: null
 icon_default: null
-description: 'Text with formatting'
+description: 'Text with formatting, and optional image'
 behavior_plugins: {  }

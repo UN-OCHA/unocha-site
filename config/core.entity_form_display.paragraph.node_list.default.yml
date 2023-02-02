@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.node_list.field_node
     - field.field.paragraph.node_list.field_view
     - paragraphs.paragraphs_type.node_list
   module:
@@ -13,16 +12,6 @@ targetEntityType: paragraph
 bundle: node_list
 mode: default
 content:
-  field_node:
-    type: entity_reference_autocomplete
-    weight: 0
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_view:
     type: viewsreference_autocomplete
     weight: 2
