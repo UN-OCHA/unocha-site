@@ -39,24 +39,26 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 1
+            weight: 3
             additional: {  }
           c665fb41-e67e-45d9-ae59-bf4c93063a4b:
             uuid: c665fb41-e67e-45d9-ae59-bf4c93063a4b
             region: content
             configuration:
               id: 'field_block:node:landing_page:field_landing_page_image'
+              label: 'Landing page image'
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: entity_reference_entity_view
-                label: above
+                label: hidden
                 settings:
                   view_mode: default
-                  link: false
                 third_party_settings: {  }
-            weight: 2
+            weight: 1
             additional: {  }
           114a40c1-ecd8-4e93-b541-f94d92763f3a:
             uuid: 114a40c1-ecd8-4e93-b541-f94d92763f3a
@@ -75,7 +77,7 @@ third_party_settings:
                 settings:
                   link_to_entity: false
                 third_party_settings: {  }
-            weight: 3
+            weight: 2
             additional: {  }
         third_party_settings: {  }
       -
@@ -102,16 +104,6 @@ third_party_settings:
                   view_mode: default
                 third_party_settings: {  }
             weight: 0
-            additional: {  }
-          01101194-1896-4724-9d86-90a75bd308e5:
-            uuid: 01101194-1896-4724-9d86-90a75bd308e5
-            region: content
-            configuration:
-              id: 'extra_field_block:node:landing_page:links'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-            weight: 1
             additional: {  }
         third_party_settings: {  }
   layout_builder_restrictions:
