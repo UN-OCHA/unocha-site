@@ -19,7 +19,7 @@
 
 .paragraph--type--card-list .field--name-field-card,
 .paragraph--type--list--card .paragraph--type--node .erd-list--card,
-.paragraph--type--node-list .view .view-content {
+.paragraph--type--node-list.node-list--view-mode--card .view .view-content {
   display: flex;
   flex-flow: row wrap;
   gap: var(--uno-card-list-gap-size);
@@ -27,7 +27,7 @@
 
 .paragraph--type--card-list .field--name-field-card > .field__item,
 .paragraph--type--list--card .paragraph--type--node .erd-list--card > .field__item,
-.paragraph--type--node-list .view .views-row {
+.paragraph--type--node-list.node-list--view-mode--card .view .views-row {
   /* stylelint-disable-next-line max-line-length */
   flex: 0 1 calc((100% / var(--uno-card-list-num-cols)) - var(--uno-card-list-gap-size) + var(--uno-card-list-gap-size) / var(--uno-card-list-num-cols));
 }
@@ -35,14 +35,14 @@
 @media screen and (min-width: 480px) {
   .paragraph--type--card-list,
   .paragraph--type--list--card .paragraph--type--node .erd-list--card,
-  .paragraph--type--node-list .view .view-content {
+  .paragraph--type--node-list.node-list--view-mode--card .view .view-content {
     --uno-card-list-num-cols: 2;
   }
 }
 
 @media screen and (min-width: 750px) {
   .paragraph--type--card-list--col-3,
-  .paragraph--type--node-list .view .view-content {
+  .paragraph--type--node-list.node-list--view-mode--card .view .view-content {
     --uno-card-list-num-cols: 3;
   }
 }

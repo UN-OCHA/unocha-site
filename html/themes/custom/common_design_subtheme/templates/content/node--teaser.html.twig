@@ -91,11 +91,14 @@
 
 <article{{ attributes.addClass(classes) }}>
 
-  {% if content.field_image|render %}
+  {# {% if content.field_image|render %} #}
     <div class="cd-teaser__image">
+      {{ content.field_event_image }}
+      {{ content.field_article_image }}
+      {{ content.field_landing_page_image }}
       {{ content.field_image }}
     </div>
-  {% endif %}
+  {# {% endif %} #}
 
   <div class="cd-teaser__container [ cd-flow ]">
     {{ title_prefix }}
@@ -107,7 +110,7 @@
     {{ title_suffix }}
 
     <div class="cd-teaser__description cd-max-width">
-      {{ content|without('field_image', 'body') }}
+      {{ content|without('field_event_image', 'body') }}
 
       {% set contentBody %}
         {{ content.body }}

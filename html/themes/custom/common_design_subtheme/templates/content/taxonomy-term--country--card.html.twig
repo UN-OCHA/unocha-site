@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a taxonomy term.
+ *
+ * Available variables:
+ * - url: URL of the current term.
+ * - name: (optional) Name of the current term.
+ * - content: Items for the content of the term (fields and description).
+ *   Use 'content' to print them all, or print a subset such as
+ *   'content.description'. Use the following code to exclude the
+ *   printing of a given child element:
+ *   @code
+ *   {{ content|without('description') }}
+ *   @endcode
+ * - attributes: HTML attributes for the wrapper.
+ * - page: Flag for the full page state.
+ * - term: The taxonomy term entity, including:
+ *   - id: The ID of the taxonomy term.
+ *   - bundle: Machine name of the current vocabulary.
+ * - view_mode: View mode, e.g. 'full', 'teaser', etc.
+ *
+ * @see template_preprocess_taxonomy_term()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'uno-card cd-card cd-card--clickable [ cd-flow ]'
+  ]
+%}
+
+{{ attach_library('common_design/cd-flow') }}
+{{ attach_library('common_design/cd-utilities') }}
+{{ attach_library('common_design/cd-typography') }}
+{{ attach_library('common_design/cd-button') }}
+{{ attach_library('common_design/cd-read-more') }}
+{{ attach_library('common_design/cd-card') }}
+{{ attach_library('common_design_subtheme/uno-card-list')}}
+
+<article{{attributes.addClass(classes)}}>
+	{# {% set destination = paragraph.field_destination.0.url %} #}
+	{% set destination = '/node/1' %}
+	<div class="uno-card__content cd-card__container [ cd-flow ]">
+		<a href="{{ destination }}">{{ content.field_title }}</a>
+		{{ content }}
+		<a class="cd-button cd-button--small cd-button--icon" href="{{ destination }}">
+			<span class="cd-button__text">{{ 'View more'|t }}</span>
+			<svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
+				<use xlink:href="#cd-icon--arrow-right"></use>
+			</svg>
+		</a>
+	</div>
+	{# <div class="uno-card__image">
+	        {{ content.field_image }}
+	      </div> #}
+</article>
