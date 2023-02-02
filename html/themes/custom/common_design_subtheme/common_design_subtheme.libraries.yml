@@ -19,10 +19,40 @@ global-styling:
 # completely independent and style the custom content of your website, such as
 # a custom Paragraph type.
 #
+cd-button:
+  css:
+    component:
+      components/cd-button/cd-button.css: {}
+
+cd-caption:
+  css:
+    component:
+      components/cd-caption/cd-caption.css: {}
+
 cd-cards:
   css:
     component:
       components/cd-cards/layout--cards.css: {}
+
+cd-social-links:
+  css:
+    component:
+      components/cd-social-links/cd-social-links.css: {}
+
+uno-card:
+  css:
+    theme:
+      components/uno-card/uno-card.css: {}
+
+uno-card-list:
+  css:
+    theme:
+      components/uno-card-list/uno-card-list.css: {}
+
+uno-cta:
+  css:
+    theme:
+      components/uno-cta/uno-cta.css: {}
 
 uno-embed:
   css:
@@ -30,6 +60,7 @@ uno-embed:
       components/uno-embed/uno-embed.css: {}
   js:
     components/uno-embed/uno-embed.js: {}
+
 ###
 # Define Drupal libraries for additional webfonts.
 #

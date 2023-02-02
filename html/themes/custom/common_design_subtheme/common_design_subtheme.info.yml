@@ -37,10 +37,15 @@ libraries:
 #
 # @see common_design_subtheme.libraries.yml
 #
-# libraries-extend:
-#   common_design/cd-teaser:
-#     - common_design_subtheme/custom-teaser
+libraries-extend:
+  common_design/cd-button:
+    - common_design_subtheme/cd-caption
 
+  common_design/cd-button:
+    - common_design_subtheme/cd-button
+
+  common_design/cd-social-links:
+    - common_design_subtheme/cd-social-links
 ###
 # Override libraries to replace specific base-theme components. Now, when the
 # base-theme component would have been used, instead ONLY yours will apply.
@@ -54,5 +59,7 @@ libraries:
 # @see https://www.drupal.org/project/components
 # @see https://www.drupal.org/docs/contributed-modules/components/understanding-twig-namespaces
 #
-# components:
-#   namespaces:
+# UNO components
+components:
+  namespaces:
+    uno-components: components

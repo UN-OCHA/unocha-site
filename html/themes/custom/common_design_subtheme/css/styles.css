@@ -89,25 +89,11 @@ button[aria-expanded] .cd-icon--arrow-down {
   display: block;
 }
 
-
 /* Paragraphs */
-.field__label {
-  font-weight: bold;
-  color: var(--cd-grey--dark);
-  text-transform: uppercase;
-  display: none;
-}
-
-.paragraph .field__label {
-  font-weight: bold;
-  color: var(--cd-grey--mid);
-  text-transform: initial;
-}
-
 .paragraph {
   margin-bottom: 2rem;
 }
-.paragraph .field {
+.paragraph > .field {
   margin-bottom: 1rem;
 }
 
@@ -122,4 +108,29 @@ button[aria-expanded] .cd-icon--arrow-down {
 
 .field--name-body + .field--name-field-custom-content {
   margin-top: 2rem;
+}
+
+/* .field__label {
+  font-weight: bold;
+  color: var(--cd-grey--dark);
+  text-transform: uppercase;
+  display: none;
+} */
+
+/* .paragraph .field__label {
+  font-weight: bold;
+  color: var(--cd-grey--mid);
+  text-transform: initial;
+} */
+
+.field--label-inline {
+  display: flex;
+}
+
+.field--label-inline > .field__label {
+  margin-inline-end: 0.5rem;
+}
+
+.field--label-inline>.field__label::after {
+  content: ':'
 }
