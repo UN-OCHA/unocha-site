@@ -136,7 +136,7 @@ button[aria-expanded] .cd-icon--arrow-down {
   content: ':'
 }
 
-/* Landijng page - restrict width and centre horizontally */
+/* Restrict width and centre horizontally */
 .node--type-landing-page .cd-page-title,
 .node--type-landing-page .field--name-body,
 .node--type-landing-page .field--name-description,
