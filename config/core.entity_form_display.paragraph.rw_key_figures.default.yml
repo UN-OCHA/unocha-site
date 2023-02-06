@@ -1,0 +1,28 @@
+uuid: bd809864-7d1c-41ce-bb93-0c3498e54b97
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rw_key_figures.field_country
+    - field.field.paragraph.rw_key_figures.field_numcols
+    - paragraphs.paragraphs_type.rw_key_figures
+id: paragraph.rw_key_figures.default
+targetEntityType: paragraph
+bundle: rw_key_figures
+mode: default
+content:
+  field_country:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_numcols:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

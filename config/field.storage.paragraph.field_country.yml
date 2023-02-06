@@ -1,0 +1,108 @@
+uuid: 8192999b-5a4e-40af-8e2a-f120ac34ff8f
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_country
+field_name: field_country
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: AFG
+      label: Afghanistan
+    -
+      value: BDI
+      label: Burundi
+    -
+      value: BFA
+      label: 'Burkina Faso'
+    -
+      value: BGD
+      label: Bangladesh
+    -
+      value: CAF
+      label: 'Central African Republic'
+    -
+      value: CMR
+      label: Cameroon
+    -
+      value: COD
+      label: 'Congo, Democratic Republic of the'
+    -
+      value: COL
+      label: Colombia
+    -
+      value: ETH
+      label: Ethiopia
+    -
+      value: HTI
+      label: Haiti
+    -
+      value: IRQ
+      label: Iraq
+    -
+      value: KEN
+      label: Kenya
+    -
+      value: LBN
+      label: Lebanon
+    -
+      value: LBY
+      label: Libya
+    -
+      value: MLI
+      label: Mali
+    -
+      value: MMR
+      label: Myanmar
+    -
+      value: MOZ
+      label: Mozambique
+    -
+      value: NER
+      label: Niger
+    -
+      value: NGA
+      label: Nigeria
+    -
+      value: PAK
+      label: Pakistan
+    -
+      value: PSE
+      label: 'Palestine, State of'
+    -
+      value: SDN
+      label: Sudan
+    -
+      value: SOM
+      label: Somalia
+    -
+      value: SSD
+      label: 'South Sudan'
+    -
+      value: SYR
+      label: 'Syrian Arab Republic'
+    -
+      value: TCD
+      label: Chad
+    -
+      value: UKR
+      label: Ukraine
+    -
+      value: VEN
+      label: 'Venezuela (Bolivarian Republic of)'
+    -
+      value: YEM
+      label: Yemen
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

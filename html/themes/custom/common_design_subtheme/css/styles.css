@@ -91,7 +91,7 @@ button[aria-expanded] .cd-icon--arrow-down {
 
 /* Paragraphs */
 .paragraph {
-  margin-bottom: 2rem;
+  margin: 4rem 0 4rem;
 }
 .paragraph > .field {
   margin-bottom: 1rem;
@@ -133,4 +133,53 @@ button[aria-expanded] .cd-icon--arrow-down {
 
 .field--label-inline>.field__label::after {
   content: ':'
+}
+
+/* Landijng page - restrict width and centre horizontally */
+.node--type-landing-page .cd-page-title,
+.node--type-landing-page .field--name-body,
+.node--type-landing-page .field--name-description,
+.node--type-landing-page .field--name-field-text,
+.node--type-landing-page .paragraph--type--list--teaser {
+  max-width: var(--cd-max-content-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.node--type-landing-page .field--name-body,
+.node--type-landing-page .field--name-description,
+.node--type-landing-page .field--name-field-text {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.paragraph--type--text.paragraph__image--align-left,
+.paragraph--type--text.paragraph__image--align-right {
+  display: flex;
+}
+
+/* Paragraph Text and Image with alignment */
+.paragraph__image--align-left .field--name-field-text {
+  order: 2;
+  padding-inline-start: 4rem;
+  text-align: left;
+}
+.paragraph__image--align-left .field--name-field-text-image {
+  order: 1;
+}
+
+.paragraph__image--align-right .field--name-field-text {
+  order: 1;
+  padding-inline-end: 4rem;
+}
+.paragraph__image--align-right .field--name-field-text-image {
+  order: 2;
+}
+
+.paragraph__image--align-center .field--name-field-media-image .field__item {
+  text-align: center;
+}
+.paragraph__image--align-center .field--name-field-media-image .field__item img {
+  display: inline-block;
+  margin: 0 auto;
 }

@@ -1,0 +1,16 @@
+uuid: ec320056-b533-44f8-a919-5f6b0c268b79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rw_key_figures.field_country
+    - field.field.paragraph.rw_key_figures.field_numcols
+    - paragraphs.paragraphs_type.rw_key_figures
+id: paragraph.rw_key_figures.default
+targetEntityType: paragraph
+bundle: rw_key_figures
+mode: default
+content: {  }
+hidden:
+  field_country: true
+  field_numcols: true

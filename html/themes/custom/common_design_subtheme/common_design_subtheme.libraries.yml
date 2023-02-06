@@ -39,6 +39,16 @@ cd-social-links:
     component:
       components/cd-social-links/cd-social-links.css: {}
 
+rw-brand:
+  css:
+    theme:
+      components/rw-brand/rw-brand.css: {}
+
+rw-key-figures:
+  css:
+    theme:
+      components/rw-key-figures/rw-key-figures.css: {}
+
 uno-card:
   css:
     theme:
