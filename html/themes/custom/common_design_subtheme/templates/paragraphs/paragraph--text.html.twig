@@ -44,17 +44,14 @@
   'paragraph--type--' ~ paragraph.bundle|clean_class,
   view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   not paragraph.isPublished() ? 'paragraph--unpublished',
-  paragraph.field_media_content_image_align.value == 'right' ? 'paragraph__image--align-right' : 'paragraph__no-image',
-  paragraph.field_media_content_image_align.value == 'left' ? 'paragraph__image--align-left' : 'paragraph__no-image'
+  paragraph.field_image_align.value ? 'paragraph__image--align-' ~ paragraph.field_image_align.value : 'paragraph__image--align-none'
 ]
 %}
 
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-
     {% block content %}
-      {{ content|without('field_media_content_image_align') }}
+      {{ content|without('field_image_align') }}
     {% endblock %}
-
   </div>
 {% endblock paragraph %}
