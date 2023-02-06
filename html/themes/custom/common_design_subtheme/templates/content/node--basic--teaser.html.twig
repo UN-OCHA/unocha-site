@@ -93,11 +93,7 @@
 
   {# {% if content.field_image|render %} #}
     <div class="cd-teaser__image">
-      {{ content.field_event_image }}
-      {{ content.field_article_image }}
       {{ content.field_basic_image }}
-      {{ content.field_landing_page_image }}
-      {{ content.field_image }}
     </div>
   {# {% endif %} #}
 
@@ -111,7 +107,7 @@
     {{ title_suffix }}
 
     <div class="cd-teaser__description cd-max-width">
-      {{ content|without('field_event_image', 'body') }}
+      {{ content|without('field_basic_image', 'body') }}
 
       {% set contentBody %}
         {{ content.body }}

@@ -93,11 +93,10 @@
 
 <article{{ attributes.addClass(classes) }}>
   {# {% set destination = paragraph.field_destination.0.url %} #}
-  {% set destination = '/node/1' %}
   <div class="uno-card__content cd-card__container [ cd-flow ]">
-    <a href="{{ destination }}">{{ content.field_title }}</a>
+    <a href="{{ url }}">{{ label }}</a>
     {{ content }}
-    <a class="cd-button cd-button--small cd-button--icon" href="{{ destination }}">
+    <a class="cd-button cd-button--small cd-button--icon" href="{{ url }}">
       <span class="cd-button__text">{{ 'View more'|t }}</span>
       <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
         <use xlink:href="#cd-icon--arrow-right"></use>
