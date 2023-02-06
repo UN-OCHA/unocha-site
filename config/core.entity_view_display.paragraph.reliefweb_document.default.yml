@@ -1,0 +1,16 @@
+uuid: fed3427e-c135-42a8-a0c3-10148d42e927
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.reliefweb_document.field_hide_thumbnail
+    - field.field.paragraph.reliefweb_document.field_reliefweb_url
+    - paragraphs.paragraphs_type.reliefweb_document
+id: paragraph.reliefweb_document.default
+targetEntityType: paragraph
+bundle: reliefweb_document
+mode: default
+content: {  }
+hidden:
+  field_hide_thumbnail: true
+  field_reliefweb_url: true

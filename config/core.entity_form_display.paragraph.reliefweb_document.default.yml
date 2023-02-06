@@ -1,0 +1,33 @@
+uuid: cd777386-30b4-4d59-912a-4fc40280df35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.reliefweb_document.field_hide_thumbnail
+    - field.field.paragraph.reliefweb_document.field_reliefweb_url
+    - paragraphs.paragraphs_type.reliefweb_document
+  module:
+    - link
+id: paragraph.reliefweb_document.default
+targetEntityType: paragraph
+bundle: reliefweb_document
+mode: default
+content:
+  field_hide_thumbnail:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_reliefweb_url:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,145 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+<div{{attributes.addClass(classes)}}>
+
+{{ attach_library('common_design_subtheme/cd-button') }}
+{{ attach_library('common_design_subtheme/uno-rss-feed') }}
+
+  {# <div class="external-feed--wrapper uno-rss-feed">
+    <ul class="external-feed--list">
+      {% for item in items %}
+        <li class="external-feed--item">
+        <div class="external-feed--item-title">
+          <h3>
+            {% if options.display_date %}{{ item.date|date('d-M-Y') }} - {% endif %}
+            <a rel="{% if not (item.link starts with 'https://reliefweb.int') %}noopener noreferrer external nofollow{% endif %}" class="external-feed--item-link" href="{{ item.link }}"  target="_blank">{{ item.title }}</a>
+            <span class="uno__external-url"></span>
+          </h3>
+        </div>
+
+        {% if options.display_description %}
+          {% if item.description|length > 0 %}
+            {% if options.display_each_item_full %}
+              <div class="external-feed--item-description--full">
+                {{ item.description|striptags|raw }}
+              </div>
+            {% else %}
+              <div class="external-feed--item-description--teaser">
+                {{ item.description|striptags|slice(0, 200)|raw }}
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+
+    {% if read_more %}
+      <div class="external-feed--readmore">
+        <a class="cd-button cd-button--icon cd-button--small" rel="{% if not (read_more.url starts with 'https://reliefweb.int') %}noopener noreferrer external nofollow{% endif %}" href="{{ read_more.url }}">
+          <span class="cd-button__text">{{ 'View all updates'|t }}</span>
+          <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16"><use xlink:href="#cd-icon--arrow-right"></use></svg>
+        </a>
+      </div>
+    {% endif %}
+  </div> #}
+
+  <div class="external-feed--wrapper uno-rss-feed">
+    <ul class="external-feed--list">
+      <li class="external-feed--item">
+        <div class="external-feed--item-title">
+          <h3>
+            06-Feb-2023 -
+            <a rel="" class="external-feed--item-link" href="https://reliefweb.int/report/burkina-faso/bulletin-conjoint-dinformation-sur-les-marches-au-burkina-faso-periode-de-decembre-2022" target="_blank">Bulletin conjoint d’information sur les marchés au Burkina Faso (Période de décembre 2022)</a>
+            <span class="uno__external-url"></span>
+          </h3>
+        </div>
+
+      </li>
+      <li class="external-feed--item">
+        <div class="external-feed--item-title">
+          <h3>
+            06-Feb-2023 -
+            <a rel="" class="external-feed--item-link" href="https://reliefweb.int/report/yemen/yemen-health-cluster-bulletin-september-october-2022" target="_blank">Yemen: Health Cluster Bulletin, September &amp; October 2022</a>
+            <span class="uno__external-url"></span>
+          </h3>
+        </div>
+
+      </li>
+      <li class="external-feed--item">
+        <div class="external-feed--item-title">
+          <h3>
+            06-Feb-2023 -
+            <a rel="" class="external-feed--item-link" href="https://reliefweb.int/report/syrian-arab-republic/syrian-arab-republic-humanitarian-country-team-hct-coordinated-response-flash-update-earthquake-6-february-2023" target="_blank">Syrian Arab Republic - Humanitarian Country Team (HCT) Coordinated Response Flash Update - Earthquake (6 February 2023)</a>
+            <span class="uno__external-url"></span>
+          </h3>
+        </div>
+
+      </li>
+      <li class="external-feed--item">
+        <div class="external-feed--item-title">
+          <h3>
+            06-Feb-2023 -
+            <a rel="" class="external-feed--item-link" href="https://reliefweb.int/report/syrian-arab-republic/north-west-syria-situation-report-6-february-2023" target="_blank">North-West Syria: Situation Report (6 February 2023)</a>
+            <span class="uno__external-url"></span>
+          </h3>
+        </div>
+
+      </li>
+
+  </div>
+
+
+
+
+
+</div>
+{% endblock paragraph %}
+

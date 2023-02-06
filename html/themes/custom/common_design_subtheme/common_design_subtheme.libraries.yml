@@ -49,6 +49,14 @@ rw-key-figures:
     theme:
       components/rw-key-figures/rw-key-figures.css: {}
 
+rw-river:
+  css:
+    theme:
+      components/rw-river/rw-river.css: {}
+      components/rw-river/rw-river-views.css: {}
+  dependencies:
+    - common_design_subtheme/rw-brand
+
 uno-card:
   css:
     theme:
@@ -70,6 +78,16 @@ uno-embed:
       components/uno-embed/uno-embed.css: {}
   js:
     components/uno-embed/uno-embed.js: {}
+
+uno-river:
+  css:
+    theme:
+      components/uno-river/uno-river.css: {}
+
+uno-rss-feed:
+  css:
+    theme:
+      components/uno-rss-feed/uno-rss-feed.css: {}
 
 ###
 # Define Drupal libraries for additional webfonts.

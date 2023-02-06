@@ -1,0 +1,20 @@
+uuid: ed32fe2d-13ce-43c6-b931-8d29c262f13d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rss_feed.field_max_number_of_items
+    - field.field.paragraph.rss_feed.field_rss_link
+    - field.field.paragraph.rss_feed.field_rss_options
+    - field.field.paragraph.rss_feed.field_rss_read_more
+    - paragraphs.paragraphs_type.rss_feed
+id: paragraph.rss_feed.default
+targetEntityType: paragraph
+bundle: rss_feed
+mode: default
+content: {  }
+hidden:
+  field_max_number_of_items: true
+  field_rss_link: true
+  field_rss_options: true
+  field_rss_read_more: true

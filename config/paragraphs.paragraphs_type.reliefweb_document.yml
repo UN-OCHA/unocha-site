@@ -1,0 +1,10 @@
+uuid: 4afd05b0-935c-49a7-9602-adb96e69de7a
+langcode: en
+status: true
+dependencies: {  }
+id: reliefweb_document
+label: 'ReliefWeb - Document'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

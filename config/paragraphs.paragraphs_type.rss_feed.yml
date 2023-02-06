@@ -1,0 +1,10 @@
+uuid: c568c3cc-fa4b-4bcf-8e06-4af6b726db08
+langcode: en
+status: true
+dependencies: {  }
+id: rss_feed
+label: 'RSS Feed'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
