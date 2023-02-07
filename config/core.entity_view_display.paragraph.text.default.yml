@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.text.field_image_align
     - field.field.paragraph.text.field_text
     - field.field.paragraph.text.field_text_image
+    - field.field.paragraph.text.field_title
     - paragraphs.paragraphs_type.text
   module:
     - entity_reference_revisions
@@ -20,7 +21,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_text_image:
     type: entity_reference_revisions_entity_view
@@ -29,7 +30,15 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 2
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
   field_image_align: true

@@ -5,7 +5,11 @@ dependencies:
   config:
     - field.field.paragraph.embed.field_embed_code
     - field.field.paragraph.embed.field_embed_url
+    - field.field.paragraph.embed.field_text
+    - field.field.paragraph.embed.field_title
     - paragraphs.paragraphs_type.embed
+  module:
+    - text
 id: paragraph.embed.default
 targetEntityType: paragraph
 bundle: embed
@@ -13,14 +17,29 @@ mode: default
 content:
   field_embed_code:
     type: basic_string
-    label: above
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_embed_url:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_text:
+    type: text_default
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
-  field_embed_url:
+  field_title:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

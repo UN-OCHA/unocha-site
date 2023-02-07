@@ -5,12 +5,31 @@ dependencies:
   config:
     - field.field.paragraph.reliefweb_document.field_hide_thumbnail
     - field.field.paragraph.reliefweb_document.field_reliefweb_url
+    - field.field.paragraph.reliefweb_document.field_text
+    - field.field.paragraph.reliefweb_document.field_title
     - paragraphs.paragraphs_type.reliefweb_document
+  module:
+    - text
 id: paragraph.reliefweb_document.default
 targetEntityType: paragraph
 bundle: reliefweb_document
 mode: default
-content: {  }
+content:
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_hide_thumbnail: true
   field_reliefweb_url: true

@@ -46,13 +46,14 @@
     not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
-{% block paragraph %}
-<div{{attributes.addClass(classes)}}>
-
 {{ attach_library('common_design_subtheme/cd-button') }}
 {{ attach_library('common_design_subtheme/uno-rss-feed') }}
 {{ attach_library('common_design_subtheme/uno-river') }}
 
+{% block paragraph %}
+<div{{attributes.addClass(classes)}}>
+  {{ content.field_title}}
+  {{ content.field_text}}
   <div class="uno-river">
     <div class="uno-river__results">
       <h2 class="visually-hidden">ReliefWeb results</h2>

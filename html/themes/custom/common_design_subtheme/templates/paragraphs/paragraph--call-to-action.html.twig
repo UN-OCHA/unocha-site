@@ -12,13 +12,17 @@
 #}
 {{ attach_library('common_design/cd-button') }}
 {{ attach_library('common_design_subtheme/uno-cta') }}
+{{ attach_library('common_design/cd-bleed') }}
+
+
 {%
   set classes = [
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    'cd-align--center'
+    'cd-align--center',
+    'cd-bleed'
   ]
 %}
 {% set destination = paragraph.field_destination.0.url %}
@@ -30,6 +34,7 @@
     .setAttribute('id', paragraph.bundle ~ '-' ~ paragraph.id())
   }}>
     {% block content %}
+    {{ content|without('field_destination')}}
       <a id="cta--{{ paragraph.id() }}" class="cd-button cd-button--outline cd-button--bold cd-button--wide cd-button--uppercase call-to-action" href="{{ destination }}" target="_blank">{{ link_text }}</a>
     {% endblock %}
   </div>

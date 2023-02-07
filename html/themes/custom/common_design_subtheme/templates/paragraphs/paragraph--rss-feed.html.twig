@@ -46,11 +46,13 @@
     not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
-{% block paragraph %}
-<div{{attributes.addClass(classes)}}>
-
 {{ attach_library('common_design_subtheme/cd-button') }}
 {{ attach_library('common_design_subtheme/uno-rss-feed') }}
+
+{% block paragraph %}
+<div{{attributes.addClass(classes)}}>
+  {{ content.field_title}}
+  {{ content.field_text}}
 
   {# <div class="external-feed--wrapper uno-rss-feed">
     <ul class="external-feed--list">
