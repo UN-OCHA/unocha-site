@@ -113,7 +113,7 @@
       {% endif %}
       <div class="cd-author__content">
         <div{{ author_attributes.addClass('node__submitted') }}>
-          {% trans %}Submitted by {{ author_name }} on {{ unochaDate }}{% endtrans %}
+          {% trans %}Submitted on {{ unochaDate }}{% endtrans %}
           {{ metadata }}
         </div>
       </div>
@@ -126,10 +126,13 @@
       <div class="cd-layout-two-col">
 
         <div class="cd-layout-main-content">
-          {{ content }}
+          {{ content|without('field_country') }}
         </div>
 
         <div class="cd-layout-sidebar-first" role="complementary">
+
+          {{ content.field_country}}
+
           {% if componentsModule %}
               {% include '@uno-components/cd-social-links/cd-social-links.html.twig' %}
             {% endif %}

@@ -102,6 +102,24 @@
   {% endif %}
   {{ title_suffix }}
 
+{% if display_submitted %}
+	<footer class="cd-author node__meta [ cd-bumper ]">
+		{% if author_picture %}
+			<div class="cd-author__image cd-author__image--rounded">
+				{{ author_picture }}
+			</div>
+		{% endif %}
+		<div class="cd-author__content">
+			<div{{author_attributes.addClass('node__submitted')}}>
+				{% trans %}Submitted on
+				{{ unochaDate }}{% endtrans %}
+				{{ metadata }}
+			</div>
+		</div>
+	</footer>
+{% endif %}
+
+
   {{ local_tasks }}
 
   <div{{ content_attributes }}>
@@ -110,10 +128,13 @@
      <div class="cd-layout-two-col">
 
        <div class="cd-layout-main-content">
-         {{ content }}
+         {{ content|without('field_country') }}
        </div>
 
        <div class="cd-layout-sidebar-first" role="complementary">
+
+        {{ content.field_country}}
+
          {% if componentsModule %}
             {% include '@uno-components/cd-social-links/cd-social-links.html.twig' %}
           {% endif %}
