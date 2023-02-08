@@ -8,11 +8,17 @@
 /**
  * Implements hook_theme_suggestions_page_alter().
  */
-// function common_design_subtheme_theme_suggestions_page_alter(array &$suggestions, array $variables) {
-//   if ($node = \Drupal::routeMatch()->getParameter('node')) {
-//     $suggestions[] = 'page__' . $node->bundle();
-//   }
-// }
+function common_design_subtheme_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  $is_front = \Drupal::service('path.matcher')->isFrontPage();
+
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $suggestions[] = 'page__' . $node->bundle();
+  }
+
+  if ($is_front && $node = \Drupal::routeMatch()->getParameter('node')) {
+    $suggestions[] = 'page__front__' . $node->bundle();
+  }
+}
 
 
 /**
