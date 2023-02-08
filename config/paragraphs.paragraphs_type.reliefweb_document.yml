@@ -1,10 +1,15 @@
 uuid: 4afd05b0-935c-49a7-9602-adb96e69de7a
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - layout_paragraphs
 id: reliefweb_document
 label: 'ReliefWeb - Document'
 icon_uuid: null
 icon_default: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

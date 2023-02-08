@@ -14,7 +14,6 @@ behavior_plugins:
     enabled: true
     available_layouts:
       layout_twocol: 'Two column'
-      layout_twocol_bricks: 'Two column bricks'
-      layout_threecol_25_50_25: 'Three column 25/50/25'
-      layout_threecol_33_34_33: 'Three column 33/34/33'
       cards: Cards
+      layout_threecol: 'Three column'
+      layout_fourcol: 'Four column'

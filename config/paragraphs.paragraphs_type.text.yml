@@ -1,10 +1,15 @@
 uuid: 51719521-9894-45cc-ae0d-cbb87b1cc3e0
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - layout_paragraphs
 id: text
 label: 'Text and image'
 icon_uuid: null
 icon_default: null
 description: 'Text with formatting, and optional image'
-behavior_plugins: {  }
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

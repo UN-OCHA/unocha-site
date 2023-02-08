@@ -1,10 +1,15 @@
 uuid: e5b2b090-cd28-405c-af8a-012adc79c910
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - layout_paragraphs
 id: call_to_action
 label: 'Call to action'
 icon_uuid: null
 icon_default: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

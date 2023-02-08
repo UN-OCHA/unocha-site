@@ -1,10 +1,15 @@
 uuid: c568c3cc-fa4b-4bcf-8e06-4af6b726db08
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - layout_paragraphs
 id: rss_feed
 label: 'RSS Feed'
 icon_uuid: null
 icon_default: null
 description: ''
-behavior_plugins: {  }
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

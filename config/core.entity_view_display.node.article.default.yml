@@ -7,9 +7,11 @@ dependencies:
     - field.field.node.article.field_article_image
     - field.field.node.article.field_article_image_caption
     - field.field.node.article.field_country
+    - field.field.node.article.field_custom_content
     - field.field.node.article.field_story_type
     - node.type.article
   module:
+    - entity_reference_revisions
     - text
     - user
 id: node.article.default
@@ -48,6 +50,15 @@ content:
       link: true
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_custom_content:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
     region: content
   links:
     settings: {  }
