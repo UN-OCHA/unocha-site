@@ -34,6 +34,26 @@ cd-cards:
     component:
       components/cd-cards/layout--cards.css: {}
 
+cd-hero:
+  css:
+    component:
+      components/cd-hero/cd-hero.css: {}
+
+cd-hero--style-one:
+  css:
+    component:
+      components/cd-hero/cd-hero--style-one.css: {}
+
+cd-hero--style-two:
+  css:
+    component:
+      components/cd-hero/cd-hero--style-two.css: {}
+
+cd-hero--style-three:
+  css:
+    component:
+      components/cd-hero/cd-hero--style-three.css: {}
+
 cd-social-links:
   css:
     component:
