@@ -79,6 +79,11 @@ uno-embed:
   js:
     components/uno-embed/uno-embed.js: {}
 
+uno-layout:
+  css:
+    theme:
+      components/uno-layout/uno-layout.css: {}
+
 uno-river:
   css:
     theme:

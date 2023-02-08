@@ -14,3 +14,54 @@ cards:
       label: Second
     third:
       label: Third
+
+layout_twocol:
+  label: 'Two column'
+  category: 'Common Design Layouts'
+  path: templates/layouts
+  template: layout--twocol
+  library: common_design_subtheme/uno-layout
+  default_region: first
+  icon_map:
+    - [first, second]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+
+layout_threecol:
+  label: 'Three column'
+  category: 'Common Design Layouts'
+  path: templates/layouts
+  template: layout--threecol
+  library: common_design_subtheme/uno-layout
+  default_region: second
+  icon_map:
+    - [first, second, third]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+    third:
+      label: Third
+
+layout_fourcol:
+  label: 'Four column'
+  category: 'Common Design Layouts'
+  path: templates/layouts
+  template: layout--fourcol
+  library: common_design_subtheme/uno-layout
+  default_region: first
+  icon_map:
+    - [first, second, third, fourth]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+    third:
+      label: Third
+    fourth:
+      label: Fourth
