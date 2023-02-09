@@ -1,0 +1,54 @@
+/**
+ * UNO nav
+ */
+
+.uno-nav {
+  padding: 1rem;
+  background-color: var(--brand-primary);
+  color: white;
+}
+
+.uno-nav__container {
+  max-width: var(--cd-max-width);
+  text-align: center;
+  margin: 0 auto;
+}
+
+.uno-nav__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.uno-nav__title a {
+  color: white;
+  text-decoration: none;
+}
+.uno-nav__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.uno-nav__list li {
+  padding: 0;
+}
+.uno-nav__list li a {
+  display: block;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 767px) {
+.uno-nav__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .uno-nav__list {
+    display: flex;
+  }
+
+  .uno-nav__list li {
+    padding: 0;
+  }
+}

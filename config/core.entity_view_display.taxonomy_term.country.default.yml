@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.country.field_country_image
     - field.field.taxonomy_term.country.field_custom_content
+    - field.field.taxonomy_term.country.field_response_type
     - taxonomy.vocabulary.country
   module:
     - layout_paragraphs
@@ -40,4 +41,5 @@ content:
     weight: 2
     region: content
 hidden:
+  field_response_type: true
   langcode: true

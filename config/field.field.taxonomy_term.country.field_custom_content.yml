@@ -11,7 +11,7 @@ id: taxonomy_term.country.field_custom_content
 field_name: field_custom_content
 entity_type: taxonomy_term
 bundle: country
-label: 'Custom Content'
+label: 'Custom content'
 description: ''
 required: false
 translatable: false
@@ -23,6 +23,9 @@ settings:
     target_bundles: null
     negate: 1
     target_bundles_drag_drop:
+      call_to_action:
+        weight: 15
+        enabled: false
       card:
         weight: 8
         enabled: false
@@ -38,10 +41,28 @@ settings:
       layout:
         weight: 12
         enabled: false
+      node:
+        weight: 21
+        enabled: false
       node_list:
         weight: 13
         enabled: false
+      reliefweb_document:
+        weight: 23
+        enabled: false
+      reliefweb_river:
+        weight: 24
+        enabled: false
+      rss_feed:
+        weight: 25
+        enabled: false
+      rw_key_figures:
+        weight: 26
+        enabled: false
       text:
         weight: 14
+        enabled: false
+      video:
+        weight: 28
         enabled: false
 field_type: entity_reference_revisions

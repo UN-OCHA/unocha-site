@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.taxonomy_term.card
     - field.field.taxonomy_term.country.field_country_image
     - field.field.taxonomy_term.country.field_custom_content
+    - field.field.taxonomy_term.country.field_response_type
     - taxonomy.vocabulary.country
   module:
     - layout_builder
@@ -38,4 +39,5 @@ content:
     region: content
 hidden:
   field_custom_content: true
+  field_response_type: true
   langcode: true

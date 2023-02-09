@@ -104,6 +104,11 @@ uno-layout:
     theme:
       components/uno-layout/uno-layout.css: {}
 
+uno-nav:
+  css:
+    theme:
+      components/uno-nav/uno-nav.css: {}
+
 uno-river:
   css:
     theme:
