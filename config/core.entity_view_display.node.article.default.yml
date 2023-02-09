@@ -11,7 +11,7 @@ dependencies:
     - field.field.node.article.field_story_type
     - node.type.article
   module:
-    - entity_reference_revisions
+    - layout_paragraphs
     - text
     - user
 id: node.article.default
@@ -52,7 +52,7 @@ content:
     weight: 2
     region: content
   field_custom_content:
-    type: entity_reference_revisions_entity_view
+    type: layout_paragraphs
     label: hidden
     settings:
       view_mode: default

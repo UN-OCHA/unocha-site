@@ -12,7 +12,7 @@ dependencies:
     - node.type.event
   module:
     - datetime_range
-    - entity_reference_revisions
+    - layout_paragraphs
     - text
     - user
 id: node.event.default
@@ -44,7 +44,7 @@ content:
     weight: 3
     region: content
   field_custom_content:
-    type: entity_reference_revisions_entity_view
+    type: layout_paragraphs
     label: hidden
     settings:
       view_mode: default
