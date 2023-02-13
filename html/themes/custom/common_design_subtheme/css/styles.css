@@ -249,3 +249,14 @@ button[aria-expanded] .cd-icon--arrow-down {
   height: 100%;
 }
 
+.cd-soft-footer {
+  text-align: left;
+}
+.cd-soft-footer h3 {
+  color: white;
+}
+.cd-soft-footer ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
