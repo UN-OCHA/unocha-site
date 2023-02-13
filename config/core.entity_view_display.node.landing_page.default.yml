@@ -9,9 +9,9 @@ dependencies:
     - field.field.node.landing_page.field_landing_page_image
     - node.type.landing_page
   module:
-    - entity_reference_revisions
     - layout_builder
     - layout_builder_restrictions
+    - layout_paragraphs
     - text
     - user
 third_party_settings:
@@ -65,7 +65,7 @@ content:
     weight: 1
     region: content
   field_custom_content:
-    type: entity_reference_revisions_entity_view
+    type: layout_paragraphs
     label: hidden
     settings:
       view_mode: default
