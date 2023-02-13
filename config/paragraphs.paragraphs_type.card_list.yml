@@ -1,15 +1,10 @@
 uuid: 896b19ba-2e53-4d5f-b114-8d65fbcb0523
 langcode: en
 status: true
-dependencies:
-  module:
-    - layout_paragraphs
+dependencies: {  }
 id: card_list
 label: 'Card List'
 icon_uuid: null
 icon_default: null
-description: 'A container for other Paragraph types.'
-behavior_plugins:
-  layout_paragraphs:
-    enabled: false
-    available_layouts: {  }
+description: 'A container for custom cards'
+behavior_plugins: {  }

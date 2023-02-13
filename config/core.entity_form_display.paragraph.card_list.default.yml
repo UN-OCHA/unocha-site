@@ -5,9 +5,12 @@ dependencies:
   config:
     - field.field.paragraph.card_list.field_card
     - field.field.paragraph.card_list.field_numcols
+    - field.field.paragraph.card_list.field_text
+    - field.field.paragraph.card_list.field_title
     - paragraphs.paragraphs_type.card_list
   module:
     - paragraphs
+    - text
 id: paragraph.card_list.default
 targetEntityType: paragraph
 bundle: card_list
@@ -36,6 +39,22 @@ content:
     weight: 0
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_text:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
 hidden:
   created: true
