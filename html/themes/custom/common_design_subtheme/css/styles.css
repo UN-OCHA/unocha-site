@@ -111,6 +111,10 @@ button[aria-expanded] .cd-icon--arrow-down {
   margin-top: 2rem;
 }
 
+.field--name-field-custom-content > .field__item + .field__item {
+  margin-top: 6rem;
+}
+
 /* .field__label {
   font-weight: bold;
   color: var(--cd-grey--dark);
