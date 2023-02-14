@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "011da10b84b5ce6c52df02f7626a48d1",
+    "content-hash": "ac8d46e64189f4a560011aa538d83305",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -12562,31 +12562,33 @@
         },
         {
             "name": "unocha/common_design",
-            "version": "dev-cd-392-nosass",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/common_design.git",
-                "reference": "dafbc91220806da8d7de61bb0ca2ee556144d01b"
+                "reference": "2ec9be7e799c4cdabc756b02536614a1989c66b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/common_design/zipball/dafbc91220806da8d7de61bb0ca2ee556144d01b",
-                "reference": "dafbc91220806da8d7de61bb0ca2ee556144d01b",
+                "url": "https://api.github.com/repos/UN-OCHA/common_design/zipball/2ec9be7e799c4cdabc756b02536614a1989c66b5",
+                "reference": "2ec9be7e799c4cdabc756b02536614a1989c66b5",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "^1.2"
+                "composer/installers": "^1.2",
+                "drupal/stable": "^2.0"
             },
+            "default-branch": true,
             "type": "drupal-theme",
             "license": [
                 "GPL-2.0-only"
             ],
             "description": "OCHA Common Design base theme for Drupal 9+",
             "support": {
-                "source": "https://github.com/UN-OCHA/common_design/tree/cd-392-nosass",
+                "source": "https://github.com/UN-OCHA/common_design/tree/develop",
                 "issues": "https://github.com/UN-OCHA/common_design/issues"
             },
-            "time": "2023-01-31T13:45:11+00:00"
+            "time": "2023-02-09T13:52:35+00:00"
         },
         {
             "name": "unocha/ocha_search",
