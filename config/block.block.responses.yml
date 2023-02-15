@@ -1,0 +1,25 @@
+uuid: 0a9b1048-68c1-4f9d-b571-c6df9ec71971
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.responses
+  module:
+    - system
+  theme:
+    - common_design_subtheme
+id: responses
+theme: common_design_subtheme
+region: responses_nav
+weight: 0
+provider: null
+plugin: 'system_menu_block:responses'
+settings:
+  id: 'system_menu_block:responses'
+  label: Responses
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }
