@@ -266,8 +266,8 @@ button[aria-expanded] .cd-icon--arrow-down {
 }
 
 /* Hide fields to use as Heros */
-.field--name-field-landing-page-image,
-.field--name-field-article-image-caption,
-.field--name-field-country-image {
+.node--view-mode-full .field--name-field-landing-page-image,
+.node--view-mode-full .field--name-field-article-image-caption,
+.taxonomy-term--full .field--name-field-country-image {
   display: none;
 }
