@@ -14,7 +14,8 @@
   margin: 0 auto;
 }
 
-.uno-nav__title {
+.uno-nav__title,
+.uno-nav__list li:first-child a {
   font-size: 1.25rem;
   font-weight: bold;
 }
