@@ -1,0 +1,25 @@
+uuid: 44959640-ebec-4c04-a406-82fec06efb35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.datawrapper
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+id: paragraph.datawrapper.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: datawrapper
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

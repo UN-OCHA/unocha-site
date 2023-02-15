@@ -1,0 +1,10 @@
+uuid: 57543ea0-b62e-42bf-8771-5d39933cbc60
+langcode: en
+status: true
+dependencies: {  }
+id: datawrapper
+label: Datawrapper
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
