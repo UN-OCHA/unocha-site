@@ -42,6 +42,7 @@
 
 @media screen and (min-width: 750px) {
   .paragraph--type--card-list--col-3,
+  .paragraph--type--list--card .paragraph--type--node .erd-list--card,
   .paragraph--type--node-list.node-list--view-mode--card .view .view-content {
     --uno-card-list-num-cols: 3;
   }

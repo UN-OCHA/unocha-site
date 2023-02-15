@@ -264,3 +264,10 @@ button[aria-expanded] .cd-icon--arrow-down {
   padding: 0;
   list-style-type: none;
 }
+
+/* Hide fields to use as Heros */
+.field--name-field-landing-page-image,
+.field--name-field-article-image-caption,
+.field--name-field-country-image {
+  display: none;
+}
