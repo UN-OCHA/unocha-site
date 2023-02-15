@@ -5,6 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.card
     - taxonomy.vocabulary.country
+    - taxonomy.vocabulary.responses
+  content:
+    - 'taxonomy_term:responses:4b8c3efb-14df-49f3-b2ed-8ca720965516'
   module:
     - taxonomy
     - user
@@ -144,24 +147,6 @@ display:
         - 'languages:language_interface'
         - user.permissions
       tags: {  }
-  block_1:
-    id: block_1
-    display_title: 'Current emergencies'
-    display_plugin: block
-    position: 1
-    display_options:
-      title: 'Current emergencies'
-      defaults:
-        title: false
-      display_description: ''
-      display_extenders: {  }
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - user.permissions
-      tags: {  }
   block_2:
     id: block_2
     display_title: Countries
@@ -178,5 +163,144 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - user.permissions
+      tags: {  }
+  current_responses:
+    id: current_responses
+    display_title: 'Current responses'
+    display_plugin: block
+    position: 1
+    display_options:
+      title: 'Current responses'
+      defaults:
+        title: false
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user.permissions
+      tags: {  }
+  page__active_responses:
+    id: page__active_responses
+    display_title: 'Active responses'
+    display_plugin: page
+    position: 3
+    display_options:
+      title: 'Active responses'
+      filters:
+        status:
+          id: status
+          table: taxonomy_term_field_data
+          field: status
+          entity_type: taxonomy_term
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders: {  }
+      path: active-responses
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user.permissions
+      tags: {  }
+  page__humanitarian_response_plans:
+    id: page__humanitarian_response_plans
+    display_title: 'Humanitarian response plans'
+    display_plugin: page
+    position: 3
+    display_options:
+      title: 'Humanitarian response plans'
+      filters:
+        status:
+          id: status
+          table: taxonomy_term_field_data
+          field: status
+          entity_type: taxonomy_term
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        field_response_type_target_id:
+          id: field_response_type_target_id
+          table: taxonomy_term__field_response_type
+          field: field_response_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            3: 3
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: responses
+          type: select
+          hierarchy: true
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders: {  }
+      path: humanitarian-response-plans
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user
         - user.permissions
       tags: {  }
