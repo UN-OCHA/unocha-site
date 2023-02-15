@@ -1,0 +1,29 @@
+uuid: d552831b-08ad-4597-be2d-4c14c6a65e08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_response
+    - paragraphs.paragraphs_type.node
+    - taxonomy.vocabulary.country
+id: paragraph.node.field_response
+field_name: field_response
+entity_type: paragraph
+bundle: node
+label: Response
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      country: country
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: country
+field_type: entity_reference
