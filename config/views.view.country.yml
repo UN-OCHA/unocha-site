@@ -7,7 +7,10 @@ dependencies:
     - taxonomy.vocabulary.country
     - taxonomy.vocabulary.responses
   content:
+    - 'taxonomy_term:responses:3ad99003-1b75-449a-8d46-c4d368789e19'
     - 'taxonomy_term:responses:4b8c3efb-14df-49f3-b2ed-8ca720965516'
+    - 'taxonomy_term:responses:851d9e7a-2de9-4461-b551-0ce112de98d8'
+    - 'taxonomy_term:responses:93f96c87-1937-4275-9dee-14e5702cacdd'
   module:
     - taxonomy
     - user
@@ -220,6 +223,90 @@ display:
         - 'languages:language_interface'
         - user.permissions
       tags: {  }
+  page__flash_appeals:
+    id: page__flash_appeals
+    display_title: 'Flash appeals'
+    display_plugin: page
+    position: 3
+    display_options:
+      title: 'Flash appeals'
+      filters:
+        status:
+          id: status
+          table: taxonomy_term_field_data
+          field: status
+          entity_type: taxonomy_term
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        field_response_type_target_id:
+          id: field_response_type_target_id
+          table: taxonomy_term__field_response_type
+          field: field_response_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            2: 2
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: responses
+          type: select
+          hierarchy: true
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders: {  }
+      path: flash-appeals
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user
+        - user.permissions
+      tags: {  }
   page__humanitarian_response_plans:
     id: page__humanitarian_response_plans
     display_title: 'Humanitarian response plans'
@@ -296,6 +383,174 @@ display:
       display_description: ''
       display_extenders: {  }
       path: humanitarian-response-plans
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user
+        - user.permissions
+      tags: {  }
+  page__other:
+    id: page__other
+    display_title: Other
+    display_plugin: page
+    position: 3
+    display_options:
+      title: Other
+      filters:
+        status:
+          id: status
+          table: taxonomy_term_field_data
+          field: status
+          entity_type: taxonomy_term
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        field_response_type_target_id:
+          id: field_response_type_target_id
+          table: taxonomy_term__field_response_type
+          field: field_response_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            4: 4
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: responses
+          type: select
+          hierarchy: true
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders: {  }
+      path: other
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user
+        - user.permissions
+      tags: {  }
+  page__regional_response_plans:
+    id: page__regional_response_plans
+    display_title: 'Regional  response plans'
+    display_plugin: page
+    position: 3
+    display_options:
+      title: 'Regional response plans'
+      filters:
+        status:
+          id: status
+          table: taxonomy_term_field_data
+          field: status
+          entity_type: taxonomy_term
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        field_response_type_target_id:
+          id: field_response_type_target_id
+          table: taxonomy_term__field_response_type
+          field: field_response_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            5: 5
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: responses
+          type: select
+          hierarchy: true
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders: {  }
+      path: regional-response-plans
     cache_metadata:
       max-age: -1
       contexts:
