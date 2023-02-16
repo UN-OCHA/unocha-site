@@ -1,0 +1,46 @@
+{#
+
+/**
+ * @file
+ * Template for a list of files.
+ *
+ * Available variables:
+ * - attributes: section attributes
+ * - title: section title
+ * - title_attributes: attributes for the title
+ * - level: heading level for the title
+ * - list: list of attachments with a preview, label, description and url
+ * - list_attributes: attributes for the list
+ * - lazy_load_first_preview: also lazy load the first attachment preview
+ */
+
+#}
+{% if list is not empty %}
+<section{{ attributes.addClass('unocha-reliefweb-attachment-list') }}>
+  <h{{ level }}{{ title_attributes.addClass('visually-hidden') }}>{{ title }}</h{{ level }}>
+  <ul{{ list_attributes }}>
+    {% for item in list %}
+    <li>
+      <a href="{{ item.url }}">
+        {% if item.preview is not empty and loop.index == 1 and not lazy_load_first_preview %}
+          {%
+            set item = item|merge({
+              'preview': item.preview|merge({
+                '#attributes': (item.preview['#attributes'] ?? {})|merge({
+                  'loading': 'eager'
+                })
+              })
+            })
+          %}
+        {% endif %}
+
+        {{ item.preview }}
+        <strong class="unocha-reliefweb-attachment-list__label">{{ item.label }}</strong>
+        <span class="unocha-reliefweb-attachment-list__description">{{ item.description }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+

@@ -1,0 +1,2 @@
+route_callbacks:
+  - '\Drupal\unocha_reliefweb\Routing\ReliefWebDocumentRoutes::routes'
