@@ -471,16 +471,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.5.2",
+            "version": "2.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "c76c013c555160410af47c03a0e173518e3f5796"
+                "reference": "6b67eeea4d72051c369ccdbfb2423a56e2ab51a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/c76c013c555160410af47c03a0e173518e3f5796",
-                "reference": "c76c013c555160410af47c03a0e173518e3f5796",
+                "url": "https://api.github.com/repos/composer/composer/zipball/6b67eeea4d72051c369ccdbfb2423a56e2ab51a9",
+                "reference": "6b67eeea4d72051c369ccdbfb2423a56e2ab51a9",
                 "shasum": ""
             },
             "require": {
@@ -564,7 +564,7 @@
             "support": {
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
-                "source": "https://github.com/composer/composer/tree/2.5.2"
+                "source": "https://github.com/composer/composer/tree/2.5.4"
             },
             "funding": [
                 {
@@ -580,7 +580,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-04T13:33:22+00:00"
+            "time": "2023-02-15T12:10:06+00:00"
         },
         {
             "name": "composer/installers",
@@ -3903,27 +3903,27 @@
         },
         {
             "name": "drupal/sophron",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/sophron.git",
-                "reference": "2.0.0"
+                "reference": "2.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/sophron-2.0.0.zip",
-                "reference": "2.0.0",
-                "shasum": "fa8b51cdf7c673f63e8776cdc012832d408cac36"
+                "url": "https://ftp.drupal.org/files/projects/sophron-2.0.1.zip",
+                "reference": "2.0.1",
+                "shasum": "eb9b22e843400392ba7fa35dc99c644d2cf08982"
             },
             "require": {
                 "drupal/core": "^10",
-                "fileeye/mimemap": "^2"
+                "fileeye/mimemap": "^2.0.1"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1663612655",
+                    "version": "2.0.1",
+                    "datestamp": "1676319965",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4543,16 +4543,16 @@
         },
         {
             "name": "fileeye/mimemap",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FileEye/MimeMap.git",
-                "reference": "24144b7dc84168e14e4fc893d654c4fb40628346"
+                "reference": "58fbd11312a8f69e0824a640b86b33a9d096fe7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FileEye/MimeMap/zipball/24144b7dc84168e14e4fc893d654c4fb40628346",
-                "reference": "24144b7dc84168e14e4fc893d654c4fb40628346",
+                "url": "https://api.github.com/repos/FileEye/MimeMap/zipball/58fbd11312a8f69e0824a640b86b33a9d096fe7f",
+                "reference": "58fbd11312a8f69e0824a640b86b33a9d096fe7f",
                 "shasum": ""
             },
             "require": {
@@ -4599,9 +4599,9 @@
             ],
             "support": {
                 "issues": "https://github.com/FileEye/MimeMap/issues",
-                "source": "https://github.com/FileEye/MimeMap/tree/2.0.0"
+                "source": "https://github.com/FileEye/MimeMap/tree/2.0.1"
             },
-            "time": "2022-07-17T13:00:20+00:00"
+            "time": "2023-02-11T19:58:58+00:00"
         },
         {
             "name": "grasmash/expander",
@@ -5402,16 +5402,16 @@
         },
         {
             "name": "mglaman/phpstan-drupal",
-            "version": "1.1.28",
+            "version": "1.1.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mglaman/phpstan-drupal.git",
-                "reference": "55c3f437e52d0e10e7ac59ffb20e338625b79594"
+                "reference": "e6f6191c53b159013fcbd186d7f85511f3f96ff8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/55c3f437e52d0e10e7ac59ffb20e338625b79594",
-                "reference": "55c3f437e52d0e10e7ac59ffb20e338625b79594",
+                "url": "https://api.github.com/repos/mglaman/phpstan-drupal/zipball/e6f6191c53b159013fcbd186d7f85511f3f96ff8",
+                "reference": "e6f6191c53b159013fcbd186d7f85511f3f96ff8",
                 "shasum": ""
             },
             "require": {
@@ -5486,7 +5486,7 @@
             "description": "Drupal extension and rules for PHPStan",
             "support": {
                 "issues": "https://github.com/mglaman/phpstan-drupal/issues",
-                "source": "https://github.com/mglaman/phpstan-drupal/tree/1.1.28"
+                "source": "https://github.com/mglaman/phpstan-drupal/tree/1.1.29"
             },
             "funding": [
                 {
@@ -5502,7 +5502,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-01T21:17:43+00:00"
+            "time": "2023-02-08T21:44:03+00:00"
         },
         {
             "name": "mikey179/vfsstream",
@@ -6745,16 +6745,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.9.16",
+            "version": "1.9.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "922e2689bb180575d0f57de0443c431a5a698e8f"
+                "reference": "204e459e7822f2c586463029f5ecec31bb45a1f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/922e2689bb180575d0f57de0443c431a5a698e8f",
-                "reference": "922e2689bb180575d0f57de0443c431a5a698e8f",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/204e459e7822f2c586463029f5ecec31bb45a1f2",
+                "reference": "204e459e7822f2c586463029f5ecec31bb45a1f2",
                 "shasum": ""
             },
             "require": {
@@ -6784,7 +6784,7 @@
             ],
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/1.9.16"
+                "source": "https://github.com/phpstan/phpstan/tree/1.9.17"
             },
             "funding": [
                 {
@@ -6800,7 +6800,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-07T10:42:21+00:00"
+            "time": "2023-02-08T12:25:00+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -12148,16 +12148,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v3.5.0",
+            "version": "v3.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "3ffcf4b7d890770466da3b2666f82ac054e7ec72"
+                "reference": "a6e0510cc793912b451fd40ab983a1d28f611c15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/3ffcf4b7d890770466da3b2666f82ac054e7ec72",
-                "reference": "3ffcf4b7d890770466da3b2666f82ac054e7ec72",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/a6e0510cc793912b451fd40ab983a1d28f611c15",
+                "reference": "a6e0510cc793912b451fd40ab983a1d28f611c15",
                 "shasum": ""
             },
             "require": {
@@ -12208,7 +12208,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.5.0"
+                "source": "https://github.com/twigphp/Twig/tree/v3.5.1"
             },
             "funding": [
                 {
@@ -12220,7 +12220,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-12-27T12:28:18+00:00"
+            "time": "2023-02-08T07:49:20+00:00"
         },
         {
             "name": "un-ocha/oauth2-hid",
