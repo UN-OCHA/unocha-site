@@ -1,0 +1,5 @@
+services:
+  unocha_utility.twig.extension:
+    class: Drupal\unocha_utility\TwigExtension
+    tags:
+      - { name: twig.extension }
