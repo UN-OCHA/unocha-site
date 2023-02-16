@@ -20,7 +20,10 @@
 .paragraph--type--card-list .field--name-field-card,
 .paragraph--type--list--card .paragraph--type--node .erd-list--card,
 .paragraph--type--node-list.node-list--view-mode--card .view .view-content,
-.view-display-id-page__humanitarian_response_plans .view-content {
+.view-display-id-page__humanitarian_response_plans .view-content,
+.view-display-id-page__regional_response_plans .view-content,
+.view-display-id-page__flash_appeals .view-content,
+.view-display-id-page__other .view-content {
   display: flex;
   flex-flow: row wrap;
   gap: var(--uno-card-list-gap-size);
@@ -29,7 +32,10 @@
 .paragraph--type--card-list .field--name-field-card > .field__item,
 .paragraph--type--list--card .paragraph--type--node .erd-list--card > .field__item,
 .paragraph--type--node-list.node-list--view-mode--card .view .views-row,
-.view-display-id-page__humanitarian_response_plans .view-content .views-row {
+.view-display-id-page__humanitarian_response_plans .view-content .views-row,
+.view-display-id-page__regional_response_plans .view-content .views-row,
+.view-display-id-page__flash_appeals .view-content .views-row,
+.view-display-id-page__other .view-content .views-row {
   /* stylelint-disable-next-line max-line-length */
   flex: 0 1 calc((100% / var(--uno-card-list-num-cols)) - var(--uno-card-list-gap-size) + var(--uno-card-list-gap-size) / var(--uno-card-list-num-cols));
 }
@@ -38,7 +44,10 @@
   .paragraph--type--card-list,
   .paragraph--type--list--card .paragraph--type--node .erd-list--card,
   .paragraph--type--node-list.node-list--view-mode--card .view .view-content,
-    .view-display-id-page__humanitarian_response_plans .view-content {
+  .view-display-id-page__humanitarian_response_plans .view-content,
+  .view-display-id-page__regional_response_plans .view-content,
+  .view-display-id-page__flash_appeals .view-content,
+  .view-display-id-page__other .view-content {
     --uno-card-list-num-cols: 2;
   }
 }
@@ -47,7 +56,10 @@
   .paragraph--type--card-list--col-3,
   .paragraph--type--list--card .paragraph--type--node .erd-list--card,
   .paragraph--type--node-list.node-list--view-mode--card .view .view-content,
-    .view-display-id-page__humanitarian_response_plans .view-content {
+  .view-display-id-page__humanitarian_response_plans .view-content,
+  .view-display-id-page__regional_response_plans .view-content,
+  .view-display-id-page__flash_appeals .view-content,
+  .view-display-id-page__other .view-content {
     --uno-card-list-num-cols: 3;
   }
 }

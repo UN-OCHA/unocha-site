@@ -34,6 +34,13 @@
   display: block;
   color: white;
   padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+.uno-nav__list li a:hover {
+  text-decoration: underline;
+}
+.uno-nav__list li a.is-active {
+  background-color: var(--brand-primary--dark);
 }
 
 @media screen and (min-width: 767px) {
