@@ -11,7 +11,7 @@ id: paragraph.node.field_response
 field_name: field_response
 entity_type: paragraph
 bundle: node
-label: Response
+label: Term
 description: ''
 required: false
 translatable: false
