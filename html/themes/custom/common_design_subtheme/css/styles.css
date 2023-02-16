@@ -271,3 +271,8 @@ button[aria-expanded] .cd-icon--arrow-down {
 .taxonomy-term--full .field--name-field-country-image {
   display: none;
 }
+
+/* Set bg colour so when menu items break layout, we can see them */
+.cd-nav__menu-item--level-1 {
+  background-color: white;
+}
