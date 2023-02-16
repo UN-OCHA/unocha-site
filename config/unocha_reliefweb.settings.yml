@@ -1,0 +1,9 @@
+_core:
+  default_config_hash: '-QZ1seQJjnMsuxisbsBMiKHJsRblIyIkcMYrv5UF0yc'
+reliefweb_api_url: 'https://api.reliefweb.int/v1'
+reliefweb_api_appname: unocha.org
+reliefweb_api_cache_enabled: true
+reliefweb_api_cache_lifetime: 300
+reliefweb_api_verify_ssl: true
+reliefweb_website: 'https://reliefweb.int'
+reliefweb_document_not_found_max_age: 600
