@@ -20,7 +20,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_country_image:
     type: entity_reference_entity_view
@@ -29,7 +29,7 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_custom_content:
     type: layout_paragraphs
@@ -38,8 +38,15 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 3
+    region: content
+  field_response_type:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
-  field_response_type: true
   langcode: true
