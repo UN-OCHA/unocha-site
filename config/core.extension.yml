@@ -59,6 +59,8 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  unocha_reliefweb: 0
+  unocha_utility: 0
   update: 0
   user: 0
   user_display_name: 0
