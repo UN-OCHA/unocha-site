@@ -471,16 +471,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.5.2",
+            "version": "2.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "c76c013c555160410af47c03a0e173518e3f5796"
+                "reference": "6b67eeea4d72051c369ccdbfb2423a56e2ab51a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/c76c013c555160410af47c03a0e173518e3f5796",
-                "reference": "c76c013c555160410af47c03a0e173518e3f5796",
+                "url": "https://api.github.com/repos/composer/composer/zipball/6b67eeea4d72051c369ccdbfb2423a56e2ab51a9",
+                "reference": "6b67eeea4d72051c369ccdbfb2423a56e2ab51a9",
                 "shasum": ""
             },
             "require": {
@@ -564,7 +564,7 @@
             "support": {
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
-                "source": "https://github.com/composer/composer/tree/2.5.2"
+                "source": "https://github.com/composer/composer/tree/2.5.4"
             },
             "funding": [
                 {
@@ -580,7 +580,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-04T13:33:22+00:00"
+            "time": "2023-02-15T12:10:06+00:00"
         },
         {
             "name": "composer/installers",
@@ -3903,27 +3903,27 @@
         },
         {
             "name": "drupal/sophron",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/sophron.git",
-                "reference": "2.0.0"
+                "reference": "2.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/sophron-2.0.0.zip",
-                "reference": "2.0.0",
-                "shasum": "fa8b51cdf7c673f63e8776cdc012832d408cac36"
+                "url": "https://ftp.drupal.org/files/projects/sophron-2.0.1.zip",
+                "reference": "2.0.1",
+                "shasum": "eb9b22e843400392ba7fa35dc99c644d2cf08982"
             },
             "require": {
                 "drupal/core": "^10",
-                "fileeye/mimemap": "^2"
+                "fileeye/mimemap": "^2.0.1"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1663612655",
+                    "version": "2.0.1",
+                    "datestamp": "1676319965",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4543,16 +4543,16 @@
         },
         {
             "name": "fileeye/mimemap",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FileEye/MimeMap.git",
-                "reference": "24144b7dc84168e14e4fc893d654c4fb40628346"
+                "reference": "58fbd11312a8f69e0824a640b86b33a9d096fe7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FileEye/MimeMap/zipball/24144b7dc84168e14e4fc893d654c4fb40628346",
-                "reference": "24144b7dc84168e14e4fc893d654c4fb40628346",
+                "url": "https://api.github.com/repos/FileEye/MimeMap/zipball/58fbd11312a8f69e0824a640b86b33a9d096fe7f",
+                "reference": "58fbd11312a8f69e0824a640b86b33a9d096fe7f",
                 "shasum": ""
             },
             "require": {
@@ -4599,9 +4599,9 @@
             ],
             "support": {
                 "issues": "https://github.com/FileEye/MimeMap/issues",
-                "source": "https://github.com/FileEye/MimeMap/tree/2.0.0"
+                "source": "https://github.com/FileEye/MimeMap/tree/2.0.1"
             },
-            "time": "2022-07-17T13:00:20+00:00"
+            "time": "2023-02-11T19:58:58+00:00"
         },
         {
             "name": "grasmash/expander",
