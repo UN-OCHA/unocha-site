@@ -13,25 +13,24 @@ volumes:
 
 services:
   memcache:
-    restart: always
-    image: memcached:alpine
+    image: public.ecr.aws/unocha/memcache:1.6
     hostname: unocha-local-memcache
     container_name: unocha-local-memcache
-    entrypoint: ["memcached", "-m", "64"]
+    environment:
+      MEMCACHE_MAX_MEMORY: 64
     ports:
       - "11211"
     networks:
       - default
 
   mysql:
-    image: mariadb:latest
+    image: public.ecr.aws/unocha/mysql:10.6
     hostname: unocha-local-mysql
     container_name: unocha-local-mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=unocha
+      - MYSQL_DB=unocha
       - MYSQL_USER=unocha
-      - MYSQL_PASSWORD=unocha
+      - MYSQL_PASS=unocha
     volumes:
       - "unocha-local-site-database:/var/lib/mysql:rw"
     networks:
