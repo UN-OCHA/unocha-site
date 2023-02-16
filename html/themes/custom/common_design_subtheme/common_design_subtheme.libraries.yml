@@ -64,6 +64,13 @@ rw-brand:
     theme:
       components/rw-brand/rw-brand.css: {}
 
+rw-document:
+  css:
+    theme:
+      components/rw-document/rw-document.css: {}
+  dependencies:
+    - common_design/cd-page-title
+
 rw-key-figures:
   css:
     theme:
