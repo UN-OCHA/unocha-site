@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.country.field_country_image
     - field.field.taxonomy_term.country.field_custom_content
+    - field.field.taxonomy_term.country.field_regional_office
     - field.field.taxonomy_term.country.field_response_type
     - taxonomy.vocabulary.country
   module:
@@ -39,6 +40,15 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_regional_office:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    weight: 4
     region: content
   field_response_type:
     type: entity_reference_label

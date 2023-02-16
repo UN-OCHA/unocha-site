@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: Country
 vid: country
-description: ''
+description: 'This should probably be renamed to Responses'
 weight: 0

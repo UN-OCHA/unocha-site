@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.country.field_country_image
     - field.field.taxonomy_term.country.field_custom_content
+    - field.field.taxonomy_term.country.field_regional_office
     - field.field.taxonomy_term.country.field_response_type
     - taxonomy.vocabulary.country
   module:
@@ -42,6 +43,12 @@ content:
       require_layouts: 0
       empty_message: ''
     third_party_settings: {  }
+  field_regional_office:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_response_type:
     type: options_select
     weight: 4
@@ -50,7 +57,7 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 5
+    weight: 6
     region: content
     settings:
       include_locked: true
@@ -65,13 +72,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 7
+    weight: 8
     region: content
     settings:
       display_label: true

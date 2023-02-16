@@ -2,7 +2,7 @@ uuid: 1391b9f0-de08-40e5-9971-412a5d58ac2f
 langcode: en
 status: true
 dependencies: {  }
-name: Responses
+name: 'Response type'
 vid: responses
 description: 'Response type '
 weight: 0

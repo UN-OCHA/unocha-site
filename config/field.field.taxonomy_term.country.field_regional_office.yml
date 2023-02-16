@@ -1,17 +1,16 @@
-uuid: d552831b-08ad-4597-be2d-4c14c6a65e08
+uuid: dabdd6d3-3ffa-4d05-ac7e-e4fe6074c34b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_response
-    - paragraphs.paragraphs_type.node
+    - field.storage.taxonomy_term.field_regional_office
     - taxonomy.vocabulary.country
     - taxonomy.vocabulary.regional_offices
-id: paragraph.node.field_response
-field_name: field_response
-entity_type: paragraph
-bundle: node
-label: Response
+id: taxonomy_term.country.field_regional_office
+field_name: field_regional_office
+entity_type: taxonomy_term
+bundle: country
+label: 'Regional office'
 description: ''
 required: false
 translatable: false
@@ -21,11 +20,10 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      country: country
       regional_offices: regional_offices
     sort:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: country
+    auto_create_bundle: ''
 field_type: entity_reference
