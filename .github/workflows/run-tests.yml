@@ -140,6 +140,11 @@ jobs:
           threshold_metric: "lines"
           comment_footer: false
 
+      - name: Run Lighthouse
+        id: lighthouse
+        uses: actions/checkout@v3
+        uses: un-ocha/unocha-site/.github/workflows/lighthouse.yml@feature/UNO-601-performance
+
       - name: DB Logs
         id: dblog
         if: failure()
