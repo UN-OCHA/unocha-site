@@ -108,7 +108,7 @@ jobs:
 
       - name: Run Lighthouse
         id: lighthouse
-        uses: UN-OCHA/unocha-site/.github/workflows/lighthouse.yml@main
+        uses: un-ocha/unocha-site/.github/workflows/lighthouse.yml@feature/UNO-601-performance
 
       - name: Run tests
         id: tests
