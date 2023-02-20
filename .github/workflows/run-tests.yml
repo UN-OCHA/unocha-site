@@ -106,6 +106,10 @@ jobs:
         env:
           fail-fast: true
 
+      - name: Run Lighthouse
+        id: lighthouse
+        uses: ./lighthouse.yml
+
       - name: Run tests
         id: tests
         uses: cafuego/command-output@main
