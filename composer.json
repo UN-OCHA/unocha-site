@@ -17,10 +17,6 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/UN-OCHA/common_design.git"
         }
     ],
     "require": {
@@ -59,7 +55,7 @@
         "drush/drush": "^11.3",
         "oomphinc/composer-installers-extender": "^2.0",
         "orakili/composer-drupal-info-file-patch-helper": "^1",
-        "unocha/common_design": "dev-develop",
+        "unocha/common_design": "^8",
         "unocha/ocha_search": "^1.0",
         "webflo/drupal-finder": "^1.2.2"
     },
