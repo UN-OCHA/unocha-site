@@ -21,6 +21,7 @@ jobs:
         with:
           run: |
             php --version && composer --version
+
       - name: Checkout Code
         id: checkout
         uses: actions/checkout@v3
@@ -105,14 +106,6 @@ jobs:
             docker-compose -f tests/docker-compose.yml exec -T drupal drush -y si --existing-config minimal install_configure_form.enable_update_status_emails=NULL
         env:
           fail-fast: true
-
-      - name: Check out lighthouse action
-        id: lighthouse-ci
-        uses: actions/checkout@v3
-
-      - name: Run Lighthouse
-        id: lighthouse
-        uses: un-ocha/unocha-site/.github/workflows/lighthouse.yml@feature/UNO-601-performance
 
       - name: Run tests
         id: tests
