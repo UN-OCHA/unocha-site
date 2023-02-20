@@ -106,6 +106,14 @@ jobs:
         env:
           fail-fast: true
 
+      - name: Check out lighthouse action
+        id: lighthouse-ci
+        uses: actions/checkout@v3
+
+      - name: Run Lighthouse
+        id: lighthouse
+        uses: un-ocha/unocha-site/.github/workflows/lighthouse.yml@feature/UNO-601-performance
+
       - name: Run tests
         id: tests
         uses: cafuego/command-output@main
@@ -120,10 +128,6 @@ jobs:
             docker-compose -f tests/docker-compose.yml exec -T -w /srv/www -e XDEBUG_MODE=coverage -e BROWSERTEST_OUTPUT_DIRECTORY=/srv/www/html/sites/default/files/browser_output -e DTT_BASE_URL=http://127.0.0.1 drupal ./vendor/bin/phpunit --coverage-clover /srv/www/html/build/logs/clover.xml --debug
         env:
           fail-fast: true
-
-      - name: Run Lighthouse
-        id: lighthouse
-        uses: un-ocha/unocha-site/.github/workflows/lighthouse.yml@feature/UNO-601-performance
 
       - name: Copy Coveralls
         if: success()
