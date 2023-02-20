@@ -108,7 +108,7 @@ jobs:
 
       - name: Run Lighthouse
         id: lighthouse
-        uses: ./lighthouse.yml
+        uses: UN-OCHA/unocha-site/.github/workflows/lighthouse.yml@
 
       - name: Run tests
         id: tests
