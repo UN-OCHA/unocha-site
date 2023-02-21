@@ -136,7 +136,7 @@ jobs:
 
       - name: Monitor coverage
         id: coveralls
-        if: ${{ steps.copy_coveralls.outputs.stdout != "skip-coverage" && success() }}
+        if: success() && steps.copy_coveralls.outputs.stdout != 'skip-coverage'
         uses: slavcodev/coverage-monitor-action@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
