@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "88e737cb89cb466c66e1bc4f51175420",
+    "content-hash": "61e1248fa08958562dcb2c3d5e42d069",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3237,6 +3237,29 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/imageapi_optimize_binaries"
             }
+        },
+        {
+            "name": "drupal/imageapi_optimize_webp",
+            "version": "dev-3297416-automated-drupal-10",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/issue/imageapi_optimize_webp-3297416.git",
+                "reference": "884ed9a631994a483c77a442c3ef06524a760acc"
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Add WebP support to Image API",
+            "homepage": "https://www.drupal.org/project/imageapi_optimize_webp",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "issues": "https://www.drupal.org/project/issues/imageapi_optimize_webp",
+                "source": "http://cgit.drupalcode.org/imageapi_optimize_webp"
+            },
+            "time": "2023-01-19T15:20:44+00:00"
         },
         {
             "name": "drupal/imagemagick",
@@ -14475,6 +14498,7 @@
         "drupal/config_split": 5,
         "drupal/entity_usage": 10,
         "drupal/imageapi_optimize_binaries": 10,
+        "drupal/imageapi_optimize_webp": 20,
         "drupal/viewsreference": 10
     },
     "prefer-stable": true,

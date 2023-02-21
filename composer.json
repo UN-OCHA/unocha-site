@@ -12,11 +12,18 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://packages.drupal.org/8"
+            "url": "https://packages.drupal.org/8",
+            "exclude": [
+                "drupal/imageapi_optimize_webp"
+            ]
         },
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "git",
+            "url": "https://git.drupalcode.org/issue/imageapi_optimize_webp-3297416.git"
         }
     ],
     "require": {
@@ -36,6 +43,7 @@
         "drupal/entity_usage": "^2.0@beta",
         "drupal/google_tag": "^1.6",
         "drupal/imageapi_optimize_binaries": "^1.0@beta",
+        "drupal/imageapi_optimize_webp": "dev-3297416-automated-drupal-10",
         "drupal/imagemagick": "^3.4",
         "drupal/layout_builder_restrictions": "^2.17",
         "drupal/layout_paragraphs": "^2.0",
