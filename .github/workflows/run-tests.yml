@@ -128,6 +128,8 @@ jobs:
         with:
           run: |
             docker cp "$(docker-compose -f tests/docker-compose.yml ps -q drupal)":/srv/www/html/build/logs/clover.xml .
+        continue-on-error: true
+
       - name: Monitor coverage
         id: coveralls
         if: success()
