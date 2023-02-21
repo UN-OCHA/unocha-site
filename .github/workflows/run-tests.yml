@@ -123,13 +123,13 @@ jobs:
           fail-fast: true
 
       - name: Copy Coveralls
-        continue-on-error: true
+        id: copy_coveralls
         if: success()
-        run: docker cp "$(docker-compose -f tests/docker-compose.yml ps -q drupal)":/srv/www/html/build/logs/clover.xml .
+        run: docker cp "$(docker-compose -f tests/docker-compose.yml ps -q drupal)":/srv/www/html/build/logs/clover.xml . || echo "skip=true" >> "$GITHUB_OUTPUT"
 
       - name: Monitor coverage
         id: coveralls
-        if: success()
+        if: ${{ steps.copy_coveralls.outputs.skip != 'true' }}
         uses: slavcodev/coverage-monitor-action@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
