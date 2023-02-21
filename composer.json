@@ -12,11 +12,18 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://packages.drupal.org/8"
+            "url": "https://packages.drupal.org/8",
+            "exclude": [
+                "drupal/webp"
+            ]
         },
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "git",
+            "url": "https://git.drupalcode.org/issue/webp-3290669.git"
         }
     ],
     "require": {
@@ -51,6 +58,7 @@
         "drupal/user_display_name": "^1.1",
         "drupal/user_expire": "^1.1",
         "drupal/viewsreference": "^2.0@beta",
+        "drupal/webp": "dev-3290669-automated-drupal-10",
         "drupal/xmlsitemap": "^1.4",
         "drush/drush": "^11.3",
         "oomphinc/composer-installers-extender": "^2.0",

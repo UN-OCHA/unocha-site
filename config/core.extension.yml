@@ -74,6 +74,7 @@ module:
   user_expire: 0
   views_ui: 0
   viewsreference: 0
+  webp: 0
   xmlsitemap_engines: 0
   pathauto: 1
   xmlsitemap: 1
