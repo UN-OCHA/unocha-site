@@ -123,19 +123,20 @@ jobs:
           fail-fast: true
 
       - name: Copy Coveralls
+        id: copy_coveralls
         if: success()
         uses: cafuego/command-output@main
         with:
           run: |
-            if docker-compose -f tests/docker-compose.yml exec -T drupal test ! -d /srv/www/html/build/logs/clover.xml; then
-              echo "skip-coverage"
-            else
+            if docker-compose -f tests/docker-compose.yml exec -T drupal test -f /srv/www/html/build/logs/clover.xml; then
               docker cp "$(docker-compose -f tests/docker-compose.yml ps -q drupal)":/srv/www/html/build/logs/clover.xml .
+            else
+              echo "skip-coverage"
             fi
 
       - name: Monitor coverage
         id: coveralls
-        if: steps.today.outputs.stdout != "skip-coverage" && success()
+        if: ${{ steps.copy_coveralls.outputs.stdout != "skip-coverage" && success() }}
         uses: slavcodev/coverage-monitor-action@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
