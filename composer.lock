@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "a07c5f7b60e170bc74d9c4d8c6c3c1fe",
-=======
-    "content-hash": "940654c20f1eeba029dc08d2679b980f",
->>>>>>> origin/feature/UNO-575-config
+    "content-hash": "d448ab89cf4c1b8d80f260d57f0c4dd8",
     "packages": [
         {
             "name": "asm89/stack-cors",
