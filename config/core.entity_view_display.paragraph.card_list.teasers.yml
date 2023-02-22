@@ -1,8 +1,9 @@
-uuid: b75488b4-57f6-4fd5-98bd-65814fb54b2b
+uuid: bfff7ccb-e093-4795-82a3-784d1e6e7c3a
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.teasers
     - field.field.paragraph.card_list.field_card
     - field.field.paragraph.card_list.field_numcols
     - field.field.paragraph.card_list.field_text
@@ -11,11 +12,16 @@ dependencies:
     - paragraphs.paragraphs_type.card_list
   module:
     - entity_reference_revisions
+    - layout_builder
     - text
-id: paragraph.card_list.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.card_list.teasers
 targetEntityType: paragraph
 bundle: card_list
-mode: default
+mode: teasers
 content:
   field_card:
     type: entity_reference_revisions_entity_view
