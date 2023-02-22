@@ -246,10 +246,11 @@ display:
       tags: {  }
   page__events:
     id: page__events
-    display_title: Page
+    display_title: Events
     display_plugin: page
     position: 1
     display_options:
+      display_description: ''
       display_extenders: {  }
       path: events
     cache_metadata:
