@@ -1,0 +1,16 @@
+uuid: 886baedd-a3c1-433f-bc38-c36d9ae4f925
+langcode: en
+status: true
+dependencies: {  }
+name: story_thumbnail
+label: 'Story thumbnail'
+effects:
+  d2647055-1d68-4d15-8801-1dc65c7adad5:
+    uuid: d2647055-1d68-4d15-8801-1dc65c7adad5
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 660
+      height: 440
+      anchor: center-center
+pipeline: __default__

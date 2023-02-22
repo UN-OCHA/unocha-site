@@ -1,0 +1,74 @@
+uuid: ab027d57-c8b0-4d5a-9277-8e3a8643f862
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.story
+    - image.style.story_thumbnail
+  theme:
+    - common_design_subtheme
+id: 1x_story
+label: '1x story'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: story
+    breakpoint_id: common_design.xxl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: story
+    breakpoint_id: common_design.xxl
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: story
+    breakpoint_id: common_design.xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: story
+    breakpoint_id: common_design.xl
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: story
+    breakpoint_id: common_design.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: story
+    breakpoint_id: common_design.lg
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: story_thumbnail
+    breakpoint_id: common_design.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: story_thumbnail
+    breakpoint_id: common_design.md
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: story_thumbnail
+    breakpoint_id: common_design.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: story_thumbnail
+    breakpoint_id: common_design.sm
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: story_thumbnail
+    breakpoint_id: common_design.xs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: story_thumbnail
+    breakpoint_id: common_design.xs
+    multiplier: 2x
+breakpoint_group: common_design_subtheme
+fallback_image_style: story
