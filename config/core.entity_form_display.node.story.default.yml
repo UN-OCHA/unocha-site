@@ -1,30 +1,28 @@
-uuid: c6aad892-3d31-45f1-b18e-dcf7b4d5cac2
+uuid: 07f1c995-81c9-476f-b5ca-d1723c8ded07
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.event.body
-    - field.field.node.event.field_article_image_caption
-    - field.field.node.event.field_country
-    - field.field.node.event.field_custom_content
-    - field.field.node.event.field_event_date
-    - field.field.node.event.field_event_image
-    - field.field.node.event.field_event_type
-    - node.type.event
+    - field.field.node.story.body
+    - field.field.node.story.field_country
+    - field.field.node.story.field_custom_content
+    - field.field.node.story.field_story_image
+    - field.field.node.story.field_story_image_caption
+    - field.field.node.story.field_story_type
+    - node.type.story
   module:
-    - datetime_range
     - layout_paragraphs
     - media_library
     - path
     - text
-id: node.event.default
+id: node.story.default
 targetEntityType: node
-bundle: event
+bundle: story
 mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 6
+    weight: 3
     region: content
     settings:
       rows: 9
@@ -34,11 +32,34 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_article_image_caption:
+  field_country:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_custom_content:
+    type: layout_paragraphs
+    weight: 6
+    region: content
+    settings:
+      preview_view_mode: default
+      nesting_depth: 0
+      require_layouts: 0
+      empty_message: ''
+    third_party_settings: {  }
+  field_story_image:
+    type: media_library_widget
+    weight: 1
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_story_image_caption:
     type: string_textfield
     weight: 2
     region: content
@@ -46,71 +67,42 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_country:
+  field_story_type:
     type: options_select
     weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_custom_content:
-    type: layout_paragraphs
-    weight: 7
-    region: content
-    settings:
-      preview_view_mode: preview
-      nesting_depth: 0
-      require_layouts: 0
-      empty_message: ''
-    third_party_settings: {  }
-  field_event_date:
-    type: daterange_default
-    weight: 3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_event_image:
-    type: media_library_widget
-    weight: 1
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
-  field_event_type:
-    type: options_select
-    weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 8
+    weight: 7
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 13
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 11
+    weight: 10
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 15
+    weight: 14
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 12
+    weight: 11
     region: content
     settings:
       display_label: true
@@ -125,7 +117,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 9
+    weight: 8
     region: content
     settings:
       match_operator: CONTAINS
@@ -134,7 +126,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 14
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }

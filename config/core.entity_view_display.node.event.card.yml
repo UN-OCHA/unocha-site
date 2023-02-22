@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.event.field_custom_content
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_type
     - node.type.event
   module:
     - datetime_range
@@ -33,14 +34,6 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-  field_country:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_event_date:
     type: daterange_default
     label: inline
@@ -60,8 +53,17 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_event_type:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
   field_article_image_caption: true
+  field_country: true
   field_custom_content: true
   langcode: true
   links: true

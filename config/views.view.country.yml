@@ -150,8 +150,8 @@ display:
         - 'languages:language_interface'
         - user.permissions
       tags: {  }
-  block_2:
-    id: block_2
+  countries:
+    id: countries
     display_title: Countries
     display_plugin: block
     position: 1

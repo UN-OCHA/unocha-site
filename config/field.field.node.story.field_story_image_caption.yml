@@ -1,0 +1,19 @@
+uuid: 0141aa15-bf23-4596-8769-70b7a2876288
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_story_image_caption
+    - node.type.story
+id: node.story.field_story_image_caption
+field_name: field_story_image_caption
+entity_type: node
+bundle: story
+label: 'Image caption'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

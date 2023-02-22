@@ -1,0 +1,71 @@
+uuid: a1ea7a3b-907f-4d06-af51-2f2ed0e4a2ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_custom_content
+    - node.type.story
+  module:
+    - entity_reference_revisions
+id: node.story.field_custom_content
+field_name: field_custom_content
+entity_type: node
+bundle: story
+label: 'Custom content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 0
+    target_bundles_drag_drop:
+      call_to_action:
+        weight: 16
+        enabled: false
+      card:
+        weight: 17
+        enabled: false
+      card_list:
+        weight: 18
+        enabled: false
+      datawrapper:
+        weight: 19
+        enabled: false
+      embed:
+        weight: 20
+        enabled: false
+      image_caption:
+        weight: 21
+        enabled: false
+      layout:
+        weight: 22
+        enabled: false
+      node:
+        weight: 23
+        enabled: false
+      node_list:
+        weight: 24
+        enabled: false
+      reliefweb_document:
+        weight: 25
+        enabled: false
+      reliefweb_river:
+        weight: 26
+        enabled: false
+      rss_feed:
+        weight: 27
+        enabled: false
+      rw_key_figures:
+        weight: 28
+        enabled: false
+      text:
+        weight: 29
+        enabled: false
+      video:
+        weight: 30
+        enabled: false
+field_type: entity_reference_revisions

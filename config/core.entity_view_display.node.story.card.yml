@@ -1,0 +1,57 @@
+uuid: 7ef5f061-0742-4377-b8e6-98ba15e79493
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.story.body
+    - field.field.node.story.field_country
+    - field.field.node.story.field_custom_content
+    - field.field.node.story.field_story_image
+    - field.field.node.story.field_story_image_caption
+    - field.field.node.story.field_story_type
+    - node.type.story
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.story.card
+targetEntityType: node
+bundle: story
+mode: card
+content:
+  body:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 160
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_country:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_story_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_custom_content: true
+  field_story_image_caption: true
+  field_story_type: true
+  langcode: true
+  links: true
