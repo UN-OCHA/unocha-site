@@ -244,8 +244,8 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  page_1:
-    id: page_1
+  page__events:
+    id: page__events
     display_title: Page
     display_plugin: page
     position: 1
