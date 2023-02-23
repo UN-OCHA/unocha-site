@@ -29,11 +29,6 @@ cd-caption:
     component:
       components/cd-caption/cd-caption.css: {}
 
-cd-cards:
-  css:
-    component:
-      components/cd-cards/layout--cards.css: {}
-
 cd-hero:
   css:
     component:

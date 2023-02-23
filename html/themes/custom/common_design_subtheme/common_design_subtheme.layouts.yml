@@ -1,20 +1,3 @@
-cards:
-  label: 'Cards'
-  category: 'Common Design Layouts'
-  path: templates/layouts
-  template: layout--cards
-  library: common_design_subtheme/cd-cards
-  default_region: first
-  icon_map:
-    - [first, second, third]
-  regions:
-    first:
-      label: First
-    second:
-      label: Second
-    third:
-      label: Third
-
 layout_twocol:
   label: 'Two column'
   category: 'Common Design Layouts'
