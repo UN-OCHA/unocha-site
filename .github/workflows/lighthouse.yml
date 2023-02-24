@@ -110,11 +110,6 @@ jobs:
         env:
           fail-fast: true
 
-  tests:
-    runs-on: ubuntu-latest
-    needs: setup
-
-    steps:
       - name: Debug Stack
         uses: cafuego/command-output@main
         with:
@@ -191,19 +186,14 @@ jobs:
             *Pusher: @${{ github.actor }}, Action: `${{ github.event_name }}`, Workflow: `${{ github.workflow }}`*
           edit-mode: replace
 
-  lighthouse:
-    if: contains(github.event.pull_request.labels.*.name, 'performance')
-    runs-on: ubuntu-latest
-    needs: setup
-
-    steps:
       - name: Debug Stack
+        if: contains(github.event.pull_request.labels.*.name, 'performance')
         uses: cafuego/command-output@main
         with:
           run: docker ps -a
 
-      - uses: actions/checkout@v3
       - name: Audit URLs using Lighthouse
+        if: contains(github.event.pull_request.labels.*.name, 'performance')
         uses: treosh/lighthouse-ci-action@v9
         with:
           urls: |
@@ -214,6 +204,7 @@ jobs:
 
   slack:
     runs-on: ubuntu-latest
+    needs: [tests]
 
     steps:
       - name: Slack Success Notification
