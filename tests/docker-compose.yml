@@ -69,3 +69,5 @@ services:
       - DTT_BASE_URL=http://127.0.0.1
     networks:
       - default
+    ports:
+      - 127.0.0.1:8080:80
