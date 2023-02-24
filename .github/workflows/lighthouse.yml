@@ -11,7 +11,7 @@ jobs:
       - name: Setup PHP with PECL extension
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.1
+          php-version: 8.2
           tools: composer
         env:
           fail-fast: true
@@ -81,6 +81,7 @@ jobs:
             docker-compose -f tests/docker-compose.yml up -d
             sleep 10
             docker ps -a
+            docker-compose -f tests/docker-compose.yml exec -T drupal sed -i 's/display_errors = Off/display_errors = On/' /etc/php82/php.ini
             docker-compose -f tests/docker-compose.yml exec -w /srv/www -T drupal composer install
         env:
           fail-fast: true
@@ -114,6 +115,11 @@ jobs:
     needs: setup
 
     steps:
+      - name: Debug Stack
+        uses: cafuego/command-output@main
+        with:
+          run: docker ps -a
+
       - name: Run tests
         id: tests
         uses: cafuego/command-output@main
@@ -191,6 +197,11 @@ jobs:
     needs: setup
 
     steps:
+      - name: Debug Stack
+        uses: cafuego/command-output@main
+        with:
+          run: docker ps -a
+
       - uses: actions/checkout@v3
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v9
