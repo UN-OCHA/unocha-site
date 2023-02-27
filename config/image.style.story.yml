@@ -1,0 +1,16 @@
+uuid: 58f53ed8-cc96-4da7-bd96-d029b7b5e72a
+langcode: en
+status: true
+dependencies: {  }
+name: story
+label: Story
+effects:
+  1b6d76cd-bedf-47df-83cc-1963b6280d49:
+    uuid: 1b6d76cd-bedf-47df-83cc-1963b6280d49
+    id: image_scale
+    weight: 1
+    data:
+      width: 824
+      height: null
+      upscale: false
+pipeline: __default__

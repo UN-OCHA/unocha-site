@@ -1,0 +1,16 @@
+uuid: 84c7b242-5e51-425e-8b90-a6fe5cd86fbe
+langcode: en
+status: true
+dependencies: {  }
+name: hero_thumbnail
+label: 'Hero thumbnail'
+effects:
+  1918f590-89f1-4743-a0a3-82dad8fd800f:
+    uuid: 1918f590-89f1-4743-a0a3-82dad8fd800f
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 950
+      height: 260
+      anchor: center-center
+pipeline: __default__
