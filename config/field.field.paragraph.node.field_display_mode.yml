@@ -1,0 +1,29 @@
+uuid: ec90ef60-ac2d-4802-9b22-14827d37e366
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_display_mode
+    - paragraphs.paragraphs_type.node
+  module:
+    - entity_reference_display
+id: paragraph.node.field_display_mode
+field_name: field_display_mode
+entity_type: paragraph
+bundle: node
+label: 'Display mode'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: title
+default_value_callback: ''
+settings:
+  exclude:
+    card: card
+    full: full
+    teaser: teaser
+    title: title
+  negate: true
+field_type: entity_reference_display

@@ -1,0 +1,26 @@
+uuid: 8ebca859-8d2b-42bc-8b0f-57b29187d3f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.reliefweb_river
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - ckeditor
+id: paragraph.reliefweb_river.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: reliefweb_river
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
