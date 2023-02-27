@@ -1,0 +1,59 @@
+/**
+ * ReliefWeb document page.
+ */
+
+/* Date. */
+.unocha-reliefweb-document__date {
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Lists in content. */
+.unocha-reliefweb-document li {
+  margin: 8px 0 0;
+}
+
+/* Attachments. */
+.unocha-reliefweb-attachment-list {
+  max-width: 220px;
+  margin: 0 auto 24px auto;
+  padding-top: 0;
+}
+.unocha-reliefweb-attachment-list ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.unocha-reliefweb-attachment-list li {
+  margin: 0;
+  padding: 16px 0;
+  text-align: center;
+  border: 1px solid var(--brand-grey);
+}
+.unocha-reliefweb-attachment-list li + li {
+  margin-top: 24px;
+}
+.unocha-reliefweb-attachment-list img {
+  width: 100%;
+  margin: -16px 0 8px 0;
+  border-bottom: 1px solid var(--brand-grey);
+}
+.unocha-reliefweb-attachment-list strong {
+  display: block;
+  padding: 0 16px;
+}
+.unocha-reliefweb-attachment-list strong:first-letter {
+  text-transform: capitalize;
+}
+.unocha-reliefweb-attachment-list span {
+  display: block;
+  padding: 4px 16px 0 16px;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 480px) {
+  .unocha-reliefweb-attachment-list {
+    float: right;
+    margin-left: 24px;
+  }
+}

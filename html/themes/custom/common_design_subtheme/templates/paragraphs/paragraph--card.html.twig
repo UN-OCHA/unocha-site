@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a Featured Highlight paragraph.
+ *
+ * @overrides html/themes/custom/common_design_subtheme/templates/paragraph.html.twig
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('common_design_subtheme/uno-card')}}
+
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'uno-card',
+  ]
+%}
+
+{% block paragraph %}
+  <div{{ attributes
+    .addClass(classes)
+    .setAttribute('data-type', paragraph.bundle)
+    .setAttribute('id', paragraph.bundle ~ '-' ~ paragraph.id())
+  }}>
+    {% block content %}
+      {% set destination = paragraph.field_card_link.0.url %}
+      <div class="uno-card__content">
+        <div class="uno-card__title">
+          {% if destination %}
+          <a href="{{ destination }}">{{ content.field_card_title }}</a>
+          {% else %}
+            {{ content.field_card_title }}
+          {% endif %}
+        </div>
+        <div class="uno-card__summary">
+          {{ content|without('field_card_link', 'field_card_title') }}
+          {% if destination %}
+            <a class="cd-button cd-button--small cd-button--icon" href="{{ destination }}">
+              <span class="cd-button__text">{{ 'View more'|t }}</span>
+              <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16"><use xlink:href="#cd-icon--arrow-right"></use></svg>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+      {# <div class="uno-card__image">
+        {{ content.field_image }}
+      </div> #}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

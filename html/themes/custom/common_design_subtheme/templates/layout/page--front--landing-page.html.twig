@@ -77,6 +77,7 @@
   {% block hero %}
     <div class="cd-layout-hero">
       {% if componentsModule %}
+        {% include '@uno-components/cd-hero/cd-hero--front.html.twig' %}
         {% if page.responses_nav %}
           {% include '@uno-components/uno-nav/uno-nav.html.twig' %}
         {% endif %}
@@ -119,8 +120,9 @@
   {% endblock %}
 
   {% block footer %}
-    {% include '@common_design_subtheme/cd/cd-footer/cd-footer.html.twig' %}
+    {% include '@common_design/cd/cd-footer/cd-footer.html.twig' %}
   {% endblock %}
 
 
 </div>{# /.cd-layout-container #}
+
