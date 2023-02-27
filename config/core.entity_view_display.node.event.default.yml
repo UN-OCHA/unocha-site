@@ -4,12 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
-    - field.field.node.event.field_article_image_caption
     - field.field.node.event.field_country
     - field.field.node.event.field_custom_content
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_image
     - field.field.node.event.field_event_type
+    - field.field.node.event.field_image_caption
     - node.type.event
   module:
     - datetime_range
@@ -26,15 +26,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 5
-    region: content
-  field_article_image_caption:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
+    weight: 6
     region: content
   field_country:
     type: entity_reference_label
@@ -42,7 +34,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_custom_content:
     type: layout_paragraphs
@@ -51,7 +43,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_event_date:
     type: daterange_default
@@ -61,7 +53,7 @@ content:
       format_type: unocha
       separator: '-'
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_event_image:
     type: entity_reference_entity_view
@@ -78,7 +70,15 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 3
+    weight: 4
+    region: content
+  field_image_caption:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   langcode: true

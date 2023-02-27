@@ -5,9 +5,9 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.field_article_image
-    - field.field.node.article.field_article_image_caption
     - field.field.node.article.field_country
     - field.field.node.article.field_custom_content
+    - field.field.node.article.field_image_caption
     - field.field.node.article.field_story_type
     - node.type.article
   module:
@@ -24,7 +24,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_article_image:
     type: entity_reference_entity_view
@@ -35,21 +35,13 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_article_image_caption:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_country:
     type: entity_reference_label
     label: inline
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_custom_content:
     type: layout_paragraphs
@@ -58,12 +50,20 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 6
+    region: content
+  field_image_caption:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
 hidden:
   field_story_type: true

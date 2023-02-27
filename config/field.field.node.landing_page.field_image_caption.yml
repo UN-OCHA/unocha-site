@@ -1,14 +1,14 @@
-uuid: ead9176f-977b-4424-88d6-3da9a03d77e7
+uuid: ac6a7df1-75d2-4051-8640-bcf2da7b67b9
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_article_image_caption
-    - node.type.article
-id: node.article.field_article_image_caption
-field_name: field_article_image_caption
+    - field.storage.node.field_image_caption
+    - node.type.landing_page
+id: node.landing_page.field_image_caption
+field_name: field_image_caption
 entity_type: node
-bundle: article
+bundle: landing_page
 label: 'Image caption'
 description: ''
 required: false

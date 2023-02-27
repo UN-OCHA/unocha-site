@@ -5,8 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.card
     - field.field.node.landing_page.body
-    - field.field.node.landing_page.field_article_image_caption
     - field.field.node.landing_page.field_custom_content
+    - field.field.node.landing_page.field_image_caption
     - field.field.node.landing_page.field_landing_page_image
     - node.type.landing_page
   module:
@@ -55,14 +55,6 @@ content:
     settings:
       trim_length: 160
     third_party_settings: {  }
-    weight: 2
-    region: content
-  field_article_image_caption:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
     weight: 1
     region: content
   field_landing_page_image:
@@ -76,6 +68,7 @@ content:
     region: content
 hidden:
   field_custom_content: true
+  field_image_caption: true
   langcode: true
   layout_builder__layout: true
   links: true
