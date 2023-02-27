@@ -1,0 +1,41 @@
+uuid: bb7030cb-160a-4b18-8065-faae8d0e68f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_custom_content
+    - field.field.node.landing_page.field_image_caption
+    - field.field.node.landing_page.field_landing_page_image
+    - node.type.landing_page
+  module:
+    - text
+    - user
+id: node.landing_page.teaser
+targetEntityType: node
+bundle: landing_page
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 160
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_landing_page_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_custom_content: true
+  field_image_caption: true
+  langcode: true
+  links: true
