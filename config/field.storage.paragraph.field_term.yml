@@ -1,12 +1,12 @@
-uuid: 4891c880-dd05-42a2-a49f-c3ec400ada4d
+uuid: 6513460f-f833-4d2f-a3de-41b90cedfed0
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
     - taxonomy
-id: paragraph.field_response
-field_name: field_response
+id: paragraph.field_term
+field_name: field_term
 entity_type: paragraph
 type: entity_reference
 settings:

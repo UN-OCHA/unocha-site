@@ -1,14 +1,14 @@
-uuid: d552831b-08ad-4597-be2d-4c14c6a65e08
+uuid: 24ed4183-5843-4425-92e0-b893c41ae71b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_response
+    - field.storage.paragraph.field_term
     - paragraphs.paragraphs_type.node
     - taxonomy.vocabulary.country
     - taxonomy.vocabulary.regional_offices
-id: paragraph.node.field_response
-field_name: field_response
+id: paragraph.node.field_term
+field_name: field_term
 entity_type: paragraph
 bundle: node
 label: Term
