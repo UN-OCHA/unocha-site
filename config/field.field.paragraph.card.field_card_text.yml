@@ -1,19 +1,26 @@
-uuid: 0e6497f6-c02f-4990-92d9-57da3fecada5
+uuid: 37256767-6beb-4bef-97c0-d07249cc6815
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_card_text
     - paragraphs.paragraphs_type.card
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - ckeditor
 id: paragraph.card.field_card_text
 field_name: field_card_text
 entity_type: paragraph
 bundle: card
-label: 'Card Text'
+label: 'Card text'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string_long
+field_type: text_long
