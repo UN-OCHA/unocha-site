@@ -83,6 +83,7 @@ class InstallHelper implements ContainerInjectionInterface {
   public function importContent() {
     $this->importPages();
   }
+
   /**
    * Imports pages.
    *
@@ -103,7 +104,10 @@ class InstallHelper implements ContainerInjectionInterface {
         // Fields mapping starts.
         // Set Body Field.
         if (!empty($data['body'])) {
-          $values['body'] = [['value' => $data['body'], 'format' => 'basic_html']];
+          $values['body'] = [[
+            'value' => $data['body'],
+            'format' => 'basic_html',
+          ]];
         }
         // Set node alias if exists.
         if (!empty($data['slug'])) {
@@ -156,7 +160,7 @@ class InstallHelper implements ContainerInjectionInterface {
    */
   protected function getUser($name) {
     $user_storage = $this->entityTypeManager->getStorage('user');
-    $users = $user_storage->loadByProperties(['name' => $name]);;
+    $users = $user_storage->loadByProperties(['name' => $name]);
     if (empty($users)) {
       // Creating user without any email/password.
       $user = $user_storage->create([
