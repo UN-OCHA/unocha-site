@@ -107,7 +107,8 @@ class InstallHelper implements ContainerInjectionInterface {
           $values['body'] = [[
             'value' => $data['body'],
             'format' => 'basic_html',
-          ]];
+          ],
+          ];
         }
         // Set node alias if exists.
         if (!empty($data['slug'])) {
