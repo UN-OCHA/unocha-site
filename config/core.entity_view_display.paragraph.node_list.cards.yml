@@ -1,0 +1,50 @@
+uuid: def02a5d-1562-41c2-adec-de3f46066de9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.cards
+    - field.field.paragraph.node_list.field_display_mode
+    - field.field.paragraph.node_list.field_text
+    - field.field.paragraph.node_list.field_title
+    - field.field.paragraph.node_list.field_view
+    - paragraphs.paragraphs_type.node_list
+  module:
+    - layout_builder
+    - text
+    - viewsreference
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.node_list.cards
+targetEntityType: paragraph
+bundle: node_list
+mode: cards
+content:
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_view:
+    type: viewsreference_formatter
+    label: hidden
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_display_mode: true

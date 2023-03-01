@@ -1,0 +1,119 @@
+{%
+  set attributes =  create_attribute({
+    'aria-labelledby': 'uno-mega-menu',
+    'data-cd-toggable': 'Active responses'|t,
+    'data-cd-icon': 'arrow-down',
+    'data-cd-component': 'cd-nav-level-0',
+    'data-cd-replace': 'uno-mega-menu',
+    'id': 'uno-mega-menu',
+    'role': 'navigation'
+  })
+%}
+{%
+  set classes = [
+    'uno-mega-menu',
+    component ~ '__dropdown',
+    'cd-dropdown'
+  ]
+%}
+{{ attach_library('common_design_subtheme/uno-mega-menu') }}
+
+<section id="active-responses" class="active-responses-menu desktop-only">
+
+  <h2 id="uno-mega-menu" class="cd-block-title visually-hidden">{% trans %}Humanitarian response plans{% endtrans %}</h2>
+
+  <nav{{ attributes.addClass(classes)}}>
+    <ul class="menu cd-container">
+      <li>
+        <a href="/afghanistan" hreflang="en">Afghanistan</a>
+      </li>
+      <li>
+        <a href="/burkina-faso" hreflang="en">Burkina Faso</a>
+      </li>
+      <li>
+        <a href="/burundi" hreflang="en">Burundi</a>
+      </li>
+      <li>
+        <a href="/cameroon" hreflang="en">Cameroon</a>
+      </li>
+      <li>
+        <a href="/central-african-republic" hreflang="en">Central African Republic</a>
+      </li>
+      <li>
+        <a href="/chad" hreflang="en">Chad</a>
+      </li>
+      <li>
+        <a href="/colombia" hreflang="en">Colombia</a>
+      </li>
+      <li>
+        <a href="/democratic-republic-of-the-congo" hreflang="en">Democratic Republic of the Congo</a>
+      </li>
+      <li>
+        <a href="/el-salvador" hreflang="en">El Salvador</a>
+      </li>
+      <li>
+        <a href="/ethiopia" hreflang="en">Ethiopia</a>
+      </li>
+      <li>
+        <a href="/guatemala" hreflang="en">Guatemala</a>
+      </li>
+      <li>
+        <a href="/haiti" hreflang="en">Haiti</a>
+      </li>
+      <li>
+        <a href="/honduras" hreflang="en">Honduras</a>
+      </li>
+      <li>
+        <a href="/kenya" hreflang="en">Kenya</a>
+      </li>
+      <li>
+        <a href="/lebanon" hreflang="en">Lebanon</a>
+      </li>
+      <li>
+        <a href="/madagascar" hreflang="en">Madagascar</a>
+      </li>
+      <li>
+        <a href="/mali" hreflang="en">Mali</a>
+      </li>
+      <li>
+        <a href="/mozambique" hreflang="en">Mozambique</a>
+      </li>
+      <li>
+        <a href="/myanmar" hreflang="en">Myanmar</a>
+      </li>
+      <li>
+        <a href="/niger" hreflang="en">Niger</a>
+      </li>
+      <li>
+        <a href="/nigeria" hreflang="en">Nigeria</a>
+      </li>
+      <li>
+        <a href="/occupied-palestinian-territory" hreflang="en">Occupied Palestinian Territory</a>
+      </li>
+      <li>
+        <a href="/pakistan" hreflang="en">Pakistan</a>
+      </li>
+      <li>
+        <a href="/somalia" hreflang="en">Somalia</a>
+      </li>
+      <li>
+        <a href="/south-sudan" hreflang="en">South Sudan</a>
+      </li>
+      <li>
+        <a href="/sudan" hreflang="en">Sudan</a>
+      </li>
+      <li>
+        <a href="/syrian-arab-republic" hreflang="en">Syrian Arab Republic</a>
+      </li>
+      <li>
+        <a href="/ukraine" hreflang="en">Ukraine</a>
+      </li>
+      <li>
+        <a href="/venezuela" hreflang="en">Venezuela</a>
+      </li>
+      <li>
+        <a href="/yemen" hreflang="en">Yemen</a>
+      </li>
+    </ul>
+  </nav>
+</section>
