@@ -1,8 +1,28 @@
 /**
  * CD Hero: Style two
  */
+@media (min-width: 767px) {
+  .cd-hero__image {
+    height: 33rem;
+    /* 533px */
+  }
+}
 
 @media (min-width: 1024px) {
+  .cd-hero {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 66rem;
+    /* 1067px */
+  }
+
+  .cd-hero__image {
+    height: 66rem;
+    /* 1067px */
+  }
+
   .cd-hero--style-two .cd-hero__container {
     padding: 2rem 3.75rem;
     background-color: var(--cd-white);
