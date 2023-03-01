@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.basic.body
     - field.field.node.basic.field_basic_image
     - field.field.node.basic.field_custom_content
+    - field.field.node.basic.field_image_caption
     - node.type.basic
   module:
     - layout_builder
@@ -43,7 +44,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_basic_image:
     type: entity_reference_entity_view
@@ -61,7 +62,15 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 3
+    region: content
+  field_image_caption:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
   langcode: true

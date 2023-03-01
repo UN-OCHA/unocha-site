@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.card_list.field_numcols
     - field.field.paragraph.card_list.field_text
     - field.field.paragraph.card_list.field_title
+    - field.field.paragraph.card_list.paragraph_view_mode
     - paragraphs.paragraphs_type.card_list
   module:
     - entity_reference_revisions
@@ -42,3 +43,4 @@ content:
     region: content
 hidden:
   field_numcols: true
+  paragraph_view_mode: true

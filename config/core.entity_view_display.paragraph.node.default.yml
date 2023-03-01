@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.node.field_display_mode
     - field.field.paragraph.node.field_node
-    - field.field.paragraph.node.field_response
+    - field.field.paragraph.node.field_term
     - field.field.paragraph.node.field_text
     - field.field.paragraph.node.field_title
     - paragraphs.paragraphs_type.node
@@ -27,7 +27,7 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  field_response:
+  field_term:
     type: entity_reference_display_default
     label: hidden
     settings:

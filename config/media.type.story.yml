@@ -1,0 +1,13 @@
+uuid: da7626ac-35d8-4be7-8880-7f10f87d3681
+langcode: en
+status: true
+dependencies: {  }
+id: story
+label: Story
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_3
+field_map: {  }

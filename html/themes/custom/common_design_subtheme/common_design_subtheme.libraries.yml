@@ -29,11 +29,6 @@ cd-caption:
     component:
       components/cd-caption/cd-caption.css: {}
 
-cd-cards:
-  css:
-    component:
-      components/cd-cards/layout--cards.css: {}
-
 cd-hero:
   css:
     component:
@@ -110,6 +105,11 @@ uno-layout:
   css:
     theme:
       components/uno-layout/uno-layout.css: {}
+
+uno-mega-menu:
+  css:
+    theme:
+      components/uno-mega-menu/uno-mega-menu.css: {}
 
 uno-nav:
   css:
