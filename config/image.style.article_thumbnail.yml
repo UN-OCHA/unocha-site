@@ -1,0 +1,16 @@
+uuid: 670374c4-6566-47ad-8e1f-5cc79cf04723
+langcode: en
+status: true
+dependencies: {  }
+name: article_thumbnail
+label: 'Article thumbnail'
+effects:
+  0ac7655c-e5f7-49a5-b629-e7b6aa10baaa:
+    uuid: 0ac7655c-e5f7-49a5-b629-e7b6aa10baaa
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 660
+      height: 440
+      anchor: center-center
+pipeline: __default__

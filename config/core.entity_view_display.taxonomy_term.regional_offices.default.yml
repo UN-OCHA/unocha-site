@@ -1,0 +1,22 @@
+uuid: d43b3684-43e4-4a52-ae5b-84b1fe07150f
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.regional_offices
+  module:
+    - text
+id: taxonomy_term.regional_offices.default
+targetEntityType: taxonomy_term
+bundle: regional_offices
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true

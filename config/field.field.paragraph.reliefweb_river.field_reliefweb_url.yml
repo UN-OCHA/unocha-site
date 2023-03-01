@@ -1,0 +1,23 @@
+uuid: b2db3a0f-6e21-4ec2-81dd-a996ad1ed351
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_reliefweb_url
+    - paragraphs.paragraphs_type.reliefweb_river
+  module:
+    - link
+id: paragraph.reliefweb_river.field_reliefweb_url
+field_name: field_reliefweb_url
+entity_type: paragraph
+bundle: reliefweb_river
+label: 'Reliefweb URL'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

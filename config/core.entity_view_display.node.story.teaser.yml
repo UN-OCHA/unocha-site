@@ -1,0 +1,56 @@
+uuid: 783e984d-dd4e-429e-8854-ce2f6eccd0db
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.story.body
+    - field.field.node.story.field_country
+    - field.field.node.story.field_custom_content
+    - field.field.node.story.field_image_caption
+    - field.field.node.story.field_regional_office
+    - field.field.node.story.field_story_image
+    - field.field.node.story.field_story_type
+    - field.field.node.story.field_theme
+    - node.type.story
+  module:
+    - text
+    - user
+id: node.story.teaser
+targetEntityType: node
+bundle: story
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 160
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_country:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_story_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_custom_content: true
+  field_image_caption: true
+  field_regional_office: true
+  field_story_type: true
+  field_theme: true
+  langcode: true
+  links: true

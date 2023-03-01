@@ -1,0 +1,15 @@
+uuid: 78f3af09-d568-4cd2-8419-ad31ea31c5cf
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+id: reliefweb_river
+label: 'Reliefweb - Feed'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

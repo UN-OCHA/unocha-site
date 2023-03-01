@@ -1,0 +1,68 @@
+uuid: 1b310bb0-fc0b-46f2-8b81-3871b5571bf2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rss_feed.field_max_number_of_items
+    - field.field.paragraph.rss_feed.field_rss_link
+    - field.field.paragraph.rss_feed.field_rss_options
+    - field.field.paragraph.rss_feed.field_rss_read_more
+    - field.field.paragraph.rss_feed.field_text
+    - field.field.paragraph.rss_feed.field_title
+    - paragraphs.paragraphs_type.rss_feed
+  module:
+    - link
+    - text
+id: paragraph.rss_feed.default
+targetEntityType: paragraph
+bundle: rss_feed
+mode: default
+content:
+  field_max_number_of_items:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_rss_link:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_rss_options:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_rss_read_more:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_text:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,35 @@
+uuid: ec320056-b533-44f8-a919-5f6b0c268b79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rw_key_figures.field_country
+    - field.field.paragraph.rw_key_figures.field_numcols
+    - field.field.paragraph.rw_key_figures.field_text
+    - field.field.paragraph.rw_key_figures.field_title
+    - paragraphs.paragraphs_type.rw_key_figures
+  module:
+    - text
+id: paragraph.rw_key_figures.default
+targetEntityType: paragraph
+bundle: rw_key_figures
+mode: default
+content:
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_country: true
+  field_numcols: true

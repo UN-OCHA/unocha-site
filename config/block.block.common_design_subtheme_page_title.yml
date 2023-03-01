@@ -2,14 +2,16 @@ uuid: 6fa7c666-67ea-4132-b414-1a2982eda97d
 langcode: en
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - common_design_subtheme
 _core:
   default_config_hash: Oh72CHUkp6cj6dbrXMK2hzCsM05w9cHVoD22rMLQUfk
 id: common_design_subtheme_page_title
 theme: common_design_subtheme
-region: content
-weight: -30
+region: page_title
+weight: -5
 provider: null
 plugin: page_title_block
 settings:
@@ -17,4 +19,8 @@ settings:
   label: 'Page title'
   label_display: '0'
   provider: core
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/press-releases/*'

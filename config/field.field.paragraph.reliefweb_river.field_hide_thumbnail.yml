@@ -1,0 +1,23 @@
+uuid: 8bef85f9-bbef-46e7-b629-fc36c9ed14fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hide_thumbnail
+    - paragraphs.paragraphs_type.reliefweb_river
+id: paragraph.reliefweb_river.field_hide_thumbnail
+field_name: field_hide_thumbnail
+entity_type: paragraph
+bundle: reliefweb_river
+label: 'Hide Thumbnail'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Hide
+  off_label: Show
+field_type: boolean

@@ -1,0 +1,20 @@
+uuid: d1c5918f-8f5c-44c7-90c3-52d6818535c5
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_max_number_of_items
+field_name: field_max_number_of_items
+entity_type: paragraph
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

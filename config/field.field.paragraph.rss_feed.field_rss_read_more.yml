@@ -1,0 +1,23 @@
+uuid: ce8f6521-17b6-45ba-8c70-3096cc8bff51
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rss_read_more
+    - paragraphs.paragraphs_type.rss_feed
+  module:
+    - link
+id: paragraph.rss_feed.field_rss_read_more
+field_name: field_rss_read_more
+entity_type: paragraph
+bundle: rss_feed
+label: 'RSS read more'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

@@ -1,0 +1,29 @@
+uuid: dabdd6d3-3ffa-4d05-ac7e-e4fe6074c34b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_regional_office
+    - taxonomy.vocabulary.country
+    - taxonomy.vocabulary.regional_offices
+id: taxonomy_term.country.field_regional_office
+field_name: field_regional_office
+entity_type: taxonomy_term
+bundle: country
+label: 'Regional office'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      regional_offices: regional_offices
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
