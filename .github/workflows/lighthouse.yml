@@ -130,15 +130,6 @@ jobs:
         env:
           fail-fast: true
 
-      - name: Install demo content
-        id: content
-        uses: cafuego/command-output@main
-        with:
-          run: |
-            docker-compose -f tests/docker-compose.yml exec -T drupal drush -y cim
-        env:
-          fail-fast: true
-
       - name: Copy Coveralls
         id: copy_coveralls
         if: success()
