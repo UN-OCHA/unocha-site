@@ -107,6 +107,7 @@ jobs:
         with:
           run: |
             docker-compose -f tests/docker-compose.yml exec -T drupal drush -y si --existing-config minimal install_configure_form.enable_update_status_emails=NULL
+            docker-compose -f tests/docker-compose.yml exec -T drupal drush -y cim
         env:
           fail-fast: true
 
