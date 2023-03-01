@@ -107,7 +107,6 @@ jobs:
         with:
           run: |
             docker-compose -f tests/docker-compose.yml exec -T drupal drush -y si --existing-config minimal install_configure_form.enable_update_status_emails=NULL
-            docker-compose -f tests/docker-compose.yml exec -T drupal drush -y cim
         env:
           fail-fast: true
 
@@ -128,6 +127,15 @@ jobs:
             docker-compose -f tests/docker-compose.yml exec -T drupal mkdir -p /srv/www/html/sites/default/files/browser_output
             docker-compose -f tests/docker-compose.yml exec -T drupal chmod -R 777 /srv/www/html/sites/default/files/browser_output
             docker-compose -f tests/docker-compose.yml exec -T -w /srv/www -e XDEBUG_MODE=coverage -e BROWSERTEST_OUTPUT_DIRECTORY=/srv/www/html/sites/default/files/browser_output -e DTT_BASE_URL=http://127.0.0.1 drupal ./vendor/bin/phpunit --coverage-clover /srv/www/html/build/logs/clover.xml --debug
+        env:
+          fail-fast: true
+
+      - name: Install demo content
+        id: content
+        uses: cafuego/command-output@main
+        with:
+          run: |
+            docker-compose -f tests/docker-compose.yml exec -T drupal drush -y cim
         env:
           fail-fast: true
 
