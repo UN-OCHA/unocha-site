@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "397fb54f4f054014c030b8be0f8a2ab7",
+    "content-hash": "08cc810451d3aad04af9c13c5d131426",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2485,6 +2485,41 @@
             }
         },
         {
+            "name": "drupal/canto_connector",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/orakili/canto_connector.git",
+                "reference": "006ff721466dda110eb8123847482ca9277a3c16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/orakili/canto_connector/zipball/006ff721466dda110eb8123847482ca9277a3c16",
+                "reference": "006ff721466dda110eb8123847482ca9277a3c16",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/json_field": "^1.0@RC"
+            },
+            "default-branch": true,
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "awm",
+                    "homepage": "https://www.drupal.org/u/awm"
+                },
+                {
+                    "name": "flightdev",
+                    "homepage": "https://www.drupal.org/u/flightdev"
+                }
+            ],
+            "description": "DAM integration with Canto.",
+            "time": "2023-03-03T06:04:58+00:00"
+        },
+        {
             "name": "drupal/coder",
             "version": "8.3.17",
             "source": {
@@ -3255,6 +3290,96 @@
             }
         },
         {
+            "name": "drupal/entity_browser",
+            "version": "2.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/entity_browser.git",
+                "reference": "8.x-2.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/entity_browser-8.x-2.9.zip",
+                "reference": "8.x-2.9",
+                "shasum": "251afad80cde9fa547501a8d9de5d94b9f5bacff"
+            },
+            "require": {
+                "drupal/core": "^9.2 || ^10"
+            },
+            "require-dev": {
+                "drupal/embed": "~1.0",
+                "drupal/entity_embed": "1.x-dev",
+                "drupal/entity_reference_revisions": "1.x-dev",
+                "drupal/entityqueue": "1.x-dev",
+                "drupal/inline_entity_form": "1.x-dev",
+                "drupal/paragraphs": "1.x-dev",
+                "drupal/token": "1.x-dev"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.9",
+                    "datestamp": "1674070933",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Janez Urevc",
+                    "homepage": "https://github.com/slashrsm",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Primoz Hmeljak",
+                    "homepage": "https://github.com/primsi",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "See other contributors",
+                    "homepage": "https://www.drupal.org/node/1943336/committers",
+                    "role": "contributor"
+                },
+                {
+                    "name": "Drupal Media Team",
+                    "homepage": "https://www.drupal.org/user/3260690"
+                },
+                {
+                    "name": "marcingy",
+                    "homepage": "https://www.drupal.org/user/77320"
+                },
+                {
+                    "name": "oknate",
+                    "homepage": "https://www.drupal.org/user/471638"
+                },
+                {
+                    "name": "Primsi",
+                    "homepage": "https://www.drupal.org/user/282629"
+                },
+                {
+                    "name": "samuel.mortenson",
+                    "homepage": "https://www.drupal.org/user/2582268"
+                },
+                {
+                    "name": "slashrsm",
+                    "homepage": "https://www.drupal.org/user/744628"
+                }
+            ],
+            "description": "Entity browsing and selecting component.",
+            "homepage": "http://drupal.org/project/entity_browser",
+            "support": {
+                "source": "https://git.drupalcode.org/project/entity_browser",
+                "issues": "https://www.drupal.org/project/issues/entity_browser",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
             "name": "drupal/entity_reference_display",
             "version": "2.0.0",
             "source": {
@@ -3718,6 +3843,71 @@
             "homepage": "https://www.drupal.org/project/imagemagick",
             "support": {
                 "source": "https://git.drupalcode.org/project/imagemagick"
+            }
+        },
+        {
+            "name": "drupal/json_field",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/json_field.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/json_field-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "9d1233be45736afcaa29336d7d09410a6b342c46"
+            },
+            "require": {
+                "drupal/core": "^9.2 || ^10",
+                "ext-json": "*"
+            },
+            "require-dev": {
+                "swaggest/json-schema": "^0"
+            },
+            "suggest": {
+                "drupal/diff": "^0",
+                "swaggest/json-schema": "^0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1673020757",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "See contributors",
+                    "homepage": "https://www.drupal.org/node/2653746/committers",
+                    "role": "Developer"
+                },
+                {
+                    "name": "dawehner",
+                    "homepage": "https://www.drupal.org/user/99340"
+                },
+                {
+                    "name": "Jaesin",
+                    "homepage": "https://www.drupal.org/user/841054"
+                }
+            ],
+            "description": "Provides a JSON field, formatter and views integration",
+            "homepage": "https://www.drupal.org/project/json_field",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/json_field",
+                "issues": "https://www.drupal.org/project/issues/json_field"
             }
         },
         {
@@ -14225,6 +14415,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/canto_connector": 20,
         "drupal/components": 10,
         "drupal/config_split": 5,
         "drupal/entity_usage": 10,
