@@ -1,0 +1,45 @@
+uuid: 28084aaf-7573-4e88-869d-6ff28f7cef4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.canto_image.field_canto_asset_image
+    - field.field.media.canto_image.field_cantodam_asset_id
+    - field.field.media.canto_image.field_cantodam_asset_metadata
+    - field.field.media.canto_image.field_image_copyright
+    - field.field.media.canto_image.field_image_description
+    - field.field.media.canto_image.field_image_height
+    - field.field.media.canto_image.field_image_width
+    - image.style.medium
+    - media.type.canto_image
+  module:
+    - image
+id: media.canto_image.media_library
+targetEntityType: media
+bundle: canto_image
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_canto_asset_image: true
+  field_cantodam_asset_id: true
+  field_cantodam_asset_metadata: true
+  field_image_copyright: true
+  field_image_description: true
+  field_image_height: true
+  field_image_width: true
+  langcode: true
+  name: true
+  uid: true
