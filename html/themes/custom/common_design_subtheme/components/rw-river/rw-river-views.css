@@ -1,0 +1,55 @@
+/* stylelint-disable max-line-length */
+/**
+ * RW River Views
+ *
+ * Taken directly from RW9. Any cusotmizations will appear in a separate file.
+ *
+ * @see https://raw.githubusercontent.com/UN-OCHA/rwint9-site/38e66da1b0fa4d6f316aaa7c961db859e2ef5d4b/html/themes/custom/common_design_subtheme/components/rw-river/rw-river-views.css
+ */
+
+/* View selector */
+.rw-river-page .rw-river-views {
+  width: 100%;
+  /* margin: 8px 0; */
+  padding: 0;
+  list-style: none;
+}
+.rw-river-page .rw-river-views ul {
+  margin: -12px;
+  padding: 0;
+  list-style: none;
+}
+.rw-river-page .rw-river-views li {
+  display: inline-block;
+  margin: 12px 16px;
+  vertical-align: bottom;
+}
+.rw-river-page .rw-river-views a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 3px;
+  text-decoration: none;
+  color: var(--cd-reliefweb-brand-grey--dark);
+  border-bottom: 3px solid transparent;
+  font-size: 18px;
+}
+.rw-river-page .rw-river-views a:hover,
+.rw-river-page .rw-river-views a:focus,
+.rw-river-page .rw-river-views a:active {
+  text-decoration: none;
+  border-color: var(--cd-reliefweb-brand-grey--light);
+}
+.rw-river-page .rw-river-views .rw-river-views__list__item--selected a {
+  border-color: var(--cd-reliefweb-brand-red--dark);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .rw-river-page .rw-river-views a {
+    font-size: 20px;
+  }
+  .rw-river-page .rw-river-views .rw-river-views__list__item--selected a {
+    font-size: var(--cd-font-size--large);
+  }
+}

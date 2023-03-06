@@ -1,0 +1,23 @@
+uuid: 7396fffe-3e83-4967-9787-a34a90391203
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_rss_link
+    - paragraphs.paragraphs_type.rss_feed
+  module:
+    - link
+id: paragraph.rss_feed.field_rss_link
+field_name: field_rss_link
+entity_type: paragraph
+bundle: rss_feed
+label: 'RSS Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

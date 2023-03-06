@@ -1,0 +1,74 @@
+uuid: 9c9110b4-725f-4bb3-b851-77d087932b7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_custom_content
+    - field.field.node.landing_page.field_image_caption
+    - field.field.node.landing_page.field_landing_page_image
+    - node.type.landing_page
+  module:
+    - layout_builder
+    - layout_builder_restrictions
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  layout_builder_restrictions:
+    allowed_block_categories:
+      - 'Chaos Tools'
+      - 'Content fields'
+      - Devel
+      - Forms
+      - 'Lists (Views)'
+      - Menus
+      - 'OCHA Search'
+      - 'Social Auth'
+      - System
+      - core
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
+      restricted_categories:
+        - 'Chaos Tools'
+        - Devel
+        - Forms
+        - 'Lists (Views)'
+        - Menus
+        - 'OCHA Search'
+        - 'Social Auth'
+        - System
+        - core
+id: node.landing_page.card
+targetEntityType: node
+bundle: landing_page
+mode: card
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 160
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_landing_page_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_custom_content: true
+  field_image_caption: true
+  langcode: true
+  layout_builder__layout: true
+  links: true

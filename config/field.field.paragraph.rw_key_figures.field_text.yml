@@ -1,0 +1,26 @@
+uuid: aeb2559e-e943-4072-af1c-8112a20215ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.rw_key_figures
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - ckeditor
+id: paragraph.rw_key_figures.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: rw_key_figures
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,63 @@
+uuid: 8da7b94c-0bd3-4dc1-9fd2-4e865850ec74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.node.field_display_mode
+    - field.field.paragraph.node.field_node
+    - field.field.paragraph.node.field_term
+    - field.field.paragraph.node.field_text
+    - field.field.paragraph.node.field_title
+    - paragraphs.paragraphs_type.node
+  module:
+    - text
+id: paragraph.node.default
+targetEntityType: paragraph
+bundle: node
+mode: default
+content:
+  field_display_mode:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_node:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_term:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_text:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

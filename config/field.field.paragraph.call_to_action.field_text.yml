@@ -1,0 +1,26 @@
+uuid: baa2c0e1-d96c-4d5c-ac67-f8cd38b86eed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.call_to_action
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - ckeditor
+id: paragraph.call_to_action.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: call_to_action
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,26 @@
+uuid: a27c26cc-b028-4936-b6e1-cdfd27ddb4be
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.rss_feed
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - ckeditor
+id: paragraph.rss_feed.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: rss_feed
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

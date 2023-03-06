@@ -12,9 +12,6 @@
     },
     "drupal/xmlsitemap": {
       "https://www.drupal.org/project/xmlsitemap/issues/3323148": "https://git.drupalcode.org/project/xmlsitemap/-/merge_requests/23.diff"
-    },
-    "unocha/common_design": {
-      "Drupal 10 compatibility": "patches/common_design-drupal-10-compatibility.patch"
     }
   }
 }

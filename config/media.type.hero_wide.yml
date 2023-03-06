@@ -1,0 +1,13 @@
+uuid: 20978a74-6238-4f3e-8590-a080380e7de8
+langcode: en
+status: true
+dependencies: {  }
+id: hero_wide
+label: 'Hero wide'
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_1
+field_map: {  }
