@@ -98,7 +98,7 @@ class InstallHelper implements ContainerInjectionInterface {
 
         // Prepare content.
         $values = [
-          'type' => 'landing_page',
+          'type' => 'demo',
           'title' => $data['title'],
         ];
         // Fields mapping starts.

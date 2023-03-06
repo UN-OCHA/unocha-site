@@ -3,13 +3,13 @@ status: true
 dependencies:
     config:
         - field.storage.node.body
-        - node.type.landing_page
+        - node.type.demo
     module:
         - text
-id: node.landing_page.body
+id: node.demo.body
 field_name: body
 entity_type: node
-bundle: landing_page
+bundle: demo
 label: Body
 description: ''
 required: false

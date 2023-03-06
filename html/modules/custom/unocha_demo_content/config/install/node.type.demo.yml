@@ -4,8 +4,8 @@ dependencies:
   enforced:
     module:
       - unocha_demo_content
-name: 'Landing page'
-type: landing_page
+name: 'Demo'
+type: demo
 description: 'Demo content type'
 help: ''
 new_revision: false

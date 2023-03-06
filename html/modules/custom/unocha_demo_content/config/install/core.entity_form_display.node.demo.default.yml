@@ -2,19 +2,19 @@ langcode: en
 status: true
 dependencies:
     config:
-        - field.field.node.landing_page.body
-        - node.type.landing_page
+        - field.field.node.demo.body
+        - node.type.demo
     module:
         - text
         - user
-id: node.landing_page.default
+id: node.demo.default
 targetEntityType: node
-bundle: landing_page
+bundle: demo
 mode: default
 content:
     body:
         label: hidden
-        type: text_default
+        type: text_textarea_with_summary
         weight: 101
         settings: {  }
         third_party_settings: {  }
