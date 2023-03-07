@@ -1,0 +1,33 @@
+uuid: 4b61ba62-2ee5-4fb2-abc2-3aab20033699
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.canto_images
+    - field.field.paragraph.canto_image.field_image
+    - paragraphs.paragraphs_type.canto_image
+  module:
+    - entity_browser
+id: paragraph.canto_image.default
+targetEntityType: paragraph
+bundle: canto_image
+mode: default
+content:
+  field_image:
+    type: entity_browser_entity_reference
+    weight: 0
+    region: content
+    settings:
+      entity_browser: canto_images
+      field_widget_display: rendered_entity
+      field_widget_edit: false
+      field_widget_remove: true
+      field_widget_replace: true
+      open: true
+      field_widget_display_settings:
+        view_mode: default
+      selection_mode: selection_append
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

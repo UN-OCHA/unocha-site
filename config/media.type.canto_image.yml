@@ -1,0 +1,24 @@
+uuid: e97315e3-4c0c-441e-85ff-4c8aad6dab07
+langcode: en
+status: true
+dependencies:
+  module:
+    - canto_connector
+id: canto_image
+label: 'Canto Image'
+description: ''
+source: cantodam_asset
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_cantodam_asset_id
+  metadata_field: field_cantodam_asset_metadata
+field_map:
+  description: field_image_description
+  file: field_canto_asset_image
+  metadata: field_cantodam_asset_metadata
+  uuid: field_cantodam_asset_id
+  name: name
+  copyright: field_image_copyright
+  width: field_image_width
+  height: field_image_height

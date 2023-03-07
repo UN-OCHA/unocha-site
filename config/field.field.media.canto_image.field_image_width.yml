@@ -1,0 +1,23 @@
+uuid: 09e801c9-b991-45af-be82-47f31a3767d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_image_width
+    - media.type.canto_image
+id: media.canto_image.field_image_width
+field_name: field_image_width
+entity_type: media
+bundle: canto_image
+label: Width
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

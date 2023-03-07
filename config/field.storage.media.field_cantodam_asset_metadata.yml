@@ -1,0 +1,19 @@
+uuid: ea2d5b3a-b868-4048-97c8-5542d98ac9d6
+langcode: en
+status: true
+dependencies:
+  module:
+    - json_field
+    - media
+id: media.field_cantodam_asset_metadata
+field_name: field_cantodam_asset_metadata
+entity_type: media
+type: json_native
+settings: {  }
+module: json_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
