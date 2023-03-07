@@ -135,7 +135,7 @@ jobs:
         uses: cafuego/command-output@main
         with:
           run: |
-            docker-compose -f tests/docker-compose.yml exec -T drupal drush -y cim
+            docker-compose -f tests/docker-compose.yml exec -T drupal drush -y en unocha_demo_content
         env:
           fail-fast: true
 
