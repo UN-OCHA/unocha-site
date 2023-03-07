@@ -2490,12 +2490,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/orakili/canto_connector.git",
-                "reference": "006ff721466dda110eb8123847482ca9277a3c16"
+                "reference": "3ff98346be2d3acc4df79debc0cb6ef0278daec6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orakili/canto_connector/zipball/006ff721466dda110eb8123847482ca9277a3c16",
-                "reference": "006ff721466dda110eb8123847482ca9277a3c16",
+                "url": "https://api.github.com/repos/orakili/canto_connector/zipball/3ff98346be2d3acc4df79debc0cb6ef0278daec6",
+                "reference": "3ff98346be2d3acc4df79debc0cb6ef0278daec6",
                 "shasum": ""
             },
             "require": {
@@ -2517,7 +2517,7 @@
                 }
             ],
             "description": "DAM integration with Canto.",
-            "time": "2023-03-03T06:04:58+00:00"
+            "time": "2023-03-07T00:56:33+00:00"
         },
         {
             "name": "drupal/coder",
