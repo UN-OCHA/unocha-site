@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - unocha_demo_content
+name: 'Demo'
+type: demo
+description: 'Demo content type'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

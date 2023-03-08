@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+    config:
+        - field.field.node.demo.body
+        - node.type.demo
+    module:
+        - text
+        - user
+id: node.demo.default
+targetEntityType: node
+bundle: demo
+mode: default
+content:
+    body:
+        label: hidden
+        type: text_textarea_with_summary
+        weight: 101
+        settings: {  }
+        third_party_settings: {  }
+    links:
+        weight: 100
+hidden: {  }

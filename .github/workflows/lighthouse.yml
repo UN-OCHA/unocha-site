@@ -1,16 +1,17 @@
-name: Run tests
-
-on: [pull_request]
+name: Lighthouse CI
+on:
+  pull_request:
+    types: [labeled, unlabeled, opened, edited, synchronize, reopened]
 
 jobs:
-  tests:
+  setup:
     runs-on: ubuntu-latest
 
     steps:
       - name: Setup PHP with PECL extension
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.1
+          php-version: 8.2
           tools: composer
         env:
           fail-fast: true
@@ -21,6 +22,7 @@ jobs:
         with:
           run: |
             php --version && composer --version
+
       - name: Checkout Code
         id: checkout
         uses: actions/checkout@v3
@@ -79,6 +81,7 @@ jobs:
             docker-compose -f tests/docker-compose.yml up -d
             sleep 10
             docker ps -a
+            docker-compose -f tests/docker-compose.yml exec -T drupal sed -i 's/display_errors = Off/display_errors = On/' /etc/php82/php.ini
             docker-compose -f tests/docker-compose.yml exec -w /srv/www -T drupal composer install
         env:
           fail-fast: true
@@ -107,6 +110,11 @@ jobs:
         env:
           fail-fast: true
 
+      - name: Debug Stack
+        uses: cafuego/command-output@main
+        with:
+          run: docker ps -a
+
       - name: Run tests
         id: tests
         uses: cafuego/command-output@main
@@ -119,6 +127,16 @@ jobs:
             docker-compose -f tests/docker-compose.yml exec -T drupal mkdir -p /srv/www/html/sites/default/files/browser_output
             docker-compose -f tests/docker-compose.yml exec -T drupal chmod -R 777 /srv/www/html/sites/default/files/browser_output
             docker-compose -f tests/docker-compose.yml exec -T -w /srv/www -e XDEBUG_MODE=coverage -e BROWSERTEST_OUTPUT_DIRECTORY=/srv/www/html/sites/default/files/browser_output -e DTT_BASE_URL=http://127.0.0.1 drupal ./vendor/bin/phpunit --coverage-clover /srv/www/html/build/logs/clover.xml --debug
+        env:
+          fail-fast: true
+
+      - name: Install demo content
+        id: content
+        uses: cafuego/command-output@main
+        with:
+          run: |
+            docker-compose -f tests/docker-compose.yml exec -T drupal drush -y en unocha_demo_content
+            curl -v http://127.0.0.1:8080
         env:
           fail-fast: true
 
@@ -148,7 +166,7 @@ jobs:
         uses: peter-evans/find-comment@v2
         id: fc
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.pull_request.number }}
           comment-author: 'github-actions[bot]'
           body-includes: Build output
@@ -156,7 +174,7 @@ jobs:
       - name: Create or update comment
         uses: peter-evans/create-or-update-comment@v2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           comment-id: ${{ steps.fc.outputs.comment-id }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
@@ -177,6 +195,23 @@ jobs:
 
             *Pusher: @${{ github.actor }}, Action: `${{ github.event_name }}`, Workflow: `${{ github.workflow }}`*
           edit-mode: replace
+
+      - name: Debug Stack
+        if: contains(github.event.pull_request.labels.*.name, 'performance')
+        uses: cafuego/command-output@main
+        with:
+          run: docker ps -a
+
+      - name: Audit URLs using Lighthouse
+        # Run Lighthouse if the PR has the label "performance"
+        if: contains(github.event.pull_request.labels.*.name, 'performance')
+        uses: treosh/lighthouse-ci-action@v9
+        with:
+          urls: |
+            http://127.0.0.1:8080/demo
+          budgetPath: .github/workflows/lighthouse-budget.json # test performance budgets
+          uploadArtifacts: true # save results as an action artifacts
+          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
 
       - name: Slack Success Notification
         id: slack_success
