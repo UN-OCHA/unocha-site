@@ -1,14 +1,23 @@
-{
-  "ci": {
-    "assert": {
-      "assertions": {
-        "first-contentful-paint": [
-          "error",
-          {
-            "minScore": 0.6
-          }
-        ]
+[
+  {
+    "path": "/*",
+    "resourceSizes": [
+      {
+        "resourceType": "document",
+        "budget": 60
+      },
+      {
+        "resourceType": "script",
+        "budget": 150
+      },
+      {
+        "resourceType": "stylesheet",
+        "budget": 20
+      },
+      {
+        "resourceType": "total",
+        "budget": 700
       }
-    }
+    ]
   }
-}
+]
