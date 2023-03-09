@@ -1,7 +1,0 @@
-type: module
-name: UNOCHA ReliefWeb
-description: 'Provides integration with ReliefWeb.'
-package: unocha
-core_version_requirement: ^9 || ^10
-dependencies:
-  - drupal:unocha_utility
