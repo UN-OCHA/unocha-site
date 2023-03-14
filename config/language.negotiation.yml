@@ -5,8 +5,17 @@ session:
 url:
   source: path_prefix
   prefixes:
+    ar: ar
+    zh-hans: zh
     en: ''
-    '': null
+    fr: fr
+    es: es
+    ru: ru
   domains:
+    ar: ''
+    zh-hans: ''
     en: ''
+    fr: ''
+    es: ''
+    ru: ''
 selected_langcode: site_default

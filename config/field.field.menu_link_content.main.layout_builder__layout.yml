@@ -1,0 +1,21 @@
+uuid: 3216a435-b2fd-4fc4-822b-3e8b06133372
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.layout_builder__layout
+    - system.menu.main
+  module:
+    - layout_builder
+id: menu_link_content.main.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: menu_link_content
+bundle: main
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

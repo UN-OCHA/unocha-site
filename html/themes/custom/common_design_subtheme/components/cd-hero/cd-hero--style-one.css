@@ -1,7 +1,6 @@
 /**
  * CD Hero: Style One
  */
-
 .cd-hero--style-one .cd-hero__container {
   background: rgba(0, 0, 0, 0.85);
 }
@@ -19,7 +18,24 @@
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
 
+@media (min-width: 767px) {
+  .cd-hero__image {
+    height: 33rem;
+    /* 533px */
+  }
+}
+
 @media (min-width: 1024px) {
+  .cd-hero {
+    height: 66rem;
+    /* 1067px */
+  }
+
+  .cd-hero__image {
+    height: 66rem;
+    /* 1067px */
+  }
+
   .cd-hero--style-one::after {
     position: absolute;
     right: 0;

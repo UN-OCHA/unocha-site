@@ -4,78 +4,121 @@
   justify-content: flex-end;
 }
 
-.menu--main {
-  order: 2;
-}
-.active-responses-menu {
-  order: 1;
+/* So the mega menu and normal menus play nice together */
+@media (min-width: 1024px) {
+  .cd-site-header__nav-holder nav[role="navigation"].cd-nav {
+    position: unset;
+  }
+  .cd-site-header__nav-holder nav[role="navigation"] li.menu-item.menu-item--expanded {
+    position: relative;
+  }
 }
 
-/* Temporary rules for mega menu display */
-.active-responses-menu.desktop-only {
-  display: none;
-}
 @media (min-width: 1024px) {
-  .active-responses-menu.desktop-only {
+  .uno-mega-menu {
+    background: var(--brand-grey);
+    position: absolute;
+    z-index: var(--cd-z-dropdown);
+    color: var(--cd-default-text-color);
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 1.5rem 0;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
+    top: calc(var(--cd-global-header-height) + var(--cd-site-header-height) + 6px);
+  }
+
+  /* Add 39px for the admin menu toolbar */
+  .user-logged-in .uno-mega-menu {
+    top: calc(var(--cd-global-header-height) + var(--cd-site-header-height) + 6px + 39px);
+  }
+}
+
+.layout--mega-menu a {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0;
+  text-align: left;
+  text-decoration: none;
+  color: var(--cd-default-text-color);
+}
+
+.uno-mega-menu__block ul span {
+  font-weight: bold;
+  display: none;
+  margin: 0 0 1rem;
+}
+
+@media (min-width: 1024px) {
+  .uno-mega-menu__block ul span {
     display: block;
   }
-}
 
-.menu--main .cd-nav__menu--level-1 > li:last-child {
-  display: block;
-}
-@media (min-width: 1024px) {
-  .menu--main .cd-nav__menu--level-1 > li:last-child {
-    display: none;
+  .uno-mega-menu__block + .uno-mega-menu__block {
+    margin-top: 1.5rem;
   }
 }
 
-.uno-mega-menu {
-  background: var(--brand-grey);
-  position: absolute;
-  z-index: var(--cd-z-dropdown);
-  color: var(--cd-white);
-  width: 100%;
-  left: 0;
-  right: 0;
-  padding: 1.5rem 0;
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
-  top: calc(var(--cd-global-header-height) + var(--cd-site-header-height) + 6px);
-}
-
-/* Add 39px for the admin menu toolbar */
-.user-logged-in .uno-mega-menu {
-  top: calc(var(--cd-global-header-height) + var(--cd-site-header-height) + 6px + 39px);
-}
-
-.cd-site-header__nav-holder .uno-mega-menu ul {
+.uno-mega-menu .uno-mega-menu__wrapper ul {
   list-style-type: none;
-  display: block;
-  columns: 4;
-}
-
-.uno-mega-menu ul li {
-  margin: 0;
   padding: 0;
 }
+
 .uno-mega-menu ul li a {
-  padding: 0 0 1rem;
+  padding: 15px 30px;
   display: block;
 }
 
-.active-responses-menu button {
-  width: auto;
+@media (min-width: 1024px) {
+  .uno-mega-menu .uno-mega-menu__wrapper {
+    display: block;
+    columns: 4;
+  }
+
+  .uno-mega-menu__block ul {
+    --dropdown: false;
+  }
+
+  .uno-mega-menu ul li a {
+    padding: 0 0 1rem;
+  }
 }
 
-.active-responses-menu button:hover {
-  background: var(--brand-grey);
+/* It annoys me */
+.contextual {
+  display: none;
 }
 
-.active-responses-menu button:focus {
-  background: var(--cd-white);
+/* Third level menu items */
+@media (min-width: 1024px) {
+  .cd-site-header__nav-holder nav[role="navigation"] li.menu-item.menu-item--expanded.cd-nav__menu-item--level-2 {
+    --dropdown: false;
+  }
+
+  .cd-site-header__nav-holder nav[role="navigation"] li.menu-item.menu-item--expanded.cd-nav__menu-item--level-2 button::before {
+    background: transparent
+  }
+
+  .cd-nav > .menu > li > ul > li.menu-item--active-trail {
+    border-inline-start: 0 none;
+  }
+
+  .cd-nav > .menu > li > ul > li.menu-item--active-trail svg {
+    display: none;
+  }
+
+  .cd-nav > .menu > li > ul > li.menu-item--active-trail .cd-nav-level-2__btn-label {
+    display: flex;
+    color: var(--cd-black);
+    font-weight: 700;
+    padding: 0 15px;
+  }
 }
 
-.active-responses-menu button:focus::before {
-  background: var(--brand-highlight);
+.menu-item--expanded .menu-item--expanded [aria-expanded="true"] + ul {
+  display: block;
 }
 
+.menu-item--expanded .menu-item--expanded [aria-expanded="false"] + ul {
+  display: none;
+}
