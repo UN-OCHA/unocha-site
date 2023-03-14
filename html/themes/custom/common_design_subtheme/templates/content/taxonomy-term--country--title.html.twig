@@ -28,13 +28,4 @@
  * @see common_design_subtheme_preprocess_taxonomy_term()
  */
 #}
-<article{{ attributes
-  .addClass([
-    'taxonomy-term',
-    'taxonomy-term--' ~ term.bundle(),
-    'taxonomy-term--full',
-    'taxonomy-term--' ~ term.bundle() ~ '--full'
-  ])
-}}>
-  {{ content }}
-</article>
+<a href="{{ url }}">{{ name }}</a>
