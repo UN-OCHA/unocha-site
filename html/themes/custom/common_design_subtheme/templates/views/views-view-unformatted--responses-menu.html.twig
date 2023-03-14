@@ -15,9 +15,22 @@
  * @see template_preprocess_views_view_unformatted()
  */
 #}
-{% if title %}
-  <span>{{ title }}</span>
-{% endif %}
-{% for row in rows %}
-  {{- row.content -}}
-{% endfor %}
+<div class="uno-mega-menu__block">
+  {%
+    set attributes =  create_attribute({
+      'data-cd-toggable': title,
+      'data-cd-icon': 'arrow-down',
+      'data-cd-component': 'uno-mega-menu',
+      'data-cd-replace': id,
+      'id': ('uno-mega-menu-' ~ id)|clean_id,
+    })
+  %}
+  <ul{{ attributes }}>
+    {% if title %}
+      <span>{{ title }}</span>
+    {% endif %}
+    {% for row in rows %}
+      <li class="menu-item">{{- row.content -}}</li>
+    {% endfor %}
+  </ul>
+</div>

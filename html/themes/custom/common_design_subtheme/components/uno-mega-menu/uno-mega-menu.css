@@ -43,47 +43,45 @@
   color: var(--cd-default-text-color);
 }
 
-.uno-mega-menu span {
+.uno-mega-menu__block ul span {
   font-weight: bold;
-  display: block;
-  margin: 0 0 0.5rem;
-}
-
-.uno-mega-menu a + span {
-  margin-top: 1.5rem;
+  display: none;
+  margin: 0 0 1rem;
 }
 
 @media (min-width: 1024px) {
-  .uno-mega-menu ul {
-    list-style-type: none;
+  .uno-mega-menu__block ul span {
     display: block;
-    columns: 4;
-    padding: 0;
+  }
+
+  .uno-mega-menu__block + .uno-mega-menu__block {
+    margin-top: 1.5rem;
   }
 }
 
-.uno-mega-menu ul li {
-  margin: 0;
+.uno-mega-menu .uno-mega-menu__wrapper ul {
+  list-style-type: none;
   padding: 0;
 }
+
 .uno-mega-menu ul li a {
-  padding: 0 0 1rem;
+  padding: 15px 30px;
   display: block;
 }
 
+@media (min-width: 1024px) {
+  .uno-mega-menu .uno-mega-menu__wrapper {
+    display: block;
+    columns: 4;
+  }
 
+  .uno-mega-menu__block ul {
+    --dropdown: false;
+  }
 
-.active-responses-menu button {
-  width: auto;
-}
-.active-responses-menu button:hover {
-  background: var(--brand-grey);
-}
-.active-responses-menu button:focus {
-  background: var(--cd-white);
-}
-.active-responses-menu button:focus::before {
-  background: var(--brand-highlight);
+  .uno-mega-menu ul li a {
+    padding: 0 0 1rem;
+  }
 }
 
 /* It annoys me */
@@ -91,9 +89,29 @@
   display: none;
 }
 
+/* Third level menu items */
 @media (min-width: 1024px) {
   .cd-site-header__nav-holder nav[role="navigation"] li.menu-item.menu-item--expanded.cd-nav__menu-item--level-2 {
     --dropdown: false;
+  }
+
+  .cd-site-header__nav-holder nav[role="navigation"] li.menu-item.menu-item--expanded.cd-nav__menu-item--level-2 button::before {
+    background: transparent
+  }
+
+  .cd-nav > .menu > li > ul > li.menu-item--active-trail {
+    border-inline-start: 0 none;
+  }
+
+  .cd-nav > .menu > li > ul > li.menu-item--active-trail svg {
+    display: none;
+  }
+
+  .cd-nav > .menu > li > ul > li.menu-item--active-trail .cd-nav-level-2__btn-label {
+    display: flex;
+    color: var(--cd-black);
+    font-weight: 700;
+    padding: 0 15px;
   }
 }
 
