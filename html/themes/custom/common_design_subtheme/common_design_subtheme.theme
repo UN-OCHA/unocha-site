@@ -41,9 +41,6 @@ function common_design_subtheme_preprocess_menu(array &$variables) {
     // Mark items as using a mega menu when the Mega menu viewmode is selected.
     foreach ($variables['items'] as &$item) {
       $item['mega_menu'] = $item['content']['#view_mode'] == 'mega_menu';
-      /** @var \Drupal\Core\Template\Attribute $attributes */
-      $attributes = $item['#item']['attributes'];
-      $attributes->addClass('mega--menu');
     }
   }
 }
