@@ -33,6 +33,7 @@
 .paragraph--type--card-list .field--name-field-card > .field__item,
 .paragraph--type--list--card .paragraph--type--node .erd-list--card > .field__item,
 .paragraph--type--node-list.node-list--view-mode--card .view .views-row,
+.paragraph--type--node-list.node-list--view-mode--card article,
 .view-display-id-page__humanitarian_response_plans .view-content .views-row,
 .view-display-id-page__regional_response_plans .view-content .views-row,
 .view-display-id-page__flash_appeals .view-content .views-row,
@@ -66,4 +67,10 @@
   .view-display-id-page__stories .view-content {
     --uno-card-list-num-cols: 3;
   }
+}
+
+/* Promoted item to span full width */
+.paragraph--type--node-list.node-list--view-mode--card article.node--sticky.uno-card {
+  flex: 1 0 100%;
+  border-color: pink;
 }
