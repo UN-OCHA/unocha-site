@@ -1,0 +1,8 @@
+uuid: 71a2bede-b47d-4317-aa25-79ae0464d33f
+langcode: en
+status: true
+dependencies: {  }
+id: latest
+label: Latest
+description: ''
+locked: false
