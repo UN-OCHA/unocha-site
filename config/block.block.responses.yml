@@ -22,8 +22,4 @@ settings:
   level: 1
   depth: 1
   expand_all_items: false
-visibility:
-  request_path:
-    id: request_path
-    negate: false
-    pages: "/active-responses\r\n/humanitarian-response-plans\r\n/flash-appeals\r\n/regional-response-plans\r\n/other\r\n<front>\r\n/taxonomy/term/*"
+visibility: {  }

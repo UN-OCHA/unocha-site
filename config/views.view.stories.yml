@@ -6,7 +6,9 @@ dependencies:
     - core.entity_view_mode.node.card
     - node.type.story
     - taxonomy.vocabulary.country
+    - taxonomy.vocabulary.regional_offices
     - taxonomy.vocabulary.story
+    - taxonomy.vocabulary.theme
   content:
     - 'taxonomy_term:story:615ee19e-e550-46b7-a3b8-feb36eef5cec'
   module:
@@ -77,15 +79,17 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: mini
+        type: full
         options:
           offset: 0
-          items_per_page: 6
+          items_per_page: 10
           total_pages: null
           id: 0
           tags:
             next: ››
             previous: ‹‹
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -94,6 +98,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          quantity: 9
       exposed_form:
         type: basic
         options:
@@ -562,6 +567,150 @@ display:
             group_items: {  }
           reduce_duplicates: false
           vid: country
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_theme_target_id:
+          id: field_theme_target_id
+          table: node__field_theme
+          field: field_theme_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_theme_target_id_op
+            label: Theme
+            description: ''
+            use_operator: false
+            operator: field_theme_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_theme_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: theme
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_regional_office_target_id:
+          id: field_regional_office_target_id
+          table: node__field_regional_office
+          field: field_regional_office_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_regional_office_target_id_op
+            label: Region
+            description: ''
+            use_operator: false
+            operator: field_regional_office_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_regional_office_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: regional_offices
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_story_type_target_id:
+          id: field_story_type_target_id
+          table: node__field_story_type
+          field: field_story_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_story_type_target_id_op
+            label: 'Story type'
+            description: ''
+            use_operator: false
+            operator: field_story_type_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_story_type_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: story
           type: select
           hierarchy: false
           limit: true
