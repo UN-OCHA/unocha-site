@@ -3,18 +3,43 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.call_to_action.field_call_to_action_layout
     - field.field.paragraph.call_to_action.field_destination
     - field.field.paragraph.call_to_action.field_text
     - field.field.paragraph.call_to_action.field_title
     - paragraphs.paragraphs_type.call_to_action
   module:
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_discovery
+    - layout_paragraphs
     - link
     - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
+      restricted_categories: {  }
 id: paragraph.call_to_action.default
 targetEntityType: paragraph
 bundle: call_to_action
 mode: default
 content:
+  field_call_to_action_layout:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_destination:
     type: link
     label: hidden
@@ -42,4 +67,5 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  layout_builder__layout: true
