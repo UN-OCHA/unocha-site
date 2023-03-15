@@ -94,6 +94,9 @@
 <article{{ attributes.addClass(classes) }}>
   {# {% set destination = paragraph.field_destination.0.url %} #}
   <div class="uno-card__content cd-card__container [ cd-flow ]">
+    {% if node.isSticky %}
+      <span class="uno-featured">{% trans %}Featured{% endtrans %}</span>
+    {% endif %}
     <a href="{{ url }}">{{ label }}</a>
     {{ content }}
     <a class="cd-button cd-button--small cd-button--icon" href="{{ url }}">
