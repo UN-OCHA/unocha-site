@@ -11,5 +11,8 @@ icon_default: null
 description: ''
 behavior_plugins:
   layout_paragraphs:
-    enabled: false
-    available_layouts: {  }
+    enabled: true
+    available_layouts:
+      layout_twocol: 'Two column'
+      layout_threecol: 'Three column'
+      layout_fourcol: 'Four column'

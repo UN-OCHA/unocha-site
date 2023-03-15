@@ -14,6 +14,5 @@ behavior_plugins:
     enabled: true
     available_layouts:
       layout_twocol: 'Two column'
-      cards: Cards
       layout_threecol: 'Three column'
       layout_fourcol: 'Four column'
