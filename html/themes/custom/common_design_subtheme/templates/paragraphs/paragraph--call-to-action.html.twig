@@ -35,7 +35,9 @@
   }}>
     {% block content %}
     {{ content|without('field_destination')}}
-      <a id="cta--{{ paragraph.id() }}" class="cd-button cd-button--outline cd-button--bold cd-button--wide cd-button--uppercase call-to-action" href="{{ destination }}" target="_blank">{{ link_text }}</a>
+      {% if fcontent.field_destination %}
+        <a id="cta--{{ paragraph.id() }}" class="cd-button cd-button--outline cd-button--bold cd-button--wide cd-button--uppercase call-to-action" href="{{ destination }}" target="_blank">{{ link_text }}</a>
+      {% endif %}
     {% endblock %}
   </div>
 {% endblock paragraph %}
