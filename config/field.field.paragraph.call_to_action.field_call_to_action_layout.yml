@@ -1,0 +1,76 @@
+uuid: f4c746ac-6c65-464c-8466-4b6c9bd3b1b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_call_to_action_layout
+    - paragraphs.paragraphs_type.call_to_action
+    - paragraphs.paragraphs_type.layout
+  module:
+    - entity_reference_revisions
+id: paragraph.call_to_action.field_call_to_action_layout
+field_name: field_call_to_action_layout
+entity_type: paragraph
+bundle: call_to_action
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      layout: layout
+    negate: 0
+    target_bundles_drag_drop:
+      call_to_action:
+        weight: 17
+        enabled: false
+      canto_image:
+        weight: 18
+        enabled: false
+      card:
+        weight: 19
+        enabled: false
+      card_list:
+        weight: 20
+        enabled: false
+      datawrapper:
+        weight: 21
+        enabled: false
+      embed:
+        weight: 22
+        enabled: false
+      image_caption:
+        weight: 23
+        enabled: false
+      layout:
+        weight: 24
+        enabled: true
+      node:
+        weight: 25
+        enabled: false
+      node_list:
+        weight: 26
+        enabled: false
+      reliefweb_document:
+        weight: 27
+        enabled: false
+      reliefweb_river:
+        weight: 28
+        enabled: false
+      rss_feed:
+        weight: 29
+        enabled: false
+      rw_key_figures:
+        weight: 30
+        enabled: false
+      text:
+        weight: 31
+        enabled: false
+      video:
+        weight: 32
+        enabled: false
+field_type: entity_reference_revisions
