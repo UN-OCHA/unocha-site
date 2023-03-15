@@ -309,7 +309,7 @@ button[aria-expanded] .cd-icon--arrow-down {
   background: var(--brand-grey);
 }
 
-.cd-soft-footer .cd-soft-footer__inner > nav {
+.cd-soft-footer .cd-soft-footer__inner .cd-soft-footer__nav-wrapper nav {
   margin-bottom: 1rem;
 }
 
@@ -371,3 +371,33 @@ a.cd-footer-social__link svg {
   background-color: var(--brand-highlight);
   padding: 0 1rem;
  }
+
+.views-exposed-form.cd-form .cd-form--inline,
+.views-exposed-form.cd-form .cd-form--inline label,
+.views-exposed-form.cd-form .cd-form--inline .cd-form__item {
+  display: block;
+}
+
+@media (min-width: 767px) {
+  .views-exposed-form.cd-form .cd-form--inline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .views-exposed-form.cd-form .cd-form--inline > div {
+    flex: 1 0 20%;
+    max-width: 20%;
+  }
+
+  .views-exposed-form.cd-form .cd-form--inline .form-actions {
+    text-align: right;
+  }
+}
+
+/* Prevent devel generated content with long string filenames breaking layout */
+.view-media-centre .cd-caption {
+  word-wrap: break-word;
+  max-width: 200px;
+}
