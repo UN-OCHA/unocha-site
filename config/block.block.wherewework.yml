@@ -1,0 +1,31 @@
+uuid: 59ef6e9b-38dd-4db0-b4c4-e44432e835b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.where-we-work
+  module:
+    - menu_block
+  theme:
+    - common_design_subtheme
+id: wherewework
+theme: common_design_subtheme
+region: footer_soft
+weight: -8
+provider: null
+plugin: 'menu_block:where-we-work'
+settings:
+  id: 'menu_block:where-we-work'
+  label: 'Where we work'
+  label_display: visible
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'where-we-work:'
+  suggestion: where_we_work
+visibility: {  }

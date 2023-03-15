@@ -1,6 +1,6 @@
 uuid: 0a9b1048-68c1-4f9d-b571-c6df9ec71971
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - system.menu.responses
@@ -16,8 +16,8 @@ provider: null
 plugin: 'system_menu_block:responses'
 settings:
   id: 'system_menu_block:responses'
-  label: Responses
-  label_display: '0'
+  label: 'Current emergencies'
+  label_display: visible
   provider: system
   level: 1
   depth: 1
