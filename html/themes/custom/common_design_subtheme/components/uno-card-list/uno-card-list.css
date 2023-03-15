@@ -24,7 +24,8 @@
 .view-display-id-page__regional_response_plans .view-content,
 .view-display-id-page__flash_appeals .view-content,
 .view-display-id-page__other .view-content,
-.view-display-id-page__stories .view-content {
+.view-display-id-page__stories .view-content,
+.view-media-centre .view-content {
   display: flex;
   flex-flow: row wrap;
   gap: var(--uno-card-list-gap-size);
@@ -38,7 +39,9 @@
 .view-display-id-page__regional_response_plans .view-content .views-row,
 .view-display-id-page__flash_appeals .view-content .views-row,
 .view-display-id-page__other .view-content .views-row,
-.view-display-id-page__stories .view-content .views-row {
+.view-display-id-page__stories .view-content .views-row,
+.view-display-id-page__stories .view-content article,
+.view-media-centre .view-content article {
   /* stylelint-disable-next-line max-line-length */
   flex: 0 1 calc((100% / var(--uno-card-list-num-cols)) - var(--uno-card-list-gap-size) + var(--uno-card-list-gap-size) / var(--uno-card-list-num-cols));
 }
@@ -51,7 +54,8 @@
   .view-display-id-page__regional_response_plans .view-content,
   .view-display-id-page__flash_appeals .view-content,
   .view-display-id-page__other .view-content,
-  .view-display-id-page__stories .view-content {
+  .view-display-id-page__stories .view-content,
+  .view-media-centre .view-content {
     --uno-card-list-num-cols: 2;
   }
 }
@@ -64,7 +68,8 @@
   .view-display-id-page__regional_response_plans .view-content,
   .view-display-id-page__flash_appeals .view-content,
   .view-display-id-page__other .view-content,
-  .view-display-id-page__stories .view-content {
+  .view-display-id-page__stories .view-content,
+  .view-media-centre .view-content {
     --uno-card-list-num-cols: 3;
   }
 }
