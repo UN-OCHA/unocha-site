@@ -74,16 +74,6 @@
     {% endblock %}
   {% endif %}
 
-  {% block hero %}
-    <div class="cd-layout-hero">
-      {% if componentsModule %}
-        {% if page.responses_nav %}
-          {% include '@uno-components/uno-nav/uno-nav.html.twig' %}
-        {% endif %}
-      {% endif %}
-    </div>
-  {% endblock %}
-
   {{ page.help }}
 
   {% block main %}
