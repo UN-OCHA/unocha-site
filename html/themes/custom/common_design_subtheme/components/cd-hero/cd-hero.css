@@ -1,10 +1,16 @@
 /**
  * CD Hero
  */
+:root {
+  --cd-max-width--hero: 1600px; /* width for 3:2 aspect ratio */
+}
 
 .cd-hero {
+  max-width: var(--cd-max-width--hero);
   position: relative;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cd-hero__image {
@@ -127,11 +133,11 @@
 }
 
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   .path-frontpage .cd-hero {
     height: 32rem;
   }
   .path-frontpage .cd-hero__image {
     height: 32rem;
   }
-}
+} */

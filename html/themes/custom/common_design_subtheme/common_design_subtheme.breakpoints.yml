@@ -1,39 +1,39 @@
-common_design.xs:
+common_design_subtheme.xs:
   label: extra small
   mediaQuery: "(min-width: 0px)"
   weight: 1
   multipliers:
     - 1x
     - 2x
-common_design.sm:
+common_design_subtheme.sm:
   label: small
   mediaQuery: "(min-width: 576px)"
   weight: 1
   multipliers:
     - 1x
     - 2x
-common_design.md:
+common_design_subtheme.md:
   label: tablet
   mediaQuery: "(min-width: 768px)"
   weight: 2
   multipliers:
     - 1x
     - 2x
-common_design.lg:
+common_design_subtheme.lg:
   label: desktop
   mediaQuery: "(min-width: 1024px)"
   weight: 3
   multipliers:
     - 1x
     - 2x
-common_design.xl:
+common_design_subtheme.xl:
   label: xlarge
   mediaQuery: "(min-width: 1200px)"
   weight: 3
   multipliers:
     - 1x
     - 2x
-common_design.xxl:
+common_design_subtheme.xxl:
   label: xxlarge
   mediaQuery: "(min-width: 1400px)"
   weight: 3
