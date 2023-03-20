@@ -1,4 +1,4 @@
-.cd-global-header,
+/* .cd-global-header,
 .js .cd-global-header__actions > * {
   background: var(--brand-grey);
 }
@@ -54,10 +54,30 @@ button[aria-expanded] .cd-icon--arrow-down {
 .cd-global-header .menu>li a,
 .cd-global-header .menu>li button {
   color: var(--cd-default-text-color);
+} */
+
+.cd-global-header {
+  background: var(--brand-primary--dark);
+}
+
+.js .cd-global-header__actions {
+  background: linear-gradient(to bottom, var(--brand-primary--dark), var(--brand-primary--dark) 33.33%, var(--cd-white) 33.33%, var(--cd-white) 66.66%, var(--brand-primary--dark) 66.66%);
+}
+
+.js .cd-global-header__actions > * {
+  background: var(--brand-primary--dark);
 }
 
 .cd-layout-highlighted {
   background: var(--brand-primary);
+}
+
+.cd-global-header__dropdown {
+  background: var(--brand-primary--dark);
+}
+
+.cd-global-header button[aria-expanded="true"]::before {
+  border-color: transparent transparent var(--brand-primary--dark);
 }
 
 #block-emergencies {
@@ -277,7 +297,77 @@ button[aria-expanded] .cd-icon--arrow-down {
   background-color: white;
 }
 
+/* Last menu item with coloured background */
 .cd-nav > .menu > .menu-item:last-child a {
   background: var(--brand-highlight);
   color: white;
 }
+
+.cd-soft-footer,
+.cd-footer {
+  color: var(--cd-default-text-color);
+  background: var(--brand-grey);
+}
+
+.cd-soft-footer .cd-soft-footer__inner > nav {
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 575px) {
+  .cd-soft-footer .cd-soft-footer__inner .cd-soft-footer__nav-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .cd-soft-footer .cd-soft-footer__nav-wrapper > nav {
+    flex: 0 1 50%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .cd-soft-footer .cd-soft-footer__nav-wrapper > nav {
+    flex: 0 1 33%;
+  }
+}
+
+.cd-footer a,
+.cd-soft-footer a,
+.cd-soft-footer h2 {
+  color: var(--cd-default-text-color);
+}
+
+.cd-footer a:hover,
+.cd-soft-footer a:hover,
+.cd-soft-footer a:focus {
+  color: var(--cd-default-text-color);
+}
+
+.cd-soft-footer__nav-responses {
+  color: var(--brand-highlight-contract);
+  background-color: var(--brand-highlight);
+  padding: 1rem;
+}
+
+
+a.cd-footer-social__link svg {
+  fill: var(--brand-primary);
+}
+
+.cd-footer-copyright svg {
+  fill: var(--cd-default-text-color);
+}
+
+.cd-mandate__logo {
+  background: url("../img/logos/ocha-lockup.svg") 0 center no-repeat;
+}
+
+.uno-subscribe {
+  padding: 3rem 0 2rem;
+}
+
+.uno-featured  {
+  display: inline-block;
+  color: var(--brand-highlight-contract);
+  background-color: var(--brand-highlight);
+  padding: 0 1rem;
+ }
