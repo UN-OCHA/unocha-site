@@ -1,0 +1,61 @@
+uuid: 63e24074-9b61-4bd2-a89c-44aef49741fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.menu_link_content.mega_menu
+    - field.field.menu_link_content.main.layout_builder__layout
+    - system.menu.main
+    - views.view.responses
+  module:
+    - layout_builder
+    - layout_builder_restrictions
+    - views
+  theme:
+    - common_design_subtheme
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_mega_menu
+        layout_settings:
+          label: 'Mega menu'
+          context_mapping: {  }
+        components:
+          aa20eb45-b4b7-4d24-8d39-cd59a136f890:
+            uuid: aa20eb45-b4b7-4d24-8d39-cd59a136f890
+            region: first
+            configuration:
+              id: 'views_block:responses-responses_menu'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts:
+        - layout_mega_menu
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
+      restricted_categories: {  }
+id: menu_link_content.main.mega_menu
+targetEntityType: menu_link_content
+bundle: main
+mode: mega_menu
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  layout_builder__layout: true

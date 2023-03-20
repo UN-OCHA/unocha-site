@@ -276,3 +276,8 @@ button[aria-expanded] .cd-icon--arrow-down {
 .cd-nav__menu-item--level-1 {
   background-color: white;
 }
+
+.cd-nav > .menu > .menu-item:last-child a {
+  background: var(--brand-highlight);
+  color: white;
+}

@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a two-column layout.
+ *
+ * Available variables:
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'layout',
+    'layout--mega-menu',
+    'uno-mega-menu'
+  ]
+%}
+
+{{ attach_library('common_design_subtheme/uno-mega-menu') }}
+
+{% if content %}
+  <div{{attributes.addClass(classes)}}>
+    {% if content.first %}
+      <div {{ region_attributes.first.addClass('layout__region', 'layout__region--first') }}>
+        <div class='cd-container'>
+          {{ content.first }}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

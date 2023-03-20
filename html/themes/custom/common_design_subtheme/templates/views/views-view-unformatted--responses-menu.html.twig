@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+<div class="uno-mega-menu__block">
+  {%
+    set attributes =  create_attribute({
+      'data-cd-toggable': title,
+      'data-cd-icon': 'arrow-down',
+      'data-cd-component': 'uno-mega-menu',
+      'data-cd-replace': id,
+      'id': ('uno-mega-menu-' ~ id)|clean_id,
+    })
+  %}
+  <ul{{ attributes }}>
+    {% if title %}
+      <span>{{ title }}</span>
+    {% endif %}
+    {% for row in rows %}
+      <li class="menu-item">{{- row.content -}}</li>
+    {% endfor %}
+  </ul>
+</div>
