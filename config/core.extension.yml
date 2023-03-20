@@ -48,6 +48,8 @@ module:
   media_library: 0
   memcache: 0
   memcache_admin: 0
+  menu_block: 0
+  menu_item_extras: 0
   menu_link_content: 0
   menu_ui: 0
   mysql: 0

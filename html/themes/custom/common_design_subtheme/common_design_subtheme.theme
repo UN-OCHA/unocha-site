@@ -32,3 +32,15 @@ function common_design_subtheme_theme_suggestions_taxonomy_term_alter(array &$su
   $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
   $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
 }
+
+/**
+ * Implements hook_preprocess_menu().
+ */
+function common_design_subtheme_preprocess_menu(array &$variables) {
+  if ($variables['menu_name'] == 'main') {
+    // Mark items as using a mega menu when the Mega menu viewmode is selected.
+    foreach ($variables['items'] as &$item) {
+      $item['mega_menu'] = $item['content']['#view_mode'] == 'mega_menu';
+    }
+  }
+}
