@@ -6,11 +6,9 @@ dependencies:
     - core.entity_view_mode.menu_link_content.mega_menu
     - field.field.menu_link_content.main.layout_builder__layout
     - system.menu.main
-    - views.view.responses
   module:
     - layout_builder
     - layout_builder_restrictions
-    - views
   theme:
     - common_design_subtheme
 third_party_settings:
@@ -23,20 +21,7 @@ third_party_settings:
         layout_settings:
           label: 'Mega menu'
           context_mapping: {  }
-        components:
-          aa20eb45-b4b7-4d24-8d39-cd59a136f890:
-            uuid: aa20eb45-b4b7-4d24-8d39-cd59a136f890
-            region: first
-            configuration:
-              id: 'views_block:responses-responses_menu'
-              label: ''
-              label_display: '0'
-              provider: views
-              context_mapping: {  }
-              views_label: ''
-              items_per_page: none
-            weight: 0
-            additional: {  }
+        components: {  }
         third_party_settings: {  }
   layout_builder_restrictions:
     allowed_block_categories: {  }

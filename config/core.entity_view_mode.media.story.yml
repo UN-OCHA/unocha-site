@@ -1,0 +1,10 @@
+uuid: 9a3c108f-7afc-4d33-b8eb-eaffabd9b851
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.story
+label: Story
+targetEntityType: media
+cache: true

@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_event_type
     - node.type.event
-    - taxonomy.vocabulary.events
 id: node.event.field_event_type
 field_name: field_event_type
 entity_type: node
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles:
-      events: events
+    target_bundles: {  }
     sort:
       field: name
       direction: asc

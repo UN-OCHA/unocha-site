@@ -1,0 +1,40 @@
+uuid: 2b243db0-5e53-42c6-ae7c-66dd7793b789
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.figures.field_figures
+    - paragraphs.paragraphs_type.figures
+  module:
+    - double_field
+id: paragraph.figures.default
+targetEntityType: paragraph
+bundle: figures
+mode: default
+content:
+  field_figures:
+    type: double_field
+    weight: 1
+    region: content
+    settings:
+      first:
+        type: textfield
+        label_display: block
+        size: 30
+        placeholder: Label
+        label: Ok
+        cols: 10
+        rows: 5
+      second:
+        type: textfield
+        label_display: block
+        size: 30
+        placeholder: Value
+        label: Ok
+        cols: 10
+        rows: 5
+      inline: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.paragraph.node.field_display_mode
     - field.field.paragraph.node.field_node
-    - field.field.paragraph.node.field_term
     - field.field.paragraph.node.field_text
     - field.field.paragraph.node.field_title
     - paragraphs.paragraphs_type.node
@@ -26,16 +25,6 @@ content:
       display_field: null
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_term:
-    type: entity_reference_display_default
-    label: hidden
-    settings:
-      view_mode: default
-      link: true
-      display_field: null
-    third_party_settings: {  }
-    weight: 3
     region: content
   field_text:
     type: text_default

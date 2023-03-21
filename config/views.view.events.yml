@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - node.type.event
-    - taxonomy.vocabulary.events
+    - taxonomy.vocabulary.event_type
   module:
     - node
     - taxonomy

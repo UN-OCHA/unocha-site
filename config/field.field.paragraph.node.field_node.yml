@@ -4,10 +4,8 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_node
-    - node.type.article
     - node.type.basic
     - node.type.event
-    - node.type.landing_page
     - paragraphs.paragraphs_type.node
 id: paragraph.node.field_node
 field_name: field_node
@@ -23,13 +21,11 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
-      article: article
       basic: basic
       event: event
-      landing_page: landing_page
     sort:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: article
+    auto_create_bundle: null
 field_type: entity_reference

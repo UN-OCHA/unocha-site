@@ -1,0 +1,29 @@
+uuid: 1f6ee959-b327-459f-bb4d-d0b437608f88
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_region
+    - node.type.region
+    - node.type.response
+id: node.response.field_region
+field_name: field_region
+entity_type: node
+bundle: response
+label: Region
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      region: region
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
