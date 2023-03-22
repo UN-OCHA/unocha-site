@@ -43,9 +43,8 @@
   color: var(--cd-default-text-color);
 }
 
-.uno-mega-menu__block ul span {
+.uno-mega-menu__block .uno-mega-menu__heading {
   font-weight: bold;
-  display: none;
   margin: 0 0 1rem;
 }
 
@@ -84,18 +83,14 @@
   }
 }
 
-/* It annoys me */
-.contextual {
-  display: none;
-}
 
 /* Third level menu items */
 @media (min-width: 1024px) {
-  .cd-site-header__nav-holder nav[role="navigation"] li.menu-item.menu-item--expanded.cd-nav__menu-item--level-2 {
+  .cd-site-header__nav-holder nav[role="navigation"] li.uno-mega-menu__menu-item {
     --dropdown: false;
   }
 
-  .cd-site-header__nav-holder nav[role="navigation"] li.menu-item.menu-item--expanded.cd-nav__menu-item--level-2 button::before {
+  .cd-site-header__nav-holder nav[role="navigation"] li.uno-mega-menu__menu-item button::before {
     background: transparent
   }
 
