@@ -1,0 +1,10 @@
+uuid: 4d1eedfe-5184-4ce1-a55a-26198778942f
+langcode: en
+status: true
+dependencies: {  }
+id: figures
+label: Figures
+icon_uuid: null
+icon_default: null
+description: 'Multiple items with label and value fields.'
+behavior_plugins: {  }

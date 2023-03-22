@@ -1,0 +1,11 @@
+uuid: fe9043ab-e013-4e41-be75-456a2dd94124
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.response
+id: node.response
+target_entity_type_id: node
+target_bundle: response
+default_langcode: site_default
+language_alterable: false

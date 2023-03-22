@@ -4,11 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.media_library
-    - media.type.article
     - media.type.canto_image
-    - media.type.hero_wide
     - media.type.image
-    - media.type.story
     - media.type.video
   module:
     - media
@@ -16,7 +13,7 @@ dependencies:
 id: media_centre
 label: 'Media centre'
 module: views
-description: 'This is a placeholder view for Canto'
+description: 'This is a placeholder view for the media centre'
 tag: ''
 base_table: media_field_data
 base_field: mid

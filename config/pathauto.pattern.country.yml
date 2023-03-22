@@ -1,0 +1,22 @@
+uuid: 24ab4c4d-c48e-481a-a489-afa4681ff1bd
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: country
+label: Country
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:vocabulary]/[term:name]'
+selection_criteria:
+  a54beba9-d90e-4b52-83fd-52283a02f5bd:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: a54beba9-d90e-4b52-83fd-52283a02f5bd
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      country: country
+selection_logic: and
+weight: -5
+relationships: {  }

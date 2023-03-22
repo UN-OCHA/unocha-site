@@ -1,0 +1,39 @@
+uuid: d673886c-8076-4fd7-af3e-5c1036645f31
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.figures.field_figures
+    - paragraphs.paragraphs_type.figures
+  module:
+    - double_field
+id: paragraph.figures.default
+targetEntityType: paragraph
+bundle: figures
+mode: default
+content:
+  field_figures:
+    type: double_field_unformatted_list
+    label: hidden
+    settings:
+      first:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      second:
+        format_type: medium
+        link: false
+        hidden: false
+        key: false
+        decimal_separator: .
+        thousand_separator: ''
+        scale: 2
+      inline: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

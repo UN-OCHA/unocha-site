@@ -6,11 +6,11 @@ dependencies:
     - core.entity_view_mode.menu_link_content.mega_menu
     - field.field.menu_link_content.main.layout_builder__layout
     - system.menu.main
-    - views.view.responses
+    - system.menu.mega-menu
   module:
     - layout_builder
     - layout_builder_restrictions
-    - views
+    - menu_block
   theme:
     - common_design_subtheme
 third_party_settings:
@@ -24,17 +24,24 @@ third_party_settings:
           label: 'Mega menu'
           context_mapping: {  }
         components:
-          aa20eb45-b4b7-4d24-8d39-cd59a136f890:
-            uuid: aa20eb45-b4b7-4d24-8d39-cd59a136f890
+          ab294038-a9a9-491a-a21e-b6556cc477a7:
+            uuid: ab294038-a9a9-491a-a21e-b6556cc477a7
             region: first
             configuration:
-              id: 'views_block:responses-responses_menu'
-              label: ''
+              id: 'menu_block:mega-menu'
+              label: 'Current responses'
               label_display: '0'
-              provider: views
+              provider: menu_block
               context_mapping: {  }
-              views_label: ''
-              items_per_page: none
+              follow: false
+              follow_parent: child
+              label_link: false
+              label_type: block
+              level: 1
+              depth: 0
+              expand_all_items: true
+              parent: 'mega-menu:'
+              suggestion: mega_menu
             weight: 0
             additional: {  }
         third_party_settings: {  }

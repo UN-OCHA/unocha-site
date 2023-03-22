@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.paragraph.node.field_display_mode
     - field.field.paragraph.node.field_node
-    - field.field.paragraph.node.field_term
     - field.field.paragraph.node.field_text
     - field.field.paragraph.node.field_title
     - paragraphs.paragraphs_type.node
@@ -25,16 +24,6 @@ content:
   field_node:
     type: entity_reference_autocomplete
     weight: 2
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_term:
-    type: entity_reference_autocomplete
-    weight: 3
     region: content
     settings:
       match_operator: CONTAINS

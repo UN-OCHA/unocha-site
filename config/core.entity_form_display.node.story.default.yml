@@ -6,8 +6,8 @@ dependencies:
     - field.field.node.story.body
     - field.field.node.story.field_country
     - field.field.node.story.field_custom_content
-    - field.field.node.story.field_image_caption
-    - field.field.node.story.field_regional_office
+    - field.field.node.story.field_region
+    - field.field.node.story.field_response
     - field.field.node.story.field_story_image
     - field.field.node.story.field_story_type
     - field.field.node.story.field_theme
@@ -24,7 +24,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 3
+    weight: 2
     region: content
     settings:
       rows: 9
@@ -54,15 +54,13 @@ content:
       require_layouts: 0
       empty_message: ''
     third_party_settings: {  }
-  field_image_caption:
-    type: string_textfield
-    weight: 2
+  field_region:
+    type: options_select
+    weight: 5
     region: content
-    settings:
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-  field_regional_office:
+  field_response:
     type: options_select
     weight: 7
     region: content
@@ -77,13 +75,13 @@ content:
     third_party_settings: {  }
   field_story_type:
     type: options_select
-    weight: 4
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   field_theme:
     type: options_select
-    weight: 5
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }

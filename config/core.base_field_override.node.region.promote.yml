@@ -1,0 +1,22 @@
+uuid: a3497f15-402c-42e5-8233-299644eca317
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.region
+id: node.region.promote
+field_name: promote
+entity_type: node
+bundle: region
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
