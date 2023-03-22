@@ -2,7 +2,6 @@
 
 namespace Drupal\unocha_reliefweb\Controller;
 
-use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Controller\ControllerBase;
@@ -80,28 +79,22 @@ class ReliefWebDocumentController extends ControllerBase {
   /**
    * Get the page title.
    *
-   * @param string $ocha_product
-   *   The type of document.
-   *
    * @return string|\Drupal\Component\Render\MarkupInterface
    *   Page title.
    */
-  public function getPageTitle($ocha_product) {
-    $this->retrieveApiData($ocha_product);
+  public function getPageTitle() {
+    $this->retrieveApiData();
     return $this->data['title'] ?? '';
   }
 
   /**
    * Get the page content.
    *
-   * @param string $ocha_product
-   *   The type of document.
-   *
    * @return array
    *   Render array.
    */
-  public function getPageContent($ocha_product) {
-    $this->retrieveApiData($ocha_product);
+  public function getPageContent() {
+    $this->retrieveApiData();
     if (empty($this->data)) {
       return [];
     }
@@ -188,35 +181,29 @@ class ReliefWebDocumentController extends ControllerBase {
 
   /**
    * Retrieve the data from the ReliefWeb API.
-   *
-   * @param string $ocha_product
-   *   The type of document.
    */
-  protected function retrieveApiData($ocha_product) {
-    if (empty($ocha_product)) {
-      $this->throwNotFound();
-    }
-
-    $base_url = $this->config->get('reliefweb_website') ?? 'https://reliefweb.int';
-
-    $url = $this->requestStack->getCurrentRequest()->getRequestUri();
-    $url_parts = UrlHelper::parse($url);
-    $url_path = preg_replace('#^/?[^/]+/#', 'report/', $url_parts['path']);
-    $url_alias = $base_url . '/' . $url_path;
+  protected function retrieveApiData() {
+    $url_alias = $this->getAliasFromUrl();
 
     $payload = [
       'filter' => [
         'conditions' => [
           [
-            // @todo review in case we want to use the term ID.
-            'field' => 'ocha_product.name.exact',
-            'value' => $ocha_product,
+            // Filter to limit to OCHA documents.
+            'field' => 'ocha_product',
           ],
           [
-            // @todo review in case we can use the node ID.
-            // @todo review in case other aliases are indexed in the RW API.
-            'field' => 'url_alias',
-            'value' => $url_alias,
+            'conditions' => [
+              [
+                'field' => 'url_alias',
+                'value' => $url_alias,
+              ],
+              [
+                'field' => 'redirects',
+                'value' => $url_alias,
+              ],
+            ],
+            'operator' => 'OR',
           ],
         ],
         'operator' => 'AND',
@@ -244,6 +231,39 @@ class ReliefWebDocumentController extends ControllerBase {
     else {
       $this->throwNotFound();
     }
+  }
+
+  /**
+   * Get the ReliefWeb URL alias from the given UNOCHA URL.
+   *
+   * @param string $url
+   *   UNOCHA URL. If empty use the current URL.
+   *   Ex: https://www.unocha.org/publications/report/france/report-title.
+   *
+   * @return string
+   *   A ReliefWeb URL alias based on the given URL.
+   *   Ex: https://reliefweb.int/report/france/report-title.
+   */
+  protected function getAliasFromUrl($url = '') {
+    $url = $url ?: $this->requestStack->getCurrentRequest()->getRequestUri();
+    $base_url = $this->config->get('reliefweb_website') ?? 'https://reliefweb.int';
+    return preg_replace('#^/publications/#', $base_url . '/', $url);
+  }
+
+  /**
+   * Get a UNOCHA URL from a ReliefWeb URL alias.
+   *
+   * @param string $alias
+   *   ReliefWeb URL alias.
+   *   Ex: https://reliefweb.int/report/france/report-title.
+   *
+   * @return string
+   *   A UNOCHA URL based on the given URL alias.
+   *   Ex: https://www.unocha.org/publications/report/france/report-title.
+   */
+  protected function getUrlFromAlias($alias) {
+    $base_url = $this->requestStack->getCurrentRequest()->getSchemeAndHttpHost();
+    return preg_replace('#^https?://[^/]+/#', $base_url . '/publications/', $alias);
   }
 
   /**
