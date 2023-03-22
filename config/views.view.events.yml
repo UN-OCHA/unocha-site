@@ -315,7 +315,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          vid: events
+          vid: event_type
           type: select
           hierarchy: false
           limit: true
