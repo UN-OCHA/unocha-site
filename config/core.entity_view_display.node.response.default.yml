@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.response.field_custom_content
     - field.field.node.response.field_region
     - field.field.node.response.field_response_image
+    - field.field.node.response.field_response_type
     - node.type.response
   module:
     - entity_reference_revisions
@@ -58,6 +59,14 @@ content:
       link: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_response_type:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
     region: content
 hidden:
   langcode: true
