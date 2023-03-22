@@ -57,6 +57,16 @@ services:
       # Mount configuration and allow overriding it.
       - "../config:/srv/www/config:rw"
       - "../config_dev:/srv/www/config_dev:rw"
+      # Mount the composer files and patches.
+      - "../composer.json:/srv/www/composer.json:rw"
+      - "../composer.patches.json:/srv/www/composer.patches.json:rw"
+      - "../composer.lock:/srv/www/composer.lock:rw"
+      - "../patches:/srv/www/patches:rw"
+      # # Mount contrib modules and themes.
+      # - "../html/modules/contrib:/srv/www/html/modules/contrib:rw"
+      # - "../html/themes/contrib:/srv/www/html/themes/contrib:rw"
+      # Mount nginx custom configuration.
+      - "../docker/etc/nginx/custom:/etc/nginx/custom"
     environment:
       - TERM=xterm
       - ENVIRONMENT=dev
@@ -68,8 +78,7 @@ services:
       - DRUPAL_DB_PASSWORD=unocha
       - DRUPAL_DB_HOST=mysql
       - DRUPAL_DB_DRIVER=mysql
-      - PHP_ENVIRONMENT=dev
-      - PHP_XDEBUG=true
+      - PHP_ENVIRONMENT=local
       # Rate limiting.
       - NGINX_LIMIT_HUMANS=1024r/s
       - NGINX_BURST_HUMANS=1024
