@@ -3,13 +3,24 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.ckeditor
     - filter.format.text_editor_simple
+    - node.type.basic
+    - node.type.event
+    - node.type.region
+    - node.type.response
+    - node.type.story
+    - taxonomy.vocabulary.country
+    - taxonomy.vocabulary.event_type
+    - taxonomy.vocabulary.regional_offices
+    - taxonomy.vocabulary.response_type
+    - taxonomy.vocabulary.story_type
+    - taxonomy.vocabulary.theme
   module:
     - content_translation
     - file
     - filter
     - media
-    - menu_link_content
     - node
     - paragraphs
     - path
@@ -35,7 +46,6 @@ permissions:
   - 'revert all revisions'
   - 'translate any entity'
   - 'translate editable entities'
-  - 'translate menu_link_content'
   - 'update any media'
   - 'update content translations'
   - 'update media'
@@ -45,3 +55,63 @@ permissions:
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view unpublished paragraphs'
+  - 'use text format ckeditor'
+  - 'create basic content'
+  - 'create event content'
+  - 'create region content'
+  - 'create response content'
+  - 'create story content'
+  - 'delete any basic content'
+  - 'delete any event content'
+  - 'delete any region content'
+  - 'delete any response content'
+  - 'delete any story content'
+  - 'delete own basic content'
+  - 'delete own event content'
+  - 'delete own region content'
+  - 'delete own response content'
+  - 'delete own story content'
+  - 'delete basic revisions'
+  - 'delete event revisions'
+  - 'delete region revisions'
+  - 'delete response revisions'
+  - 'delete story revisions'
+  - 'edit any basic content'
+  - 'edit any event content'
+  - 'edit any region content'
+  - 'edit any response content'
+  - 'edit any story content'
+  - 'edit own basic content'
+  - 'edit own event content'
+  - 'edit own region content'
+  - 'edit own response content'
+  - 'edit own story content'
+  - 'revert basic revisions'
+  - 'revert event revisions'
+  - 'revert region revisions'
+  - 'revert response revisions'
+  - 'revert story revisions'
+  - 'view basic revisions'
+  - 'view event revisions'
+  - 'view region revisions'
+  - 'view response revisions'
+  - 'view story revisions'
+  - 'administer nodes'
+  - 'create terms in country'
+  - 'create terms in event_type'
+  - 'create terms in regional_offices'
+  - 'create terms in response_type'
+  - 'create terms in story_type'
+  - 'create terms in theme'
+  - 'delete terms in country'
+  - 'delete terms in event_type'
+  - 'delete terms in regional_offices'
+  - 'delete terms in response_type'
+  - 'delete terms in story_type'
+  - 'delete terms in theme'
+  - 'edit terms in country'
+  - 'edit terms in event_type'
+  - 'edit terms in regional_offices'
+  - 'edit terms in response_type'
+  - 'edit terms in story_type'
+  - 'edit terms in theme'
