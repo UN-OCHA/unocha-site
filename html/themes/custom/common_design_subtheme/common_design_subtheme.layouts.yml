@@ -61,3 +61,16 @@ layout_mega_menu:
   regions:
     first:
       label: First
+
+layout_tabs:
+  label: 'UNO Tabs'
+  category: 'Common Design Layouts'
+  path: templates/layouts
+  template: layout--tabs
+  library: common_design_subtheme/uno-tabs
+  default_region: first
+  icon_map:
+    - [first]
+  regions:
+    first:
+      label: First
