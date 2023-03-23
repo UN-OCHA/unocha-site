@@ -1,18 +1,19 @@
-uuid: 716c5a22-f21a-4995-bb9c-233f50dd3840
+uuid: 076d2da9-699c-4afc-80b6-008717988eec
 langcode: en
 status: true
 dependencies:
   module:
+    - paragraph_view_mode
     - paragraphs
-id: paragraph.field_image_caption
-field_name: field_image_caption
+id: paragraph.paragraph_view_mode
+field_name: paragraph_view_mode
 entity_type: paragraph
-type: string
+type: paragraph_view_mode
 settings:
   max_length: 255
   case_sensitive: false
   is_ascii: false
-module: core
+module: paragraph_view_mode
 locked: false
 cardinality: 1
 translatable: true
