@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.response.body
+    - field.field.node.response.field_active_response
     - field.field.node.response.field_country
     - field.field.node.response.field_custom_content
     - field.field.node.response.field_region
@@ -25,6 +26,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_active_response:
+    type: boolean
+    label: inline
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_country:
     type: entity_reference_label
@@ -66,7 +77,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
 hidden:
   langcode: true

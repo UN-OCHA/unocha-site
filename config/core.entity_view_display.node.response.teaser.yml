@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.response.body
+    - field.field.node.response.field_active_response
     - field.field.node.response.field_country
     - field.field.node.response.field_custom_content
     - field.field.node.response.field_region
@@ -50,6 +51,7 @@ content:
     weight: 3
     region: content
 hidden:
+  field_active_response: true
   field_country: true
   field_custom_content: true
   field_region: true
