@@ -48,7 +48,7 @@
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-    <h2>{{ content.field_tab_heading }}</h2>
+    {# <h2>{{ content.field_tab_heading }}</h2> #}
     {% block content %}
       {{ content|without('field_tab_heading') }}
     {% endblock %}
