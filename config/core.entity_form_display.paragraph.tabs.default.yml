@@ -25,9 +25,9 @@ content:
       title: Paragraph
       title_plural: Paragraphs
       edit_mode: open
-      add_mode: dropdown
+      add_mode: button
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: tab
     third_party_settings: {  }
   field_text:
     type: text_textarea

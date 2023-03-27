@@ -5,27 +5,24 @@ dependencies:
   config:
     - field.field.paragraph.tab.field_tab_content
     - field.field.paragraph.tab.field_tab_heading
+    - field.field.paragraph.tab.field_tab_paragraph
     - paragraphs.paragraphs_type.tab
   module:
-    - text
+    - entity_reference_revisions
 id: paragraph.tab.default
 targetEntityType: paragraph
 bundle: tab
 mode: default
 content:
-  field_tab_content:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_tab_heading:
-    type: string
+  field_tab_paragraph:
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
-      link_to_entity: false
+      view_mode: default
+      link: ''
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  field_tab_content: true
+  field_tab_heading: true
