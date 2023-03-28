@@ -1,0 +1,20 @@
+uuid: 27d8419a-4246-412b-a356-24c57946aa11
+langcode: en
+status: false
+dependencies:
+  module:
+    - language
+  theme:
+    - common_design_claro
+id: common_design_claro_languageswitcher
+theme: common_design_claro
+region: header
+weight: -6
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Language switcher'
+  label_display: '0'
+  provider: language
+visibility: {  }

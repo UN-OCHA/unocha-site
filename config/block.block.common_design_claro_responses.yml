@@ -1,0 +1,25 @@
+uuid: d7315d57-b817-4afe-9198-eb56e6037ba2
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.responses
+  module:
+    - system
+  theme:
+    - common_design_claro
+id: common_design_claro_responses
+theme: common_design_claro
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:responses'
+settings:
+  id: 'system_menu_block:responses'
+  label: 'Current emergencies'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }
