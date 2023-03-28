@@ -358,3 +358,20 @@ a.cd-footer-social__link svg {
   word-wrap: break-word;
   max-width: 200px;
 }
+
+/* Story node */
+footer.cd-author {
+  margin-top: 3rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--brand-grey);
+}
+
+/* Centre content horizontally with max-width limit */
+.cd-layout-main-content .paragraph--type--text,
+.cd-layout-main-content .field--type-text-with-summary,
+.cd-layout-main-content footer,
+.cd-layout-main-content .cd-caption {
+  max-width: var(--cd-max-content-width);
+  margin-left: auto;
+  margin-right: auto;
+}
