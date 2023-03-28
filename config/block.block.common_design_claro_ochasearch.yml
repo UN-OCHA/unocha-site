@@ -1,0 +1,22 @@
+uuid: 951833ba-682a-4ff0-b2b7-7d9fa42cf2cd
+langcode: en
+status: false
+dependencies:
+  module:
+    - ocha_search
+  theme:
+    - common_design_claro
+_core:
+  default_config_hash: 8WyCxN22EpigRD00Is7yEYlxGEN8AYrbUMVYDQfHU_M
+id: common_design_claro_ochasearch
+theme: common_design_claro
+region: header
+weight: 3
+provider: null
+plugin: ocha_search_block
+settings:
+  id: ocha_search_block
+  label: 'OCHA Search'
+  label_display: '0'
+  provider: ocha_search
+visibility: {  }

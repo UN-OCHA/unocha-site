@@ -1,0 +1,31 @@
+uuid: a5d07e73-3be4-4d5a-8280-08ecc7cb6b46
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.what-we-do
+  module:
+    - menu_block
+  theme:
+    - common_design_claro
+id: common_design_claro_whatwedo
+theme: common_design_claro
+region: header
+weight: -10
+provider: null
+plugin: 'menu_block:what-we-do'
+settings:
+  id: 'menu_block:what-we-do'
+  label: 'What we do'
+  label_display: visible
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'what-we-do:'
+  suggestion: what_we_do
+visibility: {  }

@@ -1,0 +1,13 @@
+/* This fixes the issue with the CKeditor anchor modal in Layout paragraphs,
+  documented here:
+  https: //www.drupal.org/project/drupal/issues/3328425
+  See https: //www.drupal.org/project/drupal/issues/3274937#comment-14824232
+*/
+
+.ck-body-wrapper .ck {
+  --ck-z-modal: 1261;
+}
+
+.ui-dialog~.ck-body-wrapper {
+  --ck-z-modal: 1261;
+}
