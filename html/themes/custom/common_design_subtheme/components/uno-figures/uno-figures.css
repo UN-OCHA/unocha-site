@@ -12,7 +12,7 @@
 }
 
 .uno-figure__value {
-  color: #5391cb;
+  color: var(--brand-primary);
   font-size: 1.625rem;
   font-weight: bold;
 }
@@ -49,4 +49,5 @@
 
 .uno-figures__footnote {
   font-size: var(--cd-font-size--small);
+  max-width: var(--cd-max-content-width);
 }
