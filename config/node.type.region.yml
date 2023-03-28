@@ -7,8 +7,8 @@ dependencies:
 third_party_settings:
   menu_ui:
     available_menus:
-      - main
-    parent: 'main:'
+      - mega-menu
+    parent: 'mega-menu:'
 name: Region
 type: region
 description: ''
