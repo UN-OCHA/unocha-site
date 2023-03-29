@@ -1,0 +1,22 @@
+uuid: 934fd0e9-aa90-445c-a22c-e57c507ae942
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - common_design_claro
+_core:
+  default_config_hash: aeqlWs7HwctZeZC7ADcbxfqehJzBRfZKmuZz3DsH3_4
+id: common_design_claro_messages
+theme: common_design_claro
+region: highlighted
+weight: -9
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

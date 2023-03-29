@@ -95,4 +95,5 @@ theme:
   common_design: 0
   common_design_subtheme: 0
   claro: 0
+  common_design_claro: 0
 profile: minimal

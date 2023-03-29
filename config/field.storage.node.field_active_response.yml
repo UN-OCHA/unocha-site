@@ -1,16 +1,14 @@
-uuid: 7e675c49-259d-4196-a5a9-bd909333f1b1
+uuid: d501befc-09b1-4eb3-94c6-22d8e32419bd
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - taxonomy
-id: node.field_response_type
-field_name: field_response_type
+id: node.field_active_response
+field_name: field_active_response
 entity_type: node
-type: entity_reference
-settings:
-  target_type: taxonomy_term
+type: boolean
+settings: {  }
 module: core
 locked: false
 cardinality: 1

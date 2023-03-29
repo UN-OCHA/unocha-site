@@ -4,11 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.response.body
+    - field.field.node.response.field_active_response
     - field.field.node.response.field_country
     - field.field.node.response.field_custom_content
     - field.field.node.response.field_region
     - field.field.node.response.field_response_image
-    - field.field.node.response.field_response_type
     - node.type.response
   module:
     - entity_reference_revisions
@@ -25,6 +25,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_active_response:
+    type: boolean
+    label: inline
+    settings:
+      format: yes-no
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 5
     region: content
   field_country:
     type: entity_reference_label
@@ -59,14 +69,6 @@ content:
       link: false
     third_party_settings: {  }
     weight: 0
-    region: content
-  field_response_type:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 5
     region: content
 hidden:
   langcode: true

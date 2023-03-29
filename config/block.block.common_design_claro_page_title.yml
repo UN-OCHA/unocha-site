@@ -1,0 +1,26 @@
+uuid: 0806209d-4e0d-43c3-aed4-ba2a9147198a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - common_design_claro
+_core:
+  default_config_hash: Oh72CHUkp6cj6dbrXMK2hzCsM05w9cHVoD22rMLQUfk
+id: common_design_claro_page_title
+theme: common_design_claro
+region: content
+weight: -9
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/press-releases/*'

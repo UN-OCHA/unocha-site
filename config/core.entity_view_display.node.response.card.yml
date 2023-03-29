@@ -5,11 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.card
     - field.field.node.response.body
+    - field.field.node.response.field_active_response
     - field.field.node.response.field_country
     - field.field.node.response.field_custom_content
     - field.field.node.response.field_region
     - field.field.node.response.field_response_image
-    - field.field.node.response.field_response_type
     - node.type.response
   module:
     - layout_builder
@@ -41,15 +41,8 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_response_type:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
 hidden:
+  field_active_response: true
   field_country: true
   field_custom_content: true
   field_region: true

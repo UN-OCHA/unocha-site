@@ -81,8 +81,10 @@
     'cd-article'
   ]
 %}
+
 {{ attach_library('common_design/cd-article') }}
 {{ attach_library('common_design/cd-author') }}
+{{ attach_library('common_design/cd-caption') }}
 {{ attach_library('common_design/cd-typography') }}
 
 {% set unochaDate = node.getCreatedTime|date('j F Y') %}
@@ -102,45 +104,30 @@
   {% endif %}
   {{ title_suffix }}
 
-  {{ local_tasks }}
-
-  {% if display_submitted %}
-    <footer class="cd-author node__meta [ cd-bumper ]">
-      {% if author_picture %}
-        <div class="cd-author__image cd-author__image--rounded">
-          {{ author_picture }}
-        </div>
-      {% endif %}
-      <div class="cd-author__content">
-        <div{{ author_attributes.addClass('node__submitted') }}>
-          {% trans %}Submitted on {{ unochaDate }}{% endtrans %}
-          {{ metadata }}
-        </div>
-      </div>
-    </footer>
+  {% if componentsModule %}
+    {% include '@uno-components/cd-social-links/cd-social-links.html.twig' %}
   {% endif %}
 
-  <div{{ content_attributes }}>
+  {{ local_tasks }}
 
-    {% block section %}
-      <div class="cd-layout-two-col">
+  <div{{ content_attributes.addClass('cd-layout-main-content') }}>
+    {{ content }}
 
-        <div class="cd-layout-main-content">
-          {{ content|without('field_country') }}
+    {% if display_submitted %}
+      <footer class="cd-author node__meta [ cd-bumper ]">
+        {% if author_picture %}
+          <div class="cd-author__image cd-author__image--rounded">
+            {{ author_picture }}
+          </div>
+        {% endif %}
+        <div class="cd-author__content">
+          <div{{ author_attributes.addClass('node__submitted') }}>
+            {{ unochaDate }}
+            {{ metadata }}
+          </div>
         </div>
-
-        <div class="cd-layout-sidebar-first" role="complementary">
-
-          {{ content.field_country}}
-
-          {% if componentsModule %}
-              {% include '@uno-components/cd-social-links/cd-social-links.html.twig' %}
-            {% endif %}
-        </div>
-
-      </div>
-    {% endblock %}
-
+      </footer>
+    {% endif %}
   </div>
 
 </article>

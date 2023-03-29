@@ -101,6 +101,11 @@ uno-embed:
   js:
     components/uno-embed/uno-embed.js: {}
 
+uno-figures:
+  css:
+    theme:
+      components/uno-figures/uno-figures.css: {}
+
 uno-layout:
   css:
     theme:

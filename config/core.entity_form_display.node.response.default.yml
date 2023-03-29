@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.response.field_custom_content
     - field.field.node.response.field_region
     - field.field.node.response.field_response_image
-    - field.field.node.response.field_response_type
     - node.type.response
   module:
     - layout_paragraphs
@@ -72,12 +71,6 @@ content:
     region: content
     settings:
       media_types: {  }
-    third_party_settings: {  }
-  field_response_type:
-    type: options_buttons
-    weight: 4
-    region: content
-    settings: {  }
     third_party_settings: {  }
   langcode:
     type: language_select

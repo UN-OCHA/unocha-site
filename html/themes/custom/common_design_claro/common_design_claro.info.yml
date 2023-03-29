@@ -1,0 +1,35 @@
+# This theme is marked as @internal. It is intended to evolve and change over
+# minor releases.
+# Change record https://www.drupal.org/node/2582945.
+# As the UI of Drupal improves between minor versions, the markup and assets
+# in the Claro theme will change. The Claro theme is not backwards compatible.
+# If you wish to modify the output or assets of Claro you can:
+# 1. Copy the whole of Claro and rename it as your own administration theme. You
+# will need to manually manage your own updates if you want to stay up to
+# date with Claro's bug fixes and feature support.
+#
+# 2. Sub-theme Claro. This is only recommended if you want to make minor tweaks
+# and understand that Claro could break your modifications as it changes.
+name: Common Design Claro
+type: theme
+base theme: claro
+description: 'Extends Claro admin theme'
+alt text: 'Screenshot of Claro, Drupal administration theme.'
+package: Core
+version: VERSION
+core_version_requirement: ^9 || ^10
+libraries:
+  - common_design_claro/global-styling
+
+regions:
+  header: 'Header'
+  pre_content: 'Pre-content'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  sidebar_first: 'First sidebar'
+regions_hidden:
+  - sidebar_first
