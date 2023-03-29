@@ -65,7 +65,23 @@
 .page-node-type-region .paragraph--type--content-list article.node--sticky.uno-card:first-child,
 .page-node-type-basic .paragraph--type--content-list article.node--sticky.uno-card:first-child {
   flex: 1 0 100%;
-  border-color: pink;
+}
+
+@media screen and (min-width: 767px) {
+  /* Promoted item to span full width */
+  .page-node-type-region .paragraph--type--content-list article.node--sticky.uno-card:first-child,
+  .page-node-type-basic .paragraph--type--content-list article.node--sticky.uno-card:first-child {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .page-node-type-basic .paragraph--type--content-list article.node--sticky.uno-card:first-child .uno-card__image {
+    flex: 0 1 50%;
+  }
+
+  .page-node-type-basic .paragraph--type--content-list article.node--sticky.uno-card:first-child .cd-card__container {
+    flex: 0 1 50%;
+  }
 }
 
 .more-link {
