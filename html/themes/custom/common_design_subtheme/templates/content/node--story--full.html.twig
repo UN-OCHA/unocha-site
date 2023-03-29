@@ -84,7 +84,6 @@
 
 {{ attach_library('common_design/cd-article') }}
 {{ attach_library('common_design/cd-author') }}
-{{ attach_library('common_design/cd-caption') }}
 {{ attach_library('common_design/cd-typography') }}
 
 {% set unochaDate = node.getCreatedTime|date('j F Y') %}
@@ -122,7 +121,7 @@
         {% endif %}
         <div class="cd-author__content">
           <div{{ author_attributes.addClass('node__submitted') }}>
-            {{ unochaDate }}
+            {% trans %}Posted on&nbsp;{% endtrans %}{{ unochaDate }}
             {{ metadata }}
           </div>
         </div>
