@@ -10,6 +10,8 @@
  * @see template_preprocess_media()
  */
 #}
+{{ attach_library('common_design/cd-caption') }}
+
 <article{{ attributes }}>
   {{ title_suffix.contextual_links }}
   {% if content %}
