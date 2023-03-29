@@ -62,7 +62,13 @@
 }
 
 /* Promoted item to span full width */
-.paragraph--type--content-list.content-list--view-mode--card article.node--sticky.uno-card {
+.page-node-type-response .paragraph--type--content-list article.node--sticky.uno-card:first-child,
+.page-node-type-response .paragraph--type--content-list article.node--sticky.uno-card:first-child {
   flex: 1 0 100%;
   border-color: pink;
+}
+
+.more-link {
+  display: block;
+  margin-top: 2rem;
 }
