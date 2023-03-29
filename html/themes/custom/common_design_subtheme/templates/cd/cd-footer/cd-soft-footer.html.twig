@@ -1,3 +1,4 @@
+{% set soft_footer_attribute = create_attribute() %}
 {%
     set classes = [
     'cd-container',
@@ -6,12 +7,12 @@
 %}
 
 <section class="cd-soft-footer">
-  <div{{attributes.addClass(classes)}}>
+  <div{{soft_footer_attribute.addClass(classes)}}>
     {{ page.footer_soft}}
     {{ page.responses_nav}}
   </div>
 
-  <div{{attributes.addClass(classes)}}>
+  <div{{soft_footer_attribute.addClass(classes)}}>
     <!-- Begin Mailchimp Signup Form -->
     <div id="mc_embed_signup" class="uno-subscribe">
       <form action="https://reliefweb.us5.list-manage.com/subscribe/post?u=bbba5e49a58c86ed484b5a084&amp;id=45f2ec85e2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
