@@ -62,8 +62,8 @@
 }
 
 /* Promoted item to span full width */
-.page-node-type-response .paragraph--type--content-list article.node--sticky.uno-card:first-child,
-.page-node-type-response .paragraph--type--content-list article.node--sticky.uno-card:first-child {
+.page-node-type-region .paragraph--type--content-list article.node--sticky.uno-card:first-child,
+.page-node-type-basic .paragraph--type--content-list article.node--sticky.uno-card:first-child {
   flex: 1 0 100%;
   border-color: pink;
 }
