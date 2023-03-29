@@ -32,16 +32,24 @@
  * @see media_library_preprocess_media()
  */
 #}
-<article{{ attributes }}>
-  {% if content %}
-    <div{{ preview_attributes.addClass('js-media-library-item-preview') }}>
-      {{ content|without('name') }}
+{{ attach_library('common_design/cd-caption') }}
+
+{# Why can't I get the bundle? #}
+{%
+  set classes = [
+    bundle ? 'media--type-' ~ media.bundle|clean_class,
+    view_mode ? 'media--view-mode-' ~ view_mode|clean_class
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+  {{ title_suffix.contextual_links }}
+  {% if content.field_image_caption and content.field_image_copyright %}
+    {{ content|without('field_image_caption', 'field_image_copyright') }}
+    <div class="cd-caption">
+      {{ content.field_image_caption}}
+      {{ content.field_image_copyright}}
     </div>
-    {% if not status %}
-      {{ "unpublished" | t }}
-    {% endif %}
-    <div{{ metadata_attributes.addClass('cd-caption') }}>
-      {{ name }}
-    </div>
+  {% elseif content %}
+    {{ content }}
   {% endif %}
 </article>

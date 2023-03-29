@@ -353,12 +353,6 @@ a.cd-footer-social__link svg {
   }
 }
 
-/* Prevent devel generated content with long string filenames breaking layout */
-.view-media-centre .cd-caption {
-  word-wrap: break-word;
-  max-width: 200px;
-}
-
 /* Story node */
 footer.cd-author {
   margin-top: 3rem;
