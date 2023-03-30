@@ -24,7 +24,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_active_response:
     type: boolean
@@ -34,7 +34,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 1
     region: content
   field_country:
     type: entity_reference_label
@@ -51,7 +51,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 5
     region: content
   field_region:
     type: entity_reference_label

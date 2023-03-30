@@ -22,7 +22,8 @@
 .paragraph--type--content-list.content-list--view-mode--card .view .view-content,
 .view-stories .view-content,
 .view-responses .view-content,
-.view-media-centre .view-content {
+.view-media-centre .view-content,
+.view-events .view-content {
   display: flex;
   flex-flow: row wrap;
   gap: var(--uno-card-list-gap-size);
@@ -34,7 +35,8 @@
 .paragraph--type--content-list.content-list--view-mode--card article,
 .view-stories .view-content article,
 .view-responses .view-content article,
-.view-media-centre .view-content article {
+.view-media-centre .view-content article,
+.view-events .view-content article {
   /* stylelint-disable-next-line max-line-length */
   flex: 0 1 calc((100% / var(--uno-card-list-num-cols)) - var(--uno-card-list-gap-size) + var(--uno-card-list-gap-size) / var(--uno-card-list-num-cols));
 }
@@ -45,7 +47,8 @@
   .paragraph--type--content-list.content-list--view-mode--card .view .view-content,
   .view-stories .view-content,
   .view-responses .view-content,
-  .view-media-centre .view-content {
+  .view-media-centre .view-content,
+  .view-events .view-content {
     --uno-card-list-num-cols: 2;
   }
 }
@@ -56,7 +59,8 @@
   .paragraph--type--content-list.content-list--view-mode--card .view .view-content,
   .view-stories .view-content,
   .view-responses .view-content,
-  .view-media-centre .view-content {
+  .view-media-centre .view-content,
+  .view-events .view-content {
     --uno-card-list-num-cols: 3;
   }
 }

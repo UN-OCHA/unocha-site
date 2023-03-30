@@ -1,0 +1,10 @@
+uuid: 80f3bf43-865f-4166-81b2-18bda294c649
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.event
+label: Event
+targetEntityType: media
+cache: true

@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.event.field_custom_content
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_location
     - field.field.node.event.field_event_type
     - field.field.node.event.field_region
     - field.field.node.event.field_response
@@ -33,11 +34,19 @@ content:
     settings:
       trim_length: 160
     third_party_settings: {  }
+    weight: 4
+    region: content
+  field_country:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
     weight: 3
     region: content
   field_event_date:
     type: daterange_default
-    label: inline
+    label: hidden
     settings:
       timezone_override: ''
       format_type: unocha
@@ -49,22 +58,22 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: card
+      view_mode: event
       link: false
     third_party_settings: {  }
     weight: 0
     region: content
   field_event_type:
     type: entity_reference_label
-    label: inline
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     weight: 2
     region: content
 hidden:
-  field_country: true
   field_custom_content: true
+  field_event_location: true
   field_region: true
   field_response: true
   langcode: true

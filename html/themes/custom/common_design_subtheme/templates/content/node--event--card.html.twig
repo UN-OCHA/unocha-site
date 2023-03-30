@@ -93,15 +93,12 @@
 
 <article{{ attributes.addClass(classes) }}>
   <div class="uno-card__image">
-    {{ content.field_story_image }}
+    {{ content.field_event_image }}
   </div>
   {# {% set destination = paragraph.field_destination.0.url %} #}
   <div class="uno-card__content cd-card__container [ cd-flow ]">
-    {% if node.isSticky %}
-      <span class="uno-featured uno-tag">{% trans %}Featured{% endtrans %}</span>
-    {% endif %}
     <h3 class="uno-card__title"><a href="{{ url }}">{{ label }}</a></h3>
-    {{ content|without('field_story_image') }}
+    {{ content|without('field_event_image') }}
     <a class="cd-button cd-button--small cd-button--icon" href="{{ url }}">
       <span class="cd-button__text">{{ 'View more'|t }}</span>
       <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
