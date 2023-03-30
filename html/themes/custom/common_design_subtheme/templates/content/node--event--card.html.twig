@@ -97,9 +97,6 @@
   </div>
   {# {% set destination = paragraph.field_destination.0.url %} #}
   <div class="uno-card__content cd-card__container [ cd-flow ]">
-    {% if node.isSticky %}
-      <span class="uno-featured">{% trans %}Featured{% endtrans %}</span>
-    {% endif %}
     <h3 class="uno-card__title"><a href="{{ url }}">{{ label }}</a></h3>
     {{ content|without('field_event_image') }}
     <a class="cd-button cd-button--small cd-button--icon" href="{{ url }}">

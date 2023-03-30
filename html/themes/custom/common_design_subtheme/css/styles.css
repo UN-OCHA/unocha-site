@@ -322,7 +322,7 @@ a.cd-footer-social__link svg {
   padding: 3rem 0 2rem;
 }
 
-.uno-featured  {
+.uno-tag{
   display: inline-block;
   color: var(--brand-highlight-contract);
   background-color: var(--brand-highlight);
