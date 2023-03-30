@@ -32,6 +32,16 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  field_active_response:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_response_image:
     type: entity_reference_entity_view
     label: hidden
@@ -42,7 +52,6 @@ content:
     weight: 0
     region: content
 hidden:
-  field_active_response: true
   field_country: true
   field_custom_content: true
   field_region: true
