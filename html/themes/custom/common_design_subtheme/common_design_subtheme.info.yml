@@ -40,9 +40,10 @@ libraries:
 # @see common_design_subtheme.libraries.yml
 #
 libraries-extend:
+  common_design/cd-article:
+    - common_design_subtheme/cd-article
   common_design/cd-button:
     - common_design_subtheme/cd-button
-
   common_design/cd-caption:
     - common_design_subtheme/cd-caption
   common_design/cd-hero:
