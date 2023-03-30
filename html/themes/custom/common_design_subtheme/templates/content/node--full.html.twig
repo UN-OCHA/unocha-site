@@ -86,8 +86,16 @@
 {{ attach_library('common_design/cd-typography') }}
 
 {% set unochaDate = node.getCreatedTime|date('j F Y') %}
-<article{{ attributes.addClass(classes) }}>
 
+  {% if content.field_basic_image is not empty %}
+    {% embed '@uno-components/cd-hero/cd-hero.html.twig' %}
+      {% block hero_image %}
+        {{ content.field_basic_image }}
+      {% endblock %}
+    {% endembed %}
+  {% endif %}
+
+<article{{ attributes.addClass(classes) }}
   {{ title_prefix }}
   {% if page %}
     {% if title %}
@@ -120,7 +128,7 @@
 
   <div{{ content_attributes }}>
 
-    {{ content }}
+    {{ content|without('field_basic_image') }}
 
 {#    {% block section %}#}
 {#      <div class="cd-layout-two-col">#}
