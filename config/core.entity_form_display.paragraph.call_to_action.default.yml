@@ -3,30 +3,20 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.call_to_action.field_call_to_action_layout
     - field.field.paragraph.call_to_action.field_destination
     - field.field.paragraph.call_to_action.field_text
     - field.field.paragraph.call_to_action.field_title
+    - field.field.paragraph.call_to_action.paragraph_view_mode
     - paragraphs.paragraphs_type.call_to_action
   module:
-    - layout_paragraphs
     - link
+    - paragraph_view_mode
     - text
 id: paragraph.call_to_action.default
 targetEntityType: paragraph
 bundle: call_to_action
 mode: default
 content:
-  field_call_to_action_layout:
-    type: layout_paragraphs
-    weight: 3
-    region: content
-    settings:
-      preview_view_mode: default
-      nesting_depth: 1
-      require_layouts: 0
-      empty_message: ''
-    third_party_settings: {  }
   field_destination:
     type: link_default
     weight: 2
@@ -55,6 +45,17 @@ content:
     weight: -200
     region: content
     settings: {  }
+    third_party_settings: {  }
+  paragraph_view_mode:
+    type: paragraph_view_mode
+    weight: -100
+    region: content
+    settings:
+      view_modes:
+        default: default
+        subscribe: subscribe
+      default_view_mode: default
+      form_mode_bind: true
     third_party_settings: {  }
 hidden:
   created: true
