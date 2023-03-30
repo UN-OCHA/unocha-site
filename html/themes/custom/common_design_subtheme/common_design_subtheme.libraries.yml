@@ -39,16 +39,6 @@ cd-hero:
     component:
       components/cd-hero/cd-hero.css: {}
 
-cd-hero--style-one:
-  css:
-    component:
-      components/cd-hero/cd-hero--style-one.css: {}
-
-cd-hero--style-two:
-  css:
-    component:
-      components/cd-hero/cd-hero--style-two.css: {}
-
 cd-hero--style-three:
   css:
     component:
