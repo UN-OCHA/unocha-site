@@ -1,20 +1,21 @@
-uuid: 2a96730b-c5d9-4e73-985c-042844647a19
+uuid: fc20f88e-b51e-47d4-8c7c-0a78eb25a258
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.taxonomy_term.teaser
-    - taxonomy.vocabulary.regional_offices
+    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.title
+    - node.type.region
   module:
-    - taxonomy
+    - node
     - user
 id: regions
 label: Regions
 module: views
 description: ''
 tag: ''
-base_table: taxonomy_term_field_data
-base_field: tid
+base_table: node_field_data
+base_field: nid
 display:
   default:
     id: default
@@ -22,18 +23,18 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Regional Offices'
+      title: Regions
       fields:
-        name:
-          id: name
-          table: taxonomy_term_field_data
-          field: name
+        title:
+          id: title
+          table: node_field_data
+          field: title
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: taxonomy_term
-          entity_field: name
-          plugin_id: term_name
+          entity_type: node
+          entity_field: title
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -71,7 +72,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          convert_spaces: false
       pager:
         type: none
         options:
@@ -95,47 +95,63 @@ display:
         options: {  }
       empty: {  }
       sorts:
-        name:
-          id: name
-          table: taxonomy_term_field_data
-          field: name
+        title:
+          id: title
+          table: node_field_data
+          field: title
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: taxonomy_term
-          entity_field: name
+          entity_type: node
+          entity_field: title
           plugin_id: standard
           order: ASC
           expose:
             label: ''
             field_identifier: ''
           exposed: false
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
       arguments: {  }
       filters:
         status:
           id: status
-          table: taxonomy_term_field_data
+          table: node_field_data
           field: status
-          entity_type: taxonomy_term
+          entity_type: node
           entity_field: status
           plugin_id: boolean
           value: '1'
           group: 1
           expose:
             operator: ''
-        vid:
-          id: vid
-          table: taxonomy_term_field_data
-          field: vid
-          entity_type: taxonomy_term
-          entity_field: vid
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
           plugin_id: bundle
           value:
-            regional_offices: regional_offices
+            region: region
       style:
         type: default
       row:
-        type: 'entity:taxonomy_term'
+        type: 'entity:node'
         options:
           relationship: none
           view_mode: teaser
@@ -156,16 +172,43 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  page__regions:
+    id: page__regions
+    display_title: Regions
+    display_plugin: page
+    position: 1
+    display_options:
+      display_description: ''
+      display_extenders: {  }
+      path: regions
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
         - user.permissions
       tags: {  }
   regions:
     id: regions
-    display_title: 'Regional offices'
+    display_title: 'Regions block'
     display_plugin: block
     position: 2
     display_options:
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: title
       defaults:
-        pager: true
+        style: false
+        row: false
       display_description: ''
       display_extenders: {  }
     cache_metadata:
@@ -173,5 +216,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - 'user.node_grants:view'
         - user.permissions
       tags: {  }
