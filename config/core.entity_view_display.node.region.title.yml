@@ -1,0 +1,28 @@
+uuid: dc7fc3d5-812a-4bf8-ae9d-5ec73e6a3a8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.title
+    - field.field.node.region.body
+    - field.field.node.region.field_custom_content
+    - field.field.node.region.field_region_image
+    - node.type.region
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.region.title
+targetEntityType: node
+bundle: region
+mode: title
+content: {  }
+hidden:
+  body: true
+  field_custom_content: true
+  field_region_image: true
+  langcode: true
+  links: true
