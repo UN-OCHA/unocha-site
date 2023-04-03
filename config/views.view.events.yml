@@ -236,16 +236,7 @@ display:
         title: false
         relationships: false
         arguments: false
-      relationships:
-        field_region:
-          id: field_region
-          table: node__field_region
-          field: field_region
-          relationship: none
-          group_type: group
-          admin_label: 'field_region: Content'
-          plugin_id: standard
-          required: true
+      relationships: {  }
       display_description: ''
       display_extenders: {  }
     cache_metadata:
