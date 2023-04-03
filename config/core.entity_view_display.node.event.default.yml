@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.event.field_custom_content
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_location
     - field.field.node.event.field_event_type
     - field.field.node.event.field_region
     - field.field.node.event.field_response
@@ -27,15 +28,15 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_country:
     type: entity_reference_label
     label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_custom_content:
     type: layout_paragraphs
@@ -44,7 +45,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   field_event_date:
     type: daterange_default
@@ -60,10 +61,17 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: story
+      view_mode: event
       link: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_event_location:
+    type: text_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_event_type:
     type: entity_reference_label
@@ -71,7 +79,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_region:
     type: entity_reference_label
@@ -79,7 +87,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_response:
     type: entity_reference_label
@@ -87,7 +95,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
 hidden:
   langcode: true

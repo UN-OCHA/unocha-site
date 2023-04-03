@@ -1,8 +1,9 @@
-uuid: 3eefd1f7-0fb4-4011-a748-4f44a25b7813
+uuid: ba447086-1a54-4759-896e-c6dac28b555a
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.subscribe
     - field.field.paragraph.call_to_action.field_destination
     - field.field.paragraph.call_to_action.field_text
     - field.field.paragraph.call_to_action.field_title
@@ -24,10 +25,10 @@ third_party_settings:
       denylisted_blocks: {  }
       allowlisted_blocks: {  }
       restricted_categories: {  }
-id: paragraph.call_to_action.default
+id: paragraph.call_to_action.subscribe
 targetEntityType: paragraph
 bundle: call_to_action
-mode: default
+mode: subscribe
 content:
   field_destination:
     type: link

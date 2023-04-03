@@ -19,6 +19,11 @@ global-styling:
 # completely independent and style the custom content of your website, such as
 # a custom Paragraph type.
 #
+cd-article:
+  css:
+    component:
+      components/cd-article/cd-article.css: {}
+
 cd-button:
   css:
     component:
@@ -33,16 +38,6 @@ cd-hero:
   css:
     component:
       components/cd-hero/cd-hero.css: {}
-
-cd-hero--style-one:
-  css:
-    component:
-      components/cd-hero/cd-hero--style-one.css: {}
-
-cd-hero--style-two:
-  css:
-    component:
-      components/cd-hero/cd-hero--style-two.css: {}
 
 cd-hero--style-three:
   css:

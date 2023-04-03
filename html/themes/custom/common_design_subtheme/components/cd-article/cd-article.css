@@ -4,6 +4,8 @@
 
 .cd-article p {
   max-width: var(--cd-max-content-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cd-article__page-title {

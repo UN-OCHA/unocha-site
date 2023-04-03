@@ -99,7 +99,7 @@ display:
         type: basic
         options:
           submit_button: Apply
-          reset_button: false
+          reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
@@ -580,34 +580,7 @@ display:
         relationships: false
         fields: false
         arguments: false
-      relationships:
-        field_country:
-          id: field_country
-          table: node__field_country
-          field: field_country
-          relationship: none
-          group_type: group
-          admin_label: 'field_country: Taxonomy term'
-          plugin_id: standard
-          required: true
-        field_region:
-          id: field_region
-          table: node__field_region
-          field: field_region
-          relationship: none
-          group_type: group
-          admin_label: 'field_region: Content'
-          plugin_id: standard
-          required: false
-        field_response:
-          id: field_response
-          table: node__field_response
-          field: field_response
-          relationship: none
-          group_type: group
-          admin_label: 'field_response: Content'
-          plugin_id: standard
-          required: false
+      relationships: {  }
       display_description: ''
       use_more: true
       use_more_always: false

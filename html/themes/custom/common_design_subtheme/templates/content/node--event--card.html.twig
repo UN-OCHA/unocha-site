@@ -78,64 +78,32 @@
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    'cd-article'
+    'uno-card cd-card cd-card--clickable [ cd-flow ]'
   ]
 %}
-{{ attach_library('common_design/cd-article') }}
-{{ attach_library('common_design/cd-author') }}
+
+{{ attach_library('common_design/cd-flow') }}
+{{ attach_library('common_design/cd-utilities') }}
 {{ attach_library('common_design/cd-typography') }}
-{{ attach_library('common_design_subtheme/uno-social-links') }}
+{{ attach_library('common_design/cd-button') }}
+{{ attach_library('common_design/cd-read-more') }}
+{{ attach_library('common_design/cd-card') }}
+{{ attach_library('common_design_subtheme/uno-card-list')}}
 
-{% set unochaDate = node.getCreatedTime|date('j F Y') %}
-
-  {% if content.field_basic_image is not empty %}
-    {% embed '@uno-components/cd-hero/cd-hero.html.twig' %}
-      {% block hero_image %}
-        {{ content.field_basic_image }}
-      {% endblock %}
-    {% endembed %}
-  {% endif %}
 
 <article{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {% if page %}
-    {% if title %}
-      {# This is not wrapped as this renders the page title block which
-         already wraps the node title in a <h1>. #}
-      {{ title }}
-    {% endif %}
-  {% else %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
-  {{ title_suffix }}
-
-  {% if componentsModule %}
-    {% include '@uno-components/cd-social-links/cd-social-links.html.twig' %}
-  {% endif %}
-
-  {{ local_tasks }}
-
-  <div{{ content_attributes }}>
-
-    {{ content|without('field_basic_image') }}
-
-    {% if display_submitted %}
-      <footer class="cd-author node__meta [ cd-bumper ]">
-        {% if author_picture %}
-          <div class="cd-author__image cd-author__image--rounded">
-            {{ author_picture }}
-          </div>
-        {% endif %}
-        <div class="cd-author__content">
-          <div{{author_attributes.addClass('node__submitted')}}>
-            {% trans %}Submitted on
-            {{ unochaDate }}{% endtrans %}
-            {{ metadata }}
-          </div>
-        </div>
-      </footer>
-    {% endif %}
-
+  <div class="uno-card__image">
+    {{ content.field_event_image }}
   </div>
-
+  {# {% set destination = paragraph.field_destination.0.url %} #}
+  <div class="uno-card__content cd-card__container [ cd-flow ]">
+    <h3 class="uno-card__title"><a href="{{ url }}">{{ label }}</a></h3>
+    {{ content|without('field_event_image') }}
+    <a class="cd-button cd-button--small cd-button--icon" href="{{ url }}">
+      <span class="cd-button__text">{{ 'View more'|t }}</span>
+      <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
+        <use xlink:href="#cd-icon--arrow-right"></use>
+      </svg>
+    </a>
+  </div>
 </article>

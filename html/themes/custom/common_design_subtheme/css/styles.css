@@ -322,7 +322,7 @@ a.cd-footer-social__link svg {
   padding: 3rem 0 2rem;
 }
 
-.uno-featured  {
+.uno-tag{
   display: inline-block;
   color: var(--brand-highlight-contract);
   background-color: var(--brand-highlight);
@@ -353,12 +353,6 @@ a.cd-footer-social__link svg {
   }
 }
 
-/* Prevent devel generated content with long string filenames breaking layout */
-.view-media-centre .cd-caption {
-  word-wrap: break-word;
-  max-width: 200px;
-}
-
 /* Story node */
 footer.cd-author {
   margin-top: 3rem;
@@ -374,4 +368,9 @@ footer.cd-author {
   max-width: var(--cd-max-content-width);
   margin-left: auto;
   margin-right: auto;
+}
+
+
+.field__item > p:first-child {
+  margin-top: 0;
 }
