@@ -84,6 +84,7 @@
 {{ attach_library('common_design/cd-article') }}
 {{ attach_library('common_design/cd-author') }}
 {{ attach_library('common_design/cd-typography') }}
+{{ attach_library('common_design_subtheme/uno-social-links') }}
 
 {% set unochaDate = node.getCreatedTime|date('j F Y') %}
 
@@ -108,41 +109,32 @@
   {% endif %}
   {{ title_suffix }}
 
-  {{ local_tasks }}
-
-  {% if display_submitted %}
-    <footer class="cd-author node__meta [ cd-bumper ]">
-      {% if author_picture %}
-        <div class="cd-author__image cd-author__image--rounded">
-          {{ author_picture }}
-        </div>
-      {% endif %}
-      <div class="cd-author__content">
-        <div{{ author_attributes.addClass('node__submitted') }}>
-          {% trans %}Submitted by {{ author_name }} on {{ unochaDate }}{% endtrans %}
-          {{ metadata }}
-        </div>
-      </div>
-    </footer>
+  {% if componentsModule %}
+    {% include '@uno-components/cd-social-links/cd-social-links.html.twig' %}
   {% endif %}
+
+  {{ local_tasks }}
 
   <div{{ content_attributes }}>
 
     {{ content|without('field_basic_image') }}
 
-{#    {% block section %}#}
-{#      <div class="cd-layout-two-col">#}
-
-{#        <div class="cd-layout-main-content">#}
-{#          {{ content }}#}
-{#        </div>#}
-
-{#        <div class="cd-layout-sidebar-first" role="complementary">#}
-{#          Other fields on the node can be printed here to create a faux sidebar layout.#}
-{#        </div>#}
-
-{#      </div>#}
-{#    {% endblock %}#}
+    {% if display_submitted %}
+      <footer class="cd-author node__meta [ cd-bumper ]">
+        {% if author_picture %}
+          <div class="cd-author__image cd-author__image--rounded">
+            {{ author_picture }}
+          </div>
+        {% endif %}
+        <div class="cd-author__content">
+          <div{{author_attributes.addClass('node__submitted')}}>
+            {% trans %}Submitted on
+            {{ unochaDate }}{% endtrans %}
+            {{ metadata }}
+          </div>
+        </div>
+      </footer>
+    {% endif %}
 
   </div>
 
