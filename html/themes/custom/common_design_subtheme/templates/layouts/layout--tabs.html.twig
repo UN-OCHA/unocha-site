@@ -14,16 +14,32 @@
 {%
   set classes = [
     'layout',
-    'layout--tabs'
+    'layout--tabs',
+    'uno-tabs'
   ]
 %}
 
+{{ attach_library('common_design_subtheme/uno-tabs') }}
+
 {% if content %}
+{% set region = 'tabs' %}
+
   <div{{attributes.addClass(classes)}}>
-    {% if content.first %}
-      <div {{ region_attributes.first.addClass('layout__region', 'layout__region--first') }}>
-        {{ content.first }}
-      </div>
-    {% endif %}
+
+    <ul class="uno-tabs__list">
+    {% for tab in content.tabs %}
+
+      {# {{dpm(tab['#paragraph'])}} #}
+
+      <li><a href="#section--{{ loop.index }}">Tab {{ loop.index }}</a></li>
+    {% endfor %}
+    </ul>
+
+    {% for tab in content.tabs %}
+      <section class="uno-tabs__section" id="section--{{ loop.index }}">
+        {{ tab }}
+      </section>
+    {% endfor %}
+
   </div>
 {% endif %}

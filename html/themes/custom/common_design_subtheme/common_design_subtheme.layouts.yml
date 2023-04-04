@@ -70,7 +70,11 @@ layout_tabs:
   library: common_design_subtheme/uno-tabs
   default_region: first
   icon_map:
-    - [first]
+    - [first, second, third]
+    - [all]
+    - [all]
+    - [all]
+    - [all]
   regions:
-    first:
-      label: First
+    tabs:
+      label: Tab Set
