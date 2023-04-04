@@ -67,11 +67,13 @@ function common_design_subtheme_preprocess_node(&$variables) {
   $icon_twitter = file_get_contents(\Drupal::service('extension.path.resolver')->getPath('theme', 'common_design_subtheme') . '/components/cd-social-links/img/icon--twitter.svg');
   $icon_facebook = file_get_contents(\Drupal::service('extension.path.resolver')->getPath('theme', 'common_design_subtheme') . '/components/cd-social-links/img/icon--facebook.svg');
   $icon_linkedin = file_get_contents(\Drupal::service('extension.path.resolver')->getPath('theme', 'common_design_subtheme') . '/components/cd-social-links/img/icon--linkedin.svg');
+  $icon_email = file_get_contents(\Drupal::service('extension.path.resolver')->getPath('theme', 'common_design_subtheme') . '/components/cd-social-links/img/icon--email.svg');
   $icon_copyurl = file_get_contents(\Drupal::service('extension.path.resolver')->getPath('theme', 'common_design_subtheme') . '/components/cd-social-links/img/icon--copyurl.svg');
   $icon_pdf = file_get_contents(\Drupal::service('extension.path.resolver')->getPath('theme', 'common_design_subtheme') . '/components/cd-social-links/img/icon--pdf.svg');
   $variables['icon_twitter'] = $icon_twitter;
   $variables['icon_facebook'] = $icon_facebook;
   $variables['icon_linkedin'] = $icon_linkedin;
+  $variables['icon_email'] = $icon_email;
   $variables['icon_copyurl'] = $icon_copyurl;
   $variables['icon_pdf'] = $icon_pdf;
 
