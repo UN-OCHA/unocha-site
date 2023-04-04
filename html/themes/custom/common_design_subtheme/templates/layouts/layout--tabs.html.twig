@@ -37,7 +37,8 @@
 
     {% for tab in content.tabs %}
       <section class="uno-tabs__section" id="section--{{ loop.index }}">
-        {{ tab }}
+        {# {{ tab }} #}
+        {{ content.tabs }}
       </section>
     {% endfor %}
 
