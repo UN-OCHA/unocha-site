@@ -49,12 +49,22 @@ cd-page-title:
     component:
       components/cd-page-title/cd-page-title.css: {}
 
+cd-read-more:
+  css:
+    component:
+      components/cd-read-more/cd-read-more.css: {}
+
 cd-social-links:
   js:
     components/cd-social-links/cd-social-links.js: {}
   css:
     component:
       components/cd-social-links/cd-social-links.css: {}
+
+cd-teaser:
+  css:
+    component:
+      components/cd-teaser/cd-teaser.css: {}
 
 rw-brand:
   css:
