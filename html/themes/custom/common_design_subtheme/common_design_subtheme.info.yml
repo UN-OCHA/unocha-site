@@ -46,6 +46,8 @@ libraries-extend:
     - common_design_subtheme/cd-button
   common_design/cd-caption:
     - common_design_subtheme/cd-caption
+  common_design/cd-page-title:
+    - common_design_subtheme/cd-page-title
   common_design/cd-social-links:
     - common_design_subtheme/cd-social-links
 
