@@ -101,7 +101,7 @@ button[aria-expanded] .cd-icon--arrow-down {
   margin-top: 2rem;
 }
 
-.paragraph--type--node-teaser>.field > .field__items > .field__item {
+.paragraph--type--node-teaser > .field > .field__items > .field__item {
   margin-bottom: 2rem;
 }
 
@@ -113,9 +113,10 @@ button[aria-expanded] .cd-icon--arrow-down {
   margin-top: 6rem;
 }
 
-
+/* Fields with inline labels */
 .field--label-inline {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .field--label-inline > .field__label {
@@ -126,42 +127,83 @@ button[aria-expanded] .cd-icon--arrow-down {
   content: ':'
 }
 
+.field--label-inline > .field__item {
+  flex: 0 1 auto;
+}
+/* Restrict width and centre horizontally all fields that are inline
+  This might need adjustment */
+.cd-layout-main-content > .field--label-inline,
+.field--name-field-theme {
+  max-width: var(--cd-max-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+
+.node--view-mode-full .field--name-field-event-image {
+  margin-bottom: 1rem;
+}
+
 /* Restrict width and centre horizontally */
-.node--type-landing-page .cd-page-title,
-.node--type-landing-page .field--name-body,
-.node--type-landing-page .field--name-description,
-.node--type-landing-page .field--name-field-text,
-.node--type-landing-page .field--name-field-title,
-.node--type-landing-page .paragraph--type--list--teaser,
-.taxonomy-term--country .field--name-description,
-.taxonomy-term--country .field--name-field-text,
-.taxonomy-term--country .field--name-field-title,
-.paragraph--type--rss-feed,
-.paragraph--type--reliefweb-document,
-.paragraph--type--reliefweb-river,
-.viewsreference--view-title {
+.node--type-basic .cd-page-title,
+.node--type-region .cd-page-title,
+.node--type-response .cd-page-title,
+.node--type-story .cd-page-title,
+.field--name-body,
+.field--name-description,
+.viewsreference--view-title,
+.field--name-body > ul,
+.paragraph .field--name-field-title {
   max-width: var(--cd-max-content-width);
   margin-left: auto;
   margin-right: auto;
 }
 
-.node--type-landing-page .field--name-body,
-.node--type-landing-page .field--name-description,
-.node--type-landing-page .field--name-field-text,
-.node--type-landing-page .field--name-field-title,
-.taxonomy-term--country .field--name-field-text,
-.taxonomy-term--country .field--name-field-title {
+.node--type-event .cd-page-title {
+  max-width: var(--cd-max-content-width);
+}
+
+/* Centre content horizontally with max-width limit */
+.cd-layout-main-content .paragraph--type--text,
+.cd-layout-main-content .field--type-text-with-summary,
+.cd-layout-main-content footer,
+.cd-layout-main-content .cd-caption {
+  max-width: var(--cd-max-content-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Prevent horizontal centering in these cases */
+
+/* I would like to be able to do this for specific List (eg. Events)
+    from the Content List paragraph type
+    but the viewmode concept for Views Reference fields does not apply here
+    so .content-list--view-mode--teaser is moot
+    The viewmode is set in the View config.
+    It currently works the same way for all Content List
+    */
+.paragraph--type--content-list.content-list--view-mode--teaser .field--name-field-title,
+.paragraph--view-mode--image-align-left .field--name-field-title,
+.paragraph--view-mode--image-align-right .field--name-field-title {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Basic vertical rhythm, will need adjusting */
+.node--type-basic .field--name-body,
+.node--type-basic .field--name-description,
+.node--type-basic .field--name-field-text,
+.node--type-basic .field--name-field-title {
   margin-top: 2rem;
   margin-bottom: 4rem;
 }
 
-.node--type-landing-page .field--name-field-title,
-.taxonomy-term--country .field--name-field-title,
+.node--type-basic .field--name-field-title,
 .viewsreference--view-title {
   margin-bottom: 2rem;
 }
 
-.paragraph--type--text-and-image .field--name-field-text>p:first-child,
+.paragraph--type--text-and-image .field--name-field-text > p:first-child,
 .paragraph--type--text .field--name-field-text > p:first-child {
   margin-top: 0;
 }
@@ -240,13 +282,6 @@ button[aria-expanded] .cd-icon--arrow-down {
   margin: 0;
   padding: 0;
   list-style-type: none;
-}
-
-/* Hide fields to use as Heros */
-.node--view-mode-full .field--name-field-landing-page-image,
-.node--view-mode-full .field--name-field-article-image-caption,
-.taxonomy-term--full .field--name-field-country-image {
-  display: none;
 }
 
 /* Set bg colour so when menu items break layout, we can see them */
@@ -329,6 +364,10 @@ a.cd-footer-social__link svg {
   padding: 0 1rem;
  }
 
+ .view-filters {
+  margin-bottom: 4rem;
+ }
+
 .views-exposed-form.cd-form .cd-form--inline,
 .views-exposed-form.cd-form .cd-form--inline label,
 .views-exposed-form.cd-form .cd-form--inline .cd-form__item {
@@ -359,17 +398,6 @@ footer.cd-author {
   padding: 1rem 0;
   border-top: 1px solid var(--brand-grey);
 }
-
-/* Centre content horizontally with max-width limit */
-.cd-layout-main-content .paragraph--type--text,
-.cd-layout-main-content .field--type-text-with-summary,
-.cd-layout-main-content footer,
-.cd-layout-main-content .cd-caption {
-  max-width: var(--cd-max-content-width);
-  margin-left: auto;
-  margin-right: auto;
-}
-
 
 .field__item > p:first-child {
   margin-top: 0;

@@ -115,7 +115,7 @@
 
   {{ local_tasks }}
 
-  <div{{ content_attributes }}>
+  <div{{ content_attributes.addClass('cd-layout-main-content') }}>
 
     {{ content|without('field_basic_image') }}
 
