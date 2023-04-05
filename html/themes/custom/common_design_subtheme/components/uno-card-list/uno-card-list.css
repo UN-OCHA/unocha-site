@@ -17,9 +17,8 @@
   border-top: 0;
 }
 
-.paragraph--type--card-list .field--name-field-card,
-.paragraph--type--list--card .paragraph--type--node .erd-list--card,
-.paragraph--type--content-list.content-list--view-mode--card .view .view-content,
+.paragraph--type--node.paragraph--view-mode--cards .field--name-field-node,
+.paragraph--type--content-list.paragraph--view-mode--cards .view .view-content,
 .view-stories .view-content,
 .view-responses .view-content,
 .view-media-centre .view-content,
@@ -28,11 +27,8 @@
   flex-flow: row wrap;
   gap: var(--uno-card-list-gap-size);
 }
-
-.paragraph--type--card-list .field--name-field-card > .field__item,
-.paragraph--type--list--card .paragraph--type--node .erd-list--card > .field__item,
-.paragraph--type--content-list.content-list--view-mode--card .view .views-row,
-.paragraph--type--content-list.content-list--view-mode--card article,
+.paragraph--type--node.paragraph--view-mode--cards .field--name-field-node .field__item,
+.paragraph--type--content-list.paragraph--view-mode--cards article,
 .view-stories .view-content article,
 .view-responses .view-content article,
 .view-media-centre .view-content article,
@@ -42,9 +38,8 @@
 }
 
 @media screen and (min-width: 480px) {
-  .paragraph--type--card-list,
-  .paragraph--type--list--card .paragraph--type--node .erd-list--card,
-  .paragraph--type--content-list.content-list--view-mode--card .view .view-content,
+  .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node,
+  .paragraph--type--content-list.paragraph--view-mode--cards .view .view-content,
   .view-stories .view-content,
   .view-responses .view-content,
   .view-media-centre .view-content,
@@ -54,9 +49,8 @@
 }
 
 @media screen and (min-width: 750px) {
-  .paragraph--type--card-list--col-3,
-  .paragraph--type--list--card .paragraph--type--node .erd-list--card,
-  .paragraph--type--content-list.content-list--view-mode--card .view .view-content,
+  .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node,
+  .paragraph--type--content-list.paragraph--view-mode--cards .view .view-content,
   .view-stories .view-content,
   .view-responses .view-content,
   .view-media-centre .view-content,
