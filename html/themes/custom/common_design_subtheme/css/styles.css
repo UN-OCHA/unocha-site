@@ -140,7 +140,7 @@ button[aria-expanded] .cd-icon--arrow-down {
   margin-bottom: 1rem;
 }
 
-.field--name-field-event-image {
+.node--view-mode-full .field--name-field-event-image {
   margin-bottom: 1rem;
 }
 
@@ -163,6 +163,16 @@ button[aria-expanded] .cd-icon--arrow-down {
   max-width: var(--cd-max-content-width);
 }
 
+/* Centre content horizontally with max-width limit */
+.cd-layout-main-content .paragraph--type--text,
+.cd-layout-main-content .field--type-text-with-summary,
+.cd-layout-main-content footer,
+.cd-layout-main-content .cd-caption {
+  max-width: var(--cd-max-content-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Basic vertical rhythm, will need adjusting */
 .node--type-basic .field--name-body,
 .node--type-basic .field--name-description,
@@ -180,6 +190,13 @@ button[aria-expanded] .cd-icon--arrow-down {
 .paragraph--type--text-and-image .field--name-field-text > p:first-child,
 .paragraph--type--text .field--name-field-text > p:first-child {
   margin-top: 0;
+}
+
+/* Prevent horizontal centering in these cases */
+.paragraph--view-mode--image-align-left .field--name-field-title,
+.paragraph--view-mode--image-align-right .field--name-field-title {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* Paragraph Text and Image with alignment */
@@ -256,13 +273,6 @@ button[aria-expanded] .cd-icon--arrow-down {
   margin: 0;
   padding: 0;
   list-style-type: none;
-}
-
-/* Hide fields to use as Heros */
-.node--view-mode-full .field--name-field-landing-page-image,
-.node--view-mode-full .field--name-field-article-image-caption,
-.taxonomy-term--full .field--name-field-country-image {
-  display: none;
 }
 
 /* Set bg colour so when menu items break layout, we can see them */
@@ -345,6 +355,10 @@ a.cd-footer-social__link svg {
   padding: 0 1rem;
  }
 
+ .view-filters {
+  margin-bottom: 4rem;
+ }
+
 .views-exposed-form.cd-form .cd-form--inline,
 .views-exposed-form.cd-form .cd-form--inline label,
 .views-exposed-form.cd-form .cd-form--inline .cd-form__item {
@@ -375,17 +389,6 @@ footer.cd-author {
   padding: 1rem 0;
   border-top: 1px solid var(--brand-grey);
 }
-
-/* Centre content horizontally with max-width limit */
-.cd-layout-main-content .paragraph--type--text,
-.cd-layout-main-content .field--type-text-with-summary,
-.cd-layout-main-content footer,
-.cd-layout-main-content .cd-caption {
-  max-width: var(--cd-max-content-width);
-  margin-left: auto;
-  margin-right: auto;
-}
-
 
 .field__item > p:first-child {
   margin-top: 0;

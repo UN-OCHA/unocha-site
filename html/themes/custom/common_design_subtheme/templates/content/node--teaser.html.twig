@@ -78,7 +78,7 @@
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    'cd-teaser [ cd-flow cd-bumper ]'
+    'cd-teaser [ cd-bumper ]'
   ]
 %}
 
@@ -91,15 +91,11 @@
 
 <article{{ attributes.addClass(classes) }}>
 
-  {# {% if content.field_image|render %} #}
+  {% if content.field_event_image|render %}
     <div class="cd-teaser__image">
       {{ content.field_event_image }}
-      {{ content.field_article_image }}
-      {{ content.field_basic_image }}
-      {{ content.field_landing_page_image }}
-      {{ content.field_image }}
     </div>
-  {# {% endif %} #}
+  {% endif %}
 
   <div class="cd-teaser__container [ cd-flow ]">
     {{ title_prefix }}
@@ -117,7 +113,7 @@
         {{ content.body }}
       {% endset %}
 
-      {{ contentBody|striptags }}
+      <p>{{ contentBody|striptags }}</p>
 
     </div>
       <a href="{{ url }}" class="cd-teaser__link cd-read-more">
