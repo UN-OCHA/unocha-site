@@ -173,6 +173,22 @@ button[aria-expanded] .cd-icon--arrow-down {
   margin-right: auto;
 }
 
+/* Prevent horizontal centering in these cases */
+
+/* I would like to be able to do this for specific List (eg. Events)
+    from the Content List paragraph type
+    but the viewmode concept for Views Reference fields does not apply here
+    so .content-list--view-mode--teaser is moot
+    The viewmode is set in the View config.
+    It currently works the same way for all Content List
+    */
+.paragraph--type--content-list.content-list--view-mode--teaser .field--name-field-title,
+.paragraph--view-mode--image-align-left .field--name-field-title,
+.paragraph--view-mode--image-align-right .field--name-field-title {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /* Basic vertical rhythm, will need adjusting */
 .node--type-basic .field--name-body,
 .node--type-basic .field--name-description,
@@ -190,13 +206,6 @@ button[aria-expanded] .cd-icon--arrow-down {
 .paragraph--type--text-and-image .field--name-field-text > p:first-child,
 .paragraph--type--text .field--name-field-text > p:first-child {
   margin-top: 0;
-}
-
-/* Prevent horizontal centering in these cases */
-.paragraph--view-mode--image-align-left .field--name-field-title,
-.paragraph--view-mode--image-align-right .field--name-field-title {
-  margin-left: 0;
-  margin-right: 0;
 }
 
 /* Paragraph Text and Image with alignment */
