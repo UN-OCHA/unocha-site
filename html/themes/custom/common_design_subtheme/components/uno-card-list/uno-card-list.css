@@ -10,13 +10,6 @@
   --uno-card-list-gap-size: 1.5rem;
 }
 
-/* unset default styles that apply to top-level card */
-.paragraph--type--card-list .field--name-field-card > .field__item + .field__item {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: 0;
-}
-
 .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node,
 .paragraph--type--content-list.paragraph--view-mode--cards .view .view-content,
 .view-stories .view-content,
@@ -27,7 +20,7 @@
   flex-flow: row wrap;
   gap: var(--uno-card-list-gap-size);
 }
-.paragraph--type--node.paragraph--view-mode--cards .field--name-field-node .field__item,
+.paragraph--type--node.paragraph--view-mode--cards .field--name-field-node article,
 .paragraph--type--content-list.paragraph--view-mode--cards article,
 .view-stories .view-content article,
 .view-responses .view-content article,
@@ -82,7 +75,8 @@
   }
 }
 
-.more-link {
+.layout__region .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node {
   display: block;
-  margin-top: 2rem;
 }
+
+
