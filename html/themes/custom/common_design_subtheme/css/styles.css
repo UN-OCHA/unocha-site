@@ -190,15 +190,15 @@ button[aria-expanded] .cd-icon--arrow-down {
 }
 
 /* Basic vertical rhythm, will need adjusting */
-.node--type-basic .field--name-body,
-.node--type-basic .field--name-description,
-.node--type-basic .field--name-field-text,
-.node--type-basic .field--name-field-title {
+/* .node--view-mode-full .field--name-body,
+.node--view-mode-full .field--name-description,
+.node--view-mode-full .field--name-field-text,
+.node--view-mode-full .field--name-field-title {
   margin-top: 2rem;
   margin-bottom: 4rem;
-}
+} */
 
-.node--type-basic .field--name-field-title,
+.node--view-mode-full .field--name-field-title,
 .viewsreference--view-title {
   margin-bottom: 2rem;
 }
@@ -272,6 +272,7 @@ button[aria-expanded] .cd-icon--arrow-down {
   height: 100%;
 }
 
+/* Soft footer */
 .cd-soft-footer {
   text-align: left;
 }
@@ -340,7 +341,6 @@ button[aria-expanded] .cd-icon--arrow-down {
   padding: 1rem;
 }
 
-
 a.cd-footer-social__link svg {
   fill: var(--brand-primary);
 }
@@ -357,16 +357,22 @@ a.cd-footer-social__link svg {
   padding: 3rem 0 2rem;
 }
 
-.uno-tag{
+.uno-tag {
   display: inline-block;
   color: var(--brand-highlight-contract);
   background-color: var(--brand-highlight);
   padding: 0 1rem;
  }
 
+ /* Views */
  .view-filters {
   margin-bottom: 4rem;
  }
+
+.more-link {
+  display: block;
+  margin-top: 2rem;
+}
 
 .views-exposed-form.cd-form .cd-form--inline,
 .views-exposed-form.cd-form .cd-form--inline label,
@@ -399,6 +405,11 @@ footer.cd-author {
   border-top: 1px solid var(--brand-grey);
 }
 
+/* Generic typography, might need increased specificity */
 .field__item > p:first-child {
   margin-top: 0;
+}
+
+.paragraph--type--node.paragraph--view-mode--teasers article + article {
+  margin-top: 2rem;
 }

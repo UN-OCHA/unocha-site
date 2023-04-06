@@ -91,23 +91,29 @@
 
 <article{{ attributes.addClass(classes) }}>
 
-  {% if content.field_event_image|render %}
+  {% block teaser_image %}
+  {% if content.field_image|render %}
     <div class="cd-teaser__image">
-      {{ content.field_event_image }}
+      {{ content.field_image }}
     </div>
   {% endif %}
+  {% endblock %}
 
   <div class="cd-teaser__container [ cd-flow ]">
     {{ title_prefix }}
     {% if label and not page %}
+      {% block teaser_title %}
       <h2{{ title_attributes.addClass('cd-teaser__title cd-max-width') }}>
         <a href="{{ url }}" rel="bookmark">{{ label }}</a>
       </h2>
+      {% endblock %}
     {% endif %}
     {{ title_suffix }}
 
     <div class="cd-teaser__description cd-max-width">
-      {{ content|without('field_event_image', 'body') }}
+
+    {% block teaser_content %}
+      {{ content|without('field_image', 'body') }}
 
       {% set contentBody %}
         {{ content.body }}
@@ -115,13 +121,17 @@
 
       <p>{{ contentBody|striptags }}</p>
 
+    {% endblock %}
     </div>
-      <a href="{{ url }}" class="cd-teaser__link cd-read-more">
-        {% trans %}Learn more{% endtrans %}
-        <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
-          <use xlink:href="#cd-icon--arrow-right"></use>
-        </svg>
-      </a>
+
+    {% block read_more %}
+    <a href="{{ url }}" class="cd-card__link cd-read-more">
+      {% trans %}Read more{% endtrans %}
+      <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
+        <use xlink:href="#cd-icon--arrow-right"></use>
+      </svg>
+    </a>
+    {% endblock %}
   </div>
 
 </article>

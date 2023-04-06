@@ -44,8 +44,9 @@
 }
 
 .uno-mega-menu__block .uno-mega-menu__heading {
+  display: block;
   font-weight: bold;
-  margin: 0 0 1rem;
+  margin: 0 0 0.5rem;
 }
 
 @media (min-width: 1024px) {
@@ -79,7 +80,7 @@
   }
 
   .uno-mega-menu ul li a {
-    padding: 0 0 1rem;
+    padding: 0 0 0.5rem;
   }
 }
 
