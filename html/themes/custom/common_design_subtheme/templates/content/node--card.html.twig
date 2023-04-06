@@ -82,6 +82,8 @@
   ]
 %}
 
+{% set unochaDate = node.getCreatedTime|date('j F Y') %}
+
 {{ attach_library('common_design/cd-flow') }}
 {{ attach_library('common_design/cd-utilities') }}
 {{ attach_library('common_design/cd-typography') }}
@@ -112,6 +114,14 @@
   </div>
 
   <div class="cd-card__footer">
+    {% block date %}
+      {% if display_submitted %}
+        <div class="cd-card__date">
+          <time datetime="{{ node.getCreatedTime|date }}">{{ unochaDate }}</time>
+        </div>
+      {% endif %}
+    {% endblock %}
+
     {% block read_more %}
     <a href="{{ url }}" class="cd-card__link cd-read-more">
       {% trans %}Read more{% endtrans %}
@@ -120,6 +130,7 @@
       </svg>
     </a>
     {% endblock %}
+
   </div>
 
 </article>
