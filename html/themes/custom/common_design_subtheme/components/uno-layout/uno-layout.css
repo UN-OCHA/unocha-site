@@ -5,7 +5,7 @@
 
 :root {
   --uno-card-list-num-cols: 1;
-  --uno-card-list-gap-size: 1.5rem;
+  --uno-card-list-gap-size: 2rem;
 }
 
 .layout--twocol,

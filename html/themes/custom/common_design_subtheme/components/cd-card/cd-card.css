@@ -70,11 +70,36 @@
  */
 .cd-card__footer {
   flex-shrink: 0;
-  padding: 0 0 2rem;
+  padding: 2rem 0 0;
+  padding-inline-end: 2rem;
+  content: "";
+  position: relative;
+}
+.cd-card__footer::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6rem;
+  height: 3px;
+  background-color: var(--brand-primary);
+}
+
+@media screen and (min-width: 480px) {
+  .cd-card__footer {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+  }
+}
+
+.cd-card__date {
+  display: inline-block;
+  font-size: 0.875rem;
+  flex: 1 auto;
 }
 
 .cd-card__link {
-  padding: 1rem 0 0;
+  padding: 0;
   border-top: 0 solid var(--brand-grey);
 }
 
