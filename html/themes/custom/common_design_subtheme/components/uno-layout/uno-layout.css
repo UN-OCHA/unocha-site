@@ -3,42 +3,50 @@
  * Provides the layout styles for two-column layout section.
  */
 
+:root {
+  --uno-card-list-num-cols: 1;
+  --uno-card-list-gap-size: 1.5rem;
+}
+
 .layout--twocol,
 .layout--threecol,
 .layout--fourcol {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  gap: var(--uno-card-list-gap-size);
 }
 
 .layout--twocol > .layout__region,
 .layout--threecol > .layout__region,
 .layout--fourcol > .layout__region {
-  flex: 0 1 100%;
+  /* stylelint-disable-next-line max-line-length */
+  flex: 0 1 calc((100% / var(--uno-card-list-num-cols)) - var(--uno-card-list-gap-size) + var(--uno-card-list-gap-size) / var(--uno-card-list-num-cols));
 }
 
-@media screen and (min-width: 40em) {
-  .layout--twocol.layout--twocol > .layout__region {
-    flex: 0 1 50%;
+@media screen and (min-width: 480px) {
+  .layout--twocol > .layout__region {
+    --uno-card-list-num-cols: 2;
   }
 
   .layout--threecol > .layout__region {
-    flex: 0 1 33%;
+    --uno-card-list-num-cols: 3;
   }
 
   .layout--fourcol > .layout__region {
-    flex: 0 1 25%;
-  }
-
-  .layout--twocol > .layout__region,
-  .layout--threecol > .layout__region,
-  .layout--fourcol > .layout__region {
-    padding-inline-start: 1rem;
-  }
-
-  .layout--twocol > .layout__region:first-child,
-  .layout--threecol > .layout__region:first-child,
-  .layout--fourcol > .layout__region:first-child {
-    padding-inline-start: 0;
+    --uno-card-list-num-cols: 2;
   }
 }
 
+@media screen and (min-width: 750px) {
+  .layout--twocol > .layout__region {
+    --uno-card-list-num-cols: 2;
+  }
+
+  .layout--threecol > .layout__region {
+    --uno-card-list-num-cols: 3;
+  }
+
+  .layout--fourcol > .layout__region {
+    --uno-card-list-num-cols: 4;
+  }
+}
