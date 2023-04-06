@@ -6,6 +6,9 @@ dependencies:
     - field.storage.paragraph.field_node
     - node.type.basic
     - node.type.event
+    - node.type.region
+    - node.type.response
+    - node.type.story
     - paragraphs.paragraphs_type.node
 id: paragraph.node.field_node
 field_name: field_node
@@ -23,9 +26,12 @@ settings:
     target_bundles:
       basic: basic
       event: event
+      region: region
+      response: response
+      story: story
     sort:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: null
+    auto_create_bundle: basic
 field_type: entity_reference
