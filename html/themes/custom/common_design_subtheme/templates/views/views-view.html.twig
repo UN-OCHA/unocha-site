@@ -61,15 +61,17 @@
     </div>
   {% endif %}
 
-  {% if rows %}
-    <div class="view-content">
-      {{ rows }}
-    </div>
-  {% elseif empty %}
-    <div class="view-empty">
-      {{ empty }}
-    </div>
-  {% endif %}
+  {% block view_content %}
+    {% if rows %}
+      <div class="view-content">
+        {{ rows }}
+      </div>
+    {% elseif empty %}
+      <div class="view-empty">
+        {{ empty }}
+      </div>
+    {% endif %}
+  {% endblock %}
 
   {% if pager %}
     {{ pager }}
