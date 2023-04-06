@@ -75,6 +75,7 @@
   }
 }
 
+/* Cards in a layout */
 .layout__region .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node {
   display: block;
 }

@@ -13,7 +13,7 @@
 .cd-card {
   display: flex;
   flex-flow: column nowrap;
-  border: 2px solid var(--brand-grey);
+  border: 0 solid var(--brand-grey);
   background-color: var(--cd-white);
 }
 
@@ -75,7 +75,7 @@
 
 .cd-card__link {
   padding: 1rem 0 0;
-  border-top: 1px solid var(--brand-grey);
+  border-top: 0 solid var(--brand-grey);
 }
 
 /**
