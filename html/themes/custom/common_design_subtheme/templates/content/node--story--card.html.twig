@@ -87,7 +87,12 @@
   {% endblock %}
 
   {% block card_content %}
+  {% if node.isSticky %}
     {{ content|without('field_story_image') }}
+  {% else %}
+    {{ content|without('field_story_image', 'body') }}
+  {% endif %}
+
   {% endblock %}
 
 {% endembed %}

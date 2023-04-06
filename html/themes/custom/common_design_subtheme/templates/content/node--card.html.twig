@@ -109,7 +109,9 @@
     {% block card_content %}
       {{ content }}
     {% endblock %}
+  </div>
 
+  <div class="cd-card__footer">
     {% block read_more %}
     <a href="{{ url }}" class="cd-card__link cd-read-more">
       {% trans %}Read more{% endtrans %}
@@ -118,6 +120,6 @@
       </svg>
     </a>
     {% endblock %}
-
   </div>
+
 </article>

@@ -190,15 +190,15 @@ button[aria-expanded] .cd-icon--arrow-down {
 }
 
 /* Basic vertical rhythm, will need adjusting */
-.node--type-basic .field--name-body,
-.node--type-basic .field--name-description,
-.node--type-basic .field--name-field-text,
-.node--type-basic .field--name-field-title {
+/* .node--view-mode-full .field--name-body,
+.node--view-mode-full .field--name-description,
+.node--view-mode-full .field--name-field-text,
+.node--view-mode-full .field--name-field-title {
   margin-top: 2rem;
   margin-bottom: 4rem;
-}
+} */
 
-.node--type-basic .field--name-field-title,
+.node--view-mode-full .field--name-field-title,
 .viewsreference--view-title {
   margin-bottom: 2rem;
 }
