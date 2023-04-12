@@ -151,9 +151,10 @@ button[aria-expanded] .cd-icon--arrow-down {
 .node--type-story .cd-page-title,
 .field--name-body,
 .field--name-description,
-.viewsreference--view-title,
 .field--name-body > ul,
-.paragraph .field--name-field-title {
+.cd-layout-main-content .field--type-text-with-summary,
+.cd-layout-main-content footer,
+.cd-layout-main-content .cd-caption {
   max-width: var(--cd-max-content-width);
   margin-left: auto;
   margin-right: auto;
@@ -161,16 +162,6 @@ button[aria-expanded] .cd-icon--arrow-down {
 
 .node--type-event .cd-page-title {
   max-width: var(--cd-max-content-width);
-}
-
-/* Centre content horizontally with max-width limit */
-.cd-layout-main-content .paragraph--type--text,
-.cd-layout-main-content .field--type-text-with-summary,
-.cd-layout-main-content footer,
-.cd-layout-main-content .cd-caption {
-  max-width: var(--cd-max-content-width);
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* Prevent horizontal centering in these cases */
@@ -182,12 +173,12 @@ button[aria-expanded] .cd-icon--arrow-down {
     The viewmode is set in the View config.
     It currently works the same way for all Content List
     */
-.paragraph--type--content-list.content-list--view-mode--teaser .field--name-field-title,
+/* .paragraph--type--content-list.content-list--view-mode--teaser .field--name-field-title,
 .paragraph--view-mode--image-align-left .field--name-field-title,
 .paragraph--view-mode--image-align-right .field--name-field-title {
   margin-left: 0;
   margin-right: 0;
-}
+} */
 
 /* Basic vertical rhythm, will need adjusting */
 /* .node--view-mode-full .field--name-body,
@@ -412,4 +403,10 @@ footer.cd-author {
 
 .paragraph--type--node.paragraph--view-mode--teasers article + article {
   margin-top: 2rem;
+}
+
+.node--view-mode-campaign {
+  border:3px solid var(--brand-grey);
+  display: flex;
+  padding: 1rem;
 }

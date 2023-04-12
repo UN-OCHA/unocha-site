@@ -1,0 +1,54 @@
+uuid: d94182b3-854a-4b2c-8039-2231e7a1b863
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.campaign
+    - field.field.node.story.body
+    - field.field.node.story.field_country
+    - field.field.node.story.field_custom_content
+    - field.field.node.story.field_region
+    - field.field.node.story.field_response
+    - field.field.node.story.field_story_image
+    - field.field.node.story.field_story_type
+    - field.field.node.story.field_theme
+    - node.type.story
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.story.campaign
+targetEntityType: node
+bundle: story
+mode: campaign
+content:
+  body:
+    type: text_trimmed
+    label: hidden
+    settings:
+      trim_length: 160
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_story_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: hero
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_country: true
+  field_custom_content: true
+  field_region: true
+  field_response: true
+  field_story_type: true
+  field_theme: true
+  langcode: true
+  links: true
