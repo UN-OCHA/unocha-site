@@ -1,26 +1,32 @@
-uuid: 7d8d16a8-f06d-4abc-bf69-9ee435ac622e
+uuid: 1dd3eb8c-a89f-452a-a162-e73938339028
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.cards
     - field.field.paragraph.node.field_node
     - field.field.paragraph.node.field_text
     - field.field.paragraph.node.field_title
     - field.field.paragraph.node.paragraph_view_mode
     - paragraphs.paragraphs_type.node
   module:
+    - layout_builder
     - text
-id: paragraph.node.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.node.cards
 targetEntityType: paragraph
 bundle: node
-mode: default
+mode: cards
 content:
   field_node:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
-      link: true
+      view_mode: card
+      link: false
     third_party_settings: {  }
     weight: 2
     region: content

@@ -73,15 +73,15 @@
 {% embed '@common_design_subtheme/content/node--teaser.html.twig'
 %}
   {% block teaser_image %}
-  {% if content.field_basic_image|render %}
+  {% if content.field_story_image|render %}
     <div class="cd-teaser__image">
-      {{ content.field_basic_image }}
+      {{ content.field_story_image }}
     </div>
   {% endif %}
   {% endblock %}
 
   {% block teaser_content %}
-    {{ content|without('field_basic_image') }}
+    {{ content|without('field_story_image') }}
   {% endblock %}
 
 {% endembed %}

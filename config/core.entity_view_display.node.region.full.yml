@@ -1,38 +1,52 @@
-uuid: 37a34a4e-952d-4a65-a486-cf1ef77d55e8
+uuid: a9a8d51e-c0e4-43b2-bf20-e7f594691d65
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.region.body
     - field.field.node.region.field_custom_content
     - field.field.node.region.field_region_image
     - node.type.region
   module:
+    - entity_reference_revisions
+    - layout_builder
     - text
     - user
-id: node.region.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.region.full
 targetEntityType: node
 bundle: region
-mode: default
+mode: full
 content:
   body:
-    type: text_trimmed
+    type: text_default
     label: hidden
-    settings:
-      trim_length: 600
+    settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_custom_content:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_region_image:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: media_library
+      view_mode: hero
       link: false
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
-  field_custom_content: true
   langcode: true
   links: true

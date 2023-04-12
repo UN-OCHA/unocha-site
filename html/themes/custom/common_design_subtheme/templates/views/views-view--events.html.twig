@@ -61,17 +61,15 @@
     </div>
   {% endif %}
 
-  {% block view_content %}
-    {% if rows %}
-      <div class="view-content">
-        {{ rows }}
-      </div>
-    {% elseif empty %}
-      <div class="view-empty">
-        {{ empty }}
-      </div>
-    {% endif %}
-  {% endblock %}
+  {% if rows %}
+    <div class="view-content [ cd-flow ]">
+      {{ rows }}
+    </div>
+  {% elseif empty %}
+    <div class="view-empty">
+      {{ empty }}
+    </div>
+  {% endif %}
 
   {% if pager %}
     {{ pager }}

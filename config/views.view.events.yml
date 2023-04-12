@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.card
+    - core.entity_view_mode.node.teaser
     - node.type.event
     - taxonomy.vocabulary.country
     - taxonomy.vocabulary.event_type
@@ -162,7 +162,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: card
+          view_mode: teaser
       query:
         type: views_query
         options:

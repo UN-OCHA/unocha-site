@@ -43,8 +43,7 @@
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished',
-    paragraph.field_display_mode.value ? 'content-list--view-mode--' ~ paragraph.field_display_mode.value : 'content-list--view-mode--teaser'
+    not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
 
