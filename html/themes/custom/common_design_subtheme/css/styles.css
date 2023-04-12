@@ -413,3 +413,9 @@ footer.cd-author {
 .paragraph--type--node.paragraph--view-mode--teasers article + article {
   margin-top: 2rem;
 }
+
+.node--view-mode-campaign {
+  border:3px solid var(--brand-grey);
+  display: flex;
+  padding: 1rem;
+}
