@@ -32,29 +32,43 @@ content:
     settings:
       trim_length: 160
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
   field_country:
     type: entity_reference_label
     label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_region:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_response:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_story_image:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: story
+      view_mode: card
       link: false
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
   field_custom_content: true
-  field_region: true
-  field_response: true
   field_story_type: true
   field_theme: true
   langcode: true

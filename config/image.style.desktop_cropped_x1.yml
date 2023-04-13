@@ -1,0 +1,16 @@
+uuid: 7ddae179-9adc-4f64-abc9-3af49e5116b7
+langcode: en
+status: true
+dependencies: {  }
+name: desktop_cropped_x1
+label: 'desktop cropped x1'
+effects:
+  f717a7e2-36a7-42da-a8ad-2fb87979cbe4:
+    uuid: f717a7e2-36a7-42da-a8ad-2fb87979cbe4
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 976
+      height: 732
+      anchor: center-center
+pipeline: __default__

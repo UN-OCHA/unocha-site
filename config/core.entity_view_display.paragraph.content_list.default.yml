@@ -35,7 +35,10 @@ content:
     label: hidden
     settings:
       plugin_types:
-        - block
+        block: block
+        default: 0
+        page: 0
+        feed: 0
     third_party_settings: {  }
     weight: 2
     region: content

@@ -44,8 +44,9 @@
 }
 
 .uno-mega-menu__block .uno-mega-menu__heading {
+  display: block;
   font-weight: bold;
-  margin: 0 0 1rem;
+  margin: 0 0 0.5rem;
 }
 
 @media (min-width: 1024px) {
@@ -53,8 +54,8 @@
     display: block;
   }
 
-  .uno-mega-menu__block + .uno-mega-menu__block {
-    margin-top: 1.5rem;
+  .uno-mega-menu__block {
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -69,9 +70,15 @@
 }
 
 @media (min-width: 1024px) {
+  .uno-mega-menu .uno-mega-menu__wrapper ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 250px;
+  }
+
   .uno-mega-menu .uno-mega-menu__wrapper {
     display: block;
-    columns: 4;
   }
 
   .uno-mega-menu__block ul {
@@ -79,7 +86,7 @@
   }
 
   .uno-mega-menu ul li a {
-    padding: 0 0 1rem;
+    padding: 0 0 0.5rem;
   }
 }
 

@@ -1,0 +1,20 @@
+uuid: 1257751f-7d1d-4958-aaa1-11ca380a12e3
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - common_design_claro
+id: mainpagecontent
+theme: common_design_claro
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

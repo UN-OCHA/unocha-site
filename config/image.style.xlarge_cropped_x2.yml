@@ -1,0 +1,16 @@
+uuid: a00ea4f5-302f-4e74-918e-0fb38501294e
+langcode: en
+status: true
+dependencies: {  }
+name: xlarge_cropped_x2
+label: 'xlarge cropped x2'
+effects:
+  4cb1c5c0-67d0-40fb-aa4f-2e3a26a1c4ea:
+    uuid: 4cb1c5c0-67d0-40fb-aa4f-2e3a26a1c4ea
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 2280
+      height: 1710
+      anchor: center-center
+pipeline: __default__

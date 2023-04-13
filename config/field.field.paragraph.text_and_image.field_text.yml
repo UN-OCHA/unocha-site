@@ -1,0 +1,26 @@
+uuid: d810c35e-828a-45a7-9b6e-5f32ee2e9c6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.text_and_image
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - ckeditor
+id: paragraph.text_and_image.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: text_and_image
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

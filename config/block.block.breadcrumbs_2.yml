@@ -1,0 +1,20 @@
+uuid: dfb1b94e-6827-4b4a-8771-c0f00dab3fea
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - common_design_claro
+id: breadcrumbs_2
+theme: common_design_claro
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

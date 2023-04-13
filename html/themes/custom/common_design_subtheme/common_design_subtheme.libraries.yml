@@ -19,6 +19,11 @@ global-styling:
 # completely independent and style the custom content of your website, such as
 # a custom Paragraph type.
 #
+cd-article:
+  css:
+    component:
+      components/cd-article/cd-article.css: {}
+
 cd-button:
   css:
     component:
@@ -29,30 +34,42 @@ cd-caption:
     component:
       components/cd-caption/cd-caption.css: {}
 
+cd-card:
+  css:
+    component:
+      components/cd-card/cd-card.css: {}
+
 cd-hero:
   css:
     component:
       components/cd-hero/cd-hero.css: {}
-
-cd-hero--style-one:
-  css:
-    component:
-      components/cd-hero/cd-hero--style-one.css: {}
-
-cd-hero--style-two:
-  css:
-    component:
-      components/cd-hero/cd-hero--style-two.css: {}
 
 cd-hero--style-three:
   css:
     component:
       components/cd-hero/cd-hero--style-three.css: {}
 
+cd-page-title:
+  css:
+    component:
+      components/cd-page-title/cd-page-title.css: {}
+
+cd-read-more:
+  css:
+    component:
+      components/cd-read-more/cd-read-more.css: {}
+
 cd-social-links:
+  js:
+    components/cd-social-links/cd-social-links.js: {}
   css:
     component:
       components/cd-social-links/cd-social-links.css: {}
+
+cd-teaser:
+  css:
+    component:
+      components/cd-teaser/cd-teaser.css: {}
 
 rw-brand:
   css:
@@ -104,6 +121,11 @@ uno-embed:
       components/uno-embed/uno-embed.css: {}
   js:
     components/uno-embed/uno-embed.js: {}
+
+uno-figures:
+  css:
+    theme:
+      components/uno-figures/uno-figures.css: {}
 
 uno-layout:
   css:

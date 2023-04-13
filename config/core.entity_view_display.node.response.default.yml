@@ -4,14 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.response.body
+    - field.field.node.response.field_active_response
     - field.field.node.response.field_country
     - field.field.node.response.field_custom_content
     - field.field.node.response.field_region
     - field.field.node.response.field_response_image
-    - field.field.node.response.field_response_type
     - node.type.response
   module:
-    - entity_reference_revisions
     - text
     - user
 id: node.response.default
@@ -20,54 +19,26 @@ bundle: response
 mode: default
 content:
   body:
-    type: text_default
+    type: text_trimmed
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: 160
     third_party_settings: {  }
     weight: 1
-    region: content
-  field_country:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_custom_content:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_region:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 3
     region: content
   field_response_image:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: hero
+      view_mode: media_library
       link: false
     third_party_settings: {  }
     weight: 0
     region: content
-  field_response_type:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 5
-    region: content
 hidden:
+  field_active_response: true
+  field_country: true
+  field_custom_content: true
+  field_region: true
   langcode: true
   links: true

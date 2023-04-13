@@ -1,0 +1,31 @@
+uuid: 0ae49a4b-e616-4f73-8c82-d55f685a3891
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.where-we-work
+  module:
+    - menu_block
+  theme:
+    - common_design_claro
+id: common_design_claro_wherewework
+theme: common_design_claro
+region: header
+weight: -9
+provider: null
+plugin: 'menu_block:where-we-work'
+settings:
+  id: 'menu_block:where-we-work'
+  label: 'Where we work'
+  label_display: visible
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'where-we-work:'
+  suggestion: where_we_work
+visibility: {  }

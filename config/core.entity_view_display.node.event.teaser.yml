@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.event.field_custom_content
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_location
     - field.field.node.event.field_event_type
     - field.field.node.event.field_region
     - field.field.node.event.field_response
@@ -44,7 +45,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: story
+      view_mode: event
       link: false
     third_party_settings: {  }
     weight: 0
@@ -60,6 +61,7 @@ content:
 hidden:
   field_country: true
   field_custom_content: true
+  field_event_location: true
   field_region: true
   field_response: true
   langcode: true

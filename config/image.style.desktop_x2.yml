@@ -1,0 +1,18 @@
+uuid: f611aefa-8e5c-47c0-8477-cc94c1c7ecf7
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: USIwZb1Qkfh6-rA3n4Xip5sOO9lcrBthoNa-87rr-lg
+name: desktop_x2
+label: 'desktop x2'
+effects:
+  3c236793-07b8-4146-bb9c-7fb21c082528:
+    uuid: 3c236793-07b8-4146-bb9c-7fb21c082528
+    id: image_scale
+    weight: 2
+    data:
+      width: 1952
+      height: null
+      upscale: true
+pipeline: __default__

@@ -1,0 +1,10 @@
+uuid: 211ec818-d2fb-457d-a400-67437ee1a13a
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.image_align_left
+label: 'Image align left'
+targetEntityType: paragraph
+cache: true

@@ -1,9 +1,9 @@
-{{ attach_library('common_design/cd-social-links') }}
+{{ attach_library('common_design_subtheme/cd-social-links') }}
 
 <footer class="cd-social-links">
   {% set shareText = label|render|striptags|default(title|render|striptags) %}
-  {% set shareMessage = 'Replace this with the share text: '|t ~ shareText %}
-  {% set shareUrl = 'https://demo.commondesign-unocha-org.ahconu.org' ~ url %}
+  {% set shareMessage = 'UNOCHA: '|t ~ shareText %}
+  {% set shareUrl = 'https://unocha.org' ~ url %}
   <div class="cd-social-links__wrapper">
     <ul class="cd-social-links__list">
       <li class="cd-social-links__item">
@@ -27,6 +27,14 @@
           <span class="visually-hidden">{{ 'Share on LinkedIn'|t }}</span>
           <svg class="cd-icon cd-icon--social-links--linkedin" aria-hidden="true" focusable="false" width="16" height="16">
             <use xlink:href="#cd-icon--social-links--linkedin"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="cd-social-links__item">
+        <a class="cd-social-links__link cd-social-links__link--email" href="mailto:?subject=UNOCHA&amp;body={{ shareMessage }}&title={{ label|render|striptags|trim }}&url={{ shareUrl|url_encode }}">
+          <span class="visually-hidden">{{ 'Share by Email'|t }}</span>
+          <svg class="cd-icon cd-icon--social-links--email" aria-hidden="true" focusable="false" width="16" height="16">
+            <use xlink:href="#cd-icon--social-links--email"></use>
           </svg>
         </a>
       </li>
