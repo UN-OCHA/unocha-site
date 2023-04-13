@@ -1,0 +1,185 @@
+/**
+ * Article Meta information.
+ *
+ * Meta information like source or publication date, generally in the header or
+ * footer.
+ */
+.rw-entity-meta {
+  display: block;
+  margin: 0;
+}
+.rw-entity-meta + dl.rw-entity-meta {
+  margin-top: 4px;
+}
+.rw-entity-meta:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.rw-entity-meta dt:after {
+  content: ": ";
+}
+.rw-entity-meta dt {
+  padding: 0;
+  font-size: 15px;
+  font-weight: bold;
+  /* To have enough tapping space between links. */
+  line-height: 30px;
+}
+.rw-entity-meta dd {
+  margin: 0;
+  font-size: 16px;
+  /* To have enough tapping space between links. */
+  line-height: 30px;
+}
+.rw-entity-meta dd ul,
+.rw-entity-meta dd li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.rw-entity-meta dd li:after {
+  content: ", ";
+}
+/* This will be ignored in IE8 but it's not a big deal. */
+.rw-entity-meta dd li:last-child:after {
+  content: none;
+}
+.rw-entity-meta dd li.rw-entity-meta__tag-value__list__item--more:before {
+  content: " + ";
+}
+
+/**
+ * Content format.
+ *
+ * Display an icon in front of the content format.
+ */
+.rw-entity-meta dd.rw-entity-meta__tag-value--format:before {
+  display: inline-block;
+  overflow: hidden;
+  width: 16px;
+  height: 16px;
+  /* The top margin is to have a better vertical alignment. */
+  margin: -2px 6px 0 0;
+  content: "";
+  vertical-align: middle;
+  background: var(--rw-icons--content--report--16--dark-grey);
+}
+.rw-entity-meta dd.rw-entity-meta__tag-value--format--map:before {
+  background: var(--rw-icons--content--map--16--dark-grey);
+}
+.rw-entity-meta dd.rw-entity-meta__tag-value--format--infographic:before {
+  background: var(--rw-icons--content--infographic--16--dark-grey);
+}
+.rw-entity-meta dd.rw-entity-meta__tag-value--format--interactive:before {
+  background: var(--rw-icons--content--interactive--16--dark-grey);
+}
+
+/* Meta core styles */
+.rw-entity-meta--core dt {
+  display: inline;
+  float: left;
+  clear: both;
+  margin: 0 4px 0 0;
+}
+.rw-entity-meta--core .rw-entity-meta__tag-label--status {
+  margin-right: 8px;
+}
+.rw-entity-meta__tag-value--status {
+  text-transform: capitalize;
+}
+.rw-entity-meta--core dt:after {
+  content: ": ";
+}
+/* Show the meta information inline. */
+@media screen and (min-width: 480px) {
+  .rw-entity-meta--core dt {
+    float: none;
+  }
+  .rw-entity-meta--core dd {
+    display: inline;
+  }
+  /* Separator. */
+  .rw-entity-meta--core dd:after {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin: 0 8px;
+    padding: 0;
+    content: "";
+    vertical-align: middle;
+    border-radius: 4px;
+    background: var(--cd-reliefweb-brand-grey--dark);
+  }
+  .rw-entity-meta--core dd:last-of-type:after {
+    content: none;
+  }
+}
+
+.rw-entity-meta--empty {
+  margin: 0;
+  font-size: 15px;
+  line-height: 29px;
+}
+
+/**
+ * Meta for river articles.
+ */
+.rw-river .rw-entity-meta dt {
+  font-size: 14px;
+}
+.rw-river .rw-entity-meta dd {
+  font-size: 15px;
+}
+.rw-river dl.rw-entity-meta.rw-article-meta {
+  /* #2e3436 with 0.85 opacity on white. */
+  color: var(--cd-reliefweb-brand-grey--mid);
+}
+
+@media screen and (min-width: 480px) {
+  dl.rw-entity-meta--stacked.rw-entity-meta dd {
+    display: inline;
+  }
+  dl.rw-entity-meta--stacked.rw-entity-meta dd:after {
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 0;
+  }
+}
+
+/**
+ * Country/disaster status.
+ *
+ * Display a color coded dot next to the country/disaster status.
+ */
+.rw-entity-meta dd.rw-entity-meta__tag-value--status:before {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  border-radius: 5px;
+}
+.rw-entity-meta dd.rw-entity-meta__tag-value--status--past:before {
+  content: "";
+  background: #b6c8d0;
+}
+.rw-entity-meta dd.rw-entity-meta__tag-value--status--alert:before {
+  content: "";
+  background: var(--cd-reliefweb-orange--alert);
+}
+.rw-entity-meta dd.rw-entity-meta__tag-value--status--ongoing:before {
+  content: "";
+  background: var(--cd-reliefweb-brand-red);
+}
+
+.taxonomy-term--disaster--full dl.rw-entity-meta dd.rw-entity-meta__tag-value--status--past:before {
+  content: none;
+}
+
+/* Organization Details */
+.rw-entity-details .rw-entity-meta dt {
+  float: left;
+  margin: 0 4px 0 0;
+}

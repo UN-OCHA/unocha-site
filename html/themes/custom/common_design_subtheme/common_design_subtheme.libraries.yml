@@ -74,7 +74,11 @@ rw-key-figures:
 rw-river:
   css:
     theme:
+      components/rw-entity-country-slug/rw-entity-country-slug.css: {}
+      components/rw-entity-meta/rw-entity-meta.css: {}
       components/rw-river/rw-river.css: {}
+      components/rw-river/rw-river-article.css: {}
+      components/rw-river/rw-river-results.css: {}
       components/rw-river/rw-river-views.css: {}
   dependencies:
     - common_design_subtheme/rw-brand
