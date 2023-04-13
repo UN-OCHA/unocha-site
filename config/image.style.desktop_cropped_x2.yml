@@ -1,0 +1,16 @@
+uuid: 90b4f90c-90db-42e8-a34e-331e2b88fbfa
+langcode: en
+status: true
+dependencies: {  }
+name: desktop_cropped_x2
+label: 'desktop cropped x2'
+effects:
+  3dbf4f78-aac0-4df7-bb75-d9ffce0a4aa8:
+    uuid: 3dbf4f78-aac0-4df7-bb75-d9ffce0a4aa8
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1952
+      height: 1464
+      anchor: center-center
+pipeline: __default__

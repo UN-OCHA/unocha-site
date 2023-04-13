@@ -1,0 +1,16 @@
+uuid: be70a338-7c29-49c4-9b0b-572117305ef2
+langcode: en
+status: true
+dependencies: {  }
+name: xlarge_cropped_x1
+label: 'xlarge cropped x1'
+effects:
+  47659189-350f-49ac-a3ff-86a44dbbeb29:
+    uuid: 47659189-350f-49ac-a3ff-86a44dbbeb29
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1140
+      height: 855
+      anchor: center-center
+pipeline: __default__

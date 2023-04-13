@@ -1,0 +1,16 @@
+uuid: 63643f93-9fca-4e61-b2b2-50616ff675a4
+langcode: en
+status: true
+dependencies: {  }
+name: xlarge_x1
+label: 'xlarge x1'
+effects:
+  e62d09dd-e03f-441d-91ba-52bc7cb343a4:
+    uuid: e62d09dd-e03f-441d-91ba-52bc7cb343a4
+    id: image_scale
+    weight: 1
+    data:
+      width: 1140
+      height: null
+      upscale: true
+pipeline: __default__
