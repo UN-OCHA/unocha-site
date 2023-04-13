@@ -183,28 +183,38 @@ class ReliefWebDocumentController extends ControllerBase {
    * Retrieve the data from the ReliefWeb API.
    */
   protected function retrieveApiData() {
-    $url_alias = $this->getAliasFromUrl();
+    $url_alias = unocha_reliefweb_get_reliefweb_url_from_unocha_url();
+
+    // Filters for the URL lookup to retrieve the ReliefWeb document.
+    $lookup_filter = [
+      'field' => 'url_alias',
+      'value' => $url_alias,
+    ];
+
+    // Also use the "redirects" field for the lookup if instructed so.
+    if (!empty($this->config->get('reliefweb_api_use_redirects'))) {
+      $lookup_filter = [
+        'conditions' => [
+          $lookup_filter,
+          [
+            'field' => 'redirects',
+            'value' => $url_alias,
+          ],
+        ],
+        'operator' => 'OR',
+      ];
+    }
+
+    // Filter to limit to OCHA documents.
+    $ocha_filter = [
+      'field' => 'ocha_product',
+    ];
 
     $payload = [
       'filter' => [
         'conditions' => [
-          [
-            // Filter to limit to OCHA documents.
-            'field' => 'ocha_product',
-          ],
-          [
-            'conditions' => [
-              [
-                'field' => 'url_alias',
-                'value' => $url_alias,
-              ],
-              [
-                'field' => 'redirects',
-                'value' => $url_alias,
-              ],
-            ],
-            'operator' => 'OR',
-          ],
+          $ocha_filter,
+          $lookup_filter,
         ],
         'operator' => 'AND',
       ],
@@ -234,39 +244,6 @@ class ReliefWebDocumentController extends ControllerBase {
   }
 
   /**
-   * Get the ReliefWeb URL alias from the given UNOCHA URL.
-   *
-   * @param string $url
-   *   UNOCHA URL. If empty use the current URL.
-   *   Ex: https://www.unocha.org/publications/report/france/report-title.
-   *
-   * @return string
-   *   A ReliefWeb URL alias based on the given URL.
-   *   Ex: https://reliefweb.int/report/france/report-title.
-   */
-  protected function getAliasFromUrl($url = '') {
-    $url = $url ?: $this->requestStack->getCurrentRequest()->getRequestUri();
-    $base_url = $this->config->get('reliefweb_website') ?? 'https://reliefweb.int';
-    return preg_replace('#^/publications/#', $base_url . '/', $url);
-  }
-
-  /**
-   * Get a UNOCHA URL from a ReliefWeb URL alias.
-   *
-   * @param string $alias
-   *   ReliefWeb URL alias.
-   *   Ex: https://reliefweb.int/report/france/report-title.
-   *
-   * @return string
-   *   A UNOCHA URL based on the given URL alias.
-   *   Ex: https://www.unocha.org/publications/report/france/report-title.
-   */
-  protected function getUrlFromAlias($alias) {
-    $base_url = $this->requestStack->getCurrentRequest()->getSchemeAndHttpHost();
-    return preg_replace('#^https?://[^/]+/#', $base_url . '/publications/', $alias);
-  }
-
-  /**
    * Parse the ReliefWeb API data.
    *
    * @param array $raw
@@ -286,7 +263,7 @@ class ReliefWebDocumentController extends ControllerBase {
 
     $data['title'] = $fields['title'];
     $data['date'] = DateHelper::getDateTimeStamp($fields['date']['original']);
-    $data['body'] = HtmlSanitizer::sanitize($fields['body-html']);
+    $data['body'] = isset($fields['body-html']) ? HtmlSanitizer::sanitize($fields['body-html']) : '';
 
     if (!empty($fields['file'])) {
       $data['attachments'] = $fields['file'];
@@ -300,7 +277,6 @@ class ReliefWebDocumentController extends ControllerBase {
       $this->apiClient::updateApiUrls($data['image'], $unocha_url);
     }
 
-    // @todo handle image.
     return $data;
   }
 
