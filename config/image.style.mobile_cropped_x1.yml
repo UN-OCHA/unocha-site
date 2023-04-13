@@ -1,0 +1,16 @@
+uuid: 9e32c11e-8fdd-4bbc-934d-76eb06c6f413
+langcode: en
+status: true
+dependencies: {  }
+name: mobile_cropped_x1
+label: 'mobile cropped x1'
+effects:
+  f379957d-3b77-426b-be95-94feb09e065b:
+    uuid: f379957d-3b77-426b-be95-94feb09e065b
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 576
+      height: 432
+      anchor: center-center
+pipeline: __default__

@@ -1,0 +1,16 @@
+uuid: 06123ce5-c772-48c8-8ed6-41f5d17ea0c8
+langcode: en
+status: true
+dependencies: {  }
+name: tablet_cropped_x2
+label: 'tablet cropped x2'
+effects:
+  36be06ff-750c-4432-9eb6-5fc7386c54bc:
+    uuid: 36be06ff-750c-4432-9eb6-5fc7386c54bc
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1536
+      height: 1152
+      anchor: center-center
+pipeline: __default__
