@@ -1,0 +1,59 @@
+uuid: 28a29e80-0fce-4664-96a3-80cadcf42163
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.response.body
+    - field.field.node.response.field_active_response
+    - field.field.node.response.field_country
+    - field.field.node.response.field_custom_content
+    - field.field.node.response.field_region
+    - field.field.node.response.field_response_image
+    - node.type.response
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.response.card
+targetEntityType: node
+bundle: response
+mode: card
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 160
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_active_response:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_response_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_country: true
+  field_custom_content: true
+  field_region: true
+  langcode: true
+  links: true

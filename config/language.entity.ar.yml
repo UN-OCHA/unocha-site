@@ -1,0 +1,9 @@
+uuid: ff1820e0-16f1-4d31-9aa8-f6d3050fda36
+langcode: ar
+status: true
+dependencies: {  }
+id: ar
+label: العربية
+direction: rtl
+weight: -10
+locked: false

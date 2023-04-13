@@ -1,42 +1,21 @@
+{% set soft_footer_attribute = create_attribute() %}
+{%
+    set classes = [
+    'cd-container',
+    'cd-soft-footer__inner'
+  ]
+%}
+
 <section class="cd-soft-footer">
-  <div class="cd-container cd-soft-footer__inner">
-    {# <a href="#" class="cd-button cd-soft-footer__button">Click me</a> #}
-    <div class="block cd-block">
-      <h3>Active responses</h3>
-      <ul>
-        <li><a href="">All responses</a></li>
-        <li><a href="">Humanitarian Response Plans</a></li>
-        <li><a href="">Flash Appeals</a></li>
-        <li><a href="">Regional Response Plans</a></li>
-        <li><a href="">Other</a></li>
-      </ul>
-    </div>
-    <div class="block cd-block">
-      <h3>Menu title</h3>
-      <ul>
-        <li><a href="">Menu item one</a></li>
-        <li><a href="">Menu item two</a></li>
-        <li><a href="">Thrid menu item</a></li>
-        <li><a href="">Fourth menu item</a></li>
-      </ul>
-    </div>
-    <div class="block cd-block">
-      <h3>Menu title</h3>
-      <ul>
-        <li><a href="">Menu item one</a></li>
-        <li><a href="">Menu item two</a></li>
-        <li><a href="">Thrid menu item</a></li>
-        <li><a href="">Fourth menu item</a></li>
-      </ul>
-    </div>
-    <div class="block cd-block">
-      <h3>Menu title</h3>
-      <ul>
-        <li><a href="">Menu item one</a></li>
-        <li><a href="">Menu item two</a></li>
-        <li><a href="">Thrid menu item</a></li>
-        <li><a href="">Fourth menu item</a></li>
-      </ul>
-    </div>
+  <div{{soft_footer_attribute.addClass(classes)}}>
+    {{ page.footer_soft}}
+    {{ page.responses_nav}}
   </div>
+
+  <div{{soft_footer_attribute.addClass(classes)}}>
+
+    {% include '@common_design_subtheme/uno/subscribe.html.twig' %}
+
+  </div>
+
 </section>

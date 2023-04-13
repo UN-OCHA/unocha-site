@@ -1,0 +1,19 @@
+{% for subfield, subitem in item %}
+  {% if subfield == 'first' -%}
+    <div class="double-field-{{ subfield }} uno-figure__label">
+      {%- if field_settings.storage[subfield].type == 'text' -%}
+        {{- subitem|nl2br -}}
+      {%- else -%}
+        {{- subitem -}}
+      {%- endif -%}
+    </div>
+  {% elseif subitem -%}
+    <div class="double-field-{{ subfield }} uno-figure__value">
+      {%- if field_settings.storage[subfield].type == 'text' -%}
+        {{- subitem|nl2br -}}
+      {%- else -%}
+        {{- subitem -}}
+      {%- endif -%}
+    </div>
+  {% endif %}
+{% endfor %}

@@ -1,0 +1,49 @@
+uuid: 1dd3eb8c-a89f-452a-a162-e73938339028
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.cards
+    - field.field.paragraph.node.field_node
+    - field.field.paragraph.node.field_text
+    - field.field.paragraph.node.field_title
+    - field.field.paragraph.node.paragraph_view_mode
+    - paragraphs.paragraphs_type.node
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.node.cards
+targetEntityType: paragraph
+bundle: node
+mode: cards
+content:
+  field_node:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  paragraph_view_mode: true

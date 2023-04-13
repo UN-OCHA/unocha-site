@@ -1,0 +1,24 @@
+uuid: cad35fe4-ab33-4980-87d7-2b4405f5b050
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.responses
+  module:
+    - views
+  theme:
+    - common_design_subtheme
+id: views_block__responses_active_responses_menu
+theme: common_design_subtheme
+region: responses_nav
+weight: 0
+provider: null
+plugin: 'views_block:responses-active_responses_menu'
+settings:
+  id: 'views_block:responses-active_responses_menu'
+  label: 'Current emergencies'
+  label_display: visible
+  provider: views
+  views_label: 'Current emergencies'
+  items_per_page: none
+visibility: {  }

@@ -7,11 +7,11 @@
    * In the future the Component library will adhere to these vars as well.
    */
   --brand-primary: var(--cd-ocha-blue);
-  --brand-primary: #3778ba;
   --brand-primary--light: var(--cd-blue--brighter);
-  --brand-primary--dark: var(--cd-blue--dark);
-  --brand-highlight: var(--cd-highlight-red);
+  --brand-primary--dark: #144372;
+  --brand-highlight: #E56A54;
+  --brand-highlight-contract: #0B2641;
   --brand-grey: var(--cd-blue-grey);
-  --brand-grey: #F2F2F2;
+  --brand-grey: #f5f5f5;
   --brand-logo-width: 186px;
 }

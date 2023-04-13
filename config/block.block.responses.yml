@@ -1,6 +1,6 @@
 uuid: 0a9b1048-68c1-4f9d-b571-c6df9ec71971
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.responses
@@ -16,14 +16,10 @@ provider: null
 plugin: 'system_menu_block:responses'
 settings:
   id: 'system_menu_block:responses'
-  label: Responses
-  label_display: '0'
+  label: 'Current emergencies'
+  label_display: visible
   provider: system
   level: 1
   depth: 1
   expand_all_items: false
-visibility:
-  request_path:
-    id: request_path
-    negate: false
-    pages: "/active-responses\r\n/humanitarian-response-plans\r\n/flash-appeals\r\n/regional-response-plans\r\n/other\r\n<front>\r\n/taxonomy/term/*"
+visibility: {  }

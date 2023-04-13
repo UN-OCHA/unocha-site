@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: responses
-label: Responses
+label: 'Current emergencies'
 description: ''
 locked: false

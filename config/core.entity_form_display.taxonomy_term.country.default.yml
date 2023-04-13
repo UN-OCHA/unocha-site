@@ -3,14 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.country.field_country_image
-    - field.field.taxonomy_term.country.field_custom_content
-    - field.field.taxonomy_term.country.field_regional_office
-    - field.field.taxonomy_term.country.field_response_type
     - taxonomy.vocabulary.country
   module:
-    - layout_paragraphs
-    - media_library
     - path
     - text
 id: taxonomy_term.country.default
@@ -25,35 +19,6 @@ content:
     settings:
       rows: 5
       placeholder: ''
-    third_party_settings: {  }
-  field_country_image:
-    type: media_library_widget
-    weight: 1
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
-  field_custom_content:
-    type: layout_paragraphs
-    weight: 3
-    region: content
-    settings:
-      preview_view_mode: preview
-      nesting_depth: 0
-      require_layouts: 0
-      empty_message: ''
-    third_party_settings: {  }
-  field_regional_office:
-    type: options_select
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_response_type:
-    type: options_select
-    weight: 4
-    region: content
-    settings: {  }
     third_party_settings: {  }
   langcode:
     type: language_select

@@ -5,12 +5,12 @@ dependencies: {  }
 name: story
 label: Story
 effects:
-  1b6d76cd-bedf-47df-83cc-1963b6280d49:
-    uuid: 1b6d76cd-bedf-47df-83cc-1963b6280d49
-    id: image_scale
-    weight: 1
+  453d9bc9-278d-429d-b1d1-a30f27003e2d:
+    uuid: 453d9bc9-278d-429d-b1d1-a30f27003e2d
+    id: image_scale_and_crop
+    weight: 2
     data:
-      width: 824
-      height: null
-      upscale: false
+      width: 1400
+      height: 933
+      anchor: center-center
 pipeline: __default__

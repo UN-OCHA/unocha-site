@@ -1,0 +1,29 @@
+uuid: 1c36ebac-195a-4ef3-973f-2712a67f4daf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image
+    - media.type.canto_image
+    - paragraphs.paragraphs_type.canto_image
+id: paragraph.canto_image.field_image
+field_name: field_image
+entity_type: paragraph
+bundle: canto_image
+label: Image
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      canto_image: canto_image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

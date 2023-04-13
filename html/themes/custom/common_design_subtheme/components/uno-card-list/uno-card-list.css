@@ -7,63 +7,91 @@
 
 :root {
   --uno-card-list-num-cols: 1;
-  --uno-card-list-gap-size: 1.5rem;
+  --uno-card-list-gap-size: 2rem;
 }
 
-/* unset default styles that apply to top-level card */
-.paragraph--type--card-list .field--name-field-card > .field__item + .field__item {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: 0;
-}
-
-.paragraph--type--card-list .field--name-field-card,
-.paragraph--type--list--card .paragraph--type--node .erd-list--card,
-.paragraph--type--node-list.node-list--view-mode--card .view .view-content,
-.view-display-id-page__humanitarian_response_plans .view-content,
-.view-display-id-page__regional_response_plans .view-content,
-.view-display-id-page__flash_appeals .view-content,
-.view-display-id-page__other .view-content,
-.view-display-id-page__stories .view-content {
+.paragraph--type--node.paragraph--view-mode--cards .field--name-field-node,
+.paragraph--type--content-list.paragraph--view-mode--cards .view .view-content,
+.view-stories .view-content,
+.view-responses .view-content,
+.view-media-centre .view-content,
+.view-regions .view-content {
   display: flex;
   flex-flow: row wrap;
   gap: var(--uno-card-list-gap-size);
 }
-
-.paragraph--type--card-list .field--name-field-card > .field__item,
-.paragraph--type--list--card .paragraph--type--node .erd-list--card > .field__item,
-.paragraph--type--node-list.node-list--view-mode--card .view .views-row,
-.view-display-id-page__humanitarian_response_plans .view-content .views-row,
-.view-display-id-page__regional_response_plans .view-content .views-row,
-.view-display-id-page__flash_appeals .view-content .views-row,
-.view-display-id-page__other .view-content .views-row,
-.view-display-id-page__stories .view-content .views-row {
+.paragraph--type--node.paragraph--view-mode--cards .field--name-field-node article,
+.paragraph--type--content-list.paragraph--view-mode--cards article,
+.view-stories .view-content article,
+.view-responses .view-content article,
+.view-media-centre .view-content article,
+.view-regions .view-content article {
   /* stylelint-disable-next-line max-line-length */
   flex: 0 1 calc((100% / var(--uno-card-list-num-cols)) - var(--uno-card-list-gap-size) + var(--uno-card-list-gap-size) / var(--uno-card-list-num-cols));
 }
 
 @media screen and (min-width: 480px) {
-  .paragraph--type--card-list,
-  .paragraph--type--list--card .paragraph--type--node .erd-list--card,
-  .paragraph--type--node-list.node-list--view-mode--card .view .view-content,
-  .view-display-id-page__humanitarian_response_plans .view-content,
-  .view-display-id-page__regional_response_plans .view-content,
-  .view-display-id-page__flash_appeals .view-content,
-  .view-display-id-page__other .view-content,
-  .view-display-id-page__stories .view-content {
+  .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node,
+  .paragraph--type--content-list.paragraph--view-mode--cards .view .view-content,
+  .view-stories .view-content,
+  .view-responses .view-content,
+  .view-media-centre .view-content,
+  .view-regions .view-content {
     --uno-card-list-num-cols: 2;
   }
 }
 
 @media screen and (min-width: 750px) {
-  .paragraph--type--card-list--col-3,
-  .paragraph--type--list--card .paragraph--type--node .erd-list--card,
-  .paragraph--type--node-list.node-list--view-mode--card .view .view-content,
-  .view-display-id-page__humanitarian_response_plans .view-content,
-  .view-display-id-page__regional_response_plans .view-content,
-  .view-display-id-page__flash_appeals .view-content,
-  .view-display-id-page__other .view-content,
-  .view-display-id-page__stories .view-content {
+  .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node,
+  .paragraph--type--content-list.paragraph--view-mode--cards .view .view-content,
+  .view-stories .view-content,
+  .view-responses .view-content,
+  .view-media-centre .view-content,
+  .view-regions .view-content {
     --uno-card-list-num-cols: 3;
   }
 }
+
+/* Promoted item to span full width */
+.paragraph--type--content-list article.node--type-story.node--sticky.uno-card:first-child {
+  flex: 1 0 100%;
+}
+/* Hide the body field on all story cards */
+article.node--type-story.node--sticky.uno-card .field--name-body {
+  display: none;
+}
+/* Hide the body field on all but first sticky item */
+.paragraph--type--content-list article.node--type-story.node--sticky.uno-card:not(:first-child) .field--name-body {
+  display: none;
+}
+
+@media screen and (min-width: 480px) {
+  .paragraph--type--content-list article.node--type-story.node--sticky.uno-card:first-child .cd-card__footer {
+    flex: 1 0 100%;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  /* Promoted item to span full width */
+  .paragraph--type--content-list article.node--type-story.node--sticky.uno-card:first-child {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .paragraph--type--content-list article.node--type-story.node--sticky.uno-card:first-child .uno-card__image {
+    flex: 0 1 60%;
+  }
+
+  .paragraph--type--content-list article.node--type-story.node--sticky.uno-card:first-child .cd-card__container {
+    flex: 0 1 40%;
+    padding-inline-start: 2rem;
+  }
+}
+
+/* Cards in a layout */
+.layout__region .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node {
+  display: block;
+}
+
+

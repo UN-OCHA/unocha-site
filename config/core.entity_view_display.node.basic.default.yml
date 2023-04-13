@@ -6,12 +6,10 @@ dependencies:
     - field.field.node.basic.body
     - field.field.node.basic.field_basic_image
     - field.field.node.basic.field_custom_content
-    - field.field.node.basic.field_image_caption
     - node.type.basic
   module:
     - layout_builder
     - layout_builder_restrictions
-    - layout_paragraphs
     - text
     - user
 third_party_settings:
@@ -40,39 +38,24 @@ bundle: basic
 mode: default
 content:
   body:
-    type: text_default
+    type: text_trimmed
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: 160
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_basic_image:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: media_library
       link: false
     third_party_settings: {  }
     weight: 0
     region: content
-  field_custom_content:
-    type: layout_paragraphs
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_image_caption:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
 hidden:
+  field_custom_content: true
   langcode: true
   layout_builder__layout: true
   links: true

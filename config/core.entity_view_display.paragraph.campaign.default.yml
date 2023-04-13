@@ -1,0 +1,22 @@
+uuid: 4b46c5b6-15ef-4160-9494-802e0b655265
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.campaign.field_campaign
+    - paragraphs.paragraphs_type.campaign
+id: paragraph.campaign.default
+targetEntityType: paragraph
+bundle: campaign
+mode: default
+content:
+  field_campaign:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: campaign
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

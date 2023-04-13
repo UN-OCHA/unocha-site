@@ -1,0 +1,31 @@
+uuid: 6093d488-330b-4493-959a-2fab20ec84db
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.help
+  module:
+    - menu_block
+  theme:
+    - common_design_subtheme
+id: help
+theme: common_design_subtheme
+region: header_top
+weight: -5
+provider: null
+plugin: 'menu_block:help'
+settings:
+  id: 'menu_block:help'
+  label: Help
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'help:'
+  suggestion: help
+visibility: {  }
