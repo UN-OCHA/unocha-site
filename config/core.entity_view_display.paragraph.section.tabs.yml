@@ -1,0 +1,30 @@
+uuid: 6b744afb-8a5d-4087-b4cd-0ea8aaa77dcf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.tabs
+    - field.field.paragraph.section.field_title
+    - field.field.paragraph.section.paragraph_view_mode
+    - paragraphs.paragraphs_type.section
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.section.tabs
+targetEntityType: paragraph
+bundle: section
+mode: tabs
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  paragraph_view_mode: true

@@ -1,0 +1,23 @@
+uuid: 2713e2fd-0248-41fe-8d09-9f06ccb85d5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.container
+    - field.field.paragraph.section.field_title
+    - field.field.paragraph.section.paragraph_view_mode
+    - paragraphs.paragraphs_type.section
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.section.container
+targetEntityType: paragraph
+bundle: section
+mode: container
+content: {  }
+hidden:
+  field_title: true
+  paragraph_view_mode: true
