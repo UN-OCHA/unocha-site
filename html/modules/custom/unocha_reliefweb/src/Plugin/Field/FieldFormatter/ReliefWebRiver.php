@@ -82,18 +82,26 @@ class ReliefWebRiver extends FormatterBase {
         continue;
       }
 
+      $title = $item->getTitle();
+
       $white_label = !empty($this->getSetting('white_label'));
 
       $element = [
         '#theme' => 'unocha_reliefweb_river',
         '#resource' => $river['resource'],
-        '#title' => $item->getTitle() ?: $this->t('List'),
+        '#title' => $title ?: $this->t('List'),
         '#entities' => call_user_func($river['parse'], $river, $data, $white_label),
       ];
 
       if (!empty($this->getSetting('view_all_link'))) {
         // @todo shall we also white label this link?
-        $element['#more'] = $item->getUrl();
+        $element['#more']['url'] = $item->getUrl();
+
+        if (!empty($title)) {
+          $element['#more']['label'] = $this->t('View all @title', [
+            '@title' => $title,
+          ]);
+        }
       }
 
       $elements[$delta] = $element;
