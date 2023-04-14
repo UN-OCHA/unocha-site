@@ -16,4 +16,3 @@ behavior_plugins:
       layout_twocol: 'UNO Two column'
       layout_threecol: 'UNO Three column'
       layout_fourcol: 'UNO Four column'
-      layout_tabs: 'UNO Tabs'
