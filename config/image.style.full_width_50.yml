@@ -1,0 +1,16 @@
+uuid: 0fa5cd91-bd6f-4840-8c76-9a15615251ae
+langcode: en
+status: true
+dependencies: {  }
+name: full_width_50
+label: 'Full width - 50%'
+effects:
+  f49ae510-9976-4cfb-bbc5-dd5918ff2650:
+    uuid: f49ae510-9976-4cfb-bbc5-dd5918ff2650
+    id: image_scale
+    weight: 1
+    data:
+      width: 570
+      height: null
+      upscale: false
+pipeline: __default__

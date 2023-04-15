@@ -1,0 +1,16 @@
+uuid: 61090679-8ad5-41f9-ba2f-1afe831e7999
+langcode: en
+status: true
+dependencies: {  }
+name: xlarge_x2
+label: 'xlarge x2'
+effects:
+  f232d435-7e98-43db-904a-5109737ffd6a:
+    uuid: f232d435-7e98-43db-904a-5109737ffd6a
+    id: image_scale
+    weight: 1
+    data:
+      width: 2280
+      height: null
+      upscale: true
+pipeline: __default__

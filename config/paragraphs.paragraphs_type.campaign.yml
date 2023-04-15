@@ -1,0 +1,10 @@
+uuid: c3edb4df-ed89-46e7-ad60-5bb002bb121d
+langcode: en
+status: true
+dependencies: {  }
+id: campaign
+label: Campaign
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
