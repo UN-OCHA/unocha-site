@@ -70,6 +70,7 @@ function common_design_subtheme_preprocess_menu__main(array &$variables) {
         foreach ($item['below'] as $child) {
           if (!empty($child['below'])) {
             $variables['items'][$key]['is_mega_menu'] = TRUE;
+            $variables['items'][$key]['max_level'] = 2;
           }
         }
       }

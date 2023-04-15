@@ -16,6 +16,8 @@
  *   - is_collapsed: TRUE if the link has children within the current menu tree
  *     that are not currently visible.
  *   - in_active_trail: TRUE if the link is in the active trail.
+ *   - is_mega_menu: TRUE to display the menu as mega menu.
+ *   - max_level: maximum level of nested children.
  */
 #}
 {% import _self as menus %}
@@ -29,8 +31,8 @@
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-{{ menus.menu_links(items, attributes, 0, false) }}
-{% macro menu_links(items, attributes, menu_level, mega_menu) %}
+{{ menus.menu_links(items, attributes, 0, 1, false) }}
+{% macro menu_links(items, attributes, menu_level, max_level, mega_menu) %}
   {% import _self as menus %}
   {% if items %}
     {# When outputting menu level as a class, use the "cosmetic" value so that
@@ -106,13 +108,13 @@
             {% set attributes = create_attribute() %}
           {% endif %}
 
-          {# Limit to 2 nested levels. #}
-          {% if menu_level < 3 %}
+          {# Limit the nested levels. #}
+          {% if menu_level < max_level %}
             {# Adding 1 to menu_level here is NOT cosmetic, so the increment is
                spelled out explicitly to avoid any accidental find/replace or
                other developer change in the future. This increment powers the
                recursive macro so that the menu renders its entire depth. #}
-            {{ menus.menu_links(item.below, attributes, menu_level + 1, mega_menu or item.is_mega_menu) }}
+            {{ menus.menu_links(item.below, attributes, menu_level + 1, item.max_level ?? max_level, mega_menu or item.is_mega_menu) }}
           {% endif %}
         {% endif %}
 
