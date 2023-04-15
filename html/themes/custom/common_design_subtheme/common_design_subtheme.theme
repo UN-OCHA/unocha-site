@@ -59,12 +59,20 @@ function common_design_subtheme_theme_suggestions_node_alter(array &$suggestions
 
 /**
  * Implements hook_preprocess_menu().
+ *
+ * Flag main navigation menu items with more than 2 nested levels of children as
+ * "mega menus"s to ease styling.
  */
-function common_design_subtheme_preprocess_menu(array &$variables) {
-  if ($variables['menu_name'] == 'main') {
-    // Mark items as using a mega menu when the Mega menu viewmode is selected.
-    foreach ($variables['items'] as &$item) {
-      $item['mega_menu'] = $item['content']['#view_mode'] == 'mega_menu';
+function common_design_subtheme_preprocess_menu__main(array &$variables) {
+  if (!empty($variables['items'])) {
+    foreach ($variables['items'] as $key => $item) {
+      if (!empty($item['below'])) {
+        foreach ($item['below'] as $child) {
+          if (!empty($child['below'])) {
+            $variables['items'][$key]['is_mega_menu'] = TRUE;
+          }
+        }
+      }
     }
   }
 }
