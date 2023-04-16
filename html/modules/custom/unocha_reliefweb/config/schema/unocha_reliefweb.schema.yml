@@ -26,7 +26,7 @@ unocha_reliefweb.settings:
     reliefweb_api_converter:
       type: string
       label: 'URL of the ReliefWeb API converter.'
-    reliefweb_api_converter:
+    reliefweb_api_use_redirects:
       type: boolean
       label: 'Also use the "redirects" field for URL lookups.'
 
