@@ -1,15 +1,16 @@
-uuid: 6b259eb1-0426-47c0-a4f5-1a075b45a170
+uuid: 12b50a5c-a5df-48fb-82af-94e7f0cd47ba
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.field_hide_thumbnail
-field_name: field_hide_thumbnail
+    - unocha_reliefweb
+id: paragraph.field_reliefweb_river
+field_name: field_reliefweb_river
 entity_type: paragraph
-type: boolean
+type: reliefweb_river
 settings: {  }
-module: core
+module: unocha_reliefweb
 locked: false
 cardinality: 1
 translatable: true

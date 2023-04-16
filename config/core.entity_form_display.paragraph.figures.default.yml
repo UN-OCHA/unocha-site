@@ -5,12 +5,16 @@ dependencies:
   config:
     - field.field.paragraph.figures.field_figures
     - field.field.paragraph.figures.field_figures_footnote
+    - field.field.paragraph.figures.field_reliefweb_document
     - field.field.paragraph.figures.field_text
     - field.field.paragraph.figures.field_title
+    - field.field.paragraph.figures.paragraph_view_mode
     - paragraphs.paragraphs_type.figures
   module:
     - double_field
+    - paragraph_view_mode
     - text
+    - unocha_reliefweb
 id: paragraph.figures.default
 targetEntityType: paragraph
 bundle: figures
@@ -47,6 +51,12 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_reliefweb_document:
+    type: reliefweb_document
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_text:
     type: text_textarea
     weight: 1
@@ -62,6 +72,17 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  paragraph_view_mode:
+    type: paragraph_view_mode
+    weight: -100
+    region: content
+    settings:
+      view_modes:
+        figures: figures
+        default: '0'
+      default_view_mode: figures
+      form_mode_bind: true
     third_party_settings: {  }
 hidden:
   created: true

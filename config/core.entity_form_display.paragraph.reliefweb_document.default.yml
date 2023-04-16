@@ -3,33 +3,25 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.reliefweb_document.field_hide_thumbnail
-    - field.field.paragraph.reliefweb_document.field_reliefweb_url
+    - field.field.paragraph.reliefweb_document.field_reliefweb_document
     - field.field.paragraph.reliefweb_document.field_text
     - field.field.paragraph.reliefweb_document.field_title
+    - field.field.paragraph.reliefweb_document.paragraph_view_mode
     - paragraphs.paragraphs_type.reliefweb_document
   module:
-    - link
+    - paragraph_view_mode
     - text
+    - unocha_reliefweb
 id: paragraph.reliefweb_document.default
 targetEntityType: paragraph
 bundle: reliefweb_document
 mode: default
 content:
-  field_hide_thumbnail:
-    type: boolean_checkbox
+  field_reliefweb_document:
+    type: reliefweb_document
     weight: 2
     region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  field_reliefweb_url:
-    type: link_default
-    weight: 3
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
+    settings: {  }
     third_party_settings: {  }
   field_text:
     type: text_textarea
@@ -46,6 +38,16 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  paragraph_view_mode:
+    type: paragraph_view_mode
+    weight: -100
+    region: content
+    settings:
+      view_modes:
+        default: Default
+      default_view_mode: default
+      form_mode_bind: true
     third_party_settings: {  }
 hidden:
   created: true

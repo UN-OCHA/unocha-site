@@ -1,0 +1,22 @@
+uuid: 401ef47f-bdcf-4bc3-9a1d-9c3107c8330c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_reliefweb_document
+    - paragraphs.paragraphs_type.figures
+  module:
+    - unocha_reliefweb
+id: paragraph.figures.field_reliefweb_document
+field_name: field_reliefweb_document
+entity_type: paragraph
+bundle: figures
+label: 'ReliefWeb Document'
+description: 'URL of a source document for the figures on https://reliefweb.int.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  river: updates
+field_type: reliefweb_document
