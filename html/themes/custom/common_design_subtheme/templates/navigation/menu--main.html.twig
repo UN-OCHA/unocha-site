@@ -76,6 +76,18 @@
       {% set id = (parent_id ~ '-item-' ~ loop.index)|clean_id %}
 
       <li{{ item.attributes.addClass(classes) }}>
+        {% if mega_menu and menu_level == 1 and item.is_expanded and item.below %}
+          {%
+            set dropdown_attributes = create_attribute({
+              'data-cd-toggable': item.title,
+              'data-cd-icon': 'arrow-down',
+              'data-cd-component': component,
+              'id': (component ~ '-' ~ menu_level_cosmetic ~ '-' ~ loop.index)|clean_id,
+            })
+          %}
+          <div{{ dropdown_attributes.addClass('uno-mega-menu__dropdown') }}>
+        {% endif %}
+
         {# The item.url is a \Drupal\Core\Url object so we render it first to be
            able to check if it's empty to avoid <a> with an empty href for
            menu items that are not links (<nolink>). #}
@@ -118,6 +130,9 @@
           {% endif %}
         {% endif %}
 
+        {% if mega_menu and menu_level == 1 and item.is_expanded and item.below %}
+          </div>
+        {% endif %}
       </li>
     {% endfor %}
 

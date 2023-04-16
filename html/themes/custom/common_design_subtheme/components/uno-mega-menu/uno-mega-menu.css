@@ -47,8 +47,18 @@
   .uno-mega-menu__menu .menu-item__label {
     padding: 0 0 0.5rem 0;
   }
+
+  .uno-mega-menu__dropdown[data-cd-toggable] {
+    --dropdown: false;
+  }
 }
 
-.uno-mega-menu__menu > .menu-item > .menu-item__label {
+.uno-mega-menu__menu > .menu-item > .menu-item__label,
+.uno-mega-menu__menu [data-cd-toggler],
+.uno-mega-menu__dropdown > .menu-item__label {
   font-weight: bold;
+}
+
+[data-cd-toggler] + .uno-mega-menu__dropdown > .menu-item__label {
+  font-weight: normal;
 }
