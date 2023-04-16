@@ -152,6 +152,13 @@ uno-rss-feed:
     theme:
       components/uno-rss-feed/uno-rss-feed.css: {}
 
+uno-tabs:
+  css:
+    theme:
+      components/uno-tabs/uno-tabs.css: {}
+  js:
+    components/uno-tabs/uno-tabs.js: {}
+
 ###
 # Define Drupal libraries for additional webfonts.
 #
