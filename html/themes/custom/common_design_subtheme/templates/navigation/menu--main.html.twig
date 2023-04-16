@@ -1,0 +1,132 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ *   - is_mega_menu: TRUE to display the menu as mega menu.
+ *   - max_level: maximum level of nested children.
+ */
+#}
+{% import _self as menus %}
+
+{# Add the mega menu library if at least one child is a mega menu. #}
+{% if items|filter(item => item.is_mega_menu)|length > 0 %}
+  {{ attach_library('common_design_subtheme/uno-mega-menu') }}
+{% endif %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0, 1, false) }}
+{% macro menu_links(items, attributes, menu_level, max_level, mega_menu) %}
+  {% import _self as menus %}
+  {% if items %}
+    {# When outputting menu level as a class, use the "cosmetic" value so that
+       classnames begin with 1 instead of 0. #}
+    {% set menu_level_cosmetic = menu_level + 1 %}
+    {% set component = 'cd-nav-level-' ~ menu_level_cosmetic %}
+
+    {%
+      set menu_classes = [
+        'menu',
+        'cd-nav__menu--level-' ~ menu_level_cosmetic,
+        menu_level > 0 and not mega_menu ? component ~ '__dropdown',
+        mega_menu and menu_level == 1 ? 'uno-mega-menu__menu',
+        mega_menu and menu_level == 2 ? 'uno-mega-menu__block',
+      ]
+    %}
+
+    {% set parent_id = attributes.id ?? (component ~ menu_level) %}
+
+    {# In case of a mega menu, wrap the list of menu items to ease styling. #}
+    {% if mega_menu and menu_level == 1 %}
+      <div{{ attributes.addClass('uno-mega-menu') }}>
+      <ul{{ create_attribute().addClass(['uno-mega-menu__menu', 'menu']).setAttribute('role', 'list') }}>
+    {% else %}
+      <ul{{ attributes.addClass(menu_classes).setAttribute('role', 'list') }}>
+    {% endif %}
+
+    {% for item in items %}
+      {%
+        set classes = [
+          'menu-item',
+          'cd-nav__menu-item--level-' ~ menu_level_cosmetic,
+          item.is_expanded ? 'menu-item--expanded',
+          item.is_collapsed ? 'menu-item--collapsed',
+          item.in_active_trail ? 'menu-item--active-trail',
+          item.is_mega_menu ? 'uno-mega-menu-item',
+        ]
+      %}
+
+      {% set title = item.title == '%username%' ? username : item.title %}
+      {% set id = (parent_id ~ '-item-' ~ loop.index)|clean_id %}
+
+      <li{{ item.attributes.addClass(classes) }}>
+        {# The item.url is a \Drupal\Core\Url object so we render it first to be
+           able to check if it's empty to avoid <a> with an empty href for
+           menu items that are not links (<nolink>). #}
+        {% set url = item.url|render %}
+        {# Progressive enhancement: make sure there is always a menu entry.
+           - If the menu item has children and javascript is enabled then this
+             will be replaced with a button to show the child menu.
+           - If the menu item has children, an id attribute / value is added. #}
+        {% if url is not empty %}
+        <a class="cd-nav__btn {{ component ~ '__btn' }} menu-item__label" href="{{ url }}" id="{{ id }}"><span>{{ title }}</span></a>
+        {% else %}
+        <span class="menu-item__label" id="{{ id }}">{{ title }}</span>
+        {% endif %}
+
+        {% if item.is_expanded and item.below %}
+          {# If the menu item has children then we mark it as toggable and we'll
+             let the dropdown javascript handle the rest. #}
+          {% if not mega_menu %}
+            {%
+              set attributes = create_attribute({
+                'data-cd-toggable': item.title,
+                'data-cd-icon': 'arrow-down',
+                'data-cd-component': component,
+                'data-cd-replace': id,
+                'id': (component ~ '-' ~ menu_level_cosmetic ~ '-' ~ loop.index)|clean_id,
+              })
+            %}
+          {# Reset the attributes otherwise. #}
+          {% else %}
+            {% set attributes = create_attribute() %}
+          {% endif %}
+
+          {# Limit the nested levels. #}
+          {% if menu_level < max_level %}
+            {# Adding 1 to menu_level here is NOT cosmetic, so the increment is
+               spelled out explicitly to avoid any accidental find/replace or
+               other developer change in the future. This increment powers the
+               recursive macro so that the menu renders its entire depth. #}
+            {{ menus.menu_links(item.below, attributes, menu_level + 1, item.max_level ?? max_level, mega_menu or item.is_mega_menu) }}
+          {% endif %}
+        {% endif %}
+
+      </li>
+    {% endfor %}
+
+    {# In case of a mega menu, wrap the list of menu items to ease styling. #}
+    {% if mega_menu and menu_level == 1 %}
+      </ul>
+      </div>
+    {% else %}
+      </ul>
+    {% endif %}
+  {% endif %}
+{% endmacro %}
