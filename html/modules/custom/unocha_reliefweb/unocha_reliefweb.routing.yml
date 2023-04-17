@@ -1,2 +1,7 @@
-route_callbacks:
-  - '\Drupal\unocha_reliefweb\Routing\ReliefWebDocumentRoutes::routes'
+unocha_reliefweb.publications.document:
+  path: '/publications/{type}/{country}/{title}'
+  defaults:
+    _controller: '\Drupal\unocha_reliefweb\Controller\ReliefWebDocumentController::getPageContent'
+    _title_callback: '\Drupal\unocha_reliefweb\Controller\ReliefWebDocumentController::getPageTitle'
+  requirements:
+    _permission: 'access content'
