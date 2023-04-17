@@ -52,9 +52,9 @@ content:
     region: content
     settings:
       preview_view_mode: preview
-      nesting_depth: 0
+      nesting_depth: 2
       require_layouts: 0
-      empty_message: ''
+      empty_message: 'Placeholder message to display when field is empty'
     third_party_settings: {  }
   field_event_date:
     type: daterange_default

@@ -12,8 +12,8 @@ dependencies:
     - field.field.node.response.field_response_image
     - node.type.response
   module:
-    - entity_reference_revisions
     - layout_builder
+    - layout_paragraphs
     - text
     - user
 third_party_settings:
@@ -51,7 +51,7 @@ content:
     weight: 3
     region: content
   field_custom_content:
-    type: entity_reference_revisions_entity_view
+    type: layout_paragraphs
     label: hidden
     settings:
       view_mode: default
