@@ -30,7 +30,6 @@
     flex: 0 0 auto;
     flex-flow: row wrap;
     flex-direction: column;
-    justify-content: flex-end;
     width: 100%;
     max-width: var(--cd-max-width);
     max-height: 250px;
