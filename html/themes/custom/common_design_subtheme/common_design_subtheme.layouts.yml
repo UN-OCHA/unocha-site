@@ -48,16 +48,3 @@ layout_fourcol:
       label: Third
     fourth:
       label: Fourth
-
-layout_mega_menu:
-  label: 'UNO Mega menu'
-  category: 'Common Design Layouts'
-  path: templates/layouts
-  template: layout--mega-menu
-  library: common_design_subtheme/uno-mega-menu
-  default_region: first
-  icon_map:
-    - [first]
-  regions:
-    first:
-      label: First
