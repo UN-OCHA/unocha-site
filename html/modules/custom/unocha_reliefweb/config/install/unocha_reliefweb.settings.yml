@@ -12,3 +12,7 @@ reliefweb_api_verify_ssl: true
 reliefweb_website: https://reliefweb.int
 # Max age when for a ReliefWeb document page not found response.
 reliefweb_document_not_found_max_age: 600
+# URL of the ReliefWeb API converter.
+reliefweb_api_converter: https://reliefweb.int/search/converter/json
+# Also use the "redirects" field for URL lookups.
+reliefweb_api_use_redirects: true

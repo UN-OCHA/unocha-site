@@ -1,0 +1,33 @@
+{#
+
+/**
+ * @file
+ * Template file for the country slug of an entity.
+ *
+ * Available variables:
+ * - attributes: wrapper attributes
+ * - countries: list of countries with the following properties:
+ *   - url: url to either the country page or the river filtered by the country
+ *   - name: country name
+ *   - shortname: country short name
+ */
+
+#}
+{% if countries %}
+{% apply spaceless %}
+<p{{ attributes.addClass('rw-entity-country-slug') }}>
+  {% for item in countries|taglist(1, 'shortname') %}
+    {% if item.url is empty %}
+      <span class="rw-entity-country-slug__link">{{ item.shortname ?? item.name }}</span>
+    {% else %}
+      <a class="rw-entity-country-slug__link" href="{{ item.url }}">{{ item.shortname ?? item.name }}</a>
+    {% endif %}
+  {% endfor %}
+  {% if countries|length > 1 %}
+    <span class="rw-entity-country-slug__more">{{ ' + @count more'|t({
+      '@count': (countries|length) - 1,
+    }) }}</span>
+  {% endif %}
+</p>
+{% endapply %}
+{% endif %}

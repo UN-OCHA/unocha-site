@@ -2,7 +2,6 @@
 
 namespace Drupal\unocha_reliefweb\Controller;
 
-use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Controller\ControllerBase;
@@ -80,28 +79,22 @@ class ReliefWebDocumentController extends ControllerBase {
   /**
    * Get the page title.
    *
-   * @param string $ocha_product
-   *   The type of document.
-   *
    * @return string|\Drupal\Component\Render\MarkupInterface
    *   Page title.
    */
-  public function getPageTitle($ocha_product) {
-    $this->retrieveApiData($ocha_product);
+  public function getPageTitle() {
+    $this->retrieveApiData();
     return $this->data['title'] ?? '';
   }
 
   /**
    * Get the page content.
    *
-   * @param string $ocha_product
-   *   The type of document.
-   *
    * @return array
    *   Render array.
    */
-  public function getPageContent($ocha_product) {
-    $this->retrieveApiData($ocha_product);
+  public function getPageContent() {
+    $this->retrieveApiData();
     if (empty($this->data)) {
       return [];
     }
@@ -188,36 +181,40 @@ class ReliefWebDocumentController extends ControllerBase {
 
   /**
    * Retrieve the data from the ReliefWeb API.
-   *
-   * @param string $ocha_product
-   *   The type of document.
    */
-  protected function retrieveApiData($ocha_product) {
-    if (empty($ocha_product)) {
-      $this->throwNotFound();
+  protected function retrieveApiData() {
+    $url_alias = unocha_reliefweb_get_reliefweb_url_from_unocha_url();
+
+    // Filters for the URL lookup to retrieve the ReliefWeb document.
+    $lookup_filter = [
+      'field' => 'url_alias',
+      'value' => $url_alias,
+    ];
+
+    // Also use the "redirects" field for the lookup if instructed so.
+    if (!empty($this->config->get('reliefweb_api_use_redirects'))) {
+      $lookup_filter = [
+        'conditions' => [
+          $lookup_filter,
+          [
+            'field' => 'redirects',
+            'value' => $url_alias,
+          ],
+        ],
+        'operator' => 'OR',
+      ];
     }
 
-    $base_url = $this->config->get('reliefweb_website') ?? 'https://reliefweb.int';
-
-    $url = $this->requestStack->getCurrentRequest()->getRequestUri();
-    $url_parts = UrlHelper::parse($url);
-    $url_path = preg_replace('#^/?[^/]+/#', 'report/', $url_parts['path']);
-    $url_alias = $base_url . '/' . $url_path;
+    // Filter to limit to OCHA documents.
+    $ocha_filter = [
+      'field' => 'ocha_product',
+    ];
 
     $payload = [
       'filter' => [
         'conditions' => [
-          [
-            // @todo review in case we want to use the term ID.
-            'field' => 'ocha_product.name.exact',
-            'value' => $ocha_product,
-          ],
-          [
-            // @todo review in case we can use the node ID.
-            // @todo review in case other aliases are indexed in the RW API.
-            'field' => 'url_alias',
-            'value' => $url_alias,
-          ],
+          $ocha_filter,
+          $lookup_filter,
         ],
         'operator' => 'AND',
       ],
@@ -266,7 +263,7 @@ class ReliefWebDocumentController extends ControllerBase {
 
     $data['title'] = $fields['title'];
     $data['date'] = DateHelper::getDateTimeStamp($fields['date']['original']);
-    $data['body'] = HtmlSanitizer::sanitize($fields['body-html']);
+    $data['body'] = isset($fields['body-html']) ? HtmlSanitizer::sanitize($fields['body-html']) : '';
 
     if (!empty($fields['file'])) {
       $data['attachments'] = $fields['file'];
@@ -280,7 +277,6 @@ class ReliefWebDocumentController extends ControllerBase {
       $this->apiClient::updateApiUrls($data['image'], $unocha_url);
     }
 
-    // @todo handle image.
     return $data;
   }
 
