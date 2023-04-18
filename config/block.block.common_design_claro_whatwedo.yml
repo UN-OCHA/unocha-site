@@ -5,7 +5,7 @@ dependencies:
   config:
     - system.menu.what-we-do
   module:
-    - menu_block
+    - system
   theme:
     - common_design_claro
 id: common_design_claro_whatwedo
@@ -13,19 +13,13 @@ theme: common_design_claro
 region: header
 weight: -10
 provider: null
-plugin: 'menu_block:what-we-do'
+plugin: 'system_menu_block:what-we-do'
 settings:
-  id: 'menu_block:what-we-do'
+  id: 'system_menu_block:what-we-do'
   label: 'What we do'
   label_display: visible
-  provider: menu_block
-  follow: false
-  follow_parent: child
-  label_link: false
-  label_type: block
+  provider: system
   level: 1
   depth: 0
   expand_all_items: false
-  parent: 'what-we-do:'
-  suggestion: what_we_do
 visibility: {  }

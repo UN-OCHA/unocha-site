@@ -5,7 +5,7 @@ dependencies:
   config:
     - system.menu.events
   module:
-    - menu_block
+    - system
   theme:
     - common_design_subtheme
 id: events
@@ -13,19 +13,13 @@ theme: common_design_subtheme
 region: footer_soft
 weight: -6
 provider: null
-plugin: 'menu_block:events'
+plugin: 'system_menu_block:events'
 settings:
-  id: 'menu_block:events'
+  id: 'system_menu_block:events'
   label: Events
   label_display: visible
-  provider: menu_block
-  follow: false
-  follow_parent: child
-  label_link: false
-  label_type: block
+  provider: system
   level: 1
   depth: 0
   expand_all_items: false
-  parent: 'events:'
-  suggestion: events
 visibility: {  }
