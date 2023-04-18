@@ -1,0 +1,55 @@
+{#
+
+/**
+ * @file
+ * Template file for a report entity article in a river.
+ *
+ * Available variables;
+ * - level: heading level (defaults to 3)
+ * - attributes: article attributes
+ * - entity: the article entity's data as an associative array with notably:
+ *   - url: url to the full article/page
+ *   - title: article title
+ *   - langcode: article language code
+ *   - id: entity id
+ *   - bundle: entity bundle.
+ *   - tags (optional): list of terms the entity is tagged with
+ *   - various properties like posting date, status etc.
+ * - meta_attributes: meta information attributes.
+ */
+
+#}
+{% if entity.attachments and entity.preview %}
+<article{{ attributes
+  .addClass([
+    'rw-river-article',
+    'rw-river-article--' ~ entity.bundle,
+    entity.preview ? 'rw-river-article--with-preview',
+  ])
+  .setAttribute('data-id', entity.id)
+}}>
+  {# Header with country slug and title. #}
+  <header class="rw-river-article__header visually-hidden">
+    {# Country slug. #}
+    {{ render_var({
+      '#theme': 'unocha_reliefweb_entity_country_slug',
+      '#countries': entity.tags.country,
+    }) }}
+
+    {# Title. #}
+    {{ render_var({
+      '#theme': 'unocha_reliefweb_river_article_title',
+      '#level': level,
+      '#langcode': entity.langcode,
+      '#url': entity.url,
+      '#title': entity.title,
+    }) }}
+  </header>
+
+  {% set attachment = entity.attachments|first %}
+  <div class="rw-river-article__attachment">
+    <img class="rw-river-article__attachment__preview" src="{{ attachment.preview['url-thumb'] }}" alt="" loading="lazy">
+    <a class="rw-river-article__attachment__preview" href="{{ attachment.url }}">{{ 'Download report'|t }}</a>
+  </div>
+</article>
+{% endif %}

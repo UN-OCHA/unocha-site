@@ -1,16 +1,16 @@
-uuid: 471f8d2e-4ae2-4356-a9fd-bf3deecdb2ec
+uuid: 9ab6e131-4e5d-4e95-8d08-09e82a2f3852
 langcode: en
 status: true
 dependencies:
   module:
-    - link
     - paragraphs
-id: paragraph.field_reliefweb_url
-field_name: field_reliefweb_url
+    - unocha_reliefweb
+id: paragraph.field_reliefweb_document
+field_name: field_reliefweb_document
 entity_type: paragraph
-type: link
+type: reliefweb_document
 settings: {  }
-module: link
+module: unocha_reliefweb
 locked: false
 cardinality: 1
 translatable: true

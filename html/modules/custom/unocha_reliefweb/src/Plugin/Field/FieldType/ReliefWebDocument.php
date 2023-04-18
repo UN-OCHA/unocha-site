@@ -11,23 +11,18 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\TypedData\DataDefinition;
 
 /**
- * Plugin implementation of the 'reliefweb_river' field type.
+ * Plugin implementation of the 'reliefweb_document' field type.
  *
  * @FieldType(
- *   id = "reliefweb_river",
- *   label = @Translation("ReliefWeb River"),
- *   description = @Translation("A field to display of list of documents from ReliefWeb."),
+ *   id = "reliefweb_document",
+ *   label = @Translation("ReliefWeb Document"),
+ *   description = @Translation("A field to display of list a document from ReliefWeb."),
  *   category = @Translation("ReliefWeb"),
- *   default_widget = "reliefweb_river",
- *   default_formatter = "reliefweb_river",
+ *   default_widget = "reliefweb_document",
+ *   default_formatter = "reliefweb_document",
  * )
  */
-class ReliefWebRiver extends FieldItemBase {
-
-  /**
-   * Maximum number of documents that can be requested.
-   */
-  const LIMIT = 100;
+class ReliefWebDocument extends FieldItemBase {
 
   /**
    * ReliefWeb API config.
@@ -55,17 +50,6 @@ class ReliefWebRiver extends FieldItemBase {
           'not null' => TRUE,
           'sortable' => TRUE,
         ],
-        'title' => [
-          'type' => 'varchar',
-          'length' => 1024,
-          'not null' => TRUE,
-          'sortable' => TRUE,
-        ],
-        'limit' => [
-          'type' => 'int',
-          'description' => 'Maximum number of documents to request.',
-          'not null' => TRUE,
-        ],
       ],
       'indexes' => [
         'url' => ['url'],
@@ -86,17 +70,7 @@ class ReliefWebRiver extends FieldItemBase {
   public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
     $properties['url'] = DataDefinition::create('string')
       ->setLabel(new TranslatableMarkup('Url'))
-      ->setDescription(new TranslatableMarkup('The ReliefWeb River URL.'))
-      ->setRequired(TRUE);
-
-    $properties['title'] = DataDefinition::create('string')
-      ->setLabel(new TranslatableMarkup('Title'))
-      ->setDescription(new TranslatableMarkup('Optional title for the river.'))
-      ->setRequired(TRUE);
-
-    $properties['limit'] = DataDefinition::create('integer')
-      ->setLabel(new TranslatableMarkup('Limit'))
-      ->setDescription(new TranslatableMarkup('Maximum number of documents to request.'))
+      ->setDescription(new TranslatableMarkup('The ReliefWeb Document URL.'))
       ->setRequired(TRUE);
 
     return $properties;
@@ -107,7 +81,7 @@ class ReliefWebRiver extends FieldItemBase {
    */
   public static function defaultFieldSettings() {
     return [
-      'rivers' => ['updates'],
+      'river' => 'updates',
     ] + parent::defaultFieldSettings();
   }
 
@@ -122,12 +96,12 @@ class ReliefWebRiver extends FieldItemBase {
       $options[$river] = $info['label'];
     }
 
-    $element['rivers'] = [
-      '#type' => 'checkboxes',
-      '#title' => $this->t('Allowed rivers'),
-      '#description' => $this->t('Select the rivers that can be linked in this field.'),
+    $element['river'] = [
+      '#type' => 'radios',
+      '#title' => $this->t('Allowed document type'),
+      '#description' => $this->t('Select the river to which this document belongs.'),
       '#options' => $options,
-      '#default_value' => $this->getSetting('rivers'),
+      '#default_value' => $this->getSetting('river'),
     ];
 
     return $element;
@@ -153,24 +127,8 @@ class ReliefWebRiver extends FieldItemBase {
         'Length' => [
           'max' => 2048,
         ],
-        'ReliefWebRiverUrl' => [
-          'rivers' => $this->getSetting('rivers'),
+        'ReliefWebDocumentUrl' => [
           'website' => static::getConfig()->get('website'),
-        ],
-      ],
-    ]);
-    $constraints[] = $constraint_manager->create('ComplexData', [
-      'title' => [
-        'Length' => [
-          'max' => 1024,
-        ],
-      ],
-    ]);
-    $constraints[] = $constraint_manager->create('ComplexData', [
-      'limit' => [
-        'Range' => [
-          'min' => 1,
-          'max' => self::LIMIT,
         ],
       ],
     ]);
@@ -189,23 +147,13 @@ class ReliefWebRiver extends FieldItemBase {
   }
 
   /**
-   * Get the river title.
+   * Get the river name.
    *
    * @return string
-   *   River title.
+   *   River name.
    */
-  public function getTitle() {
-    return $this->get('title')->getValue() ?? '';
-  }
-
-  /**
-   * Get the maximum number of items to retrieve from the API.
-   *
-   * @return int
-   *   Limit.
-   */
-  public function getLimit() {
-    return $this->get('limit')->getValue();
+  public function getRiver() {
+    return $this->getSetting('river');
   }
 
   /**
@@ -218,10 +166,6 @@ class ReliefWebRiver extends FieldItemBase {
       $random->string(mt_rand(4, 8)) . '.' .
       $random->string(mt_rand(2, 3)) . '/' .
       $random->string(mt_rand(4, 12));
-
-    $values['title'] = $random->sentences(mt_rand(2, 5));
-
-    $values['limit'] = mt_rand(1, 50);
 
     return $values;
   }

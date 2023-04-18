@@ -19,6 +19,7 @@
     <time class="unocha-reliefweb-document__date" datetime="{{ date|date('c') }} ">{{ date|date('j M Y') }}</time>
   </header>
   <div{{ content_attributes.addClass('unocha-reliefweb-document__content') }}>
-    {{- content -}}
+    {{- content|without('body') -}}
+    {{- content.body|render|sanitize_html(false, level + 1) -}}
   </div>
 </article>

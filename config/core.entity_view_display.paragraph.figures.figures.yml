@@ -1,8 +1,9 @@
-uuid: d673886c-8076-4fd7-af3e-5c1036645f31
+uuid: 2069baf8-044f-4232-9bf4-5c31f7ec754d
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.figures
     - field.field.paragraph.figures.field_figures
     - field.field.paragraph.figures.field_figures_footnote
     - field.field.paragraph.figures.field_reliefweb_document
@@ -12,12 +13,17 @@ dependencies:
     - paragraphs.paragraphs_type.figures
   module:
     - double_field
+    - layout_builder
     - text
     - unocha_reliefweb
-id: paragraph.figures.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.figures.figures
 targetEntityType: paragraph
 bundle: figures
-mode: default
+mode: figures
 content:
   field_figures:
     type: double_field_unformatted_list

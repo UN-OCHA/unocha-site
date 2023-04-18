@@ -17,3 +17,8 @@ A large part of the code was copied from the following modules of the ReliefWeb 
 - https://github.com/UN-OCHA/rwint9-site/tree/develop/html/modules/custom/reliefweb_api
 - https://github.com/UN-OCHA/rwint9-site/tree/develop/html/modules/custom/reliefweb_entities
 - https://github.com/UN-OCHA/rwint9-site/tree/develop/html/modules/custom/reliefweb_rivers
+
+## TODO
+
+- [ ] Check if we should move the "ocha_only" setting to the field types instead of the formatters for the ReliefWebRiver and ReliefWebDocument fields.
+- [ ] Add template overrides for the preview view mode and if there is no content (for example the document URL is not for a OCHA document), then display a message so there is some feedback for the editors.

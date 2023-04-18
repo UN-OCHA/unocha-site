@@ -10,17 +10,17 @@ use Drupal\unocha_reliefweb\Services\ReliefWebDocuments;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Plugin implementation of the 'reliefweb_river' formatter.
+ * Plugin implementation of the 'reliefweb_document' formatter.
  *
  * @FieldFormatter(
- *   id = "reliefweb_river",
- *   label = @Translation("ReliefWeb River"),
+ *   id = "reliefweb_document",
+ *   label = @Translation("ReliefWeb Document"),
  *   field_types = {
- *     "reliefweb_river"
+ *     "reliefweb_document"
  *   }
  * )
  */
-class ReliefWebRiver extends FormatterBase {
+class ReliefWebDocument extends FormatterBase {
 
   /**
    * The ReliefWeb documents service.
@@ -77,7 +77,6 @@ class ReliefWebRiver extends FormatterBase {
     return [
       'white_label' => TRUE,
       'ocha_only' => TRUE,
-      'view_all_link' => FALSE,
     ] + parent::defaultSettings();
   }
 
@@ -97,12 +96,6 @@ class ReliefWebRiver extends FormatterBase {
       '#default_value' => !empty($this->getSetting('ocha_only')),
       '#description' => $this->t('If checked, only documents from OCHA will be included.'),
     ];
-    $elements['view_all_link'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('Show view all link'),
-      '#default_value' => !empty($this->getSetting('view_all_link')),
-      '#description' => $this->t('If checked, display a link to the ReliefWeb river.'),
-    ];
     return $elements;
   }
 
@@ -117,9 +110,6 @@ class ReliefWebRiver extends FormatterBase {
     ]);
     $summary[] = $this->t('OCHA documents only: @value', [
       '@value' => $this->getSetting('ocha_only') ? $this->t('Yes') : $this->t('No'),
-    ]);
-    $summary[] = $this->t('Show view all link: @value', [
-      '@value' => $this->getSetting('view_all_link') ? $this->t('Yes') : $this->t('No'),
     ]);
 
     return $summary;
@@ -139,34 +129,24 @@ class ReliefWebRiver extends FormatterBase {
         continue;
       }
 
-      $limit = $item->getLimit();
-      if (empty($limit)) {
+      $river = $item->getRiver();
+      if (empty($river)) {
         continue;
       }
 
-      $data = $this->getReliefWebDocuments()->getRiverDataFromUrl($url, $limit, NULL, $white_label);
-      if (empty($data['entities'])) {
+      // Use NULL as filter to default to the UN OCHA only filter.
+      $filter = !empty($this->getSetting('ocha_only')) ? NULL : [];
+
+      // Get the data for the document.
+      $data = $this->getReliefWebDocuments()->getDocumentDataFromUrl($river, $url, $filter, $white_label);
+      if (empty($data['entity'])) {
         continue;
       }
 
       $element = [
-        '#theme' => 'unocha_reliefweb_river__' . $this->viewMode,
-        '#resource' => $data['river']['resource'],
-        '#title' => $item->getTitle() ?: $this->t('List'),
-        '#entities' => $data['entities'],
+        '#theme' => 'unocha_reliefweb_river_article__' . $data['river']['bundle'] . '__' . $this->viewMode,
+        '#entity' => $data['entity'],
       ];
-
-      if (!empty($this->getSetting('view_all_link'))) {
-        // @todo shall we also white label this link and/or convert it to
-        // a URL on the /publications page?
-        $element['#more']['url'] = $item->getUrl();
-
-        if (!empty($title)) {
-          $element['#more']['label'] = $this->t('View all @title', [
-            '@title' => $title,
-          ]);
-        }
-      }
 
       $elements[$delta] = $element;
     }

@@ -81,8 +81,8 @@ class ReliefWebApiConverter {
    */
   public function getApiPayload($url, $timeout = 5, $cache_enabled = TRUE) {
     $converter_url = $this->config->get('reliefweb_api_converter');
-    if (empty($converter_url)) {
-      $this->logger->error('Missing ReliefWeb API converter setting');
+    if (empty($converter_url) || !is_string($converter_url)) {
+      $this->logger->error('Missing or invalid ReliefWeb API converter setting');
       return [];
     }
 

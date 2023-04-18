@@ -1,20 +1,26 @@
-uuid: 5a662370-edfe-4a13-ac9d-5c237bf0e700
+uuid: ee828711-2d2f-4ce2-bbf9-5a4d13021ef0
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.teasers
     - field.field.paragraph.reliefweb_river.field_reliefweb_river
     - field.field.paragraph.reliefweb_river.field_text
     - field.field.paragraph.reliefweb_river.field_title
     - field.field.paragraph.reliefweb_river.paragraph_view_mode
     - paragraphs.paragraphs_type.reliefweb_river
   module:
+    - layout_builder
     - text
     - unocha_reliefweb
-id: paragraph.reliefweb_river.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.reliefweb_river.teasers
 targetEntityType: paragraph
 bundle: reliefweb_river
-mode: default
+mode: teasers
 content:
   field_reliefweb_river:
     type: reliefweb_river

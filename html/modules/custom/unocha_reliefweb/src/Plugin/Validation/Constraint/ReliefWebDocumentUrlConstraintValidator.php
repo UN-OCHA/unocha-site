@@ -7,17 +7,16 @@ use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
 /**
- * Valid ReliefWeb River URL constraint validator.
+ * Valid ReliefWeb Document URL constraint validator.
  *
- * @todo Perform a request against the API to check for validity.
+ * @todo Add a list of valid URL patterns?
  */
-class ReliefWebRiverUrlConstraintValidator extends ConstraintValidator {
+class ReliefWebDocumentUrlConstraintValidator extends ConstraintValidator {
 
   /**
    * {@inheritdoc}
    */
   public function validate($value, Constraint $constraint) {
-    $rivers = array_filter($constraint->rivers ?? []);
     $website = $constraint->website ?? 'https://reliefweb.int';
     $skip_if_empty = !empty($constraint->skipIfEmpty);
 
@@ -31,14 +30,12 @@ class ReliefWebRiverUrlConstraintValidator extends ConstraintValidator {
 
       // Check if the URL is a ReliefWeb river URL.
       $url = UrlHelper::parse($value)['path'];
-      foreach ($rivers as $river) {
-        if ($url === $website . '/' . $river) {
-          return;
-        }
+      if (strpos($url, $website . '/') === 0) {
+        return;
       }
 
       $this->context
-        ->buildViolation($constraint->mustBeValidRiverUrl)
+        ->buildViolation($constraint->mustBeValidDocumentUrl)
         ->setParameter('%field', $this->context->getPropertyName())
         ->addViolation();
     }

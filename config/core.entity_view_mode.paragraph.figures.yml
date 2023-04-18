@@ -1,0 +1,10 @@
+uuid: 1785dd9a-4991-46ca-8a54-4f82cbdf75e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.figures
+label: Figures
+targetEntityType: paragraph
+cache: true

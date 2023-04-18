@@ -3,41 +3,25 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.reliefweb_river.field_hide_thumbnail
-    - field.field.paragraph.reliefweb_river.field_max_number_of_items
-    - field.field.paragraph.reliefweb_river.field_reliefweb_url
+    - field.field.paragraph.reliefweb_river.field_reliefweb_river
     - field.field.paragraph.reliefweb_river.field_text
     - field.field.paragraph.reliefweb_river.field_title
+    - field.field.paragraph.reliefweb_river.paragraph_view_mode
     - paragraphs.paragraphs_type.reliefweb_river
   module:
-    - link
+    - paragraph_view_mode
     - text
+    - unocha_reliefweb
 id: paragraph.reliefweb_river.default
 targetEntityType: paragraph
 bundle: reliefweb_river
 mode: default
 content:
-  field_hide_thumbnail:
-    type: boolean_checkbox
+  field_reliefweb_river:
+    type: reliefweb_river
     weight: 2
     region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  field_max_number_of_items:
-    type: number
-    weight: 3
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_reliefweb_url:
-    type: link_default
-    weight: 4
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
+    settings: {  }
     third_party_settings: {  }
   field_text:
     type: text_textarea
@@ -54,6 +38,18 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  paragraph_view_mode:
+    type: paragraph_view_mode
+    weight: -100
+    region: content
+    settings:
+      view_modes:
+        default: Default
+        cards: Cards
+        teasers: Teasers
+      default_view_mode: default
+      form_mode_bind: true
     third_party_settings: {  }
 hidden:
   created: true
