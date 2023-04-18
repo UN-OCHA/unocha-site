@@ -5,7 +5,7 @@ dependencies:
   config:
     - system.menu.latest
   module:
-    - menu_block
+    - system
   theme:
     - common_design_subtheme
 id: latest
@@ -13,19 +13,13 @@ theme: common_design_subtheme
 region: footer_soft
 weight: -4
 provider: null
-plugin: 'menu_block:latest'
+plugin: 'system_menu_block:latest'
 settings:
-  id: 'menu_block:latest'
+  id: 'system_menu_block:latest'
   label: Latest
   label_display: visible
-  provider: menu_block
-  follow: false
-  follow_parent: child
-  label_link: false
-  label_type: block
+  provider: system
   level: 1
   depth: 0
   expand_all_items: false
-  parent: 'latest:'
-  suggestion: latest
 visibility: {  }

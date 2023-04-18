@@ -5,7 +5,7 @@ dependencies:
   config:
     - system.menu.help
   module:
-    - menu_block
+    - system
   theme:
     - common_design_subtheme
 id: help
@@ -13,19 +13,13 @@ theme: common_design_subtheme
 region: header_top
 weight: -5
 provider: null
-plugin: 'menu_block:help'
+plugin: 'system_menu_block:help'
 settings:
-  id: 'menu_block:help'
+  id: 'system_menu_block:help'
   label: Help
   label_display: '0'
-  provider: menu_block
-  follow: false
-  follow_parent: child
-  label_link: false
-  label_type: block
+  provider: system
   level: 1
   depth: 0
   expand_all_items: false
-  parent: 'help:'
-  suggestion: help
 visibility: {  }
