@@ -10,18 +10,20 @@
 .uno-tabs [role="tablist"] a {
   text-decoration: none;
   padding: 0.5rem 1em;
+  position: relative;
+  bottom: -3px;
 }
 
 .uno-tabs [role="tablist"] [aria-selected] {
-  border: 2px solid;
+  border-bottom: 3px solid var(--brand-primary);
   background: #fff;
-  border-bottom: 0;
+  /* border-bottom: 0; */
   position: relative;
-  top: 2px;
+  /* top: 3px; */
 }
 
 .uno-tabs [role="tabpanel"] {
-  border: 2px solid;
+  border-top: 3px solid var(--brand-grey);
   padding: 1.5rem;
 }
 
@@ -43,7 +45,7 @@
   }
 
   .uno-tabs [role="tablist"] a {
-    border: 2px solid #222 !important;
+    border: 2px solid var(--brand-primary) !important;
   }
 
   .uno-tabs [role="tablist"] li + li a {
