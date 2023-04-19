@@ -8,4 +8,4 @@ reliefweb_api_verify_ssl: true
 reliefweb_website: 'https://reliefweb.int'
 reliefweb_document_not_found_max_age: 600
 reliefweb_api_converter: 'https://reliefweb.int/search/converter/json'
-reliefweb_api_use_redirects: true
+reliefweb_api_use_redirects: false
