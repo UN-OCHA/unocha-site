@@ -299,7 +299,6 @@ class KeyFigure extends WidgetBase {
           '#type' => 'textfield',
           '#title' => $this->t('Label'),
           '#default_value' => $label,
-          '#disabled' => !$manual,
         ];
       }
       if ($manual || isset($value)) {
