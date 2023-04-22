@@ -1,8 +1,9 @@
-uuid: 2b243db0-5e53-42c6-ae7c-66dd7793b789
+uuid: a234aefa-fbb4-4a28-812b-c73c6fc807dc
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.figures_compact_long
     - field.field.paragraph.figures.field_figures
     - field.field.paragraph.figures.field_figures_footnote
     - field.field.paragraph.figures.field_reliefweb_document
@@ -11,64 +12,58 @@ dependencies:
     - field.field.paragraph.figures.paragraph_view_mode
     - paragraphs.paragraphs_type.figures
   module:
-    - paragraph_view_mode
+    - layout_builder
     - text
     - unocha_figures
     - unocha_reliefweb
-id: paragraph.figures.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.figures.figures_compact_long
 targetEntityType: paragraph
 bundle: figures
-mode: default
+mode: figures_compact_long
 content:
   field_figures:
     type: key_figure
-    weight: 3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_figures_footnote:
-    type: string_textarea
-    weight: 4
-    region: content
+    label: hidden
     settings:
-      rows: 5
-      placeholder: ''
+      format: long
+      precision: '2'
     third_party_settings: {  }
-  field_reliefweb_document:
-    type: reliefweb_document
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_text:
-    type: text_textarea
     weight: 2
     region: content
-    settings:
-      rows: 5
-      placeholder: ''
+  field_figures_footnote:
+    type: basic_string
+    label: hidden
+    settings: {  }
     third_party_settings: {  }
-  field_title:
-    type: string_textfield
+    weight: 3
+    region: content
+  field_reliefweb_document:
+    type: reliefweb_document
+    label: hidden
+    settings:
+      white_label: true
+      ocha_only: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
     weight: 1
     region: content
+  field_title:
+    type: string
+    label: hidden
     settings:
-      size: 60
-      placeholder: ''
+      link_to_entity: false
     third_party_settings: {  }
-  paragraph_view_mode:
-    type: paragraph_view_mode
     weight: 0
     region: content
-    settings:
-      view_modes:
-        figures: figures
-        figures_compact_long: figures_compact_long
-        figures_compact_short: figures_compact_short
-        default: '0'
-      default_view_mode: figures
-      form_mode_bind: true
-    third_party_settings: {  }
 hidden:
-  created: true
-  status: true
+  paragraph_view_mode: true
