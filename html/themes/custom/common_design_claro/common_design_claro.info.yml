@@ -33,3 +33,7 @@ regions:
   sidebar_first: 'First sidebar'
 regions_hidden:
   - sidebar_first
+
+libraries-extend:
+  core/drupal.dialog.ajax:
+    - common_design_claro/dialog.ajax
