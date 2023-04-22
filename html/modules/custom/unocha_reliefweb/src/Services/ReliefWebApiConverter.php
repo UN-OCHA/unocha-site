@@ -2,6 +2,7 @@
 
 namespace Drupal\unocha_reliefweb\Services;
 
+use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
@@ -29,6 +30,13 @@ class ReliefWebApiConverter {
   protected $config;
 
   /**
+   * The time service.
+   *
+   * @var \Drupal\Component\Datetime\TimeInterface
+   */
+  protected $time;
+
+  /**
    * The HTTP client service.
    *
    * @var \GuzzleHttp\ClientInterface
@@ -49,6 +57,8 @@ class ReliefWebApiConverter {
    *   The cache backend.
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The config factory service.
+   * @param \Drupal\Component\Datetime\TimeInterface $time
+   *   The time service.
    * @param \GuzzleHttp\ClientInterface $http_client
    *   The HTTP client service.
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $logger_factory
@@ -57,11 +67,13 @@ class ReliefWebApiConverter {
   public function __construct(
     CacheBackendInterface $cache_backend,
     ConfigFactoryInterface $config_factory,
+    TimeInterface $time,
     ClientInterface $http_client,
     LoggerChannelFactoryInterface $logger_factory
   ) {
     $this->cache = $cache_backend;
     $this->config = $config_factory->get('unocha_reliefweb.settings');
+    $this->time = $time;
     $this->httpClient = $http_client;
     $this->logger = $logger_factory->get('unocha_reliefweb');
   }
@@ -153,7 +165,9 @@ class ReliefWebApiConverter {
     }
 
     if ($cache_enabled) {
-      $this->cache->set($cache_id, $payload, $cache_lifetime);
+      $tags = static::getCacheTags();
+      $cache_expiration = $this->time->getRequestTime() + $cache_lifetime;
+      $this->cache->set($cache_id, $payload, $cache_expiration, $tags);
     }
 
     return $payload;
@@ -171,6 +185,17 @@ class ReliefWebApiConverter {
   public static function getCacheId($url) {
     $hash = hash('sha256', $url);
     return 'reliefweb_api:conversions:' . $hash;
+  }
+
+  /**
+   * Determine the cache tags of an API query's resource.
+   *
+   * @return array
+   *   Cache tags.
+   */
+  public static function getCacheTags() {
+    $tags[] = 'reliefweb_api:conversions';
+    return $tags;
   }
 
 }
