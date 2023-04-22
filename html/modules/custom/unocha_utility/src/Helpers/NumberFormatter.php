@@ -282,13 +282,15 @@ class NumberFormatter {
    *   Either 'short' or 'long' (default).
    * @param int $precision
    *   Precision for the rounding of the number once compacted.
+   * @param bool $use_gho_specifics
+   *   When TRUE, apply some extra transformations like on the GHO site.
    *
    * @return string
    *   Formatted number.
    *
    * @see http://st.unicode.org/cldr-apps/v#/fr/Compact_Decimal_Formatting
    */
-  public static function formatNumberCompact($number, $langcode, $type = 'long', $precision = 2) {
+  public static function formatNumberCompact($number, $langcode, $type = 'long', $precision = 2, $use_gho_specifics = FALSE) {
     if ($number <= 0) {
       return '-';
     }
@@ -303,15 +305,15 @@ class NumberFormatter {
     }
 
     // Skip if the language is not handled.
-    if (empty(static::patterns[$langcode])) {
+    if (empty(static::$patterns[$langcode])) {
       return static::formatNumberDecimal($number, $langcode);
     }
 
     // Get the pattern for the language and type. Skip if undefined.
-    if (!isset(static::patterns[$langcode][$type])) {
+    if (!isset(static::$patterns[$langcode][$type])) {
       return static::formatNumberDecimal($number, $langcode);
     }
-    $patterns = static::patterns[$langcode][$type];
+    $patterns = static::$patterns[$langcode][$type];
 
     // We want something like 1.2 million not 1,200,000, so we "truncate" the
     // number to a value between 0 and 1000 (not included).
@@ -320,13 +322,15 @@ class NumberFormatter {
     $n = $n / pow(1000, $p);
 
     // GHO-152: Use the "million" for number below 1 million.
-    if ($number < 1e6) {
-      $n = $n / 1000;
-      $p = $p + 1;
-      $precision = 2;
-    }
-    else {
-      $precision = 1;
+    if ($use_gho_specifics) {
+      if ($number < 1e6) {
+        $n = $n / 1000;
+        $p = $p + 1;
+        $precision = 2;
+      }
+      else {
+        $precision = 1;
+      }
     }
 
     // Retrieve the pattern key for the number (ex: 1000000). Skip if Undefined.
@@ -346,9 +350,7 @@ class NumberFormatter {
     // The GHO print version doesn't seem to translate the truncated part of the
     // number (ex: 1.2) for Arabic and use the English notation instead so we
     // do the same here.
-    //
-    // @todo Confirm?
-    if ($langcode === 'ar') {
+    if ($use_gho_specifics && $langcode === 'ar') {
       $number = static::formatNumberDecimal(round($n, $precision), 'en');
     }
     else {
