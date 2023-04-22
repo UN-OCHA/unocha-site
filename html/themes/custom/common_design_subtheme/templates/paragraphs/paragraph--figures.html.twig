@@ -54,7 +54,7 @@
     {% block content %}
       {{ content|without(['field_figures_footnote', 'field_reliefweb_document']) }}
 
-      <div class="uno-figures__footnote">{{ content.field_figures_footnote}}</div>
+      <div class="unocha-figures__footnote">{{ content.field_figures_footnote}}</div>
 
       {{ content.field_reliefweb_document }}
     {% endblock %}
