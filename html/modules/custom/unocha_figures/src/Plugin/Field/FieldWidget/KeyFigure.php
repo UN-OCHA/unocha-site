@@ -281,7 +281,8 @@ class KeyFigure extends WidgetBase {
             '#empty_value' => '',
           ];
 
-          $label = $figures[$figure_id]['name'] ?? NULL;
+          // Preserve the label override.
+          $label = $values['label'] ?? $figures[$figure_id]['name'] ?? NULL;
           $value = $figures[$figure_id]['value'] ?? NULL;
         }
       }
