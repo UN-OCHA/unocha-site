@@ -45,3 +45,14 @@ field.field_settings.key_figure:
     year:
       type: integer
       label: 'Figure year'
+
+field.formatter.settings.key_figure:
+  type: mapping
+  label: 'Key Figure formatter settings'
+  mapping:
+    format:
+      type: string
+      label: 'Number format'
+    precision:
+      type: integer
+      label: 'Number of digits after the decimal'
