@@ -62,3 +62,21 @@ dd.unocha-figure__value {
   max-width: var(--cd-max-content-width);
   font-size: var(--cd-font-size--small);
 }
+
+/* RW document */
+.rw-river-article__attachment {
+  border: 3px solid var(--brand-grey);
+  padding: 1rem;
+}
+.rw-river-article__attachment a {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .paragraph--type--figures.paragraph--view-mode--figures {
+    display: flex;
+  }
+  .uno-figures__wrapper {
+    flex: 1 0 auto;
+  }
+}

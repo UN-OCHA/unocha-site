@@ -145,6 +145,8 @@ button[aria-expanded] .cd-icon--arrow-down {
 }
 
 /* Restrict width and centre horizontally */
+.paragraph--type--reliefweb-document,
+.rw-river,
 .node--type-basic .cd-page-title,
 .node--type-region .cd-page-title,
 .node--type-response .cd-page-title,
@@ -347,12 +349,9 @@ a.cd-footer-social__link svg {
   fill: var(--brand-primary);
 }
 
+.cd-mandate svg,
 .cd-footer-copyright svg {
   fill: var(--cd-default-text-color);
-}
-
-.cd-mandate__logo {
-  background: url("../img/logos/ocha-lockup.svg") 0 center no-repeat;
 }
 
 .uno-subscribe {
@@ -421,3 +420,4 @@ footer.cd-author {
   display: flex;
   padding: 1rem;
 }
+

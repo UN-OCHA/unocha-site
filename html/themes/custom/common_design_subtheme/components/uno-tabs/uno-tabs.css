@@ -8,28 +8,28 @@
 }
 
 .uno-tabs [role="tablist"] a {
-  text-decoration: none;
-  padding: 0.5rem 1em;
   position: relative;
   bottom: -3px;
+  padding: 0.5rem 1em;
+  text-decoration: none;
 }
 
 .uno-tabs [role="tablist"] [aria-selected] {
+  position: relative;
   border-bottom: 3px solid var(--brand-primary);
   background: #fff;
   /* border-bottom: 0; */
-  position: relative;
   /* top: 3px; */
 }
 
 .uno-tabs [role="tabpanel"] {
-  border-top: 3px solid var(--brand-grey);
   padding: 1.5rem;
+  border-top: 3px solid var(--brand-grey);
 }
 
-.uno-tabs [role="tabpanel"] * + * {
+/* .uno-tabs [role="tabpanel"] * + * {
   margin-top: 0.75rem;
-}
+} */
 
 .uno-tabs *:focus {
   outline: none;
@@ -40,8 +40,8 @@
 
   .uno-tabs [role="tablist"] li,
   .uno-tabs [role="tablist"] a {
-    display: block;
     position: static;
+    display: block;
   }
 
   .uno-tabs [role="tablist"] a {
@@ -57,7 +57,7 @@
   }
 
   .uno-tabs [role="tablist"] [aria-selected]::after {
-    content: '\0020⬅';
+    content: "\0020⬅";
   }
 
   .uno-tabs [role="tabpanel"] {
