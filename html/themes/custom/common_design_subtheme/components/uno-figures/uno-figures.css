@@ -1,41 +1,37 @@
-.unocha-figure-list {
-  padding-bottom: 2rem;
+.uno-figures {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-dl.unocha-figure-list {
+dl.uno-figures {
   margin: 0;
 }
 
-.unocha-figure {
+.uno-figure {
+  flex-basis: 100%;
   padding: 0 0 1rem;
 }
 
-.unocha-figure__label {
+.uno-figure__label {
   font-size: 1rem;
   font-weight: bold;
 }
-dt.unocha-figure__label-wrapper {
+dt.uno-figure__label-wrapper {
   width: 100%;
   padding: 0 0 1rem 0;
 }
 
-.unocha-figure__value {
+.uno-figure__value {
   color: var(--brand-primary);
   font-size: 1.625rem;
   font-weight: bold;
 }
-dd.unocha-figure__value {
+dd.uno-figure__value {
   margin: 0;
 }
 
 @media (min-width: 768px) {
-  .unocha-figures {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-top: 2rem;
-  }
-
-  .unocha-figure {
+  .uno-figure {
     display: inline-block;
     flex-basis: 50%;
     flex-grow: 1;
@@ -43,40 +39,47 @@ dd.unocha-figure__value {
     padding-inline-end: 1.5rem;
   }
 
-  .unocha-figure__label {
+  .uno-figure__label {
     font-size: 1.125rem;
   }
 
-  .unocha-figure__value {
+  .uno-figure__value {
     font-size: 2rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .unocha-figure {
+  .uno-figure {
     flex-basis: 25%;
   }
 }
 
-.unocha-figures__footnote {
+.uno-figures__footnote {
   max-width: var(--cd-max-content-width);
   font-size: var(--cd-font-size--small);
 }
 
 /* RW document */
-.rw-river-article__attachment {
-  border: 3px solid var(--brand-grey);
-  padding: 1rem;
+.paragraph--type--figures .rw-river-article {
+  display: inline-block;
+  padding-top: 1.5rem;
 }
-.rw-river-article__attachment a {
+.paragraph--type--figures .rw-river-article__attachment {
+  padding: 1rem;
+  border: 3px solid var(--brand-grey);
+}
+.paragraph--type--figures .rw-river-article__attachment a {
   display: block;
 }
 
 @media (min-width: 1024px) {
-  .paragraph--type--figures.paragraph--view-mode--figures {
+  .paragraph--type--figures {
     display: flex;
   }
   .uno-figures__wrapper {
     flex: 1 0 auto;
+  }
+  .paragraph--type--figures .rw-river-article {
+    padding-top: 0;
   }
 }

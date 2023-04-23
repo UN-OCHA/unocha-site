@@ -18,14 +18,14 @@
 
 #}
 {% if label is not empty and value is not empty %}
-<div{{ attributes.addClass('unocha-figure') }}>
-  <dt{{ label_attributes.addClass('unocha-figure__label-wrapper') }}>
-    <span{{ label_attributes.addClass('unocha-figure__label') }}>{{ label }}</span>
+<div{{ attributes.addClass('uno-figure') }}>
+  <dt{{ label_attributes.addClass('uno-figure__label-wrapper') }}>
+    <span{{ label_attributes.addClass('uno-figure__label') }}>{{ label }}</span>
     {%- if unit is not empty -%}
-      <small{{ unit_attribute.addClass('unocha-figure__unit') }}> ({{ unit }})</small>
+      <small{{ unit_attribute.addClass('uno-figure__unit') }}> ({{ unit }})</small>
     {%- endif -%}
   </dt>
-  <dd{{ value_attributes.addClass('unocha-figure__value') }}>{{ value }}</dd>
+  <dd{{ value_attributes.addClass('uno-figure__value') }}>{{ value }}</dd>
 </div>
 {% endif %}
 
