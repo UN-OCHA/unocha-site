@@ -91,7 +91,11 @@ rw-key-figures:
 rw-river:
   css:
     theme:
+      components/rw-entity-country-slug/rw-entity-country-slug.css: {}
+      components/rw-entity-meta/rw-entity-meta.css: {}
       components/rw-river/rw-river.css: {}
+      components/rw-river/rw-river-article.css: {}
+      components/rw-river/rw-river-results.css: {}
       components/rw-river/rw-river-views.css: {}
   dependencies:
     - common_design_subtheme/rw-brand
@@ -147,6 +151,13 @@ uno-rss-feed:
   css:
     theme:
       components/uno-rss-feed/uno-rss-feed.css: {}
+
+uno-tabs:
+  css:
+    theme:
+      components/uno-tabs/uno-tabs.css: {}
+  js:
+    components/uno-tabs/uno-tabs.js: {}
 
 ###
 # Define Drupal libraries for additional webfonts.

@@ -23,3 +23,33 @@ unocha_reliefweb.settings:
     reliefweb_document_not_found_max_age:
       type: integer
       label: 'Max age when for a ReliefWeb document page not found response.'
+    reliefweb_api_converter:
+      type: string
+      label: 'URL of the ReliefWeb API converter.'
+    reliefweb_api_use_redirects:
+      type: boolean
+      label: 'Also use the "redirects" field for URL lookups.'
+
+field.field_settings.reliefweb_river:
+  type: mapping
+  mapping:
+    url:
+      type: string
+      label: 'ReliefWeb River URL'
+    title:
+      type: string
+      label: 'River Title'
+    limit:
+      type: integer
+      label: 'Maximum number of documents to request'
+
+field.formatter.settings.reliefweb_river:
+  type: mapping
+  label: 'ReliefWeb River formatter settings'
+  mapping:
+    white_label:
+      type: boolean
+      label: 'Convert ReliefWeb URLs to UNOCHA URLs'
+    view_all_link:
+      type: boolean
+      label: 'Display a link to the full list of articles'

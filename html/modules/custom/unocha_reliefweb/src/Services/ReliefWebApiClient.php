@@ -70,7 +70,13 @@ class ReliefWebApiClient {
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $logger_factory
    *   The logger factory service.
    */
-  public function __construct(CacheBackendInterface $cache_backend, ConfigFactoryInterface $config_factory, TimeInterface $time, ClientInterface $http_client, LoggerChannelFactoryInterface $logger_factory) {
+  public function __construct(
+    CacheBackendInterface $cache_backend,
+    ConfigFactoryInterface $config_factory,
+    TimeInterface $time,
+    ClientInterface $http_client,
+    LoggerChannelFactoryInterface $logger_factory
+  ) {
     $this->cache = $cache_backend;
     $this->config = $config_factory->get('unocha_reliefweb.settings');
     $this->time = $time;
@@ -401,10 +407,10 @@ class ReliefWebApiClient {
         $result[] = $condition;
       }
       // Range filter - keep as is.
-      elseif (is_array($value) && (isset($value['to']) || isset($value['to']))) {
+      elseif (is_array($value) && (isset($value['from']) || isset($value['to']))) {
         $result[] = $condition;
       }
-      // Different operator or negated condition -  keep as is.
+      // Different operator or negated condition - keep as is.
       elseif ((isset($condition_operator) && $condition_operator !== $operator) || !empty($condition['negate'])) {
         $result[] = $condition;
       }

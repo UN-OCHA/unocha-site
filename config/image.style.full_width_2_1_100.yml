@@ -1,0 +1,16 @@
+uuid: 41b4565d-39fa-4318-a384-9dbeee1679e1
+langcode: en
+status: true
+dependencies: {  }
+name: full_width_2_1_100
+label: 'Full width - 2:1 - 100%'
+effects:
+  43325c5f-123b-44c1-ad53-4c524ac5be35:
+    uuid: 43325c5f-123b-44c1-ad53-4c524ac5be35
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1140
+      height: 570
+      anchor: center-center
+pipeline: __default__

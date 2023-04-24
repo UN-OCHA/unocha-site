@@ -1,0 +1,19 @@
+uuid: c84da3df-410c-4e90-b1bc-5a121b1a7ad3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.section
+id: paragraph.section.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: section
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

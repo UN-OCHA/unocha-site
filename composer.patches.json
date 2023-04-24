@@ -9,6 +9,9 @@
     "drupal/maintenance200": {
       "Drupal 10 compatibility": "patches/maintenance200-drupal-10-compatibility.patch"
     },
+    "drupal/pathauto": {
+      "PHP 8.2 compatibility": "patches/pathauto-php-82-compatibility.patch"
+    },
     "drupal/user_expire": {
       "Allow the notification email to be customised": "patches/user_expire-customize-notification-email.patch",
       "Reset expiration when user is reactivated": "patches/user_expire-reset-expiration-on-reactivation.patch"

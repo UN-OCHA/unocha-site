@@ -9,7 +9,7 @@ id: node.response.field_active_response
 field_name: field_active_response
 entity_type: node
 bundle: response
-label: 'Active response'
+label: 'Priority response'
 description: ''
 required: false
 translatable: false

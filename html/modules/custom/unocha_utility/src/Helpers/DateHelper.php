@@ -8,6 +8,33 @@ namespace Drupal\unocha_utility\Helpers;
 class DateHelper {
 
   /**
+   * Get a date object from the given date.
+   *
+   * @param \DateTime|string|int $date
+   *   Date.
+   *
+   * @return \DateTime|null
+   *   Date object.
+   */
+  public static function getDateObject($date) {
+    if (!empty($date)) {
+      // Date object. It can be a PHP DateTime or DrupalDateTime...
+      if (is_object($date)) {
+        return $date;
+      }
+      // Formatted date.
+      elseif (is_string($date) && !is_numeric($date)) {
+        return date_create($date, timezone_open('UTC'));
+      }
+      // Assume it's a timestamp.
+      elseif (is_numeric($date)) {
+        return date_create('@' . $date, timezone_open('UTC'));
+      }
+    }
+    return NULL;
+  }
+
+  /**
    * Get the timestamp from a date value extracted from the form state.
    *
    * The type of data returned from a date field is not consistent so we

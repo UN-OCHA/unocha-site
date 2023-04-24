@@ -151,10 +151,16 @@ button[aria-expanded] .cd-icon--arrow-down {
 .node--type-story .cd-page-title,
 .field--name-body,
 .field--name-description,
+.viewsreference--view-title,
 .field--name-body > ul,
+.paragraph .field--name-field-title,
 .cd-layout-main-content .field--type-text-with-summary,
 .cd-layout-main-content footer,
-.cd-layout-main-content .cd-caption {
+.cd-layout-main-content .cd-caption,
+.paragraph--type--text .field--name-field-title,
+.paragraph--type--text .field--name-field-text,
+.paragraph--type--text-and-image.paragraph--view-mode--default .field--name-field-title,
+.paragraph--type--text-and-image.paragraph--view-mode--default .field--name-field-text {
   max-width: var(--cd-max-content-width);
   margin-left: auto;
   margin-right: auto;
@@ -163,6 +169,7 @@ button[aria-expanded] .cd-icon--arrow-down {
 .node--type-event .cd-page-title {
   max-width: var(--cd-max-content-width);
 }
+
 
 /* Prevent horizontal centering in these cases */
 
@@ -173,12 +180,12 @@ button[aria-expanded] .cd-icon--arrow-down {
     The viewmode is set in the View config.
     It currently works the same way for all Content List
     */
-/* .paragraph--type--content-list.content-list--view-mode--teaser .field--name-field-title,
+.paragraph--type--content-list.content-list--view-mode--teaser .field--name-field-title,
 .paragraph--view-mode--image-align-left .field--name-field-title,
 .paragraph--view-mode--image-align-right .field--name-field-title {
   margin-left: 0;
   margin-right: 0;
-} */
+}
 
 /* Basic vertical rhythm, will need adjusting */
 /* .node--view-mode-full .field--name-body,
@@ -291,6 +298,10 @@ button[aria-expanded] .cd-icon--arrow-down {
 .cd-footer {
   color: var(--cd-default-text-color);
   background: var(--brand-grey);
+}
+
+.cd-soft-footer__inner {
+  align-items: flex-start;
 }
 
 .cd-soft-footer .cd-soft-footer__inner .cd-soft-footer__nav-wrapper nav {

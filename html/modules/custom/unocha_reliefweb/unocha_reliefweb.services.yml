@@ -8,3 +8,9 @@ services:
   reliefweb_api.client:
     class: Drupal\unocha_reliefweb\Services\ReliefWebApiClient
     arguments: ['@cache.reliefweb_api', '@config.factory', '@datetime.time', '@http_client', '@logger.factory']
+  reliefweb_api.converter:
+    class: Drupal\unocha_reliefweb\Services\ReliefWebApiConverter
+    arguments: ['@cache.reliefweb_api', '@config.factory', '@http_client', '@logger.factory']
+  reliefweb.documents:
+    class: Drupal\unocha_reliefweb\Services\ReliefWebDocuments
+    arguments: ['@config.factory', '@reliefweb_api.client', '@reliefweb_api.converter', '@logger.factory', '@request_stack', '@string_translation']
