@@ -27,9 +27,9 @@
   padding: 1.5rem;
 }
 
-.uno-tabs [role="tabpanel"] * + * {
+/* .uno-tabs [role="tabpanel"] * + * {
   margin-top: 0.75rem;
-}
+} */
 
 .uno-tabs *:focus {
   outline: none;
