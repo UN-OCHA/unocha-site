@@ -52,9 +52,11 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
+    <div class="uno-figures__wrapper">
       {{ content|without(['field_figures_footnote', 'field_reliefweb_document']) }}
 
       <div class="uno-figures__footnote">{{ content.field_figures_footnote}}</div>
+    </div>
 
       {{ content.field_reliefweb_document }}
     {% endblock %}
