@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Module file for the Canto integration.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function unocha_canto_theme() {
+  $themes = [
+    // Theme for a Canto portal.
+    'unocha_canto_portal' => [
+      'variables' => [
+        // Wrapper attributes.
+        'attributes' => NULL,
+        // Content attributes.
+        'content_attributes' => NULL,
+        // URL of the canto portal.
+        'url' => NULL,
+      ],
+    ],
+  ];
+
+  return $themes;
+}
