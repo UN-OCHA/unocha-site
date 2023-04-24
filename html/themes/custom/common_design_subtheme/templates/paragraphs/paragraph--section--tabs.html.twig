@@ -51,6 +51,8 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
+
+    {{ content.field_title }}
       <ul class="uno-tabs__list">
       {% for section in content.regions.content %}
         {% set paragraph = section['#paragraph'] %}
