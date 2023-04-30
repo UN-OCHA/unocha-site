@@ -3,20 +3,18 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.country.field_iso3
+    - field.field.taxonomy_term.country.field_location
+    - field.field.taxonomy_term.country.field_shortname
     - taxonomy.vocabulary.country
-  module:
-    - text
 id: taxonomy_term.country.default
 targetEntityType: taxonomy_term
 bundle: country
 mode: default
-content:
-  description:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
+content: {  }
 hidden:
+  description: true
+  field_iso3: true
+  field_location: true
+  field_shortname: true
   langcode: true
