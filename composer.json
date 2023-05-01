@@ -46,6 +46,7 @@
         "drupal/geofield": "^1.53",
         "drupal/google_tag": "^1.6",
         "drupal/imageapi_optimize_binaries": "^1.0@beta",
+        "drupal/imageapi_optimize_webp": "^2.0",
         "drupal/imagemagick": "^3.4",
         "drupal/layout_builder_restrictions": "^2.17",
         "drupal/layout_paragraphs": "^2.0",
