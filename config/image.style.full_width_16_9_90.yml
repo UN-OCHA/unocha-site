@@ -13,4 +13,4 @@ effects:
       width: 1026
       height: 577
       anchor: center-center
-pipeline: __default__
+pipeline: convert_to_webp
