@@ -1,0 +1,21 @@
+uuid: b578f868-756c-4e1d-acad-9b1367e033be
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_location
+    - taxonomy.vocabulary.country
+  module:
+    - geofield
+id: taxonomy_term.country.field_location
+field_name: field_location
+entity_type: taxonomy_term
+bundle: country
+label: Location
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geofield

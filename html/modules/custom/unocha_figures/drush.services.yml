@@ -1,0 +1,6 @@
+services:
+  ocha_key_figures_api.commands:
+    class: \Drupal\unocha_figures\Commands\OchaKeyFigureApiCommands
+    arguments: ['@config.factory', '@database', '@entity_field.manager', '@entity_type.manager', '@ocha_key_figures_api.client']
+    tags:
+      - { name: drush.command }

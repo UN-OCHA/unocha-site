@@ -15,4 +15,4 @@ effects:
       width: 1152
       height: null
       upscale: true
-pipeline: __default__
+pipeline: convert_to_webp
