@@ -1,4 +1,4 @@
-uuid: a7b0841e-25e8-4049-9f0a-9041d590a51d
+uuid: 14c4c1bc-2067-4506-ba99-a961eeeed297
 langcode: en
 status: true
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
     - field.storage.paragraph.field_figures
     - paragraphs.paragraphs_type.figures
   module:
-    - double_field
+    - unocha_figures
 id: paragraph.figures.field_figures
 field_name: field_figures
 entity_type: paragraph
@@ -17,23 +17,5 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings:
-  first:
-    label: ''
-    list: false
-    allowed_values: {  }
-    max: null
-    min: null
-    required: true
-    on_label: 'On'
-    off_label: 'Off'
-  second:
-    label: ''
-    list: false
-    allowed_values: {  }
-    max: null
-    min: null
-    required: true
-    on_label: 'On'
-    off_label: 'Off'
-field_type: double_field
+settings: {  }
+field_type: key_figure

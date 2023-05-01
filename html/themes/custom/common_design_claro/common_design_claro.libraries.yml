@@ -3,3 +3,8 @@ global-styling:
   css:
     base:
       css/styles.css: {}
+
+
+dialog.ajax:
+  js:
+    js/dialog.ajax.buttons.js: { minified: true }

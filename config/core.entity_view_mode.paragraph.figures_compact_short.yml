@@ -1,0 +1,10 @@
+uuid: 68fad9aa-ba76-4c81-9e11-90ed506a9e0a
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.figures_compact_short
+label: 'Figures - Compact Short'
+targetEntityType: paragraph
+cache: true
