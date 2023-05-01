@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Module file for unocha_figures.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function unocha_figures_theme() {
+  $themes = [
+    // Theme for a ReliefWeb document.
+    'unocha_figure_list' => [
+      'variables' => [
+        // Wrapper attributes.
+        'attributes' => NULL,
+        // List of renderable figures.
+        'figures' => NULL,
+      ],
+    ],
+    // Theme for a ReliefWeb document.
+    'unocha_figure' => [
+      'variables' => [
+        // Wrapper attributes.
+        'attributes' => NULL,
+        // Label attributes.
+        'label_attributes' => NULL,
+        // Value attributes.
+        'value_attributes' => NULL,
+        // Unit attributes.
+        'unit_attributes' => NULL,
+        // Label.
+        'label' => NULL,
+        // Value.
+        'value' => NULL,
+        // Unit.
+        'unit' => NULL,
+        // Country name.
+        'country' => NULL,
+        // Year.
+        'year' => NULL,
+      ],
+    ],
+  ];
+
+  return $themes;
+}

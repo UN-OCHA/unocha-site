@@ -137,7 +137,7 @@ class ReliefWebApiClient {
   public function requestMultiple(array $queries, $decode = TRUE, $timeout = 5, $cache_enabled = TRUE) {
     $results = [];
     $api_url = $this->config->get('reliefweb_api_url');
-    $appname = $this->config->get('reliefweb_api_appname') ?: 'reliefweb.int';
+    $appname = $this->config->get('reliefweb_api_appname') ?: 'unocha.org';
     $cache_enabled = $cache_enabled && ($this->config->get('reliefweb_api_cache_enabled') ?? TRUE);
     $cache_lifetime = $this->config->get('reliefweb_api_cache_lifetime') ?? 300;
     $verify_ssl = $this->config->get('reliefweb_api_verify_ssl');
@@ -249,7 +249,8 @@ class ReliefWebApiClient {
       // request in which case $data is NULL.
       if (isset($cache, $cache_ids[$index], $queries[$index]['resource'])) {
         $tags = static::getCacheTags($queries[$index]['resource']);
-        $this->cache->set($cache_ids[$index], $data, $cache_lifetime, $tags);
+        $cache_expiration = $this->time->getRequestTime() + $cache_lifetime;
+        $this->cache->set($cache_ids[$index], $data, $cache_expiration, $tags);
       }
 
       $results[$index] = $data;
