@@ -1,9 +1,9 @@
-uuid: 2069baf8-044f-4232-9bf4-5c31f7ec754d
+uuid: a234aefa-fbb4-4a28-812b-c73c6fc807dc
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.paragraph.figures
+    - core.entity_view_mode.paragraph.figures_compact_long
     - field.field.paragraph.figures.field_figures
     - field.field.paragraph.figures.field_figures_footnote
     - field.field.paragraph.figures.field_reliefweb_document
@@ -20,17 +20,17 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: paragraph.figures.figures
+id: paragraph.figures.figures_compact_long
 targetEntityType: paragraph
 bundle: figures
-mode: figures
+mode: figures_compact_long
 content:
   field_figures:
     type: key_figure
     label: hidden
     settings:
-      format: decimal
-      precision: 1
+      format: long
+      precision: '2'
     third_party_settings: {  }
     weight: 2
     region: content
