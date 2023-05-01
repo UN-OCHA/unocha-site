@@ -4,6 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.title
+    - field.field.taxonomy_term.country.field_iso3
+    - field.field.taxonomy_term.country.field_location
+    - field.field.taxonomy_term.country.field_shortname
     - taxonomy.vocabulary.country
   module:
     - layout_builder
@@ -18,4 +21,7 @@ mode: title
 content: {  }
 hidden:
   description: true
+  field_iso3: true
+  field_location: true
+  field_shortname: true
   langcode: true
