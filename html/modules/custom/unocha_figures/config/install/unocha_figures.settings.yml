@@ -1,0 +1,12 @@
+# URL of the OCHA Key Figures API.
+ocha_key_figures_api_url: https://keyfigures.api.unocha.org/api/v1
+# API Key for the OCHA Key Figures API.
+ocha_key_figures_api_key:
+# App name parameter to indentify the API requests.
+ocha_key_figures_api_appname: unocha.org
+# Cache the query results.
+ocha_key_figures_api_cache_enabled: true
+# How long to cache the query results.
+ocha_key_figures_api_cache_lifetime: 300
+# Verify the SSL certificate of the API query performing requests.
+ocha_key_figures_api_verify_ssl: true

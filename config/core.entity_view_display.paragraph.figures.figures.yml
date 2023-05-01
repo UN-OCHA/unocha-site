@@ -12,9 +12,9 @@ dependencies:
     - field.field.paragraph.figures.paragraph_view_mode
     - paragraphs.paragraphs_type.figures
   module:
-    - double_field
     - layout_builder
     - text
+    - unocha_figures
     - unocha_reliefweb
 third_party_settings:
   layout_builder:
@@ -26,26 +26,11 @@ bundle: figures
 mode: figures
 content:
   field_figures:
-    type: double_field_unformatted_list
+    type: key_figure
     label: hidden
     settings:
-      first:
-        format_type: medium
-        link: false
-        hidden: false
-        key: false
-        decimal_separator: .
-        thousand_separator: ''
-        scale: 2
-      second:
-        format_type: medium
-        link: false
-        hidden: false
-        key: false
-        decimal_separator: .
-        thousand_separator: ''
-        scale: 2
-      inline: true
+      format: decimal
+      precision: 1
     third_party_settings: {  }
     weight: 2
     region: content

@@ -29,6 +29,7 @@ module:
   file: 0
   file_mdm: 0
   filter: 0
+  geofield: 0
   google_tag: 0
   image: 0
   imageapi_optimize: 0
@@ -71,6 +72,8 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  unocha_migrate: 0
+  unocha_figures: 0
   unocha_reliefweb: 0
   unocha_utility: 0
   update: 0
