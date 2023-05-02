@@ -172,6 +172,16 @@ button[aria-expanded] .cd-icon--arrow-down {
   max-width: var(--cd-max-content-width);
 }
 
+.paragraph--type--section .paragraph--type--figures .field--name-field-text,
+.paragraph--type--section .paragraph--type--figures .field--name-field-title,
+.paragraph--type--section .paragraph--type--text .field--name-field-text,
+.paragraph--type--section .paragraph--type--text .field--name-field-title,
+.paragraph--type--section.paragraph .field--name-field-title,
+.paragraph--type--section .cd-article p {
+  max-width: var(--cd-max-content-width);
+  margin-left: unset;
+  margin-right: unset;
+}
 
 /* Prevent horizontal centering in these cases */
 
