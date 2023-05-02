@@ -137,7 +137,8 @@ class KeyFigure extends FieldItemBase {
    * {@inheritdoc}
    */
   public function isEmpty() {
-    return empty($this->getFigureValue());
+    $value = $this->getFigureValue();
+    return is_null($value) || $value === '';
   }
 
   /**
