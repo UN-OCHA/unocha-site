@@ -112,13 +112,13 @@
   <div{{ content_attributes }}>
 
    {% block section %}
-     <div class="cd-layout-two-col">
+     <div class="cd-layout--sidebar-first">
 
-       <div class="cd-layout-main-content">
+       <div class="cd-layout__content">
          {{ content|without('field_country') }}
        </div>
 
-       <div class="cd-layout-sidebar-first" role="complementary">
+       <div class="cd-layout__sidebar cd-layout__sidebar--first" role="complementary">
         {{ content.field_country}}
       </div>
 
