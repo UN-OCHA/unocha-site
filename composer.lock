@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "61591ab8f398466c848018ffdbf2b6cb",
+    "content-hash": "6fbf2140c693c8671b66f474351417a4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7790,16 +7790,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.20.3",
+            "version": "1.20.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "6c04009f6cae6eda2f040745b6b846080ef069c2"
+                "reference": "7d568c87a9df9c5f7e8b5f075fc469aa8cb0a4cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/6c04009f6cae6eda2f040745b6b846080ef069c2",
-                "reference": "6c04009f6cae6eda2f040745b6b846080ef069c2",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/7d568c87a9df9c5f7e8b5f075fc469aa8cb0a4cd",
+                "reference": "7d568c87a9df9c5f7e8b5f075fc469aa8cb0a4cd",
                 "shasum": ""
             },
             "require": {
@@ -7829,9 +7829,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.20.3"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.20.4"
             },
-            "time": "2023-04-25T09:01:03+00:00"
+            "time": "2023-05-02T09:19:37+00:00"
         },
         {
             "name": "phpstan/phpstan",
@@ -13377,16 +13377,16 @@
         },
         {
             "name": "unocha/common_design",
-            "version": "v8.0.2",
+            "version": "dev-cd-462-layouts",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/common_design.git",
-                "reference": "2874981cc8587efbf1d419f8e6c4683867e1929c"
+                "reference": "50a3c27212a93c8ad8375c214b72e29872c80df0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/common_design/zipball/2874981cc8587efbf1d419f8e6c4683867e1929c",
-                "reference": "2874981cc8587efbf1d419f8e6c4683867e1929c",
+                "url": "https://api.github.com/repos/UN-OCHA/common_design/zipball/50a3c27212a93c8ad8375c214b72e29872c80df0",
+                "reference": "50a3c27212a93c8ad8375c214b72e29872c80df0",
                 "shasum": ""
             },
             "require": {
@@ -13394,16 +13394,15 @@
                 "drupal/stable": "^2.0"
             },
             "type": "drupal-theme",
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-only"
             ],
             "description": "OCHA Common Design base theme for Drupal 9+",
             "support": {
-                "issues": "https://github.com/UN-OCHA/common_design/issues",
-                "source": "https://github.com/UN-OCHA/common_design/tree/v8.0.2"
+                "source": "https://github.com/UN-OCHA/common_design/tree/cd-462-layouts",
+                "issues": "https://github.com/UN-OCHA/common_design/issues"
             },
-            "time": "2023-04-12T20:35:54+00:00"
+            "time": "2023-04-28T14:24:04+00:00"
         },
         {
             "name": "unocha/ocha_search",
@@ -14597,7 +14596,8 @@
         "drupal/config_split": 5,
         "drupal/entity_usage": 10,
         "drupal/imageapi_optimize_binaries": 10,
-        "drupal/viewsreference": 10
+        "drupal/viewsreference": 10,
+        "unocha/common_design": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
