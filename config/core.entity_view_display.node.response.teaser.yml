@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.response.field_custom_content
     - field.field.node.response.field_region
     - field.field.node.response.field_response_image
+    - field.field.node.response.field_response_link
     - node.type.response
   module:
     - text
@@ -46,4 +47,5 @@ hidden:
   field_country: true
   field_custom_content: true
   field_region: true
+  field_response_link: true
   langcode: true
