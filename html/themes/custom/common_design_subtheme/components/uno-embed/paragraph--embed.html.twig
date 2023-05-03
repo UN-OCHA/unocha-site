@@ -54,6 +54,9 @@
 
     {% block content %}
 
+    {{ content.field_title }}
+    {{ content.field_text }}
+
     {% if videoURL %}
       <video controls width="100%" muted="true">
         <source src="{{ videoURL }}" type="video/mp4">
