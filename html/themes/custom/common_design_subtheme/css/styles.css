@@ -84,9 +84,9 @@ button[aria-expanded] .cd-icon--arrow-down {
 }
 
 /* Paragraphs */
-.paragraph {
+/* .paragraph {
   margin: 4rem 0 4rem;
-}
+} */
 
 .paragraph > .field {
   margin-bottom: 1rem;
@@ -442,9 +442,19 @@ footer.cd-author {
   padding: 1rem;
 }
 
-@media (min-width: 1024px) {
-  .cd-layout__content {
-    flex-basis: 0;
-    flex-grow: 999;
+.paragraph--type--layout .cd-teaser {
+  border-bottom: 0 solid;
+}
+
+
+@media (min-width: 767px) {
+  .uno-content--custom {
+    position: relative;
+  }
+
+  .uno-content--custom > a.cd-button {
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }
