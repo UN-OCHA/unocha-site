@@ -2945,16 +2945,16 @@
         },
         {
             "name": "drupal/core-dev",
-            "version": "10.0.8",
+            "version": "10.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-dev.git",
-                "reference": "88ef23ed37d23891afde3a1d10433fb82898a30a"
+                "reference": "22a053f9de0ce6ce9db2755693b9c81ddf86b3b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-dev/zipball/88ef23ed37d23891afde3a1d10433fb82898a30a",
-                "reference": "88ef23ed37d23891afde3a1d10433fb82898a30a",
+                "url": "https://api.github.com/repos/drupal/core-dev/zipball/22a053f9de0ce6ce9db2755693b9c81ddf86b3b7",
+                "reference": "22a053f9de0ce6ce9db2755693b9c81ddf86b3b7",
                 "shasum": ""
             },
             "require": {
@@ -2965,7 +2965,7 @@
                 "drupal/coder": "^8.3.10",
                 "instaclick/php-webdriver": "^1.4.1",
                 "justinrainbow/json-schema": "^5.2",
-                "mglaman/phpstan-drupal": "^1.1.29",
+                "mglaman/phpstan-drupal": "^1.1.31",
                 "mikey179/vfsstream": "^1.6.11",
                 "phpspec/prophecy-phpunit": "^2",
                 "phpstan/extension-installer": "^1.1",
@@ -2991,9 +2991,9 @@
             ],
             "description": "require-dev dependencies from drupal/drupal; use in addition to drupal/core-recommended to run tests from drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-dev/tree/10.0.8"
+                "source": "https://github.com/drupal/core-dev/tree/10.0.9"
             },
-            "time": "2023-02-23T15:40:18+00:00"
+            "time": "2023-05-01T11:13:00+00:00"
         },
         {
             "name": "drupal/core-recommended",
@@ -8800,23 +8800,23 @@
         },
         {
             "name": "react/promise",
-            "version": "v2.9.0",
+            "version": "v2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/promise.git",
-                "reference": "234f8fd1023c9158e2314fa9d7d0e6a83db42910"
+                "reference": "f913fb8cceba1e6644b7b90c4bfb678ed8a3ef38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/promise/zipball/234f8fd1023c9158e2314fa9d7d0e6a83db42910",
-                "reference": "234f8fd1023c9158e2314fa9d7d0e6a83db42910",
+                "url": "https://api.github.com/repos/reactphp/promise/zipball/f913fb8cceba1e6644b7b90c4bfb678ed8a3ef38",
+                "reference": "f913fb8cceba1e6644b7b90c4bfb678ed8a3ef38",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.3 || ^5.7 || ^4.8.36"
+                "phpunit/phpunit": "^9.5 || ^5.7 || ^4.8.36"
             },
             "type": "library",
             "autoload": {
@@ -8860,19 +8860,15 @@
             ],
             "support": {
                 "issues": "https://github.com/reactphp/promise/issues",
-                "source": "https://github.com/reactphp/promise/tree/v2.9.0"
+                "source": "https://github.com/reactphp/promise/tree/v2.10.0"
             },
             "funding": [
                 {
-                    "url": "https://github.com/WyriHaximus",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/clue",
-                    "type": "github"
+                    "url": "https://opencollective.com/reactphp",
+                    "type": "open_collective"
                 }
             ],
-            "time": "2022-02-11T10:27:51+00:00"
+            "time": "2023-05-02T15:15:43+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -13381,12 +13377,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/common_design.git",
-                "reference": "50a3c27212a93c8ad8375c214b72e29872c80df0"
+                "reference": "1eab45ea39d87c0f3a70d2be06d242226a87b99d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/common_design/zipball/50a3c27212a93c8ad8375c214b72e29872c80df0",
-                "reference": "50a3c27212a93c8ad8375c214b72e29872c80df0",
+                "url": "https://api.github.com/repos/UN-OCHA/common_design/zipball/1eab45ea39d87c0f3a70d2be06d242226a87b99d",
+                "reference": "1eab45ea39d87c0f3a70d2be06d242226a87b99d",
                 "shasum": ""
             },
             "require": {
@@ -13402,7 +13398,7 @@
                 "source": "https://github.com/UN-OCHA/common_design/tree/cd-462-layouts",
                 "issues": "https://github.com/UN-OCHA/common_design/issues"
             },
-            "time": "2023-04-28T14:24:04+00:00"
+            "time": "2023-05-03T09:06:57+00:00"
         },
         {
             "name": "unocha/ocha_search",
