@@ -140,6 +140,11 @@ button[aria-expanded] .cd-icon--arrow-down {
   margin-bottom: 1rem;
 }
 
+.node--type-event .field--name-field-event-date,
+.node--type-event .field--name-field-event-location,
+.node--type-event .field--name-field-event-type,
+.node--type-event .field--name-field-country,
+.node--type-event .field--name-field-region,
 .node--view-mode-full .field--name-field-event-image {
   margin-bottom: 1rem;
 }
@@ -151,6 +156,12 @@ button[aria-expanded] .cd-icon--arrow-down {
 .node--type-region .cd-page-title,
 .node--type-response .cd-page-title,
 .node--type-story .cd-page-title,
+.node--type-event .cd-page-title,
+.node--type-event .field--name-field-event-date,
+.node--type-event .field--name-field-event-location,
+.node--type-event .field--name-field-event-type,
+.node--type-event .field--name-field-country,
+.node--type-event .field--name-field-region,
 .field--name-body,
 .field--name-description,
 .viewsreference--view-title,
