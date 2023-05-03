@@ -52,6 +52,11 @@
   }
 }
 
+@media screen and (min-width: 750px) {
+  .view-responses .view-content {
+    --uno-card-list-num-cols: 4;
+  }
+}
 /* Promoted item to span full width */
 .paragraph--type--content-list article.node--type-story.node--sticky.uno-card:first-child {
   flex: 1 0 100%;
