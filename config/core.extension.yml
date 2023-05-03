@@ -44,6 +44,7 @@ module:
   layout_discovery: 0
   layout_paragraphs: 0
   link: 0
+  linkit: 0
   locale: 0
   maintenance200: 0
   media: 0

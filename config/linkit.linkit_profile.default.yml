@@ -1,0 +1,28 @@
+uuid: 1ee983fa-a1d2-4d8f-b022-100789bafd87
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: dccI0aMqbCYWOoBgpP2KeCRjxBV0AjmqzvASrmkLtSc
+label: Default
+id: default
+description: 'A default Linkit profile'
+matchers:
+  556010a3-e317-48b3-b4ed-854c10f4b950:
+    id: 'entity:node'
+    uuid: 556010a3-e317-48b3-b4ed-854c10f4b950
+    settings:
+      metadata: 'by [node:author] | [node:created:medium]'
+      bundles:
+        basic: basic
+        event: event
+        region: region
+        response: response
+        story: story
+      group_by_bundle: false
+      substitution_type: canonical
+      limit: 100
+      include_unpublished: false
+    weight: 0
