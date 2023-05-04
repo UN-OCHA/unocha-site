@@ -13,53 +13,12 @@ dependencies:
     - text
 third_party_settings:
   layout_builder:
-    enabled: true
+    enabled: false
     allow_custom: false
-    sections:
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-        components:
-          7129d68b-a20a-4a83-80e1-52bfcd6051da:
-            uuid: 7129d68b-a20a-4a83-80e1-52bfcd6051da
-            region: content
-            configuration:
-              id: 'field_block:paragraph:layout:field_title'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: string
-                label: hidden
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-          a40b8c9b-d64e-4c74-82b9-b38f86a6cd38:
-            uuid: a40b8c9b-d64e-4c74-82b9-b38f86a6cd38
-            region: content
-            configuration:
-              id: 'field_block:paragraph:layout:field_text'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 1
-            additional: {  }
-        third_party_settings: {  }
   layout_builder_restrictions:
     allowed_block_categories: {  }
     entity_view_mode_restriction:
-      allowed_layouts:
-        - layout_twocol
-        - layout_threecol
-        - layout_fourcol
+      allowed_layouts: {  }
       denylisted_blocks: {  }
       allowlisted_blocks: {  }
       restricted_categories: {  }
