@@ -30,7 +30,7 @@ content:
     label: hidden
     settings:
       format: short
-      precision: '1'
+      precision: 1
     third_party_settings: {  }
     weight: 2
     region: content
