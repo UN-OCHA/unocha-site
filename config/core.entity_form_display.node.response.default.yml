@@ -9,9 +9,11 @@ dependencies:
     - field.field.node.response.field_custom_content
     - field.field.node.response.field_region
     - field.field.node.response.field_response_image
+    - field.field.node.response.field_response_link
     - node.type.response
   module:
     - layout_paragraphs
+    - link
     - media_library
     - path
     - text
@@ -38,7 +40,7 @@ content:
     third_party_settings: {  }
   field_active_response:
     type: boolean_checkbox
-    weight: 5
+    weight: 4
     region: content
     settings:
       display_label: true
@@ -71,6 +73,14 @@ content:
     region: content
     settings:
       media_types: {  }
+    third_party_settings: {  }
+  field_response_link:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   langcode:
     type: language_select

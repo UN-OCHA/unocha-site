@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "61591ab8f398466c848018ffdbf2b6cb",
+    "content-hash": "2332ced4e95134bfc15b1fe1bf57cdeb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4177,6 +4177,68 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/layout_paragraphs",
                 "issues": "https://www.drupal.org/project/issues/layout_paragraphs"
+            }
+        },
+        {
+            "name": "drupal/linkit",
+            "version": "6.0.0-rc1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/linkit.git",
+                "reference": "6.0.0-rc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/linkit-6.0.0-rc1.zip",
+                "reference": "6.0.0-rc1",
+                "shasum": "126069976e2a7d34cc8530c0950c75bd7f1b5d3c"
+            },
+            "require": {
+                "drupal/core": "^9.4 || ^10.0.0"
+            },
+            "conflict": {
+                "drupal/core": ">=10.1"
+            },
+            "require-dev": {
+                "drupal/ckeditor": "*",
+                "drupal/imce": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "6.0.0-rc1",
+                    "datestamp": "1681070405",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Emil Stjerneman",
+                    "homepage": "https://stjerneman.com",
+                    "email": "emil@stjerneman.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "johnwebdev",
+                    "homepage": "https://www.drupal.org/user/3331569"
+                },
+                {
+                    "name": "mark_fullmer",
+                    "homepage": "https://www.drupal.org/user/2612816"
+                }
+            ],
+            "description": "Linkit - Enriched linking experience",
+            "homepage": "http://drupal.org/project/linkit",
+            "support": {
+                "source": "http://cgit.drupalcode.org/linkit",
+                "issues": "http://drupal.org/project/linkit"
             }
         },
         {
@@ -13373,16 +13435,16 @@
         },
         {
             "name": "unocha/common_design",
-            "version": "v8.0.2",
+            "version": "v8.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/common_design.git",
-                "reference": "2874981cc8587efbf1d419f8e6c4683867e1929c"
+                "reference": "2ea1deae46e659a313d9eebb2a838368f332b18f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/common_design/zipball/2874981cc8587efbf1d419f8e6c4683867e1929c",
-                "reference": "2874981cc8587efbf1d419f8e6c4683867e1929c",
+                "url": "https://api.github.com/repos/UN-OCHA/common_design/zipball/2ea1deae46e659a313d9eebb2a838368f332b18f",
+                "reference": "2ea1deae46e659a313d9eebb2a838368f332b18f",
                 "shasum": ""
             },
             "require": {
@@ -13397,9 +13459,9 @@
             "description": "OCHA Common Design base theme for Drupal 9+",
             "support": {
                 "issues": "https://github.com/UN-OCHA/common_design/issues",
-                "source": "https://github.com/UN-OCHA/common_design/tree/v8.0.2"
+                "source": "https://github.com/UN-OCHA/common_design/tree/v8.1.0"
             },
-            "time": "2023-04-12T20:35:54+00:00"
+            "time": "2023-05-04T09:44:30+00:00"
         },
         {
             "name": "unocha/ocha_search",
@@ -14593,6 +14655,7 @@
         "drupal/config_split": 5,
         "drupal/entity_usage": 10,
         "drupal/imageapi_optimize_binaries": 10,
+        "drupal/linkit": 5,
         "drupal/viewsreference": 10
     },
     "prefer-stable": true,

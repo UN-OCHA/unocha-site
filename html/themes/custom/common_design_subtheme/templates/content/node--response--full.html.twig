@@ -87,21 +87,22 @@
 {{ attach_library('common_design_subtheme/uno-social-links') }}
 
 {% set unochaDate = node.getCreatedTime|date('j F Y') %}
-<article{{ attributes.addClass(classes) }}>
 
-  {{ title_prefix }}
-  {% if page %}
-    {% if title %}
-      {# This is not wrapped as this renders the page title block which
-         already wraps the node title in a <h1>. #}
-      {{ title }}
+<article{{ attributes.addClass(classes) }}>
+  <header>
+    <span class="uno-tag">{{ content.field_region[0]["#title"] }}</span>
+    {{ title_prefix }}
+    {% if page %}
+      {% if title %}
+        {# This is not wrapped as this renders the page title block which
+          already wraps the node title in a <h1>. #}
+        {{ title }}
+      {% endif %}
+    {% else %}
+      <h2{{ title_attributes }}>{{ label }}</h2>
     {% endif %}
-  {% else %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
+    {{ title_suffix }}
+  </header>
 
   {% if componentsModule %}
     {% include '@uno-components/cd-social-links/cd-social-links.html.twig' %}
@@ -111,15 +112,17 @@
 
   <div{{ content_attributes.addClass('cd-layout-main-content') }}>
 
-   {% block section %}
-    <div class="cd-layout">
+    {{ content.field_response_image }}
 
-       <div class="cd-layout__content">
-         {{ content }}
-       </div>
+    <div class="uno-content--custom">
 
+    {% if content.field_response_link|render %}
+      <a href="{{ content.field_response_link[0]["#url"] }}" class="cd-button cd-button--bold cd-button--wide">
+        {{ content.field_response_link[0]["#title"] }}
+      </a>
+    {% endif %}
+      {{ content|without('field_response_image', 'field_response_link') }}
     </div>
-   {% endblock %}
 
     {% if display_submitted %}
       <footer class="cd-author node__meta [ cd-bumper ]">

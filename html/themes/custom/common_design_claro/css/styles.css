@@ -11,3 +11,8 @@
 .ui-dialog~.ck-body-wrapper {
   --ck-z-modal: 1261;
 }
+
+/* Specific paragraph previews */
+.paragraph--type--content-list.paragraph--view-mode--preview .media--type-image {
+  max-width: 220px;
+}

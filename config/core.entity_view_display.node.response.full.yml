@@ -10,11 +10,12 @@ dependencies:
     - field.field.node.response.field_custom_content
     - field.field.node.response.field_region
     - field.field.node.response.field_response_image
+    - field.field.node.response.field_response_link
     - node.type.response
   module:
     - layout_builder
     - layout_paragraphs
-    - text
+    - link
     - user
 third_party_settings:
   layout_builder:
@@ -25,13 +26,6 @@ targetEntityType: node
 bundle: response
 mode: full
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_active_response:
     type: boolean
     label: inline
@@ -40,7 +34,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_country:
     type: entity_reference_label
@@ -57,7 +51,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 1
     region: content
   field_region:
     type: entity_reference_label
@@ -76,6 +70,19 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_response_link:
+    type: link
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: _blank
+    third_party_settings: {  }
+    weight: 5
+    region: content
 hidden:
+  body: true
   langcode: true
   links: true

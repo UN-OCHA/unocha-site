@@ -1,0 +1,54 @@
+  {#
+
+  /**
+  * @file
+  * Template file for a report entity article in a river.
+  *
+  * Available variables;
+  * - level: heading level (defaults to 3)
+  * - attributes: article attributes
+  * - entity: the article entity's data as an associative array with notably:
+  *   - url: url to the full article/page
+  *   - title: article title
+  *   - langcode: article language code
+  *   - id: entity id
+  *   - bundle: entity bundle.
+  *   - tags (optional): list of terms the entity is tagged with
+  *   - various properties like posting date, status etc.
+  * - meta_attributes: meta information attributes.
+  */
+
+  #}
+  <article{{attributes.addClass(['rw-river-article','rw-river-article--'~entity.bundle,entity.image?'rw-river-article--with-image',entity.summary?'rw-river-article--with-summary',entity.preview?'rw-river-article--with-preview',]).setAttribute('data-id',entity.id)}}>
+
+  {# Image (ex: headline). #}
+  {% if entity.image is not empty %}
+    {{ render_var({
+      '#theme': 'unocha_reliefweb_entity_image',
+      '#style': 'medium',
+      '#image': entity.image,
+      '#caption': false,
+    }) }}
+  {% endif %}
+
+  {# Article attachment preview and/or summary. #}
+  <div class="rw-river-article__content" lang="{{ entity.langcode }}">
+    <div class="cd-preview--label">{{ 'This is a preview'|t }}</div>
+    {# Header with country slug and title. #}
+    <header
+      class="rw-river-article__header">
+      {# Title. #}
+      {{ render_var({
+        '#theme': 'unocha_reliefweb_river_article_title',
+        '#level': 4,
+        '#langcode': entity.langcode,
+        '#url': entity.url,
+        '#title': entity.title,
+      }) }}
+    </header>
+    {% if entity.preview is not empty %}
+      <img src="{{ entity.preview.url }}" alt="{{ entity.preview.alt ?? '' }}" loading="lazy">
+    {% endif %}
+  </div>
+  </article>
+

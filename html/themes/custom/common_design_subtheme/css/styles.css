@@ -84,9 +84,9 @@ button[aria-expanded] .cd-icon--arrow-down {
 }
 
 /* Paragraphs */
-.paragraph {
+/* .paragraph {
   margin: 4rem 0 4rem;
-}
+} */
 
 .paragraph > .field {
   margin-bottom: 1rem;
@@ -97,9 +97,9 @@ button[aria-expanded] .cd-icon--arrow-down {
  }
 
 /* Nodes and Terms */
-.layout + .layout {
+/* .layout + .layout {
   margin-top: 2rem;
-}
+} */
 
 .paragraph--type--node-teaser > .field > .field__items > .field__item {
   margin-bottom: 2rem;
@@ -109,9 +109,9 @@ button[aria-expanded] .cd-icon--arrow-down {
   margin-top: 2rem;
 }
 
-.field--name-field-custom-content > .field__item + .field__item {
+/* .field--name-field-custom-content > .field__item + .field__item {
   margin-top: 6rem;
-}
+} */
 
 /* Fields with inline labels */
 .field--label-inline {
@@ -140,6 +140,11 @@ button[aria-expanded] .cd-icon--arrow-down {
   margin-bottom: 1rem;
 }
 
+.node--type-event .field--name-field-event-date,
+.node--type-event .field--name-field-event-location,
+.node--type-event .field--name-field-event-type,
+.node--type-event .field--name-field-country,
+.node--type-event .field--name-field-region,
 .node--view-mode-full .field--name-field-event-image {
   margin-bottom: 1rem;
 }
@@ -149,16 +154,22 @@ button[aria-expanded] .cd-icon--arrow-down {
 .rw-river,
 .node--type-basic .cd-page-title,
 .node--type-region .cd-page-title,
+.node--type-region header,
 .node--type-response .cd-page-title,
+.node--type-response header,
 .node--type-story .cd-page-title,
+.node--type-event .cd-page-title,
+.node--type-event .field--name-field-event-date,
+.node--type-event .field--name-field-event-location,
+.node--type-event .field--name-field-event-type,
+.node--type-event .field--name-field-country,
+.node--type-event .field--name-field-region,
 .field--name-body,
 .field--name-description,
-.viewsreference--view-title,
 .field--name-body > ul,
 .paragraph .field--name-field-title,
 .cd-layout-main-content .field--type-text-with-summary,
 .cd-layout-main-content footer,
-.cd-layout-main-content .cd-caption,
 .paragraph--type--text .field--name-field-title,
 .paragraph--type--text .field--name-field-text,
 .paragraph--type--text-and-image.paragraph--view-mode--default .field--name-field-title,
@@ -172,6 +183,16 @@ button[aria-expanded] .cd-icon--arrow-down {
   max-width: var(--cd-max-content-width);
 }
 
+.paragraph--type--section .paragraph--type--figures .field--name-field-text,
+.paragraph--type--section .paragraph--type--figures .field--name-field-title,
+.paragraph--type--section .paragraph--type--text .field--name-field-text,
+.paragraph--type--section .paragraph--type--text .field--name-field-title,
+.paragraph--type--section.paragraph .field--name-field-title,
+.paragraph--type--section .cd-article p {
+  max-width: var(--cd-max-content-width);
+  margin-left: unset;
+  margin-right: unset;
+}
 
 /* Prevent horizontal centering in these cases */
 
@@ -198,9 +219,82 @@ button[aria-expanded] .cd-icon--arrow-down {
   margin-bottom: 4rem;
 } */
 
-.node--view-mode-full .field--name-field-title,
+.node--view-mode-full .paragraph .field--name-field-title,
 .viewsreference--view-title {
+  margin-bottom: 1rem;
+}
+
+.node--view-mode-full .field--name-field-text {
   margin-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .node--view-mode-full .field--name-field-text {
+    margin-bottom: 6rem;
+  }
+}
+
+.node--view-mode-full .paragraph .field--name-field-text {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .node--view-mode-full .paragraph .field--name-field-text {
+    margin-bottom: 3rem;
+  }
+}
+
+
+.paragraph--type--campaign {
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .paragraph--type--campaign {
+    margin-bottom: 6rem;
+  }
+}
+
+.paragraph--type--embed,
+.paragraph--type--call-to-action,
+.paragraph--type--video,
+.paragraph--type--node,
+.paragraph--type--section.paragraph--view-mode--default,
+.paragraph--type--section.paragraph--view-mode--tabs,
+.paragraph--type--content-list {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .paragraph--type--embed,
+  .paragraph--type--call-to-action,
+  .paragraph--type--video,
+  .paragraph--type--node,
+  .paragraph--type--section.paragraph--view-mode--default,
+  .paragraph--type--section.paragraph--view-mode--tabs,
+  .paragraph--type--content-list {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+}
+
+/* Paragraphs in layouts or nested, remove margins */
+.layout__region .paragraph--type--node,
+.paragraph--type--section.paragraph--view-mode--tabs .paragraph--type--section {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 768px) {
+  .layout__region .paragraph--type--node,
+  .paragraph--type--section.paragraph--view-mode--tabs .paragraph--type--section {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.node--view-mode-full .field--name-body {
+  margin-bottom: 6rem;
+}
+.node--view-mode-full .node--view-mode-teaser .field--name-body {
+  margin-bottom: 0;
 }
 
 .paragraph--type--text-and-image .field--name-field-text > p:first-child,
@@ -355,7 +449,7 @@ a.cd-footer-social__link svg {
 }
 
 .uno-subscribe {
-  padding: 3rem 0 2rem;
+  margin: 2rem 0 3rem;
 }
 
 .uno-tag {
@@ -373,6 +467,22 @@ a.cd-footer-social__link svg {
 .more-link {
   display: block;
   margin-top: 2rem;
+}
+.view-display-id-media .view-header,
+.view-display-id-response_media .view-header,
+.view-display-id-events .view-header,
+.view-display-id-country_events .view-header,
+.view-display-id-upcoming_events .view-header,
+.view-display-id-past_events .view-header,
+.view-display-id-response_stories .view-header,
+.view-display-id-stories .view-header {
+  display: flex;
+  align-items: baseline;
+}
+
+.view-header .views-display-link {
+  text-decoration: none;
+  padding-inline-start: 1rem;
 }
 
 .views-exposed-form.cd-form .cd-form--inline,
@@ -399,6 +509,19 @@ a.cd-footer-social__link svg {
   }
 }
 
+.view-display-id-regional_responses .view-content {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.view-display-id-regional_responses .view-content li {
+  padding: 0.5rem 1rem;
+  border-top: 1px solid var(--brand-grey);
+}
+.view-display-id-regional_responses .view-content li a {
+  text-decoration: none;
+}
+
 /* Story node */
 footer.cd-author {
   margin-top: 3rem;
@@ -421,3 +544,19 @@ footer.cd-author {
   padding: 1rem;
 }
 
+.paragraph--type--layout .cd-teaser {
+  border-bottom: 0 solid;
+}
+
+
+@media (min-width: 767px) {
+  .uno-content--custom {
+    position: relative;
+  }
+
+  .uno-content--custom > a.cd-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}

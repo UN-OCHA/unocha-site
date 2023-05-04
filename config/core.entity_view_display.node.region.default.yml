@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.region.body
     - field.field.node.region.field_custom_content
     - field.field.node.region.field_region_image
+    - field.field.node.region.field_region_link
     - node.type.region
   module:
     - text
@@ -34,5 +35,6 @@ content:
     region: content
 hidden:
   field_custom_content: true
+  field_region_link: true
   langcode: true
   links: true
