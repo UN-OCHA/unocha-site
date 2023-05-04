@@ -7,10 +7,12 @@ dependencies:
     - field.field.node.region.body
     - field.field.node.region.field_custom_content
     - field.field.node.region.field_region_image
+    - field.field.node.region.field_region_link
     - node.type.region
   module:
     - layout_builder
     - layout_paragraphs
+    - link
     - text
     - user
 third_party_settings:
@@ -27,7 +29,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_custom_content:
     type: layout_paragraphs
@@ -36,7 +38,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_region_image:
     type: entity_reference_entity_view
@@ -46,6 +48,18 @@ content:
       link: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_region_link:
+    type: link
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
   langcode: true
