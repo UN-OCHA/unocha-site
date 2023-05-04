@@ -176,12 +176,36 @@ display:
           field: field_country
           plugin_id: standard
       css_class: ''
-      use_more: true
+      use_more: false
       use_more_always: true
       use_more_text: 'View all'
-      link_display: page__events
+      link_display: '0'
       link_url: ''
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: '<h2>[view:title]</h2>'
+            format: ckeditor
+          tokenize: false
+        display_link:
+          id: display_link
+          table: views
+          field: display_link
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: display_link
+          label: 'View all'
+          empty: false
+          display_id: page__events
       footer: {  }
       display_extenders: {  }
     cache_metadata:

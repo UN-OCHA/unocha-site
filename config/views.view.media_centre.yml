@@ -192,7 +192,31 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: '<h2>[view:title]</h2>'
+            format: ckeditor
+          tokenize: false
+        display_link:
+          id: display_link
+          table: views
+          field: display_link
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: display_link
+          label: 'View all'
+          empty: false
+          display_id: page__media_centre
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -463,6 +487,7 @@ display:
         relationships: false
         filters: false
         filter_groups: false
+        header: false
       relationships:
         reverse__node__field_response_image:
           id: reverse__node__field_response_image
@@ -494,6 +519,7 @@ display:
           plugin_id: standard
           required: false
       display_description: ''
+      header: {  }
       display_extenders: {  }
       path: media
     cache_metadata:

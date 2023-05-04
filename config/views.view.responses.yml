@@ -529,8 +529,26 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  block_1:
-    id: block_1
+  page__responses:
+    id: page__responses
+    display_title: 'Responses page'
+    display_plugin: page
+    position: 1
+    display_options:
+      display_description: ''
+      display_extenders: {  }
+      path: responses
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  regional_responses:
+    id: regional_responses
     display_title: 'Regional responses block'
     display_plugin: block
     position: 2
@@ -644,7 +662,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: card
+          view_mode: title
       defaults:
         pager: false
         style: false
@@ -659,24 +677,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - 'user.node_grants:view'
-        - user.permissions
-      tags: {  }
-  page__responses:
-    id: page__responses
-    display_title: 'Responses page'
-    display_plugin: page
-    position: 1
-    display_options:
-      display_description: ''
-      display_extenders: {  }
-      path: responses
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

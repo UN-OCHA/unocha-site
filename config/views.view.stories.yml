@@ -457,7 +457,7 @@ display:
     display_plugin: block
     position: 2
     display_options:
-      title: 'Response stories'
+      title: 'Latest stories and news'
       fields:
         title:
           id: title
@@ -526,7 +526,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 5
+          items_per_page: 3
       arguments:
         field_response_target_id:
           id: field_response_target_id
@@ -575,16 +575,55 @@ display:
         use_more: false
         use_more_always: false
         use_more_text: false
+        link_display: false
+        link_url: false
         style: false
         row: false
         relationships: false
         fields: false
         arguments: false
-      relationships: {  }
+        header: false
+      relationships:
+        field_response:
+          id: field_response
+          table: node__field_response
+          field: field_response
+          relationship: none
+          group_type: group
+          admin_label: 'field_response: Content'
+          plugin_id: standard
+          required: false
       display_description: ''
       use_more: true
       use_more_always: false
       use_more_text: 'View all'
+      link_display: page__stories
+      link_url: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: '<h2>[view:title]</h2>'
+            format: ckeditor
+          tokenize: true
+        display_link:
+          id: display_link
+          table: views
+          field: display_link
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: display_link
+          label: 'View all'
+          empty: false
+          display_id: page__stories
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -601,7 +640,7 @@ display:
     display_plugin: block
     position: 2
     display_options:
-      title: Stories
+      title: 'Latest stories and news'
       fields:
         title:
           id: title
@@ -670,7 +709,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 5
+          items_per_page: 4
       arguments: {  }
       style:
         type: default
@@ -685,16 +724,46 @@ display:
         use_more: false
         use_more_always: false
         use_more_text: false
+        link_display: false
+        link_url: false
         style: false
         row: false
         relationships: false
         fields: false
         arguments: false
+        header: false
       relationships: {  }
       display_description: ''
-      use_more: true
+      use_more: false
       use_more_always: false
       use_more_text: 'View all'
+      link_display: '0'
+      link_url: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: '<h2>[view:title]</h2>'
+            format: ckeditor
+          tokenize: false
+        display_link:
+          id: display_link
+          table: views
+          field: display_link
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: display_link
+          label: 'View all'
+          empty: false
+          display_id: page__stories
       display_extenders: {  }
     cache_metadata:
       max-age: -1
