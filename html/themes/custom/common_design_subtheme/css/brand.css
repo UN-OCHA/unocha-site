@@ -14,5 +14,6 @@
   --brand-highlight-contract: #0B2641;
   --brand-grey: var(--cd-blue-grey);
   --brand-grey: #f5f5f5;
+  --brand-grey--text: #00000080;
   --brand-logo-width: 186px;
 }
