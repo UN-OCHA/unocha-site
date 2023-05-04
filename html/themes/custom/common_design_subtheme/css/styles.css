@@ -97,9 +97,9 @@ button[aria-expanded] .cd-icon--arrow-down {
  }
 
 /* Nodes and Terms */
-.layout + .layout {
+/* .layout + .layout {
   margin-top: 2rem;
-}
+} */
 
 .paragraph--type--node-teaser > .field > .field__items > .field__item {
   margin-bottom: 2rem;
@@ -109,9 +109,9 @@ button[aria-expanded] .cd-icon--arrow-down {
   margin-top: 2rem;
 }
 
-.field--name-field-custom-content > .field__item + .field__item {
+/* .field--name-field-custom-content > .field__item + .field__item {
   margin-top: 6rem;
-}
+} */
 
 /* Fields with inline labels */
 .field--label-inline {
@@ -164,7 +164,6 @@ button[aria-expanded] .cd-icon--arrow-down {
 .node--type-event .field--name-field-region,
 .field--name-body,
 .field--name-description,
-.viewsreference--view-title,
 .field--name-body > ul,
 .paragraph .field--name-field-title,
 .cd-layout-main-content .field--type-text-with-summary,
@@ -221,7 +220,7 @@ button[aria-expanded] .cd-icon--arrow-down {
 
 .node--view-mode-full .field--name-field-title,
 .viewsreference--view-title {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .paragraph--type--text-and-image .field--name-field-text > p:first-child,
@@ -394,6 +393,22 @@ a.cd-footer-social__link svg {
 .more-link {
   display: block;
   margin-top: 2rem;
+}
+.view-display-id-media .view-header,
+.view-display-id-response_media .view-header,
+.view-display-id-events .view-header,
+.view-display-id-country_events .view-header,
+.view-display-id-upcoming_events .view-header,
+.view-display-id-past_events .view-header,
+.view-display-id-response_stories .view-header,
+.view-display-id-stories .view-header {
+  display: flex;
+  align-items: baseline;
+}
+
+.view-header .views-display-link {
+  text-decoration: none;
+  padding-inline-start: 1rem;
 }
 
 .views-exposed-form.cd-form .cd-form--inline,
