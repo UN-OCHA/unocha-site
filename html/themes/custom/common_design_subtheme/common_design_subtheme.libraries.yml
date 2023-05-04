@@ -8,8 +8,8 @@ global-styling:
     theme:
       css/styles.css: {}
       css/brand.css: {}
-#   dependencies:
-#     - common_design_subtheme/custom-teaser
+  dependencies:
+    - common_design_subtheme/uno-card-list
 
 ###
 # Define Drupal libraries for your custom components.

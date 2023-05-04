@@ -13,17 +13,22 @@
 .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node,
 .paragraph--type--content-list.paragraph--view-mode--cards .view .view-content,
 .view-stories .view-content,
-.view-responses .view-content,
+.view-display-id-regional_responses .view-content,
+.view-display-id-active_responses .view-content,
 .view-media-centre .view-content,
 .view-regions .view-content {
   display: flex;
   flex-flow: row wrap;
   gap: var(--uno-card-list-gap-size);
 }
+.view-display-id-regional_responses .view-content {
+  gap: 0 var(--uno-card-list-gap-size);
+}
 .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node article,
 .paragraph--type--content-list.paragraph--view-mode--cards article,
 .view-stories .view-content article,
-.view-responses .view-content article,
+.view-display-id-regional_responses .view-content li,
+.view-display-id-active_responses .view-content article,
 .view-media-centre .view-content article,
 .view-regions .view-content article {
   /* stylelint-disable-next-line max-line-length */
@@ -34,7 +39,8 @@
   .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node,
   .paragraph--type--content-list.paragraph--view-mode--cards .view .view-content,
   .view-stories .view-content,
-  .view-responses .view-content,
+  .view-display-id-regional_responses .view-content,
+  .view-display-id-active_responses .view-content,
   .view-media-centre .view-content,
   .view-regions .view-content {
     --uno-card-list-num-cols: 2;
@@ -45,7 +51,8 @@
   .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node,
   .paragraph--type--content-list.paragraph--view-mode--cards .view .view-content,
   .view-stories .view-content,
-  .view-responses .view-content,
+  .view-display-id-regional_responses .view-content,
+  .view-display-id-active_responses .view-content,
   .view-media-centre .view-content,
   .view-regions .view-content {
     --uno-card-list-num-cols: 3;
@@ -53,7 +60,7 @@
 }
 
 @media screen and (min-width: 750px) {
-  .view-responses .view-content {
+  .view-display-id-active_responses .view-content {
     --uno-card-list-num-cols: 4;
   }
 }
