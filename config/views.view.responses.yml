@@ -532,7 +532,9 @@ display:
         fields: false
         filters: false
         filter_groups: false
+        header: false
       display_description: ''
+      header: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1
