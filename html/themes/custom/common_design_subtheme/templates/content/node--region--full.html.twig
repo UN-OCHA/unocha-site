@@ -90,7 +90,7 @@
 
 <article{{ attributes.addClass(classes) }}>
   <header>
-    <span class="uno-tag">{{ content.field_region[0]["#title"] }}</span>
+    <span class="uno-tag">{{ 'Regional office for'|t}}</span>
     {{ title_prefix }}
     {% if page %}
       {% if title %}
@@ -112,16 +112,16 @@
 
   <div{{ content_attributes.addClass('cd-layout-main-content') }}>
 
-    {{ content.field_response_image }}
+    {{ content.field_region_image }}
 
     <div class="uno-content--custom">
 
-    {% if content.field_response_link|render %}
-      <a href="{{ content.field_response_link[0]["#url"] }}" class="cd-button cd-button--bold cd-button--wide">
-        {{ content.field_response_link[0]["#title"] }}
+    {% if content.field_region_link|render %}
+      <a href="{{ content.field_region_link[0]["#url"] }}" class="cd-button cd-button--bold cd-button--wide">
+        {{ content.field_region_link[0]["#title"] }}
       </a>
     {% endif %}
-      {{ content|without('field_response_image', 'field_response_link') }}
+      {{ content|without('field_region_image', 'field_region_link') }}
     </div>
 
     {% if display_submitted %}
