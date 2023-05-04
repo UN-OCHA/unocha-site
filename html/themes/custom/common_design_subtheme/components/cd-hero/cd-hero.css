@@ -10,7 +10,10 @@
   margin-left: auto;
   margin-right: auto;
 }
-
+.cd-hero__image picture,
+.cd-hero__image picture img {
+  display: block;
+}
 
 /* Hero flush to main nav */
 .cd-page-layout-container main .cd-hero {

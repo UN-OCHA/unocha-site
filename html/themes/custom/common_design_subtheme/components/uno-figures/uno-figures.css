@@ -2,9 +2,21 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
-dl.uno-figures {
-  margin: 0;
+@media (min-width: 768px) {
+  .uno-figures {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+  .field--name-field-text + .uno-figures {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
 }
 
 .uno-figure {
