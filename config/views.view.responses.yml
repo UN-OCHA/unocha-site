@@ -191,7 +191,20 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: '<h2>[view:title]</h2>'
+            format: ckeditor
+          tokenize: false
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -209,7 +222,7 @@ display:
     display_plugin: block
     position: 2
     display_options:
-      title: 'Active responses'
+      title: 'Current responses'
       fields:
         title:
           id: title
@@ -535,7 +548,10 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      defaults:
+        header: false
       display_description: ''
+      header: {  }
       display_extenders: {  }
       path: responses
     cache_metadata:
@@ -553,6 +569,7 @@ display:
     display_plugin: block
     position: 2
     display_options:
+      title: 'Regional coverage'
       fields:
         title:
           id: title
@@ -664,6 +681,7 @@ display:
           relationship: none
           view_mode: title
       defaults:
+        title: false
         pager: false
         style: false
         row: false
