@@ -27,36 +27,12 @@ bundle: story
 mode: card
 content:
   body:
-    type: text_trimmed
+    type: text_summary_or_trimmed
     label: hidden
     settings:
       trim_length: 160
     third_party_settings: {  }
-    weight: 4
-    region: content
-  field_country:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
     weight: 1
-    region: content
-  field_region:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_response:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 3
     region: content
   field_story_image:
     type: entity_reference_entity_view
@@ -67,9 +43,19 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_story_type:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
+  field_country: true
   field_custom_content: true
-  field_story_type: true
+  field_region: true
+  field_response: true
   field_theme: true
   langcode: true
   links: true
