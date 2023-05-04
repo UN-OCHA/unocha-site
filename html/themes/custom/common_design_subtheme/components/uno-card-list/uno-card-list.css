@@ -57,38 +57,47 @@
     --uno-card-list-num-cols: 4;
   }
 }
+
+
 /* Promoted item to span full width */
-.paragraph--type--content-list article.node--type-story.node--sticky.uno-card:first-child {
+.path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child,
+.page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child {
   flex: 1 0 100%;
 }
 /* Hide the body field on all story cards */
-article.node--type-story.node--sticky.uno-card .field--name-body {
-  display: none;
-}
-/* Hide the body field on all but first sticky item */
-.paragraph--type--content-list article.node--type-story.node--sticky.uno-card:not(:first-child) .field--name-body {
+article.node--type-story.node--view-mode-card .field--name-body {
   display: none;
 }
 
+/* Display the body field on the first sticky item on Homepage and Region pages */
+.path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .field--name-body,
+.page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .field--name-body {
+  display: block;
+}
+
 @media screen and (min-width: 480px) {
-  .paragraph--type--content-list article.node--type-story.node--sticky.uno-card:first-child .cd-card__footer {
+  .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer,
+  .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer {
     flex: 1 0 100%;
   }
 }
 
 @media screen and (min-width: 767px) {
   /* Promoted item to span full width */
-  .paragraph--type--content-list article.node--type-story.node--sticky.uno-card:first-child {
+  .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child,
+  .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
 
-  .paragraph--type--content-list article.node--type-story.node--sticky.uno-card:first-child .uno-card__image {
+  .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .uno-card__image,
+  .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .uno-card__image {
     flex: 0 1 60%;
   }
 
-  .paragraph--type--content-list article.node--type-story.node--sticky.uno-card:first-child .cd-card__container {
+  .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__container,
+  .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__container {
     flex: 0 1 40%;
     padding-inline-start: 2rem;
   }
