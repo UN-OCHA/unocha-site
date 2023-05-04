@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf590b421f422da67db2eb79ad6ad39f",
+    "content-hash": "2332ced4e95134bfc15b1fe1bf57cdeb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -13435,16 +13435,16 @@
         },
         {
             "name": "unocha/common_design",
-            "version": "dev-cd-462-layouts",
+            "version": "v8.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/common_design.git",
-                "reference": "1eab45ea39d87c0f3a70d2be06d242226a87b99d"
+                "reference": "2ea1deae46e659a313d9eebb2a838368f332b18f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/common_design/zipball/1eab45ea39d87c0f3a70d2be06d242226a87b99d",
-                "reference": "1eab45ea39d87c0f3a70d2be06d242226a87b99d",
+                "url": "https://api.github.com/repos/UN-OCHA/common_design/zipball/2ea1deae46e659a313d9eebb2a838368f332b18f",
+                "reference": "2ea1deae46e659a313d9eebb2a838368f332b18f",
                 "shasum": ""
             },
             "require": {
@@ -13452,15 +13452,16 @@
                 "drupal/stable": "^2.0"
             },
             "type": "drupal-theme",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-only"
             ],
             "description": "OCHA Common Design base theme for Drupal 9+",
             "support": {
-                "source": "https://github.com/UN-OCHA/common_design/tree/cd-462-layouts",
-                "issues": "https://github.com/UN-OCHA/common_design/issues"
+                "issues": "https://github.com/UN-OCHA/common_design/issues",
+                "source": "https://github.com/UN-OCHA/common_design/tree/v8.1.0"
             },
-            "time": "2023-05-03T09:06:57+00:00"
+            "time": "2023-05-04T09:44:30+00:00"
         },
         {
             "name": "unocha/ocha_search",
@@ -14655,8 +14656,7 @@
         "drupal/entity_usage": 10,
         "drupal/imageapi_optimize_binaries": 10,
         "drupal/linkit": 5,
-        "drupal/viewsreference": 10,
-        "unocha/common_design": 20
+        "drupal/viewsreference": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,
