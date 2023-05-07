@@ -101,10 +101,10 @@ class CantoApiClient {
    *
    * @param string $resource
    *   API resource endpoint (ex: reports).
-   * @param array $parameters
-   *   API request parameters.
-   * @param bool $decode
-   *   Whether to decode (json) the output or not.
+   * @param array $payload
+   *   API request payload (body for POST or parameters for GET).
+   * @param string $method
+   *   Request method.
    * @param int $timeout
    *   Request timeout.
    * @param bool $cache_enabled
@@ -113,15 +113,16 @@ class CantoApiClient {
    * @return array|null
    *   The data from the API response or NULL in case of error.
    */
-  public function request($resource, array $parameters = [], $decode = TRUE, $timeout = 5, $cache_enabled = TRUE) {
+  public function request($resource, array $payload = [], $method = 'GET', $timeout = 5, $cache_enabled = TRUE) {
     $queries = [
       $resource => [
         'resource' => $resource,
-        'parameters' => $parameters,
+        'payload' => $payload,
+        'method' => $method,
       ],
     ];
 
-    $results = $this->requestMultiple($queries, $decode, $timeout, $cache_enabled);
+    $results = $this->requestMultiple($queries, $timeout, $cache_enabled);
     return $results[$resource];
   }
 
@@ -131,8 +132,6 @@ class CantoApiClient {
    * @param array $queries
    *   List of queries to perform in parallel. Each item is an associative
    *   array with the resource and the query parameters.
-   * @param bool $decode
-   *   Whether to decode (json) the output or not.
    * @param int $timeout
    *   Request timeout.
    * @param bool $cache_enabled
@@ -144,7 +143,7 @@ class CantoApiClient {
    *
    * @see https://docs.guzzlephp.org/en/stable/quickstart.html#concurrent-requests
    */
-  public function requestMultiple(array $queries, $decode = TRUE, $timeout = 5, $cache_enabled = TRUE) {
+  public function requestMultiple(array $queries, $timeout = 5, $cache_enabled = TRUE) {
     $results = [];
     $api_url = $this->config->get('canto_api_url');
     $token = $this->getAccessToken();
@@ -155,21 +154,33 @@ class CantoApiClient {
     // Initialize the result array and retrieve the data for the cached queries.
     $cache_ids = [];
     foreach ($queries as $index => $query) {
-      $parameters = $query['parameters'] ?? [];
+      $payload = $query['payload'] ?? [];
+      $method = $query['method'] ?? 'GET';
 
       // Sanitize the query parameters.
-      if (is_array($parameters)) {
-        $parameters = static::sanitizeParameters($parameters);
+      if ($method === 'GET' && is_array($payload)) {
+        $payload = static::sanitizeParameters($payload);
       }
 
-      // Update the query parameters.
-      $queries[$index]['parameters'] = $parameters;
+      // Allow full URL resource. This is notably the case for requests against
+      // the `api_binary` to retrieve URLs of Canto media.
+      if (strpos($query['resource'], 'http') === 0) {
+        $url = $query['resource'];
+      }
+      else {
+        $url = rtrim($api_url, '/') . '/' . ltrim($query['resource'], '/');
+      }
+
+      // Update the query.
+      $queries[$index]['payload'] = $payload;
+      $queries[$index]['method'] = $method;
+      $queries[$index]['url'] = $url;
 
       // Attempt to get the data from the cache.
       $results[$index] = NULL;
       if ($cache_enabled) {
         // Retrieve the cache id for the query.
-        $cache_id = static::getCacheId($query['resource'], $parameters);
+        $cache_id = static::getCacheId($query['resource'], $method, $payload);
         $cache_ids[$index] = $cache_id;
         // Attempt to retrieve the cached data for the query.
         $cache = $this->cache->get($cache_id);
@@ -187,21 +198,22 @@ class CantoApiClient {
         continue;
       }
 
-      $url = $api_url . '/' . $query['resource'];
-      $parameters = $query['parameters'] ?? [];
+      $url = $query['url'];
+      $payload = $query['payload'] ?? NULL;
+      $method = $query['method'] ?? 'GET';
 
-      // Skip the request if something is wrong with the parameters.
-      if (isset($parameters) && !is_array($parameters)) {
-        $results[$index] = NULL;
-        $this->logger->error('Invalid parameters when requesting @url: @parameters', [
-          '@url' => $api_url . '/' . $query['resource'],
-          '@parameters' => print_r($parameters, TRUE) . ' (' . gettype($parameters) . ')',
+      // Skip the request if something is wrong with the payload.
+      if (isset($payload) && !is_array($payload)) {
+        $this->logger->error('Invalid payload when requesting @url: @payload', [
+          '@url' => $url,
+          '@payload' => print_r($payload, TRUE) . ' (' . gettype($payload) . ')',
         ]);
         continue;
       }
+
+      // Perfoam an async request against the API.
       try {
-        $promises[$index] = $this->httpClient->getAsync($url, [
-          'query' => $parameters,
+        $options = [
           'headers' => [
             'Accept' => 'application/json',
             'Authorization' => 'Bearer ' . $token,
@@ -209,12 +221,23 @@ class CantoApiClient {
           'timeout' => $timeout,
           'connect_timeout' => $timeout,
           'verify' => $verify_ssl,
-        ]);
+        ];
+
+        if ($method === 'GET') {
+          $options['query'] = $payload;
+          $options['headers']['Content-Type'] = 'application/x-www-form-urlencoded; charset=utf-8';
+        }
+        else {
+          $options['body'] = $payload;
+          $options['header']['Content-Type'] = 'application/json; charset=utf-8';
+        }
+
+        $promises[$index] = $this->httpClient->requestAsync($method, $url, $options);
       }
       catch (\Exception $exception) {
-        $this->logger->error('Exception while querying @url with @parameters: @exception', [
-          '@url' => $api_url . '/' . $query['resource'],
-          '@parameters' => print_r($parameters, TRUE),
+        $this->logger->error('Exception while querying @url with @payload: @exception', [
+          '@url' => $url,
+          '@payload' => print_r($payload, TRUE),
           '@exception' => $exception->getMessage(),
         ]);
       }
@@ -232,23 +255,29 @@ class CantoApiClient {
 
         // Retrieve the raw response's data.
         if ($response->getStatusCode() === 200) {
-          $data = (string) $response->getBody();
+          $content = (string) $response->getBody();
         }
         else {
-          $this->logger->notice('Unable to retrieve API data (code: @code) when requesting @url with parameters @parameters', [
+          $this->logger->notice('Unable to retrieve API data (code: @code) when requesting @url with payload @payload', [
             '@code' => $response->getStatusCode(),
-            '@url' => $api_url . '/' . $queries[$index]['resource'],
-            '@parameters' => print_r($queries[$index]['parameters'], TRUE),
+            '@url' => $queries[$index]['url'],
+            '@payload' => print_r($queries[$index]['payload'], TRUE),
           ]);
-          $data = '';
+          $content = NULL;
         }
+
+        $data = [
+          'code' => $response->getStatusCode(),
+          'headers' => $response->getHeaders(),
+          'content' => $content,
+        ];
       }
       // Otherwise log the error.
       else {
-        $this->logger->notice('Unable to retrieve API data (code: @code) when requesting @url with parameters @parameters: @reason', [
+        $this->logger->notice('Unable to retrieve API data (code: @code) when requesting @url with payload @payload: @reason', [
           '@code' => $result['reason']->getCode(),
-          '@url' => $api_url . '/' . $queries[$index]['resource'],
-          '@parameters' => print_r($queries[$index]['parameters'], TRUE),
+          '@url' => $queries[$index]['url'],
+          '@payload' => print_r($queries[$index]['payload'], TRUE),
           '@reason' => $result['reason']->getMessage(),
         ]);
       }
@@ -264,28 +293,6 @@ class CantoApiClient {
       $results[$index] = $data;
     }
 
-    // We don't store the decoded data. This is to ensure that we can use the
-    // same cached data regardless of whether to return JSON data or not.
-    if ($decode) {
-      foreach ($results as $index => $data) {
-        if (!empty($data)) {
-          // Decode the data, skip if invalid.
-          try {
-            $data = json_decode($data, TRUE, 512, JSON_THROW_ON_ERROR);
-          }
-          catch (\Exception $exception) {
-            $data = NULL;
-            $this->logger->notice('Unable to decode Canto API data for request @url with parameters @parameters', [
-              '@url' => $api_url . '/' . $queries[$index]['resource'],
-              '@parameters' => print_r($queries[$index]['parameters'], TRUE),
-            ]);
-          }
-
-          // Add the resulting data with same index as the query.
-          $results[$index] = $data;
-        }
-      }
-    }
     return $results;
   }
 
@@ -388,16 +395,22 @@ class CantoApiClient {
     $allowed_parameters = [
       'sortBy',
       'sortDirection',
+      // Because why not be consistent and only use sortBy...
+      'orderBy',
       // Tree view.
       'layer',
       // Assets.
+      'scheme',
       'keyword',
       'tags',
       'tagsLiteral',
       'keywords',
       'approval',
-      // Because why not be consistent and only use sortBy...
-      'orderBy',
+      // Facetting.
+      'aggsEnabled',
+      // Pagination.
+      'limit',
+      'start',
     ];
 
     // Ensure only allowed parameters are passed and in a fixed order to
@@ -419,15 +432,17 @@ class CantoApiClient {
    *
    * @param string $resource
    *   API resource.
-   * @param array|string|null $parameters
-   *   API parameters.
+   * @param string $method
+   *   Request method.
+   * @param array|string|null $payload
+   *   API payload.
    *
    * @return string
    *   Cache id.
    */
-  public static function getCacheId($resource, $parameters) {
-    $hash = hash('sha256', serialize($parameters ?? ''));
-    return 'canto_api:queries:' . $resource . ':' . $hash;
+  public static function getCacheId($resource, $method, $payload) {
+    $hash = hash('sha256', serialize($payload ?? ''));
+    return 'canto_api:queries:' . $resource . ':' . $method . ':' . $hash;
   }
 
   /**

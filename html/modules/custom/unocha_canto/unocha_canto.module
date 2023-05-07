@@ -25,3 +25,10 @@ function unocha_canto_theme() {
 
   return $themes;
 }
+
+/**
+ * Implements hook_media_source_info_alter().
+ */
+function unocha_canto_media_source_info_alter(array &$sources) {
+  $sources['image']['forms']['media_library_add'] = '\Drupal\unocha_canto\Form\CantoImageForm';
+}
