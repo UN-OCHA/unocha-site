@@ -1,22 +1,21 @@
-uuid: 37f9e5bc-0dce-47e9-8eb1-62ef07c86f52
+uuid: 9a65d98d-931f-4c6d-ae94-654c0b132ea4
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node_by_type
-label: 'Node by type'
+id: stories
+label: Stories
 type: 'canonical_entities:node'
-pattern: '[node:content-type]/[node:title]'
+pattern: '/latest/news-and-stories/[node:title]'
 selection_criteria:
-  df7bdacb-ee26-4a51-9531-c04577fc4bce:
+  cd7cc2ee-d233-4f93-894c-5b266e5798d2:
     id: 'entity_bundle:node'
     negate: false
-    uuid: df7bdacb-ee26-4a51-9531-c04577fc4bce
+    uuid: cd7cc2ee-d233-4f93-894c-5b266e5798d2
     context_mapping:
       node: node
     bundles:
-      event: event
       story: story
 selection_logic: and
 weight: -5
