@@ -446,6 +446,7 @@ display:
         relationships: false
         filters: false
         filter_groups: false
+        header: false
       relationships:
         field_country:
           id: field_country
@@ -457,6 +458,7 @@ display:
           plugin_id: standard
           required: false
       display_description: ''
+      header: {  }
       display_extenders: {  }
       path: latest/events
     cache_metadata:
