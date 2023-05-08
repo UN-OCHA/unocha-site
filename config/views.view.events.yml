@@ -458,7 +458,7 @@ display:
           required: false
       display_description: ''
       display_extenders: {  }
-      path: events
+      path: latest/events
     cache_metadata:
       max-age: -1
       contexts:
