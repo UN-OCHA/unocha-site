@@ -15,7 +15,6 @@
 
 .uno-breadcrumb ol li a {
   color: var(--brand-grey--text);
-  text-decoration: none;
 }
 
 .uno-breadcrumb ol li::after {
@@ -26,6 +25,10 @@
 .uno-breadcrumb ol li:last-child {
   color: var(--brand-primary);
   font-weight: 700;
+}
+
+.uno-breadcrumb ol li:last-child a {
+  text-decoration: none;
 }
 
 .uno-breadcrumb ol li:last-child::after {
