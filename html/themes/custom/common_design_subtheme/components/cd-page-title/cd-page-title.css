@@ -4,4 +4,25 @@
 
 .cd-page-title {
   border-bottom: 0 none;
+  color: var(--brand-primary);
+  font-size: var(--cd-font-size--2xbase);
+}
+
+@media screen and (min-width: 1024px) {
+  .cd-page-title {
+    font-size: var(--cd-font-size--2xlarge);
+  }
+}
+
+.page-node-type-basic .cd-page-title {
+  color: var(--cd-black);
+}
+
+.page-node-type-response .cd-page-title {
+  color: var(--brand-highlight);
+}
+
+.page-node-type-region .cd-page-title,
+.page-node-type-region .cd-page-title {
+  color: var(--cd-black);
 }

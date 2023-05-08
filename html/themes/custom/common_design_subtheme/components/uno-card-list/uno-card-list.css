@@ -81,6 +81,18 @@ article.node--type-story.node--view-mode-card .field--name-body {
 .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .field--name-body {
   display: block;
 }
+.path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer,
+.page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer {
+  position: relative;
+}
+
+.path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer::before,
+.page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer::before {
+  content: "";
+  width: 4rem;
+  height: 3px;
+  background-color: var(--brand-primary--dark);
+}
 
 @media screen and (min-width: 480px) {
   .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer,
@@ -98,6 +110,16 @@ article.node--type-story.node--view-mode-card .field--name-body {
     flex-wrap: wrap;
   }
 
+  .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__title a,
+  .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__title a {
+    font-size: var(--cd-font-size--2xbase);
+  }
+
+  .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .field--name-body,
+  .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .field--name-body {
+    font-size: var(--cd-font-size--base);
+  }
+
   .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .uno-card__image,
   .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .uno-card__image {
     flex: 0 1 60%;
@@ -106,7 +128,8 @@ article.node--type-story.node--view-mode-card .field--name-body {
   .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__container,
   .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__container {
     flex: 0 1 40%;
-    padding-inline-start: 2rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
   }
 }
 
