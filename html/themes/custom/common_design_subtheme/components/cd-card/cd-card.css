@@ -57,8 +57,10 @@
 .cd-card__title,
 .cd-card__title a {
   display: block;
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 0.5rem;
 }
 
 .cd-card__description p:last-child {
@@ -101,6 +103,7 @@
 .cd-card__link {
   padding: 0;
   border-top: 0 solid var(--brand-grey);
+  text-decoration: none;
 }
 
 /**
@@ -166,4 +169,8 @@ rule but our stock card only has one link so we keep the rule specific.
 */
 .cd-card--clickable .cd-card__link {
   position: relative;
+}
+
+.cd-card .cd-card__title a {
+  text-decoration: none;
 }

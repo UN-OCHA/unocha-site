@@ -61,3 +61,17 @@
 [data-cd-toggler] + .uno-mega-menu__dropdown > .menu-item__label {
   font-weight: normal;
 }
+
+
+/* When a parent menu item is not a link <nolink>, hide the label on mobile.
+  Eg. Europe
+  Europe has a child item (Ukraine) but no regional office nor region page.
+*/
+.cd-nav__menu-item--level-2.menu-item--expanded > .uno-mega-menu__dropdown > span.menu-item__label {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .cd-nav__menu-item--level-2.menu-item--expanded > .uno-mega-menu__dropdown > span.menu-item__label {
+    display: block;
+  }
+}
