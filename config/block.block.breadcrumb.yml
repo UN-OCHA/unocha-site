@@ -1,0 +1,24 @@
+uuid: b28f2b5e-8119-4497-8ee6-383b958c4b25
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - common_design_subtheme
+id: breadcrumb
+theme: common_design_subtheme
+region: breadcrumb
+weight: -10
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'
