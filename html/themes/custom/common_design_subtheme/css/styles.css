@@ -149,7 +149,8 @@ body {
 .node--type-event .field--name-field-event-type,
 .node--type-event .field--name-field-country,
 .node--type-event .field--name-field-region,
-.node--view-mode-full .field--name-field-event-image {
+.node--view-mode-full .field--name-field-event-image,
+.node--type-event .field--name-field-response {
   margin-bottom: 1rem;
 }
 
@@ -168,6 +169,7 @@ body {
 .node--type-event .field--name-field-event-type,
 .node--type-event .field--name-field-country,
 .node--type-event .field--name-field-region,
+.node--type-event .field--name-field-response,
 .field--name-body,
 .field--name-description,
 .field--name-body > ul,
