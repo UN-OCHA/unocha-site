@@ -13,17 +13,22 @@
 .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node,
 .paragraph--type--content-list.paragraph--view-mode--cards .view .view-content,
 .view-stories .view-content,
-.view-responses .view-content,
+.view-display-id-regional_responses .view-content,
+.view-display-id-active_responses .view-content,
 .view-media-centre .view-content,
 .view-regions .view-content {
   display: flex;
   flex-flow: row wrap;
   gap: var(--uno-card-list-gap-size);
 }
+.view-display-id-regional_responses .view-content {
+  gap: 0 var(--uno-card-list-gap-size);
+}
 .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node article,
 .paragraph--type--content-list.paragraph--view-mode--cards article,
 .view-stories .view-content article,
-.view-responses .view-content article,
+.view-display-id-regional_responses .view-content li,
+.view-display-id-active_responses .view-content article,
 .view-media-centre .view-content article,
 .view-regions .view-content article {
   /* stylelint-disable-next-line max-line-length */
@@ -34,7 +39,8 @@
   .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node,
   .paragraph--type--content-list.paragraph--view-mode--cards .view .view-content,
   .view-stories .view-content,
-  .view-responses .view-content,
+  .view-display-id-regional_responses .view-content,
+  .view-display-id-active_responses .view-content,
   .view-media-centre .view-content,
   .view-regions .view-content {
     --uno-card-list-num-cols: 2;
@@ -45,47 +51,85 @@
   .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node,
   .paragraph--type--content-list.paragraph--view-mode--cards .view .view-content,
   .view-stories .view-content,
-  .view-responses .view-content,
+  .view-display-id-regional_responses .view-content,
+  .view-display-id-active_responses .view-content,
   .view-media-centre .view-content,
   .view-regions .view-content {
     --uno-card-list-num-cols: 3;
   }
 }
 
+@media screen and (min-width: 750px) {
+  .view-display-id-active_responses .view-content {
+    --uno-card-list-num-cols: 4;
+  }
+}
+
+
 /* Promoted item to span full width */
-.paragraph--type--content-list article.node--type-story.node--sticky.uno-card:first-child {
+.path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child,
+.page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child {
   flex: 1 0 100%;
 }
 /* Hide the body field on all story cards */
-article.node--type-story.node--sticky.uno-card .field--name-body {
-  display: none;
-}
-/* Hide the body field on all but first sticky item */
-.paragraph--type--content-list article.node--type-story.node--sticky.uno-card:not(:first-child) .field--name-body {
+article.node--type-story.node--view-mode-card .field--name-body {
   display: none;
 }
 
+/* Display the body field on the first sticky item on Homepage and Region pages */
+.path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .field--name-body,
+.page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .field--name-body {
+  display: block;
+}
+.path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer,
+.page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer {
+  position: relative;
+}
+
+.path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer::before,
+.page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer::before {
+  content: "";
+  width: 4rem;
+  height: 3px;
+  background-color: var(--brand-primary--dark);
+}
+
 @media screen and (min-width: 480px) {
-  .paragraph--type--content-list article.node--type-story.node--sticky.uno-card:first-child .cd-card__footer {
+  .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer,
+  .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer {
     flex: 1 0 100%;
   }
 }
 
 @media screen and (min-width: 767px) {
   /* Promoted item to span full width */
-  .paragraph--type--content-list article.node--type-story.node--sticky.uno-card:first-child {
+  .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child,
+  .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
 
-  .paragraph--type--content-list article.node--type-story.node--sticky.uno-card:first-child .uno-card__image {
+  .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__title a,
+  .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__title a {
+    font-size: var(--cd-font-size--2xbase);
+  }
+
+  .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .field--name-body,
+  .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .field--name-body {
+    font-size: var(--cd-font-size--base);
+  }
+
+  .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .uno-card__image,
+  .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .uno-card__image {
     flex: 0 1 60%;
   }
 
-  .paragraph--type--content-list article.node--type-story.node--sticky.uno-card:first-child .cd-card__container {
+  .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__container,
+  .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__container {
     flex: 0 1 40%;
-    padding-inline-start: 2rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
   }
 }
 

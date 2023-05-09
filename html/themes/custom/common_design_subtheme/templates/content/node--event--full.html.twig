@@ -109,20 +109,16 @@
 
   {{ local_tasks }}
 
-  <div{{ content_attributes }}>
+  <div{{ content_attributes.addClass('cd-layout-main-content') }}>
 
    {% block section %}
-     <div class="cd-layout-two-col">
+    <div class="cd-layout">
 
-       <div class="cd-layout-main-content">
-         {{ content|without('field_country') }}
+       <div class="cd-layout__content">
+         {{ content }}
        </div>
 
-       <div class="cd-layout-sidebar-first" role="complementary">
-        {{ content.field_country}}
-      </div>
-
-     </div>
+    </div>
    {% endblock %}
 
     {% if display_submitted %}

@@ -2,12 +2,37 @@
  * CD Caption
  */
 
-.cd-caption {
+.cd-container .cd-caption {
   text-align: left;
   font-size: 0.875rem;
   font-style: normal;
-  margin: 1rem 0 2rem;
+  padding: 0;
+  margin: 0.25rem auto 2rem;
   max-width: var(--cd-max-content-width);
+}
+
+/* .cd-container .node--type-region .cd-caption {
+  padding: 0;
+  margin: 0.25rem auto 2rem;
+  max-width: var(--cd-max-width);
+} */
+
+.cd-container .cd-hero .cd-caption {
+  margin: 0.25rem auto 2rem;
+  max-width: var(--cd-max-width);
+  padding: 0 var(--cd-container-padding);
+}
+
+@media (min-width: 768px) {
+  .cd-container .cd-hero .cd-caption {
+    padding: 0 var(--cd-container-padding-tablet);
+  }
+}
+
+@media (min-width: 1200px) {
+  .cd-container.cd-hero .cd-caption {
+    padding: 0 var(--cd-container-padding-xlarge);
+  }
 }
 
 [dir="rtl"] .cd-caption {

@@ -23,7 +23,7 @@
 }
 
 .uno-tabs [role="tabpanel"] {
-  padding: 1.5rem;
+  padding: 1.5rem 1rem;
   border-top: 3px solid var(--brand-grey);
 }
 

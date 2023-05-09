@@ -1,0 +1,34 @@
+.uno-breadcrumb ol {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  margin-bottom: 1rem;
+  font-size: var(--cd-font-size--ref);
+  text-transform: uppercase;
+}
+
+.uno-breadcrumb ol li {
+  position: relative;
+  margin-inline-end: 0.25rem;
+  color: var(--brand-grey--text);
+}
+
+.uno-breadcrumb ol li a {
+  color: var(--brand-grey--text);
+  text-decoration: none;
+}
+
+.uno-breadcrumb ol li::after {
+  content: '/';
+  padding-inline-start: 0.25rem;
+}
+
+.uno-breadcrumb ol li:last-child {
+  color: var(--brand-primary);
+  font-weight: 700;
+}
+
+.uno-breadcrumb ol li:last-child::after {
+  content: none;
+  padding-inline-start: 0;
+}

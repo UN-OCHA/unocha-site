@@ -78,60 +78,69 @@
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    'uno-card cd-card cd-card--clickable'
+    'cd-article'
   ]
 %}
+{{ attach_library('common_design/cd-article') }}
+{{ attach_library('common_design/cd-author') }}
+{{ attach_library('common_design/cd-typography') }}
+{{ attach_library('common_design_subtheme/uno-social-links') }}
 
 {% set unochaDate = node.getCreatedTime|date('j F Y') %}
 
-{{ attach_library('common_design/cd-flow') }}
-{{ attach_library('common_design/cd-utilities') }}
-{{ attach_library('common_design/cd-typography') }}
-{{ attach_library('common_design/cd-button') }}
-{{ attach_library('common_design/cd-read-more') }}
-{{ attach_library('common_design/cd-card') }}
-{{ attach_library('common_design_subtheme/uno-card-list')}}
-
 <article{{ attributes.addClass(classes) }}>
-
-  <div class="uno-card__image">
-  {% block card_image %}
-    {{ content.field_image }}
-  {% endblock %}
-  </div>
-
-  {# {% set destination = paragraph.field_destination.0.url %} #}
-  <div class="uno-card__content cd-card__container [ cd-flow ]">
-    {% block card_title %}
-    <h3 class="uno-card__title cd-card__t">
-      <a href="{{ url }}">{{ label }}</a>
-    </h3>
-    {% endblock %}
-
-    {% block card_content %}
-      {{ content }}
-    {% endblock %}
-  </div>
-
-  {% block card_footer %}
-  <div class="cd-card__footer">
-    {% block date %}
-      {% if display_submitted %}
-        <div class="cd-card__date">
-          <time datetime="{{ node.getCreatedTime|date }}">{{ unochaDate }}</time>
-        </div>
+  <header>
+    <span class="uno-tag">{{ content.field_region[0]["#title"] }}</span>
+    {{ title_prefix }}
+    {% if page %}
+      {% if title %}
+        {# This is not wrapped as this renders the page title block which
+          already wraps the node title in a <h1>. #}
+        {{ title }}
       {% endif %}
-    {% endblock %}
+    {% else %}
+      <h2{{ title_attributes }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
+  </header>
 
-    {% block read_more %}
-    <a href="{{ url }}" class="cd-card__link cd-read-more">
-      {% trans %}Read more{% endtrans %}
-      <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
-        <use xlink:href="#cd-icon--arrow-right"></use>
-      </svg>
-    </a>
-    {% endblock %}
+  {% if componentsModule %}
+    {% include '@uno-components/cd-social-links/cd-social-links.html.twig' %}
+  {% endif %}
+
+  {{ local_tasks }}
+
+  <div{{ content_attributes.addClass('cd-layout-main-content') }}>
+
+    {{ content.field_response_image }}
+
+    <div class="uno-content--custom">
+
+    {% if content.field_response_link|render %}
+      <a href="{{ content.field_response_link[0]["#url"] }}" class="cd-button cd-button--bold cd-button--wide">
+        {{ content.field_response_link[0]["#title"] }}
+      </a>
+    {% endif %}
+      {{ content|without('field_response_image', 'field_response_link') }}
+    </div>
+
+    {% if display_submitted %}
+      <footer class="cd-author node__meta [ cd-bumper ]">
+        {% if author_picture %}
+          <div class="cd-author__image cd-author__image--rounded">
+            {{ author_picture }}
+          </div>
+        {% endif %}
+        <div class="cd-author__content">
+          <div{{author_attributes.addClass('node__submitted')}}>
+            {% trans %}Submitted on
+            {{ unochaDate }}{% endtrans %}
+            {{ metadata }}
+          </div>
+        </div>
+      </footer>
+    {% endif %}
+
   </div>
-  {% endblock %}
 
 </article>

@@ -5,6 +5,8 @@
 .cd-social-links {
   z-index: 5; /* keep them clickable */
   width: 100%;
+  margin-top: -2rem;
+  margin-bottom: 2rem;
 }
 
 .cd-social-links__wrapper {
