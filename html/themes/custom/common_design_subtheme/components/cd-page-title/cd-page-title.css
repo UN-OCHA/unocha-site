@@ -14,6 +14,8 @@
   }
 }
 
+.page-node-type-event .cd-page-title,
+.unocha-reliefweb-document .cd-page-title,
 .page-node-type-basic .cd-page-title {
   color: var(--cd-black);
 }
@@ -22,7 +24,6 @@
   color: var(--brand-highlight);
 }
 
-.page-node-type-region .cd-page-title,
 .page-node-type-region .cd-page-title {
   color: var(--cd-black);
 }

@@ -30,11 +30,14 @@
     'block',
     'block-menu',
     'navigation',
-    'menu--' ~ derivative_plugin_id|clean_class
+    'menu--' ~ derivative_plugin_id|clean_class,
+    'uno-nav'
   ]
 %}
 
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
+
+{{ attach_library('common_design_subtheme/uno-nav') }}
 
 <nav role="navigation" {{ attributes
   .setAttribute('aria-labelledby', heading_id)

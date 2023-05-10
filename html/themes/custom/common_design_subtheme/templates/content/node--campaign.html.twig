@@ -83,21 +83,10 @@
 
 {{ attach_library('common_design/cd-button') }}
 {{ attach_library('common_design/cd-read-more') }}
+{{ attach_library('common_design_subtheme/uno-campaign') }}
 
 <article{{ attributes.addClass(classes) }}>
-
-  {# {% block campaign_image %}
-  {% if content.field_story_image|render %}
-    <div class="cd-campaign__image">
-      {{ content.field_story_image }}
-    </div>
-  {% endif %}
-  {% endblock %} #}
-
   <div class="cd-campaign__header">
-    {# {% if node.isPromoted %}
-      <span class="uno-featured uno-tag">{% trans %}Featured{% endtrans %}</span>
-    {% endif %} #}
     {{ title_prefix }}
     {% if label and not page %}
       {% block campaign_title %}

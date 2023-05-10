@@ -3,23 +3,11 @@
  */
 
 .uno-nav {
+  color: var(--brand-highlight-contrast);
+  background-color: var(--brand-highlight);
   padding: 1rem;
-  background-color: var(--brand-primary);
-  color: white;
-}
-
-.uno-nav__container {
-  max-width: var(--cd-max-width);
-  text-align: center;
-  margin: 0 auto;
-}
-
-.uno-nav__titlem {
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-.uno-nav__title a {
-  color: white;
+  border: 1px solid #707070;
+  margin-top: -36px; /* Height of nav h2 and its bottom margin */
 }
 .uno-nav__list {
   list-style-type: none;
@@ -28,4 +16,12 @@
 }
 .uno-nav__list li {
   padding: 0;
+}
+
+.cd-soft-footer .cd-soft-footer__nav-responses a {
+  color: var(--cd-white);
+}
+
+ .cd-soft-footer .cd-soft-footer__nav-responses h2 {
+  color: var(--brand-primary--dark);
 }
