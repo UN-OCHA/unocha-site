@@ -17,9 +17,10 @@
   color: var(--brand-grey--text);
 }
 
-.uno-breadcrumb ol li::after {
+.uno-breadcrumb ol li::before {
   content: '/';
-  padding-inline-start: 0.25rem;
+  padding-inline-end: 0.25rem;
+  color: var(--brand-grey--text);
 }
 
 .uno-breadcrumb ol li:last-child {
@@ -31,7 +32,15 @@
   text-decoration: none;
 }
 
-.uno-breadcrumb ol li:last-child::after {
+.uno-breadcrumb ol li:first-child::before {
   content: none;
-  padding-inline-start: 0;
+  padding-inline-end: 0;
+}
+
+/* Hide the current page title in breadcrumbs for
+  Stories, Events, Publications */
+.path-publications .uno-breadcrumb ol li:last-child,
+.page-node-type-event .uno-breadcrumb ol li:last-child,
+.page-node-type-story .uno-breadcrumb ol li:last-child {
+  display: none;
 }
