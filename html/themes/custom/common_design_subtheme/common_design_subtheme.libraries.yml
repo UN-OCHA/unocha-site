@@ -60,8 +60,6 @@ cd-read-more:
       components/cd-read-more/cd-read-more.css: {}
 
 cd-social-links:
-  js:
-    components/cd-social-links/cd-social-links.js: {}
   css:
     component:
       components/cd-social-links/cd-social-links.css: {}

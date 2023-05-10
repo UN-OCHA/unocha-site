@@ -6,19 +6,20 @@
   {% set shareUrl = 'https://unocha.org' ~ url %}
   <div class="cd-social-links__wrapper">
     <ul class="cd-social-links__list">
-      <li class="cd-social-links__item">
-        <a class="cd-social-links__link cd-social-links__link--twitter" target="_blank" href="https://twitter.com/intent/tweet?text={{ shareMessage }}%0A%0A{{ shareUrl|url_encode }}">
-          <span class="visually-hidden">{{ 'Share on Twitter'|t }}</span>
-          <svg class="cd-icon cd-icon--social-links--twitter" aria-hidden="true" focusable="false" width="16" height="16">
-            <use xlink:href="#cd-icon--social-links--twitter"></use>
-          </svg>
-        </a>
-      </li>
+      <span class="cd-social-links__label">{{ "Share"|t }}</span>
       <li class="cd-social-links__item">
         <a class="cd-social-links__link cd-social-links__link--facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ shareUrl|url_encode }}">
           <span class="visually-hidden">{{ 'Share on Facebook'|t }}</span>
           <svg class="cd-icon cd-icon--social-links--facebook" aria-hidden="true" focusable="false" width="16" height="16">
             <use xlink:href="#cd-icon--social-links--facebook"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="cd-social-links__item">
+        <a class="cd-social-links__link cd-social-links__link--twitter" target="_blank" href="https://twitter.com/intent/tweet?text={{ shareMessage }}%0A%0A{{ shareUrl|url_encode }}">
+          <span class="visually-hidden">{{ 'Share on Twitter'|t }}</span>
+          <svg class="cd-icon cd-icon--social-links--twitter" aria-hidden="true" focusable="false" width="16" height="16">
+            <use xlink:href="#cd-icon--social-links--twitter"></use>
           </svg>
         </a>
       </li>
@@ -38,24 +39,6 @@
           </svg>
         </a>
       </li>
-      <li class="cd-social-links__item">
-        <a class="cd-social-links__link cd-social-links__link--copy" href="{{ shareUrl }}" data-message="{{ 'URL copied to clipboard'|t }}">
-          <span class="visually-hidden">{{ 'Copy URL to clipboard'|t }}</span>
-          <svg class="cd-icon cd-icon--copyurl" aria-hidden="true" focusable="false" width="16" height="16">
-            <use xlink:href="#cd-icon--copyurl"></use>
-          </svg>
-        </a>
-      </li>
-      {% if pdf_download_url %}
-      <li class="cd-social-links__item">
-        <a class="cd-social-links__link cd-social-links__link--pdf" href="{{ pdf_download_url }}">
-          <span class="visually-hidden">{{ 'Download PDF'|t }}</span>
-          <svg class="cd-icon cd-icon--pdf" aria-hidden="true" focusable="false" width="16" height="16">
-            <use xlink:href="#cd-icon--pdf"></use>
-          </svg>
-        </a>
-      </li>
-      {% endif %}
     </ul>
   </div>
 </footer>
