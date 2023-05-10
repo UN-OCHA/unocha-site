@@ -239,16 +239,25 @@ body {
   }
 }
 
+/* When a Text paragraph is in a layouts */
 .node--view-mode-full .paragraph .field--name-field-text {
   margin-bottom: 2rem;
 }
-
 @media screen and (min-width: 768px) {
   .node--view-mode-full .paragraph .field--name-field-text {
     margin-bottom: 3rem;
   }
 }
 
+.node--view-mode-full .layout .paragraph .field--name-field-text {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .node--view-mode-full .layout .paragraph .field--name-field-text {
+    margin-bottom: 0;
+  }
+}
 
 .paragraph--type--campaign {
   margin-bottom: 2rem;
@@ -550,12 +559,6 @@ footer.cd-author {
 
 .paragraph--type--node.paragraph--view-mode--teasers article + article {
   margin-top: 2rem;
-}
-
-.node--view-mode-campaign {
-  border:3px solid var(--brand-grey);
-  display: flex;
-  padding: 1rem;
 }
 
 .paragraph--type--layout .cd-teaser {

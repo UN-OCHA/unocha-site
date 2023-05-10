@@ -12,6 +12,11 @@
   border-bottom: 1px solid var(--brand-grey);
 }
 
+.view-content .cd-teaser:first-child {
+  border-top: 1px solid var(--brand-grey);
+  padding-top: 1rem;
+}
+
 .cd-teaser__title,
 .cd-teaser__title a {
   display: inline-block;
