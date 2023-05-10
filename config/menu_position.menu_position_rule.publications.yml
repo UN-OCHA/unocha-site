@@ -1,0 +1,19 @@
+uuid: 0e22f9b2-ce66-4bb0-ae46-4d581e862adb
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: publications
+label: Publications
+menu_name: main
+parent: 'menu_link_content:8f177f43-fa93-4c61-b640-98ea211745db'
+menu_link: 'menu_position_link:publications'
+enabled: true
+weight: null
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '/publications/*'
