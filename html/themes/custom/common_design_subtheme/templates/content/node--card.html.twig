@@ -100,8 +100,7 @@
   {% endblock %}
   </div>
 
-  {# {% set destination = paragraph.field_destination.0.url %} #}
-  <div class="uno-card__content cd-card__container [ cd-flow ]">
+  <div class="uno-card__content cd-card__container">
     {% block card_title %}
     <h3 class="uno-card__title cd-card__t">
       <a href="{{ url }}">{{ label }}</a>
@@ -111,27 +110,27 @@
     {% block card_content %}
       {{ content }}
     {% endblock %}
-  </div>
 
-  {% block card_footer %}
-  <div class="cd-card__footer">
-    {% block date %}
-      {% if display_submitted %}
-        <div class="cd-card__date">
-          <time datetime="{{ node.getCreatedTime|date }}">{{ unochaDate }}</time>
-        </div>
-      {% endif %}
-    {% endblock %}
+    {% block card_footer %}
+      <div class="cd-card__footer">
+        {% block date %}
+          {% if display_submitted %}
+            <div class="cd-card__date">
+              <time datetime="{{ node.getCreatedTime|date }}">{{ unochaDate }}</time>
+            </div>
+          {% endif %}
+        {% endblock %}
 
-    {% block read_more %}
-    <a href="{{ url }}" class="cd-card__link cd-read-more">
-      {% trans %}Read more{% endtrans %}
-      <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
-        <use xlink:href="#cd-icon--arrow-right"></use>
-      </svg>
-    </a>
+        {% block read_more %}
+        <a href="{{ url }}" class="cd-card__link cd-read-more">
+          {% trans %}Read more{% endtrans %}
+          <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
+            <use xlink:href="#cd-icon--arrow-right"></use>
+          </svg>
+        </a>
+        {% endblock %}
+      </div>
     {% endblock %}
   </div>
-  {% endblock %}
 
 </article>

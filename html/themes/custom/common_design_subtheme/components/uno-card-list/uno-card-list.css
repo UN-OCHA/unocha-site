@@ -98,6 +98,7 @@ article.node--type-story.node--view-mode-card .field--name-body {
   .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer,
   .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer {
     flex: 1 0 100%;
+    padding-top: 2rem;
   }
 }
 
@@ -125,9 +126,15 @@ article.node--type-story.node--view-mode-card .field--name-body {
     flex: 0 1 60%;
   }
 
+  .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .uno-card__image img,
+  .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .uno-card__image img {
+    display: block;
+  }
+
   .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__container,
   .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__container {
     flex: 0 1 40%;
+    padding-top: 1rem;
     padding-inline-start: 1rem;
     padding-inline-end: 1rem;
   }

@@ -8,6 +8,10 @@
   margin-right: auto;
 }
 
+.cd-article p:first-child {
+  margin-top: 0;
+}
+
 .cd-article__page-title {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
