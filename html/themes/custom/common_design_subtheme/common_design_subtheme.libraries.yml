@@ -103,6 +103,11 @@ uno-breadcrumb:
     theme:
       components/uno-breadcrumb/uno-breadcrumb.css: {}
 
+uno-campaign:
+  css:
+    theme:
+      components/uno-campaign/uno-campaign.css: {}
+
 uno-card:
   css:
     theme:
