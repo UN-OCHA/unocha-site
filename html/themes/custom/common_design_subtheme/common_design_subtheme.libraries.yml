@@ -10,6 +10,7 @@ global-styling:
       css/brand.css: {}
   dependencies:
     - common_design_subtheme/uno-card-list
+    - common_design_subtheme/cd
 
 ###
 # Define Drupal libraries for your custom components.
@@ -19,6 +20,12 @@ global-styling:
 # completely independent and style the custom content of your website, such as
 # a custom Paragraph type.
 #
+
+cd:
+  css:
+    component:
+      components/cd/cd.css: {}
+
 cd-article:
   css:
     component:
