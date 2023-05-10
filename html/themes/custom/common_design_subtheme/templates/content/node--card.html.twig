@@ -110,27 +110,27 @@
     {% block card_content %}
       {{ content }}
     {% endblock %}
-  </div>
 
-  {% block card_footer %}
-  <div class="cd-card__footer">
-    {% block date %}
-      {% if display_submitted %}
-        <div class="cd-card__date">
-          <time datetime="{{ node.getCreatedTime|date }}">{{ unochaDate }}</time>
-        </div>
-      {% endif %}
-    {% endblock %}
+    {% block card_footer %}
+      <div class="cd-card__footer">
+        {% block date %}
+          {% if display_submitted %}
+            <div class="cd-card__date">
+              <time datetime="{{ node.getCreatedTime|date }}">{{ unochaDate }}</time>
+            </div>
+          {% endif %}
+        {% endblock %}
 
-    {% block read_more %}
-    <a href="{{ url }}" class="cd-card__link cd-read-more">
-      {% trans %}Read more{% endtrans %}
-      <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
-        <use xlink:href="#cd-icon--arrow-right"></use>
-      </svg>
-    </a>
+        {% block read_more %}
+        <a href="{{ url }}" class="cd-card__link cd-read-more">
+          {% trans %}Read more{% endtrans %}
+          <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
+            <use xlink:href="#cd-icon--arrow-right"></use>
+          </svg>
+        </a>
+        {% endblock %}
+      </div>
     {% endblock %}
   </div>
-  {% endblock %}
 
 </article>
