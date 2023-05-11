@@ -14,5 +14,6 @@ behavior_plugins:
     enabled: true
     available_layouts:
       layout_twocol: 'UNO Two column'
+      layout_twocol_sidebar: 'UNO Two column Sidebar'
       layout_threecol: 'UNO Three column'
       layout_fourcol: 'UNO Four column'
