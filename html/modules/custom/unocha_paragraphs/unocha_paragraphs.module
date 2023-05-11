@@ -1,0 +1,88 @@
+<?php
+
+/**
+ * @file
+ * Module file for the unocha_paragraphs module.
+ */
+
+use Drupal\Core\Link;
+use Drupal\Core\Url;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_preprocess_paragraph__type().
+ */
+function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+
+  $limit = $paragraph->field_limit->value ?? 3;
+
+  $entity_type_manager = \Drupal::entityTypeManager();
+  $storage = $entity_type_manager->getStorage('node');
+  $builder = $entity_type_manager->getViewBuilder('node');
+
+  $query = $storage
+    ->getQuery()
+    ->accessCheck(TRUE)
+    ->condition('type', 'story')
+    ->sort('sticky', 'desc')
+    ->sort('promote', 'desc')
+    ->sort('created', 'desc')
+    // @todo get that from a field on the paragraph.
+    ->range(0, $limit);
+
+  // Retrieve the closest node parent. We do this because the paragraph may
+  // be nested in another paragraph for example.
+  $parent = $paragraph->getParentEntity();
+  while (isset($parent) && !($parent instanceof NodeInterface)) {
+    if ($parent instanceof ParagraphInterface) {
+      $parent = $parent->getParentEntity();
+    }
+    else {
+      $parent = NULL;
+    }
+  }
+
+  // Parameters for the "view all" link.
+  $view_all_query = [];
+
+  // Filter the stories based on the parent entity.
+  if (isset($parent) && $parent instanceof NodeInterface && !empty($parent->id())) {
+    if ($parent->bundle() === 'response') {
+      $view_all_query['response'] = $parent->id();
+      $query->condition('field_response', $parent->id(), '=');
+    }
+    elseif ($parent->bundle() === 'region') {
+      $view_all_query['region'] = $parent->id();
+      $query->condition('field_region', $parent->id(), '=');
+    }
+    elseif ($parent->hasField('field_country')) {
+      $country_ids = [];
+      foreach ($parent->field_country->filterEmptyItems() as $item) {
+        $country_ids[] = $item->target_id;
+      }
+      if (!empty($country_ids)) {
+        // @todo review if we allow multiple selections for the country filter.
+        $view_all_query['country'] = reset($country_ids);
+        $query->condition('field_country', $country_ids, 'IN');
+
+        // Exclude the current story so we can show related ones only.
+        if ($parent->bundle() === 'story') {
+          $query->condition('nid', $parent->id(), '<>');
+        }
+      }
+    }
+  }
+
+  // Add the renderable stories.
+  $stories = $storage->loadMultiple($query->execute() ?? []);
+  if (!empty($stories)) {
+    $view_all_url = Url::fromUserInput('/latest/news-and-stories', [
+      'query' => $view_all_query,
+    ]);
+    $variables['content']['view_all'] = Link::fromTextAndUrl(t('View all'), $view_all_url)->toRenderable();
+    // @todo get the view mode from the paragraph view mode?
+    $variables['content']['stories'] = $builder->viewMultiple($stories, 'card');
+  }
+}
