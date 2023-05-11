@@ -62,6 +62,7 @@
         "drupal/stable": "^2.0",
         "drupal/user_display_name": "^1.1",
         "drupal/user_expire": "^1.1",
+        "drupal/verf": "^2.0",
         "drupal/viewsreference": "^2.0@beta",
         "drupal/xmlsitemap": "^1.4",
         "drush/drush": "^11.3",
