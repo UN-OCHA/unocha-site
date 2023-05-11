@@ -1,0 +1,10 @@
+unocha_canto.canto.api:
+  path: '/admin/unocha_canto/canto/api'
+  defaults:
+    _controller: '\Drupal\unocha_canto\Controller\CantoController::api'
+    _title: 'Canto API.'
+  methods: [GET, POST]
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'access canto api'

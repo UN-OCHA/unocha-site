@@ -1,0 +1,10 @@
+services:
+  cache.canto_api:
+    class: Drupal\Core\Cache\CacheBackendInterface
+    tags:
+      - { name: cache.bin }
+    factory: cache_factory:get
+    arguments: [canto_api]
+  canto_api.client:
+    class: Drupal\unocha_canto\Services\CantoApiClient
+    arguments: ['@cache.canto_api', '@config.factory', '@datetime.time', '@http_client', '@logger.factory', '@state']
