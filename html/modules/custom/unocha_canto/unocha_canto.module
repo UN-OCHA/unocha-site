@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Module file for the Canto integration.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function unocha_canto_theme() {
+  $themes = [
+    // Theme for a Canto portal.
+    'unocha_canto_portal' => [
+      'variables' => [
+        // Wrapper attributes.
+        'attributes' => NULL,
+        // Content attributes.
+        'content_attributes' => NULL,
+        // URL of the canto portal.
+        'url' => NULL,
+      ],
+    ],
+  ];
+
+  return $themes;
+}
+
+/**
+ * Implements hook_media_source_info_alter().
+ */
+function unocha_canto_media_source_info_alter(array &$sources) {
+  $sources['image']['forms']['media_library_add'] = '\Drupal\unocha_canto\Form\CantoImageForm';
+}

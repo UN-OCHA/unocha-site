@@ -1,0 +1,6 @@
+canto.library:
+  css:
+    component:
+      components/canto-library/canto-library.css: {}
+  js:
+    components/canto-library/canto-library.js: {}

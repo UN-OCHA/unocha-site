@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Canto - Media library</title>
+  <link type="text/css" rel="stylesheet" href="/canto/assets/library.css" >
+</head>
+<body class="canto-body" id="cantoViewBody">
+  <div class="canto-header">
+    <!-- @todo change to a button to toggle the display of the tree? -->
+    <div id="canto-tree-toggle" class="canto-tree-toggle">
+      <img class="canto-logo" src="https://s3-us-west-2.amazonaws.com/static.dmc/universal/icon/Extension.png" alt="">
+      <span class="canto-library-label">Library</span>
+    </div>
+
+    <div id="canto-results" class="canto-results">
+    </div>
+
+    <div id="canto-search" class="canto-search">
+      <div class="canto-search-wrapper">
+        <input type="text" placeholder="Global Search" id="canto-search-input" class="canto-search-input" name="search">
+        <button type="button" value="search" id="canto-search-button" class="canto-search-button" >Search</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="canto-content" class="canto-content">
+    <div class="canto-tree" id="canto-tree"></div>
+
+    <div class="canto-gallery" id="canto-gallery">
+      <div id="canto-asset-list" class="canto-asset-list"></div>
+      <div id="canto-empty-list" class="canto-empty-list" hidden>No items were found.</div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="/canto/assets/library.js"></script>
+</body>
+</html>
