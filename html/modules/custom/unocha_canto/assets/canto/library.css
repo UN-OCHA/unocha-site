@@ -1,0 +1,210 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px,1px,1px,1px);
+  width: 1px;
+  height: 1px;
+  word-wrap: normal;
+}
+
+/** LOADING OVERLAY. **/
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+[data-loading] {
+  position: relative;
+}
+[data-loading="true"]:before {
+  position: absolute;
+  z-index: 1001;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  background: rgba(0, 0, 0, 0.8);
+}
+[data-loading="true"]:after {
+  position: absolute;
+  z-index: 1002;
+  top: calc(50% - 48px);
+  left: calc(50% - 48px);
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  content: "";
+  animation: rotation 1s linear infinite;
+  border: 5px solid #FFF;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+}
+
+.canto-body {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+}
+
+/** HEADER. **/
+.canto-header {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.canto-library-toggle {
+  display: inline-block;
+}
+.canto-logo {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+.canto-results {
+  display: inline-block;
+}
+
+.canto-search-wrapper {
+  display: flex;
+}
+.canto-search-input {
+  height: 20px;
+  padding: 0 5px;
+  border: 1px solid #555;
+}
+.canto-search-button {
+  height: 20px;
+  border: 1px solid #555;
+}
+
+/** CONTENT. **/
+.canto-content {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: calc(100% - 50px);
+}
+
+.canto-tree {
+  position: relative;
+  overflow: scroll;
+  width: 20%;
+  height: 100%;
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  background-color: #f5f5f5;
+}
+.canto-tree ul {
+  margin: 0;
+  padding: 5px 10px;
+  list-style: none;
+}
+.canto-tree li {
+  margin-left: 10px;
+  padding: 3px 0;
+}
+.canto-tree summary {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  cursor: pointer;
+}
+
+.canto-gallery {
+  position: relative;
+  overflow-y: scroll;
+  width: 80%;
+  height: 100%;
+}
+.canto-asset-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.canto-empty-list {
+  padding: 20px;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+/** IMAGES. **/
+.canto-image {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 180px;
+  height: 180px;
+  margin: 1px;
+}
+.canto-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+.canto-image:hover img {
+  opacity: 1;
+}
+.canto-image-name {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  padding: 10px;
+  text-align: center;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: white;
+  background: rgba(50, 50, 50, 0.5);
+  font-size: 12px;
+  line-height: 20px;
+}
+.canto-image:hover .canto-image-name {
+  display: block;
+}
+.canto-image-select {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: none;
+  overflow: hidden;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  text-indent: 24px;
+  border: 2px solid black;
+  border-radius: 50%;
+  background: white;
+}
+.canto-image:hover .canto-image-select {
+  display: block;
+}
+.canto-image input:checked + .canto-image-select {
+  display: block;
+  background: #333;
+}

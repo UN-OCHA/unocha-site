@@ -1,0 +1,3 @@
+access canto api:
+  title: 'Access Canto API'
+  description: 'Allow users to perform request against the Canto API.'

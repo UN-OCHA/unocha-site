@@ -74,6 +74,7 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  unocha_canto: 0
   unocha_figures: 0
   unocha_migrate: 0
   unocha_reliefweb: 0

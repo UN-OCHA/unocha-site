@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.event
+    - field.field.media.image.field_canto_asset_id
     - field.field.media.image.field_image_caption
     - field.field.media.image.field_image_copyright
     - field.field.media.image.field_media_image
@@ -32,6 +33,7 @@ content:
     region: content
 hidden:
   created: true
+  field_canto_asset_id: true
   field_image_caption: true
   field_image_copyright: true
   langcode: true
