@@ -1,0 +1,31 @@
+uuid: d12fe0bb-17b9-41be-8d5a-d9cc676b38bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.stories.field_limit
+    - field.field.paragraph.stories.field_title
+    - paragraphs.paragraphs_type.stories
+id: paragraph.stories.default
+targetEntityType: paragraph
+bundle: stories
+mode: default
+content:
+  field_limit:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

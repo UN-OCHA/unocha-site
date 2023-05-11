@@ -1,0 +1,25 @@
+uuid: 4b53c46e-054a-42a3-8290-5f42ed95f7dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_limit
+    - paragraphs.paragraphs_type.stories
+id: paragraph.stories.field_limit
+field_name: field_limit
+entity_type: paragraph
+bundle: stories
+label: Limit
+description: 'Maximum number of stories to display.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 3
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
