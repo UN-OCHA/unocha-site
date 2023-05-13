@@ -5,9 +5,13 @@
  * Module file for the unocha_paragraphs module.
  */
 
+use Drupal\Core\Menu\MenuLinkInterface;
+use Drupal\Core\Menu\MenuLinkTreeElement;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
 use Drupal\node\NodeInterface;
+use Drupal\paragraphs\ParagraphInterface;
+use Drupal\Core\Menu\MenuTreeParameters;
 
 /**
  * Implements hook_preprocess_paragraph__type().
@@ -17,17 +21,8 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
   $paragraph = $variables['paragraph'];
   $limit = $paragraph->field_limit->value ?? 3;
 
-  // Retrieve the closest node parent. We need to do loop because the paragraph
-  // maybe nested in another paragraph or other entity for example.
-  $parent = $paragraph->getParentEntity();
-  while (isset($parent) && !($parent instanceof NodeInterface)) {
-    if ($parent instanceof ParagraphInterface) {
-      $parent = $parent->getParentEntity();
-    }
-    else {
-      $parent = NULL;
-    }
-  }
+  // Retrieve the closest node parent.
+  $parent = unocha_paragraphs_get_paragraph_parent_node($paragraph);
 
   // Parameters for the "view all" link.
   $view_all_query = [];
@@ -47,8 +42,8 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
       // If we don't have enough stories for the response, complete with
       // stories from the region.
       if (count($stories) < $limit) {
-        $region = unocha_paragraphs_get_region_from_response($parent);
-        if (isset($region)) {
+        $region = unocha_paragraphs_get_node_parent_node($parent);
+        if (isset($region) && $region->bundle() === 'region') {
           $stories += unocha_paragraphs_get_stories([
             ['field_region', $region->id(), '='],
           ], $limit - count($stories));
@@ -122,6 +117,69 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
 }
 
 /**
+ * Implements hook_preprocess_paragraph__type().
+ */
+function unocha_paragraphs_preprocess_paragraph__resources(array &$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+
+  // Retrieve the closest node parent.
+  $parent = unocha_paragraphs_get_paragraph_parent_node($paragraph);
+
+  if (!empty($parent)) {
+    $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+
+    // Get the menu links referencing this node.
+    $menu_links = $menu_link_manager->loadLinksByRoute('entity.node.canonical', [
+      'node' => $parent->id(),
+    ]);
+
+    // Get the ID of the menu link for the node in the main navigation menu.
+    $menu_link_id = NULL;
+    if (!empty($menu_links)) {
+      foreach ($menu_links as $menu_link) {
+        if ($menu_link->getMenuName() === 'main') {
+          $menu_link_id = $menu_link->getPluginId();
+        }
+      }
+    }
+
+    if (isset($menu_link_id)) {
+      $tree_parameters = new MenuTreeParameters();
+      $tree_parameters->setRoot($menu_link_id);
+      $tree_parameters->setMaxDepth(1);
+      $tree_parameters->excludeRoot();
+
+      // Get the child links.
+      $menu_links = \Drupal::service('menu.link_tree')
+        ->load('main', $tree_parameters);
+
+      // Get the associated nodes.
+      $nodes = unocha_paragraphs_get_nodes_from_menu_links($menu_links);
+
+      // Extract the title and url of the nodes that are resources to build
+      // the resource list.
+      $links = [];
+      foreach ($nodes as $node) {
+        if ($node->bundle() === 'resource') {
+          $links[] = [
+            'title' => $node->label(),
+            'url' => $node->toUrl(),
+          ];
+        }
+      }
+
+      if (!empty($links)) {
+        $variables['content']['resources'] = [
+          '#theme' => 'links__resources',
+          '#links' => $links,
+        ];
+      }
+    }
+  }
+}
+
+/**
  * Get story node entities from the given conditions and limit.
  *
  * @param array $conditions
@@ -165,25 +223,22 @@ function unocha_paragraphs_get_stories(array $conditions = [], $limit = 3, $excl
 }
 
 /**
- * Get the region parent entity from a response entity.
+ * Get the parent node from the menu link associated with the given node.
  *
- * Note: this function currently retrieves the region entity from the
- * parent in the main navigation hierarchy but if all the responses are tagged
- * with a region (field_region) then maybe we can use that instead which
- * would reduce a bit the lookups.
- *
- * @param \Drupal\node\NodeInterface $response
- *   Response.
+ * @param \Drupal\node\NodeInterface $node
+ *   Child node in the menu hierarchy.
+ * @param string $menu_name
+ *   Menu in which to look for the parent.
  *
  * @return \Drupal\node\NodeInteface|null
- *   Region.
+ *   Parent node.
  */
-function unocha_paragraphs_get_region_from_response(NodeInterface $response) {
+function unocha_paragraphs_get_node_parent_node(NodeInterface $node, $menu_name = 'main') {
   $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
 
   // Get the menu links referencing this node.
   $menu_links = $menu_link_manager->loadLinksByRoute('entity.node.canonical', [
-    'node' => $response->id(),
+    'node' => $node->id(),
   ]);
 
   // Get the parent link in the main navigation menu, which should be a link
@@ -191,7 +246,7 @@ function unocha_paragraphs_get_region_from_response(NodeInterface $response) {
   $parent_link_id = NULL;
   if (!empty($menu_links)) {
     foreach ($menu_links as $menu_link) {
-      if ($menu_link->getMenuName() === 'main') {
+      if ($menu_link->getMenuName() === $menu_name) {
         $parent_link_id = $menu_link->getParent();
       }
     }
@@ -199,11 +254,70 @@ function unocha_paragraphs_get_region_from_response(NodeInterface $response) {
 
   // Try to retrieve the region node from the parent menu link.
   if (!empty($parent_link_id)) {
-    $parent_link = $menu_link_manager->createInstance($parent_link_id);
-    if (!empty($parent_link) && $parent_link->getRouteName() === 'entity.node.canonical' && !empty($parent_link->getRouteParameters()['node'])) {
-      return \Drupal::entityTypeManager()->getStorage('node')->load($parent_link->getRouteParameters()['node']);
-    }
+    $nodes = unocha_paragraphs_get_nodes_from_menu_links([$parent_link_id]);
+    return !empty($nodes) ? reset($nodes) : NULL;
   }
 
   return NULL;
+}
+
+/**
+ * Get the parent node of a paragaph.
+ *
+ * @param \Drupal\paragaph\ParagraphInterface $paragraph
+ *   Paragrah entity.
+ *
+ * @return \Drupal\node\NodeInterface|null
+ *   Parent node.
+ */
+function unocha_paragraphs_get_paragraph_parent_node(ParagraphInterface $paragraph) {
+  // Retrieve the closest node parent. We need to do loop because the paragraph
+  // maybe nested in another paragraph or other entity for example.
+  $parent = $paragraph->getParentEntity();
+  while (isset($parent) && !($parent instanceof NodeInterface)) {
+    if ($parent instanceof ParagraphInterface) {
+      $parent = $parent->getParentEntity();
+    }
+    else {
+      $parent = NULL;
+    }
+  }
+  return $parent;
+}
+
+/**
+ * Get a nodes from a menu link items pointing at them.
+ *
+ * @param array $menu_links
+ *   List of menu link objects or IDs.
+ *
+ * @return \Drupal\node\NodeInterface[]
+ *   Nodes corresponding to the menu links.
+ */
+function unocha_paragraphs_get_nodes_from_menu_links(array $menu_links) {
+  $node_ids = [];
+  foreach ($menu_links as $menu_link) {
+    if (is_string($menu_link)) {
+      $menu_link = \Drupal::service('plugin.manager.menu.link')
+        ->createInstance($menu_link);
+    }
+    elseif ($menu_link instanceof MenuLinkTreeElement) {
+      $menu_link = $menu_link->link;
+    }
+
+    if (isset($menu_link) &&
+      $menu_link instanceof MenuLinkInterface &&
+      $menu_link->getRouteName() === 'entity.node.canonical' &&
+      !empty($menu_link->getRouteParameters()['node'])
+    ) {
+      $node_id = $menu_link->getRouteParameters()['node'];
+      $node_ids[$node_id] = $node_id;
+    }
+  }
+  if (!empty($node_ids)) {
+    return \Drupal::entityTypeManager()
+      ->getStorage('node')
+      ->loadMultiple($node_ids);
+  }
+  return [];
 }
