@@ -1,0 +1,18 @@
+uuid: 144bb058-d888-4fa2-afe6-bd63880d3bbb
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Resource
+type: resource
+description: 'A response resource page.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

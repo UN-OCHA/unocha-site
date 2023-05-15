@@ -79,6 +79,7 @@ module:
   unocha_canto: 0
   unocha_figures: 0
   unocha_migrate: 0
+  unocha_paragraphs: 0
   unocha_reliefweb: 0
   unocha_utility: 0
   update: 0
@@ -86,6 +87,7 @@ module:
   user_display_name: 0
   user_expire: 0
   views_ui: 0
+  verf: 0
   viewsreference: 0
   xmlsitemap_engines: 0
   pathauto: 1

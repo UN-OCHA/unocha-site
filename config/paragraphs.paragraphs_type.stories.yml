@@ -1,0 +1,10 @@
+uuid: 75d4a760-55d0-4847-88ae-27eacb3edc54
+langcode: en
+status: true
+dependencies: {  }
+id: stories
+label: Stories
+icon_uuid: null
+icon_default: null
+description: 'List of latest news and stories.'
+behavior_plugins: {  }

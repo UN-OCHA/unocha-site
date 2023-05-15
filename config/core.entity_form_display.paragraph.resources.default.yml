@@ -1,0 +1,23 @@
+uuid: d8c5f194-cf68-4ce8-aa7e-ed71e700cc6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.resources.field_title
+    - paragraphs.paragraphs_type.resources
+id: paragraph.resources.default
+targetEntityType: paragraph
+bundle: resources
+mode: default
+content:
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
