@@ -413,7 +413,7 @@ footer.cd-author {
 }
 
 .layout--twocol-sidebar.cd-layout,
-.paragraph--type--reliefweb-river {
+.page-node-type-response .paragraph--type--reliefweb-river {
   background-color: var(--brand-grey);
   padding: 2rem;
 }
