@@ -28,17 +28,17 @@ settings:
     default: 0
     feed: 0
   preselect_views:
-    events: events
     media_centre: media_centre
-    regions: regions
-    responses: responses
-    stories: stories
     content: 0
+    events: 0
     files: 0
     frontpage: 0
     media: 0
     media_library: 0
     redirect: 0
+    regions: 0
+    responses: 0
+    stories: 0
     user_admin_people: 0
   enabled_settings:
     title: 0
