@@ -37,6 +37,13 @@ class ReliefWebDocumentController extends ControllerBase {
   protected $data;
 
   /**
+   * Static cache for the parsed data retrieved from the API.
+   *
+   * @var array
+   */
+  protected static $cache = [];
+
+  /**
    * Constructor.
    *
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
@@ -99,6 +106,17 @@ class ReliefWebDocumentController extends ControllerBase {
       '#date' => $data['published'],
       '#content' => $content,
     ];
+  }
+
+  /**
+   * Get the OCHA product of the document.
+   *
+   * @return string
+   *   OCHA product.
+   */
+  public function getOchaProduct() {
+    $data = $this->getDocumentData();
+    return $data['tags']['ocha_product'][0]['name'] ?? '';
   }
 
   /**
@@ -167,6 +185,9 @@ class ReliefWebDocumentController extends ControllerBase {
 
   /**
    * Retrieve the ReliefWeb document data.
+   *
+   * @return array
+   *   Data from the RW API or empty array if nothing was found.
    */
   protected function getDocumentData() {
     if (!isset($this->data)) {
@@ -174,8 +195,15 @@ class ReliefWebDocumentController extends ControllerBase {
       $url = UrlHelper::getReliefWebUrlFromUnochaUrl();
 
       // Get the data from the API for the document matching this URL.
-      $data = $this->getReliefWebDocuments()->getDocumentDataFromUrl('updates', $url);
-      $this->data = $data['entity'];
+      // We store it in a static cache so that we don't need to retrieve it
+      // again when a new instance of the controller is used, for example
+      // when building the breadcrumbs.
+      // @see Drupal\unocha_reliefweb\Services\ReliefWebBreadcrumbBuilder::build()
+      if (!isset(static::$cache[$url])) {
+        static::$cache[$url] = $this->getReliefWebDocuments()->getDocumentDataFromUrl('updates', $url);
+      }
+
+      $this->data = static::$cache[$url]['entity'] ?? [];
     }
 
     if (!empty($this->data)) {
@@ -184,6 +212,7 @@ class ReliefWebDocumentController extends ControllerBase {
     else {
       $this->throwNotFound();
     }
+    return [];
   }
 
   /**

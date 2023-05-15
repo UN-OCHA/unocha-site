@@ -1,0 +1,21 @@
+uuid: 02843a7e-7dfd-440b-ae4d-47985efe3ff6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.stories
+id: paragraph.stories.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: stories
+label: Title
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: 'Latest News and Stories'
+default_value_callback: ''
+settings: {  }
+field_type: string

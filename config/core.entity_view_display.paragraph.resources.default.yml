@@ -1,0 +1,21 @@
+uuid: 20b4969c-b94c-402e-a5cf-6219f5fe59c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.resources.field_title
+    - paragraphs.paragraphs_type.resources
+id: paragraph.resources.default
+targetEntityType: paragraph
+bundle: resources
+mode: default
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

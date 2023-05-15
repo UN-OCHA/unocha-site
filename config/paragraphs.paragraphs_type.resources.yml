@@ -1,0 +1,10 @@
+uuid: 488eac45-6c03-4d6e-b3c6-3efb0c641c8f
+langcode: en
+status: true
+dependencies: {  }
+id: resources
+label: Resources
+icon_uuid: null
+icon_default: null
+description: 'List of resources for a response.'
+behavior_plugins: {  }

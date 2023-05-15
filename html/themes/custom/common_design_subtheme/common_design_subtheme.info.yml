@@ -13,6 +13,7 @@ regions:
   header_navigation: Header navigation
   highlighted: Highlighted
   responses_nav: Responses navigation
+  breadcrumb: Breadcrumb
   page_title: Page title
   content: Content
   sidebar_first: First sidebar
