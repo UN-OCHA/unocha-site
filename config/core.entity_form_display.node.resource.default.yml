@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.resource.field_custom_content
     - node.type.resource
   module:
-    - entity_reference_revisions
+    - layout_paragraphs
     - path
     - text
 id: node.resource.default
@@ -32,14 +32,14 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_custom_content:
-    type: entity_reference_revisions_autocomplete
+    type: layout_paragraphs
     weight: 122
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      preview_view_mode: preview
+      nesting_depth: 2
+      require_layouts: 0
+      empty_message: ''
     third_party_settings: {  }
   langcode:
     type: language_select
