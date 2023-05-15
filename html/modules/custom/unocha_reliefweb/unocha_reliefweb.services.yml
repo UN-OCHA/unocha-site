@@ -14,3 +14,8 @@ services:
   reliefweb.documents:
     class: Drupal\unocha_reliefweb\Services\ReliefWebDocuments
     arguments: ['@config.factory', '@reliefweb_api.client', '@reliefweb_api.converter', '@logger.factory', '@request_stack', '@string_translation']
+  reliefweb.breadcrumb:
+    class: Drupal\unocha_reliefweb\Services\ReliefWebBreadcrumbBuilder
+    arguments: ['@request_stack', '@controller_resolver', '@language_manager']
+    tags:
+      - { name: breadcrumb_builder, priority: 701 }
