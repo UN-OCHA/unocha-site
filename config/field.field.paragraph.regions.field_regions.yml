@@ -1,0 +1,54 @@
+uuid: 5b938721-2b2b-4920-b22a-42b39bdb8e1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_regions
+    - paragraphs.paragraphs_type.regions
+    - views.view.regions
+  module:
+    - viewsreference
+id: paragraph.regions.field_regions
+field_name: field_regions
+entity_type: paragraph
+bundle: regions
+label: Regions
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    display_id: regions
+    data: 'a:5:{s:5:"title";N;s:5:"pager";N;s:6:"offset";N;s:8:"argument";N;s:5:"limit";N;}'
+    target_uuid: fc20f88e-b51e-47d4-8c7c-0a78eb25a258
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: 0
+  plugin_types:
+    block: block
+    default: 0
+    page: 0
+    feed: 0
+  preselect_views:
+    regions: regions
+    content: 0
+    events: 0
+    files: 0
+    frontpage: 0
+    media: 0
+    media_centre: 0
+    media_library: 0
+    redirect: 0
+    responses: 0
+    stories: 0
+    user_admin_people: 0
+  enabled_settings:
+    title: title
+    pager: 0
+    offset: 0
+    argument: 0
+    limit: 0
+field_type: viewsreference
