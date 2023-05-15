@@ -23,7 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Stories
+      title: 'News and stories'
       fields:
         title:
           id: title
@@ -210,7 +210,7 @@ display:
       tags: {  }
   page__stories:
     id: page__stories
-    display_title: Stories
+    display_title: 'News and stories'
     display_plugin: page
     position: 1
     display_options:

@@ -431,6 +431,7 @@ class ReliefWebDocuments {
         'country' => 'country',
         'source' => 'source',
         'language' => 'language',
+        'ocha_product' => 'ocha_product',
       ]);
 
       // Base article data.

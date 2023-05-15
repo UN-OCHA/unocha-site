@@ -51,6 +51,7 @@ module:
   media_library: 0
   memcache: 0
   memcache_admin: 0
+  menu_breadcrumb: 0
   menu_link_content: 0
   menu_ui: 0
   mysql: 0
@@ -74,6 +75,7 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  unocha_breadcrumbs: 0
   unocha_canto: 0
   unocha_figures: 0
   unocha_migrate: 0
