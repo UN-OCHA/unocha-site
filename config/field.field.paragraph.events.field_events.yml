@@ -1,0 +1,54 @@
+uuid: cdd735eb-be1d-4fae-a75e-d8d36166b12d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_events
+    - paragraphs.paragraphs_type.events
+    - views.view.events
+  module:
+    - viewsreference
+id: paragraph.events.field_events
+field_name: field_events
+entity_type: paragraph
+bundle: events
+label: Events
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    display_id: upcoming_events
+    data: 'a:5:{s:5:"title";N;s:5:"pager";N;s:6:"offset";N;s:8:"argument";N;s:5:"limit";N;}'
+    target_uuid: e2493c2d-7b66-4f27-a5a1-a27b2e7dedd2
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: 0
+  plugin_types:
+    block: block
+    default: 0
+    page: 0
+    feed: 0
+  preselect_views:
+    events: events
+    content: 0
+    files: 0
+    frontpage: 0
+    media: 0
+    media_centre: 0
+    media_library: 0
+    redirect: 0
+    regions: 0
+    responses: 0
+    stories: 0
+    user_admin_people: 0
+  enabled_settings:
+    title: 0
+    pager: 0
+    offset: 0
+    argument: 0
+    limit: 0
+field_type: viewsreference
