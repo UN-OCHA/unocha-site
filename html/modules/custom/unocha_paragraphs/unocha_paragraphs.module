@@ -1,0 +1,209 @@
+<?php
+
+/**
+ * @file
+ * Module file for the unocha_paragraphs module.
+ */
+
+use Drupal\Core\Link;
+use Drupal\Core\Url;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_preprocess_paragraph__type().
+ */
+function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+  $limit = $paragraph->field_limit->value ?? 3;
+
+  // Retrieve the closest node parent. We need to do loop because the paragraph
+  // maybe nested in another paragraph or other entity for example.
+  $parent = $paragraph->getParentEntity();
+  while (isset($parent) && !($parent instanceof NodeInterface)) {
+    if ($parent instanceof ParagraphInterface) {
+      $parent = $parent->getParentEntity();
+    }
+    else {
+      $parent = NULL;
+    }
+  }
+
+  // Parameters for the "view all" link.
+  $view_all_query = [];
+
+  // Filter the stories based on the parent entity.
+  $stories = [];
+  if (isset($parent) && $parent instanceof NodeInterface && !empty($parent->id())) {
+    if ($parent->bundle() === 'response') {
+      // Get the stories tagged with the response.
+      $stories = unocha_paragraphs_get_stories([
+        ['field_response', $parent->id(), '='],
+      ], $limit);
+
+      // Filter the News and Stories page by the response.
+      $view_all_query['response'] = $parent->id();
+
+      // If we don't have enough stories for the response, complete with
+      // stories from the region.
+      if (count($stories) < $limit) {
+        $region = unocha_paragraphs_get_region_from_response($parent);
+        if (isset($region)) {
+          $stories += unocha_paragraphs_get_stories([
+            ['field_region', $region->id(), '='],
+          ], $limit - count($stories));
+
+          // Also add the region as filter to have consistent results in the
+          // News and Stories landing page.
+          $view_all_query['region'] = $region->id();
+        }
+      }
+    }
+    elseif ($parent->bundle() === 'region') {
+      // Get the stories tagged with the region.
+      $stories = unocha_paragraphs_get_stories([
+        ['field_region', $parent->id(), '='],
+      ], $limit);
+
+      // Filter the News and Stories page by the region.
+      $view_all_query['region'] = $parent->id();
+    }
+    else {
+      // Exclude the current story so we can show related ones only.
+      $exclude = $parent->bundle() === 'story' ? $parent->id() : NULL;
+
+      // Add conditions on the referenced entities.
+      $conditions = [];
+      $fields = [
+        'field_response' => 'response',
+        'field_region' => 'region',
+        'field_country' => 'country',
+      ];
+      foreach ($fields as $field => $filter) {
+        if ($parent->hasField($field)) {
+          $ids = [];
+          foreach ($parent->get($field)->filterEmptyItems() as $item) {
+            if (isset($item->target_id)) {
+              $ids[] = $item->target_id;
+            }
+          }
+          if (!empty($ids)) {
+            $conditions[] = [$field, $ids, 'IN'];
+
+            // @todo review if we allow multiple selections for the filters.
+            // Filter the News and Stories page.
+            $view_all_query[$filter] = reset($ids);
+          }
+        }
+      }
+
+      $stories = unocha_paragraphs_get_stories($conditions, $limit, $exclude);
+    }
+  }
+  // If there are no valid parent, we just show the latest stories,
+  // for example when adding a stories paragraph type to a response as the
+  // paragraph doesn't yet have a parent as it's not yet saved.
+  // @todo add disclaimer in the preview in the form?
+  else {
+    $stories = unocha_paragraphs_get_stories([], $limit);
+  }
+
+  // Add the renderable stories.
+  if (!empty($stories)) {
+    $view_all_url = Url::fromUserInput('/latest/news-and-stories', [
+      'query' => $view_all_query,
+    ]);
+    $variables['content']['view_all'] = Link::fromTextAndUrl(t('View all'), $view_all_url)->toRenderable();
+    // @todo get the view mode from the paragraph view mode?
+    $variables['content']['stories'] = \Drupal::entityTypeManager()
+      ->getViewBuilder('node')
+      ->viewMultiple($stories, 'card');
+  }
+}
+
+/**
+ * Get story node entities from the given conditions and limit.
+ *
+ * @param array $conditions
+ *   List of conditions. Each condition has field, value and operator.
+ * @param int $limit
+ *   Number of stories to return.
+ * @param int|null $exclude
+ *   ID of story to exclude. This is mostly for when showing other stories on a
+ *   story page.
+ *
+ * @return \Drupal\node\NodeInterface[]
+ *   List of story nodes.
+ */
+function unocha_paragraphs_get_stories(array $conditions = [], $limit = 3, $exclude = NULL) {
+  $storage = \Drupal::entityTypeManager()->getStorage('node');
+
+  $query = $storage
+    ->getQuery()
+    ->accessCheck(TRUE)
+    ->condition('type', 'story')
+    ->sort('sticky', 'desc')
+    ->sort('promote', 'desc')
+    ->sort('created', 'desc')
+    ->range(0, $limit);
+
+  // Exclude a story.
+  if (!empty($exclude)) {
+    $query->condition('nid', $exclude, '<>');
+  }
+
+  // Additional conditions.
+  if (!empty($conditions)) {
+    $or_condition_group = $query->orConditionGroup();
+    foreach ($conditions as $condition) {
+      $or_condition_group->condition(...$condition);
+    }
+    $query->condition($or_condition_group);
+  }
+
+  return $storage->loadMultiple($query->execute() ?? []);
+}
+
+/**
+ * Get the region parent entity from a response entity.
+ *
+ * Note: this function currently retrieves the region entity from the
+ * parent in the main navigation hierarchy but if all the responses are tagged
+ * with a region (field_region) then maybe we can use that instead which
+ * would reduce a bit the lookups.
+ *
+ * @param \Drupal\node\NodeInterface $response
+ *   Response.
+ *
+ * @return \Drupal\node\NodeInteface|null
+ *   Region.
+ */
+function unocha_paragraphs_get_region_from_response(NodeInterface $response) {
+  $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+
+  // Get the menu links referencing this node.
+  $menu_links = $menu_link_manager->loadLinksByRoute('entity.node.canonical', [
+    'node' => $response->id(),
+  ]);
+
+  // Get the parent link in the main navigation menu, which should be a link
+  // to the region node.
+  $parent_link_id = NULL;
+  if (!empty($menu_links)) {
+    foreach ($menu_links as $menu_link) {
+      if ($menu_link->getMenuName() === 'main') {
+        $parent_link_id = $menu_link->getParent();
+      }
+    }
+  }
+
+  // Try to retrieve the region node from the parent menu link.
+  if (!empty($parent_link_id)) {
+    $parent_link = $menu_link_manager->createInstance($parent_link_id);
+    if (!empty($parent_link) && $parent_link->getRouteName() === 'entity.node.canonical' && !empty($parent_link->getRouteParameters()['node'])) {
+      return \Drupal::entityTypeManager()->getStorage('node')->load($parent_link->getRouteParameters()['node']);
+    }
+  }
+
+  return NULL;
+}
