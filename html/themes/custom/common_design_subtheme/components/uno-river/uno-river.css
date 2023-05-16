@@ -4,25 +4,20 @@
   --rw-card-list-gap-size: 2rem;
 }
 
-.paragraph--type--reliefweb-document .rw-river-article .rw-river-article__header+.rw-river-article__footer dd,
-.paragraph--type--reliefweb-river .rw-river-article .rw-river-article__header+.rw-river-article__footer dd {
+.paragraph--type--reliefweb-river .rw-river-article .rw-river-article__header + .rw-river-article__footer dd {
   font-size: 0.875rem;
 }
 
-.paragraph--type--reliefweb-document .rw-river-article .rw-river-article__title a,
 .paragraph--type--reliefweb-river .rw-river-article .rw-river-article__title a {
   color: var(--cd-black);
   text-decoration: none;
 }
 
 /* Hide icons */
-.paragraph--type--reliefweb-document .rw-entity-meta dd.rw-entity-meta__tag-value--format::before,
 .paragraph--type--reliefweb-river .rw-entity-meta dd.rw-entity-meta__tag-value--format::before {
   content: none;
 }
 
-.paragraph--type--reliefweb-document .cd-read-more,
-.paragraph--type--reliefweb-document .uno-tag,
 .paragraph--type--reliefweb-river .cd-read-more,
 .paragraph--type--reliefweb-river .uno-tag {
   display: none;
@@ -112,12 +107,6 @@
   align-items: flex-start;
 }
 
-.paragraph--type--reliefweb-river.paragraph--view-mode--teasers .rw-river-article .rw-river-article__content img {
-  float: left;
-  max-height: 118px;
-  margin: 2px 20px 0 0;
-}
-
 .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .rw-river-article .rw-river-article__header {
   flex: 0 1 50%;
 }
@@ -141,7 +130,7 @@
 /* Control markup display for view modes */
 .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .uno-tag,
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .uno-tag {
-  display: inline-block;
+  display: block;
 }
 .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .cd-read-more,
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .cd-read-more {
@@ -163,6 +152,14 @@
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-entity-meta .rw-entity-meta__tag-value--posted {
   display: inline-block;
 }
+
+.paragraph--type--reliefweb-river.paragraph--view-mode--teasers .rw-entity-meta .rw-entity-meta__tag-value--posted,
+.paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-entity-meta .rw-entity-meta__tag-value--posted,
+.paragraph--type--reliefweb-river.paragraph--view-mode--teasers .cd-read-more,
+.paragraph--type--reliefweb-river.paragraph--view-mode--cards .cd-read-more {
+  font-size: var(--cd-font-size--small);
+}
+
 /* Hide list bullet */
 .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .rw-entity-meta--core dd::after,
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-entity-meta--core dd::after {
