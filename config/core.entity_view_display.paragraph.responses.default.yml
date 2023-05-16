@@ -1,23 +1,26 @@
-uuid: bf01dfed-b2db-4eae-8c39-ed0a650b8bc7
+uuid: df4acf69-7274-4ebf-bc50-fbc79eae463b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.datawrapper.field_datawrapper_embed
-    - field.field.paragraph.datawrapper.field_text
-    - field.field.paragraph.datawrapper.field_title
-    - paragraphs.paragraphs_type.datawrapper
+    - field.field.paragraph.responses.field_responses
+    - field.field.paragraph.responses.field_text
+    - field.field.paragraph.responses.field_title
+    - paragraphs.paragraphs_type.responses
   module:
     - text
-id: paragraph.datawrapper.default
+    - viewsreference
+id: paragraph.responses.default
 targetEntityType: paragraph
-bundle: datawrapper
+bundle: responses
 mode: default
 content:
-  field_datawrapper_embed:
-    type: basic_string
+  field_responses:
+    type: viewsreference_formatter
     label: hidden
-    settings: {  }
+    settings:
+      plugin_types:
+        - block
     third_party_settings: {  }
     weight: 2
     region: content

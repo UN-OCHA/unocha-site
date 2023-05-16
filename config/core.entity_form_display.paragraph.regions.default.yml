@@ -1,30 +1,29 @@
-uuid: f94c43a8-6c27-4d20-b9c2-b6956bf057d0
+uuid: 5b6bae78-bb8b-4c29-891a-521a4c3e6116
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.datawrapper.field_datawrapper_embed
-    - field.field.paragraph.datawrapper.field_text
-    - field.field.paragraph.datawrapper.field_title
-    - paragraphs.paragraphs_type.datawrapper
+    - field.field.paragraph.regions.field_regions
+    - field.field.paragraph.regions.field_text
+    - field.field.paragraph.regions.field_title
+    - paragraphs.paragraphs_type.regions
   module:
     - text
-id: paragraph.datawrapper.default
+    - viewsreference
+id: paragraph.regions.default
 targetEntityType: paragraph
-bundle: datawrapper
+bundle: regions
 mode: default
 content:
-  field_datawrapper_embed:
-    type: string_textarea
-    weight: 0
+  field_regions:
+    type: viewsreference_select
+    weight: 2
     region: content
-    settings:
-      rows: 5
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_text:
     type: text_textarea
-    weight: 2
+    weight: 1
     region: content
     settings:
       rows: 5
@@ -32,7 +31,7 @@ content:
     third_party_settings: {  }
   field_title:
     type: string_textfield
-    weight: 1
+    weight: 0
     region: content
     settings:
       size: 60

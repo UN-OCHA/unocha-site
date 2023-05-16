@@ -1,14 +1,14 @@
-uuid: 164342b3-812e-4d75-bb3d-279c51ec61d5
+uuid: 140735c6-d26c-4322-83ae-89b412a6d468
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_title
-    - paragraphs.paragraphs_type.embed
-id: paragraph.embed.field_title
+    - paragraphs.paragraphs_type.regions
+id: paragraph.regions.field_title
 field_name: field_title
 entity_type: paragraph
-bundle: embed
+bundle: regions
 label: Title
 description: ''
 required: false

@@ -1,9 +1,9 @@
-uuid: 30dc4838-b1d4-4139-b6fe-8e1010bbb8a5
+uuid: 15bffc3a-50f8-4ad5-901c-5d4ddeb30587
 langcode: en
 status: true
 dependencies: {  }
-id: content_list
-label: 'Content list'
+id: events
+label: Events
 icon_uuid: null
 icon_default: null
 description: ''

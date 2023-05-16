@@ -1,16 +1,18 @@
-uuid: ecbf2871-4f21-4922-b717-9fa9abfd9cf5
+uuid: 37983d93-49e4-4192-994c-13cf84f29f1f
 langcode: en
 status: true
 dependencies:
   module:
-    - link
     - paragraphs
-id: paragraph.field_rss_read_more
-field_name: field_rss_read_more
+    - views
+    - viewsreference
+id: paragraph.field_regions
+field_name: field_regions
 entity_type: paragraph
-type: link
-settings: {  }
-module: link
+type: viewsreference
+settings:
+  target_type: view
+module: viewsreference
 locked: false
 cardinality: 1
 translatable: true

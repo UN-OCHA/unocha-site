@@ -1,10 +1,10 @@
-uuid: c568c3cc-fa4b-4bcf-8e06-4af6b726db08
+uuid: b20731bf-9bc4-47ca-b8ea-66d2eefe1569
 langcode: en
 status: true
 dependencies: {  }
-id: rss_feed
-label: 'RSS Feed'
+id: regions
+label: Regions
 icon_uuid: null
 icon_default: null
-description: 'To be deleted'
+description: ''
 behavior_plugins: {  }
