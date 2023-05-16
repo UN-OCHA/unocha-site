@@ -1,0 +1,10 @@
+uuid: 673fb76a-2c23-462f-8be7-0f05b11dcf2c
+langcode: en
+status: true
+dependencies: {  }
+id: responses
+label: Responses
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

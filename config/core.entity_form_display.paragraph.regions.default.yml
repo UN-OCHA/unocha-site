@@ -1,0 +1,42 @@
+uuid: 5b6bae78-bb8b-4c29-891a-521a4c3e6116
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.regions.field_regions
+    - field.field.paragraph.regions.field_text
+    - field.field.paragraph.regions.field_title
+    - paragraphs.paragraphs_type.regions
+  module:
+    - text
+    - viewsreference
+id: paragraph.regions.default
+targetEntityType: paragraph
+bundle: regions
+mode: default
+content:
+  field_regions:
+    type: viewsreference_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_text:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

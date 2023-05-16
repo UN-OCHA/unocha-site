@@ -1,0 +1,26 @@
+uuid: 4d19c16a-6762-44e1-b02c-3f45de74f430
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.regions
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - ckeditor
+id: paragraph.regions.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: regions
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
