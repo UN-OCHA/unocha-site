@@ -67,12 +67,11 @@
 
 /* Restrict width and centre horizontally */
 .paragraph--type--reliefweb-document,
-.rw-river,
 .node--type-basic .cd-page-title,
 .node--type-region .cd-page-title,
-.node--type-region header,
+.node--type-region > header,
 .node--type-response .cd-page-title,
-.node--type-response header,
+.node--type-response > header,
 .node--type-story .cd-page-title,
 .node--type-event .cd-page-title,
 .node--type-event .field--name-field-event-date,
@@ -86,7 +85,7 @@
 .field--name-body > ul,
 .paragraph .field--name-field-title,
 .cd-layout-main-content .field--type-text-with-summary,
-.cd-layout-main-content footer,
+.cd-layout-main-content > footer,
 .paragraph--type--text .field--name-field-title,
 .paragraph--type--text .field--name-field-text,
 .paragraph--type--text-and-image.paragraph--view-mode--default .field--name-field-title,

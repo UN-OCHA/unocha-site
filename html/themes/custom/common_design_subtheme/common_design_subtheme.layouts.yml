@@ -13,6 +13,21 @@ layout_twocol:
     second:
       label: Second
 
+layout_twocol_sidebar:
+  label: 'UNO Two column Sidebar'
+  category: 'Common Design Layouts'
+  path: templates/layouts
+  template: layout--twocol-sidebar
+  library: common_design_subtheme/uno-layout
+  default_region: first
+  icon_map:
+    - [first, first, second]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+
 layout_threecol:
   label: 'UNO Three column'
   category: 'Common Design Layouts'

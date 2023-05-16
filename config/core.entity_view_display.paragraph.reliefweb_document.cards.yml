@@ -1,56 +1,50 @@
-uuid: cd777386-30b4-4d59-912a-4fc40280df35
+uuid: fb966656-44eb-4960-9b1d-a7a53c8ccf05
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.cards
     - field.field.paragraph.reliefweb_document.field_reliefweb_document
     - field.field.paragraph.reliefweb_document.field_text
     - field.field.paragraph.reliefweb_document.field_title
     - field.field.paragraph.reliefweb_document.paragraph_view_mode
     - paragraphs.paragraphs_type.reliefweb_document
   module:
-    - paragraph_view_mode
+    - layout_builder
     - text
     - unocha_reliefweb
-id: paragraph.reliefweb_document.default
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.reliefweb_document.cards
 targetEntityType: paragraph
 bundle: reliefweb_document
-mode: default
+mode: cards
 content:
   field_reliefweb_document:
     type: reliefweb_document
+    label: hidden
+    settings:
+      white_label: true
+      ocha_only: true
+    third_party_settings: {  }
     weight: 2
     region: content
+  field_text:
+    type: text_default
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-  field_text:
-    type: text_textarea
     weight: 1
     region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
   field_title:
-    type: string_textfield
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
     weight: 0
     region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  paragraph_view_mode:
-    type: paragraph_view_mode
-    weight: -100
-    region: content
-    settings:
-      view_modes:
-        default: default
-        cards: cards
-        teasers: teasers
-      default_view_mode: default
-      form_mode_bind: true
-    third_party_settings: {  }
 hidden:
-  created: true
-  status: true
+  paragraph_view_mode: true
