@@ -16,3 +16,5 @@ canto_api_verify_ssl: true
 canto_oauth_domain_url: https://oauth.canto.com
 # Base URL of the UNOCHA Canto site.
 canto_site_base_url: https://unocha.canto.com
+# UNOCHA Canto OEmbed base URL (ex: current site URL).
+canto_oembed_base_url:

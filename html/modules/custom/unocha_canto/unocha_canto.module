@@ -43,6 +43,10 @@ function unocha_canto_oembed_resource_url_alter(array &$parsed_url, Provider $pr
   // Rewrite the UNOCHA Canto provider endpoint to use the current host so that
   // it can work on local or development sites.
   if (strpos($parsed_url['path'], '/canto/oembed') !== FALSE) {
-    $parsed_url['path'] = \Drupal::request()->getSchemeAndHttpHost() . '/canto/oembed';
+    $oembed_base_url = \Drupal::config('unocha_canto.settings')?->get('canto_oembed_base_url');
+    if (empty($oembed_base_url)) {
+      $oembed_base_url = \Drupal::request()->getSchemeAndHttpHost();
+    }
+    $parsed_url['path'] = $oembed_base_url . '/canto/oembed';
   }
 }
