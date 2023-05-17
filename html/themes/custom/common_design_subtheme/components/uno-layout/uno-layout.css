@@ -9,6 +9,7 @@
 }
 
 .layout--twocol,
+.layout--twocol-siderbar,
 .layout--threecol,
 .layout--fourcol {
   display: flex;
@@ -22,6 +23,7 @@
   /* stylelint-disable-next-line max-line-length */
   flex: 0 1 calc((100% / var(--uno-card-list-num-cols)) - var(--uno-card-list-gap-size) + var(--uno-card-list-gap-size) / var(--uno-card-list-num-cols));
 }
+
 
 @media screen and (min-width: 480px) {
   .layout--twocol > .layout__region {

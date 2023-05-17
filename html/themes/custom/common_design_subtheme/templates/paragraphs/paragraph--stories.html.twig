@@ -51,19 +51,17 @@
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
     'uno-stories',
-    'view-stories',
-    'view-display-id-stories',
     'paragraph--type--content-list'
   ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      <header class="uno-stories__header view-header">
+      <header class="uno-stories__header">
         {{- content.field_title -}}
         <span class="uno-stories__view_all">{{- content.view_all -}}</span>
       </header>
-      <div class="uno-stories__content view-content">
+      <div class="uno-stories__content">
         {{ content|without('field_title', 'view_all') }}
       </div>
     {% endblock %}

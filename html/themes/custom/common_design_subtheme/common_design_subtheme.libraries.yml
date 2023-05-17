@@ -130,6 +130,11 @@ uno-cta:
     theme:
       components/uno-cta/uno-cta.css: {}
 
+uno-document:
+  css:
+    theme:
+      components/uno-document/uno-document.css: {}
+
 uno-embed:
   css:
     component:

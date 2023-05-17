@@ -222,6 +222,7 @@ display:
     display_plugin: block
     position: 2
     display_options:
+      enabled: false
       title: 'Country events'
       arguments:
         field_response_target_id:
@@ -274,31 +275,13 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  events:
-    id: events
-    display_title: Events
-    display_plugin: block
-    position: 3
-    display_options:
-      defaults:
-        relationships: false
-      relationships: {  }
-      display_description: ''
-      display_extenders: {  }
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - 'user.node_grants:view'
-        - user.permissions
-      tags: {  }
   page__events:
     id: page__events
     display_title: 'Events page'
     display_plugin: page
     position: 1
     display_options:
+      enabled: true
       pager:
         type: full
         options:

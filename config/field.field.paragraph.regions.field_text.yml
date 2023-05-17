@@ -1,10 +1,10 @@
-uuid: a27c26cc-b028-4936-b6e1-cdfd27ddb4be
+uuid: 4d19c16a-6762-44e1-b02c-3f45de74f430
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_text
-    - paragraphs.paragraphs_type.rss_feed
+    - paragraphs.paragraphs_type.regions
   module:
     - allowed_formats
     - text
@@ -12,10 +12,10 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - ckeditor
-id: paragraph.rss_feed.field_text
+id: paragraph.regions.field_text
 field_name: field_text
 entity_type: paragraph
-bundle: rss_feed
+bundle: regions
 label: Text
 description: ''
 required: false

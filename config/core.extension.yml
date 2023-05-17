@@ -87,8 +87,8 @@ module:
   user: 0
   user_display_name: 0
   user_expire: 0
-  views_ui: 0
   verf: 0
+  views_ui: 0
   viewsreference: 0
   xmlsitemap_engines: 0
   pathauto: 1

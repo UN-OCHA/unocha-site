@@ -1,32 +1,26 @@
-uuid: 966c51a9-0da2-4f6b-9448-61ae01cb8505
+uuid: 1863669d-cfdd-4952-972e-3d26e9ea6b87
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.embed.field_embed_code
-    - field.field.paragraph.embed.field_embed_url
-    - field.field.paragraph.embed.field_text
-    - field.field.paragraph.embed.field_title
-    - paragraphs.paragraphs_type.embed
+    - field.field.paragraph.regions.field_regions
+    - field.field.paragraph.regions.field_text
+    - field.field.paragraph.regions.field_title
+    - paragraphs.paragraphs_type.regions
   module:
     - text
-id: paragraph.embed.default
+    - viewsreference
+id: paragraph.regions.default
 targetEntityType: paragraph
-bundle: embed
+bundle: regions
 mode: default
 content:
-  field_embed_code:
-    type: basic_string
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_embed_url:
-    type: string
+  field_regions:
+    type: viewsreference_formatter
     label: hidden
     settings:
-      link_to_entity: false
+      plugin_types:
+        - block
     third_party_settings: {  }
     weight: 2
     region: content

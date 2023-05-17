@@ -1,20 +1,21 @@
-uuid: 44959640-ebec-4c04-a406-82fec06efb35
+uuid: 7f89820f-ba60-4f38-a933-0652a8b81970
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_text
-    - paragraphs.paragraphs_type.datawrapper
+    - paragraphs.paragraphs_type.responses
   module:
     - allowed_formats
     - text
 third_party_settings:
   allowed_formats:
-    allowed_formats: {  }
-id: paragraph.datawrapper.field_text
+    allowed_formats:
+      - ckeditor
+id: paragraph.responses.field_text
 field_name: field_text
 entity_type: paragraph
-bundle: datawrapper
+bundle: responses
 label: Text
 description: ''
 required: false

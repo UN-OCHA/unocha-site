@@ -16,3 +16,27 @@
 .paragraph--type--content-list.paragraph--view-mode--preview .media--type-image {
   max-width: 220px;
 }
+
+/* Colours to demonstrate nested paragraphs */
+.lp-builder:not(.is-navigating) .js-lpb-component:hover,
+.lp-builder:not(.is-navigating) .js-lpb-component:focus-within {
+  outline-width: 3px;
+}
+
+.lp-builder:not(.is-navigating) .js-lpb-component:hover .js-lpb-component:hover,
+.lp-builder:not(.is-navigating) .js-lpb-component:hover .js-lpb-component:focus-within,
+.lp-builder:not(.is-navigating) .js-lpb-component:focus-within .js-lpb-component:focus-within,
+.lp-builder:not(.is-navigating) .js-lpb-component:focus-within .js-lpb-component:hover {
+  outline: 3px solid magenta;
+}
+
+.lp-builder:not(.is-navigating) .js-lpb-component:hover .js-lpb-component:hover .js-lpb-component:hover,
+.lp-builder:not(.is-navigating) .js-lpb-component:hover .js-lpb-component:hover .js-lpb-component:focus-within,
+.lp-builder:not(.is-navigating) .js-lpb-component:hover .js-lpb-component:focus-within .js-lpb-component:hover,
+.lp-builder:not(.is-navigating) .js-lpb-component:hover .js-lpb-component:focus-within .js-lpb-component:focus-within,
+.lp-builder:not(.is-navigating) .js-lpb-component:focus-within .js-lpb-component:hover .js-lpb-component:hover,
+.lp-builder:not(.is-navigating) .js-lpb-component:focus-within .js-lpb-component:hover .js-lpb-component:focus-within,
+.lp-builder:not(.is-navigating) .js-lpb-component:focus-within .js-lpb-component:focus-within .js-lpb-component:hover,
+.lp-builder:not(.is-navigating) .js-lpb-component:focus-within .js-lpb-component:focus-within .js-lpb-component:focus-within {
+  outline: 3px solid greenyellow;
+}
