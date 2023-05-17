@@ -13,7 +13,7 @@
 }
 
 /* Specific paragraph previews */
-.paragraph--type--content-list.paragraph--view-mode--preview .media--type-image {
+.paragraph.paragraph--view-mode--preview .media--type-image {
   max-width: 220px;
 }
 
@@ -39,4 +39,10 @@
 .lp-builder:not(.is-navigating) .js-lpb-component:focus-within .js-lpb-component:focus-within .js-lpb-component:hover,
 .lp-builder:not(.is-navigating) .js-lpb-component:focus-within .js-lpb-component:focus-within .js-lpb-component:focus-within {
   outline: 3px solid greenyellow;
+}
+
+
+/* Adjust the width of the sidebar for the Content Editor form */
+.cd-layout__sidebar--wide {
+  flex-basis: 285px !important;
 }
