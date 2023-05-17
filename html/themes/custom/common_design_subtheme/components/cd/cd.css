@@ -30,6 +30,17 @@ body {
   background-color: var(--brand-primary--dark);
 }
 
+/* Set bg colour so when menu items break layout, we can see them */
+.cd-nav__menu-item--level-1 {
+  background-color: white;
+}
+
+/* Last menu item with coloured background */
+.cd-nav>.menu>.menu-item:last-child a {
+  background: var(--brand-highlight);
+  color: white;
+}
+
 /* Soft footer */
 .cd-soft-footer {
   text-align: left;
@@ -43,17 +54,6 @@ body {
   margin: 0;
   padding: 0;
   list-style-type: none;
-}
-
-/* Set bg colour so when menu items break layout, we can see them */
-.cd-nav__menu-item--level-1 {
-  background-color: white;
-}
-
-/* Last menu item with coloured background */
-.cd-nav > .menu > .menu-item:last-child a {
-  background: var(--brand-highlight);
-  color: white;
 }
 
 .cd-soft-footer,
@@ -119,6 +119,14 @@ body {
 .cd-soft-footer a:hover,
 .cd-soft-footer a:focus {
   color: var(--cd-default-text-color);
+}
+
+.cd-soft-footer .cd-soft-footer__nav-responses a {
+  color: var(--cd-white);
+}
+
+.cd-soft-footer .cd-soft-footer__nav-responses h2 {
+  color: var(--brand-primary--dark);
 }
 
 a.cd-footer-social__link svg {

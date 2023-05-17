@@ -361,19 +361,6 @@
   }
 }
 
-.view-display-id-regional_responses .view-content {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-.view-display-id-regional_responses .view-content li {
-  padding: 0.5rem 1rem;
-  border-top: 1px solid var(--brand-grey);
-}
-.view-display-id-regional_responses .view-content li a {
-  text-decoration: none;
-}
-
 /* Story node */
 footer.cd-author {
   margin-top: 3rem;
