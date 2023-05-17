@@ -4,7 +4,7 @@
   --rw-card-list-gap-size: 2rem;
 }
 
-.rw-river-article > header {
+.rw-river-article .rw-river-article__header {
   max-width: var(--cd-max-content-width);
 }
 
