@@ -34,9 +34,12 @@
     resource ? 'rw-river--type-' ~ resource|clean_class
   ])
 }}>
-  <h{{ level }}{{ title_attributes.addClass([
-    'rw-river__title',
-  ]) }}>{{ title }}</h{{ level }}>
+
+  {% if title is not empty %}
+    <h{{ level }}{{ title_attributes.addClass([
+      'rw-river__title',
+    ]) }}>{{ title }}</h{{ level }}>
+  {% endif %}
 
   {% if entities is not empty %}
     {{ results ? results|merge({
