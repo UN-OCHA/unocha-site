@@ -5,6 +5,8 @@
  * Module file for the Canto integration.
  */
 
+use Drupal\media\OEmbed\Provider;
+
 /**
  * Implements hook_theme().
  */
@@ -31,4 +33,16 @@ function unocha_canto_theme() {
  */
 function unocha_canto_media_source_info_alter(array &$sources) {
   $sources['image']['forms']['media_library_add'] = '\Drupal\unocha_canto\Form\CantoImageForm';
+  $sources['oembed:video']['forms']['media_library_add'] = '\Drupal\unocha_canto\Form\CantoVideoForm';
+}
+
+/**
+ * Implements hook_oembed_resource_url_alter().
+ */
+function unocha_canto_oembed_resource_url_alter(array &$parsed_url, Provider $provider) {
+  // Rewrite the UNOCHA Canto provider endpoint to use the current host so that
+  // it can work on local or development sites.
+  if (strpos($parsed_url['path'], '/canto/oembed') !== FALSE) {
+    $parsed_url['path'] = \Drupal::request()->getSchemeAndHttpHost() . '/canto/oembed';
+  }
 }

@@ -8,3 +8,10 @@ unocha_canto.canto.api:
     _admin_route: TRUE
   requirements:
     _permission: 'access canto api'
+unocha_canto.canto.oembed:
+  path: '/canto/oembed'
+  defaults:
+    _controller: '\Drupal\unocha_canto\Controller\CantoController::oembed'
+    _title: 'Canto OEmbed definition.'
+  requirements:
+    _permission: 'access content'
