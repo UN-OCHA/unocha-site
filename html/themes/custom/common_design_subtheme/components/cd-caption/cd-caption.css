@@ -11,12 +11,6 @@
   max-width: var(--cd-max-content-width);
 }
 
-/* .cd-container .node--type-region .cd-caption {
-  padding: 0;
-  margin: 0.25rem auto 2rem;
-  max-width: var(--cd-max-width);
-} */
-
 .cd-container .cd-hero .cd-caption {
   margin: 0.25rem auto 2rem;
   max-width: var(--cd-max-width);
@@ -30,7 +24,7 @@
 }
 
 @media (min-width: 1200px) {
-  .cd-container.cd-hero .cd-caption {
+  .cd-container .cd-hero .cd-caption {
     padding: 0 var(--cd-container-padding-xlarge);
   }
 }

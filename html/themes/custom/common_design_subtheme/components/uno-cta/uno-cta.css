@@ -4,3 +4,9 @@
 .paragraph--type--call-to-action {
   padding: 3rem 2rem 4rem;
 }
+
+.cd-article .paragraph--type--call-to-action p {
+  max-width: var(--cd-max-content-width);
+  margin-left: auto;
+  margin-right: auto;
+}
