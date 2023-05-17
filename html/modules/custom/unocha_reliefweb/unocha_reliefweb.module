@@ -69,7 +69,7 @@ function unocha_reliefweb_theme() {
         // Section attributes.
         'attributes' => NULL,
         // Title of the river section.
-        'title' => t('List'),
+        'title' => NULL,
         // Title attributes.
         'title_attributes' => NULL,
         // Results attributes.
