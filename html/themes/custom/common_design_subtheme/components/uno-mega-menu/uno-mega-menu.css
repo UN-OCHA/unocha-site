@@ -32,7 +32,7 @@
     flex-direction: column;
     width: 100%;
     max-width: var(--cd-max-width);
-    max-height: 250px;
+    max-height: 270px;
     margin: 0 auto;
     /* We could also add the cd-container to the <ul> but then we would have to
      * unset the padding on smaller screen. */
@@ -74,4 +74,10 @@
   .cd-nav__menu-item--level-2.menu-item--expanded > .uno-mega-menu__dropdown > span.menu-item__label {
     display: block;
   }
+}
+
+/* 2nd level menu items without children */
+.uno-mega-menu .cd-nav__menu-item--level-2:not(.menu-item--expanded) + .cd-nav__menu-item--level-2,
+.uno-mega-menu .cd-nav__menu-item--level-2:not(.menu-item--expanded) + .cd-nav__menu-item--level-2:not(.menu-item--expanded) {
+  margin-top: 1rem;
 }
