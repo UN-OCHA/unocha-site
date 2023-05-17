@@ -47,11 +47,8 @@
 }
 /* Restrict width and centre horizontally all fields that are inline
   This might need adjustment */
-.cd-layout-main-content > .field--label-inline,
-.field--name-field-theme {
+.cd-layout-main-content > .field--label-inline {
   max-width: var(--cd-max-content-width);
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 1rem;
 }
 
@@ -61,50 +58,25 @@
 .node--type-event .field--name-field-country,
 .node--type-event .field--name-field-region,
 .node--view-mode-full .field--name-field-event-image,
-.node--type-event .field--name-field-response {
+.node--type-event .field--name-field-response,
+.node--type-story .field--name-field-theme {
   margin-bottom: 1rem;
 }
 
 /* Restrict width and centre horizontally */
-.paragraph--type--reliefweb-document,
-.node--type-basic .cd-page-title,
-.node--type-region .cd-page-title,
-.node--type-region > header,
-.node--type-response .cd-page-title,
-.node--type-response > header,
-.node--type-story .cd-page-title,
-.node--type-event .cd-page-title,
-.node--type-event .field--name-field-event-date,
-.node--type-event .field--name-field-event-location,
-.node--type-event .field--name-field-event-type,
-.node--type-event .field--name-field-country,
-.node--type-event .field--name-field-region,
-.node--type-event .field--name-field-response,
-.field--name-body,
-.field--name-description,
-.field--name-body > ul,
-/* .paragraph .field--name-field-title, */
-.cd-layout-main-content .field--type-text-with-summary,
-.cd-layout-main-content > footer,
-.paragraph--type--text .field--name-field-title,
-.paragraph--type--text .field--name-field-text,
-.paragraph--type--text-and-image.paragraph--view-mode--default .field--name-field-title,
-.paragraph--type--text-and-image.paragraph--view-mode--default .field--name-field-text {
+.node--type-story .cd-layout-main-content > .field--label-inline,
+.node--type-story .cd-caption,
+.node--type-story .field--name-field-theme,
+.node--type-story .field--type-text-with-summary,
+.node--type-story .field--name-field-text,
+.node--type-story .cd-layout-main-content > footer {
   max-width: var(--cd-max-content-width);
   margin-left: auto;
   margin-right: auto;
 }
 
-.node--type-event .cd-page-title {
-  max-width: var(--cd-max-content-width);
-}
-
-.paragraph--type--section .paragraph--type--figures .field--name-field-text,
-.paragraph--type--section .paragraph--type--figures .field--name-field-title,
-.paragraph--type--section .paragraph--type--text .field--name-field-text,
-.paragraph--type--section .paragraph--type--text .field--name-field-title,
-.paragraph--type--section.paragraph .field--name-field-title,
-.paragraph--type--section .cd-article p {
+.paragraph--type--section .cd-article p,
+.field--name-body > ul {
   max-width: var(--cd-max-content-width);
   margin-left: unset;
   margin-right: unset;
@@ -121,7 +93,8 @@
     */
 .paragraph--type--content-list.content-list--view-mode--teaser .field--name-field-title,
 .paragraph--view-mode--image-align-left .field--name-field-title,
-.paragraph--view-mode--image-align-right .field--name-field-title {
+.paragraph--view-mode--image-align-right .field--name-field-title,
+.cd-article p {
   margin-left: 0;
   margin-right: 0;
 }
