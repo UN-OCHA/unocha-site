@@ -33,8 +33,9 @@
 
 {% embed '@common_design_subtheme/views/views-view.html.twig' %}
   {% block view_content %}
+  {{ attach_library('common_design_subtheme/uno-nav') }}
     {% if rows %}
-      <ul class="view-content">
+      <ul class="uno-nav__list uno-nav__list--horizontal">
         {{ rows }}
       </ul>
     {% elseif empty %}
