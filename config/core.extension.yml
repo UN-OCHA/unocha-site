@@ -57,6 +57,7 @@ module:
   mysql: 0
   node: 0
   ocha_search: 0
+  oembed_providers: 0
   options: 0
   page_cache: 0
   paragraph_view_mode: 0
