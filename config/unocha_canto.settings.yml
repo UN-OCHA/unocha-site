@@ -9,3 +9,4 @@ canto_api_cache_lifetime: 300
 canto_api_verify_ssl: true
 canto_oauth_domain_url: 'https://oauth.canto.com'
 canto_site_base_url: 'https://unocha.canto.com'
+canto_oembed_base_url: null

@@ -79,6 +79,12 @@ class CantoImageForm extends FileUploadForm {
         'library' => [
           'unocha_canto/canto.library',
         ],
+        'drupalSettings' => [
+          'cantoLibrary' => [
+            'scheme' => 'image',
+            'allowedExtensions' => ['jpg', 'jpeg', 'png'],
+          ],
+        ],
       ],
     ];
 
@@ -90,12 +96,16 @@ class CantoImageForm extends FileUploadForm {
    */
   public function processUploadElement(array $element, FormStateInterface $form_state) {
     $element = parent::processUploadElement($element, $form_state);
+    // Ensure the assets value is preserved.
     $element['upload_button']['#limit_validation_errors'] = [
       ['upload'],
       ['current_selection'],
       ['canto'],
       ['canto', 'assets'],
     ];
+    // Set an attribute to the submit button so we can easily retrieve it
+    // in the Canto library javascript.
+    $element['upload_button']['#attributes']['data-canto-submit'] = '';
     return $element;
   }
 

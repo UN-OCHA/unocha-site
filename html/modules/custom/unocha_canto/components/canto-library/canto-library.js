@@ -27,6 +27,32 @@
   }
 
   /**
+   * Store the JSON data of the image(s) to insert.
+   *
+   * @param {node} dialog
+   *   The dialog element.
+   * @param {object} data
+   *   The Canto image asset data.
+   */
+  function updateImageSelection(dialog, data) {
+    const assets = dialog.querySelector('[data-drupal-selector="edit-canto-assets"]');
+    assets.value = data ? JSON.stringify(data) : '';
+  }
+
+  /**
+   * Store the JSON data of the video to insert.
+   *
+   * @param {node} dialog
+   *   The dialog element.
+   * @param {object} data
+   *   The Canto video asset data.
+   */
+  function updateVideoSelection(dialog, data) {
+    const url = dialog.querySelector('[data-drupal-selector="edit-url"]');
+    url.value = data.length ? 'https://www.unocha.org/canto/video/' + data[0].id : '';
+  }
+
+  /**
    * Show the canto library in an iframe.
    *
    * @param {node} button
@@ -37,12 +63,6 @@
   function showCantoLibrary(button, settings) {
     // Get the parent dialog.
     const dialog = button.closest('.ui-dialog');
-
-    // Elements to store the JSON data of the assets to insert.
-    const assets = dialog.querySelector('[data-drupal-selector="edit-canto-assets"]');
-
-    // Ensure we do not leave any left over of the previously loaded assets.
-    assets.value = '';
 
     // Empty the current selection.
     if (Drupal.MediaLibrary && Drupal.MediaLibrary.currentSelection) {
@@ -56,10 +76,12 @@
 
     // Get the maximum number of selectable items.
     const limit = settings.media_library.selection_remaining;
+    const allowedExtensions = settings.cantoLibrary.allowedExtension;
+    const scheme = settings.cantoLibrary.scheme;
 
-    // Get the upload button. We'll trigger its click event so that the
+    // Get the add/upload button. We'll trigger its click event so that the
     // form can be submitted via ajax.
-    const upload = dialog.querySelector('[data-drupal-selector="edit-upload-upload-button"]');
+    const submit = dialog.querySelector('[data-canto-submit]');
 
     // Listen to message events from the iframe to be created to retrieve
     // the verification code to exchange for an access token.
@@ -72,32 +94,31 @@
 
       switch (type) {
         // Initialize the library when the iframe is ready.
-        // @todo that a good place to pass options to the iframe like the
-        // allowed content types.
         case 'ready':
           event.source.postMessage({
             type: 'initialize',
             data: {
-              // @todo retrieve that from the settings set via the widget
-              // settings?
               selectionLimit: limit,
-              allowedExtensions: ['jpg', 'jpeg', 'png'],
-              scheme: 'image'
+              allowedExtensions: allowedExtensions,
+              scheme: scheme
             }
-          // @todo pass a proper origin.
           }, window.origin);
           break;
 
         case 'updateSelection':
           updateSelectionCount(button.closest('.ui-dialog'), data.length, limit);
-          assets.value = JSON.stringify(data);
+          if (scheme === 'image') {
+            updateImageSelection(dialog, data);
+          }
+          else if (scheme === 'video') {
+            updateVideoSelection(dialog, data);
+          }
           break;
       }
     });
 
     // Take over the submission of the media library so we can call our
     // own callback to create media from the selected items.
-    // @todo hide the button and add a new one saying "Add selected items".
     const select = dialog.querySelector('.ui-dialog-buttonset .media-library-select');
 
     const add = select.cloneNode(false);
@@ -106,9 +127,9 @@
     add.setAttribute('name', 'canto-library-add');
     add.appendChild(document.createTextNode(Drupal.t('Add selected')));
     add.addEventListener('click', function (event) {
-      upload.dispatchEvent(new Event('mousedown'));
-      upload.dispatchEvent(new Event('mouseup'));
-      upload.dispatchEvent(new Event('click'));
+      submit.dispatchEvent(new Event('mousedown'));
+      submit.dispatchEvent(new Event('mouseup'));
+      submit.dispatchEvent(new Event('click'));
     });
 
     // Hide the select button and insert the add one instead.
