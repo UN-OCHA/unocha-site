@@ -1,8 +1,3 @@
-/* Paragraphs */
-/* .paragraph {
-  margin: 4rem 0 4rem;
-} */
-
 .paragraph > .field {
   margin-bottom: 1rem;
 }
@@ -10,11 +5,6 @@
 .paragraph > .field--name-field-title {
    margin-bottom: 2rem;
  }
-
-/* Nodes and Terms */
-/* .layout + .layout {
-  margin-top: 2rem;
-} */
 
 .paragraph--type--node-teaser > .field > .field__items > .field__item {
   margin-bottom: 2rem;
@@ -24,10 +14,6 @@
   margin-top: 2rem;
 }
 
-/* .field--name-field-custom-content > .field__item + .field__item {
-  margin-top: 6rem;
-} */
-
 /* Fields with inline labels */
 .field--label-inline {
   display: flex;
@@ -36,6 +22,7 @@
 
 .field--label-inline > .field__label {
   margin-inline-end: 0.5rem;
+  font-weight: 500;
 }
 
 .field--label-inline > .field__label::after {
@@ -45,15 +32,39 @@
 .field--label-inline > .field__item {
   flex: 0 1 auto;
 }
-/* Restrict width and centre horizontally all fields that are inline
-  This might need adjustment */
-.cd-layout-main-content > .field--label-inline,
-.field--name-field-theme {
+
+/* Restrict width and centre horizontally all fields that are inline */
+.cd-layout-main-content > .field--label-inline {
+  max-width: var(--cd-max-content-width);
+  margin-bottom: 1rem;
+}
+
+/* Restrict width and centre horizontally */
+.node--type-story .cd-layout-main-content > .field--label-inline,
+.node--type-story .cd-caption,
+.node--type-story .field--name-field-theme,
+.node--type-story .field--type-text-with-summary,
+.node--type-story .field--name-field-text,
+.node--type-story .cd-layout-main-content > footer {
   max-width: var(--cd-max-content-width);
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 1rem;
 }
+
+/* Unset cd-article p auto margins */
+.paragraph--type--section .cd-article p,
+.field--name-body > ul {
+  max-width: var(--cd-max-content-width);
+  margin-left: unset;
+  margin-right: unset;
+}
+
+.cd-article p {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Basic vertical rhythm, will need adjusting */
 
 .node--type-event .field--name-field-event-date,
 .node--type-event .field--name-field-event-location,
@@ -61,79 +72,10 @@
 .node--type-event .field--name-field-country,
 .node--type-event .field--name-field-region,
 .node--view-mode-full .field--name-field-event-image,
-.node--type-event .field--name-field-response {
+.node--type-event .field--name-field-response,
+.node--type-story .field--name-field-theme {
   margin-bottom: 1rem;
 }
-
-/* Restrict width and centre horizontally */
-.paragraph--type--reliefweb-document,
-.node--type-basic .cd-page-title,
-.node--type-region .cd-page-title,
-.node--type-region > header,
-.node--type-response .cd-page-title,
-.node--type-response > header,
-.node--type-story .cd-page-title,
-.node--type-event .cd-page-title,
-.node--type-event .field--name-field-event-date,
-.node--type-event .field--name-field-event-location,
-.node--type-event .field--name-field-event-type,
-.node--type-event .field--name-field-country,
-.node--type-event .field--name-field-region,
-.node--type-event .field--name-field-response,
-.field--name-body,
-.field--name-description,
-.field--name-body > ul,
-/* .paragraph .field--name-field-title, */
-.cd-layout-main-content .field--type-text-with-summary,
-.cd-layout-main-content > footer,
-.paragraph--type--text .field--name-field-title,
-.paragraph--type--text .field--name-field-text,
-.paragraph--type--text-and-image.paragraph--view-mode--default .field--name-field-title,
-.paragraph--type--text-and-image.paragraph--view-mode--default .field--name-field-text {
-  max-width: var(--cd-max-content-width);
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.node--type-event .cd-page-title {
-  max-width: var(--cd-max-content-width);
-}
-
-.paragraph--type--section .paragraph--type--figures .field--name-field-text,
-.paragraph--type--section .paragraph--type--figures .field--name-field-title,
-.paragraph--type--section .paragraph--type--text .field--name-field-text,
-.paragraph--type--section .paragraph--type--text .field--name-field-title,
-.paragraph--type--section.paragraph .field--name-field-title,
-.paragraph--type--section .cd-article p {
-  max-width: var(--cd-max-content-width);
-  margin-left: unset;
-  margin-right: unset;
-}
-
-/* Prevent horizontal centering in these cases */
-
-/* I would like to be able to do this for specific List (eg. Events)
-    from the Content List paragraph type
-    but the viewmode concept for Views Reference fields does not apply here
-    so .content-list--view-mode--teaser is moot
-    The viewmode is set in the View config.
-    It currently works the same way for all Content List
-    */
-.paragraph--type--content-list.content-list--view-mode--teaser .field--name-field-title,
-.paragraph--view-mode--image-align-left .field--name-field-title,
-.paragraph--view-mode--image-align-right .field--name-field-title {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-/* Basic vertical rhythm, will need adjusting */
-/* .node--view-mode-full .field--name-body,
-.node--view-mode-full .field--name-description,
-.node--view-mode-full .field--name-field-text,
-.node--view-mode-full .field--name-field-title {
-  margin-top: 2rem;
-  margin-bottom: 4rem;
-} */
 
 .node--view-mode-full .paragraph .field--name-field-title,
 .viewsreference--view-title {
@@ -149,7 +91,7 @@
   }
 }
 
-/* When a Text paragraph is in a layouts */
+/* When a Text paragraph is in a layout */
 .node--view-mode-full .paragraph .field--name-field-text {
   margin-bottom: 2rem;
 }
@@ -184,7 +126,8 @@
 .paragraph--type--node,
 .paragraph--type--section.paragraph--view-mode--default,
 .paragraph--type--section.paragraph--view-mode--tabs,
-.paragraph--type--content-list {
+.paragraph--type--content-list,
+.paragraph--type--reliefweb-document {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -201,18 +144,51 @@
   }
 }
 
+.paragraph--type--reliefweb-document {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .paragraph--type--reliefweb-document {
+    margin-bottom: 6rem;
+  }
+}
+
 /* Paragraphs in layouts or nested, remove margins */
 .layout__region .paragraph--type--node,
-.paragraph--type--section.paragraph--view-mode--tabs .paragraph--type--section {
+.paragraph--type--section.paragraph--view-mode--tabs .paragraph--type--section,
+.layout__region .paragraph--type--reliefweb-document {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 @media screen and (min-width: 768px) {
   .layout__region .paragraph--type--node,
-  .paragraph--type--section.paragraph--view-mode--tabs .paragraph--type--section {
+  .paragraph--type--section.paragraph--view-mode--tabs .paragraph--type--section,
+  .layout__region .paragraph--type--reliefweb-document {
     margin-top: 0;
     margin-bottom: 0;
   }
+}
+
+/* When a Text paragraph is in a layout */
+.node--view-mode-full .paragraph .field--name-field-text {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .node--view-mode-full .paragraph .field--name-field-text {
+    margin-bottom: 3rem;
+  }
+}
+
+/* No top margin on first paragraph type */
+.field--name-field-custom-content .paragraph:first-child {
+  margin-top: 0;
+}
+
+.field--name-field-custom-content .paragraph:last-child {
+  margin-bottom: 0;
 }
 
 .node--view-mode-full .cd-layout-main-content > .field--name-body {
@@ -225,6 +201,41 @@
 .paragraph--type--text-and-image .field--name-field-text > p:first-child,
 .paragraph--type--text .field--name-field-text > p:first-child {
   margin-top: 0;
+}
+
+/* A layout following another layout, reduce margin */
+.paragraph--type--layout {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .paragraph--type--layout:first-child {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+}
+
+.paragraph--type--layout:first-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .paragraph--type--layout:first-child {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.paragraph--type--layout + .paragraph--type--layout {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .paragraph--type--layout + .paragraph--type--layout {
+    margin-bottom: 6rem;
+  }
 }
 
 /* Paragraph Text and Image with alignment */
@@ -386,19 +397,6 @@
   .views-exposed-form.cd-form .cd-form--inline .form-actions {
     padding-inline-end: 0;
   }
-}
-
-.view-display-id-regional_responses .view-content {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-.view-display-id-regional_responses .view-content li {
-  padding: 0.5rem 1rem;
-  border-top: 1px solid var(--brand-grey);
-}
-.view-display-id-regional_responses .view-content li a {
-  text-decoration: none;
 }
 
 /* Story node */

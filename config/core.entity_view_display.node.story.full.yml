@@ -32,7 +32,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 1
     region: content
   field_country:
     type: entity_reference_label
@@ -40,7 +40,7 @@ content:
     settings:
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
   field_custom_content:
     type: layout_paragraphs
@@ -49,7 +49,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 6
+    weight: 2
     region: content
   field_region:
     type: entity_reference_label
@@ -57,7 +57,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
   field_response:
     type: entity_reference_label
@@ -65,13 +65,13 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 3
+    weight: 5
     region: content
   field_story_image:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: story
+      view_mode: hero
       link: false
     third_party_settings: {  }
     weight: 0
@@ -82,7 +82,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 4
+    weight: 6
     region: content
 hidden:
   field_story_type: true

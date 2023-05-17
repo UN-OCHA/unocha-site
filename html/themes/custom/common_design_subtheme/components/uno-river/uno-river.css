@@ -4,6 +4,10 @@
   --rw-card-list-gap-size: 2rem;
 }
 
+.rw-river-article .rw-river-article__header {
+  max-width: var(--cd-max-content-width);
+}
+
 .paragraph--type--reliefweb-river .rw-river-article .rw-river-article__header + .rw-river-article__footer dd {
   font-size: 0.875rem;
 }
