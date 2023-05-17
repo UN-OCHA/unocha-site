@@ -52,3 +52,45 @@
     --uno-card-list-num-cols: 4;
   }
 }
+
+/** Copied from common_design/components/cd/cd-other/cd-layout--content.css.
+  so this layout also works on the Content Editor form.
+**/
+
+/**
+  * Adopt column layout once space allows.
+  */
+@media (min-width: 1024px) {
+  /**
+    * Use flex-box once window can accomodate columns.
+    */
+  .cd-layout {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2rem;
+  }
+
+  /**
+    * Content area should grow to fill available space, but also can shrink to
+    * accomodate any columns that are present.
+    */
+  .cd-layout__content {
+    flex: 1 1 auto;
+  }
+
+  /**
+    * Sidebar(s) should be fixed width. See modifier class if the wider sidebar
+    * is desired on a particular website.
+    */
+  .cd-layout__sidebar {
+    flex: 0 0 285px;
+  }
+
+  /**
+    * Define the wide sidebar. This class isn't present in the default template
+    * and must be placed by overriding within a sub-theme.
+    */
+  .cd-layout__sidebar--wide {
+    flex-basis: 400px;
+  }
+}
