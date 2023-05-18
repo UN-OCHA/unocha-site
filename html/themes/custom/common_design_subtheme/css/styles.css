@@ -285,7 +285,7 @@
   background-color: var(--brand-grey);
 }
 
-/* Video embed */
+/* Video embed defaults to 16:9 aspect ratio */
 .field--name-field-video .field--name-field-media-oembed-video {
   position: relative;
   float: none;

@@ -57,3 +57,22 @@
   font-weight: 700;
   line-height: 1.3;
 }
+
+/* Video embed defaults to 16:9 aspect ratio */
+.field--name-field-video .field--name-field-media-oembed-video {
+  position: relative;
+  float: none;
+  clear: both;
+  width: 100%;
+  height: 0;
+  padding-top: 25px;
+  padding-bottom: 56.25%;
+}
+
+.field--name-field-video .field--name-field-media-oembed-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
