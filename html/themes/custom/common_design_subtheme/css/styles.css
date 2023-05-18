@@ -120,6 +120,7 @@
   }
 }
 
+.paragraph--type--image,
 .paragraph--type--embed,
 .paragraph--type--call-to-action,
 .paragraph--type--video,
@@ -132,6 +133,7 @@
   margin-bottom: 2rem;
 }
 @media screen and (min-width: 768px) {
+  .paragraph--type--image,
   .paragraph--type--embed,
   .paragraph--type--call-to-action,
   .paragraph--type--video,
