@@ -5,6 +5,6 @@ dependencies: {  }
 _core:
   default_config_hash: Q2Ra3jfoIVk0f3SjxJX61byRQFVBAbpzYDQOiY-kno8
 id: main
-label: 'Main navigation'
-description: 'Site section links'
+label: 'Main menu'
+description: 'Main menu with mega menu'
 locked: true
