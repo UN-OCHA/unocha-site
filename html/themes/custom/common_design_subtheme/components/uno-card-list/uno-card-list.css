@@ -118,7 +118,7 @@ article.node--type-story.node--view-mode-card .field--name-body {
   .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 
   .page-node-type-basic .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__title a,
