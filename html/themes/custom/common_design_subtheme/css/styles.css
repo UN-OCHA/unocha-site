@@ -26,7 +26,7 @@
 }
 
 .field--label-inline > .field__label::after {
-  content: ':'
+  content: ":";
 }
 
 .field--label-inline > .field__item {
@@ -47,21 +47,21 @@
 .node--type-story .field--name-field-text,
 .node--type-story .cd-layout-main-content > footer {
   max-width: var(--cd-max-content-width);
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 
 /* Unset cd-article p auto margins */
 .paragraph--type--section .cd-article p,
 .field--name-body > ul {
   max-width: var(--cd-max-content-width);
-  margin-left: unset;
   margin-right: unset;
+  margin-left: unset;
 }
 
 .cd-article p {
-  margin-left: 0;
   margin-right: 0;
+  margin-left: 0;
 }
 
 /* Basic vertical rhythm, will need adjusting */
@@ -85,6 +85,7 @@
 .node--view-mode-full .field--name-field-text {
   margin-bottom: 2rem;
 }
+
 @media screen and (min-width: 768px) {
   .node--view-mode-full .field--name-field-text {
     margin-bottom: 6rem;
@@ -95,6 +96,7 @@
 .node--view-mode-full .paragraph .field--name-field-text {
   margin-bottom: 2rem;
 }
+
 @media screen and (min-width: 768px) {
   .node--view-mode-full .paragraph .field--name-field-text {
     margin-bottom: 3rem;
@@ -114,6 +116,7 @@
 .paragraph--type--campaign {
   margin-bottom: 2rem;
 }
+
 @media screen and (min-width: 768px) {
   .paragraph--type--campaign {
     margin-bottom: 6rem;
@@ -132,6 +135,7 @@
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+
 @media screen and (min-width: 768px) {
   .paragraph--type--image,
   .paragraph--type--embed,
@@ -164,23 +168,13 @@
   margin-top: 0;
   margin-bottom: 1rem;
 }
+
 @media screen and (min-width: 768px) {
   .layout__region .paragraph--type--node,
   .paragraph--type--section.paragraph--view-mode--tabs .paragraph--type--section,
   .layout__region .paragraph--type--reliefweb-document {
     margin-top: 0;
     margin-bottom: 0;
-  }
-}
-
-/* When a Text paragraph is in a layout */
-.node--view-mode-full .paragraph .field--name-field-text {
-  margin-bottom: 2rem;
-}
-
-@media screen and (min-width: 768px) {
-  .node--view-mode-full .paragraph .field--name-field-text {
-    margin-bottom: 3rem;
   }
 }
 
@@ -234,6 +228,7 @@
   margin-top: -2rem;
   margin-bottom: 2rem;
 }
+
 @media screen and (min-width: 768px) {
   .paragraph--type--layout + .paragraph--type--layout {
     margin-bottom: 6rem;
@@ -311,10 +306,10 @@
 .uno-tag {
   display: inline-block;
   padding-inline-end: 1rem;
-  font-weight: 500;
   text-transform: uppercase;
-  font-size: 1.0625rem; /* 17px */
   color: var(--brand-primary--dark);
+  font-size: 1.0625rem; /* 17px */
+  font-weight: 500;
  }
 
 .page-node-type-response .uno-tag,
@@ -347,8 +342,8 @@
 
 .uno-stories .uno-stories__view_all a,
 .view-header .views-display-link {
-  text-decoration: none;
   padding-inline-start: 1rem;
+  text-decoration: none;
 }
 
 .views-exposed-form.cd-form .cd-form--inline,
@@ -379,9 +374,9 @@
   }
 
   .views-exposed-form.cd-form .cd-form--inline .form-actions {
-    text-align: right;
     flex: 1 0 auto;
     padding-inline-end: 1rem;
+    text-align: right;
   }
 }
 
@@ -389,9 +384,6 @@
   .views-exposed-form.cd-form .cd-form--inline > .cd-form__item {
     flex: 1 0 20%;
     max-width: 20%;
-  }
-
-  .views-exposed-form.cd-form .cd-form--inline > .cd-form__item {
     padding-block-end: 0;
   }
 
@@ -427,8 +419,8 @@ footer.cd-author {
 
   .uno-content--custom > a.cd-button {
     position: absolute;
-    right: 0;
     top: 0;
+    right: 0;
   }
 }
 
