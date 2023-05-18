@@ -147,6 +147,11 @@ uno-figures:
     theme:
       components/uno-figures/uno-figures.css: {}
 
+uno-gho:
+  css:
+    theme:
+      components/uno-gho/uno-gho.css: {}
+
 uno-layout:
   css:
     theme:

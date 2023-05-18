@@ -46,3 +46,14 @@
 .cd-layout__sidebar--wide {
   flex-basis: 285px !important;
 }
+
+/* Matches .cd-block-title */
+.field--name-field-title {
+  margin: 0 0 1rem 0;
+  margin-top: 0px;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+}

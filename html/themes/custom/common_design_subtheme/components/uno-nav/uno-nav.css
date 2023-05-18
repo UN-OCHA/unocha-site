@@ -25,7 +25,7 @@
 }
 
 .uno-nav__list--horizontal li {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0 1rem;
   margin-bottom: 0.5rem;
   border-top: 1px solid var(--brand-grey);
 }

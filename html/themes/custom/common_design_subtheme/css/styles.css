@@ -120,6 +120,7 @@
   }
 }
 
+.paragraph--type--image,
 .paragraph--type--embed,
 .paragraph--type--call-to-action,
 .paragraph--type--video,
@@ -132,6 +133,7 @@
   margin-bottom: 2rem;
 }
 @media screen and (min-width: 768px) {
+  .paragraph--type--image,
   .paragraph--type--embed,
   .paragraph--type--call-to-action,
   .paragraph--type--video,
@@ -229,7 +231,7 @@
 }
 
 .paragraph--type--layout + .paragraph--type--layout {
-  margin-top: 0;
+  margin-top: -2rem;
   margin-bottom: 2rem;
 }
 @media screen and (min-width: 768px) {
@@ -308,7 +310,6 @@
 
 .uno-tag {
   display: inline-block;
-  color: var(--brand-highlight-contrast);
   padding-inline-end: 1rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -429,4 +430,9 @@ footer.cd-author {
     right: 0;
     top: 0;
   }
+}
+
+/* Center Story image within the cd-bleed container */
+.field--name-field-story-image {
+  text-align: center;
 }

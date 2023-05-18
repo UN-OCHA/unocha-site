@@ -10,3 +10,8 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+/* If the CTA paragraph is the last on the page, no background */
+.field--name-field-custom-content .paragraph:last-child.paragraph--type--call-to-action.cd-bleed {
+  background-color: transparent;
+}

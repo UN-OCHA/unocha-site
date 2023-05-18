@@ -83,7 +83,7 @@
 %}
 
 {{ attach_library('common_design/cd-article') }}
-{{ attach_library('common_design/cd-author') }}
+{{ attach_library('common_design/cd-bleed') }}
 {{ attach_library('common_design/cd-typography') }}
 {{ attach_library('common_design_subtheme/uno-social-links') }}
 
@@ -111,7 +111,10 @@
   {{ local_tasks }}
 
   <div{{ content_attributes.addClass('cd-layout-main-content') }}>
-    {{ content }}
+
+    <div class="cd-bleed">{{ content.field_story_image }}</div>
+
+    {{ content|without('field_story_image') }}
 
     {% if display_submitted %}
       <footer class="cd-author node__meta [ cd-bumper ]">

@@ -77,7 +77,6 @@
 }
 
 /* 2nd level menu items without children */
-.uno-mega-menu .cd-nav__menu-item--level-2:not(.menu-item--expanded) + .cd-nav__menu-item--level-2,
-.uno-mega-menu .cd-nav__menu-item--level-2:not(.menu-item--expanded) + .cd-nav__menu-item--level-2:not(.menu-item--expanded) {
-  margin-top: 1rem;
+.uno-mega-menu .cd-nav__menu-item--level-2:not(.menu-item--expanded) {
+  margin-bottom: 0.5rem;
 }
