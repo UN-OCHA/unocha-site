@@ -134,6 +134,9 @@
   align-items: center;
   cursor: pointer;
 }
+.canto-tree [data-tree-album] {
+  cursor: pointer;
+}
 
 .canto-gallery {
   position: relative;
