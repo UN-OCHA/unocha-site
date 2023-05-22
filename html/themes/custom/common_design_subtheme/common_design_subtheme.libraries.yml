@@ -87,6 +87,12 @@ rw-document:
       components/rw-document/rw-document.css: {}
   dependencies:
     - common_design/cd-page-title
+    - common_design_subtheme/rw-icons
+
+rw-icons:
+  css:
+    theme:
+      components/rw-icons/rw-icons.css: {}
 
 rw-key-figures:
   css:
@@ -104,6 +110,7 @@ rw-river:
       components/rw-river/rw-river-views.css: {}
   dependencies:
     - common_design_subtheme/rw-brand
+    - common_design_subtheme/rw-icons
 
 uno-breadcrumb:
   css:
@@ -166,6 +173,13 @@ uno-nav:
   css:
     theme:
       components/uno-nav/uno-nav.css: {}
+
+uno-response-map:
+  css:
+    theme:
+      components/uno-response-map/uno-response-map.css: {}
+  dependencies:
+    - common_design_subtheme/rw-icons
 
 uno-river:
   css:

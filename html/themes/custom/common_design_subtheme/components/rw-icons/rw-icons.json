@@ -1,0 +1,182 @@
+{
+  "version": "./VERSION",
+  "style": "../../css/brand.css",
+  "path": "/themes/custom/common_design_subtheme/components/rw-icons",
+  "colors": {
+    "dark-blue": "--cd-reliefweb-brand-blue--dark",
+    "dark-red": "--cd-reliefweb-brand-red--dark",
+    "dark-grey": "--cd-reliefweb-brand-grey--dark",
+    "light-grey": "--cd-reliefweb-brand-grey--light",
+    "grey": "#b6c8d0",
+    "white": "white",
+    "blue": "--cd-reliefweb-brand-blue",
+    "green": "--cd-reliefweb-green",
+    "orange": "--cd-reliefweb-orange--alert",
+    "red": "--cd-reliefweb-brand-red"
+  },
+  "icons": {
+    "common": {
+      "source": "img/icons/common",
+      "exclude": [
+        "search",
+        "up",
+        "down",
+        "info",
+        "ok",
+        "warning",
+        "error",
+        "job",
+        "training",
+        "report",
+        "map",
+        "infographic",
+        "interactive"
+      ],
+      "sizes": {
+        "12": [
+          "dark-blue",
+          "dark-red",
+          "dark-grey",
+          "white"
+        ],
+        "18": [
+          "dark-blue",
+          "dark-red",
+          "dark-grey",
+          "white"
+        ]
+      }
+    },
+    "search": {
+      "source": "img/icons/common",
+      "include": [
+        "search"
+      ],
+      "sizes": {
+        "18": [
+          "dark-blue",
+          "dark-red"
+        ],
+        "26": [
+          "white"
+        ]
+      }
+    },
+    "toggle": {
+      "source": "img/icons/common",
+      "include": [
+        "up",
+        "down"
+      ],
+      "sizes": {
+        "9": [
+          "dark-blue",
+          "dark-red",
+          "dark-grey",
+          "white"
+        ],
+        "12": [
+          "dark-blue"
+        ],
+        "18": [
+          "white"
+        ]
+      }
+    },
+    "status": {
+      "source": "img/icons/common",
+      "include": [
+        "info",
+        "ok",
+        "warning",
+        "error"
+      ],
+      "sizes": {
+        "20": [
+          "blue",
+          "green",
+          "orange",
+          "red"
+        ]
+      }
+    },
+    "content": {
+      "source": "img/icons/common",
+      "include": [
+        "job",
+        "training",
+        "report",
+        "map",
+        "infographic",
+        "interactive"
+      ],
+      "sizes": {
+        "16": [
+          "dark-grey"
+        ],
+        "24": [
+          "grey"
+        ],
+        "36": [
+          "dark-blue"
+        ]
+      }
+    },
+    "disaster-type": {
+      "source": "img/icons/disaster-types",
+      "sizes": {
+        "16": [
+          "white",
+          "grey",
+          "orange",
+          "red"
+        ],
+        "24": [
+          "grey",
+          "orange",
+          "red"
+        ],
+        "32": [
+          "white"
+        ]
+      }
+    },
+    "social-media": {
+      "source": "img/icons/social-media",
+      "sizes": {
+        "48": [
+          "dark-blue",
+          "dark-red"
+        ]
+      }
+    },
+    "map-marker": {
+      "source": "img/icons/map",
+      "sizes": {
+        "16": [
+          "grey",
+          "orange",
+          "red"
+        ],
+        "44": [
+          "blue",
+          "grey",
+          "orange",
+          "red"
+        ]
+      }
+    },
+    "datepicker": {
+      "source": "img/icons/datepicker",
+      "include": [
+        "datepicker"
+      ],
+      "sizes": {
+        "32": [
+          "dark-blue",
+          "dark-red"
+        ]
+      }
+    }
+  }
+}

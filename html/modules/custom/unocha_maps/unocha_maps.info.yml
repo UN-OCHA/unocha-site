@@ -1,0 +1,7 @@
+type: module
+name: UNOCHA Maps
+description: 'Handles maps.'
+package: unocha
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:unocha_paragraphs

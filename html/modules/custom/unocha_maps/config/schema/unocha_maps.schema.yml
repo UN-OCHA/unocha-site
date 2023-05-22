@@ -1,0 +1,7 @@
+unocha_maps.settings:
+  type: config_object
+  label: 'UNOCHA Maps settings'
+  mapping:
+    mapbox_key:
+      type: string
+      label: 'Mapbox style key.'
