@@ -1,0 +1,14 @@
+mapbox:
+  css:
+    component:
+      /mapbox/mapbox-gl-js/v1.7.0/mapbox-gl.css: { type: external, minified: true }
+  js:
+    /mapbox/mapbox-gl-js/v1.7.0/mapbox-gl.js: { type: external, minified: true, weight: -50 }
+    components/mapbox/mapbox.js: { weight: -20 }
+
+response-map:
+  js:
+    components/response-map/response-map.js: { weight: -10 }
+  dependencies:
+    - unocha_maps/mapbox
+    - core/drupalSettings

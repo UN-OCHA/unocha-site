@@ -1,0 +1,126 @@
+<?php
+
+/**
+ * @file
+ * Module file for the unocha_maps module.
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Menu\MenuTreeParameters;
+
+/**
+ * Implements hook_preprocess_paragraph__type().
+ */
+function unocha_maps_preprocess_paragraph__response_map(array &$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+
+  // Retrieve the closest node parent.
+  $parent = unocha_paragraphs_get_paragraph_parent_node($paragraph);
+
+  if (!empty($parent)) {
+    $entity_type_manager = \Drupal::entityTypeManager();
+    if ($parent->bundle() === 'region') {
+      $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+
+      // Get the menu links referencing this node.
+      $menu_links = $menu_link_manager->loadLinksByRoute('entity.node.canonical', [
+        'node' => $parent->id(),
+      ]);
+
+      // Get the ID of the menu link for the node in the main navigation menu.
+      $menu_link_id = NULL;
+      if (!empty($menu_links)) {
+        foreach ($menu_links as $menu_link) {
+          if ($menu_link->getMenuName() === 'main') {
+            $menu_link_id = $menu_link->getPluginId();
+          }
+        }
+      }
+
+      if (isset($menu_link_id)) {
+        $tree_parameters = new MenuTreeParameters();
+        $tree_parameters->setRoot($menu_link_id);
+        $tree_parameters->setMaxDepth(1);
+        $tree_parameters->excludeRoot();
+
+        // Get the child links.
+        $menu_links = \Drupal::service('menu.link_tree')
+          ->load('main', $tree_parameters);
+
+        // Get the associated nodes.
+        $responses = unocha_paragraphs_get_nodes_from_menu_links($menu_links);
+        $title = t('Regional coverage');
+      }
+    }
+    else {
+      // @todo should we filter more?
+      $responses = $entity_type_manager->getStorage('node')->loadByProperties([
+        'type' => 'response',
+        'status' => 1,
+      ]);
+      $title = t('Current responses');
+    }
+
+    // Filter out responses without a country because we cannot display them
+    // on the map.
+    if (!empty($responses)) {
+      foreach ($responses as $key => $response) {
+        if ($response->field_country->isEmpty()) {
+          unset($responses[$key]);
+        }
+      }
+    }
+
+    // Add the responses to render.
+    if (!empty($responses)) {
+      $id = Html::getUniqueId('response-map');
+
+      $build = $entity_type_manager
+        ->getViewBuilder('node')
+        ->viewMultiple($responses, 'map');
+
+      // Add the coordinates of the response's countries as attributes.
+      foreach ($responses as $response) {
+        if (isset($build[$response->id()])) {
+          $coordinates = [];
+          foreach ($response->field_country as $item) {
+            $country = $item->entity;
+            if (isset($country)) {
+              $coordinates[] = $country->field_location->lon . 'x' . $country->field_location->lat;
+            }
+          }
+          $build[$response->id()]['#attributes']['data-coordinates'] = implode('|', $coordinates);
+          $build[$response->id()]['#attributes']['class'][] = 'unocha-response-map__article';
+        }
+      }
+
+      $variables['content']['title']['#markup'] = $title;
+      $variables['content']['responses'] = [
+        '#type' => 'container',
+        '#attributes' => [
+          'class' => 'unocha-response-map__content',
+          'data-map-content' => '',
+        ],
+        'responses' => $build,
+      ];
+      $variables['attributes']['data-response-map'] = $id;
+      $variables['attributes']['class'][] = 'unocha-response-map';
+
+      // Attach the map library.
+      $variables['#attached']['library'][] = 'unocha_maps/response-map';
+      $variables['#attached']['drupalSettings']['unochaResponseMap'] = [
+        'mapboxKey' => \Drupal::config('unocha_maps.settings')->get('mapbox_key') ?? '',
+        // It's replaced server side.
+        'mapboxToken' => 'token',
+        'maps' => [
+          $id => [
+            'close' => t('Close'),
+            'fitBounds' => TRUE,
+            'usePopup' => FALSE,
+          ],
+        ],
+      ];
+    }
+  }
+}
