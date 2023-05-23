@@ -296,6 +296,30 @@
 .uno-subscribe {
   margin: 2rem 0 3rem;
 }
+.uno-subscribe form {
+  display: flex;
+}
+.uno-subscribe .uno-subscribe__logo {
+  margin-inline-end: 3rem;
+}
+.uno-subscribe .uno-subscribe__logo svg {
+  fill: var(--brand-primary);
+}
+.uno-subscribe .mc-field-group {
+  display: flex;
+}
+.uno-subscribe .cd-button {
+  border-radius: 0;
+}
+.uno-subscribe .email {
+  border: 1px solid var(--brand-grey);
+  padding-inline-start: 2rem;
+}
+@media (min-width: 767px) {
+  .uno-subscribe .email {
+    width: 400px;
+  }
+}
 
 .uno-tag {
   display: inline-block;
