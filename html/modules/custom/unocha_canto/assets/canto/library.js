@@ -13,13 +13,7 @@
       this.apiUrl = '/admin/unocha_canto/canto/api';
       this.apiHeaders = {};
 
-      // @todo retrieve that from the iframe attributes.
-      this.allowedExtensions = null;
-
-      this.imageList = [];
-      this.loadingComplete = false;
-
-      this.offset = 0;
+      this.endpoint = null;
       this.limit = 50;
     }
 
@@ -90,8 +84,16 @@
       return list;
     }
 
-    async getList(endpoint) {
-      const filter = this.getListFilter();
+    async getList(endpoint, start = 0) {
+      // Store the endpoint so we can query other pages via
+      // getCurrentListFromPage().
+      this.endpoint = endpoint;
+
+      if (!endpoint) {
+        return null;
+      }
+
+      const filter = this.getListFilter(start);
       if (endpoint.indexOf('?') >= 0) {
         endpoint = endpoint + '&' + filter;
       }
@@ -102,26 +104,23 @@
       const data = await this.request(endpoint);
       if (typeof data === 'object') {
         data.start = data.start || 0;
-        // @todo there may be a better way to merge the new results.
-        // this.imageList.push.apply(this.imageList, data.results);
-        // this.offset = data.start + data.limit + 1;
-        // this.loadingComplete = data.found - data.limit <= data.start;
-        // @todo update loading overlay.
         return data;
       }
       return null;
     }
 
-    getListFilter() {
+    async getCurrentListFromPage(page) {
+      const list = await this.getList(this.endpoint, page * this.limit);
+      return list;
+    }
+
+    getListFilter(start = 0) {
       const parameters = new URLSearchParams({
         'sortBy': 'time',
         'sortDirection': 'descending',
         'limit': this.limit,
-        'start': this.imageList.length === 0 ? 0 : this.offset
+        'start': start
       });
-      // @todo we need to inform that we are loading more images if there are
-      // already some images in the library otherwise, we need to clear the
-      // current list of images.
       return parameters.toString();
     }
 
@@ -242,6 +241,7 @@
         results.textContent = '';
         empty.removeAttribute('hidden');
         list.setAttribute('hidden', '');
+        this.removePager();
       }
       else {
         // Update the results.
@@ -276,9 +276,102 @@
 
         this.updateSelection();
 
-        // @todo handle loading more images when scrolling or simpler, add a
-        // button to add more or use a pager.
+        if (total > this.client.getLimit()) {
+          this.createPager(start, this.client.getLimit(), total);
+        }
+        else {
+          this.removePager();
+        }
       }
+    }
+
+    removePager() {
+      if (this.pager) {
+        this.pager.parentNode.removeChild(this.pager);
+      }
+    }
+
+    createPager(start, limit, total) {
+      const current = Math.floor(start / limit);
+      const pages = Math.ceil(total / limit);
+      const quantity = Math.min(pages, 9);
+      const middle = Math.ceil(quantity / 2);
+
+      if (this.pager) {
+        this.removePager();
+      }
+
+      const pager = document.createElement('ul');
+      pager.classList.add('canto-pager');
+
+      const ellipsis = document.createElement('span');
+      ellipsis.classList.add('canto-page-ellipsis');
+      ellipsis.appendChild(document.createTextNode('...'));
+
+      if (current > 0) {
+        pager.appendChild(this.createPagerPage('First', 0, ['canto-page-first']));
+        pager.appendChild(this.createPagerPage('Previous', current - 1, ['canto-page-previous']));
+        if (quantity < pages) {
+          pager.appendChild(ellipsis.cloneNode(true));
+        }
+      }
+
+      let offset = 0;
+      if (pages - current < quantity) {
+        offset = pages - quantity;
+      }
+      else if (current < middle) {
+        offset = 0;
+      }
+      else if (current > middle) {
+        offset = current - middle + 1;
+      }
+
+      for (let i = offset, l = offset + quantity; i < l; i++) {
+        pager.appendChild(this.createPagerPage(i + 1, i, ['canto-page-num'], i === current));
+      }
+
+      if (pages - current - quantity > 0) {
+        if (quantity < pages) {
+          pager.appendChild(ellipsis.cloneNode(true));
+        }
+        pager.appendChild(this.createPagerPage('Next', current + 1, ['canto-page-next']));
+        pager.appendChild(this.createPagerPage('Last', pages - 1, ['canto-page-last']));
+      }
+
+      pager.addEventListener('click', async (event) => {
+        const target = event.target;
+        if (target.hasAttribute && target.hasAttribute('data-page')) {
+          event.preventDefault();
+          const page = target.getAttribute('data-page') || 0;
+          const list = await this.client.getCurrentListFromPage(page);
+          this.renderImageList(list);
+        }
+      });
+
+      const wrapper = document.getElementById('canto-pager-wrapper');
+      wrapper.appendChild(pager);
+
+      this.pager = pager;
+    }
+
+    createPagerPage(text, page, classes = [], current = false) {
+      const listItem = document.createElement('li');
+      listItem.classList.add(...classes.concat(['canto-page']));
+      if (current) {
+        listItem.classList.add('canto-page-current');
+      }
+
+      const link = document.createElement('a');
+      link.appendChild(document.createTextNode(text));
+      link.setAttribute('href', '?page=' + page);
+      link.setAttribute('data-page', page);
+      if (current) {
+        link.setAttribute('aria-current', 'page');
+      }
+
+      listItem.appendChild(link);
+      return listItem;
     }
 
     createImage(data) {
