@@ -182,7 +182,7 @@ class ReliefWebRiver extends FormatterBase {
       $element = [
         '#theme' => 'unocha_reliefweb_river__' . $this->viewMode,
         '#resource' => $data['river']['resource'],
-        '#title' => $item->getTitle() ?: $this->t('List'),
+        '#title' => $item->getTitle() ?: '',
         '#entities' => $data['entities'],
       ];
 
