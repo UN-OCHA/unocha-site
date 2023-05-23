@@ -7,6 +7,7 @@
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Menu\MenuTreeParameters;
+use Drupal\unocha_utility\Helpers\LocalizationHelper;
 
 /**
  * Implements hook_preprocess_paragraph__type().
@@ -74,6 +75,32 @@ function unocha_maps_preprocess_paragraph__response_map(array &$variables) {
 
     // Add the responses to render.
     if (!empty($responses)) {
+      // Sort responses by priority and name.
+      $collator = LocalizationHelper::getCollator();
+      uasort($responses, function ($a, $b) use ($collator) {
+        $a_active = (int) ($a->field_active_response?->value ?? 0);
+        $b_active = (int) ($b->field_active_response?->value ?? 0);
+
+        if ($a_active === $b_active) {
+          return $collator->compare($a->label(), $b->label());
+        }
+        return $b_active <=> $a_active;
+      });
+
+      // Group responses by countries.
+      $grouped = [];
+      foreach ($responses as $response) {
+        foreach ($response->field_country as $item) {
+          $country = $item->target_id;
+          if (isset($grouped[$country])) {
+            $grouped[$country]['related'][$response->id()] = $response;
+          }
+          else {
+            $grouped[$country]['response'] = $response;
+          }
+        }
+      }
+
       $id = Html::getUniqueId('response-map');
 
       $build = $entity_type_manager
@@ -84,14 +111,56 @@ function unocha_maps_preprocess_paragraph__response_map(array &$variables) {
       foreach ($responses as $response) {
         if (isset($build[$response->id()])) {
           $coordinates = [];
+          $related = [];
+
+          // Add the coordinates for each country the response is tagged with
+          // and store the related responses.
           foreach ($response->field_country as $item) {
             $country = $item->entity;
-            if (isset($country)) {
+            if (isset($country->field_location->lon, $country->field_location->lat)) {
               $coordinates[] = $country->field_location->lon . 'x' . $country->field_location->lat;
+
+              // Add the related responses.
+              $country_responses = $grouped[$country->id()] ?? [];
+              // First add the main response for the country.
+              if (isset($country_responses['response'])) {
+                $related[$country_responses['response']->id()] = $country_responses['response'];
+              }
+              // Then add the related responses.
+              if (isset($country_responses['related'])) {
+                $related += $country_responses['related'];
+              }
+              // Remove the current response from the list of related responses.
+              unset($related[$response->id()]);
             }
           }
+
+          $build[$response->id()]['#attributes']['data-response'] = $response->id();
           $build[$response->id()]['#attributes']['data-coordinates'] = implode('|', $coordinates);
           $build[$response->id()]['#attributes']['class'][] = 'unocha-response-map__article';
+
+          // Add the related responses as a list of links to their pages.
+          if (!empty($related)) {
+            // Sort the related responses alphabetically.
+            uasort($related, function ($a, $b) use ($collator) {
+              return $collator->compare($a->label(), $b->label());
+            });
+
+            $build[$response->id()]['related'] = [
+              '#theme' => 'links',
+              '#links' => array_map(function ($response) {
+                return [
+                  'title' => $response->label(),
+                  'url' => $response->toUrl(),
+                ];
+              }, $related),
+              '#heading' => [
+                'level' => 'h4',
+                'text' => t('Related responses'),
+              ],
+              '#weight' => 100,
+            ];
+          }
         }
       }
 

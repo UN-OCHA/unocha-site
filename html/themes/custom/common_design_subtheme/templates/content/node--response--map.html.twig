@@ -77,8 +77,14 @@
   {% endif %}
   {{ title_suffix }}
 
-  <div{{ content_attributes }}>
-    {{ content }}
+  <div{{ content_attributes.addClass('unocha-response-map__article__content') }}>
+    {{ content|without('related') }}
   </div>
+
+  {% if content.related is not empty %}
+  <footer class="unocha-response-map__article__footer">
+    {{ content.related }}
+  </footer>
+  {% endif %}
 
 </article>

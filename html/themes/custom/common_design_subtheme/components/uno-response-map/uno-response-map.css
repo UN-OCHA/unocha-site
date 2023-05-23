@@ -85,6 +85,22 @@
   margin: 0;
   font-size: 15px;
 }
+.js .unocha-response-map[data-map-enabled] .unocha-response-map__article__content * {
+  font-size: 1rem;
+}
+.js .unocha-response-map[data-map-enabled] .unocha-response-map__article__footer * {
+  font-size: 1rem;
+}
+.js .unocha-response-map[data-map-enabled] .unocha-response-map__article__footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* Hide responses that don't have associated markers when the map is displayed
+ * because they cannot be displayed by clicking on a marker obviously. */
+.js .unocha-response-map[data-map-enabled] .unocha-response-map__article[data-response]:not([data-marker-id]) {
+  display: none;
+}
 
 /**
  * Map markers.
