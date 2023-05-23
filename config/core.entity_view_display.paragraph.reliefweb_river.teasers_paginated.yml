@@ -1,0 +1,52 @@
+uuid: 3c89ca13-4a8e-47ab-bd16-a3ded1aab180
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.teasers_paginated
+    - field.field.paragraph.reliefweb_river.field_reliefweb_river
+    - field.field.paragraph.reliefweb_river.field_text
+    - field.field.paragraph.reliefweb_river.field_title
+    - field.field.paragraph.reliefweb_river.paragraph_view_mode
+    - paragraphs.paragraphs_type.reliefweb_river
+  module:
+    - layout_builder
+    - text
+    - unocha_reliefweb
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.reliefweb_river.teasers_paginated
+targetEntityType: paragraph
+bundle: reliefweb_river
+mode: teasers_paginated
+content:
+  field_reliefweb_river:
+    type: reliefweb_river
+    label: hidden
+    settings:
+      white_label: true
+      view_all_link: false
+      ocha_only: '1'
+      paginated: '1'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  paragraph_view_mode: true

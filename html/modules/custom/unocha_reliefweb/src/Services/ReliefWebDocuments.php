@@ -200,6 +200,8 @@ class ReliefWebDocuments {
    *   The URL of the river.
    * @param int $limit
    *   Number of items to retrieve from the API. Defaults to 5.
+   * @param int $offset
+   *   Number of items from which to start retrieving results. Defaults to 0.
    * @param array $filter
    *   Optional filter to further limit the document to return.
    * @param bool $white_label
@@ -209,7 +211,7 @@ class ReliefWebDocuments {
    *   An associative array with the river information and the document entities
    *   data usable in templates.
    */
-  public function getRiverDataFromUrl($url, $limit = 5, array $filter = NULL, $white_label = TRUE) {
+  public function getRiverDataFromUrl($url, $limit = 5, $offset = 0, array $filter = NULL, $white_label = TRUE) {
     $river = $this->getRiverFromUrl($url);
     if (empty($river)) {
       return [];
@@ -218,6 +220,10 @@ class ReliefWebDocuments {
     $payload = $this->getPayloadFromUrl($url);
     if (empty($payload)) {
       return [];
+    }
+
+    if (!empty($offset)) {
+      $payload['offset'] = $offset;
     }
 
     return $this->getDocumentsFromPayload($river, $payload, $limit, $filter, $white_label);
@@ -238,8 +244,9 @@ class ReliefWebDocuments {
    *   Whether to white label the ReliefWeb article URL or not.
    *
    * @return array
-   *   An associative array with the river information and the entities data
-   *   usable in templates.
+   *   An associative array with the river information, the entities data
+   *   usable in templates and the total number of resources matching the
+   *   payload.
    */
   protected function getDocumentsFromPayload(array $river, array $payload, $limit, array $filter = NULL, $white_label = TRUE) {
     // Set the maximum number of items to return.
@@ -278,6 +285,7 @@ class ReliefWebDocuments {
     return [
       'river' => $river,
       'entities' => $entities,
+      'total' => $data['totalCount'] ?? count($entities),
     ];
   }
 
