@@ -53,3 +53,6 @@ field.formatter.settings.reliefweb_river:
     view_all_link:
       type: boolean
       label: 'Display a link to the full list of articles'
+    paginated:
+      type: boolean
+      label: 'User a pager to navigate the list'

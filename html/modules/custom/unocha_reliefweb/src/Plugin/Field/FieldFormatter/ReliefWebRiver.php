@@ -6,6 +6,8 @@ use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Pager\Pager;
+use Drupal\Core\Pager\PagerManagerInterface;
 use Drupal\unocha_reliefweb\Services\ReliefWebDocuments;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -21,6 +23,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * )
  */
 class ReliefWebRiver extends FormatterBase {
+
+  /**
+   * The pager manager servie.
+   *
+   * @var \Drupal\Core\Pager\PagerManagerInterface
+   */
+  protected $pagerManager;
 
   /**
    * The ReliefWeb documents service.
@@ -40,7 +49,8 @@ class ReliefWebRiver extends FormatterBase {
     $label,
     $view_mode,
     array $third_party_settings,
-    ReliefWebDocuments $reliefweb_documents
+    ReliefWebDocuments $reliefweb_documents,
+    PagerManagerInterface $pager_manager
   ) {
     parent::__construct(
       $plugin_id,
@@ -52,6 +62,7 @@ class ReliefWebRiver extends FormatterBase {
       $third_party_settings
     );
     $this->reliefwebDocuments = $reliefweb_documents;
+    $this->pagerManager = $pager_manager;
   }
 
   /**
@@ -66,7 +77,8 @@ class ReliefWebRiver extends FormatterBase {
       $configuration['label'],
       $configuration['view_mode'],
       $configuration['third_party_settings'],
-      $container->get('reliefweb.documents')
+      $container->get('reliefweb.documents'),
+      $container->get('pager.manager')
     );
   }
 
@@ -78,6 +90,7 @@ class ReliefWebRiver extends FormatterBase {
       'white_label' => TRUE,
       'ocha_only' => TRUE,
       'view_all_link' => FALSE,
+      'paginated' => FALSE,
     ] + parent::defaultSettings();
   }
 
@@ -103,6 +116,12 @@ class ReliefWebRiver extends FormatterBase {
       '#default_value' => !empty($this->getSetting('view_all_link')),
       '#description' => $this->t('If checked, display a link to the ReliefWeb river.'),
     ];
+    $elements['paginated'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Paginated'),
+      '#default_value' => !empty($this->getSetting('paginated')),
+      '#description' => $this->t('If checked, show a pager to navigate the list.'),
+    ];
     return $elements;
   }
 
@@ -121,6 +140,9 @@ class ReliefWebRiver extends FormatterBase {
     $summary[] = $this->t('Show view all link: @value', [
       '@value' => $this->getSetting('view_all_link') ? $this->t('Yes') : $this->t('No'),
     ]);
+    $summary[] = $this->t('Paginated: @value', [
+      '@value' => $this->getSetting('paginated') ? $this->t('Yes') : $this->t('No'),
+    ]);
 
     return $summary;
   }
@@ -131,6 +153,7 @@ class ReliefWebRiver extends FormatterBase {
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $elements = [];
     $white_label = !empty($this->getSetting('white_label'));
+    $paginated = !empty($this->getSetting('paginated'));
 
     /** @var \Drupal\unocha_reliefweb\Plugin\Field\FieldType\ReliefWebRiver $item */
     foreach ($items as $delta => $item) {
@@ -144,7 +167,14 @@ class ReliefWebRiver extends FormatterBase {
         continue;
       }
 
-      $data = $this->getReliefWebDocuments()->getRiverDataFromUrl($url, $limit, NULL, $white_label);
+      $pager_id = NULL;
+      if ($paginated) {
+        $pager_id = $this->pagerManager->getMaxPagerElementId() + 1;
+      }
+
+      $offset = isset($pager_id) ? $this->pagerManager->findPage($pager_id) : 0;
+
+      $data = $this->getReliefWebDocuments()->getRiverDataFromUrl($url, $limit, $offset, NULL, $white_label);
       if (empty($data['entities'])) {
         continue;
       }
@@ -168,10 +198,53 @@ class ReliefWebRiver extends FormatterBase {
         }
       }
 
+      // Initialize the pager.
+      if (isset($pager_id) && !empty($data['total'])) {
+        $pager = $this->pagerManager->createPager($data['total'], $limit, $pager_id);
+
+        // Add the pager.
+        $element['#pager'] = [
+          '#type' => 'pager',
+          '#element' => $pager_id,
+        ];
+
+        // Add the results.
+        $element['#results'] = $this->getRiverResults($pager, count($data['entities']));
+      }
+
       $elements[$delta] = $element;
     }
 
     return $elements;
+  }
+
+  /**
+   * Get the results render array for the given pager and number of found items.
+   *
+   * @param \Drupal\Core\Pager\Pager $pager
+   *   Pager for the current river.
+   * @param int $count
+   *   Number of found documents.
+   *
+   * @return array
+   *   Render array for the results.
+   */
+  protected function getRiverResults(Pager $pager, $count) {
+    $page = $pager->getCurrentPage();
+    $limit = $pager->getLimit();
+    $total = $pager->getTotalItems();
+
+    $offset = $page * $limit;
+    // Range is inclusive so we start at 1.
+    $start = $count > 0 ? $offset + 1 : 0;
+    $end = $offset + $count;
+
+    return [
+      '#theme' => 'unocha_reliefweb_river_results',
+      '#total' => $total,
+      '#start' => $start,
+      '#end' => $end,
+    ];
   }
 
   /**
