@@ -1,9 +1,9 @@
-uuid: 3c89ca13-4a8e-47ab-bd16-a3ded1aab180
+uuid: 0ea4a15b-dc5d-40d8-a997-02441129d2ca
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.paragraph.teasers_paginated
+    - core.entity_view_mode.paragraph.default_paginated
     - field.field.paragraph.reliefweb_river.field_reliefweb_river
     - field.field.paragraph.reliefweb_river.field_text
     - field.field.paragraph.reliefweb_river.field_title
@@ -17,10 +17,10 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: paragraph.reliefweb_river.teasers_paginated
+id: paragraph.reliefweb_river.default_paginated
 targetEntityType: paragraph
 bundle: reliefweb_river
-mode: teasers_paginated
+mode: default_paginated
 content:
   field_reliefweb_river:
     type: reliefweb_river
@@ -28,8 +28,8 @@ content:
     settings:
       white_label: true
       view_all_link: false
+      paginated: true
       ocha_only: '1'
-      paginated: '1'
     third_party_settings: {  }
     weight: 2
     region: content

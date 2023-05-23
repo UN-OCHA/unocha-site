@@ -22,6 +22,7 @@ content:
     settings:
       white_label: true
       view_all_link: false
+      paginated: false
       ocha_only: true
     third_party_settings: {  }
     weight: 2
