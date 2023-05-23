@@ -336,8 +336,20 @@
 
 .uno-stories .uno-stories__view_all a,
 .view-header .views-display-link {
+  position: relative;
   padding-inline-start: 1rem;
   text-decoration: none;
+}
+
+.uno-stories .uno-stories__view_all a::after,
+.view-header .views-display-link::after {
+  display: inline-block;
+  overflow: hidden;
+  width: 12px;
+  height: 12px;
+  margin: 0 0 0 3px;
+  content: "";
+  background: var(--rw-icons--common--arrow-right--12--dark-blue);
 }
 
 .views-exposed-form.cd-form .cd-form--inline,
