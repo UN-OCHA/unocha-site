@@ -5,13 +5,10 @@
 
   Drupal.behaviors.unochaResponseMap = {
     attach: function (context, settings) {
-      console.log('unochaResponseMap');
-
       // Requirements.
       if (!unocha || !unocha.mapbox || !settings || !settings.unochaResponseMap) {
         return;
       }
-      console.log(settings.unochaResponseMap);
 
       // Initialize the RW mapbox handler so we can check support.
       unocha.mapbox.init(settings.unochaResponseMap.mapboxKey, settings.unochaResponseMap.mapboxToken);
@@ -34,62 +31,84 @@
         }
       }
 
-      // Set active marker.
-      function setActiveMarker(map, marker, active, click) {
-        // If the active marker is the same marker and it was clicked, redirect
-        // to the response page, otherwise, just skip as it stays active.
-        if (active === marker) {
+      // Get the markers associated with the response.
+      function getResponseMarkers(markers, response) {
+        var responseMarkers = [];
+        var ids = response.getAttribute('data-coordinates').split('|');
+        for (var i = 0, l = ids.length; i < l; i++) {
+          var id = ids[i];
+          if (markers.hasOwnProperty(id)) {
+            responseMarkers.push(markers[id]);
+          }
+        }
+        return responseMarkers;
+      }
+
+      // Set the active response.
+      function setActiveResponse(map, markers, response, active, click) {
+        // If the same response was made active again, for example, by clicking
+        // one of its markers again, then we redirect to the response page.
+        // Otherwise, we don't do anything as it's already the active response.
+        if (active === response) {
           if (click === true) {
-            redirect(marker.response);
+            redirect(response);
           }
         }
         else {
           // Unset the previously active marker.
-          unsetActiveMarker(active);
+          unsetActiveResponse(markers, active);
+
+          var responseMarkers = getResponseMarkers(markers, response);
 
           // Determine if the description should be displayed on the left or
-          // right.
+          // right based on the position of the first response marker.
+          // This is only used when showing the response in a popup.
           var center = map.getCenter().wrap();
-          var lnglat = marker.getLngLat().wrap();
+          var lnglat = responseMarkers[0].getLngLat().wrap();
           var position = center.lng > lnglat.lng ? 'right' : 'left';
 
-          // Mark the clicked or hovered marker as being active and show the
-          // response description.
-          marker.getElement().setAttribute('data-active', '');
-          marker.response.setAttribute('data-active', position);
+          // Mark the clicked or hovered marker as being active.
+          for (var i = 0, l = responseMarkers.length; i < l; i++) {
+            responseMarkers[i].getElement().setAttribute('data-active', '');
+          }
+          // Mark the response as active to display it.
+          response.setAttribute('data-active', position);
         }
-        return marker;
+        return response;
       }
 
-      // Unset active marker.
-      function unsetActiveMarker(active) {
-        if (active) {
-          active.getElement().removeAttribute('data-active');
-          active.response.removeAttribute('data-active');
+      // Unset the active response.
+      function unsetActiveResponse(markers, response) {
+        if (response) {
+          var responseMarkers = getResponseMarkers(markers, response);
+          for (var i = 0, l = responseMarkers.length; i < l; i++) {
+            responseMarkers[i].getElement().removeAttribute('data-active');
+          }
+          response.removeAttribute('data-active');
         }
         return null;
       }
 
       // Extract the coordinates of a response article. A response can cover
       // several countries so can have several pairs of coordinates.
-      function extractCoordinates(node) {
-        var coordinates = node.getAttribute('data-coordinates').split('|');
+      function extractCoordinates(response) {
+        var coordinates = response.getAttribute('data-coordinates').split('|');
         for (var i = 0, l = coordinates.length; i < l; i++) {
           coordinates[i] = coordinates[i].split('x');
         }
         return coordinates;
       }
 
-      // Create a response marker.
-      function createMarker(id, coordinates, node) {
+      // Create a marker for a response.
+      function createMarker(id, coordinates, response) {
         var element = document.createElement('div');
         element.setAttribute('data-id', id);
 
-        if (node.hasAttribute('data-marker-id')) {
-          node.setAttribute('data-marker-id', node.getAttribute('data-marker-id') + '|' + id);
+        if (response.hasAttribute('data-marker-id')) {
+          response.setAttribute('data-marker-id', response.getAttribute('data-marker-id') + '|' + id);
         }
         else {
-          node.setAttribute('data-marker-id', id);
+          response.setAttribute('data-marker-id', id);
         }
 
         var [lon, lat] = coordinates;
@@ -108,13 +127,16 @@
           lat: lat
         });
         marker.id = id;
-        marker.response = node;
-        marker.responseLink = node.querySelector('a');
+        marker.response = response;
+        // Keep track of the first link which should be the link to
+        // the response.
+        // @todo It would be better to have a more specific selector.
+        marker.responseLink = response.querySelector('a');
         return marker;
       }
 
       // Find a parent response article from a child element.
-      function findParentArticle(container, element) {
+      function findParentResponse(container, element) {
         while (element && element !== container) {
           if (element.hasAttribute('data-marker-id')) {
             return element;
@@ -167,20 +189,24 @@
         // Create markers for each response. They will be added to the map
         // later. We create them first so we can calculate their bounds and
         // ensure the maps displays all of them.
-        var nodes = element.querySelectorAll('article[data-coordinates]');
+        var responses = element.querySelectorAll('article[data-response][data-coordinates]');
 
-        for (var i = 0, l = nodes.length; i < l; i++) {
-          var node = nodes[i];
-          var coordinates = extractCoordinates(node);
+        for (var i = 0, l = responses.length; i < l; i++) {
+          var response = responses[i];
+          var coordinates = extractCoordinates(response);
           for (var j = 0, m = coordinates.length; j < m; j++) {
-            var id = 'marker-' + i + '-' + j;
-            var marker = createMarker(id, coordinates[j], node);
-            // Extend the bounding box that will be used to set the initial bounds
-            // of the response map.
-            bounds.extend(marker.getLngLat());
-            // Keep track of ther marker so we can display the response
-            // description when hovering/clicking on it.
-            markers[id] = marker;
+            var [lon, lat] = coordinates[j];
+            var id = lon + 'x' + lat;
+            // Ensure we have only 1 marker for the coordinates.
+            if (!markers.hasOwnProperty(id)) {
+              var marker = createMarker(id, [lon, lat], response);
+              // Extend the bounding box that will be used to set the initial
+              // bounds of the response map.
+              bounds.extend(marker.getLngLat());
+              // Keep track of ther marker so we can display the response
+              // description when hovering/clicking on it.
+              markers[id] = marker;
+            }
           }
         }
 
@@ -238,7 +264,10 @@
           // @todo Instead look for the first response article and extract
           // its set of markers and hilight all of them.
           if (!usePopup) {
-            active = setActiveMarker(map, markers['marker-0-0'], null, false);
+            var response = element.querySelector('article[data-response][data-marker-id]');
+            if (response) {
+              active = setActiveResponse(map, markers, response, null, false);
+            }
           }
 
           // Ensure the map has the proper size because sometimes it will use
@@ -258,7 +287,7 @@
           // If the article is shown in a popup then hide it when clicking
           // on the map outside of its marker.
           if (usePopup && (!target.hasAttribute || !target.hasAttribute('data-id'))) {
-            active = unsetActiveMarker(active);
+            active = unsetActiveResponse(markers, active);
           }
         });
 
@@ -266,12 +295,15 @@
         container.addEventListener('click', function (event) {
           var target = event.target;
           if (target.hasAttribute && target.hasAttribute('data-id')) {
+            // We focus the title of the response. This triggers the `focusin`
+            // event listener below which is used to mark the response as active
+            // and highlight the marker.
             markers[target.getAttribute('data-id')].responseLink.focus();
           }
           // If the article is shown in a popup then hide it when clicking
           // outside of it.
           else if (usePopup) {
-            active = unsetActiveMarker(active);
+            active = unsetActiveResponse(markers, active);
           }
         });
 
@@ -279,22 +311,20 @@
         container.addEventListener('keydown', function (event) {
           // If the article is shown in a popup then hide it when pressing ESC.
           if (event.keyCode === 27 && usePopup) {
-            active = unsetActiveMarker(active);
+            active = unsetActiveResponse(markers, active);
           }
         });
 
         // Set a marker as the active one when focusing its response article.
         container.addEventListener('focusin', function (event) {
-          var article = findParentArticle(container, event.target);
-          if (article && article.hasAttribute && article.hasAttribute('data-marker-id')) {
-            // @todo highlight all the markers for the countries covered by the
-            // response.
-            active = setActiveMarker(map, markers[article.getAttribute('data-marker-id')], active, false);
+          var response = findParentResponse(container, event.target);
+          if (response && response.hasAttribute && response.hasAttribute('data-marker-id')) {
+            active = setActiveResponse(map, markers, response, active, false);
           }
-          // If the article is shown in a popup then hide it when it's not
+          // If the response is shown in a popup then hide it when it's not
           // focused anymore.
           else if (usePopup) {
-            active = unsetActiveMarker(active);
+            active = unsetActiveResponse(markers, active);
           }
         });
 
@@ -304,7 +334,6 @@
 
       // Create the maps.
       var maps = document.querySelectorAll('[data-response-map]');
-      console.log(maps);
       for (var i = 0, l = maps.length; i < l; i++) {
         createMap(maps[i]);
       }
