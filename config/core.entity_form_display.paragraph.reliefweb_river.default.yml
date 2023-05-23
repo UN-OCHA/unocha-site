@@ -45,12 +45,11 @@ content:
     region: content
     settings:
       view_modes:
+        default: default
         cards: cards
-        cards_paginated: cards_paginated
+        default_paginated: default_paginated
         teasers: teasers
-        teasers_paginated: teasers_paginated
-        default: '0'
-      default_view_mode: teasers
+      default_view_mode: default
       form_mode_bind: true
     third_party_settings: {  }
 hidden:
