@@ -143,6 +143,11 @@ uno-document:
     theme:
       components/uno-document/uno-document.css: {}
 
+uno-donors:
+  css:
+    theme:
+      components/uno-donors/uno-donors.css: {}
+
 uno-embed:
   css:
     component:
