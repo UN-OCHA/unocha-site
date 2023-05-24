@@ -86,11 +86,13 @@ ul.uno-donors__list {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
+  max-width: var(--cd-max-content-width);
 }
 
 ul.uno-donors__list li {
   position: relative;
   padding-inline-end: 0.5rem;
+  font-size: var(--cd-font-size--ref);
 }
 
 ul.uno-donors__list li::after {
