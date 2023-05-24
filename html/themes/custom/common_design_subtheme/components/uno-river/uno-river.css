@@ -31,6 +31,9 @@
 .layout--twocol-sidebar.cd-layout,
 .page-node-type-response .paragraph--type--reliefweb-river {
   background-color: var(--brand-grey);
+}
+.page-node-type-response .paragraph--type--reliefweb-river {
+  background-color: var(--brand-grey);
   padding: 2rem;
 }
 
@@ -47,6 +50,7 @@
 
 .layout--twocol-sidebar .cd-layout__sidebar--wide {
   flex-basis: 380px;
+  margin-top: 3rem; /* The height of the main column's title */
 }
 
 /* Card view mode */
