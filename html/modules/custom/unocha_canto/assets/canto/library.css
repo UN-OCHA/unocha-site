@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-family: sans-serif;
+}
+
 [hidden] {
   display: none !important;
 }
@@ -152,6 +156,21 @@
   padding: 20px;
   text-align: center;
   font-size: 1.25rem;
+}
+.canto-pager-wrapper {
+  text-align: center;
+  font-size: 1.1rem;
+}
+.canto-pager {
+  display: inline-flex;
+  gap: 12px;
+  margin: 0;
+  padding: 12px;
+  list-style: none;
+}
+.canto-page-current a {
+  color: black;
+  font-weight: bold;
 }
 
 /** IMAGES. **/
