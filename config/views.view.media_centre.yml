@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.full
-    - media.type.canto_image
     - media.type.image
     - media.type.video
     - taxonomy.vocabulary.country
@@ -142,7 +141,6 @@ display:
           operator: in
           value:
             article: article
-            canto_image: canto_image
             hero_wide: hero_wide
             image: image
             story: story
@@ -263,7 +261,6 @@ display:
           operator: in
           value:
             all: all
-            canto_image: canto_image
             image: image
             video: video
           group: 1
@@ -349,7 +346,6 @@ display:
           operator: in
           value:
             all: all
-            canto_image: canto_image
             image: image
             video: video
           group: 1
@@ -603,7 +599,6 @@ display:
           operator: in
           value:
             all: all
-            canto_image: canto_image
             image: image
             video: video
           group: 1
