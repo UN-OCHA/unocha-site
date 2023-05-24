@@ -137,3 +137,19 @@ a.cd-footer-social__link svg {
 .cd-footer-copyright svg {
   fill: var(--cd-default-text-color);
 }
+
+@media (min-width: 1024px) {
+  .cd-footer__section--menu,
+  .cd-footer__section--social {
+    padding-bottom: 0;
+  }
+}
+
+.cd-footer__section--copyright {
+  flex: 1 0 auto;
+}
+
+.cd-footer-copyright {
+  display: block;
+  text-align: start;
+}

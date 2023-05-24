@@ -11,6 +11,7 @@ global-styling:
   dependencies:
     - common_design_subtheme/uno-card-list
     - common_design_subtheme/cd
+    - common_design/cd-read-more
 
 ###
 # Define Drupal libraries for your custom components.
