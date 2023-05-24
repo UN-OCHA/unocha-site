@@ -199,7 +199,6 @@
   margin-top: 0;
 }
 
-/* A layout following another layout, reduce margin */
 .paragraph--type--layout {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -223,7 +222,7 @@
     margin-bottom: 0;
   }
 }
-
+/* A layout following another layout, reduce margin */
 .paragraph--type--layout + .paragraph--type--layout {
   margin-top: -2rem;
   margin-bottom: 2rem;
@@ -233,6 +232,12 @@
   .paragraph--type--layout + .paragraph--type--layout {
     margin-bottom: 6rem;
   }
+}
+
+/* Donors following Figures (in a Section), reduce margin */
+.paragraph--type--section + .paragraph--type--donors {
+  margin-top: -6rem;
+  margin-bottom: 2rem;
 }
 
 /* Paragraph Text and Image with alignment */
