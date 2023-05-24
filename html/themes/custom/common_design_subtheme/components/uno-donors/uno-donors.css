@@ -76,3 +76,26 @@
     flex-basis: 20%;
   }
 }
+
+/* Unearmarked donors do not include the value so we output as ul
+  instead of dl.
+*/
+ul.uno-donors__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul.uno-donors__list li {
+  position: relative;
+  padding-inline-end: 0.5rem;
+}
+
+ul.uno-donors__list li::after {
+  content: ", ";
+}
+ul.uno-donors__list li:last-child::after {
+  content: none;
+}
