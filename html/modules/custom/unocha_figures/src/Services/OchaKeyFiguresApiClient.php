@@ -319,7 +319,7 @@ class OchaKeyFiguresApiClient {
     $sanitized_parameters = [];
     if (!empty($parameters)) {
       foreach ($allowed_parameters as $parameter) {
-        if (!empty($parameters[$parameter])) {
+        if (isset($parameters[$parameter])) {
           $sanitized_parameters[$parameter] = $parameters[$parameter];
         }
       }
