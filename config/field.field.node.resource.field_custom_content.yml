@@ -29,9 +29,6 @@ settings:
       campaign:
         weight: 20
         enabled: false
-      canto_image:
-        weight: 21
-        enabled: false
       content_list:
         weight: 22
         enabled: false
