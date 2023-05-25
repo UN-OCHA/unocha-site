@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.event.field_response
     - node.type.event
   module:
+    - choices
     - datetime_range
     - layout_paragraphs
     - media_library
@@ -41,10 +42,11 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_country:
-    type: options_select
+    type: choices_widget
     weight: 6
     region: content
-    settings: {  }
+    settings:
+      configuration_options: ''
     third_party_settings: {  }
   field_custom_content:
     type: layout_paragraphs
@@ -84,16 +86,18 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_region:
-    type: options_select
+    type: choices_widget
     weight: 5
     region: content
-    settings: {  }
+    settings:
+      configuration_options: ''
     third_party_settings: {  }
   field_response:
-    type: options_select
+    type: choices_widget
     weight: 7
     region: content
-    settings: {  }
+    settings:
+      configuration_options: ''
     third_party_settings: {  }
   langcode:
     type: language_select
