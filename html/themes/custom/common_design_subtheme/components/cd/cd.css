@@ -36,9 +36,9 @@ body {
 }
 
 /* Last menu item with coloured background */
-.cd-nav>.menu>.menu-item:last-child a {
-  background: var(--brand-highlight);
+.cd-nav > .menu > .menu-item:last-child a {
   color: white;
+  background: var(--brand-highlight);
 }
 
 /* Soft footer */
@@ -102,17 +102,17 @@ body {
 }
 
 .cd-soft-footer nav a {
-  font-size: var(--cd-font-size--tiny);
   text-transform: uppercase;
+  font-size: var(--cd-font-size--tiny);
   font-weight: 500;
 }
 
 .cd-soft-footer h2 {
+  margin-bottom: 1rem;
+  text-transform: uppercase;
   color: var(--brand-primary);
   font-size: var(--cd-font-size--ref);
-  text-transform: uppercase;
   font-weight: 700;
-  margin-bottom: 1rem;
 }
 
 .cd-footer a:hover,

@@ -7,8 +7,8 @@
 
 .cd-article .paragraph--type--call-to-action p {
   max-width: var(--cd-max-content-width);
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 
 /* If the CTA paragraph is the last on the page, no background */
@@ -18,6 +18,6 @@
 
 .paragraph--type--call-to-action .uno-subscribe {
   max-width: var(--cd-max-content-width);
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }

@@ -6,16 +6,14 @@
    *
    * In the future the Component library will adhere to these vars as well.
    */
-  --brand-primary: #418FDE;
   --brand-primary: var(--cd-ocha-blue);
   --cd-blue--brighter: #82b5e9;
   --brand-primary--light: var(--cd-blue--brighter);
   --brand-primary--dark: #144372;
   --brand-highlight: #E56A54;
   --brand-highlight-contrast: #0B2641;
-  --brand-grey: var(--cd-blue-grey);
   --brand-grey: #f5f5f5;
   --brand-grey--text: #00000080;
   --brand-logo-width: 186px;
-  --brand-default-text-color: #444444;
+  --brand-default-text-color: #444;
 }
