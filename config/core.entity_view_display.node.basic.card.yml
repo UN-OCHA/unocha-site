@@ -10,29 +10,12 @@ dependencies:
     - node.type.basic
   module:
     - layout_builder
-    - layout_builder_restrictions
     - text
     - user
 third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-  layout_builder_restrictions:
-    allowed_block_categories: {  }
-    entity_view_mode_restriction:
-      allowed_layouts:
-        - layout_twocol_section
-      denylisted_blocks: {  }
-      allowlisted_blocks: {  }
-      restricted_categories:
-        - 'Chaos Tools'
-        - 'Content fields'
-        - Forms
-        - Menus
-        - 'OCHA Search'
-        - 'Social Auth'
-        - System
-        - core
 id: node.basic.card
 targetEntityType: node
 bundle: basic
