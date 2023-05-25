@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9092f2fa3d24786136aa3648513d0793",
+    "content-hash": "c00a5776d5418fcfafb5df021bc57995",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -258,6 +258,21 @@
                 "source": "https://github.com/minkphp/MinkSelenium2Driver/tree/v1.6.0"
             },
             "time": "2022-03-28T14:55:17+00:00"
+        },
+        {
+            "name": "bower-asset/choices.js",
+            "version": "v10.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Choices-js/Choices.git",
+                "reference": "5dbea2825a5887d88d6947443f4874bb7b84cc3a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Choices-js/Choices/zipball/5dbea2825a5887d88d6947443f4874bb7b84cc3a",
+                "reference": "5dbea2825a5887d88d6947443f4874bb7b84cc3a"
+            },
+            "type": "bower-asset"
         },
         {
             "name": "chi-teck/drupal-code-generator",
@@ -2556,6 +2571,79 @@
             ],
             "description": "DAM integration with Canto.",
             "time": "2023-03-07T00:56:33+00:00"
+        },
+        {
+            "name": "drupal/choices",
+            "version": "2.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/choices.git",
+                "reference": "2.1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/choices-2.1.4.zip",
+                "reference": "2.1.4",
+                "shasum": "327a2c96a26f9fc99bab60ec52d6bb4cbb7bd33a"
+            },
+            "require": {
+                "drupal/core": "^8.9 || ^9 || ^10",
+                "justinrainbow/json-schema": "^5.2"
+            },
+            "require-dev": {
+                "drupal/facets": "*"
+            },
+            "suggest": {
+                "bower-asset/choices.js": "Required to use drupal/choices."
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.1.4",
+                    "datestamp": "1679217068",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Anybody",
+                    "homepage": "https://www.drupal.org/user/291091"
+                },
+                {
+                    "name": "floydm",
+                    "homepage": "https://www.drupal.org/user/502450"
+                },
+                {
+                    "name": "Grevil",
+                    "homepage": "https://www.drupal.org/user/3668491"
+                },
+                {
+                    "name": "thomas.frobieter",
+                    "homepage": "https://www.drupal.org/user/409335"
+                },
+                {
+                    "name": "yusufhm",
+                    "homepage": "https://www.drupal.org/user/1053788"
+                }
+            ],
+            "description": "Makes select elements more friendly using the Choices plugin",
+            "homepage": "https://www.drupal.org/project/choices",
+            "keywords": [
+                "Choices",
+                "Drupal",
+                "Facets"
+            ],
+            "support": {
+                "source": "https://drupal.org/project/choices",
+                "issues": "https://drupal.org/project/issues/choices"
+            }
         },
         {
             "name": "drupal/coder",
