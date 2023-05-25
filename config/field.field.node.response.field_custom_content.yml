@@ -26,9 +26,6 @@ settings:
       call_to_action:
         weight: 17
         enabled: false
-      canto_image:
-        weight: 18
-        enabled: false
       content_list:
         weight: 21
         enabled: false
