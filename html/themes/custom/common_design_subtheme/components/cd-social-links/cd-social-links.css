@@ -16,18 +16,18 @@
 .cd-social-links .cd-social-links__list {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: flex-start;
   margin: 0;
   padding: 0;
 }
 
 .cd-social-links__label {
+  padding-inline-end: 1rem;
   text-transform: uppercase;
   color: var(--cd-black);
-  font-weight: 700;
   font-size: var(--cd-font-size--ref);
-  padding-inline-end: 1rem;
+  font-weight: 700;
 }
 
 @media (min-width: 576px) {

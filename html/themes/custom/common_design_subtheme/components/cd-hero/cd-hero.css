@@ -7,8 +7,8 @@
 
 .cd-hero__image {
   max-width: var(--cd-max-width--hero);
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 .cd-hero__image picture,
 .cd-hero__image picture img {

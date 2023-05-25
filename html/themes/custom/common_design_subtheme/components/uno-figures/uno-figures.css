@@ -5,6 +5,7 @@
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+
 @media (min-width: 768px) {
   .uno-figures {
     display: flex;

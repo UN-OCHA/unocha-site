@@ -11,20 +11,12 @@ dependencies:
     - paragraphs.paragraphs_type.call_to_action
   module:
     - layout_builder
-    - layout_builder_restrictions
     - link
     - text
 third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-  layout_builder_restrictions:
-    allowed_block_categories: {  }
-    entity_view_mode_restriction:
-      allowed_layouts: {  }
-      denylisted_blocks: {  }
-      allowlisted_blocks: {  }
-      restricted_categories: {  }
 id: paragraph.call_to_action.subscribe
 targetEntityType: paragraph
 bundle: call_to_action

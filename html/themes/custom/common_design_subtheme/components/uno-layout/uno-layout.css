@@ -24,7 +24,6 @@
   flex: 0 1 calc((100% / var(--uno-card-list-num-cols)) - var(--uno-card-list-gap-size) + var(--uno-card-list-gap-size) / var(--uno-card-list-num-cols));
 }
 
-
 @media screen and (min-width: 480px) {
   .layout--twocol > .layout__region {
     --uno-card-list-num-cols: 2;

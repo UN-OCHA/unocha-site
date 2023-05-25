@@ -1,6 +1,6 @@
 .node--view-mode-campaign {
-  border: 3px solid var(--brand-grey);
   padding: 1rem 2rem;
+  border: 3px solid var(--brand-grey);
 }
 
 @media screen and (min-width: 768px) {
