@@ -47,6 +47,7 @@
         "drupal/imageapi_optimize_binaries": "^1.0@beta",
         "drupal/imageapi_optimize_webp": "^2.0",
         "drupal/imagemagick": "^3.4",
+        "drupal/json_field": "^1.2",
         "drupal/layout_paragraphs": "^2.0",
         "drupal/linkit": "^6.0@RC",
         "drupal/maintenance200": "^1.1",
