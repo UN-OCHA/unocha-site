@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.response.field_response_link
     - node.type.response
   module:
+    - choices
     - layout_paragraphs
     - link
     - media_library
@@ -46,10 +47,11 @@ content:
       display_label: true
     third_party_settings: {  }
   field_country:
-    type: options_select
+    type: choices_widget
     weight: 2
     region: content
-    settings: {  }
+    settings:
+      configuration_options: ''
     third_party_settings: {  }
   field_custom_content:
     type: layout_paragraphs
@@ -62,10 +64,11 @@ content:
       empty_message: 'Placeholder message to display when field is empty'
     third_party_settings: {  }
   field_region:
-    type: options_select
+    type: choices_widget
     weight: 3
     region: content
-    settings: {  }
+    settings:
+      configuration_options: ''
     third_party_settings: {  }
   field_response_image:
     type: media_library_widget
