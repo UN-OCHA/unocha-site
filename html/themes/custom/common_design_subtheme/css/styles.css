@@ -312,9 +312,10 @@
   border-radius: 0;
 }
 .uno-subscribe .email {
-  border: 1px solid var(--brand-grey);
   padding-inline-start: 2rem;
+  border: 1px solid var(--brand-grey);
 }
+
 @media (min-width: 767px) {
   .uno-subscribe .email {
     width: 400px;

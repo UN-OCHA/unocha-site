@@ -69,7 +69,6 @@
   }
 }
 
-
 /* Promoted item to span full width */
 .page-node-type-basic .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child,
 .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child,
@@ -96,9 +95,9 @@ article.node--type-story.node--view-mode-card .field--name-body {
 .page-node-type-basic .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer::before,
 .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer::before,
 .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer::before {
-  content: "";
   width: 4rem;
   height: 3px;
+  content: "";
   background-color: var(--brand-primary--dark);
 }
 
@@ -159,5 +158,3 @@ article.node--type-story.node--view-mode-card .field--name-body {
 .layout__region .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node {
   display: block;
 }
-
-

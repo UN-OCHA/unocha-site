@@ -13,8 +13,8 @@
 }
 
 .view-content .cd-teaser:first-child {
-  border-top: 1px solid var(--brand-grey);
   padding-top: 1rem;
+  border-top: 1px solid var(--brand-grey);
 }
 
 .cd-teaser__title,
