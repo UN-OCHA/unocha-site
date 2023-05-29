@@ -165,6 +165,11 @@ uno-layout:
     theme:
       components/uno-layout/uno-layout.css: {}
 
+uno-leader:
+  css:
+    theme:
+      components/uno-leader/uno-leader.css: {}
+
 uno-mega-menu:
   css:
     theme:
