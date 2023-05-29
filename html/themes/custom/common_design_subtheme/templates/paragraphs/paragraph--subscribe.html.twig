@@ -11,9 +11,6 @@
  */
 #}
 {{ attach_library('common_design/cd-button') }}
-{{ attach_library('common_design_subtheme/uno-cta') }}
-{{ attach_library('common_design/cd-bleed') }}
-
 
 {%
   set classes = [
@@ -22,11 +19,9 @@
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
     'cd-align--center',
-    'cd-bleed'
   ]
 %}
-{% set destination = paragraph.field_destination.0.url %}
-{% set link_text = paragraph.field_destination.0.title %}
+
 {% block paragraph %}
   <div{{ attributes
     .addClass(classes)
@@ -34,9 +29,15 @@
     .setAttribute('id', paragraph.bundle ~ '-' ~ paragraph.id())
   }}>
     {% block content %}
-    {{ content|without('field_destination')}}
 
-    {% include '@common_design_subtheme/uno/subscribe.html.twig' %}
+    {%
+      include '@common_design_subtheme/uno/subscribe.html.twig' with {
+        'title': paragraph.field_title.0.value,
+        'url': paragraph.field_url.0.url,
+        'submit': paragraph.field_title.0.value,
+        'logo': '',
+      }
+    %}
 
     {% endblock %}
   </div>

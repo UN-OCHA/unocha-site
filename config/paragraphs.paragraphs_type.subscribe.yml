@@ -1,0 +1,10 @@
+uuid: 06270238-f454-4f22-8938-897336e847b9
+langcode: en
+status: true
+dependencies: {  }
+id: subscribe
+label: Subscribe
+icon_uuid: null
+icon_default: null
+description: 'Mailing list subscription.'
+behavior_plugins: {  }
