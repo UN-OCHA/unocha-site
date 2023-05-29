@@ -30,7 +30,7 @@
   }
 
   .layout--threecol > .layout__region {
-    --uno-card-list-num-cols: 3;
+    --uno-card-list-num-cols: 1;
   }
 
   .layout--fourcol > .layout__region {
@@ -59,7 +59,7 @@
 /**
   * Adopt column layout once space allows.
   */
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   /**
     * Use flex-box once window can accomodate columns.
     */

@@ -6,7 +6,7 @@
  *   also need to be defined.
  */
 
-@media (min-width: 800px) {
+@media screen and (min-width: 800px) {
   /* Language Switcher list. */
   .cd-language-switcher__dropdown {
     /* Unset the dropdown styles */

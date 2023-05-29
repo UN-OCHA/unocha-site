@@ -8,12 +8,18 @@
 }
 
 .uno-nav {
-  margin-top: -36px; /* Height of nav h2 and its bottom margin */
   padding: 1rem;
   color: var(--brand-highlight-contrast);
   border: 1px solid #707070;
   background-color: var(--brand-highlight);
 }
+
+@media screen and (min-width: 768px) {
+  .uno-nav {
+    margin-top: -18px; /* Height of nav h2 and its bottom margin */
+  }
+}
+
 .uno-nav__list {
   margin: 0;
   padding: 0;

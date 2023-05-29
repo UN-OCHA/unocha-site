@@ -5,8 +5,18 @@
 .cd-social-links {
   z-index: 5; /* keep them clickable */
   width: 100%;
-  margin-top: -2rem;
+  margin-top: -1rem;
+  margin-bottom: 3rem;
+}
+.path-frontpage .cd-social-links {
   margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .cd-social-links {
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .cd-social-links__wrapper {
@@ -30,7 +40,6 @@
   font-weight: 700;
 }
 
-@media (min-width: 576px) {
   .cd-social-links .cd-social-links__list {
     position: absolute;
     padding-right: inherit;
@@ -42,7 +51,6 @@
   html[dir="rtl"] .cd-social-links .cd-social-links__list {
     left: 0;
   }
-}
 
 .cd-social-links .cd-social-links__item {
   flex: 0 0 1.25rem;

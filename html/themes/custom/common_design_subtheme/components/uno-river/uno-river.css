@@ -33,8 +33,14 @@
   background-color: var(--brand-grey);
 }
 .page-node-type-response .paragraph--type--reliefweb-river {
-  padding: 2rem;
+  padding: 1rem;
   background-color: var(--brand-grey);
+}
+
+@media screen and (min-width: 1024px) {
+  .page-node-type-response .paragraph--type--reliefweb-river {
+    padding: 2rem;
+  }
 }
 
 /* CD overrides */
@@ -48,9 +54,11 @@
   gap: 0;
 }
 
-.layout--twocol-sidebar .cd-layout__sidebar--wide {
-  flex-basis: 380px;
-  margin-top: 3rem; /* The height of the main column's title */
+@media screen and (min-width: 1024px) {
+  .layout--twocol-sidebar .cd-layout__sidebar--wide {
+    flex-basis: 380px;
+    margin-top: 3rem; /* The height of the main column's title */
+  }
 }
 
 /* Card view mode */

@@ -60,11 +60,11 @@
   margin-top: 0;
 }
 
-@media all and (max-width: 479px) {
+/* @media all and (max-width: 479px) {
   .rw-river-article .rw-river-article__content img {
     display: none;
   }
-}
+} */
 .rw-river-article .rw-river-article__footer {
   /* Clear any floating from the content. */
   clear: both;
