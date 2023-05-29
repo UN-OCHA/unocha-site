@@ -4,7 +4,7 @@
 
 :root {
   --cd-bumper-space: 2rem;
-  --cd-flow-space: 2rem;
+  --cd-flow-space: 1rem;
 }
 
 .cd-teaser {
@@ -33,7 +33,7 @@
 
 .cd-teaser__image {
   margin-top: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 576px) {

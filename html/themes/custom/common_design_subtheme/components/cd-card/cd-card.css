@@ -80,6 +80,9 @@
   padding: 0;
   padding-inline-end: 2rem;
   content: "";
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
 }
 .cd-card__footer::before {
   position: absolute;
@@ -88,14 +91,6 @@
   width: 6rem;
   height: 3px;
   background-color: var(--brand-primary);
-}
-
-@media screen and (min-width: 480px) {
-  .cd-card__footer {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-  }
 }
 
 @media screen and (min-width: 480px) {

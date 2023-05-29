@@ -6,7 +6,7 @@
   margin-bottom: 2rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 480px) {
   .uno-figures {
     display: flex;
     flex-wrap: wrap;
@@ -43,13 +43,17 @@ dd.uno-figure__value {
   margin: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 480px) {
   .uno-figure {
-    display: inline-block;
     flex-basis: 50%;
     flex-grow: 1;
     flex-shrink: 0;
     padding-inline-end: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .uno-figure {
+    flex-basis: 33%;
   }
 
   .uno-figure__label {
