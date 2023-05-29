@@ -1,0 +1,46 @@
+uuid: c2c7594a-85fd-4e9d-8a09-d2176bb3239e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.leader.body
+    - field.field.node.leader.field_leader_portrait
+    - field.field.node.leader.field_leader_title
+    - node.type.leader
+    - responsive_image.styles.portrait
+  module:
+    - responsive_image
+    - text
+    - user
+id: node.leader.default
+targetEntityType: node
+bundle: leader
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_leader_portrait:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: portrait
+      image_link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_leader_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  links: true

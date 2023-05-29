@@ -1,0 +1,10 @@
+uuid: cef31a73-79c2-43b3-b135-58e8567317ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.large
+label: Large
+targetEntityType: paragraph
+cache: true

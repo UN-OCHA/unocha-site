@@ -1,0 +1,22 @@
+uuid: 78677030-1bb3-4619-b5da-b18bb4200cee
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: leaders
+label: Leaders
+type: 'canonical_entities:node'
+pattern: '[node:menu-link:parent]/[node:title]'
+selection_criteria:
+  2b2dab71-ae6b-466b-a109-c5514ebdbd31:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 2b2dab71-ae6b-466b-a109-c5514ebdbd31
+    context_mapping:
+      node: node
+    bundles:
+      leader: leader
+selection_logic: and
+weight: -5
+relationships: {  }

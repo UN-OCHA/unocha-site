@@ -1,0 +1,10 @@
+uuid: 89d54ba1-343b-48ea-98a0-ec9c76fb3919
+langcode: en
+status: true
+dependencies: {  }
+id: leader
+label: Leader
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
