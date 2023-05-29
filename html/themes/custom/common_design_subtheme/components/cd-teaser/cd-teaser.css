@@ -36,7 +36,7 @@
   margin-bottom: 1rem;
 }
 
-@media (min-width: 576px) {
+@media screen and (min-width: 576px) {
   .cd-teaser__image {
     margin-top: 0;
     margin-bottom: 0;

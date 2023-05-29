@@ -36,6 +36,7 @@
   padding: 1rem;
   background-color: var(--brand-grey);
 }
+
 @media screen and (min-width: 1024px) {
   .page-node-type-response .paragraph--type--reliefweb-river {
     padding: 2rem;

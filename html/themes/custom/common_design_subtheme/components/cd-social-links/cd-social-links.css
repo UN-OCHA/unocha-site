@@ -5,14 +5,14 @@
 .cd-social-links {
   z-index: 5; /* keep them clickable */
   width: 100%;
-  margin-bottom: 3rem;
   margin-top: -1rem;
+  margin-bottom: 3rem;
 }
 .path-frontpage .cd-social-links {
   margin-bottom: 2rem;
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .cd-social-links {
     margin-top: -2rem;
     margin-bottom: 2rem;

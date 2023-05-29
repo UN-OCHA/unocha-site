@@ -23,7 +23,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .cd-banner__image {
     position: absolute;
     top: 50%;
@@ -68,7 +68,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
   @supports (object-fit: cover) {
     .cd-banner__image {
       object-fit: none;

@@ -1,4 +1,4 @@
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   /* So the mega menus and normal menus play nice together. */
   .cd-site-header__nav-holder nav[role="navigation"].cd-nav {
     position: unset;
@@ -70,7 +70,7 @@
   display: none;
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .cd-nav__menu-item--level-2.menu-item--expanded > .uno-mega-menu__dropdown > span.menu-item__label {
     display: block;
   }

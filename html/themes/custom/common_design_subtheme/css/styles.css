@@ -264,6 +264,7 @@
     text-align: left;
   }
 }
+
 @media screen and (min-width: 1024px) {
   .paragraph--view-mode--image-align-left .field--name-field-text {
     padding-inline-start: 4rem;
@@ -430,8 +431,8 @@ footer.cd-author {
 
 /* CTA link on Response and Region pages */
 .uno-content--custom > a.uno-button {
-  margin-bottom: 0.75rem;
   float: right;
+  margin-bottom: 0.75rem;
   margin-inline-start: 0.75rem;
 }
 

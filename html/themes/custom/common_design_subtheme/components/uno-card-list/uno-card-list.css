@@ -90,8 +90,8 @@ article.node--type-story.node--view-mode-card .field--name-body {
 .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer,
 .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer {
   position: relative;
-  padding-top: 2rem;
   flex: 1 0 100%;
+  padding-top: 2rem;
 }
 
 .page-node-type-basic .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__footer::before,

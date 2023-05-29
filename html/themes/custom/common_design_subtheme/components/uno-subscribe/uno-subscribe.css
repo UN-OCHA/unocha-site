@@ -7,16 +7,16 @@
   margin: 2rem 0 3rem;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .uno-subscribe form {
     display: flex;
   }
 }
 
 .uno-subscribe .uno-subscribe__logo {
-  margin-inline-end: 3rem;
-  margin-bottom: 0.5rem;
   display: block;
+  margin-bottom: 0.5rem;
+  margin-inline-end: 3rem;
 }
 
 .uno-subscribe .uno-subscribe__logo svg {
@@ -27,7 +27,8 @@
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 768px) {
+
+@media screen and (min-width: 768px) {
   .uno-subscribe .mc-field-group {
     flex-direction: row;
     flex-wrap: wrap;
@@ -36,7 +37,8 @@
     margin-bottom: 0;
   }
 }
-@media (min-width: 1024px) {
+
+@media screen and (min-width: 1024px) {
   .uno-subscribe .mc-field-group {
     flex-wrap: nowrap;
   }
@@ -47,18 +49,20 @@
 }
 
 .uno-subscribe .email {
+  padding: 0.5rem 1rem;
   padding-inline-start: 2rem;
   border: 1px solid var(--brand-grey);
   line-height: 1.15; /* match cd-button */
-  padding: 0.5rem 1rem;
 }
-@media (min-width: 768px) {
+
+@media screen and (min-width: 768px) {
   .uno-subscribe .email,
   .uno-subscribe .cd-button {
     flex: 1 0 auto;
   }
 }
-@media (min-width: 1024px) {
+
+@media screen and (min-width: 1024px) {
   .uno-subscribe .email {
     flex: 1 0 400px;
   }

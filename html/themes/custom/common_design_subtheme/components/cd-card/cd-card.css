@@ -75,14 +75,14 @@
  */
 .cd-card__footer {
   position: relative;
+  display: flex;
+  flex-wrap: nowrap;
   flex-shrink: 0;
+  justify-content: flex-end;
   margin-top: 0.5rem;
   padding: 0;
   padding-inline-end: 2rem;
   content: "";
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
 }
 .cd-card__footer::before {
   position: absolute;

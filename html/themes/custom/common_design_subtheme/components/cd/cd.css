@@ -65,11 +65,13 @@ body {
 .cd-soft-footer {
   padding: 3rem 0 0;
 }
+
 @media screen and (min-width: 576px) {
   .cd-soft-footer {
     padding: 4rem 0 0;
   }
 }
+
 @media screen and (min-width: 1024px) {
   .cd-soft-footer {
     padding: 6rem 0 0;
@@ -90,9 +92,9 @@ body {
 @media screen and (min-width: 576px) {
   .cd-soft-footer .cd-soft-footer__inner .cd-soft-footer__nav-wrapper {
     display: flex;
+    flex: 1 0 75%;
     flex-wrap: wrap;
-    align-items: flex-start;
-    flex: 1 0 75%
+    align-items: flex-start
   }
 
   .cd-soft-footer .cd-soft-footer__nav-wrapper > nav {
@@ -162,7 +164,7 @@ a.cd-footer-social__link svg {
   fill: var(--cd-default-text-color);
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .cd-footer__section--menu,
   .cd-footer__section--social {
     padding-bottom: 0;

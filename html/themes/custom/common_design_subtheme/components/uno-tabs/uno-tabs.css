@@ -36,7 +36,7 @@
   box-shadow: inset 0 0 0 4px var(--brand-highlight);
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
   .uno-tabs [role="tablist"] li,
   .uno-tabs [role="tablist"] a {

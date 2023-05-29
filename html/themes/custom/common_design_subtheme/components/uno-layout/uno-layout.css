@@ -59,7 +59,7 @@
 /**
   * Adopt column layout once space allows.
   */
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   /**
     * Use flex-box once window can accomodate columns.
     */
