@@ -58,15 +58,15 @@ content:
     third_party_settings: {  }
   paragraph_view_mode:
     type: paragraph_view_mode
-    weight: 0
+    weight: -100
     region: content
     settings:
       view_modes:
-        figures: figures
-        figures_compact_long: figures_compact_long
-        figures_compact_short: figures_compact_short
-        default: '0'
-      default_view_mode: figures
+        default: Default
+        figures: Figures
+        figures_compact_long: 'Figures - Compact Long'
+        figures_compact_short: 'Figures - Compact Short'
+      default_view_mode: default
       form_mode_bind: true
     third_party_settings: {  }
 hidden:

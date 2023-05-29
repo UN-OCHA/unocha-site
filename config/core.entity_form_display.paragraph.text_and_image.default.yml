@@ -42,13 +42,13 @@ content:
     third_party_settings: {  }
   paragraph_view_mode:
     type: paragraph_view_mode
-    weight: 0
+    weight: -100
     region: content
     settings:
       view_modes:
-        default: default
-        image_align_left: image_align_left
-        image_align_right: image_align_right
+        default: Default
+        image_align_left: 'Image align left'
+        image_align_right: 'Image align right'
       default_view_mode: default
       form_mode_bind: true
     third_party_settings: {  }

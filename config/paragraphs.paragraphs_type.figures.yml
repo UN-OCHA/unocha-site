@@ -6,5 +6,5 @@ id: figures
 label: Figures
 icon_uuid: null
 icon_default: null
-description: 'Multiple items with label and value fields.'
+description: 'Multiple Figures with label and value fields, either from APIs or manual input. Optional link to Reliefweb Document.'
 behavior_plugins: {  }

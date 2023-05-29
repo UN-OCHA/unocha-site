@@ -52,8 +52,8 @@ content:
     region: content
     settings:
       view_modes:
-        default: default
-        subscribe: subscribe
+        default: Default
+        subscribe: Subscribe
       default_view_mode: default
       form_mode_bind: true
     third_party_settings: {  }

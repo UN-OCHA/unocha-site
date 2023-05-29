@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Leader
 type: leader
-description: ''
+description: 'Individual leadership page with Name, Title, Portrait photo, and bio.'
 help: ''
 new_revision: true
 preview_mode: 1

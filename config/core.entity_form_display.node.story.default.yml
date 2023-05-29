@@ -41,14 +41,14 @@ content:
     third_party_settings: {  }
   field_country:
     type: choices_widget
-    weight: 6
+    weight: 8
     region: content
     settings:
       configuration_options: ''
     third_party_settings: {  }
   field_custom_content:
     type: layout_paragraphs
-    weight: 8
+    weight: 3
     region: content
     settings:
       preview_view_mode: preview
@@ -58,7 +58,7 @@ content:
     third_party_settings: {  }
   field_region:
     type: choices_widget
-    weight: 5
+    weight: 6
     region: content
     settings:
       configuration_options: ''
@@ -79,13 +79,13 @@ content:
     third_party_settings: {  }
   field_story_type:
     type: options_select
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_theme:
     type: choices_widget
-    weight: 4
+    weight: 5
     region: content
     settings:
       configuration_options: ''

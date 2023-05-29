@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Response
 type: response
-description: ''
+description: 'Response page with custom content paragraphs. Associated with a Region and Country for geolocation.'
 help: ''
 new_revision: true
 preview_mode: 1
