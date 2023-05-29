@@ -6,5 +6,5 @@ id: call_to_action
 label: 'Call to action'
 icon_uuid: null
 icon_default: null
-description: ''
+description: 'Title, text and button with URL, centered horizontally and full-width.'
 behavior_plugins: {  }

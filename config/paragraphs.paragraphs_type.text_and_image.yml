@@ -6,5 +6,5 @@ id: text_and_image
 label: 'Text and Image'
 icon_uuid: null
 icon_default: null
-description: 'Text and image with alignment'
+description: 'Text and image with alignment.'
 behavior_plugins: {  }

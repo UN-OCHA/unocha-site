@@ -6,5 +6,5 @@ id: resources
 label: Resources
 icon_uuid: null
 icon_default: null
-description: 'List of resources for a response.'
+description: 'List of Resources for a Response.'
 behavior_plugins: {  }

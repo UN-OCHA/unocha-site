@@ -6,5 +6,5 @@ id: responses
 label: Responses
 icon_uuid: null
 icon_default: null
-description: ''
+description: 'Responses, displayed as Cards, grouped by Priority Response, Regional, or display all.'
 behavior_plugins: {  }

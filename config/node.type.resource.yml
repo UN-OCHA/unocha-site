@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Resource
 type: resource
-description: 'A response resource page.'
+description: 'Additional Resource pages for Responses. These do not appear in the Main Menu but rely on their position in the Menu Tree to link to a Response.'
 help: ''
 new_revision: true
 preview_mode: 1
