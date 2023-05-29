@@ -1,0 +1,31 @@
+uuid: 193a5222-47bb-4603-83ca-330f875a07bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.large
+    - field.field.paragraph.leader.field_single_node
+    - field.field.paragraph.leader.paragraph_view_mode
+    - paragraphs.paragraphs_type.leader
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.leader.large
+targetEntityType: paragraph
+bundle: leader
+mode: large
+content:
+  field_single_node:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  paragraph_view_mode: true
