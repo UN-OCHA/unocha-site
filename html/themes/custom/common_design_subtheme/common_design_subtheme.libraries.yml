@@ -192,6 +192,11 @@ uno-rss-feed:
     theme:
       components/uno-rss-feed/uno-rss-feed.css: {}
 
+uno-subscribe:
+  css:
+    theme:
+      components/uno-subscribe/uno-subscribe.css: {}
+
 uno-tabs:
   css:
     theme:
