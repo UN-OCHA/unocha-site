@@ -1,10 +1,10 @@
 .field--name-field-leader-title {
   margin-bottom: 1rem;
-  text-align: center;
   font-size: var(--cd-font-size--medium);
 }
 
-.uno-leader--title {
+.uno-leader--title,
+.uno-leader--teaser {
   text-align: center;
 }
 
@@ -35,6 +35,7 @@
     padding-inline-end: 2rem;
   }
 
+  .uno-leader--teaser,
   .field--name-field-leader-title,
   .uno-leader--title {
     text-align: left;
@@ -42,10 +43,6 @@
 
   .uno-leader--title {
     padding-inline-end: 2rem;
-  }
-
-  .uno-leader--teaser .field--name-field-leader-title {
-    text-align: center;
   }
 
   .uno-leader--teaser {
@@ -105,6 +102,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.layout--twocol .uno-leader--teaser .field--name-field-leader-title {
+  text-align: center;
 }
 
 .layout--twocol .uno-leader--teaser .uno-leader__name {
