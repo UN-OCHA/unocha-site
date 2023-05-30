@@ -83,18 +83,17 @@
   ]
 %}
 
-{{ attach_library('common_design/cd-article') }}
-{{ attach_library('common_design/cd-bleed') }}
-{{ attach_library('common_design/cd-typography') }}
 {{ attach_library('common_design_subtheme/uno-leader') }}
 
 <article{{ attributes.addClass(classes) }}>
+
+  {{ content.field_leader_portrait }}
 
   {{ title_prefix }}
   <h3{{ title_attributes.addClass('uno-leader__name') }}>{{ label }}</a></h3>
   {{ title_suffix }}
 
-  {{ content }}
+  {{ content|without('field_leader_portrait') }}
 
   {% block read_more %}
   <a href="{{ url }}" class="cd-card__link cd-read-more">
