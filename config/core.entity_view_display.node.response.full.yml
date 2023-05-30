@@ -35,6 +35,14 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
+  field_region:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_response_image:
     type: entity_reference_entity_view
     label: hidden
@@ -60,6 +68,5 @@ hidden:
   body: true
   field_active_response: true
   field_country: true
-  field_region: true
   langcode: true
   links: true
