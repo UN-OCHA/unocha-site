@@ -209,6 +209,10 @@ uno-tabs:
   js:
     components/uno-tabs/uno-tabs.js: {}
 
+uno-text-image:
+  css:
+    theme:
+      components/uno-text-image/uno-text-image.css: {}
 ###
 # Define Drupal libraries for additional webfonts.
 #

@@ -5,6 +5,12 @@
   padding: 3rem 2rem 4rem;
 }
 
+.paragraph--type--call-to-action.cd-bleed {
+  margin-right: calc(50% - 50vw + var(--cd-bleed-scrollbar-width) / 2);
+  margin-left: calc(50% - 50vw + var(--cd-bleed-scrollbar-width) / 2);
+  background-color: var(--brand-grey);
+}
+
 .cd-article .paragraph--type--call-to-action p {
   max-width: var(--cd-max-content-width);
   margin-right: auto;
