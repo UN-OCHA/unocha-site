@@ -116,7 +116,30 @@ class ReliefWebDocumentController extends ControllerBase {
    */
   public function getOchaProduct() {
     $data = $this->getDocumentData();
-    return $data['tags']['ocha_product'][0]['name'] ?? '';
+    if (empty($data['bundle']) || $data['bundle'] !== 'report') {
+      return '';
+    }
+
+    // We use a temporary mapping because some OCHA documents prior to the
+    // introduction of the OCHA product field don't have one.
+    // @todo remove if tagged with a OCHA product (ref: RW-765).
+    $ocha_product = $data['tags']['ocha_product'][0]['name'] ?? '';
+    if (empty($ocha_product) && !empty($data['format'])) {
+      $mapping = [
+        'Analysis' => 'Humanitarian Needs Overview',
+        'Appeal' => 'Other',
+        'Assessment' => 'Other',
+        'Evaluation and Lessons Learned' => 'Other',
+        'Infographic' => 'Infographic',
+        'Manual and Guideline' => 'Other',
+        'Map' => 'Thematic Map',
+        'News and Press Release' => 'Press Release',
+        'Other' => 'Other',
+        'Situation Report' => 'Situation Report',
+      ];
+      $ocha_product = $mapping[$data['format']] ?? 'Other';
+    }
+    return $ocha_product;
   }
 
   /**

@@ -128,8 +128,12 @@ class ReliefWebDocuments {
           'date',
           'body-html',
         ],
+        // @todo if all the OCHA documents get tagged with an OCHA product then
+        // replace this filter with a `'field' => 'ocha_product'` (ref: RW-765).
+        // That may be a bit faster.
         'filter' => [
-          'field' => 'ocha_product',
+          'field' => 'source.shortname.exact',
+          'value' => 'OCHA',
         ],
         'parse' => [$this, 'parseReportsApiData'],
       ],
