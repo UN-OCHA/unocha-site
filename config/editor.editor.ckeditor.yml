@@ -18,6 +18,7 @@ settings:
       - '|'
       - bulletedList
       - numberedList
+      - alignment
       - '|'
       - blockQuote
       - '|'
@@ -25,6 +26,10 @@ settings:
       - '|'
       - sourceEditing
   plugins:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - center
+        - left
     ckeditor5_heading:
       enabled_headings:
         - heading2
