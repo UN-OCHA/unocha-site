@@ -72,6 +72,11 @@ cd-social-links:
     component:
       components/cd-social-links/cd-social-links.css: {}
 
+cd-tabs:
+  css:
+    component:
+      components/cd-tabs/cd-tabs.css: {}
+
 cd-teaser:
   css:
     component:

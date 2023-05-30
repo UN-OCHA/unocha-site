@@ -235,6 +235,16 @@
   }
 }
 
+/* River followed by another river */
+.paragraph--type--reliefweb-river + .paragraph--type--reliefweb-river {
+  margin-top: 4rem;
+}
+@media screen and (min-width: 1024px) {
+  .paragraph--type--reliefweb-river + .paragraph--type--reliefweb-river {
+    margin-top: 6rem;
+  }
+}
+
 /* Video embed aspect ratio is calculated in the oembed-video field template. */
 .field--name-field-video .field--name-field-media-oembed-video {
   position: relative;
