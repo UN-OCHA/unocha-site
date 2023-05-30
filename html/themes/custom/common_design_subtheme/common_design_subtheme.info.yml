@@ -54,6 +54,8 @@ libraries-extend:
     - common_design_subtheme/cd-read-more
   common_design/cd-social-links:
     - common_design_subtheme/cd-social-links
+  common_design/cd-tabs:
+    - common_design_subtheme/cd-tabs
   common_design/cd-teaser:
     - common_design_subtheme/cd-teaser
 ###

@@ -12,6 +12,7 @@
   bottom: -3px;
   padding: 0.5rem 1em;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .uno-tabs [role="tablist"] [aria-selected] {
