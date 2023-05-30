@@ -121,7 +121,7 @@
         {{ content.field_response_link[0]["#title"] }}
       </a>
     {% endif %}
-      {{ content|without('field_response_image', 'field_response_link') }}
+      {{ content|without('field_region', 'field_response_image', 'field_response_link') }}
     </div>
 
     {% if display_submitted %}
