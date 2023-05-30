@@ -8,6 +8,9 @@
   margin-top: -1rem;
   margin-bottom: 3rem;
 }
+
+.page-node-type-response .cd-social-links,
+.page-node-type-region .cd-social-links,
 .path-frontpage .cd-social-links {
   margin-bottom: 2rem;
 }

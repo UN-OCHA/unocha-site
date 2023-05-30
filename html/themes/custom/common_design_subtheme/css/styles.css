@@ -235,63 +235,6 @@
   }
 }
 
-/* Paragraph Text and Image with alignment */
-@media screen and (min-width: 768px) {
-  .paragraph--type--text-and-image.paragraph--view-mode--image-align-left,
-  .paragraph--type--text-and-image.paragraph--view-mode--image-align-right {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .paragraph--view-mode--image-align-left .field--name-field-image,
-  .paragraph--view-mode--image-align-right .field--name-field-image {
-    flex: 0 1 50%;
-  }
-  .paragraph--view-mode--image-align-left .field--name-field-text,
-  .paragraph--view-mode--image-align-right .field--name-field-text {
-    flex: 0 1 50%;
-  }
-
-  .paragraph--type--text-and-image .field--name-field-title {
-    flex: 1 0 100%;
-  }
-
-  .paragraph--view-mode--image-align-left .field--name-field-text {
-    padding-inline-start: 2rem;
-  }
-  .paragraph--view-mode--image-align-right .field--name-field-text,
-  .paragraph--view-mode--image-align-right .field--name-field-title {
-    padding-inline-end: 2rem;
-    text-align: left;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .paragraph--view-mode--image-align-left .field--name-field-text {
-    padding-inline-start: 4rem;
-  }
-
-  .paragraph--view-mode--image-align-right .field--name-field-text,
-  .paragraph--view-mode--image-align-right .field--name-field-title {
-    padding-inline-end: 4rem;
-    text-align: left;
-  }
-}
-
-.paragraph__image--align-center .field--name-field-title,
-.paragraph__image--align-center .field--name-field-text {
-  text-align: left;
-}
-.paragraph__image--align-center .field--name-field-media-image .field__item img {
-  display: inline-block;
-  margin: 0 auto;
-}
-
-.paragraph--type--call-to-action.cd-bleed {
-  margin-right: calc(50% - 50vw + var(--cd-bleed-scrollbar-width) / 2);
-  margin-left: calc(50% - 50vw + var(--cd-bleed-scrollbar-width) / 2);
-  background-color: var(--brand-grey);
-}
-
 /* Video embed aspect ratio is calculated in the oembed-video field template. */
 .field--name-field-video .field--name-field-media-oembed-video {
   position: relative;
