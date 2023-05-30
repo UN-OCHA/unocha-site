@@ -85,9 +85,3 @@
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--brand-grey);
 }
-
-.layout--twocol .cd-block-title {
-  font-size: var(--cd-font-size--large);
-  text-align: center;
-  margin-bottom: 2rem;
-}
