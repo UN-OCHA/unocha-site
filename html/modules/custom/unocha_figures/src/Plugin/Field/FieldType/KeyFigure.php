@@ -13,7 +13,7 @@ use Drupal\Core\TypedData\DataDefinition;
  * Plugin implementation of the 'key_figure' field type.
  *
  * @FieldType(
- *   id = "key_figure",
+ *   id = "unocha_figures_key_figure",
  *   label = @Translation("Key Figure"),
  *   description = @Translation("A field to display key figures."),
  *   category = @Translation("UNOCHA"),

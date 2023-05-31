@@ -100,11 +100,6 @@ rw-icons:
     theme:
       components/rw-icons/rw-icons.css: {}
 
-rw-key-figures:
-  css:
-    theme:
-      components/rw-key-figures/rw-key-figures.css: {}
-
 rw-river:
   css:
     theme:
