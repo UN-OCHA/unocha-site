@@ -1,0 +1,104 @@
+/**
+ * Base photo gallery.
+ */
+.uno-photo-gallery__photos {
+  /* Compensate for the padding of the photos */
+  margin: -0.75rem -0.625rem;
+}
+
+.uno-photo-gallery__photo {
+  padding: 0.75rem 0.625rem;
+}
+
+/**
+ * Single column gallery.
+ *
+ * In this mode, the images (responsive) span the entire width of the pages's
+ * content region.
+ */
+.uno-photo-gallery--single-column .uno-photo-gallery__photos {
+  max-width: var(--reading-width);
+}
+
+/**
+ * Two columns gallery.
+ *
+ * In this mode, the images (responsive) span the half of the width the pages's
+ * content region on desktop and the entire width like the single column, on
+ * smaller screens.
+ */
+@media screen and (min-width: 768px) {
+  .uno-photo-gallery--two-columns .uno-photo-gallery__photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .uno-photo-gallery--two-columns .uno-photo-gallery__photo {
+    /* Not using flex-basis to determine the width because it doesn't work well
+     * in IE11 wih the padding and negative margins on the parent. Using the
+     * width works everywhere. */
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 33%;
+  }
+
+  .uno-photo-gallery--two-columns .uno-photo-gallery__photo:first-child {
+    width: 66%;
+  }
+}
+
+/**
+ * Caption below images.
+ */
+.uno-photo-gallery__caption {
+  max-width: var(--reading-width);
+  margin-top: 1.25rem;
+}
+
+.uno-photo-gallery--two-columns {
+  background-color: var(--brand-grey);
+  padding: 2rem;
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+/* .node--view-mode-full .uno-photo-gallery--two-columns .field--name-field-text {
+  margin-bottom: 1rem;
+} */
+
+.uno-photo-gallery--two-columns .cd-button {
+  margin-bottom: 1rem;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+}
+
+.uno-photo-gallery--two-columns .field--name-field-title {
+  max-width: var(--cd-max-content-width);
+}
+
+@media screen and (min-width: 768px) {
+  .layout--twocol .uno-photo-gallery--two-columns .uno-photo-gallery__photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .layout--twocol .uno-photo-gallery--two-columns .uno-photo-gallery__photo {
+    /* Not using flex-basis to determine the width because it doesn't work well
+     * in IE11 wih the padding and negative margins on the parent. Using the
+     * width works everywhere. */
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 33%;
+  }
+
+  .layout--twocol .uno-photo-gallery--two-columns .uno-photo-gallery__photo:first-child {
+    width: 100%;
+  }
+}
