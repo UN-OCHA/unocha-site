@@ -142,6 +142,9 @@ uno-document:
   css:
     theme:
       components/uno-document/uno-document.css: {}
+  dependencies:
+    - common_design_subtheme/rw-river
+    - common_design_subtheme/rw-document
 
 uno-embed:
   css:
