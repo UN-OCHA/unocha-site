@@ -17,7 +17,9 @@
   margin: 0.25rem auto 2rem;
   padding: 0 var(--cd-container-padding);
 }
-
+.cd-container .cd-hero .cd-caption .field--name-field-image-caption {
+  max-width: var(--cd-max-content-width);
+}
 @media screen and (min-width: 768px) {
   .cd-container .cd-hero .cd-caption {
     padding: 0 var(--cd-container-padding-tablet);
