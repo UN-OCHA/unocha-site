@@ -1,0 +1,22 @@
+uuid: ac1d116f-09aa-446f-8d2d-951665a650aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_reliefweb_document
+    - paragraphs.paragraphs_type.media_item
+  module:
+    - unocha_reliefweb
+id: paragraph.media_item.field_reliefweb_document
+field_name: field_reliefweb_document
+entity_type: paragraph
+bundle: media_item
+label: 'ReliefWeb Document'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  river: updates
+field_type: reliefweb_document
