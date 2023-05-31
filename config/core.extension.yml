@@ -53,6 +53,7 @@ module:
   menu_ui: 0
   mysql: 0
   node: 0
+  ocha_key_figures: 0
   ocha_search: 0
   oembed_providers: 0
   options: 0

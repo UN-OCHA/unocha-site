@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d92abe455e4bce563701763fb791e235",
+    "content-hash": "e0c8a689d917ce69b9babc622cc845c8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -11203,6 +11203,87 @@
             "time": "2023-04-28T13:50:28+00:00"
         },
         {
+            "name": "symfony/intl",
+            "version": "v6.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/intl.git",
+                "reference": "49c7d14fc0465813e85b7cbbda49844af208d95a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/intl/zipball/49c7d14fc0465813e85b7cbbda49844af208d95a",
+                "reference": "49c7d14fc0465813e85b7cbbda49844af208d95a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "symfony/filesystem": "^5.4|^6.0",
+                "symfony/finder": "^5.4|^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Intl\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                },
+                {
+                    "name": "Eriksen Costa",
+                    "email": "eriksen.costa@infranology.com.br"
+                },
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides access to the localization data of the ICU library",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "i18n",
+                "icu",
+                "internationalization",
+                "intl",
+                "l10n",
+                "localization"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/intl/tree/v6.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-04-24T14:22:26+00:00"
+        },
+        {
             "name": "symfony/lock",
             "version": "v6.2.8",
             "source": {
@@ -13410,6 +13491,35 @@
                 "source": "https://github.com/UN-OCHA/common_design/tree/v8.1.0"
             },
             "time": "2023-05-04T09:44:30+00:00"
+        },
+        {
+            "name": "unocha/ocha_key_figures",
+            "version": "2.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/UN-OCHA/ocha_key_figures.git",
+                "reference": "9a85d0ebd0dae576fc7f08ab93799e08adbae0e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/UN-OCHA/ocha_key_figures/zipball/9a85d0ebd0dae576fc7f08ab93799e08adbae0e4",
+                "reference": "9a85d0ebd0dae576fc7f08ab93799e08adbae0e4",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/intl": "^6.2"
+            },
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "UNOCHA Key Figures",
+            "support": {
+                "issues": "https://github.com/UN-OCHA/ocha_key_figures/issues",
+                "source": "https://github.com/UN-OCHA/ocha_key_figures/tree/2.0.6"
+            },
+            "time": "2023-05-30T10:43:32+00:00"
         },
         {
             "name": "unocha/ocha_search",

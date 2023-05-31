@@ -15,6 +15,9 @@
     },
     "drupal/xmlsitemap": {
       "https://www.drupal.org/project/xmlsitemap/issues/3323148": "https://git.drupalcode.org/project/xmlsitemap/-/merge_requests/23.diff"
+    },
+    "unocha/ocha_key_figures": {
+      "Remove dependencies": "patches/ocha_key_figures-remove-dependencies.patch"
     }
   }
 }
