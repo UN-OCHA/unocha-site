@@ -13,8 +13,8 @@ dependencies:
     - paragraphs.paragraphs_type.figures
   module:
     - layout_builder
+    - ocha_key_figures
     - text
-    - unocha_figures
     - unocha_reliefweb
 third_party_settings:
   layout_builder:
@@ -31,6 +31,8 @@ content:
     settings:
       format: decimal
       precision: 1
+      percentage: 'yes'
+      currency_symbol: 'yes'
     third_party_settings: {  }
     weight: 2
     region: content

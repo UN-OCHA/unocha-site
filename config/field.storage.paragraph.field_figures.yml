@@ -4,13 +4,13 @@ status: true
 dependencies:
   module:
     - paragraphs
-    - unocha_figures
+    - ocha_key_figures
 id: paragraph.field_figures
 field_name: field_figures
 entity_type: paragraph
 type: key_figure
 settings: {  }
-module: unocha_figures
+module: ocha_key_figures
 locked: false
 cardinality: -1
 translatable: true
