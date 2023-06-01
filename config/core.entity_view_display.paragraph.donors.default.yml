@@ -1,0 +1,16 @@
+uuid: 73596594-1db3-45c2-8530-f0d140aa47f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.donors.field_countries
+    - field.field.paragraph.donors.field_donor_type
+    - paragraphs.paragraphs_type.donors
+id: paragraph.donors.default
+targetEntityType: paragraph
+bundle: donors
+mode: default
+content: {  }
+hidden:
+  field_countries: true
+  field_donor_type: true
