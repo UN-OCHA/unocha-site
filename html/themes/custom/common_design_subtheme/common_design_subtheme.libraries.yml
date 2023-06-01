@@ -153,6 +153,11 @@ uno-embed:
   js:
     components/uno-embed/uno-embed.js: {}
 
+uno-donors:
+  css:
+    theme:
+      components/uno-donors/uno-donors.css: {}
+
 uno-figures:
   css:
     theme:
