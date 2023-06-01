@@ -1,0 +1,125 @@
+{#
+/**
+ * @file
+ * Theme override for a field.
+ *
+ * To override output, copy the "field.html.twig" from the templates directory
+ * to your theme's directory and customize it, just like customizing other
+ * Drupal templates such as page.html.twig or node.html.twig.
+ *
+ * Instead of overriding the theming for all fields, you can also just override
+ * theming for a subset of fields using
+ * @link themeable Theme hook suggestions. @endlink For example,
+ * here are some theme hook suggestions that can be used for a field_foo field
+ * on an article node type:
+ * - field--node--field-foo--article.html.twig
+ * - field--node--field-foo.html.twig
+ * - field--node--article.html.twig
+ * - field--field-foo.html.twig
+ * - field--text-with-summary.html.twig
+ * - field.html.twig
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ *
+ * @see template_preprocess_field()
+ */
+#}
+{{ attach_library('common_design_subtheme/uno-event-date') }}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+    label_display == 'inline' ? 'clearfix',
+    'field--view-mode-' ~ element['#view_mode']|clean_class
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+{# Macro to format a date range and display the time separately. #}
+{% import _self as date %}
+{% macro format(item, attributes) %}
+  {% set timezone = item.timezone %}
+  {# Convert the dates to ISO 8601 so we can easily compare the year, month etc. #}
+  {% set start = item.value|date('c', timezone) %}
+  {% set end = item.end_value|date('c', timezone) %}
+  {% set same_day = start[0:10] == end[0:10] %}
+  <dl{{ attributes.addClass('field__item', 'uno-event-date') }}>
+    <div class="uno-event-date__wrapper uno-event-date__wrapper--date">
+      <dt class="uno-event-date__label">Date: </dt>
+      {% apply spaceless %}
+      <dd class="uno-event-date__date">
+        {% set start_format = 'unocha_date' %}
+        {% if not same_day %}
+          {# Only show the day for the start date if it's the same month and year. #}
+          {% if start[0:7] == end[0:7] %}
+            {% set start_format = 'unocha_day' %}
+          {# Only show the day and month for the start date if it's the same year. #}
+          {% elseif start[0:4] == end[0:4] %}
+            {% set start_format = 'unocha_day_month' %}
+          {% endif %}
+        {% endif %}
+        <time class="uno-event-date__date__start" datetime="{{ start }}">{{ start|date('U')|format_date(start_format, timezone=timezone) }}</time>
+        {# Do not show the end date if it's the same day. #}
+        {% if not same_day %}
+        <span class="uno-event-date__date__separator">&ndash;</span>
+        <time class="uno-event-date__date__end" datetime="{{ end }}">{{ end|date('U')|format_date('unocha_date', timezone=timezone) }}</time>
+        {% endif %}
+      </dd>
+      {% endapply %}
+    </div>
+    <div class="uno-event-date__wrapper uno-event-date__wrapper--time">
+      <dt class="uno-event-date__label">Time: </dt>
+      <dd class="uno-event-date__time">{{ start|date('U')|format_date('unocha_time', timezone=timezone) }}</dd>
+    </div>
+  </dl>
+{% endmacro %}
+
+{# Note: we loop through the `element['#items']` not the `items` variable to
+   have access to the raw field values to compute the proper dates according
+   to the selected timezone. #}
+{% if label_hidden %}
+  {% if multiple %}
+    <div{{ attributes.addClass(classes, 'field__items') }}>
+      {% for item in element['#items'] %}
+        {{ date.format(item, item.attributes) }}
+      {% endfor %}
+    </div>
+  {% else %}
+    {% for item in element['#items'] %}
+      {{ date.format(item, attributes.addClass(classes, 'field__item')) }}
+    {% endfor %}
+  {% endif %}
+{% else %}
+  <div{{ attributes.addClass(classes) }}>
+    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+    {% if multiple %}
+      <div class="field__items">
+    {% endif %}
+    {% for item in element['#items'] %}
+      {{ date.format(item, item.attributes) }}
+    {% endfor %}
+    {% if multiple %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}
