@@ -11,7 +11,7 @@ dependencies:
     - field.field.node.event.field_event_type
     - node.type.event
   module:
-    - datetime_range
+    - datetime_range_timezone
     - layout_paragraphs
     - media_library
     - path
@@ -48,7 +48,7 @@ content:
       empty_message: 'Placeholder message to display when field is empty'
     third_party_settings: {  }
   field_event_date:
-    type: daterange_default
+    type: daterange_timezone
     weight: 2
     region: content
     settings: {  }

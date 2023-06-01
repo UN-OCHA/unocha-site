@@ -12,7 +12,7 @@ dependencies:
     - field.field.node.event.field_event_type
     - node.type.event
   module:
-    - datetime_range
+    - datetime_range_timezone
     - text
     - user
 id: node.event.teaser
@@ -29,12 +29,12 @@ content:
     weight: 3
     region: content
   field_event_date:
-    type: daterange_default
+    type: daterange_timezone
     label: hidden
     settings:
-      timezone_override: ''
-      format_type: unocha
       separator: '-'
+      format_type: unocha
+      display_timezone: true
     third_party_settings: {  }
     weight: 1
     region: content
