@@ -4,14 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
-    - field.field.node.event.field_country
     - field.field.node.event.field_custom_content
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_image
     - field.field.node.event.field_event_location
     - field.field.node.event.field_event_type
-    - field.field.node.event.field_region
-    - field.field.node.event.field_response
     - node.type.event
   module:
     - text
@@ -39,12 +36,9 @@ content:
     weight: 0
     region: content
 hidden:
-  field_country: true
   field_custom_content: true
   field_event_date: true
   field_event_location: true
   field_event_type: true
-  field_region: true
-  field_response: true
   langcode: true
   links: true
