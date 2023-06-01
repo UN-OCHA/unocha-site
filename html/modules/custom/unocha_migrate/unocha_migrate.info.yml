@@ -4,4 +4,6 @@ description: 'Migrate/create content.'
 package: unocha
 core_version_requirement: ^9 || ^10
 dependencies:
+  - drupal:datetime_range_timezone
+  - drupal:field_type_converter
   - drupal:unocha_reliefweb
