@@ -5,14 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.event.body
-    - field.field.node.event.field_country
     - field.field.node.event.field_custom_content
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_image
     - field.field.node.event.field_event_location
     - field.field.node.event.field_event_type
-    - field.field.node.event.field_region
-    - field.field.node.event.field_response
     - node.type.event
   module:
     - datetime_range
@@ -24,7 +21,7 @@ bundle: event
 mode: teaser
 content:
   body:
-    type: text_trimmed
+    type: text_summary_or_trimmed
     label: hidden
     settings:
       trim_length: 160
@@ -33,7 +30,7 @@ content:
     region: content
   field_event_date:
     type: daterange_default
-    label: inline
+    label: hidden
     settings:
       timezone_override: ''
       format_type: unocha
@@ -50,19 +47,15 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_event_type:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
+  field_event_location:
+    type: text_default
+    label: hidden
+    settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
 hidden:
-  field_country: true
   field_custom_content: true
-  field_event_location: true
-  field_region: true
-  field_response: true
+  field_event_type: true
   langcode: true
   links: true
