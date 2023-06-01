@@ -1,0 +1,31 @@
+uuid: 2547a4d7-b54c-4166-bb38-217fcba305a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.donors.field_countries
+    - field.field.paragraph.donors.field_donor_type
+    - paragraphs.paragraphs_type.donors
+  module:
+    - choices
+id: paragraph.donors.default
+targetEntityType: paragraph
+bundle: donors
+mode: default
+content:
+  field_countries:
+    type: choices_widget
+    weight: 1
+    region: content
+    settings:
+      configuration_options: ''
+    third_party_settings: {  }
+  field_donor_type:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

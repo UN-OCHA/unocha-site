@@ -11,7 +11,7 @@ use Drupal\unocha_utility\Helpers\NumberFormatter;
  * Plugin implementation of the 'key_figure' formatter.
  *
  * @FieldFormatter(
- *   id = "key_figure",
+ *   id = "unocha_figures_key_figure",
  *   label = @Translation("Key Figure"),
  *   field_types = {
  *     "key_figure"

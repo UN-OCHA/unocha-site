@@ -1,0 +1,18 @@
+uuid: cb900903-c44d-46d4-9ad8-d1e4a310c0e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.leader
+id: node.leader.title
+field_name: title
+entity_type: node
+bundle: leader
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

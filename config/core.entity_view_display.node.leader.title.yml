@@ -1,0 +1,45 @@
+uuid: ad9d86b4-4141-4e47-b5e8-4bc5bc43158f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.title
+    - field.field.node.leader.body
+    - field.field.node.leader.field_leader_portrait
+    - field.field.node.leader.field_leader_title
+    - node.type.leader
+    - responsive_image.styles.portrait
+  module:
+    - layout_builder
+    - responsive_image
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.leader.title
+targetEntityType: node
+bundle: leader
+mode: title
+content:
+  field_leader_portrait:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: portrait
+      image_link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_leader_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  body: true
+  langcode: true
+  links: true

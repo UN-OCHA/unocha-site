@@ -26,24 +26,6 @@ targetEntityType: node
 bundle: response
 mode: full
 content:
-  field_active_response:
-    type: boolean
-    label: inline
-    settings:
-      format: yes-no
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_country:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 3
-    region: content
   field_custom_content:
     type: layout_paragraphs
     label: hidden
@@ -55,11 +37,11 @@ content:
     region: content
   field_region:
     type: entity_reference_label
-    label: inline
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
   field_response_image:
     type: entity_reference_entity_view
@@ -80,9 +62,11 @@ content:
       rel: '0'
       target: _blank
     third_party_settings: {  }
-    weight: 5
+    weight: 2
     region: content
 hidden:
   body: true
+  field_active_response: true
+  field_country: true
   langcode: true
   links: true

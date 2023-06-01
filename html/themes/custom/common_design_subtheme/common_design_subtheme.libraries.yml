@@ -72,6 +72,11 @@ cd-social-links:
     component:
       components/cd-social-links/cd-social-links.css: {}
 
+cd-tabs:
+  css:
+    component:
+      components/cd-tabs/cd-tabs.css: {}
+
 cd-teaser:
   css:
     component:
@@ -94,11 +99,6 @@ rw-icons:
   css:
     theme:
       components/rw-icons/rw-icons.css: {}
-
-rw-key-figures:
-  css:
-    theme:
-      components/rw-key-figures/rw-key-figures.css: {}
 
 rw-river:
   css:
@@ -142,6 +142,9 @@ uno-document:
   css:
     theme:
       components/uno-document/uno-document.css: {}
+  dependencies:
+    - common_design_subtheme/rw-river
+    - common_design_subtheme/rw-document
 
 uno-donors:
   css:
@@ -154,6 +157,11 @@ uno-embed:
       components/uno-embed/uno-embed.css: {}
   js:
     components/uno-embed/uno-embed.js: {}
+
+uno-donors:
+  css:
+    theme:
+      components/uno-donors/uno-donors.css: {}
 
 uno-figures:
   css:
@@ -169,6 +177,11 @@ uno-layout:
   css:
     theme:
       components/uno-layout/uno-layout.css: {}
+
+uno-leader:
+  css:
+    theme:
+      components/uno-leader/uno-leader.css: {}
 
 uno-mega-menu:
   css:
@@ -197,6 +210,11 @@ uno-rss-feed:
     theme:
       components/uno-rss-feed/uno-rss-feed.css: {}
 
+uno-subscribe:
+  css:
+    theme:
+      components/uno-subscribe/uno-subscribe.css: {}
+
 uno-tabs:
   css:
     theme:
@@ -204,6 +222,10 @@ uno-tabs:
   js:
     components/uno-tabs/uno-tabs.js: {}
 
+uno-text-image:
+  css:
+    theme:
+      components/uno-text-image/uno-text-image.css: {}
 ###
 # Define Drupal libraries for additional webfonts.
 #

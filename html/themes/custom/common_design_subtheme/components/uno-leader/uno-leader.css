@@ -1,0 +1,140 @@
+.field--name-field-leader-title {
+  margin-bottom: 1rem;
+  font-size: var(--cd-font-size--medium);
+}
+
+.uno-leader--title,
+.uno-leader--teaser {
+  text-align: center;
+}
+
+.uno-leader--full .field--name-field-leader-portrait {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 576px) {
+  .uno-leader--full .cd-layout-main-content {
+    display: grid;
+    grid-template-areas: "image name" "image title";
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 33% 66%;
+    gap: 1rem 2rem;
+  }
+
+  .uno-leader--full .field--name-field-leader-title {
+    grid-area: name;
+    padding-inline-end: 2rem;
+  }
+
+  .uno-leader--full .field--name-field-leader-portrait {
+    grid-area: image;
+  }
+
+  .uno-leader--full .field--name-body {
+    padding-inline-end: 2rem;
+  }
+
+  .uno-leader--teaser,
+  .field--name-field-leader-title,
+  .uno-leader--title {
+    text-align: left;
+  }
+
+  .uno-leader--title {
+    padding-inline-end: 2rem;
+  }
+
+  .uno-leader--teaser {
+    display: grid;
+    grid-template-areas: "image name" "image title" "image link";
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-columns: 33% 66%;
+    gap: 1rem 2rem;
+  }
+  .uno-leader--teaser .uno-leader__name {
+    grid-area: name;
+    align-self: end;
+    margin: 0;
+  }
+  .uno-leader--teaser .field--name-field-leader-title {
+    grid-area: title;
+  }
+  .uno-leader--teaser .cd-read-more {
+    grid-area: link;
+  }
+  .uno-leader--teaser .field--name-field-leader-portrait {
+    grid-area: image;
+  }
+
+  .uno-leader--title {
+    display: grid;
+    grid-template-areas: "image name" "image title" "image link";
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-columns: 33% 66%;
+    gap: 1rem 1rem;
+  }
+  .uno-leader--title .uno-leader__name {
+    grid-area: name;
+    align-self: end;
+    margin: 0;
+  }
+  .uno-leader--title .field--name-field-leader-title {
+    grid-area: title;
+  }
+  .uno-leader--title .cd-read-more {
+    grid-area: link;
+    justify-self: flex-start;
+  }
+  .uno-leader--title .field--name-field-leader-portrait {
+    grid-area: image;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .uno-leader--title {
+    grid-template-columns: 20% 80%;
+  }
+}
+
+/* Two column layout for USG, ASG */
+.layout--twocol .uno-leader--teaser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.layout--twocol .uno-leader--teaser .field--name-field-leader-title {
+  text-align: center;
+}
+
+.layout--twocol .uno-leader--teaser .uno-leader__name {
+  align-self: unset;
+}
+
+/* Rounded portraits */
+.layout--twocol .field--name-field-leader-portrait img {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto ;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.field--name-field-custom-content .paragraph--type--leader,
+.field--name-field-custom-content .paragraph--type--leader:last-child {
+  margin-bottom: 6rem;
+}
+
+.paragraph--type--leader.paragraph--view-mode--small {
+  margin-bottom: 4rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--brand-grey);
+}
+
+.paragraph--type--leader.paragraph--view-mode--small:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0 solid var(--brand-grey);
+}

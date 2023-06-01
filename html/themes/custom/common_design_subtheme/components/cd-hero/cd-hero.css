@@ -7,8 +7,8 @@
 
 .cd-hero__image {
   max-width: var(--cd-max-width--hero);
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 .cd-hero__image picture,
 .cd-hero__image picture img {
@@ -20,7 +20,7 @@
   margin-top: -2rem;
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .cd-page-layout-container main .cd-hero {
     margin-top: -3rem;
   }

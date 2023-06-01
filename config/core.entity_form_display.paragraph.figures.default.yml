@@ -11,9 +11,9 @@ dependencies:
     - field.field.paragraph.figures.paragraph_view_mode
     - paragraphs.paragraphs_type.figures
   module:
+    - ocha_key_figures
     - paragraph_view_mode
     - text
-    - unocha_figures
     - unocha_reliefweb
 id: paragraph.figures.default
 targetEntityType: paragraph
@@ -24,7 +24,8 @@ content:
     type: key_figure
     weight: 3
     region: content
-    settings: {  }
+    settings:
+      allow_manual: 'yes'
     third_party_settings: {  }
   field_figures_footnote:
     type: string_textarea
@@ -58,15 +59,15 @@ content:
     third_party_settings: {  }
   paragraph_view_mode:
     type: paragraph_view_mode
-    weight: 0
+    weight: -100
     region: content
     settings:
       view_modes:
-        figures: figures
-        figures_compact_long: figures_compact_long
-        figures_compact_short: figures_compact_short
-        default: '0'
-      default_view_mode: figures
+        default: Default
+        figures: Figures
+        figures_compact_long: 'Figures - Compact Long'
+        figures_compact_short: 'Figures - Compact Short'
+      default_view_mode: default
       form_mode_bind: true
     third_party_settings: {  }
 hidden:

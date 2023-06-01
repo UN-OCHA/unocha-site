@@ -3,10 +3,10 @@
  */
 
 .cd-page-title {
-  border-bottom: 0 none;
-  color: var(--brand-primary);
-  font-size: var(--cd-font-size--2xbase);
   max-width: var(--cd-max-content-width);
+  color: var(--brand-primary);
+  border-bottom: 0 none;
+  font-size: var(--cd-font-size--2xbase);
 }
 
 @media screen and (min-width: 1024px) {

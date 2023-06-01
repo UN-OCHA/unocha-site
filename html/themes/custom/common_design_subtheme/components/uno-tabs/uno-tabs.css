@@ -12,6 +12,7 @@
   bottom: -3px;
   padding: 0.5rem 1em;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .uno-tabs [role="tablist"] [aria-selected] {
@@ -36,7 +37,7 @@
   box-shadow: inset 0 0 0 4px var(--brand-highlight);
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
   .uno-tabs [role="tablist"] li,
   .uno-tabs [role="tablist"] a {

@@ -14,7 +14,6 @@ dependencies:
     - node.type.response
   module:
     - layout_builder
-    - text
     - user
 third_party_settings:
   layout_builder:
@@ -25,14 +24,6 @@ targetEntityType: node
 bundle: response
 mode: card
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 160
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_active_response:
     type: boolean
     label: hidden
@@ -53,6 +44,7 @@ content:
     weight: 0
     region: content
 hidden:
+  body: true
   field_country: true
   field_custom_content: true
   field_region: true

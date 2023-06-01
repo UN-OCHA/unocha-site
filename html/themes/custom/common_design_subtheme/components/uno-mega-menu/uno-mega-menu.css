@@ -1,4 +1,4 @@
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   /* So the mega menus and normal menus play nice together. */
   .cd-site-header__nav-holder nav[role="navigation"].cd-nav {
     position: unset;
@@ -62,7 +62,6 @@
   font-weight: normal;
 }
 
-
 /* When a parent menu item is not a link <nolink>, hide the label on mobile.
   Eg. Europe
   Europe has a child item (Ukraine) but no regional office nor region page.
@@ -70,13 +69,14 @@
 .cd-nav__menu-item--level-2.menu-item--expanded > .uno-mega-menu__dropdown > span.menu-item__label {
   display: none;
 }
-@media (min-width: 1024px) {
+
+@media screen and (min-width: 1024px) {
   .cd-nav__menu-item--level-2.menu-item--expanded > .uno-mega-menu__dropdown > span.menu-item__label {
     display: block;
   }
-}
 
-/* 2nd level menu items without children */
-.uno-mega-menu .cd-nav__menu-item--level-2:not(.menu-item--expanded) {
-  margin-bottom: 0.5rem;
+  /* 2nd level menu items without children */
+  .uno-mega-menu .cd-nav__menu-item--level-2:not(.menu-item--expanded) {
+    margin-bottom: 0.5rem;
+  }
 }

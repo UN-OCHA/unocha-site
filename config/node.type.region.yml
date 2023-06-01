@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Region
 type: region
-description: ''
+description: 'Landing pages for Regions.'
 help: ''
 new_revision: true
 preview_mode: 1

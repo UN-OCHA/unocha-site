@@ -4,7 +4,7 @@
 
 :root {
   --cd-bumper-space: 2rem;
-  --cd-flow-space: 2rem;
+  --cd-flow-space: 1rem;
 }
 
 .cd-teaser {
@@ -13,8 +13,8 @@
 }
 
 .view-content .cd-teaser:first-child {
-  border-top: 1px solid var(--brand-grey);
   padding-top: 1rem;
+  border-top: 1px solid var(--brand-grey);
 }
 
 .cd-teaser__title,
@@ -33,10 +33,10 @@
 
 .cd-teaser__image {
   margin-top: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
-@media (min-width: 576px) {
+@media screen and (min-width: 576px) {
   .cd-teaser__image {
     margin-top: 0;
     margin-bottom: 0;

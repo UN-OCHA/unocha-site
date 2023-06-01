@@ -5,6 +5,7 @@ namespace Drupal\unocha_utility;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\unocha_utility\Helpers\HtmlSanitizer;
 use Drupal\unocha_utility\Helpers\LocalizationHelper;
+use Drupal\unocha_utility\Helpers\NumberFormatter;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
@@ -26,6 +27,8 @@ class TwigExtension extends AbstractExtension {
       new TwigFilter('dpm', 'dpm'),
       new TwigFilter('values', 'array_values'),
       new TwigFilter('hide_nested_label', [$this, 'hideNestedLabel']),
+      new TwigFilter('format_number_compact', [$this, 'formatNumberCompact']),
+      new TwigFilter('format_number_decimal', [$this, 'formatNumberDecimal']),
     ];
   }
 
@@ -181,6 +184,47 @@ class TwigExtension extends AbstractExtension {
       }
     }
     return $element;
+  }
+
+  /**
+   * Format a number with language aware compact decimal formatting.
+   *
+   * If the language is not supported or no pattern was found, the returned
+   * number will be formatted with the grouped thousands formatting.
+   *
+   * @param float|int $number
+   *   Number to format.
+   * @param string $langcode
+   *   Language code. Defaults to the current one.
+   * @param string $type
+   *   Either 'short' or 'long' (default).
+   * @param int $precision
+   *   Precision for the rounding of the number once compacted.
+   * @param bool $use_gho_specifics
+   *   When TRUE, apply some extra transformations like on the GHO site.
+   *
+   * @return string
+   *   Formatted number.
+   */
+  public static function formatNumberCompact($number, $langcode = NULL, $type = 'long', $precision = 2, $use_gho_specifics = FALSE) {
+    $langcode = $langcode ?? \Drupal::languageManager()->getCurrentLanguage()->getId();
+    return NumberFormatter::formatNumberCompact($number, $langcode, $type, $precision, $use_gho_specifics);
+  }
+
+  /**
+   * Format a number with grouped thousands.
+   *
+   * @param float|int $number
+   *   Number to format. Defaults to the current one.
+   * @param string $langcode
+   *   Language code.
+   *
+   * @return string
+   *   Formatted number.
+   */
+  public static function formatNumberDecimal($number, $langcode) {
+    $langcode = $langcode ?? \Drupal::languageManager()->getCurrentLanguage()->getId();
+    return NumberFormatter::formatNumberDecimal($number, $langcode);
   }
 
 }

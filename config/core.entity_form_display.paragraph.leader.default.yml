@@ -1,0 +1,36 @@
+uuid: 0b49baec-0b2d-4409-914f-67ffd8eaadcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.leader.field_single_node
+    - field.field.paragraph.leader.paragraph_view_mode
+    - paragraphs.paragraphs_type.leader
+  module:
+    - paragraph_view_mode
+id: paragraph.leader.default
+targetEntityType: paragraph
+bundle: leader
+mode: default
+content:
+  field_single_node:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  paragraph_view_mode:
+    type: paragraph_view_mode
+    weight: -100
+    region: content
+    settings:
+      view_modes:
+        default: Default
+        large: Large
+        small: Small
+      default_view_mode: default
+      form_mode_bind: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

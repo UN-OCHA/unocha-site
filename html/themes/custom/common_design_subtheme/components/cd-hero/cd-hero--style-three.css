@@ -32,7 +32,7 @@
 }
 */
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .cd-hero--style-three .cd-hero__container {
     /* position: absolute;
     bottom: 2rem; */
@@ -49,7 +49,7 @@
   } */
 }
 
-/* @media (min-width: 1200px) {
+/* @media screen and (min-width: 1200px) {
   [dir="ltr"] .cd-hero--style-three .cd-hero__container {
     left: 0;
   }

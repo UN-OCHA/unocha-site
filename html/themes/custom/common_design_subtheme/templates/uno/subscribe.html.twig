@@ -1,16 +1,26 @@
+{{ attach_library('common_design_subtheme/uno-subscribe') }}
+
+{# Default to the global OCHA mailing list if values are not provided. #}
+{% set url = url ?? 'https://unocha.us2.list-manage.com/profile?u=83487eb1105d72ff2427e4bd7&id=fdc5b4f7e9' %}
+{% set title = title ?? 'Subscribe to UNOCHA mailing list'|t %}
+{% set submit = submit ?? 'Subscribe to our newsletter'|t %}
+{% set logo = logo ?? 'yes' %}
+
 <!-- Begin Mailchimp Signup Form -->
 <div id="mc_embed_signup" class="uno-subscribe">
-  <form action="https://unocha.us2.list-manage.com/profile?u=83487eb1105d72ff2427e4bd7&id=fdc5b4f7e9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+  <form action="{{ url }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    {% if logo is not empty %}
     <span class="uno-subscribe__logo">
       <span class="visually-hidden">{{ 'United Nations Office for the Coordination of Humanitarian Affairs'|t }}</span>
       {{ source('@common_design_subtheme/img/logos/ocha-lockup.svg') }}
     </span>
+    {% endif %}
     <div id="mc_embed_signup_scroll">
       <h2 class="visually-hidden">{% trans %}Subscribe{% endtrans %}</h2>
       <div class="mc-field-group">
-        <label for="mce-EMAIL" class="visually-hidden">{% trans %}Subscribe to UNOCHA mailing list{% endtrans %}</label>
-        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Enter your email address">
-        <input type="submit" value="Subscribe to our newsletter" name="subscribe" id="mc-embedded-subscribe" class="button cd-button cd-button--wide cd-button--bold cd-button--uppercase">
+        <label for="mce-EMAIL" class="visually-hidden">{{ title }}</label>
+        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="{{ 'Enter your email address'|t }}">
+        <input type="submit" value="{{ submit }}" name="subscribe" id="mc-embedded-subscribe" class="button cd-button cd-button--wide cd-button--bold cd-button--uppercase">
       </div>
       <div id="mce-responses" class="clear">
         <div class="response" id="mce-error-response" style="display:none"></div>
@@ -18,7 +28,8 @@
       </div>
       <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
       <div style="position: absolute; left: -5000px;" aria-hidden="true">
-        <label for="mce-HONEYPOT">Do not fill in this field</label>
+        <label for="mce-HONEYPOT">{% trans %}Do not fill in this field{% endtrans %}</label>
+        {# @todo does name needs to be different for each form? #}
         <input id="mce-HONEYPOT" type="text" name="83487eb1105d72ff2427e4bd7" tabindex="-1" value="">
       </div>
     </div>

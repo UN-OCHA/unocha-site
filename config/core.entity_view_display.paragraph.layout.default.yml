@@ -8,20 +8,11 @@ dependencies:
     - paragraphs.paragraphs_type.layout
   module:
     - layout_builder
-    - layout_builder_restrictions
-    - layout_discovery
     - text
 third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-  layout_builder_restrictions:
-    allowed_block_categories: {  }
-    entity_view_mode_restriction:
-      allowed_layouts: {  }
-      denylisted_blocks: {  }
-      allowlisted_blocks: {  }
-      restricted_categories: {  }
 id: paragraph.layout.default
 targetEntityType: paragraph
 bundle: layout

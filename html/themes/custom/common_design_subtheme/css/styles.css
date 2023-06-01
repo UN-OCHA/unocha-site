@@ -240,49 +240,14 @@
   margin-bottom: 2rem;
 }
 
-/* Paragraph Text and Image with alignment */
-@media screen and (min-width: 768px) {
-  .paragraph--type--text-and-image.paragraph--view-mode--image-align-left,
-  .paragraph--type--text-and-image.paragraph--view-mode--image-align-right {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .paragraph--view-mode--image-align-left .field--name-field-image,
-  .paragraph--view-mode--image-align-right .field--name-field-image {
-    flex: 0 1 50%;
-  }
-  .paragraph--view-mode--image-align-left .field--name-field-text,
-  .paragraph--view-mode--image-align-right .field--name-field-text {
-    flex: 0 1 50%;
-  }
-
-  .paragraph--type--text-and-image .field--name-field-title {
-    flex: 1 0 100%;
-  }
-
-  .paragraph--view-mode--image-align-left .field--name-field-text {
-    padding-inline-start: 4rem;
-  }
-  .paragraph--view-mode--image-align-right .field--name-field-text,
-  .paragraph--view-mode--image-align-right .field--name-field-title {
-    padding-inline-end: 4rem;
-    text-align: left;
-  }
+/* River followed by another river */
+.paragraph--type--reliefweb-river + .paragraph--type--reliefweb-river {
+  margin-top: 4rem;
 }
-
-.paragraph__image--align-center .field--name-field-title,
-.paragraph__image--align-center .field--name-field-text {
-  text-align: left;
-}
-.paragraph__image--align-center .field--name-field-media-image .field__item img {
-  display: inline-block;
-  margin: 0 auto;
-}
-
-.paragraph--type--call-to-action.cd-bleed {
-  margin-right: calc(50% - 50vw + var(--cd-bleed-scrollbar-width) / 2);
-  margin-left: calc(50% - 50vw + var(--cd-bleed-scrollbar-width) / 2);
-  background-color: var(--brand-grey);
+@media screen and (min-width: 1024px) {
+  .paragraph--type--reliefweb-river + .paragraph--type--reliefweb-river {
+    margin-top: 6rem;
+  }
 }
 
 /* Video embed aspect ratio is calculated in the oembed-video field template. */
@@ -296,34 +261,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-.uno-subscribe {
-  margin: 2rem 0 3rem;
-}
-.uno-subscribe form {
-  display: flex;
-}
-.uno-subscribe .uno-subscribe__logo {
-  margin-inline-end: 3rem;
-}
-.uno-subscribe .uno-subscribe__logo svg {
-  fill: var(--brand-primary);
-}
-.uno-subscribe .mc-field-group {
-  display: flex;
-}
-.uno-subscribe .cd-button {
-  border-radius: 0;
-}
-.uno-subscribe .email {
-  border: 1px solid var(--brand-grey);
-  padding-inline-start: 2rem;
-}
-@media (min-width: 767px) {
-  .uno-subscribe .email {
-    width: 400px;
-  }
 }
 
 .uno-tag {
@@ -362,7 +299,10 @@
   display: flex;
   align-items: baseline;
 }
-
+.uno-stories .uno-stories__view_all,
+.view-header .views-display-link {
+  flex: 1 0 auto;
+}
 .uno-stories .uno-stories__view_all a,
 .view-header .views-display-link {
   position: relative;
@@ -447,7 +387,20 @@ footer.cd-author {
   border-bottom: 0 solid;
 }
 
-@media (min-width: 767px) {
+/* CTA link on Response and Region pages */
+.uno-content--custom > a.uno-button {
+  float: right;
+  margin-bottom: 0.75rem;
+  margin-inline-start: 0.75rem;
+}
+
+/* Prevent the floated button overlapping the next field */
+.uno-content--custom > a.uno-button + .field {
+  clear: both;
+}
+
+
+@media (min-width: 1200px) {
   .uno-content--custom {
     position: relative;
   }
@@ -462,4 +415,12 @@ footer.cd-author {
 /* Center Story image within the cd-bleed container */
 .field--name-field-story-image {
   text-align: center;
+}
+
+
+/* Hide User Login on mobile for now */
+@media (max-width: 480px) {
+  .menu--account {
+    display: none;
+  }
 }

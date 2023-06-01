@@ -24,14 +24,13 @@
   flex: 0 1 calc((100% / var(--uno-card-list-num-cols)) - var(--uno-card-list-gap-size) + var(--uno-card-list-gap-size) / var(--uno-card-list-num-cols));
 }
 
-
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 576px) {
   .layout--twocol > .layout__region {
     --uno-card-list-num-cols: 2;
   }
 
   .layout--threecol > .layout__region {
-    --uno-card-list-num-cols: 3;
+    --uno-card-list-num-cols: 1;
   }
 
   .layout--fourcol > .layout__region {
@@ -60,7 +59,7 @@
 /**
   * Adopt column layout once space allows.
   */
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   /**
     * Use flex-box once window can accomodate columns.
     */

@@ -21,7 +21,7 @@ use Symfony\Component\HttpFoundation\Request;
  * Plugin implementation of the 'key_figure' widget.
  *
  * @FieldWidget(
- *   id = "key_figure",
+ *   id = "unocha_figures_key_figure",
  *   label = @Translation("Key Figure"),
  *   field_types = {
  *     "key_figure"

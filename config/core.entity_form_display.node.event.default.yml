@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.event.field_response
     - node.type.event
   module:
+    - choices
     - datetime_range
     - layout_paragraphs
     - media_library
@@ -26,7 +27,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 8
+    weight: 5
     region: content
     settings:
       rows: 9
@@ -41,14 +42,15 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_country:
-    type: options_select
-    weight: 6
+    type: choices_widget
+    weight: 9
     region: content
-    settings: {  }
+    settings:
+      configuration_options: ''
     third_party_settings: {  }
   field_custom_content:
     type: layout_paragraphs
-    weight: 9
+    weight: 6
     region: content
     settings:
       preview_view_mode: preview
@@ -84,16 +86,18 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_region:
-    type: options_select
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_response:
-    type: options_select
+    type: choices_widget
     weight: 7
     region: content
-    settings: {  }
+    settings:
+      configuration_options: ''
+    third_party_settings: {  }
+  field_response:
+    type: choices_widget
+    weight: 8
+    region: content
+    settings:
+      configuration_options: ''
     third_party_settings: {  }
   langcode:
     type: language_select

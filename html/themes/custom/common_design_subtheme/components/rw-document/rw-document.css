@@ -57,3 +57,17 @@
     margin-left: 24px;
   }
 }
+
+/* Reading width. */
+.unocha-reliefweb-document {
+  max-width: var(--cd-max-content-width);
+}
+
+/* .unocha-reliefweb-document .cd-page-title {
+  font-size: var(--cd-font-size--large);
+}
+@media screen and (min-width: 1024px) {
+  .unocha-reliefweb-document .cd-page-title {
+    font-size: var(--cd-font-size--2xbase);
+  }
+} */

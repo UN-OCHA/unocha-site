@@ -1,0 +1,37 @@
+uuid: bcadb00d-b911-4876-b812-f2f6a1901e7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.donors.field_countries
+    - field.field.paragraph.donors.field_donor_type
+    - paragraphs.paragraphs_type.donors
+  module:
+    - layout_builder
+    - options
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.donors.preview
+targetEntityType: paragraph
+bundle: donors
+mode: preview
+content:
+  field_countries:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_donor_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

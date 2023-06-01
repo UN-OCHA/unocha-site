@@ -7,17 +7,10 @@
   --uno-nav-list-gap-size: 2rem;
 }
 
-.uno-nav {
-  color: var(--brand-highlight-contrast);
-  background-color: var(--brand-highlight);
-  padding: 1rem;
-  border: 1px solid #707070;
-  margin-top: -36px; /* Height of nav h2 and its bottom margin */
-}
 .uno-nav__list {
-  list-style-type: none;
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 
 .uno-nav__list li {
@@ -25,8 +18,8 @@
 }
 
 .uno-nav__list--horizontal li {
-  padding: 0.5rem 0 1rem;
   margin-bottom: 0.5rem;
+  padding: 0.5rem 0 1rem;
   border-top: 1px solid var(--brand-grey);
 }
 

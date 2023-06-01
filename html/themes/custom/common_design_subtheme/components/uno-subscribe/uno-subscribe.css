@@ -1,0 +1,69 @@
+.paragraph--type--subscribe {
+  display: flex;
+  justify-content: center;
+}
+
+.uno-subscribe {
+  margin: 2rem 0 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .uno-subscribe form {
+    display: flex;
+  }
+}
+
+.uno-subscribe .uno-subscribe__logo {
+  display: block;
+  margin-bottom: 0.5rem;
+  margin-inline-end: 3rem;
+}
+
+.uno-subscribe .uno-subscribe__logo svg {
+  fill: var(--brand-primary);
+}
+
+.uno-subscribe .mc-field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .uno-subscribe .mc-field-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .uno-subscribe .uno-subscribe__logo {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .uno-subscribe .mc-field-group {
+    flex-wrap: nowrap;
+  }
+}
+
+.uno-subscribe .cd-button {
+  border-radius: 0;
+}
+
+.uno-subscribe .email {
+  padding: 0.5rem 1rem;
+  padding-inline-start: 2rem;
+  border: 1px solid var(--brand-grey);
+  line-height: 1.15; /* match cd-button */
+}
+
+@media screen and (min-width: 768px) {
+  .uno-subscribe .email,
+  .uno-subscribe .cd-button {
+    flex: 1 0 auto;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .uno-subscribe .email {
+    flex: 1 0 400px;
+  }
+}

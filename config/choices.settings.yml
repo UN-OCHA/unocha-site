@@ -1,0 +1,7 @@
+_core:
+  default_config_hash: SyMqg7vEiTktilQuOvvG9sVwHY9G01n6omW1-cE3IHw
+use_cdn: false
+css_selector: 'select[multiple]'
+include: 2
+configuration_options: "{\r\n    \"removeItemButton\": true,\r\n    \"placeholder\": true,\r\n    \"placeholderValue\": \"Search...\",\r\n    \"searchPlaceholderValue\": \"Search...\",\r\n    \"shouldSort\": false\r\n}"
+enable_globally: false

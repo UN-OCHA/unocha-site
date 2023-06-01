@@ -1,0 +1,7 @@
+_core:
+  default_config_hash: 943mcYJvcDZ68zXQl74uC9KLpBtvQh1GTB14Er02HW8
+ocha_api_url: ''
+ocha_api_key: ''
+ocha_app_name: ''
+enable_json_ld: false
+max_age: 86400

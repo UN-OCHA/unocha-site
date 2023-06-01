@@ -35,7 +35,7 @@
   font-weight: bold;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .gho-needs-and-requirements {
     display: flex;
     justify-content: space-between;
@@ -75,7 +75,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .gho-needs-and-requirements-figure__value {
     font-size: 2.25rem;
   }
@@ -90,6 +90,6 @@
 }
 
 .gho-content .cd-read-more {
-  color: black;
   text-decoration: none;
+  color: black;
 }

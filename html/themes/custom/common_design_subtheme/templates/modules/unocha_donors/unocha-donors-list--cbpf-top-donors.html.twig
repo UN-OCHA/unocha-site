@@ -1,0 +1,38 @@
+{#
+
+/**
+ * @file
+ * Template for a list of donors/sectors.
+ *
+ * Available variables:
+ * - type: type of donor data
+ * - attributes: attributes for the container
+ * - level: heading level for the title
+ * - title: list's title
+ * - title_attributes: title attributes
+ * - list: list of donors/sectors with name and optional pledged/paid amounts
+ * - list_attributes: attributes for the list
+ * - item_attributes: attributes for the list items
+ */
+
+#}
+{% if list is not empty %}
+{{ attach_library('common_design_subtheme/uno-donors') }}
+{% set title = 'Top 5 donors' %}
+<section{{ attributes.addClass('uno-donors', 'uno-donors--' ~ type|clean_class)}}>
+  <h{{ level }}{{ title_attributes.addClass('uno-donors__title') }}>{{ title }}</h{{ level }}>
+  {% apply spaceless %}
+  <ul{{ list_attributes.addClass('uno-donors__list', 'uno-donors__list--with-figures') }}>
+    {% for item in list|slice(0, 5) %}
+    {% set amount = item.paid ? item.paid : item.pledged %}
+    {% set suffix = item.paid ? 'paid'|t : 'pledged'|t %}
+    <li{{ item_attributes.addClass('uno-donors__list__item') }}>
+      <span class="uno-donors__country">{{ item.name }}</span>
+      <span class="uno-donors__amount"> ${{ amount|format_number_compact(null, 'long', 1, true)  }} <small class="uno-donors__amount__suffix">({{ suffix }})</small></span>
+    </li>
+    {% endfor %}
+  <ul>
+  {% endapply %}
+</section>
+{% endif %}
+
