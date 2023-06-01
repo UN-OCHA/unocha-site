@@ -58,6 +58,19 @@ function common_design_subtheme_theme_suggestions_node_alter(array &$suggestions
 }
 
 /**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function common_design_subtheme_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+  $entity_type = $variables['element']['#entity_type'];
+  $bundle = $variables['element']['#bundle'];
+  $field_name = $variables['element']['#field_name'];
+  $sanitized_view_mode = strtr($variables['element']['#view_mode'], '.', '_');
+  $suggestions[] = 'field__' . $entity_type . '__' . $sanitized_view_mode . '__' . $field_name;
+  $suggestions[] = 'field__' . $entity_type . '__' . $bundle . '__' . $sanitized_view_mode . '__' . $field_name;
+  return $suggestions;
+}
+
+/**
  * Implements hook_preprocess_menu().
  *
  * Flag main navigation menu items with more than 2 nested levels of children as
