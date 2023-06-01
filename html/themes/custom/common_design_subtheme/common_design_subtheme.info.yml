@@ -48,6 +48,8 @@ libraries-extend:
     - common_design_subtheme/cd-caption
   common_design/cd-card:
     - common_design_subtheme/cd-card
+  common_design/cd-header:
+    - common_design_subtheme/cd-header
   common_design/cd-page-title:
     - common_design_subtheme/cd-page-title
   common_design/cd-read-more:

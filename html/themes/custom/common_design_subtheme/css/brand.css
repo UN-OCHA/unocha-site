@@ -16,4 +16,17 @@
   --brand-grey--text: #00000080;
   --brand-logo-width: 186px;
   --brand-default-text-color: #444;
+
+/**
+  * Site logos
+  *
+  * Specify the logo paths/dimentions here. The URL is relative to
+  * common_design_subtheme/components/cd/cd-header/cd-logo.css
+  */
+  --brand-logo-mobile-url: url("../../../img/logos/ocha-logo-blue.svg");
+  --brand-logo-mobile-width: 52px;
+  --brand-logo-desktop-width: 186px;
+
+  /* DEPRECATED: this variable will be removed in the future */
+  --brand-logo-width: var(--brand-logo-desktop-width);
 }

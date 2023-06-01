@@ -47,6 +47,11 @@ cd-card:
     component:
       components/cd-card/cd-card.css: {}
 
+cd-header:
+  css:
+    theme:
+      components/cd/cd-header/cd-logo.css: {}
+
 cd-hero:
   css:
     component:
