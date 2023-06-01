@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a2556d687656172eee28c12770765ddf",
+    "content-hash": "78ca31ba84c88d42967bacf31d4e1744",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3573,52 +3573,6 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/entity_usage",
                 "issues": "http://drupal.org/project/issues/entity_usage"
-            }
-        },
-        {
-            "name": "drupal/field_type_converter",
-            "version": "1.0.0-alpha3",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/field_type_converter.git",
-                "reference": "1.0.0-alpha3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/field_type_converter-1.0.0-alpha3.zip",
-                "reference": "1.0.0-alpha3",
-                "shasum": "9a81988923b80ee9c4fab8991b66329176d4e99f"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9 || ^10",
-                "php": "^7 || ^8"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.0-alpha3",
-                    "datestamp": "1651732786",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Hawkeye Tenderwolf",
-                    "homepage": "https://www.drupal.org/user/1571646",
-                    "email": "hawkeye@tenderwolf.io"
-                }
-            ],
-            "description": "Helper module to change fields from one type to another.",
-            "homepage": "http://drupal.org/project/field_type_converter",
-            "support": {
-                "source": "https://git.drupalcode.org/project/field_type_converter"
             }
         },
         {
