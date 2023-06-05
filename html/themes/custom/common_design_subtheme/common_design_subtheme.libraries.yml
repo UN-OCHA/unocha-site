@@ -158,10 +158,10 @@ uno-embed:
   js:
     components/uno-embed/uno-embed.js: {}
 
-uno-donors:
+uno-event-date:
   css:
     theme:
-      components/uno-donors/uno-donors.css: {}
+      components/uno-event-date/uno-event-date.css: {}
 
 uno-figures:
   css:
