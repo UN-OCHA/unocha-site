@@ -89,7 +89,7 @@
     </div>
     <div class="uno-event-date__wrapper uno-event-date__wrapper--time">
       <dt class="uno-event-date__label">Time: </dt>
-      <dd class="uno-event-date__time">{{ start|date('U')|format_date('unocha_time', timezone=timezone) }}</dd>
+      <dd class="uno-event-date__time">{{ start|date('U')|format_date('unocha_time', timezone=timezone) }} - {{ end|date('U')|format_date('unocha_time', timezone=timezone) }}</dd>
     </div>
   </dl>
 {% endmacro %}
