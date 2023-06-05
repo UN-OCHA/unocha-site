@@ -146,6 +146,11 @@ uno-document:
     - common_design_subtheme/rw-river
     - common_design_subtheme/rw-document
 
+uno-donors:
+  css:
+    theme:
+      components/uno-donors/uno-donors.css: {}
+
 uno-embed:
   css:
     component:
@@ -153,10 +158,10 @@ uno-embed:
   js:
     components/uno-embed/uno-embed.js: {}
 
-uno-donors:
+uno-event-date:
   css:
     theme:
-      components/uno-donors/uno-donors.css: {}
+      components/uno-event-date/uno-event-date.css: {}
 
 uno-figures:
   css:

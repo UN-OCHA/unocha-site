@@ -1,0 +1,111 @@
+diff --git a/datetime_range_timezone.views.inc b/datetime_range_timezone.views.inc
+new file mode 100644
+index 0000000000000000000000000000000000000000..5bc28474ec7355147ff7c70dd853e223d67cab51
+--- /dev/null
++++ b/datetime_range_timezone.views.inc
+@@ -0,0 +1,21 @@
++<?php
++
++/**
++ * @file
++ * Provides views data for the datetime_range_timezone module.
++ */
++
++use Drupal\field\FieldStorageConfigInterface;
++
++/**
++ * Implements hook_field_views_data().
++ */
++function datetime_range_timezone_field_views_data(FieldStorageConfigInterface $field_storage) {
++  // Include datetime.views.inc file in order for helper function
++  // datetime_type_field_views_data_helper() to be available.
++  \Drupal::moduleHandler()->loadInclude('datetime', 'inc', 'datetime.views');
++
++  // Get datetime field data for value and end_value.
++  $data = datetime_type_field_views_data_helper($field_storage, [], 'value');
++  return datetime_type_field_views_data_helper($field_storage, $data, 'end_value');
++}
+diff --git a/tests/modules/datetime_range_timezone_test/datetime_range_timezone_test.info.yml b/tests/modules/datetime_range_timezone_test/datetime_range_timezone_test.info.yml
+new file mode 100755
+index 0000000000000000000000000000000000000000..abd2ea07af7eacb5ba681be7f8b330a5a585c3c8
+--- /dev/null
++++ b/tests/modules/datetime_range_timezone_test/datetime_range_timezone_test.info.yml
+@@ -0,0 +1,7 @@
++name: 'Datetime range timezone test'
++type: module
++description: 'Provides a testing module for datetime_range_timezone.'
++package: Testing
++version: VERSION
++dependencies:
++  - drupal:taxonomy
+diff --git a/tests/modules/datetime_range_timezone_test/datetime_range_timezone_test.module b/tests/modules/datetime_range_timezone_test/datetime_range_timezone_test.module
+new file mode 100755
+index 0000000000000000000000000000000000000000..f35b14a893e8442565706519c4de09fa07701c95
+--- /dev/null
++++ b/tests/modules/datetime_range_timezone_test/datetime_range_timezone_test.module
+@@ -0,0 +1,17 @@
++<?php
++
++/**
++ * @file
++ * Contains datetime_range_timezone_test.module.
++ */
++
++/**
++ * Implements hook_entity_type_alter().
++ */
++function datetime_range_timezone_test_entity_type_alter(array &$entity_types) {
++  // Inhibit views data for the 'taxonomy_term' entity type in order to cover
++  // the case when an entity type provides no views data.
++  // @see https://www.drupal.org/project/drupal/issues/2995578
++  // @see \Drupal\Tests\datetime_range_timezone\Kernel\Views\EntityTypeWithoutViewsDataTest
++  $entity_types['taxonomy_term']->setHandlerClass('views_data', NULL);
++}
+diff --git a/tests/src/Kernel/Views/EntityTypeWithoutViewsDataTest.php b/tests/src/Kernel/Views/EntityTypeWithoutViewsDataTest.php
+new file mode 100755
+index 0000000000000000000000000000000000000000..66124cf8e44937799689b1276ed9b03389633644
+--- /dev/null
++++ b/tests/src/Kernel/Views/EntityTypeWithoutViewsDataTest.php
+@@ -0,0 +1,42 @@
++<?php
++
++namespace Drupal\Tests\datetime_range_timezone\Kernel\Views;
++
++use Drupal\Core\Config\InstallStorage;
++use Drupal\Core\Serialization\Yaml;
++use Drupal\KernelTests\KernelTestBase;
++use Drupal\views\Entity\View;
++
++/**
++ * Tests datetime_range_timezone when an entity type provides no views data.
++ *
++ * @group batch1
++ */
++class EntityTypeWithoutViewsDataTest extends KernelTestBase {
++
++  /**
++   * {@inheritdoc}
++   */
++  protected static $modules = [
++    'datetime_range_timezone',
++    'datetime_range_timezone_test',
++    'node',
++    'system',
++    'taxonomy',
++    'text',
++    'user',
++    'views',
++  ];
++
++  /**
++   * Tests the case when an entity type provides no views data.
++   *
++   * @see datetime_range_timezone_test_entity_type_alter()
++   */
++  public function testEntityTypeWithoutViewsData() {
++    $view_yaml = $this->getModulePath('taxonomy') . '/' . InstallStorage::CONFIG_OPTIONAL_DIRECTORY . '/views.view.taxonomy_term.yml';
++    $values = Yaml::decode(file_get_contents($view_yaml));
++    $this->assertEquals(SAVED_NEW, View::create($values)->save());
++  }
++
++}

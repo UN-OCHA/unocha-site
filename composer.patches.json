@@ -3,6 +3,9 @@
     "drupal/csp": {
       "Simplify log format": "patches/csp-log-format.patch"
     },
+    "drupal/datetime_range_timezone": {
+      "Views integration": "patches/datetime_range_timezone-views-integration.patch"
+    },
     "drupal/maintenance200": {
       "Drupal 10 compatibility": "patches/maintenance200-drupal-10-compatibility.patch"
     },
