@@ -46,7 +46,6 @@
 @media (min-width: 768px) {
   .uno-donors {
     border-top: 1px solid var(--brand-grey);
-    border-bottom: 1px solid var(--brand-grey);
     padding: 0.75rem 1rem;
     margin-bottom: 0.75rem;
   }
@@ -110,7 +109,7 @@ ul.uno-donors__list li:last-child::after {
   display: grid;
   grid-template-columns: auto min-content;
 }
-.uno-donors__list--with-figures .uno-donors__amount {
+ul.uno-donors__list--with-figures .uno-donors__amount {
   text-align: right;
   white-space: nowrap;
 }
@@ -118,6 +117,7 @@ ul.uno-donors__list li:last-child::after {
 .uno-donors--oct-unearmarked-donors .uno-donors__list__item {
   display: inline;
 }
-.uno-donors--oct-unearmarked-donors .uno-donors__list__item + .uno-donors__list__item:before {
-  content: ", ";
+
+.uno-donors__amount__suffix {
+  margin-inline-start: 0.25rem;
 }

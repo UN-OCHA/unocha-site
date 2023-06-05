@@ -235,9 +235,11 @@
 }
 
 /* Donors following Figures (in a Section), reduce margin */
-.paragraph--type--section + .paragraph--type--donors {
-  margin-top: -6rem;
-  margin-bottom: 2rem;
+@media screen and (min-width: 768px) {
+  .paragraph--type--section + .paragraph--type--donors {
+    margin-top: -3rem;
+    margin-bottom: 2rem;
+  }
 }
 
 /* River followed by another river */
