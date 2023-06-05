@@ -8,7 +8,7 @@ dependencies:
 id: node.field_event_date
 field_name: field_event_date
 entity_type: node
-type: daterange
+type: daterange_timezone
 settings:
   datetime_type: datetime
 module: datetime_range
