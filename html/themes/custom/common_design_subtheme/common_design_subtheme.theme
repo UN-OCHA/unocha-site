@@ -198,7 +198,7 @@ function common_design_subtheme_preprocess_field__field_children_menu(array &$va
           'url' => $link->getUrlObject(),
         ],
         '#weight' => $index,
-        '#active' => $current_menu_link === $link,
+        '#active' => $current_menu_link->getPluginId() === $link->getPluginId(),
       ];
     }
 
