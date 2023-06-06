@@ -1,0 +1,23 @@
+uuid: e16681ba-3bfc-457e-85e1-8118ab2dca67
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_children_menu
+    - node.type.basic
+id: node.basic.field_children_menu
+field_name: field_children_menu
+entity_type: node
+bundle: basic
+label: 'Children Menu'
+description: 'Check to display a menu with the child pages of this page.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

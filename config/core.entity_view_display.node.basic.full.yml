@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.basic.body
     - field.field.node.basic.field_basic_image
+    - field.field.node.basic.field_children_menu
     - field.field.node.basic.field_custom_content
     - node.type.basic
   module:
@@ -27,7 +28,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_basic_image:
     type: entity_reference_entity_view
@@ -38,6 +39,16 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_children_menu:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_custom_content:
     type: layout_paragraphs
     label: hidden
@@ -45,7 +56,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
 hidden:
   langcode: true

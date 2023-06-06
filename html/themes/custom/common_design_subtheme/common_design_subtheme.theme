@@ -5,6 +5,10 @@
  * Template overrides, preprocess, and hooks for the OCHA Common Design theme.
  */
 
+use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\Core\Menu\MenuLinkInterface;
+use Drupal\Core\Menu\MenuTreeParameters;
+
 /**
  * Implements hook_theme_suggestions_page_alter().
  */
@@ -89,4 +93,121 @@ function common_design_subtheme_preprocess_menu__main(array &$variables) {
       }
     }
   }
+}
+
+/**
+ * Implements hook_preprocess_field__field_children_menu().
+ *
+ * Display a menu of child pages of a basic page if "children menu" is selected.
+ */
+function common_design_subtheme_preprocess_field__field_children_menu(array &$variables) {
+  $field_item_list = $variables['element']['#items'];
+  $entity = $field_item_list->getEntity();
+  $value = $field_item_list->first()->value;
+
+  $links = [];
+  $current_menu_link = NULL;
+  $cache_metadata = CacheableMetadata::createFromRenderArray($variables);
+  $cache_metadata->addCacheableDependency($entity);
+
+  // Retrieve the menu link associated with the parent entity of the field.
+  // We'll display this menu or its parent as tabs.
+  if (isset($entity) && $entity->getEntityTypeId() === 'node') {
+    $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+
+    // Get the menu link referencing this node in the main menu.
+    $menu_links = $menu_link_manager->loadLinksByRoute('entity.node.canonical', [
+      'node' => $entity->id(),
+    ], 'main');
+    $current_menu_link = reset($menu_links);
+
+    // Get the menu link ID, it will be used to load the menu tree.
+    $menu_link_id = NULL;
+    if (!empty($current_menu_link)) {
+      // If the "children menu" is not checked, retrieve the parent menu item.
+      // If the parent entity attached to the menu item has the "children menu"
+      // checked then we display its menu. This ensures we see the same tabs
+      // on the parent and the children nodes.
+      if (empty($value)) {
+        $parent_menu_link = $menu_link_manager->createInstance($current_menu_link->getParent());
+
+        if (!empty($parent_menu_link) &&
+          $parent_menu_link instanceof MenuLinkInterface &&
+          $parent_menu_link->getRouteName() === 'entity.node.canonical' &&
+          !empty($parent_menu_link->getRouteParameters()['node'])
+        ) {
+          $node_id = $parent_menu_link->getRouteParameters()['node'];
+          $parent_entity = \Drupal::entityTypeManager()->getStorage('node')->load($node_id);
+
+          if (isset($parent_entity) && $parent_entity->hasField('field_children_menu')) {
+            $cache_metadata->addCacheableDependency($parent_entity);
+
+            if (!empty($parent_entity->field_children_menu->value)) {
+              $menu_link_id = $parent_menu_link->getPluginId();
+            }
+          }
+        }
+      }
+      else {
+        $menu_link_id = $current_menu_link->getPluginId();
+      }
+    }
+
+    // Load the menu links for the tree.
+    if (isset($menu_link_id)) {
+      $tree_parameters = new MenuTreeParameters();
+      $tree_parameters->setRoot($menu_link_id);
+      $tree_parameters->setMaxDepth(2);
+
+      // Get the child links.
+      /** @var \Drupal\Core\Menu\MenuLinkTreeElement[] $menu_elements. */
+      $menu_tree = \Drupal::service('menu.link_tree')->load('main', $tree_parameters);
+
+      // Flatten the tree links as they will be displayed as tabs (local tasks)
+      // without a hierarchy but with the parent as first link.
+      foreach ($menu_tree as $menu_tree_element) {
+        $links[] = $menu_tree_element->link;
+        if (!empty($menu_tree_element)) {
+          foreach ($menu_tree_element->subtree as $element) {
+            $links[] = $element->link;
+          }
+        }
+      }
+
+      // Add the cache metadata of the links and filter out links that are not
+      // accessible.
+      foreach ($links as $key => $link) {
+        $cache_metadata->addCacheableDependency($link);
+        if (!$link->getUrlObject()->access()) {
+          unset($links[$key]);
+        }
+      }
+    }
+  }
+
+  // Replace the field's content with a tabular menu (local tasks).
+  if (count($links) > 1) {
+    $content = [
+      '#theme' => 'menu_local_tasks__children_menu',
+    ];
+    foreach ($links as $index => $link) {
+      $content['#primary'][] = [
+        '#theme' => 'menu_local_task__children_menu',
+        '#link' => [
+          'title' => $link->getTitle(),
+          'url' => $link->getUrlObject(),
+        ],
+        '#weight' => $index,
+        '#active' => $current_menu_link->getPluginId() === $link->getPluginId(),
+      ];
+    }
+
+    $variables['items'] = [['content' => $content]];
+  }
+  // Hide the field.
+  else {
+    $variables['items'] = [];
+  }
+
+  $cache_metadata->applyTo($variables);
 }
