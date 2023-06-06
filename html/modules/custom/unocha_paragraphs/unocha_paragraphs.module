@@ -5,6 +5,7 @@
  * Module file for the unocha_paragraphs module.
  */
 
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Menu\MenuLinkInterface;
 use Drupal\Core\Menu\MenuLinkTreeElement;
 use Drupal\Core\Link;
@@ -103,6 +104,15 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
     $stories = unocha_paragraphs_get_stories([], $limit);
   }
 
+  // Filter out stories that cannot be accessed by the current user.
+  if (!empty($stories)) {
+    foreach ($stories as $key => $story) {
+      if (!$story->access('view')) {
+        unset($stories[$key]);
+      }
+    }
+  }
+
   // Add the renderable stories.
   if (!empty($stories)) {
     $view_all_url = Url::fromUserInput('/latest/news-and-stories', [
@@ -120,6 +130,8 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
  * Implements hook_preprocess_paragraph__type().
  */
 function unocha_paragraphs_preprocess_paragraph__resources(array &$variables) {
+  $cache_metadata = CacheableMetadata::createFromRenderArray($variables);
+
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = $variables['paragraph'];
 
@@ -162,10 +174,13 @@ function unocha_paragraphs_preprocess_paragraph__resources(array &$variables) {
       $links = [];
       foreach ($nodes as $node) {
         if ($node->bundle() === 'resource') {
-          $links[] = [
-            'title' => $node->label(),
-            'url' => $node->toUrl(),
-          ];
+          $cache_metadata->addCacheableDependency($node);
+          if ($node->access('view')) {
+            $links[] = [
+              'title' => $node->label(),
+              'url' => $node->toUrl(),
+            ];
+          }
         }
       }
 
@@ -177,6 +192,8 @@ function unocha_paragraphs_preprocess_paragraph__resources(array &$variables) {
       }
     }
   }
+
+  $cache_metadata->applyTo($variables);
 }
 
 /**
@@ -200,6 +217,7 @@ function unocha_paragraphs_get_stories(array $conditions = [], $limit = 3, $excl
     ->getQuery()
     ->accessCheck(TRUE)
     ->condition('type', 'story')
+    ->condition('status', 1)
     ->sort('sticky', 'desc')
     ->sort('promote', 'desc')
     ->sort('created', 'desc')
