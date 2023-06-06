@@ -63,15 +63,17 @@
   margin-right: 0;
   margin-left: 0;
 }
+/* Restrict width for lists in articles */
+.cd-article ol {
+  max-width: var(--cd-max-content-width);
+}
 
 /* Basic vertical rhythm, will need adjusting */
 
 .node--type-event .field--name-field-event-date,
 .node--type-event .field--name-field-event-location,
-.node--type-event .field--name-field-event-type,
-.node--type-event .field--name-field-country,
-.node--type-event .field--name-field-region,
 .node--view-mode-full .field--name-field-event-image,
+.node--type-event .uno-event__link,
 .node--type-event .field--name-field-response,
 .node--type-story .field--name-field-theme {
   margin-bottom: 1rem;
@@ -82,7 +84,8 @@
   margin-bottom: 1rem;
 }
 
-.node--view-mode-full .field--name-field-text {
+.node--view-mode-full .field--name-field-text,
+.node--type-event.node--view-mode-full .uno-event__link {
   margin-bottom: 2rem;
 }
 
