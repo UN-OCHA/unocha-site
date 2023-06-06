@@ -5,4 +5,4 @@ dependencies: {  }
 id: unocha_time
 label: 'UNOCHA - Time'
 locked: false
-pattern: 'H:i T'
+pattern: 'H.i T'

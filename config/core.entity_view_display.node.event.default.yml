@@ -7,10 +7,13 @@ dependencies:
     - field.field.node.event.field_custom_content
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_link
     - field.field.node.event.field_event_location
     - field.field.node.event.field_event_type
     - node.type.event
   module:
+    - datetime_range_timezone
+    - link
     - text
     - user
 id: node.event.default
@@ -19,10 +22,20 @@ bundle: event
 mode: default
 content:
   body:
-    type: text_trimmed
+    type: text_summary_or_trimmed
     label: hidden
     settings:
-      trim_length: 160
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_event_date:
+    type: daterange_timezone
+    label: hidden
+    settings:
+      separator: '-'
+      format_type: medium
+      display_timezone: true
     third_party_settings: {  }
     weight: 1
     region: content
@@ -35,10 +48,27 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_event_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_event_location:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
   field_custom_content: true
-  field_event_date: true
-  field_event_location: true
   field_event_type: true
   langcode: true
   links: true
