@@ -354,7 +354,7 @@ class CantoImageForm extends FileUploadForm {
       'name' => $file->getFilename(),
       $source_field_name => [
         'target_id' => $file->id(),
-        'alt' => mb_strcut($asset['description'] ?? '', 0, 512, "UTF-8"),
+        'alt' => '',
       ],
       'field_canto_asset_id' => $asset['id'],
       'field_image_caption' => $asset['description'] ?? '',
