@@ -275,6 +275,7 @@
   color: var(--brand-primary--dark);
   font-size: 1.0625rem; /* 17px */
   font-weight: 500;
+  letter-spacing: 1px;
  }
 
 .page-node-type-response .uno-tag,
@@ -403,7 +404,6 @@ footer.cd-author {
 .uno-content--custom > a.uno-button + .field {
   clear: both;
 }
-
 
 @media (min-width: 1200px) {
   .uno-content--custom {
