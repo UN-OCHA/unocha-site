@@ -153,10 +153,17 @@ body {
   text-decoration: none;
 }
 
+.cd-soft-footer nav li {
+  margin-bottom: 12px;
+  margin-inline-end: 1rem;
+}
+
 .cd-soft-footer nav a {
   text-transform: uppercase;
   font-size: var(--cd-font-size--tiny);
   font-weight: 500;
+  line-height: 1.2;
+  display: block;
 }
 
 .cd-soft-footer h2 {
