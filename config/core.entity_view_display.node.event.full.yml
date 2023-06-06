@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.event.field_custom_content
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_link
     - field.field.node.event.field_event_location
     - field.field.node.event.field_event_type
     - node.type.event
@@ -15,6 +16,7 @@ dependencies:
     - datetime_range_timezone
     - layout_builder
     - layout_paragraphs
+    - link
     - text
     - user
 third_party_settings:
@@ -31,7 +33,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_custom_content:
     type: layout_paragraphs
@@ -40,7 +42,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_event_date:
     type: daterange_timezone
@@ -61,9 +63,21 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_event_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_event_location:
     type: text_default
-    label: hidden
+    label: inline
     settings: {  }
     third_party_settings: {  }
     weight: 2

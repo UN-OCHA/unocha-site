@@ -8,11 +8,13 @@ dependencies:
     - field.field.node.event.field_custom_content
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_link
     - field.field.node.event.field_event_location
     - field.field.node.event.field_event_type
     - node.type.event
   module:
     - datetime_range_timezone
+    - link
     - text
     - user
 id: node.event.teaser
@@ -20,14 +22,6 @@ targetEntityType: node
 bundle: event
 mode: teaser
 content:
-  body:
-    type: text_summary_or_trimmed
-    label: hidden
-    settings:
-      trim_length: 160
-    third_party_settings: {  }
-    weight: 3
-    region: content
   field_event_date:
     type: daterange_timezone
     label: hidden
@@ -47,14 +41,27 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_event_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_event_location:
     type: text_default
-    label: hidden
+    label: inline
     settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
 hidden:
+  body: true
   field_custom_content: true
   field_event_type: true
   langcode: true
