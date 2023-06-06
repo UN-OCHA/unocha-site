@@ -1,0 +1,18 @@
+uuid: 350dd9f3-7f1c-4d09-9447-f78ecc29761b
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.reliefweb_document
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.reliefweb_document
+target_entity_type_id: paragraph
+target_bundle: reliefweb_document
+default_langcode: site_default
+language_alterable: true

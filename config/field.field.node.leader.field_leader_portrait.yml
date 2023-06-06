@@ -6,7 +6,14 @@ dependencies:
     - field.storage.node.field_leader_portrait
     - node.type.leader
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 id: node.leader.field_leader_portrait
 field_name: field_leader_portrait
 entity_type: node
@@ -14,7 +21,7 @@ bundle: leader
 label: Portrait
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -1,0 +1,18 @@
+uuid: 62a7a419-9090-4802-aabe-05a7ad7f424a
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.stories
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.stories
+target_entity_type_id: paragraph
+target_bundle: stories
+default_langcode: site_default
+language_alterable: true

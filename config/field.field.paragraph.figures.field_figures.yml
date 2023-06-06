@@ -6,7 +6,7 @@ dependencies:
     - field.storage.paragraph.field_figures
     - paragraphs.paragraphs_type.figures
   module:
-    - unocha_figures
+    - ocha_key_figures
 id: paragraph.figures.field_figures
 field_name: field_figures
 entity_type: paragraph
@@ -14,7 +14,7 @@ bundle: figures
 label: Figures
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

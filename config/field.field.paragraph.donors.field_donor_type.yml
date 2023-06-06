@@ -14,7 +14,7 @@ bundle: donors
 label: Type
 description: 'Data source.'
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
