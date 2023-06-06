@@ -217,6 +217,7 @@ function unocha_paragraphs_get_stories(array $conditions = [], $limit = 3, $excl
     ->getQuery()
     ->accessCheck(TRUE)
     ->condition('type', 'story')
+    ->condition('status', 1)
     ->sort('sticky', 'desc')
     ->sort('promote', 'desc')
     ->sort('created', 'desc')
