@@ -195,17 +195,6 @@ display:
             value: '<h2>[view:title]</h2>'
             format: ckeditor
           tokenize: false
-        display_link:
-          id: display_link
-          table: views
-          field: display_link
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: display_link
-          label: 'View all'
-          empty: false
-          display_id: page__events
       footer: {  }
       display_extenders: {  }
     cache_metadata:
