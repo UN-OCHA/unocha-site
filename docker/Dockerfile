@@ -1,5 +1,5 @@
 # Build the code.
-FROM public.ecr.aws/unocha/php-k8s:8.2.5-r0-202304-02 as builder
+FROM public.ecr.aws/unocha/php-k8s:8.2-stable as builder
 
 ARG  BRANCH_ENVIRONMENT
 
@@ -11,7 +11,10 @@ COPY . /srv/www
 WORKDIR /srv/www
 
 # Clean up previous composer installation and run new one.
-RUN rm -rf ./vendor && composer install --no-interaction --no-dev
+RUN rm -rf ./vendor && \
+    # @todo remove after removing preserve-paths from composer.
+    composer self-update 2.5.5 && \
+    composer install --no-interaction --no-dev
 
 # Copy settings to default site location.
 RUN cp -a docker/settings.php docker/services.yml docker/memcache.services.yml html/sites/default
@@ -19,7 +22,7 @@ RUN cp -a docker/settings.php docker/services.yml docker/memcache.services.yml h
 ################################################################################
 
 # Generate the image.
-FROM public.ecr.aws/unocha/php-k8s:8.2.5-r0-202304-02
+FROM public.ecr.aws/unocha/php-k8s:8.2-stable
 
 ARG VCS_REF
 ARG VCS_URL
@@ -57,4 +60,6 @@ COPY --from=builder /srv/www/composer.lock /srv/www/composer.lock
 COPY --from=builder /srv/www/patches /srv/www/patches
 COPY --from=builder /srv/www/scripts /srv/www/scripts
 COPY --from=builder /srv/www/docker/etc/nginx/custom /etc/nginx/custom/
+# @todo remove when/if it's added to the upstream image.
+COPY --from=builder /srv/www/docker/etc/nginx/apps/drupal/drupal.conf /etc/nginx/custom/apps/drupal/drupal.conf
 COPY --from=builder /srv/www/docker/etc/nginx/sites-enabled/02_mapbox_proxy_cache.conf /etc/nginx/sites-enabled/02_mapbox_proxy_cache.conf
