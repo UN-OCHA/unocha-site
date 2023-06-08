@@ -63,15 +63,17 @@
   margin-right: 0;
   margin-left: 0;
 }
+/* Restrict width for lists in articles */
+.cd-article ol {
+  max-width: var(--cd-max-content-width);
+}
 
 /* Basic vertical rhythm, will need adjusting */
 
 .node--type-event .field--name-field-event-date,
 .node--type-event .field--name-field-event-location,
-.node--type-event .field--name-field-event-type,
-.node--type-event .field--name-field-country,
-.node--type-event .field--name-field-region,
 .node--view-mode-full .field--name-field-event-image,
+.node--type-event .uno-event__link,
 .node--type-event .field--name-field-response,
 .node--type-story .field--name-field-theme {
   margin-bottom: 1rem;
@@ -82,7 +84,8 @@
   margin-bottom: 1rem;
 }
 
-.node--view-mode-full .field--name-field-text {
+.node--view-mode-full .field--name-field-text,
+.node--type-event.node--view-mode-full .uno-event__link {
   margin-bottom: 2rem;
 }
 
@@ -199,7 +202,6 @@
   margin-top: 0;
 }
 
-/* A layout following another layout, reduce margin */
 .paragraph--type--layout {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -223,8 +225,8 @@
     margin-bottom: 0;
   }
 }
-
-.paragraph--type--layout + .paragraph--type--layout {
+/* A layout following another layout, reduce margin */
+/* .paragraph--type--layout + .paragraph--type--layout {
   margin-top: -2rem;
   margin-bottom: 2rem;
 }
@@ -232,6 +234,14 @@
 @media screen and (min-width: 768px) {
   .paragraph--type--layout + .paragraph--type--layout {
     margin-bottom: 6rem;
+  }
+} */
+
+/* Donors following Figures (in a Section), reduce margin */
+@media screen and (min-width: 768px) {
+  .paragraph--type--section + .paragraph--type--donors {
+    margin-top: -3rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -265,6 +275,7 @@
   color: var(--brand-primary--dark);
   font-size: 1.0625rem; /* 17px */
   font-weight: 500;
+  letter-spacing: 1px;
  }
 
 .page-node-type-response .uno-tag,
@@ -393,7 +404,6 @@ footer.cd-author {
 .uno-content--custom > a.uno-button + .field {
   clear: both;
 }
-
 
 @media (min-width: 1200px) {
   .uno-content--custom {

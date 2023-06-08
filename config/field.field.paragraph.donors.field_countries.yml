@@ -1,19 +1,19 @@
-uuid: 8d906bab-f109-4e4e-9192-b0fefee2281a
+uuid: 9462ed70-2e9b-4d09-a7e2-9b38309d861b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_country
-    - node.type.event
+    - field.storage.paragraph.field_countries
+    - paragraphs.paragraphs_type.donors
     - taxonomy.vocabulary.country
-id: node.event.field_country
-field_name: field_country
-entity_type: node
-bundle: event
-label: Country
-description: ''
-required: false
-translatable: true
+id: paragraph.donors.field_countries
+field_name: field_countries
+entity_type: paragraph
+bundle: donors
+label: Countries
+description: 'Countries for which to retrieve the donor data.'
+required: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

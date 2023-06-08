@@ -1,0 +1,123 @@
+.uno-donor {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--brand-grey);
+  padding: 0 0 0.5rem;
+  font-size: var(--cd-font-size--ref);
+}
+
+.uno-donor dt {
+  width: 100%;
+  padding: 0 0 0.5rem 0;
+}
+.uno-donor dd {
+  margin: 0;
+}
+
+.uno-donors__title {
+  font-size: var(--cd-font-size--medium);
+  font-weight: bold;
+}
+
+@media (min-width: 576px) {
+  .uno-donors__list {
+    display: block;
+    margin: 0;
+  }
+
+  .uno-donor {
+    flex-basis: 33%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding-inline-end: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+  }
+
+  .uno-donor dt,
+  .uno-donor dd {
+    flex: 0 1 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .uno-donors {
+    border-top: 1px solid var(--brand-grey);
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .uno-donors + .uno-donors {
+    border-top: 0 solid var(--brand-grey);
+    border-bottom: 1px solid var(--brand-grey);
+    margin-bottom: 0;
+  }
+
+  .uno-donors__list {
+    display: flex;
+  }
+
+  .uno-donor {
+    border-bottom: 0 solid var(--brand-grey);
+  }
+
+  .uno-donor dt,
+  .uno-donor dd {
+    flex: 1 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .uno-donor {
+    flex-basis: 20%;
+  }
+}
+
+/* Unearmarked donors do not include the value so we output as ul
+  instead of dl.
+*/
+ul.uno-donors__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: var(--cd-max-content-width);
+}
+
+ul.uno-donors__list li {
+  position: relative;
+  padding-inline-end: 0.5rem;
+  font-size: var(--cd-font-size--ref);
+}
+
+ul.uno-donors__list li::after {
+  content: ", ";
+}
+ul.uno-donors__list li:last-child::after {
+  content: none;
+}
+.uno-donors__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.uno-donors__list--with-figures .uno-donors__list__item {
+  display: grid;
+  grid-template-columns: auto min-content;
+}
+ul.uno-donors__list--with-figures .uno-donors__amount {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.uno-donors--oct-unearmarked-donors .uno-donors__list__item {
+  display: inline;
+}
+
+.uno-donors__amount__suffix {
+  margin-inline-start: 0.25rem;
+}

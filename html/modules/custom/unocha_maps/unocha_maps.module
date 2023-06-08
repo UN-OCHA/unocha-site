@@ -67,7 +67,7 @@ function unocha_maps_preprocess_paragraph__response_map(array &$variables) {
     // on the map.
     if (!empty($responses)) {
       foreach ($responses as $key => $response) {
-        if (!isset($response->field_country) || $response->field_country->isEmpty()) {
+        if (!$response->access('view') || !isset($response->field_country) || $response->field_country->isEmpty()) {
           unset($responses[$key]);
         }
       }

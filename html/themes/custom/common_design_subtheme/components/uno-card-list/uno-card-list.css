@@ -167,6 +167,10 @@ article.node--type-story.node--view-mode-card .field--name-body {
   .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__container,
   .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__container {
     flex: 0 1 392px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
   }
 
   /* Border around Featured item */

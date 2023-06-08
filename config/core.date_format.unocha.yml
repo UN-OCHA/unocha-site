@@ -5,4 +5,4 @@ dependencies: {  }
 id: unocha
 label: UNOCHA
 locked: false
-pattern: 'j F Y - H:i'
+pattern: 'j F Y - H.i'

@@ -1,0 +1,8 @@
+uuid: dc1b106c-5057-468a-ba5e-def4a37a53f0
+langcode: en
+status: true
+dependencies: {  }
+id: unocha_time
+label: 'UNOCHA - Time'
+locked: false
+pattern: 'H.i T'
