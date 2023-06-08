@@ -252,6 +252,7 @@
 .paragraph--type--reliefweb-river + .paragraph--type--reliefweb-river {
   margin-top: 4rem;
 }
+
 @media screen and (min-width: 1024px) {
   .paragraph--type--reliefweb-river + .paragraph--type--reliefweb-river {
     margin-top: 6rem;
@@ -274,11 +275,11 @@
 .uno-tag {
   display: inline-block;
   padding-inline-end: 1rem;
+  letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--brand-primary--dark);
   font-size: 1.0625rem; /* 17px */
   font-weight: 500;
-  letter-spacing: 1px;
  }
 
 .page-node-type-response .uno-tag,

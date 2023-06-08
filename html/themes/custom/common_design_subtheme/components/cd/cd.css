@@ -97,9 +97,9 @@ body {
 
 @media screen and (min-width: 768px) {
   .cd-soft-footer .cd-soft-footer__nav-responses {
-    margin-top: -18px;
     /* Height of nav h2 and its bottom margin */
     max-width: unset;
+    margin-top: -18px;
   }
 }
 
@@ -159,11 +159,11 @@ body {
 }
 
 .cd-soft-footer nav a {
+  display: block;
   text-transform: uppercase;
   font-size: var(--cd-font-size--tiny);
   font-weight: 500;
   line-height: 1.2;
-  display: block;
 }
 
 .cd-soft-footer h2 {
