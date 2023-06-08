@@ -45,7 +45,10 @@
 .node--type-story .field--name-field-theme,
 .node--type-story .field--type-text-with-summary,
 .node--type-story .field--name-field-text,
-.node--type-story .cd-layout-main-content > footer {
+.node--type-story .cd-layout-main-content > footer,
+.node--type-basic .cd-caption,
+.node--type-region .cd-caption,
+.node--type-response .cd-caption {
   max-width: var(--cd-max-content-width);
   margin-right: auto;
   margin-left: auto;
@@ -418,7 +421,10 @@ footer.cd-author {
 }
 
 /* Center Story image within the cd-bleed container */
-.field--name-field-story-image {
+.field--name-field-story-image,
+.field--name-field-basic-image,
+.field--name-field-response-image,
+.field--name-field-region-image {
   text-align: center;
 }
 
