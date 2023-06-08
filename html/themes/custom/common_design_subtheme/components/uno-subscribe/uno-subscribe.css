@@ -1,6 +1,12 @@
-.paragraph--type--subscribe {
+.cd-footer .paragraph--type--subscribe {
   display: flex;
   justify-content: center;
+}
+
+.paragraph--type--subscribe .field--name-field-text p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .uno-subscribe {
@@ -10,6 +16,7 @@
 @media screen and (min-width: 768px) {
   .uno-subscribe form {
     display: flex;
+    justify-content: center;
   }
 }
 
