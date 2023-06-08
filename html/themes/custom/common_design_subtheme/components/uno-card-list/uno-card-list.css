@@ -166,8 +166,8 @@ article.node--type-story.node--view-mode-card .field--name-body {
   .page-node-type-basic .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__container,
   .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__container,
   .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__container {
-    flex: 0 1 392px;
     display: flex;
+    flex: 0 1 392px;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: center;
