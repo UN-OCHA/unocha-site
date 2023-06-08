@@ -10,6 +10,9 @@ default, at https://unocha-local.test.
 
 Prevent committing changes to your local files:
 
+Tests can be run locally with [act](https://github.com/nektos/act):
+`act -j tests`
+
 Some useful commands:
 - `./local/install.sh -m -c -i` will create a new instance from scratch.
 - `./local/install.sh -m -d` will recreate the image and containers and install
@@ -30,6 +33,6 @@ Some workflow tips:
   This installs the module in the container but updates the repository's
   composer files so the changes can be committed.
 - Put site specific config in [local/shared/settings/settings.site.php](local/shared/settings/settings.site.php)
-- Have git ignore modifications to the [local](local) directory with `git udpate-index --skip-worktree local` (or specific files).
-- Disable the above with `git udpate-index --no-skip-worktree local`
+- Have git ignore modifications to the [local](local) directory with `git update-index --skip-worktree local` (or specific files).
+- Disable the above with `git update-index --no-skip-worktree local`
 
