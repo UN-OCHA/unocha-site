@@ -288,10 +288,6 @@
 }
 
  /* Views */
- .view-filters {
-  margin-bottom: 4rem;
- }
-
 .more-link {
   display: block;
   margin-top: 2rem;
@@ -329,6 +325,23 @@
   margin: 0 0 0 3px;
   content: "";
   background: var(--rw-icons--common--arrow-right--12--dark-blue);
+}
+
+ .view-filters {
+  margin-bottom: 2rem;
+ }
+
+@media (min-width: 768px) {
+  .view-filters {
+    margin-bottom: 4rem;
+  }
+  .cd-filter[data-cd-toggable] {
+    --dropdown: false;
+  }
+}
+
+.view-header + .view-filters {
+  margin-top: 1rem;
 }
 
 .views-exposed-form.cd-form .cd-form--inline,
