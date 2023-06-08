@@ -1,0 +1,17 @@
+uuid: 12022031-50ea-4d5c-9f48-8b39eaec0310
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Media
+type: media
+description: 'Collections of images, video and supporting material.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

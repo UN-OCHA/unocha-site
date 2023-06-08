@@ -1,0 +1,23 @@
+uuid: 1ff5e833-3d80-4d42-938d-745893a7649b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.media_centre.field_media_centre_list
+    - paragraphs.paragraphs_type.media_centre
+  module:
+    - viewsreference
+id: paragraph.media_centre.default
+targetEntityType: paragraph
+bundle: media_centre
+mode: default
+content:
+  field_media_centre_list:
+    type: viewsreference_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,49 @@
+uuid: deb77da1-14dd-47c8-8fce-2400eaba1f51
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_media_centre_list
+    - paragraphs.paragraphs_type.media_centre
+  module:
+    - viewsreference
+id: paragraph.media_centre.field_media_centre_list
+field_name: field_media_centre_list
+entity_type: paragraph
+bundle: media_centre
+label: 'Media centre list'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: 0
+  plugin_types:
+    block: block
+    default: 0
+    page: 0
+    feed: 0
+  preselect_views:
+    media_centre: media_centre
+    content: 0
+    events: 0
+    files: 0
+    frontpage: 0
+    media: 0
+    media_library: 0
+    redirect: 0
+    regions: 0
+    responses: 0
+    stories: 0
+    user_admin_people: 0
+  enabled_settings:
+    title: 0
+    pager: 0
+    offset: 0
+    argument: 0
+    limit: 0
+field_type: viewsreference

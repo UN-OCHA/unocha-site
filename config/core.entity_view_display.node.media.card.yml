@@ -1,0 +1,43 @@
+uuid: 357eaca7-ceef-4448-a10a-84ba33a6662e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.media.body
+    - field.field.node.media.field_canto_collection
+    - field.field.node.media.field_custom_content
+    - field.field.node.media.field_media_image
+    - field.field.node.media.field_media_press_release
+    - field.field.node.media.field_media_video
+    - field.field.node.media.field_video_download
+    - node.type.media
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.media.card
+targetEntityType: node
+bundle: media
+mode: card
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_canto_collection: true
+  field_custom_content: true
+  field_media_image: true
+  field_media_press_release: true
+  field_media_video: true
+  field_video_download: true
+  langcode: true
+  links: true
