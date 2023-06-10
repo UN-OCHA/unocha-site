@@ -1,0 +1,32 @@
+uuid: 4f294e76-3dc3-47ac-93fd-dfc3ef2c9771
+langcode: en
+status: true
+dependencies:
+  module:
+    - double_field
+    - paragraphs
+id: paragraph.field_cbpf_attributes
+field_name: field_cbpf_attributes
+entity_type: paragraph
+type: double_field
+settings:
+  storage:
+    first:
+      type: string
+      maxlength: 128
+      precision: 10
+      scale: 2
+      datetime_type: datetime
+    second:
+      type: string
+      maxlength: 255
+      precision: 10
+      scale: 2
+      datetime_type: datetime
+module: double_field
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
