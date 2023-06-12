@@ -464,3 +464,10 @@ footer.cd-author {
 .paragraph--type--cbpf .cd-button {
   margin: 2rem auto 0;
 }
+
+/* When images are missing, restrict width of alt text */
+.field--name-field-media-image {
+  max-width: var(--cd-max-body-width);
+  margin-left: auto;
+  margin-right: auto;
+}
