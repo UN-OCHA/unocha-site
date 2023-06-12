@@ -1,0 +1,23 @@
+uuid: 108eb73c-9ae4-4908-bcf2-085641c56058
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_width
+    - paragraphs.paragraphs_type.cbpf
+id: paragraph.cbpf.field_width
+field_name: field_width
+entity_type: paragraph
+bundle: cbpf
+label: Width
+description: 'Combined with the "height" field to determine the aspect ratio used to display the graphic.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

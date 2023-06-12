@@ -11,6 +11,7 @@
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--brand-grey);
 }
+
 @media screen and (min-width: 768px) {
   .cd-teaser {
     padding-bottom: 3rem;
@@ -21,6 +22,7 @@
   padding-top: 2rem;
   border-top: 1px solid var(--brand-grey);
 }
+
 @media screen and (min-width: 768px) {
   .view-content .cd-teaser:first-child {
     padding-top: 3rem;
@@ -56,6 +58,7 @@
 .cd-flow > .node--type-event.node--view-mode-teaser + .node--type-event.node--view-mode-teaser {
   margin-top: 2rem;
 }
+
 @media screen and (min-width: 768px) {
   .cd-flow > .node--type-event.node--view-mode-teaser + .node--type-event.node--view-mode-teaser {
     margin-top: 3rem;
