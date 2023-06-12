@@ -56,10 +56,10 @@
 
 .uno-nav__list--vertical li a {
   display: block;
+  max-width: 16rem;
   margin-bottom: 0.5rem;
   padding: 0.5rem 0;
   border-bottom: 1px solid var(--brand-grey);
-  max-width: 16rem;
 }
 
 .uno-nav__list--vertical li a {
