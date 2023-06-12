@@ -1,0 +1,23 @@
+uuid: bde837a0-19cb-43ed-bddb-a570d5685253
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_url
+    - paragraphs.paragraphs_type.cbpf
+  module:
+    - link
+id: paragraph.cbpf.field_url
+field_name: field_url
+entity_type: paragraph
+bundle: cbpf
+label: Link
+description: 'Optional link to the source data (ex: https://cbpf.data.unocha.org/).'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 16
+field_type: link

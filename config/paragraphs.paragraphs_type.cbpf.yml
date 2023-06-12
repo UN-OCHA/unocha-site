@@ -1,0 +1,10 @@
+uuid: c64731d4-298d-44bc-a187-720f24cf3ae2
+langcode: en
+status: true
+dependencies: {  }
+id: cbpf
+label: CBPF
+icon_uuid: null
+icon_default: null
+description: 'CBPF interactive graphic from https://github.com/CBPFGMS/cbpfgms.github.io/.'
+behavior_plugins: {  }

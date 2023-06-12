@@ -1,0 +1,53 @@
+uuid: ca54b841-27c8-43fd-b1a1-f10fb641b654
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cbpf.field_cbpf_attributes
+    - field.field.paragraph.cbpf.field_cbpf_id
+    - field.field.paragraph.cbpf.field_height
+    - field.field.paragraph.cbpf.field_text
+    - field.field.paragraph.cbpf.field_title
+    - field.field.paragraph.cbpf.field_url
+    - field.field.paragraph.cbpf.field_width
+    - paragraphs.paragraphs_type.cbpf
+  module:
+    - link
+    - text
+id: paragraph.cbpf.default
+targetEntityType: paragraph
+bundle: cbpf
+mode: default
+content:
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: _blank
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_cbpf_attributes: true
+  field_cbpf_id: true
+  field_height: true
+  field_width: true
