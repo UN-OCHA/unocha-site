@@ -449,3 +449,16 @@ footer.cd-author {
     display: none;
   }
 }
+
+/* CBPF Paragraph type, center align everything so button is centered */
+.paragraph--type--cbpf {
+  text-align: center;
+}
+/* Left align Title and Text fields */
+.paragraph--type--cbpf .field--name-field-title,
+.paragraph--type--cbpf .field--name-field-text {
+  text-align: left;
+}
+.paragraph--type--cbpf .cd-button {
+  margin: 2rem auto 0;
+}

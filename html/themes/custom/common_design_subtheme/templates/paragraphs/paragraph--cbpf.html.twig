@@ -64,6 +64,10 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
+
+      {{ content.field_title }}
+      {{ content.field_text }}
+
       {% set ratio = paragraph.field_width.value ~ ' / ' ~ paragraph.field_height.value %}
       {% set srcdoc = _self.cbpf(paragraph.field_cbpf_id.0.value, paragraph.field_cbpf_attributes) %}
       <div{{ create_attribute().addClass('iframe-wrapper', 'iframe-wrapper--responsive').setAttribute('style', 'aspect-ratio: ' ~ ratio) }}>
@@ -88,6 +92,11 @@
           sandbox="allow-downloads allow-same-origin allow-scripts"
         ></iframe>
       </div>
+
+      {% if paragraph.field_url.0.url %}
+        <a class="cd-button cd-button--outline cd-button--bold cd-button--wide cd-button--uppercase cbpf-link" href="{{ paragraph.field_url.0.url }}" target="_blank">{{ paragraph.field_url.0.title }}</a>
+      {% endif %}
+
     {% endblock %}
   </div>
 {% endblock paragraph %}
