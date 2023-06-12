@@ -50,6 +50,14 @@
   .uno-mega-menu__dropdown[data-cd-toggable] {
     --dropdown: false;
   }
+
+  /* Active menus, currently excluding Regions as it is lacking selectors */
+  /* .uno-mega-menu__menu .cd-nav__menu-item--level-2.menu-item--active-trail .uno-mega-menu__dropdown > a, */
+  .uno-mega-menu__menu .cd-nav__menu-item--level-3.menu-item--active-trail > a {
+    text-decoration: underline;
+    color: var(--cd-black);
+    font-weight: 700;
+  }
 }
 
 .uno-mega-menu__menu > .menu-item > .menu-item__label,

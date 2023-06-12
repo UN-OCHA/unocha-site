@@ -6,6 +6,11 @@ body {
   background: var(--brand-primary--dark);
 }
 
+.cd-global-header__inner {
+  /* OCHA Services is removed so we adjust this */
+  justify-content: flex-end;
+}
+
 .js .cd-global-header__actions {
   background: linear-gradient(to bottom, var(--brand-primary--dark), var(--brand-primary--dark) 33.33%, var(--cd-white) 33.33%, var(--cd-white) 66.66%, var(--brand-primary--dark) 66.66%);
 }

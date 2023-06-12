@@ -288,10 +288,6 @@
 }
 
  /* Views */
- .view-filters {
-  margin-bottom: 4rem;
- }
-
 .more-link {
   display: block;
   margin-top: 2rem;
@@ -329,6 +325,23 @@
   margin: 0 0 0 3px;
   content: "";
   background: var(--rw-icons--common--arrow-right--12--dark-blue);
+}
+
+ .view-filters {
+  margin-bottom: 2rem;
+ }
+
+@media (min-width: 768px) {
+  .view-filters {
+    margin-bottom: 4rem;
+  }
+  .cd-filter[data-cd-toggable] {
+    --dropdown: false;
+  }
+}
+
+.view-header + .view-filters {
+  margin-top: 1rem;
 }
 
 .views-exposed-form.cd-form .cd-form--inline,
@@ -435,4 +448,17 @@ footer.cd-author {
   .menu--account {
     display: none;
   }
+}
+
+/* CBPF Paragraph type, center align everything so button is centered */
+.paragraph--type--cbpf {
+  text-align: center;
+}
+/* Left align Title and Text fields */
+.paragraph--type--cbpf .field--name-field-title,
+.paragraph--type--cbpf .field--name-field-text {
+  text-align: left;
+}
+.paragraph--type--cbpf .cd-button {
+  margin: 2rem auto 0;
 }
