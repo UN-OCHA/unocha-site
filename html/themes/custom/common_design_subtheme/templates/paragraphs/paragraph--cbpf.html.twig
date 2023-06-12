@@ -64,7 +64,7 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {% set ratio = paragraph.field_height.value ~ ' / ' ~ paragraph.field_width.value %}
+      {% set ratio = paragraph.field_width.value ~ ' / ' ~ paragraph.field_height.value %}
       {% set srcdoc = _self.cbpf(paragraph.field_cbpf_id.0.value, paragraph.field_cbpf_attributes) %}
       <div{{ create_attribute().addClass('iframe-wrapper', 'iframe-wrapper--responsive').setAttribute('style', 'aspect-ratio: ' ~ ratio) }}>
         <iframe
