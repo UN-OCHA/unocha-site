@@ -89,20 +89,17 @@
 {% set unochaDate = node.getCreatedTime|date('j F Y') %}
 
 <article{{ attributes.addClass(classes) }}>
-  <header>
-    <span class="uno-tag">{{ content.field_region[0]["#title"] }}</span>
-    {{ title_prefix }}
-    {% if page %}
-      {% if title %}
-        {# This is not wrapped as this renders the page title block which
-          already wraps the node title in a <h1>. #}
-        {{ title }}
-      {% endif %}
-    {% else %}
-      <h2{{ title_attributes }}>{{ label }}</h2>
+  {{ title_prefix }}
+  {% if page %}
+    {% if title %}
+      {# This is not wrapped as this renders the page title block which
+        already wraps the node title in a <h1>. #}
+      {{ title }}
     {% endif %}
-    {{ title_suffix }}
-  </header>
+  {% else %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
 
   {% if componentsModule %}
     {% include '@uno-components/cd-social-links/cd-social-links.html.twig' %}
@@ -112,16 +109,10 @@
 
   <div{{ content_attributes.addClass('cd-layout-main-content') }}>
 
-    <div class="cd-bleed">{{ content.field_response_image }}</div>
+    <div class="cd-bleed">{{ content.field_basic_image }}</div>
 
     <div class="uno-content--custom">
-
-    {% if content.field_response_link|render %}
-      <a href="{{ content.field_response_link[0]["#url"] }}" class="cd-button uno-button cd-button--bold cd-button--wide">
-        {{ content.field_response_link[0]["#title"] }}
-      </a>
-    {% endif %}
-      {{ content|without('field_region', 'field_response_image', 'field_response_link') }}
+      {{ content|without('field_basic_image') }}
     </div>
 
     {% if display_submitted %}

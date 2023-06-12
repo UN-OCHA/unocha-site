@@ -1,0 +1,39 @@
+uuid: a3f3cfc8-b660-41a7-9ded-45834cca2849
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cbpf_attributes
+    - paragraphs.paragraphs_type.cbpf
+  module:
+    - double_field
+id: paragraph.cbpf.field_cbpf_attributes
+field_name: field_cbpf_attributes
+entity_type: paragraph
+bundle: cbpf
+label: 'CBPF Attributes'
+description: "Extra data attributes for the chart/visualisation. Ex: \"data-regions\", \"data-showmap\". \r\nNote: if the \"date-year\" is not specified, it will default to the current year."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  first:
+    label: ''
+    list: false
+    allowed_values: {  }
+    max: null
+    min: null
+    required: true
+    on_label: 'On'
+    off_label: 'Off'
+  second:
+    label: ''
+    list: false
+    allowed_values: {  }
+    max: null
+    min: null
+    required: true
+    on_label: 'On'
+    off_label: 'Off'
+field_type: double_field

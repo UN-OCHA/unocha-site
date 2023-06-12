@@ -67,8 +67,8 @@ ul.tabs > li > a {
 ul.tabs > li > a.is-active,
 ul.tabs > li > a:hover {
   color: var(--brand-primary);
-  background-color: transparent;
   border-bottom: 3px solid var(--brand-grey) !important;
+  background-color: transparent;
 }
 
 ul.tabs > li > a.is-active {

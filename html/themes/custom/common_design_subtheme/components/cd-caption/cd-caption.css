@@ -12,22 +12,27 @@
 }
 
 /* Special Hero caption rules because the image exceeds the page bounds */
-.cd-container .cd-hero .cd-caption {
+.cd-container .cd-hero .cd-caption,
+.cd-container .cd-bleed .cd-caption {
   max-width: var(--cd-max-width);
   margin: 0.25rem auto 2rem;
   padding: 0 var(--cd-container-padding);
 }
-.cd-container .cd-hero .cd-caption .field--name-field-image-caption {
+.cd-container .cd-hero .cd-caption .field--name-field-image-caption,
+.cd-container .cd-bleed .cd-caption .field--name-field-image-caption {
   max-width: var(--cd-max-content-width);
 }
+
 @media screen and (min-width: 768px) {
-  .cd-container .cd-hero .cd-caption {
+  .cd-container .cd-hero .cd-caption,
+  .cd-container .cd-bleed .cd-caption {
     padding: 0 var(--cd-container-padding-tablet);
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .cd-container .cd-hero .cd-caption {
+  .cd-container .cd-hero .cd-caption,
+  .cd-container .cd-bleed .cd-caption {
     padding: 0 var(--cd-container-padding-xlarge);
   }
 }

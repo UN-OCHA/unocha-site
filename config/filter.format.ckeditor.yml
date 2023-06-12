@@ -1,7 +1,9 @@
 uuid: 24f84e24-a9fa-4e69-98e6-ae2bf843bfad
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - linkit
 name: CKEditor
 format: ckeditor
 weight: 0
@@ -34,3 +36,10 @@ filters:
     status: true
     weight: 0
     settings: {  }
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: 0
+    settings:
+      title: true

@@ -1,19 +1,19 @@
-uuid: 5481a5f8-0623-438b-ac72-0a7b0360523a
+uuid: bde837a0-19cb-43ed-bddb-a570d5685253
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_url
-    - paragraphs.paragraphs_type.subscribe
+    - paragraphs.paragraphs_type.cbpf
   module:
     - link
-id: paragraph.subscribe.field_url
+id: paragraph.cbpf.field_url
 field_name: field_url
 entity_type: paragraph
-bundle: subscribe
-label: URL
-description: 'Mailing list subscription URL and Subscribe button text.'
-required: true
+bundle: cbpf
+label: Link
+description: 'Optional link to the source data (ex: https://cbpf.data.unocha.org/).'
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

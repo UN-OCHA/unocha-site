@@ -1,0 +1,102 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+
+{% import _self as self %}
+{% macro cbpf(id, attributes) %}
+  {% set iframe_attributes = create_attribute().setAttribute('id', 'd3chartcontainer' ~ id) %}
+  {% for attribute in attributes %}
+    {% set iframe_attributes = iframe_attributes.setAttribute(attribute.first, attribute.second) %}
+  {% endfor %}
+
+  <div{{ iframe_attributes
+    .setAttribute('data-year', iframe_attributes.offsetGet('data-year') ?? 'now'|date('Y', 'UTC'))
+    .setAttribute('data-responsive', true)
+    .setAttribute('data-lazyload', true)
+  }}></div><script type="text/javascript" src="https://cbpfgms.github.io/{{ id }}/src/d3chart{{ id }}.js"></script>
+{% endmacro %}
+
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+
+      {{ content.field_title }}
+      {{ content.field_text }}
+
+      {% set ratio = paragraph.field_width.value ~ ' / ' ~ paragraph.field_height.value %}
+      {% set srcdoc = _self.cbpf(paragraph.field_cbpf_id.0.value, paragraph.field_cbpf_attributes) %}
+      <div{{ create_attribute().addClass('iframe-wrapper', 'iframe-wrapper--responsive').setAttribute('style', 'aspect-ratio: ' ~ ratio) }}>
+        <iframe
+          title="{{ paragraph.field_url.title }}"
+          {# This replaces the default html escaping by the attributes one so
+             that we can display the HTML returned by the macro. Otherwise
+             html tags are escaped. #}
+          srcdoc="{{ srcdoc|escape('html_attr')|raw }}"
+          {# @todo depending on what CBPF visualizations we end up using we may
+             want to enable scrolling as some of them like the covid map shows
+             "popups" that need scrolling. #}
+          scrolling="no"
+          frameborder="0"
+          style="width: 100%; height: 100%"
+          {# @todo having both allow-same-origin and allow-scripts kinds of
+             defeats the purpose of the sandbox as the embedded content can
+             remove the "sandbox" attribute of the iframe". It's just there
+             until we can replace the "allow-same-origin" with something like
+             "allow-storage-access-by-user-activation" to allow access to the
+             local storage which some CBPF scripts require. #}
+          sandbox="allow-downloads allow-same-origin allow-scripts"
+        ></iframe>
+      </div>
+
+      {% if paragraph.field_url.0.url %}
+        <a class="cd-button cd-button--outline cd-button--bold cd-button--wide cd-button--uppercase cbpf-link" href="{{ paragraph.field_url.0.url }}" target="_blank">{{ paragraph.field_url.0.title }}</a>
+      {% endif %}
+
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

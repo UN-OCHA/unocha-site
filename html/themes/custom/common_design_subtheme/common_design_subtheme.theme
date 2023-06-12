@@ -85,7 +85,15 @@ function common_design_subtheme_preprocess_menu__main(array &$variables) {
     foreach ($variables['items'] as $key => $item) {
       if (!empty($item['below'])) {
         foreach ($item['below'] as $child) {
-          if (!empty($child['below'])) {
+          // When the current page corresponds to the $child menu item or one of
+          // its children and the menu item has enabled children then Drupal
+          // marks it as expanded and populates the `below` property regardless
+          // of the `expanded` property of the menu item. So to have a bit of
+          // control on what is displayed as a mega menu, we explicitly check
+          // the menu link item's `expanded` property to decide whether to
+          // display it as a mega menu or not.
+          // @see \Drupal\Core\Menu\MenuLinkTree::buildItems()
+          if (!empty($child['below']) && isset($child['original_link']) && $child['original_link']->isExpanded()) {
             $variables['items'][$key]['is_mega_menu'] = TRUE;
             $variables['items'][$key]['max_level'] = 2;
           }
