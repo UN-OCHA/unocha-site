@@ -15,7 +15,7 @@ bundle: regions
 label: Regions
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     display_id: regions

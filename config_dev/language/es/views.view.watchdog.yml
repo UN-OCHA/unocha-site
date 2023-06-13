@@ -1,0 +1,30 @@
+display:
+  default:
+    display_title: 'Por defecto'
+    display_options:
+      fields:
+        type:
+          label: Tipo
+        timestamp:
+          label: Fecha
+        name:
+          label: Usuario
+        link:
+          label: Operaciones
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Elementos por página'
+            items_per_page_options_all_label: '- Todo -'
+            offset_label: Desplazamiento
+      exposed_form:
+        options:
+          submit_button: Filtro
+          reset_button_label: Restablecer
+          exposed_sorts_label: 'Ordenar por'
+      filters:
+        type:
+          expose:
+            label: Tipo
+  page:
+    display_title: Página

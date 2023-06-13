@@ -14,7 +14,7 @@ bundle: reliefweb_river
 label: 'Paragraph view mode'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value:
   -
     value: teasers

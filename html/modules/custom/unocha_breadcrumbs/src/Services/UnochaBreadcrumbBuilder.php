@@ -94,6 +94,7 @@ class UnochaBreadcrumbBuilder implements BreadcrumbBuilderInterface {
 
     $breadcrumb->addCacheableDependency($node);
     $breadcrumb->addCacheContexts(['languages:' . LanguageInterface::TYPE_CONTENT]);
+    $breadcrumb->addCacheContexts(['url.path']);
     $breadcrumb->setLinks(array_filter($links));
     return $breadcrumb;
   }

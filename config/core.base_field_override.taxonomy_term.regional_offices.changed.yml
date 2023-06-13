@@ -1,0 +1,18 @@
+uuid: d42b200e-16da-4d1e-89ac-1b74ad428712
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.regional_offices
+id: taxonomy_term.regional_offices.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: regional_offices
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed
