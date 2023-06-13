@@ -138,7 +138,8 @@
 .paragraph--type--section.paragraph--view-mode--tabs,
 .paragraph--type--content-list,
 .paragraph--type--reliefweb-document,
-.paragraph--type--subscribe {
+.paragraph--type--subscribe,
+.paragraph--type--cbpf {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -152,7 +153,8 @@
   .paragraph--type--section.paragraph--view-mode--default,
   .paragraph--type--section.paragraph--view-mode--tabs,
   .paragraph--type--content-list,
-  .paragraph--type--subscribe {
+  .paragraph--type--subscribe,
+  .paragraph--type--cbpf {
     margin-top: 6rem;
     margin-bottom: 6rem;
   }
