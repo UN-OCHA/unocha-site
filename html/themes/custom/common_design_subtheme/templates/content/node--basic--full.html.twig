@@ -109,7 +109,7 @@
 
   <div{{ content_attributes.addClass('cd-layout-main-content') }}>
 
-    {% if content.field_basic_image %}
+    {% if content.field_basic_image|render %}
       <div class="cd-bleed">{{ content.field_basic_image }}</div>
     {% endif %}
 
