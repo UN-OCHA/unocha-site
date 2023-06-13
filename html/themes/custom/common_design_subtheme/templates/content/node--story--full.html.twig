@@ -112,7 +112,9 @@
 
   <div{{ content_attributes.addClass('cd-layout-main-content') }}>
 
-    <div class="cd-bleed">{{ content.field_story_image }}</div>
+    {% if content.field_story_image %}
+      <div class="cd-bleed">{{ content.field_story_image }}</div>
+    {% endif %}
 
     {{ content|without('field_story_image') }}
 

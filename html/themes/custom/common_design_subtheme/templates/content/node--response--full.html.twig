@@ -112,7 +112,9 @@
 
   <div{{ content_attributes.addClass('cd-layout-main-content') }}>
 
+  {% if content.field_response_image %}
     <div class="cd-bleed">{{ content.field_response_image }}</div>
+  {% endif %}
 
     <div class="uno-content--custom">
 
