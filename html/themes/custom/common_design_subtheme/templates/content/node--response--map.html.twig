@@ -87,4 +87,13 @@
   </footer>
   {% endif %}
 
+  {% block read_more %}
+    <a href="{{ url }}" class="cd-card__link cd-read-more">
+      {% trans %}Learn more{% endtrans %}
+      <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
+        <use xlink:href="#cd-icon--arrow-right"></use>
+      </svg>
+    </a>
+  {% endblock %}
+
 </article>

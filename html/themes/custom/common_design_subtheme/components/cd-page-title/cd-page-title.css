@@ -8,10 +8,16 @@
   border-bottom: 0 none;
   font-size: var(--cd-font-size--2xbase);
 }
-
 @media screen and (min-width: 1024px) {
   .cd-page-title {
     font-size: var(--cd-font-size--2xlarge);
+  }
+}
+/* Breakpoint when the title max-width is reached,
+  and the social media is placed next to it */
+@media screen and (min-width: 1100px) {
+  .cd-page-title {
+    margin-bottom: 0;
   }
 }
 
