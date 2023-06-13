@@ -15,4 +15,4 @@ id: paragraph.node
 target_entity_type_id: paragraph
 target_bundle: node
 default_langcode: site_default
-language_alterable: true
+language_alterable: false

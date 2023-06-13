@@ -1,9 +1,9 @@
-uuid: 1311132f-31f1-4d1a-9b07-e406907bd4ab
+uuid: 6861a6df-afd6-4db2-87e9-496d24997b63
 langcode: en
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.response_type
+    - paragraphs.paragraphs_type.cbpf
   module:
     - content_translation
 third_party_settings:
@@ -11,8 +11,8 @@ third_party_settings:
     enabled: true
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: taxonomy_term.response_type
-target_entity_type_id: taxonomy_term
-target_bundle: response_type
+id: paragraph.cbpf
+target_entity_type_id: paragraph
+target_bundle: cbpf
 default_langcode: site_default
 language_alterable: false

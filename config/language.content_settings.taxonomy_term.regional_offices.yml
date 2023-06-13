@@ -15,4 +15,4 @@ id: taxonomy_term.regional_offices
 target_entity_type_id: taxonomy_term
 target_bundle: regional_offices
 default_langcode: site_default
-language_alterable: true
+language_alterable: false

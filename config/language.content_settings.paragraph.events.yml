@@ -15,4 +15,4 @@ id: paragraph.events
 target_entity_type_id: paragraph
 target_bundle: events
 default_langcode: site_default
-language_alterable: true
+language_alterable: false

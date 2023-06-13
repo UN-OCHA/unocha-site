@@ -15,4 +15,4 @@ id: paragraph.stories
 target_entity_type_id: paragraph
 target_bundle: stories
 default_langcode: site_default
-language_alterable: true
+language_alterable: false
