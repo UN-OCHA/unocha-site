@@ -12,7 +12,7 @@ bundle: stories
 label: Limit
 description: 'Maximum number of stories to display.'
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     value: 3

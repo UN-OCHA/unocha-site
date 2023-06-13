@@ -14,7 +14,7 @@ bundle: cbpf
 label: 'CBPF Attributes'
 description: "Extra data attributes for the chart/visualisation. Ex: \"data-regions\", \"data-showmap\". \r\nNote: if the \"date-year\" is not specified, it will default to the current year."
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

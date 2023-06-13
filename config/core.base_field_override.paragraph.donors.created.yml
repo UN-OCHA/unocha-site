@@ -1,0 +1,18 @@
+uuid: 72bd1726-31ef-43a3-be54-562af7e0b0d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.donors
+id: paragraph.donors.created
+field_name: created
+entity_type: paragraph
+bundle: donors
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

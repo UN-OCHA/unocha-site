@@ -15,13 +15,13 @@ mode: default
 content:
   field_single_node:
     type: options_select
-    weight: 0
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   paragraph_view_mode:
     type: paragraph_view_mode
-    weight: -100
+    weight: 0
     region: content
     settings:
       view_modes:
@@ -31,6 +31,17 @@ content:
       default_view_mode: default
       form_mode_bind: true
     third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
-  status: true

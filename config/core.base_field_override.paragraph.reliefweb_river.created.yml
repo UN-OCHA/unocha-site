@@ -1,0 +1,18 @@
+uuid: d6e7dfc7-f492-4ddf-a93f-96b2a54b3339
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.reliefweb_river
+id: paragraph.reliefweb_river.created
+field_name: created
+entity_type: paragraph
+bundle: reliefweb_river
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

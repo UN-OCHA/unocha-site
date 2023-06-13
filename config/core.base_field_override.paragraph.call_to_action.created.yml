@@ -1,0 +1,18 @@
+uuid: a3738dc8-5b51-478f-828a-d98f7ede8144
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.call_to_action
+id: paragraph.call_to_action.created
+field_name: created
+entity_type: paragraph
+bundle: call_to_action
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created
