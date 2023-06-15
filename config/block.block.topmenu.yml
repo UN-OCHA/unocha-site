@@ -1,22 +1,22 @@
-uuid: 6093d488-330b-4493-959a-2fab20ec84db
+uuid: ce574b7e-7c39-4a76-b1e7-eb6c89822975
 langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.help
+    - system.menu.top-menu
   module:
     - system
   theme:
     - common_design_subtheme
-id: help
+id: topmenu
 theme: common_design_subtheme
 region: header_top
-weight: -5
+weight: 0
 provider: null
-plugin: 'system_menu_block:help'
+plugin: 'system_menu_block:top-menu'
 settings:
-  id: 'system_menu_block:help'
-  label: Help
+  id: 'system_menu_block:top-menu'
+  label: 'Top menu'
   label_display: '0'
   provider: system
   level: 1
