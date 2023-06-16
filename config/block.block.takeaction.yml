@@ -1,23 +1,23 @@
-uuid: 6093d488-330b-4493-959a-2fab20ec84db
+uuid: b42c0af4-e76d-4d1e-9520-838175afbc12
 langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.help
+    - system.menu.take-action
   module:
     - system
   theme:
     - common_design_subtheme
-id: help
+id: takeaction
 theme: common_design_subtheme
-region: header_top
-weight: -5
+region: responses_nav
+weight: 0
 provider: null
-plugin: 'system_menu_block:help'
+plugin: 'system_menu_block:take-action'
 settings:
-  id: 'system_menu_block:help'
-  label: Help
-  label_display: '0'
+  id: 'system_menu_block:take-action'
+  label: 'Take action'
+  label_display: visible
   provider: system
   level: 1
   depth: 0
