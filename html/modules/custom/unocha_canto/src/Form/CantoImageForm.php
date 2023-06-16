@@ -7,10 +7,10 @@ use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\FileInterface;
-use GuzzleHttp\Exception\RequestException;
 use Drupal\media\MediaInterface;
 use Drupal\media\MediaTypeInterface;
 use Drupal\media_library\Form\FileUploadForm;
+use GuzzleHttp\Exception\RequestException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**
