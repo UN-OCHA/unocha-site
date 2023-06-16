@@ -1,109 +1,97 @@
-uuid: 45371a9d-e5b2-47e3-adf2-c99c79b3df70
+uuid: 7eb1d2bf-4194-4e5e-a5d0-1db593ba7ffb
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_custom_content
-    - node.type.media
-    - paragraphs.paragraphs_type.image
-    - paragraphs.paragraphs_type.layout
-    - paragraphs.paragraphs_type.media_centre
+    - field.storage.node.field_media_press_release
+    - node.type.media_collection
     - paragraphs.paragraphs_type.reliefweb_document
-    - paragraphs.paragraphs_type.text
-    - paragraphs.paragraphs_type.text_and_image
-    - paragraphs.paragraphs_type.video
   module:
     - entity_reference_revisions
-id: node.media.field_custom_content
-field_name: field_custom_content
+id: node.media_collection.field_media_press_release
+field_name: field_media_press_release
 entity_type: node
-bundle: media
-label: 'Custom content'
+bundle: media_collection
+label: 'Media press release'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      media_centre: media_centre
-      image: image
-      layout: layout
       reliefweb_document: reliefweb_document
-      text: text
-      text_and_image: text_and_image
-      video: video
     negate: 0
     target_bundles_drag_drop:
       call_to_action:
-        weight: 23
-        enabled: false
-      campaign:
-        weight: 24
-        enabled: false
-      donors:
         weight: 25
         enabled: false
-      events:
+      campaign:
         weight: 26
         enabled: false
-      figures:
+      donors:
         weight: 27
         enabled: false
-      image:
+      events:
         weight: 28
-        enabled: true
-      layout:
+        enabled: false
+      figures:
         weight: 29
-        enabled: true
-      leader:
+        enabled: false
+      image:
         weight: 30
+        enabled: false
+      layout:
+        weight: 31
+        enabled: false
+      leader:
+        weight: 32
         enabled: false
       media_centre:
         weight: 24
-        enabled: true
+        enabled: false
       media_item:
-        weight: 31
-        enabled: false
-      node:
-        weight: 32
-        enabled: false
-      regions:
         weight: 33
         enabled: false
-      reliefweb_document:
+      node:
         weight: 34
-        enabled: true
-      reliefweb_river:
+        enabled: false
+      regions:
         weight: 35
         enabled: false
-      resources:
+      reliefweb_document:
         weight: 36
-        enabled: false
-      response_map:
-        weight: 38
-        enabled: false
-      responses:
+        enabled: true
+      reliefweb_river:
         weight: 37
         enabled: false
-      section:
+      resources:
+        weight: 38
+        enabled: false
+      response_map:
         weight: 39
         enabled: false
-      stories:
+      responses:
         weight: 40
         enabled: false
-      subscribe:
+      section:
         weight: 41
         enabled: false
-      text:
+      stories:
         weight: 42
-        enabled: true
-      text_and_image:
+        enabled: false
+      subscribe:
         weight: 43
-        enabled: true
-      video:
+        enabled: false
+      text:
         weight: 44
-        enabled: true
+        enabled: false
+      text_and_image:
+        weight: 45
+        enabled: false
+      video:
+        weight: 46
+        enabled: false
 field_type: entity_reference_revisions

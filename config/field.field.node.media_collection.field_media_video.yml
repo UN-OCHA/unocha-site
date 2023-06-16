@@ -1,16 +1,16 @@
-uuid: bfc903c0-41e3-462f-82fd-f42ceec235dc
+uuid: 39d554f0-1771-40c9-a461-8d652884178f
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_media_image
-    - media.type.image
-    - node.type.media
-id: node.media.field_media_image
-field_name: field_media_image
+    - field.storage.node.field_media_video
+    - media.type.video
+    - node.type.media_collection
+id: node.media_collection.field_media_video
+field_name: field_media_video
 entity_type: node
-bundle: media
-label: 'Media image'
+bundle: media_collection
+label: 'Media video'
 description: ''
 required: false
 translatable: false
@@ -20,7 +20,7 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      image: image
+      video: video
     sort:
       field: _none
       direction: ASC

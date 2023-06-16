@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - node.type.media
-id: node.media
+    - node.type.media_collection
+id: node.media_collection
 target_entity_type_id: node
-target_bundle: media
+target_bundle: media_collection
 default_langcode: site_default
 language_alterable: false

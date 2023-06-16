@@ -8,8 +8,8 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: Media
-type: media
+name: 'Media Collection'
+type: media_collection
 description: 'Collections of images, video and supporting material.'
 help: ''
 new_revision: true

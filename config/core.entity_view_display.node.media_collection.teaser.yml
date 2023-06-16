@@ -4,20 +4,20 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.media.body
-    - field.field.node.media.field_canto_collection
-    - field.field.node.media.field_custom_content
-    - field.field.node.media.field_media_image
-    - field.field.node.media.field_media_press_release
-    - field.field.node.media.field_media_video
-    - field.field.node.media.field_video_download
-    - node.type.media
+    - field.field.node.media_collection.body
+    - field.field.node.media_collection.field_canto_collection
+    - field.field.node.media_collection.field_custom_content
+    - field.field.node.media_collection.field_media_image
+    - field.field.node.media_collection.field_media_press_release
+    - field.field.node.media_collection.field_media_video
+    - field.field.node.media_collection.field_video_download
+    - node.type.media_collection
   module:
     - text
     - user
-id: node.media.teaser
+id: node.media_collection.teaser
 targetEntityType: node
-bundle: media
+bundle: media_collection
 mode: teaser
 content:
   body:

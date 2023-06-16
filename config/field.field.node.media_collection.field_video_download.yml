@@ -4,13 +4,13 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_video_download
-    - node.type.media
+    - node.type.media_collection
   module:
     - link
-id: node.media.field_video_download
+id: node.media_collection.field_video_download
 field_name: field_video_download
 entity_type: node
-bundle: media
+bundle: media_collection
 label: 'Video download'
 description: ''
 required: false

@@ -4,13 +4,13 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_canto_collection
-    - node.type.media
+    - node.type.media_collection
   module:
     - link
-id: node.media.field_canto_collection
+id: node.media_collection.field_canto_collection
 field_name: field_canto_collection
 entity_type: node
-bundle: media
+bundle: media_collection
 label: 'Canto collection'
 description: ''
 required: false

@@ -4,14 +4,14 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.card
-    - field.field.node.media.body
-    - field.field.node.media.field_canto_collection
-    - field.field.node.media.field_custom_content
-    - field.field.node.media.field_media_image
-    - field.field.node.media.field_media_press_release
-    - field.field.node.media.field_media_video
-    - field.field.node.media.field_video_download
-    - node.type.media
+    - field.field.node.media_collection.body
+    - field.field.node.media_collection.field_canto_collection
+    - field.field.node.media_collection.field_custom_content
+    - field.field.node.media_collection.field_media_image
+    - field.field.node.media_collection.field_media_press_release
+    - field.field.node.media_collection.field_media_video
+    - field.field.node.media_collection.field_video_download
+    - node.type.media_collection
   module:
     - layout_builder
     - text
@@ -20,9 +20,9 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: node.media.card
+id: node.media_collection.card
 targetEntityType: node
-bundle: media
+bundle: media_collection
 mode: card
 content:
   body:
