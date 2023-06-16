@@ -28,10 +28,11 @@
     {% set suffix = item.paid ? 'paid'|t : 'pledged'|t %}
     <div{{ item_attributes.addClass('uno-donor') }}>
       <dt class="uno-donors__country">{{ item.name }}</dt>
-      <dl class="uno-donors__amount"> ${{ amount|format_number_compact(null, 'long', 1, true)  }} <small class="uno-donors__amount__suffix">({{ suffix }})</small></dl>
+      <dd class="uno-donors__amount"> ${{ amount|format_number_compact(null, 'long', 1, true)  }} <small class="uno-donors__amount__suffix">({{ suffix }})</small>
+      </dd>
     </div>
     {% endfor %}
-  <dl>
+  </dl>
   {% endapply %}
 </section>
 {% endif %}

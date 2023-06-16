@@ -203,3 +203,19 @@
 [dir="rtl"] .cd-social-links__link--copy.is--showing-message::after {
   transform: translateX(50%) translateY(-10px);
 }
+
+.cd-social-links + .cd-layout-main-content {
+  border-top: 1px solid var(--brand-grey);
+  padding-top: 2rem;
+}
+
+/* When there is a hero image */
+.cd-social-links + .cd-layout-main-content > .cd-bleed {
+  border-top: 0 none;
+  margin-top: -2rem;
+}
+
+.path-frontpage .cd-social-links + .cd-layout-main-content {
+  border-top: 0 none;
+  padding-top: 0;
+}
