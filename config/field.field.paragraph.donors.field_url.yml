@@ -1,0 +1,23 @@
+uuid: e6fd6d44-9db1-4df7-b466-046f5494148d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_url
+    - paragraphs.paragraphs_type.donors
+  module:
+    - link
+id: paragraph.donors.field_url
+field_name: field_url
+entity_type: paragraph
+bundle: donors
+label: 'Source link'
+description: 'URL of the source of the data. Ex: https://cbpf.data.unocha.org.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 16
+field_type: link

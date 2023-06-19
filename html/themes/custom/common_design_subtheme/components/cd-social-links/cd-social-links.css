@@ -204,7 +204,9 @@
   transform: translateX(50%) translateY(-10px);
 }
 
-.cd-social-links + .cd-layout-main-content {
+.cd-social-links + .unocha-reliefweb-document__content,
+.cd-social-links + .cd-layout-main-content,
+.unocha-reliefweb-document .unocha-reliefweb-document__content {
   border-top: 1px solid var(--brand-grey);
   padding-top: 2rem;
 }

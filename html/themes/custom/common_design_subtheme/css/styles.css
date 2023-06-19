@@ -251,7 +251,15 @@
 /* Donors following Figures (in a Section), reduce margin */
 @media screen and (min-width: 768px) {
   .paragraph--type--section + .paragraph--type--donors {
-    margin-top: -3rem;
+    margin-top: -6rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Donors followed by layout */
+@media screen and (min-width: 768px) {
+  .paragraph--type--donors + .paragraph--type--layout {
+    margin-top: 6rem;
     margin-bottom: 2rem;
   }
 }
