@@ -5,9 +5,12 @@ dependencies:
   config:
     - field.field.paragraph.donors.field_countries
     - field.field.paragraph.donors.field_donor_type
+    - field.field.paragraph.donors.field_figures_footnote
+    - field.field.paragraph.donors.field_url
     - paragraphs.paragraphs_type.donors
   module:
     - choices
+    - link
 id: paragraph.donors.default
 targetEntityType: paragraph
 bundle: donors
@@ -26,15 +29,31 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_figures_footnote:
+    type: string_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_url:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 3
+    weight: 5
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   translation:
-    weight: 2
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }

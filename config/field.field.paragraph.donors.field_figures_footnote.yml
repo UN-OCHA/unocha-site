@@ -1,0 +1,19 @@
+uuid: be821cce-1e13-422f-9324-c5cfb2f015c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_figures_footnote
+    - paragraphs.paragraphs_type.donors
+id: paragraph.donors.field_figures_footnote
+field_name: field_figures_footnote
+entity_type: paragraph
+bundle: donors
+label: 'Figures footnote'
+description: 'Footnote about the donors data.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
