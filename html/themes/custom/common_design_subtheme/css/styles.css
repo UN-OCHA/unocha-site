@@ -276,11 +276,10 @@
 }
 
 /* Video embed aspect ratio is calculated in the oembed-video field template. */
-.field--name-field-video .field--name-field-media-oembed-video {
+.field--name-field-media-oembed-video {
   position: relative;
 }
-
-.field--name-field-video .field--name-field-media-oembed-video iframe {
+.field--name-field-media-oembed-video iframe {
   position: absolute;
   top: 0;
   left: 0;

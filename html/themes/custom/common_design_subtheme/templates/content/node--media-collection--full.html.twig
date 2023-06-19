@@ -79,8 +79,7 @@
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
     'cd-article',
-    'uno-media',
-    'uno-photo-gallery--two-columns'
+    'uno-media'
   ]
 %}
 
@@ -89,6 +88,8 @@
 {{ attach_library('common_design/cd-typography') }}
 {{ attach_library('common_design/cd-alert') }}
 {{ attach_library('common_design_subtheme/uno-media') }}
+
+{% set unochaDate = node.getCreatedTime|date('j F Y') %}
 
 <article{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
@@ -109,30 +110,40 @@
 
   {{ local_tasks }}
 
-  <div{{ content_attributes.addClass('cd-layout-main-content') }}>
+    <div{{ content_attributes.addClass('cd-layout-main-content', 'cd-layout') }}>
 
-    {{ content }}
+      <div class="cd-layout__content">
 
-    {% if display_submitted %}
-      <footer class="cd-author node__meta [ cd-bumper ]">
-        {% if author_picture %}
-          <div class="cd-author__image cd-author__image--rounded">
-            {{ author_picture }}
-          </div>
-        {% endif %}
-        <div class="cd-author__content">
-          <div{{author_attributes.addClass('node__submitted')}}>
-            {% trans %}Submitted on
-            {{ unochaDate }}{% endtrans %}
-            {{ metadata }}
-          </div>
+        <div class="uno-photo-gallery--two-columns">
+
+          {{ content.field_media_image }}
+
+          <a href="{{ content.field_canto_collection.0.url }}" target="_blank" class="uno-button__collection cd-button cd-button--outline cd-button--bold cd-button--icon">
+            <span class="cd-button__text">{% trans %}View the entire collection{% endtrans %}</span>
+            <svg class="cd-icon cd-icon--external-link" aria-hidden="true" focusable="false" width="16" height="16">
+              <use xlink:href="#cd-icon--external-link"></use>
+            </svg>
+          </a>
+
         </div>
-      </footer>
-    {% endif %}
 
-{#     {{ content|without('field_title', 'field_text', 'field_canto_link', 'field_reliefweb_document') }}
+        {{ content.field_media_video }}
 
-    <div class="cd-alert">
+        {{ content|without('field_media_image', 'field_media_video', 'field_video_download', 'field_canto_collection') }}
+      </div>
+
+      <div class="cd-layout__sidebar cd-layout__sidebar--wide">
+
+          <a href="{{ content.field_video_download.0.url }}" target="_blank" class="uno-button__video cd-button cd-button--bold cd-button--icon">
+            <span class="cd-button__text">{% trans %}Download high-resolution video{% endtrans %}</span>
+            <svg class="cd-icon cd-icon--external-link" aria-hidden="true" focusable="false" width="16" height="16">
+              <use xlink:href="#cd-icon--external-link"></use>
+            </svg>
+          </a>
+      </div>
+    </div>
+
+    {# <div class="cd-alert">
       <div aria-live="polite">
         <div class="cd-alert__container cd-max-width [ cd-flow ]">
           <div class="cd-alert__title">
@@ -143,13 +154,22 @@
           </div>
         </div>
       </div>
-    </div>
-    <a href="{{ paragraph.field_canto_link.0.url }}" target="_blank" class="cd-button cd-button--bold cd-button--icon">
-      <span class="cd-button__text">Download assets</span>
-      <svg class="cd-icon cd-icon--external-link" aria-hidden="true" focusable="false" width="16" height="16">
-        <use xlink:href="#cd-icon--external-link"></use>
-      </svg>
-    </a> #}
+    </div> #}
 
-  </div>
+  {% if display_submitted %}
+    <footer class="cd-author node__meta [ cd-bumper ]">
+      {% if author_picture %}
+        <div class="cd-author__image cd-author__image--rounded">
+          {{ author_picture }}
+        </div>
+      {% endif %}
+      <div class="cd-author__content">
+        <div{{author_attributes.addClass('node__submitted')}}>
+          {% trans %}Submitted on
+          {{ unochaDate }}{% endtrans %}
+          {{ metadata }}
+        </div>
+      </div>
+    </footer>
+  {% endif %}
 </article>

@@ -72,7 +72,11 @@
   margin-bottom: 1rem;
 } */
 
-.uno-photo-gallery--two-columns .cd-button {
+.uno-photo-gallery--two-columns.cd-layout__sidebar {
+  position: relative;
+}
+
+.uno-photo-gallery--two-columns .uno-button__video {
   margin-bottom: 2rem;
   position: absolute;
   right: 2rem;
