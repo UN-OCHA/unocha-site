@@ -3,10 +3,10 @@
  */
 
 /* Date. */
-.unocha-reliefweb-document__date {
+/* .unocha-reliefweb-document__date {
   font-weight: bold;
   font-style: italic;
-}
+} */
 
 /* Lists in content. */
 .unocha-reliefweb-document li {
@@ -59,8 +59,15 @@
 }
 
 /* Reading width. */
-.unocha-reliefweb-document {
+.unocha-reliefweb-document .unocha-reliefweb-document__content ul,
+.unocha-reliefweb-document .unocha-reliefweb-document__content ol,
+.unocha-reliefweb-document .unocha-reliefweb-document__content p {
   max-width: var(--cd-max-content-width);
+}
+
+.unocha-reliefweb-document .unocha-reliefweb-document__content p:first-child,
+.unocha-reliefweb-document .unocha-reliefweb-document__content > .unocha-reliefweb-attachment-list + p {
+  margin-top: 0;
 }
 
 /* .unocha-reliefweb-document .cd-page-title {
