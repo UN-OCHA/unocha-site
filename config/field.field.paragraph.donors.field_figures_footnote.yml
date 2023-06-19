@@ -9,7 +9,7 @@ id: paragraph.donors.field_figures_footnote
 field_name: field_figures_footnote
 entity_type: paragraph
 bundle: donors
-label: 'Figures footnote'
+label: 'Donors footnote'
 description: 'Footnote about the donors data.'
 required: false
 translatable: true
