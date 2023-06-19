@@ -2,4 +2,23 @@
 
 {% set title_attributes = title_attributes.addClass('cd-page-title') %}
 
-{% include '@unocha_reliefweb/unocha-reliefweb-document.html.twig' %}
+<article{{ attributes.addClass('unocha-reliefweb-document')}}>
+  <header class="unocha-reliefweb-document__header">
+    <h{{ level }}{{ title_attributes.addClass('unocha-reliefweb-document__title') }}>{{ title }}</h{{ level }}>
+    <time class="unocha-reliefweb-document__date" datetime="{{ date|date('c') }} ">{{ date|date('j M Y') }}</time>
+
+    {% if componentsModule %}
+      {%
+        include '@uno-components/cd-social-links/cd-social-links.html.twig' with {
+          'label': title,
+          'title': title,
+          'url': path('<current>')
+        }
+      %}
+    {% endif %}
+  </header>
+  <div{{ content_attributes.addClass('unocha-reliefweb-document__content') }}>
+    {{- content|without('body') -}}
+    {{- content.body|render|sanitize_html(false, level + 1) -}}
+  </div>
+</article>
