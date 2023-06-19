@@ -121,3 +121,16 @@ ul.uno-donors__list--with-figures .uno-donors__amount {
 .uno-donors__amount__suffix {
   margin-inline-start: 0.25rem;
 }
+
+/* External link to Donor sources */
+.uno-donors__more {
+  margin-top: 2rem;
+  text-align: center;
+}
+/* Donors footnote for OCT Unearmarked */
+.uno-donors__footnote {
+  padding: 0 1rem;
+  margin-top: 1rem;
+  font-size: var(--cd-font-size--small);
+  max-width: var(--cd-max-content-width);
+}
