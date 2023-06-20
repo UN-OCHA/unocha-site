@@ -31,8 +31,8 @@
   .uno-photo-gallery--two-columns .uno-photo-gallery__photos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
     align-items: flex-end;
+    justify-content: flex-start;
   }
 
   .uno-photo-gallery--two-columns .uno-photo-gallery__photo {
@@ -62,10 +62,10 @@
   background-color: var(--brand-grey);
 }
 .uno-photo-gallery--two-columns {
-  background-color: var(--brand-grey);
-  padding: 2rem;
   position: relative;
   margin-bottom: 4rem;
+  padding: 2rem;
+  background-color: var(--brand-grey);
 }
 
 /* .node--view-mode-full .uno-photo-gallery--two-columns .field--name-field-text {
@@ -92,8 +92,8 @@
   .layout--twocol .uno-photo-gallery--two-columns .uno-photo-gallery__photos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
     align-items: flex-end;
+    justify-content: flex-start;
   }
 
   .layout--twocol .uno-photo-gallery--two-columns .uno-photo-gallery__photo {
@@ -127,9 +127,9 @@
 
 @media screen and (min-width: 1024px) {
   .node--type-media-collection.node--view-mode-card .uno-card__image {
-    height: 246px;
     display: flex;
     flex-direction: column;
+    height: 246px;
   }
   .node--type-media-collection.node--view-mode-card .uno-card__image .field--name-field-media-video {
     flex: 0 1 auto;

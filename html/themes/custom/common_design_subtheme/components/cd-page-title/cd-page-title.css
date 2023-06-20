@@ -8,6 +8,7 @@
   border-bottom: 0 none;
   font-size: var(--cd-font-size--2xbase);
 }
+
 @media screen and (min-width: 1024px) {
   .cd-page-title {
     font-size: var(--cd-font-size--2xlarge);
