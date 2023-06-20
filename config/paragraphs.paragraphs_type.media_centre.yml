@@ -1,0 +1,10 @@
+uuid: d7ae82e2-4bfb-4445-bbd2-f2fb100bc3a1
+langcode: en
+status: true
+dependencies: {  }
+id: media_centre
+label: 'Media centre'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

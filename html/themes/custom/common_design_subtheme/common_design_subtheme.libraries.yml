@@ -183,6 +183,11 @@ uno-leader:
     theme:
       components/uno-leader/uno-leader.css: {}
 
+uno-media:
+  css:
+    theme:
+      components/uno-media/uno-media.css: {}
+
 uno-mega-menu:
   css:
     theme:

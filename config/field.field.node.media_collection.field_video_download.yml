@@ -1,0 +1,23 @@
+uuid: 3615ce8e-a113-4bd9-87d0-53551830d5e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video_download
+    - node.type.media_collection
+  module:
+    - link
+id: node.media_collection.field_video_download
+field_name: field_video_download
+entity_type: node
+bundle: media_collection
+label: 'Video download'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 16
+field_type: link

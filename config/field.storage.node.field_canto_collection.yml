@@ -1,0 +1,19 @@
+uuid: 6843f144-8b0a-4f21-9f19-5072daf4780c
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_canto_collection
+field_name: field_canto_collection
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

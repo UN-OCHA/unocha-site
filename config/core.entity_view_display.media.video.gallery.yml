@@ -1,0 +1,35 @@
+uuid: 89ed005b-554f-4470-a904-3696fca8a909
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.media.gallery
+    - field.field.media.video.field_media_oembed_video
+    - media.type.video
+  module:
+    - layout_builder
+    - media
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.video.gallery
+targetEntityType: media
+bundle: video
+mode: gallery
+content:
+  field_media_oembed_video:
+    type: oembed
+    label: hidden
+    settings:
+      max_width: 0
+      max_height: 0
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

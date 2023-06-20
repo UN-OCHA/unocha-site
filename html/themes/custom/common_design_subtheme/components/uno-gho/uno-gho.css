@@ -12,8 +12,8 @@
 }
 
 .gho-needs-and-requirements-figure:last-child {
-  padding-bottom: 0;
   padding-right: 0;
+  padding-bottom: 0;
 }
 
 .gho-needs-and-requirements-figure__label {
@@ -35,8 +35,8 @@
 @media screen and (min-width: 768px) {
   .gho-needs-and-requirements {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
     padding-top: 2rem;
   }
 
@@ -81,8 +81,8 @@
 }
 
 .gho-heading {
-  color: var(--brand-primary);
   margin-bottom: 0;
+  color: var(--brand-primary);
 }
 
 .gho-content p {
