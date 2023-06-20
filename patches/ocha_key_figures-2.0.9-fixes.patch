@@ -1,0 +1,118 @@
+diff --git a/src/Controller/OchaKeyFiguresController.php b/src/Controller/OchaKeyFiguresController.php
+index 9168f29..fd55dab 100644
+--- a/src/Controller/OchaKeyFiguresController.php
++++ b/src/Controller/OchaKeyFiguresController.php
+@@ -421,23 +421,21 @@ class OchaKeyFiguresController extends ControllerBase {
+         $fullUrl,
+         ['headers' => $headers],
+       );
++
++      $body = $response->getBody() . '';
++      $results = json_decode($body, TRUE, 512, JSON_THROW_ON_ERROR);
+     }
+     catch (RequestException $exception) {
+       $this->getLogger('ocha_key_figures_fts_figures')->error('Fetching data from @url failed with @message', [
+         '@url' => $fullUrl,
+         '@message' => $exception->getMessage(),
+       ]);
+-
+-      if ($exception->getCode() === 404) {
+-        throw new NotFoundHttpException();
+-      }
+-      else {
+-        throw $exception;
+-      }
++      $results = [];
+     }
+ 
+-    $body = $response->getBody() . '';
+-    $results = json_decode($body, TRUE);
++    if (!is_array($results)) {
++      $results = [];
++    }
+ 
+     // Cache data.
+     if ($use_cache) {
+@@ -873,7 +871,7 @@ class OchaKeyFiguresController extends ControllerBase {
+       $options[$option['value']] = $option['label'];
+     }
+ 
+-    asort($option);
++    asort($options);
+ 
+     return $options;
+   }
+@@ -890,7 +888,7 @@ class OchaKeyFiguresController extends ControllerBase {
+       $options[$option['value']] = $option['label'];
+     }
+ 
+-    asort($option);
++    asort($options);
+ 
+     return $options;
+   }
+diff --git a/src/Plugin/Field/FieldFormatter/KeyFigureCondensed.php b/src/Plugin/Field/FieldFormatter/KeyFigureCondensed.php
+index 4102639..381ab13 100644
+--- a/src/Plugin/Field/FieldFormatter/KeyFigureCondensed.php
++++ b/src/Plugin/Field/FieldFormatter/KeyFigureCondensed.php
+@@ -93,15 +93,20 @@ class KeyFigureCondensed extends KeyFigureBase {
+         $unit = $item->getFigureUnit();
+ 
+         if ($item->getFigureProvider() != 'manual') {
+-          $data = $this->ochaKeyFiguresApiClient->query($item->getFigureProvider(), $item->getFigureId());
+-          $value = $data['value'];
+-          $unit = $data['unit'] ?? '';
++          $data = $this->ochaKeyFiguresApiClient->query($item->getFigureProvider(), strtolower($item->getFigureId()));
++          if (isset($data['value'], $data['value_type'])) {
++            $value = $data['value'];
++            $unit = $data['unit'] ?? '';
+ 
+-          if ($data['value_type'] == 'percentage') {
+-            if ($percentage_formatted == 'no') {
+-              $value /= 100;
++            if ($data['value_type'] == 'percentage') {
++              if ($percentage_formatted == 'no') {
++                $value /= 100;
++              }
+             }
+           }
++          else {
++            $value = (string) $this->t('N/A');
++          }
+         }
+ 
+         if (isset($label, $value)) {
+diff --git a/src/Plugin/Field/FieldFormatter/KeyFigurePresenceCondensed.php b/src/Plugin/Field/FieldFormatter/KeyFigurePresenceCondensed.php
+index 8e12682..12da7e0 100644
+--- a/src/Plugin/Field/FieldFormatter/KeyFigurePresenceCondensed.php
++++ b/src/Plugin/Field/FieldFormatter/KeyFigurePresenceCondensed.php
+@@ -101,17 +101,22 @@ class KeyFigurePresenceCondensed extends KeyFigureBase {
+ 
+         $data = $this->ochaKeyFiguresApiClient->getgetOchaPresenceFigureByFigureId($item->getFigureProvider(), $item->getFigureOchaPresence(), $item->getFigureYear(), $item->getFigureId());
+         $data = reset($data);
+-        $cache_tags = $data['cache_tags'];
+-        unset($data['cache_tags']);
++        if (isset($data['value'], $data['value_type'])) {
++          $cache_tags = $data['cache_tags'];
++          unset($data['cache_tags']);
+ 
+-        $value = $data['value'];
+-        $unit = $data['unit'] ?? '';
++          $value = $data['value'];
++          $unit = $data['unit'] ?? '';
+ 
+-        if ($data['value_type'] == 'percentage') {
+-          if ($percentage_formatted == 'no') {
+-            $value /= 100;
++          if ($data['value_type'] == 'percentage') {
++            if ($percentage_formatted == 'no') {
++              $value /= 100;
++            }
+           }
+         }
++        else {
++          $value = (string) $this->t('N/A');
++        }
+ 
+         if (isset($label, $value)) {
+           $value = NumberFormatter::format($value, $langcode, $format, $precision, FALSE);
