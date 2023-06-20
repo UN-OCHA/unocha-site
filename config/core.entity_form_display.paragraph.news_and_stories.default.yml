@@ -1,0 +1,27 @@
+uuid: 6becc36a-a6ba-4ef4-967f-8497f2bdde57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.news_and_stories.field_news_and_stories_list
+    - paragraphs.paragraphs_type.news_and_stories
+  module:
+    - viewsreference
+id: paragraph.news_and_stories.default
+targetEntityType: paragraph
+bundle: news_and_stories
+mode: default
+content:
+  field_news_and_stories_list:
+    type: viewsreference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

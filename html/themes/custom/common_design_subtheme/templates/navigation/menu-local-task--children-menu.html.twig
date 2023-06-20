@@ -17,4 +17,7 @@
 {% if element['#link'].title == 'Publications'|t and element['#active'] is not empty %}
   {% set link = link|merge({'#title': 'Latest'|t}) %}
 {% endif %}
+{% if element['#link'].title == 'News and stories'|t %}
+  {% set link = link|merge({'#title': 'Latest'|t}) %}
+{% endif %}
 <li{{ attributes }}>{{ link }}</li>
