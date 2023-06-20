@@ -1,0 +1,21 @@
+uuid: f3b266bd-39a9-4f3c-8340-7933cdc670af
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - views
+    - viewsreference
+id: paragraph.field_news_and_stories_list
+field_name: field_news_and_stories_list
+entity_type: paragraph
+type: viewsreference
+settings:
+  target_type: view
+module: viewsreference
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

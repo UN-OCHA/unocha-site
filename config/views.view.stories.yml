@@ -178,310 +178,10 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  page__briefings:
-    id: page__briefings
-    display_title: Briefings
-    display_plugin: page
-    position: 1
-    display_options:
-      title: Briefings
-      empty:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text_custom
-          empty: true
-          content: '<p class="empty-results">No news and stories found for the selected filters.</p>'
-          tokenize: false
-      filters:
-        status:
-          id: status
-          table: node_field_data
-          field: status
-          entity_type: node
-          entity_field: status
-          plugin_id: boolean
-          value: '1'
-          group: 1
-          expose:
-            operator: ''
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-          value:
-            story: story
-          group: 1
-        field_story_type_target_id_verf:
-          id: field_story_type_target_id_verf
-          table: node__field_story_type
-          field: field_story_type_target_id_verf
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: verf
-          operator: in
-          value:
-            324: '324'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: field_story_type_target_id_verf_op
-            label: 'Story type'
-            description: ''
-            use_operator: false
-            operator: field_story_type_target_id_verf_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: type
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-            reduce: 0
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          verf_target_bundles:
-            story_type: story_type
-            country: '0'
-            event_type: '0'
-            regional_offices: '0'
-            response_type: '0'
-            theme: '0'
-          show_unpublished: 0
-        field_country_target_id_verf:
-          id: field_country_target_id_verf
-          table: node__field_country
-          field: field_country_target_id_verf
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: verf
-          operator: in
-          value: {  }
-          group: 2
-          exposed: true
-          expose:
-            operator_id: field_country_target_id_verf_op
-            label: Country
-            description: ''
-            use_operator: false
-            operator: field_country_target_id_verf_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: country
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-            reduce: 0
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          verf_target_bundles:
-            country: country
-            event_type: '0'
-            regional_offices: '0'
-            response_type: '0'
-            story_type: '0'
-            theme: '0'
-          show_unpublished: 0
-        field_response_target_id_verf:
-          id: field_response_target_id_verf
-          table: node__field_response
-          field: field_response_target_id_verf
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: verf
-          operator: in
-          value: {  }
-          group: 2
-          exposed: true
-          expose:
-            operator_id: field_response_target_id_verf_op
-            label: Response
-            description: ''
-            use_operator: false
-            operator: field_response_target_id_verf_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: response
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-            reduce: 0
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          verf_target_bundles:
-            response: response
-            basic: '0'
-            event: '0'
-            region: '0'
-            resource: '0'
-            story: '0'
-          show_unpublished: 0
-        field_region_target_id_verf:
-          id: field_region_target_id_verf
-          table: node__field_region
-          field: field_region_target_id_verf
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: verf
-          operator: in
-          value: {  }
-          group: 2
-          exposed: true
-          expose:
-            operator_id: field_region_target_id_verf_op
-            label: Region
-            description: ''
-            use_operator: false
-            operator: field_region_target_id_verf_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: region
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-            reduce: 0
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          verf_target_bundles:
-            region: region
-            basic: '0'
-            event: '0'
-            resource: '0'
-            response: '0'
-            story: '0'
-          show_unpublished: 0
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
-          2: OR
-      query:
-        type: views_query
-        options:
-          query_comment: ''
-          disable_sql_rewrite: false
-          distinct: true
-          replica: false
-          query_tags: {  }
-      defaults:
-        empty: false
-        query: false
-        title: false
-        relationships: false
-        filters: false
-        filter_groups: false
-        header: false
-      relationships: {  }
-      display_description: ''
-      header:
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: result
-          empty: false
-          content: 'Displaying @start - @end of @total'
-      display_extenders: {  }
-      path: latest/news-and-stories/briefings
-      menu:
-        type: tab
-        title: Briefings
-        description: ''
-        weight: 3
-        expanded: false
-        menu_name: main
-        parent: ''
-        context: '0'
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - url.query_args
-        - 'user.node_grants:view'
-        - user.permissions
-      tags:
-        - 'config:views.view.stories'
-        - node_list
-        - taxonomy_term_list
-  page__latest:
-    id: page__latest
+  block_2:
+    id: block_2
     display_title: Latest
-    display_plugin: page
+    display_plugin: block
     position: 1
     display_options:
       title: 'Latest news and stories'
@@ -754,21 +454,6 @@ display:
           empty: false
           content: 'Displaying @start - @end of @total'
       display_extenders: {  }
-      path: latest/news-and-stories
-      menu:
-        type: 'default tab'
-        title: Latest
-        description: ''
-        weight: 0
-        expanded: false
-        menu_name: main
-        parent: ''
-        context: '0'
-      tab_options:
-        type: none
-        title: ''
-        description: ''
-        weight: 0
     cache_metadata:
       max-age: -1
       contexts:
@@ -782,11 +467,11 @@ display:
         - 'config:views.view.stories'
         - node_list
         - taxonomy_term_list
-  page__news:
-    id: page__news
-    display_title: News
-    display_plugin: page
-    position: 1
+  block_3:
+    id: block_3
+    display_title: 'News and Briefings'
+    display_plugin: block
+    position: 2
     display_options:
       title: News
       empty:
@@ -833,6 +518,7 @@ display:
           plugin_id: verf
           operator: in
           value:
+            324: '324'
             65: '65'
           group: 1
           exposed: false
@@ -870,6 +556,7 @@ display:
             story_type: story_type
             country: '0'
             event_type: '0'
+            office_type: '0'
             regional_offices: '0'
             response_type: '0'
             theme: '0'
@@ -1059,16 +746,6 @@ display:
           empty: false
           content: 'Displaying @start - @end of @total'
       display_extenders: {  }
-      path: latest/news-and-stories/news
-      menu:
-        type: tab
-        title: News
-        description: ''
-        weight: 2
-        expanded: false
-        menu_name: main
-        parent: ''
-        context: '0'
     cache_metadata:
       max-age: -1
       contexts:
@@ -1082,11 +759,11 @@ display:
         - 'config:views.view.stories'
         - node_list
         - taxonomy_term_list
-  page__stories:
-    id: page__stories
+  block_4:
+    id: block_4
     display_title: Stories
-    display_plugin: page
-    position: 1
+    display_plugin: block
+    position: 3
     display_options:
       title: Stories
       empty:
@@ -1359,16 +1036,6 @@ display:
           empty: false
           content: 'Displaying @start - @end of @total'
       display_extenders: {  }
-      path: latest/news-and-stories/stories
-      menu:
-        type: tab
-        title: Stories
-        description: ''
-        weight: 1
-        expanded: false
-        menu_name: main
-        parent: ''
-        context: '0'
     cache_metadata:
       max-age: -1
       contexts:

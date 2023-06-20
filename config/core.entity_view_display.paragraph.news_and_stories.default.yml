@@ -1,0 +1,27 @@
+uuid: 30d2f2cf-fd3c-4d0d-bec9-af8663af208a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.news_and_stories.field_news_and_stories_list
+    - paragraphs.paragraphs_type.news_and_stories
+  module:
+    - viewsreference
+id: paragraph.news_and_stories.default
+targetEntityType: paragraph
+bundle: news_and_stories
+mode: default
+content:
+  field_news_and_stories_list:
+    type: viewsreference_formatter
+    label: hidden
+    settings:
+      plugin_types:
+        block: block
+        default: 0
+        page: 0
+        feed: 0
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
