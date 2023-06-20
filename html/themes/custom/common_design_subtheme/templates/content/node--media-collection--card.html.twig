@@ -70,109 +70,57 @@
  *   in different view modes.
  */
 #}
-{%
-  set classes = [
-    'node',
-    'node--type-' ~ node.bundle|clean_class,
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    'cd-article',
-    'uno-media'
-  ]
+
+{% embed '@common_design_subtheme/content/node--card.html.twig'
 %}
+  {% block card_image %}
+  {{ attach_library('common_design_subtheme/uno-media') }}
 
-{{ attach_library('common_design/cd-article') }}
-{{ attach_library('common_design/cd-bleed') }}
-{{ attach_library('common_design/cd-typography') }}
-{{ attach_library('common_design/cd-alert') }}
-{{ attach_library('common_design_subtheme/uno-media') }}
-
-{% set unochaDate = node.getCreatedTime|date('j F Y') %}
-
-<article{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {% if page %}
-    {% if title %}
-      {# This is not wrapped as this renders the page title block which
-         already wraps the node title in a <h1>. #}
-      {{ title }}
+    {% if content.field_media_video|render %}
+      {{ content.field_media_video }}
+    {% else %}
+      {# Display first image #}
+      {{ content.field_media_image.0 }}
     {% endif %}
-  {% else %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
-  {{ title_suffix }}
+  {% endblock %}
 
-  {% if componentsModule %}
-    {% include '@uno-components/cd-social-links/cd-social-links.html.twig' %}
-  {% endif %}
+  {% block card_title %}
+    {% if content.field_media_video|render %}
+      <span class="uno-media-collection-type uno-tag">{% trans %}Video{% endtrans %}</span>
+    {% else %}
+      <span class="uno-media-collection-type uno-tag">{% trans %}Images{% endtrans %}</span>
+    {% endif %}
+    <h3 class="uno-card__title cd-card__title">
+      <a href="{{ url }}">{{ label }}</a>
+    </h3>
+  {% endblock %}
 
-  {{ local_tasks }}
+  {% block card_content %}
+    {{ content|without('field_media_image', 'field_media_video') }}
 
-    <div{{ content_attributes.addClass('cd-layout-main-content', 'cd-layout') }}>
+    <div class="cd-card__footer">
+      {% block date %}
+        {% if display_submitted %}
+          <div class="cd-card__date">
+            <time datetime="{{ node.getCreatedTime|date }}">{{ unochaDate }}</time>
+          </div>
+        {% endif %}
+      {% endblock %}
 
-      <div class="cd-layout__content">
-
-        {{ content.field_media_video }}
-
-        {{ content|without('field_media_image', 'field_media_video', 'field_video_download', 'field_canto_collection', 'field_custom_content') }}
-
-        <div class="uno-photo-gallery--two-columns">
-
-          {{ content.field_media_image }}
-
-          <a href="{{ node.field_canto_collection.0.url }}" target="_blank" class="uno-button__collection cd-button cd-button--outline cd-button--bold cd-button--icon">
-            <span class="cd-button__text">{% trans %}View the entire collection{% endtrans %}</span>
-            <svg class="cd-icon cd-icon--external-link" aria-hidden="true" focusable="false" width="16" height="16">
-              <use xlink:href="#cd-icon--external-link"></use>
-            </svg>
-          </a>
-
-        </div>
-
-      {{ content.field_custom_content }}
-
-      </div>
-
-      <div class="cd-layout__sidebar cd-layout__sidebar--wide">
-
-          <a href="{{ node.field_video_download.0.url }}" target="_blank" class="uno-button__video cd-button cd-button--bold cd-button--icon">
-            <span class="cd-button__text">{% trans %}Download full-resolution video{% endtrans %}</span>
-            <svg class="cd-icon cd-icon--external-link" aria-hidden="true" focusable="false" width="16" height="16">
-              <use xlink:href="#cd-icon--external-link"></use>
-            </svg>
-          </a>
-      </div>
+      {% block read_more %}
+        <a href="{{ url }}" class="cd-card__link cd-read-more">
+          {% trans %}Read more{% endtrans %}
+          <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
+            <use xlink:href="#cd-icon--arrow-right"></use>
+          </svg>
+        </a>
+      {% endblock %}
     </div>
 
-    {# <div class="cd-alert">
-      <div aria-live="polite">
-        <div class="cd-alert__container cd-max-width [ cd-flow ]">
-          <div class="cd-alert__title">
-            This is the default informative alert.
-          </div>
-          <div class="cd-alert__message">
-            <p>Visit <a href="https://unocha.canto.com/v/Test/landing?viewIndex=0">OCHA's digital asset library</a> to download this press pack.</p>
-          </div>
-        </div>
-      </div>
-    </div> #}
+  {% endblock %}
 
-  {% if display_submitted %}
-    <footer class="cd-author node__meta [ cd-bumper ]">
-      {% if author_picture %}
-        <div class="cd-author__image cd-author__image--rounded">
-          {{ author_picture }}
-        </div>
-      {% endif %}
-      <div class="cd-author__content">
-        <div{{author_attributes.addClass('node__submitted')}}>
-          {% trans %}Submitted on
-          {{ unochaDate }}{% endtrans %}
-          {{ metadata }}
-        </div>
-      </div>
-    </footer>
-  {% endif %}
-</article>
+  {# This is empty because we use its markup above instead #}
+  {% block card_footer %}
+  {% endblock %}
+
+{% endembed %}
