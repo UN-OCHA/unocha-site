@@ -22,6 +22,9 @@
     },
     "drupal/xmlsitemap": {
       "https://www.drupal.org/project/xmlsitemap/issues/3323148": "https://git.drupalcode.org/project/xmlsitemap/-/merge_requests/23.diff"
+    },
+    "unocha/ocha_key_figures": {
+      "temporary fixes for 2.0.9": "patches/ocha_key_figures-2.0.9-fixes.patch"
     }
   }
 }
