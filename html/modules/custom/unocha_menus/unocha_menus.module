@@ -81,7 +81,7 @@ function unocha_menus_get_node_menu_link(NodeInterface $node) {
     }
     // Check all allowed menus if a link does not exist in the default menu.
     if (empty($id)) {
-      $id = unocha_menus_get_node_menu_link_id($node, $menus);
+      $id = unocha_menus_get_node_menu_link_id($node, $available_menus);
     }
     if (!empty($id)) {
       return \Drupal::service('entity.repository')->getActive('menu_link_content', $id);
