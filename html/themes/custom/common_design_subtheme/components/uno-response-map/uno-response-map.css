@@ -72,7 +72,7 @@
   width: 30%;
   height: 100%;
   margin: 0;
-  padding: 12px;
+  padding: 2rem;
 }
 .js .unocha-response-map[data-map-enabled] [data-use-popup] .unocha-response-map__article[data-active] > * {
   padding: 0;
