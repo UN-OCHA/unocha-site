@@ -94,7 +94,7 @@ layout_fivecol:
   default_region: first
   icon_map:
     - [first, second, third, fourth, fifth]
-    - [sixth, seventh, eighth, nineth, tenth]
+    - [sixth, seventh, eighth, ninth, tenth]
   regions:
     first:
       label: First
@@ -112,7 +112,7 @@ layout_fivecol:
       label: Seventh
     eighth:
       label: Eighth
-    nineth:
-      label: Nineth
+    ninth:
+      label: ninth
     tenth:
       label: Tenth
