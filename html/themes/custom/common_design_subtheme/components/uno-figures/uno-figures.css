@@ -30,9 +30,9 @@
   font-weight: bold;
 }
 dt.uno-figure__label-wrapper {
+  flex: 0 0 auto;
   width: 100%;
   padding: 0 0 1rem 0;
-  flex: 0 0 auto;
 }
 
 .uno-figure__value {
@@ -46,13 +46,13 @@ dd.uno-figure__value {
 
 @media screen and (min-width: 480px) {
   .uno-figure {
+    display: flex;
+    flex-wrap: wrap;
     flex-basis: 50%;
     flex-grow: 1;
     flex-shrink: 0;
-    padding-inline-end: 1.5rem;
-    display: flex;
-    flex-wrap: wrap;
     align-content: flex-end;
+    padding-inline-end: 1.5rem;
   }
 }
 

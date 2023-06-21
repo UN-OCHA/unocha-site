@@ -129,8 +129,8 @@ ul.uno-donors__list--with-figures .uno-donors__amount {
 }
 /* Donors footnote for OCT Unearmarked */
 .uno-donors__footnote {
-  padding: 0 1rem;
-  margin-top: 1rem;
-  font-size: var(--cd-font-size--small);
   max-width: var(--cd-max-content-width);
+  margin-top: 1rem;
+  padding: 0 1rem;
+  font-size: var(--cd-font-size--small);
 }

@@ -209,3 +209,12 @@ a.cd-footer-social__link svg {
   display: block;
   text-align: start;
 }
+
+.cd-user-menu a {
+  font-weight: bold;
+}
+
+/* .cd-user-menu li:only-child a {
+  font-weight: bold;
+  padding-inline-end: 0;
+} */
