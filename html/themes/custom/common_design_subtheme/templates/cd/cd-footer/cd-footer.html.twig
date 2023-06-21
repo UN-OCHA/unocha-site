@@ -4,6 +4,8 @@
 
 <footer class="cd-footer" role="contentinfo">
   <div class="cd-container cd-footer__inner">
+  {% include '@common_design_subtheme/uno/subscribe.html.twig' %}
+
   {% block footer_menu %}
     {% include '@common_design/cd/cd-footer/cd-footer-menu.html.twig' %}
   {% endblock %}
@@ -15,8 +17,6 @@
   {% block copyright %}
     {% include '@common_design_subtheme/cd/cd-footer/cd-copyright.html.twig' %}
   {% endblock %}
-
-  {% include '@common_design_subtheme/uno/subscribe.html.twig' %}
 
   {% block ocha %}
     {# Intentionally empty to exclude block from base theme #}
