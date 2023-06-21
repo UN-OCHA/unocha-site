@@ -14,7 +14,7 @@ bundle: media_collection
 label: 'Video download'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

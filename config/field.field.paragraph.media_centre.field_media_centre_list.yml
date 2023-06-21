@@ -15,7 +15,7 @@ bundle: media_centre
 label: 'Media centre list'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value:
   -
     display_id: media_centre

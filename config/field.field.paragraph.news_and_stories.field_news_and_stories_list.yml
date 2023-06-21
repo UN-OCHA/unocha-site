@@ -15,7 +15,7 @@ bundle: news_and_stories
 label: 'News and Stories list'
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value:
   -
     display_id: block_2

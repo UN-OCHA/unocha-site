@@ -1,9 +1,9 @@
-uuid: 190541f2-fc04-48a3-b4ba-0235566edb61
+uuid: 17a178c2-3a76-4118-95f6-8859f29a01e8
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.media_collection
+    - paragraphs.paragraphs_type.media_centre
   module:
     - content_translation
 third_party_settings:
@@ -11,8 +11,8 @@ third_party_settings:
     enabled: true
     bundle_settings:
       untranslatable_fields_hide: '0'
-id: node.media_collection
-target_entity_type_id: node
-target_bundle: media_collection
+id: paragraph.media_centre
+target_entity_type_id: paragraph
+target_bundle: media_centre
 default_langcode: site_default
 language_alterable: true
