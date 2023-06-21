@@ -1,0 +1,8 @@
+type: module
+name: UNOCHA menus
+description: 'Provides customization of menus.'
+package: unocha
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:menu_link_content
+  - drupal:menu_ui
