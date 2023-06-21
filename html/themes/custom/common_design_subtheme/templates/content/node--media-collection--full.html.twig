@@ -118,31 +118,36 @@
 
         {{ content|without('field_media_image', 'field_media_video', 'field_video_download', 'field_canto_collection', 'field_custom_content') }}
 
-        <div class="uno-photo-gallery--two-columns">
+        {% if node.field_canto_collection.0.value or node.field_media_image.0.value %}
+          <div class="uno-photo-gallery--two-columns">
 
-          {{ content.field_media_image }}
+            {{ content.field_media_image }}
 
-          <a href="{{ node.field_canto_collection.0.url }}" target="_blank" class="uno-button__collection cd-button cd-button--outline cd-button--bold cd-button--icon">
-            <span class="cd-button__text">{% trans %}View the entire collection{% endtrans %}</span>
-            <svg class="cd-icon cd-icon--external-link" aria-hidden="true" focusable="false" width="16" height="16">
-              <use xlink:href="#cd-icon--external-link"></use>
-            </svg>
-          </a>
+            {% if node.field_canto_collection.0.value %}
+              <a href="{{ node.field_canto_collection.0.url }}" target="_blank" class="uno-button__collection cd-button cd-button--outline cd-button--bold cd-button--icon">
+                <span class="cd-button__text">{% trans %}View the entire collection{% endtrans %}</span>
+                <svg class="cd-icon cd-icon--external-link" aria-hidden="true" focusable="false" width="16" height="16">
+                  <use xlink:href="#cd-icon--external-link"></use>
+                </svg>
+              </a>
+            {% endif %}
 
-        </div>
+          </div>
+        {% endif %}
 
       {{ content.field_custom_content }}
 
       </div>
 
       <div class="cd-layout__sidebar cd-layout__sidebar--wide">
-
+        {% if node.field_video_download.0.url %}
           <a href="{{ node.field_video_download.0.url }}" target="_blank" class="uno-button__video cd-button cd-button--bold cd-button--icon">
             <span class="cd-button__text">{% trans %}Download full-resolution video{% endtrans %}</span>
             <svg class="cd-icon cd-icon--external-link" aria-hidden="true" focusable="false" width="16" height="16">
               <use xlink:href="#cd-icon--external-link"></use>
             </svg>
           </a>
+        {% endif %}
       </div>
     </div>
 
