@@ -27,6 +27,7 @@
 .cd-button:focus {
   color: var(--cd-white);
   background-color: var(--brand-primary--light);
+  text-decoration: none;
 }
 
 .cd-button:focus {

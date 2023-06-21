@@ -328,7 +328,6 @@
 .view-header .views-display-link {
   position: relative;
   padding-inline-start: 1rem;
-  text-decoration: none;
 }
 
 .uno-stories .uno-stories__view_all a::after,
