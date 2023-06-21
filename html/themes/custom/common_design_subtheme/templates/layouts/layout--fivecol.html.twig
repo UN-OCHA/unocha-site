@@ -14,7 +14,7 @@
 {%
   set classes = [
     'layout',
-    'layout--fourcol',
+    'layout--fivecol',
   ]
 %}
 {% if content %}
@@ -44,15 +44,15 @@
           {{ content.fourth }}
         </div>
       {% endif %}
-    </div>
 
-    <div class="layout--row">
       {% if content.fifth %}
         <div {{ region_attributes.fifth.addClass('layout__region', 'layout__region--fifth') }}>
           {{ content.fifth }}
         </div>
       {% endif %}
+    </div>
 
+    <div class="layout--row">
       {% if content.sixth %}
         <div {{ region_attributes.sixth.addClass('layout__region', 'layout__region--sixth') }}>
           {{ content.sixth }}
@@ -68,6 +68,18 @@
       {% if content.eighth %}
         <div {{ region_attributes.eighth.addClass('layout__region', 'layout__region--eighth') }}>
           {{ content.eighth }}
+        </div>
+      {% endif %}
+
+      {% if content.nineth %}
+        <div {{ region_attributes.nineth.addClass('layout__region', 'layout__region--nineth') }}>
+          {{ content.nineth }}
+        </div>
+      {% endif %}
+
+      {% if content.tenth %}
+        <div {{ region_attributes.tenth.addClass('layout__region', 'layout__region--tenth') }}>
+          {{ content.tenth }}
         </div>
       {% endif %}
     </div>
