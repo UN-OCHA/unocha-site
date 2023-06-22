@@ -5,14 +5,16 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.donors.field_countries
+    - field.field.paragraph.donors.field_country_donors
     - field.field.paragraph.donors.field_donor_type
     - field.field.paragraph.donors.field_figures_footnote
+    - field.field.paragraph.donors.field_presence_donors
     - field.field.paragraph.donors.field_url
     - paragraphs.paragraphs_type.donors
   module:
     - layout_builder
     - link
-    - options
+    - unocha_donors
 third_party_settings:
   layout_builder:
     enabled: false
@@ -22,18 +24,14 @@ targetEntityType: paragraph
 bundle: donors
 mode: preview
 content:
-  field_countries:
-    type: entity_reference_label
+  field_country_donors:
+    type: unocha_donors
     label: above
     settings:
-      link: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_donor_type:
-    type: list_default
-    label: above
-    settings: {  }
+      format: long
+      precision: '1'
+      currency_symbol: 'yes'
+      percentage: 'yes'
     third_party_settings: {  }
     weight: 0
     region: content
@@ -43,6 +41,17 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_presence_donors:
+    type: unocha_donors
+    label: above
+    settings:
+      format: long
+      precision: '1'
+      currency_symbol: 'yes'
+      percentage: 'yes'
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_url:
     type: link
@@ -56,4 +65,6 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-hidden: {  }
+hidden:
+  field_countries: true
+  field_donor_type: true

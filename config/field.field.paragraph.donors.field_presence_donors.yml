@@ -1,0 +1,21 @@
+uuid: 36f71ccb-db2d-4606-9015-0d96df9d72bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_presence_donors
+    - paragraphs.paragraphs_type.donors
+  module:
+    - ocha_key_figures
+id: paragraph.donors.field_presence_donors
+field_name: field_presence_donors
+entity_type: paragraph
+bundle: donors
+label: ' Regional office / Country office'
+description: 'Donors data for a regional or country office.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: key_figure_presence
