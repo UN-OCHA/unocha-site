@@ -278,8 +278,8 @@
 /* Full-width paragraphs */
 .paragraph--type--responses.cd-bleed,
 .paragraph--type--response-map.cd-bleed {
-  background-color: var(--brand-grey);
   padding: 2rem 0;
+  background-color: var(--brand-grey);
 }
 
 .paragraph--type--response-map.cd-bleed + .paragraph--type--responses.cd-bleed {
@@ -492,8 +492,8 @@ footer.cd-author {
 
 /* When images are missing, restrict width of alt text */
 .field--name-field-media-image {
-  font-size: 12px;
   max-width: var(--cd-max-body-width);
   margin-right: auto;
   margin-left: auto;
+  font-size: 12px;
 }

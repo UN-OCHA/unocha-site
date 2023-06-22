@@ -25,8 +25,8 @@
 }
 
 .cd-footer .uno-subscribe {
-  padding: 2rem 0;
   margin-bottom: 0 0 3rem;
+  padding: 2rem 0;
   border-top: 1px solid var(--brand-grey--border);
   border-bottom: 1px solid var(--brand-grey--border);
 }
@@ -36,6 +36,7 @@
     flex: 0 1 100%;
   }
 }
+
 @media screen and (min-width: 1024px) {
   .uno-subscribe {
     flex: 1 0 auto;
@@ -89,16 +90,16 @@
 }
 
 .uno-subscribe .cd-button {
-  border-radius: 0;
   height: 4rem;
+  border-radius: 0;
 }
 
 .uno-subscribe .email {
+  height: 4rem;
   padding: 0.5rem 1rem;
   padding-inline-start: 2rem;
   border: 1px solid var(--brand-grey);
   line-height: 1.15; /* match cd-button */
-  height: 4rem;
 }
 
 @media screen and (min-width: 768px) {

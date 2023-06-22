@@ -3,8 +3,8 @@ body {
 }
 
 a {
-  color: var(--brand-primary--dark);
   text-decoration: none;
+  color: var(--brand-primary--dark);
 }
 
 a:hover,

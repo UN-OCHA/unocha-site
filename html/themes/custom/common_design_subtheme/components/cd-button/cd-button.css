@@ -25,9 +25,9 @@
 
 .cd-button:hover,
 .cd-button:focus {
+  text-decoration: none;
   color: var(--cd-white);
   background-color: var(--brand-primary--light);
-  text-decoration: none;
 }
 
 .cd-button:focus {
