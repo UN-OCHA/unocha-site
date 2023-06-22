@@ -11,7 +11,7 @@
     var(--brand-logo-mobile-url) center no-repeat;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .cd-site-logo {
     background: none;
   }
