@@ -17,11 +17,6 @@
   color: var(--cd-black);
 }
 
-/* Hide icons */
-.paragraph--type--reliefweb-river .rw-entity-meta dd.rw-entity-meta__tag-value--format::before {
-  content: none;
-}
-
 .paragraph--type--reliefweb-river .cd-read-more,
 .paragraph--type--reliefweb-river .uno-tag {
   display: none;
@@ -29,16 +24,19 @@
 
 /* Rivers in Layouts */
 .layout--twocol-sidebar.cd-layout,
-.page-node-type-response .paragraph--type--reliefweb-river {
+.page-node-type-response .paragraph--type--reliefweb-river,
+.page-node-type-region .paragraph--type--reliefweb-river {
   background-color: var(--brand-grey);
 }
-.page-node-type-response .paragraph--type--reliefweb-river {
+.page-node-type-response .paragraph--type--reliefweb-river,
+.page-node-type-region .paragraph--type--reliefweb-river {
   padding: 1rem;
   background-color: var(--brand-grey);
 }
 
 @media screen and (min-width: 1024px) {
-  .page-node-type-response .paragraph--type--reliefweb-river {
+  .page-node-type-response .paragraph--type--reliefweb-river,
+  .page-node-type-region .paragraph--type--reliefweb-river {
     padding: 2rem;
   }
 }

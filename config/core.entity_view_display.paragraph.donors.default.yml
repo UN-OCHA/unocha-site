@@ -1,0 +1,39 @@
+uuid: 73596594-1db3-45c2-8530-f0d140aa47f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.donors.field_countries
+    - field.field.paragraph.donors.field_donor_type
+    - field.field.paragraph.donors.field_figures_footnote
+    - field.field.paragraph.donors.field_url
+    - paragraphs.paragraphs_type.donors
+  module:
+    - link
+id: paragraph.donors.default
+targetEntityType: paragraph
+bundle: donors
+mode: default
+content:
+  field_figures_footnote:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_countries: true
+  field_donor_type: true

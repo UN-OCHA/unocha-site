@@ -52,13 +52,35 @@ function unocha_maps_preprocess_paragraph__response_map(array &$variables) {
         // Get the associated nodes.
         $responses = unocha_paragraphs_get_nodes_from_menu_links($menu_links);
         $title = t('Regional coverage');
+
+        // Remove responses that are tagged only with Liaison Office.
+        if (!empty($responses)) {
+          $terms = $entity_type_manager->getStorage('taxonomy_term')->loadByProperties([
+            'vid' => 'office_type',
+            'name' => 'Liaison Office',
+            'langcode' => 'en',
+          ]);
+          if (!empty($terms)) {
+            foreach ($responses as $key => $response) {
+              if (isset($response->field_office_type) && !$response->field_office_type->isEmpty()) {
+                foreach ($response->field_office_type as $item) {
+                  if (!isset($terms[$item->target_id])) {
+                    continue 2;
+                  }
+                }
+                unset($responses[$key]);
+              }
+            }
+          }
+        }
       }
     }
     else {
-      // @todo should we filter more?
+      // Get the list of responses that have an actual response.
       $responses = $entity_type_manager->getStorage('node')->loadByProperties([
         'type' => 'response',
         'status' => 1,
+        'field_has_response' => 1,
       ]);
       $title = t('Current responses');
     }
@@ -67,7 +89,7 @@ function unocha_maps_preprocess_paragraph__response_map(array &$variables) {
     // on the map.
     if (!empty($responses)) {
       foreach ($responses as $key => $response) {
-        if (!isset($response->field_country) || $response->field_country->isEmpty()) {
+        if (!$response->access('view') || !isset($response->field_country) || $response->field_country->isEmpty()) {
           unset($responses[$key]);
         }
       }

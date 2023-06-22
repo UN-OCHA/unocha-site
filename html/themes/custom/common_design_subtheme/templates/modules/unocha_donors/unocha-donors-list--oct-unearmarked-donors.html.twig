@@ -1,0 +1,31 @@
+{#
+
+/**
+ * @file
+ * Template for a list of donors/sectors.
+ *
+ * Available variables:
+ * - type: type of donor data
+ * - attributes: attributes for the container
+ * - level: heading level for the title
+ * - title: list's title
+ * - title_attributes: title attributes
+ * - list: list of donors/sectors with name and optional pledged/paid amounts
+ * - list_attributes: attributes for the list
+ * - item_attributes: attributes for the list items
+ */
+
+#}
+{% if list is not empty %}
+{{ attach_library('common_design_subtheme/uno-donors') }}
+<section{{ attributes.addClass('uno-donors', 'uno-donors--' ~ type|clean_class)}}>
+  <h{{ level }}{{ title_attributes.addClass('uno-donors__title') }}>{{ title }}</h{{ level }}>
+  {% apply spaceless %}
+  <ul{{ list_attributes.addClass('uno-donors__list') }}>
+    {% for item in list %}
+    <li{{ item_attributes.addClass('uno-donors__list__item') }}>{{ item.name }}</li>
+    {% endfor %}
+  </ul>
+  {% endapply %}
+</section>
+{% endif %}

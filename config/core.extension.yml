@@ -16,8 +16,8 @@ module:
   ctools: 0
   datetime: 0
   datetime_range: 0
-  devel: 0
-  devel_generate: 0
+  datetime_range_timezone: 0
+  double_field: 0
   dynamic_page_cache: 0
   editor: 0
   entity_reference_revisions: 0
@@ -76,8 +76,10 @@ module:
   toolbar: 0
   unocha_breadcrumbs: 0
   unocha_canto: 0
+  unocha_donors: 0
   unocha_figures: 0
   unocha_maps: 0
+  unocha_menus: 0
   unocha_migrate: 0
   unocha_paragraphs: 0
   unocha_reliefweb: 0
@@ -87,7 +89,6 @@ module:
   user_display_name: 0
   user_expire: 0
   verf: 0
-  views_ui: 0
   viewsreference: 0
   xmlsitemap_engines: 0
   pathauto: 1

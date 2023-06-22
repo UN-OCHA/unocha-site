@@ -45,7 +45,10 @@
 .node--type-story .field--name-field-theme,
 .node--type-story .field--type-text-with-summary,
 .node--type-story .field--name-field-text,
-.node--type-story .cd-layout-main-content > footer {
+.node--type-story .cd-layout-main-content > footer,
+.node--type-basic .cd-caption,
+.node--type-region .cd-caption,
+.node--type-response .cd-caption {
   max-width: var(--cd-max-content-width);
   margin-right: auto;
   margin-left: auto;
@@ -63,15 +66,17 @@
   margin-right: 0;
   margin-left: 0;
 }
+/* Restrict width for lists in articles */
+.cd-article ol {
+  max-width: var(--cd-max-content-width);
+}
 
 /* Basic vertical rhythm, will need adjusting */
 
 .node--type-event .field--name-field-event-date,
 .node--type-event .field--name-field-event-location,
-.node--type-event .field--name-field-event-type,
-.node--type-event .field--name-field-country,
-.node--type-event .field--name-field-region,
 .node--view-mode-full .field--name-field-event-image,
+.node--type-event .uno-event__link,
 .node--type-event .field--name-field-response,
 .node--type-story .field--name-field-theme {
   margin-bottom: 1rem;
@@ -82,7 +87,8 @@
   margin-bottom: 1rem;
 }
 
-.node--view-mode-full .field--name-field-text {
+.node--view-mode-full .field--name-field-text,
+.node--type-event.node--view-mode-full .uno-event__link {
   margin-bottom: 2rem;
 }
 
@@ -131,7 +137,9 @@
 .paragraph--type--section.paragraph--view-mode--default,
 .paragraph--type--section.paragraph--view-mode--tabs,
 .paragraph--type--content-list,
-.paragraph--type--reliefweb-document {
+.paragraph--type--reliefweb-document,
+.paragraph--type--subscribe,
+.paragraph--type--cbpf {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -144,7 +152,9 @@
   .paragraph--type--node,
   .paragraph--type--section.paragraph--view-mode--default,
   .paragraph--type--section.paragraph--view-mode--tabs,
-  .paragraph--type--content-list {
+  .paragraph--type--content-list,
+  .paragraph--type--subscribe,
+  .paragraph--type--cbpf {
     margin-top: 6rem;
     margin-bottom: 6rem;
   }
@@ -199,7 +209,6 @@
   margin-top: 0;
 }
 
-/* A layout following another layout, reduce margin */
 .paragraph--type--layout {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -223,8 +232,8 @@
     margin-bottom: 0;
   }
 }
-
-.paragraph--type--layout + .paragraph--type--layout {
+/* A layout following another layout, reduce margin */
+/* .paragraph--type--layout + .paragraph--type--layout {
   margin-top: -2rem;
   margin-bottom: 2rem;
 }
@@ -233,24 +242,70 @@
   .paragraph--type--layout + .paragraph--type--layout {
     margin-bottom: 6rem;
   }
+} */
+
+.paragraph--type--donors + .paragraph--type--donors {
+  margin-top: 2rem;
+}
+
+/* Donors following Figures (in a Section), reduce margin */
+@media screen and (min-width: 768px) {
+  .paragraph--type--section + .paragraph--type--donors {
+    margin-top: -6rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Donors followed by layout */
+@media screen and (min-width: 768px) {
+  .paragraph--type--donors + .paragraph--type--layout {
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+  }
 }
 
 /* River followed by another river */
 .paragraph--type--reliefweb-river + .paragraph--type--reliefweb-river {
   margin-top: 4rem;
 }
+
 @media screen and (min-width: 1024px) {
   .paragraph--type--reliefweb-river + .paragraph--type--reliefweb-river {
     margin-top: 6rem;
   }
 }
 
-/* Video embed aspect ratio is calculated in the oembed-video field template. */
-.field--name-field-video .field--name-field-media-oembed-video {
-  position: relative;
+/* Full-width paragraphs */
+.paragraph--type--responses.cd-bleed,
+.paragraph--type--response-map.cd-bleed {
+  padding: 2rem 0;
+  background-color: var(--brand-grey);
 }
 
-.field--name-field-video .field--name-field-media-oembed-video iframe {
+.paragraph--type--response-map.cd-bleed + .paragraph--type--responses.cd-bleed {
+  margin-top: -2rem;
+}
+
+/* CBPF Paragraph type, center align everything so button is centered */
+.paragraph--type--cbpf {
+  text-align: center;
+}
+
+/* Left align Title and Text fields */
+.paragraph--type--cbpf .field--name-field-title,
+.paragraph--type--cbpf .field--name-field-text {
+  text-align: left;
+}
+
+.paragraph--type--cbpf .cd-button {
+  margin: 2rem auto 0;
+}
+
+/* Video embed aspect ratio is calculated in the oembed-video field template. */
+.field--name-field-media-oembed-video {
+  position: relative;
+}
+.field--name-field-media-oembed-video iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -261,6 +316,7 @@
 .uno-tag {
   display: inline-block;
   padding-inline-end: 1rem;
+  letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--brand-primary--dark);
   font-size: 1.0625rem; /* 17px */
@@ -273,10 +329,6 @@
 }
 
  /* Views */
- .view-filters {
-  margin-bottom: 4rem;
- }
-
 .more-link {
   display: block;
   margin-top: 2rem;
@@ -302,7 +354,6 @@
 .view-header .views-display-link {
   position: relative;
   padding-inline-start: 1rem;
-  text-decoration: none;
 }
 
 .uno-stories .uno-stories__view_all a::after,
@@ -314,6 +365,23 @@
   margin: 0 0 0 3px;
   content: "";
   background: var(--rw-icons--common--arrow-right--12--dark-blue);
+}
+
+ .view-filters {
+  margin-bottom: 2rem;
+ }
+
+@media (min-width: 768px) {
+  .view-filters {
+    margin-bottom: 4rem;
+  }
+  .cd-filter[data-cd-toggable] {
+    --dropdown: false;
+  }
+}
+
+.view-header + .view-filters {
+  margin-top: 1rem;
 }
 
 .views-exposed-form.cd-form .cd-form--inline,
@@ -394,7 +462,6 @@ footer.cd-author {
   clear: both;
 }
 
-
 @media (min-width: 1200px) {
   .uno-content--custom {
     position: relative;
@@ -408,7 +475,10 @@ footer.cd-author {
 }
 
 /* Center Story image within the cd-bleed container */
-.field--name-field-story-image {
+.field--name-field-story-image,
+.field--name-field-basic-image,
+.field--name-field-response-image,
+.field--name-field-region-image {
   text-align: center;
 }
 
@@ -418,4 +488,12 @@ footer.cd-author {
   .menu--account {
     display: none;
   }
+}
+
+/* When images are missing, restrict width of alt text */
+.field--name-field-media-image {
+  max-width: var(--cd-max-body-width);
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 12px;
 }

@@ -1,0 +1,59 @@
+uuid: bcadb00d-b911-4876-b812-f2f6a1901e7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.donors.field_countries
+    - field.field.paragraph.donors.field_donor_type
+    - field.field.paragraph.donors.field_figures_footnote
+    - field.field.paragraph.donors.field_url
+    - paragraphs.paragraphs_type.donors
+  module:
+    - layout_builder
+    - link
+    - options
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.donors.preview
+targetEntityType: paragraph
+bundle: donors
+mode: preview
+content:
+  field_countries:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_donor_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_figures_footnote:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden: {  }

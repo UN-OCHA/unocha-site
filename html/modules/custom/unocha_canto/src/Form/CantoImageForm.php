@@ -7,10 +7,10 @@ use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\FileInterface;
-use GuzzleHttp\Exception\RequestException;
 use Drupal\media\MediaInterface;
 use Drupal\media\MediaTypeInterface;
 use Drupal\media_library\Form\FileUploadForm;
+use GuzzleHttp\Exception\RequestException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**
@@ -354,7 +354,7 @@ class CantoImageForm extends FileUploadForm {
       'name' => $file->getFilename(),
       $source_field_name => [
         'target_id' => $file->id(),
-        'alt' => mb_strcut($asset['description'] ?? '', 0, 512, "UTF-8"),
+        'alt' => '',
       ],
       'field_canto_asset_id' => $asset['id'],
       'field_image_caption' => $asset['description'] ?? '',

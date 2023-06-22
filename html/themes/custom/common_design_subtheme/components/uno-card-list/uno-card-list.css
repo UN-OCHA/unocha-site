@@ -110,6 +110,12 @@ article.node--type-story.node--view-mode-card .field--name-body {
     flex: 1 0 100%;
     padding-top: 2rem;
   }
+
+  .page-node-type-basic .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__title a,
+  .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__title a,
+  .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__title a {
+    font-size: var(--cd-font-size--medium);
+  }
 }
 
 /* Promoted item to span full width */
@@ -166,7 +172,11 @@ article.node--type-story.node--view-mode-card .field--name-body {
   .page-node-type-basic .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__container,
   .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__container,
   .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__container {
+    display: flex;
     flex: 0 1 392px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
   }
 
   /* Border around Featured item */
@@ -183,6 +193,12 @@ article.node--type-story.node--view-mode-card .field--name-body {
   .node--sticky.node--view-mode-card.cd-card--clickable:first-child .cd-card__title a:focus::after,
   .node--sticky.node--view-mode-card.cd-card--clickable:first-child .cd-card__title a:active::after {
     outline: 3px solid var(--brand-primary--light);
+  }
+
+  .page-node-type-basic .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__title a,
+  .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__title a,
+  .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__title a {
+    font-size: var(--cd-font-size--2xmedium);
   }
 }
 

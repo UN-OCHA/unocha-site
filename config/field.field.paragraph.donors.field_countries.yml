@@ -1,0 +1,29 @@
+uuid: 9462ed70-2e9b-4d09-a7e2-9b38309d861b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_countries
+    - paragraphs.paragraphs_type.donors
+    - taxonomy.vocabulary.country
+id: paragraph.donors.field_countries
+field_name: field_countries
+entity_type: paragraph
+bundle: donors
+label: Countries
+description: 'Countries for which to retrieve the donor data.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      country: country
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

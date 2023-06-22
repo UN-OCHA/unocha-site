@@ -82,7 +82,6 @@
   ]
 %}
 {{ attach_library('common_design/cd-article') }}
-{{ attach_library('common_design/cd-author') }}
 {{ attach_library('common_design/cd-typography') }}
 {{ attach_library('common_design_subtheme/uno-social-links') }}
 
@@ -113,11 +112,17 @@
 
    {% block section %}
     <div class="cd-layout">
+      <div class="cd-layout__content">
 
-       <div class="cd-layout__content">
-         {{ content }}
-       </div>
+        {{ content|without('body', 'field_event_link', 'field_custom_content') }}
+        {% if node.field_event_link.0.url %}
+          <a class="uno-event__link cd-button cd-button--bold " href="{{ node.field_event_link.0.url }}" target="_blank">{{ node.field_event_link.0.title }}</a>
+        {% endif %}
 
+        {{ content.body }}
+        {{ content.field_custom_content }}
+
+      </div>
     </div>
    {% endblock %}
 

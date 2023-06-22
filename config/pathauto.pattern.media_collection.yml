@@ -1,0 +1,22 @@
+uuid: 02254cf2-32cd-4fb1-b116-0367313aab84
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: media_collection
+label: 'Media collection'
+type: 'canonical_entities:node'
+pattern: '/media-centre/[node:title]'
+selection_criteria:
+  b2b5e393-00f7-406c-b329-c31bcde8df7b:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: b2b5e393-00f7-406c-b329-c31bcde8df7b
+    context_mapping:
+      node: node
+    bundles:
+      media_collection: media_collection
+selection_logic: and
+weight: -5
+relationships: {  }

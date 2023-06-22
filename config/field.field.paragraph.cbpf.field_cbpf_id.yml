@@ -1,0 +1,19 @@
+uuid: f1ebcc19-2d24-4fe2-b950-e968391140db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cbpf_id
+    - paragraphs.paragraphs_type.cbpf
+id: paragraph.cbpf.field_cbpf_id
+field_name: field_cbpf_id
+entity_type: paragraph
+bundle: cbpf
+label: 'CBPF ID'
+description: 'ID of the chart/visualisation from https://github.com/CBPFGMS/cbpfgms.github.io/.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

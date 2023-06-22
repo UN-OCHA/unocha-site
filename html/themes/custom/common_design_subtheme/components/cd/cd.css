@@ -2,8 +2,24 @@ body {
   color: var(--brand-default-text-color);
 }
 
+a {
+  text-decoration: none;
+  color: var(--brand-primary--dark);
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  color: var(--brand-primary);
+}
+
 .cd-global-header {
   background: var(--brand-primary--dark);
+}
+
+.cd-global-header__inner {
+  /* OCHA Services is removed so we adjust this */
+  justify-content: flex-end;
 }
 
 .js .cd-global-header__actions {
@@ -84,8 +100,7 @@ body {
 
 .cd-soft-footer .cd-soft-footer__nav-responses nav {
   padding: 1rem;
-  color: var(--brand-highlight-contrast);
-  border: 1px solid #707070;
+  color: black;
   background-color: var(--brand-highlight);
 }
 
@@ -97,9 +112,9 @@ body {
 
 @media screen and (min-width: 768px) {
   .cd-soft-footer .cd-soft-footer__nav-responses {
-    margin-top: -18px;
     /* Height of nav h2 and its bottom margin */
     max-width: unset;
+    margin-top: -18px;
   }
 }
 
@@ -107,8 +122,13 @@ body {
   color: var(--cd-white);
 }
 
+.cd-soft-footer .cd-soft-footer__nav-responses a:hover,
+.cd-soft-footer .cd-soft-footer__nav-responses a:focus {
+  color: black;
+}
+
 .cd-soft-footer .cd-soft-footer__nav-responses h2 {
-  color: var(--brand-primary--dark);
+  color: black;
 }
 
 .cd-soft-footer .cd-soft-footer__nav-wrapper > nav {
@@ -149,14 +169,17 @@ body {
   color: var(--cd-default-text-color);
 }
 
-.cd-soft-footer a {
-  text-decoration: none;
+.cd-soft-footer nav li {
+  margin-bottom: 12px;
+  margin-inline-end: 1rem;
 }
 
 .cd-soft-footer nav a {
+  display: block;
   text-transform: uppercase;
   font-size: var(--cd-font-size--tiny);
   font-weight: 500;
+  line-height: 1.2;
 }
 
 .cd-soft-footer h2 {
@@ -197,3 +220,12 @@ a.cd-footer-social__link svg {
   display: block;
   text-align: start;
 }
+
+.cd-user-menu a {
+  font-weight: bold;
+}
+
+/* .cd-user-menu li:only-child a {
+  font-weight: bold;
+  padding-inline-end: 0;
+} */

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.basic.body
     - field.field.node.basic.field_basic_image
+    - field.field.node.basic.field_children_menu
     - field.field.node.basic.field_custom_content
     - node.type.basic
   module:
@@ -35,10 +36,17 @@ content:
     third_party_settings: {  }
   field_basic_image:
     type: media_library_widget
-    weight: 1
+    weight: 2
     region: content
     settings:
       media_types: {  }
+    third_party_settings: {  }
+  field_children_menu:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_custom_content:
     type: layout_paragraphs

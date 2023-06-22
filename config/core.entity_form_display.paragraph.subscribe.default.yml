@@ -3,16 +3,26 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.subscribe.field_text
     - field.field.paragraph.subscribe.field_title
     - field.field.paragraph.subscribe.field_url
     - paragraphs.paragraphs_type.subscribe
   module:
     - link
+    - text
 id: paragraph.subscribe.default
 targetEntityType: paragraph
 bundle: subscribe
 mode: default
 content:
+  field_text:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   field_title:
     type: string_textfield
     weight: 0
@@ -23,12 +33,23 @@ content:
     third_party_settings: {  }
   field_url:
     type: link_default
-    weight: 1
+    weight: 2
     region: content
     settings:
       placeholder_url: ''
-      placeholder_title: ''
+      placeholder_title: Subscribe
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 3
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   created: true
-  status: true

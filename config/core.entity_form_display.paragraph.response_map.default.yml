@@ -1,0 +1,25 @@
+uuid: f6d6c42a-e443-475f-b4d5-500ee54567d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.response_map
+id: paragraph.response_map.default
+targetEntityType: paragraph
+bundle: response_map
+mode: default
+content:
+  status:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true

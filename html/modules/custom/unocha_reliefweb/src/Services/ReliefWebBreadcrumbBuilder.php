@@ -114,6 +114,7 @@ class ReliefWebBreadcrumbBuilder implements BreadcrumbBuilderInterface {
     $links[] = Link::createFromRoute($title, '<nolink>', [], $url_options);
 
     $breadcrumb->addCacheContexts(['languages:' . LanguageInterface::TYPE_CONTENT]);
+    $breadcrumb->addCacheContexts(['url.path']);
     $breadcrumb->setLinks(array_filter($links));
     return $breadcrumb;
   }

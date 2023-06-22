@@ -1,0 +1,16 @@
+uuid: 1ff5e833-3d80-4d42-938d-745893a7649b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.media_centre.field_media_centre_list
+    - paragraphs.paragraphs_type.media_centre
+id: paragraph.media_centre.default
+targetEntityType: paragraph
+bundle: media_centre
+mode: default
+content: {  }
+hidden:
+  created: true
+  field_media_centre_list: true
+  status: true

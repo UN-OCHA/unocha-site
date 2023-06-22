@@ -5,19 +5,18 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.event.body
-    - field.field.node.event.field_country
     - field.field.node.event.field_custom_content
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_link
     - field.field.node.event.field_event_location
     - field.field.node.event.field_event_type
-    - field.field.node.event.field_region
-    - field.field.node.event.field_response
     - node.type.event
   module:
-    - datetime_range
+    - datetime_range_timezone
     - layout_builder
     - layout_paragraphs
+    - link
     - text
     - user
 third_party_settings:
@@ -34,14 +33,6 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 7
-    region: content
-  field_country:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
     weight: 4
     region: content
   field_custom_content:
@@ -51,15 +42,15 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 8
+    weight: 5
     region: content
   field_event_date:
-    type: daterange_default
-    label: inline
+    type: daterange_timezone
+    label: hidden
     settings:
-      timezone_override: ''
-      format_type: unocha
       separator: '-'
+      format_type: unocha
+      display_timezone: true
     third_party_settings: {  }
     weight: 1
     region: content
@@ -72,6 +63,18 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_event_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_event_location:
     type: text_default
     label: inline
@@ -79,30 +82,7 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  field_event_type:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_region:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_response:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 6
-    region: content
 hidden:
+  field_event_type: true
   langcode: true
   links: true

@@ -12,12 +12,12 @@ field_name: field_url
 entity_type: paragraph
 bundle: subscribe
 label: URL
-description: 'Mailing list subscription URL.'
+description: 'Mailing list subscription URL and Subscribe button text.'
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  title: 0
+  title: 2
   link_type: 16
 field_type: link

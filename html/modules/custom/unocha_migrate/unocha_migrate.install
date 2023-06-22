@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Install file for the unocha_migrate module.
+ */
+
+use Drupal\unocha_migrate\FieldTypeConverter;
+
+/**
+ * Implements hook_update_N().
+ *
+ * Change the Event node's event date field type to handle timezones.
+ */
+function unocha_migrate_update_10001(&$sandbox) {
+  \Drupal::service('module_installer')->install([
+    'datetime_range_timezone',
+  ], TRUE);
+
+  $field_map['node'] = [
+    'field_event_date' => 'daterange_timezone',
+  ];
+  return FieldTypeConverter::processBatch($sandbox, $field_map);
+}

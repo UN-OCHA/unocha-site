@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.basic.body
     - field.field.node.basic.field_basic_image
+    - field.field.node.basic.field_children_menu
     - field.field.node.basic.field_custom_content
     - node.type.basic
   module:
@@ -34,6 +35,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_children_menu: true
   field_custom_content: true
   langcode: true
   links: true

@@ -1,0 +1,22 @@
+uuid: 530a69cf-e5c1-4dde-b2bf-9ad049ee005d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.media_collection
+id: node.media_collection.promote
+field_name: promote
+entity_type: node
+bundle: media_collection
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

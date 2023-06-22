@@ -82,7 +82,7 @@
   ]
 %}
 {{ attach_library('common_design/cd-article') }}
-{{ attach_library('common_design/cd-author') }}
+{{ attach_library('common_design/cd-bleed') }}
 {{ attach_library('common_design/cd-typography') }}
 {{ attach_library('common_design_subtheme/uno-social-links') }}
 
@@ -112,7 +112,9 @@
 
   <div{{ content_attributes.addClass('cd-layout-main-content') }}>
 
-    {{ content.field_response_image }}
+  {% if content.field_response_image|render %}
+    <div class="cd-bleed">{{ content.field_response_image }}</div>
+  {% endif %}
 
     <div class="uno-content--custom">
 

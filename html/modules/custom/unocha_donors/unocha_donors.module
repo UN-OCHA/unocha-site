@@ -1,0 +1,238 @@
+<?php
+
+/**
+ * @file
+ * Module file for the unocha_donors module.
+ */
+
+use Drupal\unocha_utility\Helpers\LocalizationHelper;
+
+/**
+ * Implements hook_theme().
+ */
+function unocha_donors_theme() {
+  $themes = [
+    // Theme for a list of donors/sectors.
+    'unocha_donors_list' => [
+      'variables' => [
+        // Type of donor data.
+        'type' => NULL,
+        // Wrapper attributes.
+        'attributes' => NULL,
+        // Heading level.
+        'level' => 2,
+        // Title.
+        'title' => NULL,
+        // Title attributes.
+        'title_attributes' => NULL,
+        // List of donors/sectors with name and optional pledged/paid amounts.
+        'list' => NULL,
+        // List attributes.
+        'list_attributes' => NULL,
+        // List item attributes.
+        'item_attributes' => NULL,
+      ],
+    ],
+  ];
+
+  return $themes;
+}
+
+/**
+ * Implements hook_preprocess_paragraph__type().
+ */
+function unocha_donors_preprocess_paragraph__donors(array &$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+  $view_mode = $variables['view_mode'];
+  $donor_type = $paragraph->field_donor_type->value;
+
+  $iso3s = [];
+  if (!empty($donor_type) && isset($paragraph->field_countries)) {
+    foreach ($paragraph->field_countries as $item) {
+      $country = $item->entity ?? NULL;
+      if (isset($country) && $country->hasField('field_iso3') && !empty($country->field_iso3->value)) {
+        $iso3 = strtolower($country->field_iso3->value);
+        $iso3s[$iso3] = $iso3;
+      }
+    }
+  }
+
+  if (!empty($iso3s)) {
+    $donors = unocha_donors_get_donors($donor_type, $iso3s, $view_mode);
+    if (!empty($donors)) {
+      $variables['content']['donors'] = $donors;
+    }
+  }
+
+  // The API caches the data more granularly. The code here is not compute
+  // heavy so we can simply cache it with the root key figures tag to ensure
+  // it's always refreshed when key figures change.
+  $variables['#cache']['tags'][] = 'keyfigures';
+}
+
+/**
+ * Get the donors/sectors for the given countries.
+ *
+ * @param string $type
+ *   Donor data type.
+ * @param array $iso3s
+ *   List of ISO3 country codes.
+ * @param string $view_mode
+ *   View mode of the paragraph.
+ *
+ * @return array
+ *   Render array for the FTS top donors.
+ */
+function unocha_donors_get_donors($type, array $iso3s, $view_mode) {
+  $mapping = [
+    'fts_top_donors' => [
+      'title' => t('Top donors'),
+      'provider' => 'fts',
+      'pattern' => '/^fts_.+_YEAR_top_donors$/i',
+      'property' => 'donors',
+      'keys' => ['total_funding' => TRUE],
+      'sort' => 'total_funding',
+    ],
+    'fts_top_sectors' => [
+      'title' => t('Top sectors'),
+      'provider' => 'fts',
+      'pattern' => '/^fts_.+_YEAR_top_sectors$/i',
+      'property' => 'donors',
+      'keys' => ['total_funding' => TRUE],
+      'sort' => 'total_funding',
+    ],
+    'cbpf_top_donors' => [
+      'title' => t('Top donors'),
+      'provider' => 'cbpf',
+      'pattern' => '/^cbpf_.+_YEAR_top_donors$/i',
+      'property' => 'donors',
+      'keys' => ['paid' => TRUE, 'pledged' => TRUE],
+      'sort' => 'pledged',
+    ],
+    'oct_earmarked_donors' => [
+      'title' => t('Earmarked donors'),
+      'provider' => 'oct',
+      'pattern' => '/^oct_.+_YEAR_earmarkeddonors$/i',
+      'property' => 'donors',
+      'keys' => ['earmarked' => TRUE, 'unearmarked' => TRUE, 'total' => TRUE],
+      'sort' => 'total',
+    ],
+    'oct_unearmarked_donors' => [
+      'title' => t('Unearmarked donors'),
+      'provider' => 'oct',
+      'pattern' => '/^oct_.+_YEAR_unearmarkeddonors$/i',
+      'property' => 'value',
+      'keys' => [],
+      'sort' => NULL,
+    ],
+  ];
+
+  if (!isset($mapping[$type])) {
+    return [];
+  }
+
+  // Get the data for the current year.
+  $year = gmdate('Y');
+
+  // Get $title, $provider, $pattern, $property, $keys, $sort, $use_value.
+  extract($mapping[$type]);
+  $pattern = str_replace('YEAR', $year, $pattern);
+
+  // Retrieve the data from the OCHA Key Figures API.
+  $figures = unocha_donors_fetch_figures($provider, array_keys($iso3s), $year);
+
+  // Only keep the donor figures for the provider, year and countries.
+  $figures = array_filter($figures, function ($figure) use ($iso3s, $pattern, $property) {
+    return preg_match($pattern, $figure['id']) &&
+      isset($iso3s[strtolower($figure['iso3'])]) &&
+      !empty($figure[$property]);
+  });
+  if (empty($figures)) {
+    return [];
+  }
+
+  $donors = [];
+  foreach ($figures as $figure) {
+    if (is_array($figure[$property])) {
+      $figure_donors = $figure[$property];
+    }
+    // If the property with the list of donors is not an array, we assume it's
+    // a comma separated list.
+    else {
+      foreach (preg_split('/,\s+/', $figure[$property]) as $value) {
+        $figure_donors[$value]['name'] = $value;
+      }
+    }
+
+    // Copy over the donor properies and sum funding amounts.
+    foreach ($figure_donors as $item) {
+      if (isset($item['name'])) {
+        $name = $item['name'];
+        $donors[$name]['name'] = $name;
+
+        foreach ($keys as $key => $sum) {
+          if ($sum) {
+            $donors[$name][$key] = ($donors[$name][$key] ?? 0) + ($item[$key] ?? 0);
+          }
+          else {
+            $donors[$name][$key] = $item[$key] ?? '';
+          }
+        }
+      }
+    }
+  }
+  if (empty($donors)) {
+    return [];
+  }
+
+  // Sort the donors by a property (ex: pledged amount).
+  if (!empty($sort)) {
+    uasort($donors, function ($a, $b) use ($sort) {
+      return $b[$sort] <=> $a[$sort];
+    });
+  }
+  // Otherwise sort by name.
+  else {
+    LocalizationHelper::collatedKsort($donors);
+  }
+
+  return [
+    '#theme' => 'unocha_donors_list__' . $type . '__' . $view_mode,
+    '#type' => $type,
+    '#title' => $title ?: t('Top donors'),
+    '#list' => $donors,
+  ];
+}
+
+/**
+ * Fetch Key Figures.
+ *
+ * @param string $provider
+ *   API data provider.
+ * @param array $iso3s
+ *   List of the ISO3s of the countries we want Key Figures for.
+ * @param string $year
+ *   Year for the figures.
+ *
+ * @return array
+ *   API figures keyed by ID.
+ */
+function unocha_donors_fetch_figures($provider, array $iso3s, $year = NULL) {
+  $client = \Drupal::service('ocha_key_figures.key_figures_controller');
+
+  $query = [
+    'iso3' => $iso3s,
+    'year' => $year ?? gmdate('Y'),
+    'archived' => FALSE,
+  ];
+
+  $data = $client->query($provider, '', $query);
+
+  $results = [];
+  foreach ($data as $row) {
+    $results[strtolower($row['id'])] = $row;
+  }
+
+  return $results;
+}

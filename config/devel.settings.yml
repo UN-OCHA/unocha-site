@@ -1,8 +1,0 @@
-page_alter: false
-raw_names: false
-error_handlers:
-  - 0
-rebuild_theme: true
-devel_dumper: var_dumper
-debug_logfile: 'temporary://drupal_debug.txt'
-debug_pre: true

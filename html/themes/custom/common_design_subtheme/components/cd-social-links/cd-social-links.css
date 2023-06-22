@@ -203,3 +203,21 @@
 [dir="rtl"] .cd-social-links__link--copy.is--showing-message::after {
   transform: translateX(50%) translateY(-10px);
 }
+
+.cd-social-links + .unocha-reliefweb-document__content,
+.cd-social-links + .cd-layout-main-content,
+.unocha-reliefweb-document .unocha-reliefweb-document__content {
+  padding-top: 2rem;
+  border-top: 1px solid var(--brand-grey);
+}
+
+/* When there is a hero image */
+.cd-social-links + .cd-layout-main-content > .cd-bleed {
+  margin-top: -2rem;
+  border-top: 0 none;
+}
+
+.path-frontpage .cd-social-links + .cd-layout-main-content {
+  padding-top: 0;
+  border-top: 0 none;
+}

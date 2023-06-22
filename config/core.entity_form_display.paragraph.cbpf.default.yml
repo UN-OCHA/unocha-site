@@ -1,0 +1,105 @@
+uuid: 42c0f9be-348b-4be7-87c8-d27ecf59946c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cbpf.field_cbpf_attributes
+    - field.field.paragraph.cbpf.field_cbpf_id
+    - field.field.paragraph.cbpf.field_height
+    - field.field.paragraph.cbpf.field_text
+    - field.field.paragraph.cbpf.field_title
+    - field.field.paragraph.cbpf.field_url
+    - field.field.paragraph.cbpf.field_width
+    - paragraphs.paragraphs_type.cbpf
+  module:
+    - double_field
+    - link
+    - text
+id: paragraph.cbpf.default
+targetEntityType: paragraph
+bundle: cbpf
+mode: default
+content:
+  field_cbpf_attributes:
+    type: double_field
+    weight: 3
+    region: content
+    settings:
+      first:
+        type: textfield
+        label_display: inline
+        size: 50
+        placeholder: ''
+        label: Ok
+        cols: 10
+        rows: 5
+      second:
+        type: textfield
+        label_display: inline
+        size: 60
+        placeholder: ''
+        label: Ok
+        cols: 10
+        rows: 5
+      inline: true
+    third_party_settings: {  }
+  field_cbpf_id:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_height:
+    type: number
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_text:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_url:
+    type: link_default
+    weight: 6
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_width:
+    type: number
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
