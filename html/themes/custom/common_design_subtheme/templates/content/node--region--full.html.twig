@@ -88,7 +88,7 @@
 
 {% set unochaDate = node.getCreatedTime|date('j F Y') %}
 
-<article{{ attributes.addClass(classes) }}>
+<article{{ attributes.addClass(classes)|without('role') }}>
   <header>
     <span class="uno-tag">{{ 'Regional office for'|t}}</span>
     {{ title_prefix }}
