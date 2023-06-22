@@ -10,3 +10,9 @@
     linear-gradient(transparent, transparent),
     var(--brand-logo-mobile-url) center no-repeat;
 }
+
+@media (min-width: 768px) {
+  .cd-site-logo {
+    background: none;
+  }
+}

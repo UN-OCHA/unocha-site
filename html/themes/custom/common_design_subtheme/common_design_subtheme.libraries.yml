@@ -49,7 +49,7 @@ cd-card:
 
 cd-header:
   css:
-    theme:
+    component:
       components/cd/cd-header/cd-logo.css: {}
 
 cd-hero:
