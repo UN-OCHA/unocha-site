@@ -78,7 +78,7 @@
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    'uno-card cd-card cd-card--clickable'
+    'uno-card cd-card'
   ]
 %}
 
@@ -96,7 +96,7 @@
 
   <div class="uno-card__image">
   {% block card_image %}
-    {{ content.field_image }}
+    <a href="{{ url }}">{{ content.field_image }}</a>
   {% endblock %}
   </div>
 
