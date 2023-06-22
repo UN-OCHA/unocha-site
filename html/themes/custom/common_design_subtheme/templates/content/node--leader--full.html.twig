@@ -88,7 +88,7 @@
 {{ attach_library('common_design/cd-typography') }}
 {{ attach_library('common_design_subtheme/uno-leader') }}
 
-<article{{ attributes.addClass(classes) }}>
+<article{{attributes.addClass(classes)|without('role')}}>
 
   {{ title_prefix }}
   {% if page %}
