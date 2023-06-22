@@ -86,6 +86,10 @@
 
   <div class="uno-card__content cd-card__container">
 
+    {# {% if content.field_office_type %}
+      <span class="uno-office-type uno-tag">placeholder</span>
+    {% endif %} #}
+
     {% block card_title %}
       <h3 class="uno-card__title cd-card__title">
         <a href="{{ url }}">{{ label }}</a>
