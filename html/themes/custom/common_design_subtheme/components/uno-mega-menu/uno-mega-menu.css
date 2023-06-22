@@ -1,9 +1,9 @@
 @media screen and (min-width: 1024px) {
   /* So the mega menus and normal menus play nice together. */
-  .cd-site-header__nav-holder nav[role="navigation"].cd-nav {
+  .cd-site-header__nav-holder nav.cd-nav {
     position: unset;
   }
-  .cd-site-header__nav-holder nav[role="navigation"] li.menu-item.menu-item--expanded:not(.uno-mega-menu-item) {
+  .cd-site-header__nav-holder nav li.menu-item.menu-item--expanded:not(.uno-mega-menu-item) {
     position: relative;
   }
 
