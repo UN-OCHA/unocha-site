@@ -43,6 +43,7 @@
  * 'uno-card-list' component.
  */
 #}
+{{ attach_library('common_design/cd-bleed') }}
 {{ attach_library('common_design_subtheme/uno-card-list') }}
 {%
   set classes = [
@@ -56,8 +57,10 @@
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      {{ content }}
-    {% endblock %}
+    {# <div class="cd-container"> #}
+      {% block content %}
+        {{ content }}
+      {% endblock %}
+    {# </div> #}
   </div>
 {% endblock paragraph %}
