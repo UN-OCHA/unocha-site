@@ -275,6 +275,32 @@
   }
 }
 
+/* Full-width paragraphs */
+.paragraph--type--responses.cd-bleed,
+.paragraph--type--response-map.cd-bleed {
+  padding: 2rem 0;
+  background-color: var(--brand-grey);
+}
+
+.paragraph--type--response-map.cd-bleed + .paragraph--type--responses.cd-bleed {
+  margin-top: -2rem;
+}
+
+/* CBPF Paragraph type, center align everything so button is centered */
+.paragraph--type--cbpf {
+  text-align: center;
+}
+
+/* Left align Title and Text fields */
+.paragraph--type--cbpf .field--name-field-title,
+.paragraph--type--cbpf .field--name-field-text {
+  text-align: left;
+}
+
+.paragraph--type--cbpf .cd-button {
+  margin: 2rem auto 0;
+}
+
 /* Video embed aspect ratio is calculated in the oembed-video field template. */
 .field--name-field-media-oembed-video {
   position: relative;
@@ -328,7 +354,6 @@
 .view-header .views-display-link {
   position: relative;
   padding-inline-start: 1rem;
-  text-decoration: none;
 }
 
 .uno-stories .uno-stories__view_all a::after,
@@ -465,22 +490,10 @@ footer.cd-author {
   }
 }
 
-/* CBPF Paragraph type, center align everything so button is centered */
-.paragraph--type--cbpf {
-  text-align: center;
-}
-/* Left align Title and Text fields */
-.paragraph--type--cbpf .field--name-field-title,
-.paragraph--type--cbpf .field--name-field-text {
-  text-align: left;
-}
-.paragraph--type--cbpf .cd-button {
-  margin: 2rem auto 0;
-}
-
 /* When images are missing, restrict width of alt text */
 .field--name-field-media-image {
   max-width: var(--cd-max-body-width);
   margin-right: auto;
   margin-left: auto;
+  font-size: 12px;
 }

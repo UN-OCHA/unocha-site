@@ -1,6 +1,13 @@
-.cd-footer .paragraph--type--subscribe {
-  display: flex;
-  justify-content: center;
+@media screen and (min-width: 768px) {
+  .paragraph--type--subscribe {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .paragraph--type--subscribe .field--name-field-title,
+  .paragraph--type--subscribe .field--type-text-long {
+    flex: 1 0 100%;
+  }
 }
 
 .paragraph--type--subscribe .field--name-field-text p {
@@ -9,13 +16,44 @@
   text-align: center;
 }
 
+.node--view-mode-full .paragraph--type--subscribe .field--type-text-long {
+  margin-bottom: 1rem;
+}
+
 .uno-subscribe {
-  margin: 2rem 0 3rem;
+  margin-bottom: 3rem;
+}
+
+.cd-footer .uno-subscribe {
+  margin-bottom: 0 0 3rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--brand-grey--border);
+  border-bottom: 1px solid var(--brand-grey--border);
+}
+
+@media screen and (min-width: 768px) {
+  .uno-subscribe {
+    flex: 0 1 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .uno-subscribe {
+    flex: 1 0 auto;
+  }
+
+  .cd-footer .uno-subscribe {
+    margin-bottom: 6rem;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .uno-subscribe form {
     display: flex;
+    align-items: center;
+  }
+
+  .paragraph--type--subscribe .uno-subscribe form {
     justify-content: center;
   }
 }
@@ -52,10 +90,12 @@
 }
 
 .uno-subscribe .cd-button {
+  height: 4rem;
   border-radius: 0;
 }
 
 .uno-subscribe .email {
+  height: 4rem;
   padding: 0.5rem 1rem;
   padding-inline-start: 2rem;
   border: 1px solid var(--brand-grey);

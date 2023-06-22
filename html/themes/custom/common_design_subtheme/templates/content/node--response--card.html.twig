@@ -73,7 +73,7 @@
 {% embed '@common_design_subtheme/content/node--card.html.twig'
 %}
   {% block card_image %}
-    {{ content.field_response_image }}
+    <a href="{{ url }}">{{ content.field_response_image }}</a>
   {% endblock %}
 
   {% block card_title %}
