@@ -77,7 +77,10 @@
 
       {% if paragraph.field_url.0.url %}
       <div class="uno-donors__more">
-        <a class="cd-button cd-button--outline cd-button--bold cd-button--wide cd-button--uppercase call-to-action" href="{{ paragraph.field_url.0.url }}" target="_blank">{{ paragraph.field_url.0.title }}</a>
+        {# <a class="cd-button cd-button--outline cd-button--bold cd-button--wide cd-button--uppercase call-to-action" href="{{ paragraph.field_url.0.url }}" target="_blank">{{ paragraph.field_url.0.title }}</a> #}
+
+        <a href="{{ paragraph.field_url.0.url }}" target="_blank">{{ paragraph.field_url.0.title }}</a>
+
       </div>
       {% endif %}
     {% endblock %}
