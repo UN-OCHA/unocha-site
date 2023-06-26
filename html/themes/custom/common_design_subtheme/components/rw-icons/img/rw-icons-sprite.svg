@@ -1,13 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 956 640" width="956" height="640">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 984 640" width="984" height="640">
   <style>
-    .dark-blue { fill: #055372; }
-    .dark-red { fill: #eb1405; }
-    .dark-grey { fill: #2e3436; }
+    .dark-blue { fill: #144372; }
+    .blue { fill: #1f69b3; }
     .white { fill: white; }
-    .blue { fill: #0988bb; }
-    .green { fill: #88bb09; }
-    .orange { fill: #eb8705; }
-    .red { fill: #f65c51; }
     .grey { fill: #b6c8d0; }
   </style>
   <symbol id="common--add" viewBox="0 0 48 48">
@@ -103,11 +98,16 @@
     <use xlink:href="#common--selected" width="48" height="48" y="912"/>
     <use xlink:href="#common--user" width="48" height="48" y="960"/>
   </symbol>
-  <symbol id="group-common--12" viewBox="0 0 48 252">
-    <use xlink:href="#group-common" width="12" height="252" class="dark-blue"/>
-    <use xlink:href="#group-common" width="12" height="252" x="12" class="dark-red"/>
-    <use xlink:href="#group-common" width="12" height="252" x="24" class="dark-grey"/>
-    <use xlink:href="#group-common" width="12" height="252" x="36" class="white"/>
+  <symbol id="group-common--8" viewBox="0 0 16 168">
+    <use xlink:href="#group-common" width="8" height="168" class="dark-blue"/>
+    <use xlink:href="#group-common" width="8" height="168" x="8" class="dark-grey"/>
+  </symbol>
+  <symbol id="group-common--12" viewBox="0 0 60 252">
+    <use xlink:href="#group-common" width="12" height="252" class="blue"/>
+    <use xlink:href="#group-common" width="12" height="252" x="12" class="dark-blue"/>
+    <use xlink:href="#group-common" width="12" height="252" x="24" class="dark-red"/>
+    <use xlink:href="#group-common" width="12" height="252" x="36" class="dark-grey"/>
+    <use xlink:href="#group-common" width="12" height="252" x="48" class="white"/>
   </symbol>
   <symbol id="group-common--18" viewBox="0 0 72 378">
     <use xlink:href="#group-common" width="18" height="378" class="dark-blue"/>
@@ -380,22 +380,23 @@
     <use xlink:href="#group-datepicker" width="32" height="32" class="dark-blue"/>
     <use xlink:href="#group-datepicker" width="32" height="32" x="32" class="dark-red"/>
   </symbol>
-  <use xlink:href="#group-common--12" width="48" height="252"/>
-  <use xlink:href="#group-common--18" width="72" height="378" x="48"/>
-  <use xlink:href="#group-search--18" width="36" height="18" x="120"/>
-  <use xlink:href="#group-search--26" width="26" height="26" x="156"/>
-  <use xlink:href="#group-toggle--9" width="36" height="18" x="182"/>
-  <use xlink:href="#group-toggle--12" width="12" height="24" x="218"/>
-  <use xlink:href="#group-toggle--18" width="18" height="36" x="230"/>
-  <use xlink:href="#group-status--20" width="80" height="80" x="248"/>
-  <use xlink:href="#group-content--16" width="16" height="96" x="328"/>
-  <use xlink:href="#group-content--24" width="24" height="144" x="344"/>
-  <use xlink:href="#group-content--36" width="36" height="216" x="368"/>
-  <use xlink:href="#group-disaster-type--16" width="64" height="320" x="404"/>
-  <use xlink:href="#group-disaster-type--24" width="72" height="480" x="468"/>
-  <use xlink:href="#group-disaster-type--32" width="32" height="640" x="540"/>
-  <use xlink:href="#group-social-media--48" width="96" height="144" x="572"/>
-  <use xlink:href="#group-map-marker--16" width="48" height="16" x="668"/>
-  <use xlink:href="#group-map-marker--44" width="176" height="44" x="716"/>
-  <use xlink:href="#group-datepicker--32" width="64" height="32" x="892"/>
+  <use xlink:href="#group-common--8" width="16" height="168"/>
+  <use xlink:href="#group-common--12" width="60" height="252" x="16"/>
+  <use xlink:href="#group-common--18" width="72" height="378" x="76"/>
+  <use xlink:href="#group-search--18" width="36" height="18" x="148"/>
+  <use xlink:href="#group-search--26" width="26" height="26" x="184"/>
+  <use xlink:href="#group-toggle--9" width="36" height="18" x="210"/>
+  <use xlink:href="#group-toggle--12" width="12" height="24" x="246"/>
+  <use xlink:href="#group-toggle--18" width="18" height="36" x="258"/>
+  <use xlink:href="#group-status--20" width="80" height="80" x="276"/>
+  <use xlink:href="#group-content--16" width="16" height="96" x="356"/>
+  <use xlink:href="#group-content--24" width="24" height="144" x="372"/>
+  <use xlink:href="#group-content--36" width="36" height="216" x="396"/>
+  <use xlink:href="#group-disaster-type--16" width="64" height="320" x="432"/>
+  <use xlink:href="#group-disaster-type--24" width="72" height="480" x="496"/>
+  <use xlink:href="#group-disaster-type--32" width="32" height="640" x="568"/>
+  <use xlink:href="#group-social-media--48" width="96" height="144" x="600"/>
+  <use xlink:href="#group-map-marker--16" width="48" height="16" x="696"/>
+  <use xlink:href="#group-map-marker--44" width="176" height="44" x="744"/>
+  <use xlink:href="#group-datepicker--32" width="64" height="32" x="920"/>
 </svg>

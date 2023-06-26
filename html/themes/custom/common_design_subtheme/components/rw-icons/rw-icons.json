@@ -3,13 +3,13 @@
   "style": "../../css/brand.css",
   "path": "/themes/custom/common_design_subtheme/components/rw-icons",
   "colors": {
-    "dark-blue": "--cd-reliefweb-brand-blue--dark",
+    "dark-blue": "--brand-primary--dark",
     "dark-red": "--cd-reliefweb-brand-red--dark",
     "dark-grey": "--cd-reliefweb-brand-grey--dark",
     "light-grey": "--cd-reliefweb-brand-grey--light",
     "grey": "#b6c8d0",
     "white": "white",
-    "blue": "--cd-reliefweb-brand-blue",
+    "blue": "--brand-primary",
     "green": "--cd-reliefweb-green",
     "orange": "--cd-reliefweb-orange--alert",
     "red": "--cd-reliefweb-brand-red"
@@ -33,7 +33,12 @@
         "interactive"
       ],
       "sizes": {
+        "8": [
+          "dark-blue",
+          "dark-grey"
+        ],
         "12": [
+          "blue",
           "dark-blue",
           "dark-red",
           "dark-grey",
