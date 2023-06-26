@@ -1,14 +1,23 @@
+description: 'Recent log messages'
 display:
   default:
     display_title: الافتراضي
     display_options:
+      title: 'Recent log messages'
       fields:
+        nothing:
+          admin_label: Icon
+        severity:
+          label: Severity
         type:
           label: النوع
         timestamp:
           label: التاريخ
+        message:
+          label: Message
         name:
           label: المستخدم
+          separator: ', '
         link:
           label: عمليات
       pager:
@@ -23,9 +32,16 @@ display:
           exposed_sorts_label: 'الترتيب حسب'
           sort_asc_label: تصاعدي
           sort_desc_label: تنازلي
+      empty:
+        area:
+          admin_label: 'No log messages available.'
+          content: 'No log messages available.'
       filters:
         type:
           expose:
             label: النوع
+        severity:
+          expose:
+            label: Severity
   page:
     display_title: الصفحة
