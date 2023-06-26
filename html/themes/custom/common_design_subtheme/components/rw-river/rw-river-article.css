@@ -34,18 +34,22 @@
 .rw-river-article .rw-river-article__title {
   display: inline;
   margin: 0;
-  color: var(--cd-reliefweb-brand-blue--dark);
-  font-size: 17px;
-  font-weight: bold;
-  line-height: 28px;
+  /* font-size: 17px; */
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: black;
 }
 .rw-river-article .rw-river-article__title a {
   color: inherit;
 }
+.rw-river-article .rw-river-article__title a:hover,
+.rw-river-article .rw-river-article__title a:focus {
+  color: var(--brand-default-text-color);
+}
 .rw-river-article .rw-river-article__content {
   display: flex;
   flex: 1 0 auto;
-  align-items: center;
+  /* align-items: center; */
   padding-top: 16px;
   color: var(--cd-reliefweb-brand-grey--mid);
 }
