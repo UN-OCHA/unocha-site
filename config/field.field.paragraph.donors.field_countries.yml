@@ -12,7 +12,7 @@ entity_type: paragraph
 bundle: donors
 label: Countries
 description: 'Countries for which to retrieve the donor data.'
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

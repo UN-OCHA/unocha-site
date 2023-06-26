@@ -5,27 +5,31 @@
  * Template for a list of donors/sectors.
  *
  * Available variables:
+ * - id: unique id for the list
  * - type: type of donor data
  * - attributes: attributes for the container
  * - level: heading level for the title
  * - title: list's title
  * - title_attributes: title attributes
+ * - year: the year of the data
  * - list: list of donors/sectors with name and optional pledged/paid amounts
  * - list_attributes: attributes for the list
  * - item_attributes: attributes for the list items
+ * - format: number format
+ * - precision: number format precision
  */
 
 #}
 {% if list is not empty %}
 {{ attach_library('common_design_subtheme/uno-donors') }}
-<section{{ attributes.addClass('uno-donors', 'uno-donors--' ~ type|clean_class)}}>
+<section{{ attributes.addClass('uno-donors', 'uno-donors--' ~ type|clean_class).setAttribute('id', id) }}>
   <h{{ level }}{{ title_attributes.addClass('uno-donors__title') }}>{{ title }}</h{{ level }}>
   {% apply spaceless %}
   <dl{{ list_attributes.addClass('uno-donors__list', 'uno-donors__list--with-figures') }}>
     {% for item in list %}
     <div{{item_attributes.addClass('uno-donor')}}>
       <dt class="uno-donors__donor">{{ item.name }}</dt>
-      <dd class="uno-donors__amount"> ${{ item.total|format_number_compact(null, 'long', 1, true)  }}</dd>
+      <dd class="uno-donors__amount"> ${{ item.total|format_number_compact(null, format ?? 'long', precision ?? 1, true)  }}</dd>
     </div>
     {% endfor %}
   </dl>

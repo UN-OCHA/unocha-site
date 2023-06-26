@@ -1,0 +1,19 @@
+uuid: 5179010b-b7fc-42aa-905f-bd7ee438f8dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - ocha_key_figures
+    - paragraphs
+id: paragraph.field_country_donors
+field_name: field_country_donors
+entity_type: paragraph
+type: key_figure
+settings: {  }
+module: ocha_key_figures
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

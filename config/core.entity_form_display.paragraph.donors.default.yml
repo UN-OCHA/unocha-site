@@ -4,30 +4,26 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.donors.field_countries
+    - field.field.paragraph.donors.field_country_donors
     - field.field.paragraph.donors.field_donor_type
     - field.field.paragraph.donors.field_figures_footnote
+    - field.field.paragraph.donors.field_presence_donors
     - field.field.paragraph.donors.field_url
     - paragraphs.paragraphs_type.donors
   module:
-    - choices
     - link
+    - ocha_key_figures
 id: paragraph.donors.default
 targetEntityType: paragraph
 bundle: donors
 mode: default
 content:
-  field_countries:
-    type: choices_widget
-    weight: 1
-    region: content
-    settings:
-      configuration_options: ''
-    third_party_settings: {  }
-  field_donor_type:
-    type: options_select
+  field_country_donors:
+    type: key_figure
     weight: 0
     region: content
-    settings: {  }
+    settings:
+      allow_manual: 'no'
     third_party_settings: {  }
   field_figures_footnote:
     type: string_textarea
@@ -36,6 +32,13 @@ content:
     settings:
       rows: 5
       placeholder: ''
+    third_party_settings: {  }
+  field_presence_donors:
+    type: key_figure_presence
+    weight: 1
+    region: content
+    settings:
+      allow_manual: 'no'
     third_party_settings: {  }
   field_url:
     type: link_default
@@ -59,3 +62,5 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_countries: true
+  field_donor_type: true

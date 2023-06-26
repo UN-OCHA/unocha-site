@@ -118,6 +118,88 @@ ul.uno-donors__list--with-figures .uno-donors__amount {
   display: inline;
 }
 
+.uno-donors__list--barchart .uno-donor {
+  flex-basis: 100%;
+}
+.uno-donors__list--barchart .uno-donor .uno-donors__amount {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+.uno-donors__list--barchart .uno-donor .uno-donors__amount__figure {
+  width: 120px;
+  white-space: nowrap;
+}
+.uno-donors__amount__barchart.uno-donors--earmarked {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 10px;
+  background: var(--brand-primary--light);
+}
+.uno-donors__amount__barchart .uno-donors--unearmarked {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  height: 10px;
+  background: var(--brand-primary--dark);
+}
+.uno-donors__legend__earmarked:after,
+.uno-donors__legend__unearmarked:after {
+  display: inline-block;
+  width: 25px;
+  height: 10px;
+  margin: 0 5px;
+  content: '';
+  background: var(--brand-primary--light);
+}
+.uno-donors__legend__unearmarked:after {
+  background: var(--brand-primary--dark);
+}
+
+/* Javascript enabled */
+.js .uno-donors button {
+  display: block;
+  margin: 24px auto 0 auto;
+  padding: 8px 12px;
+  color: var(--brand-primary--dark);
+  border: 1px solid var(--brand-primary--dark);
+  background: white;
+  font-size: 16px;
+  fill: var(--brand-primary--dark);
+}
+.js .uno-donors--collapsible button svg {
+  fill: currentcolor;
+}
+.js .uno-donors--collapsible button:hover,
+.js .uno-donors--collapsible button:active,
+.js .uno-donors--collapsible button:focus {
+  color: white;
+  background: var(--brand-primary--dark);
+}
+/* Overrides the default behavior when data-cd-hidden is set as the description
+ * is always displayed, only the number of paragraphs changes. */
+.js .uno-donors--collapsible .uno-donors__list[data-cd-hidden] {
+  display: block;
+}
+.js .uno-donors--collapsible .uno-donors__list .uno-donor {
+  display: none;
+}
+/* Display only the first 3 paragraphs. */
+.js .uno-donors--collapsible .uno-donors__list .uno-donor {
+  display: none;
+}
+.js .uno-donors--collapsible .uno-donors__list .uno-donor:nth-child(-n+10) {
+  display: block;
+}
+/* Show all the paragraphs when toggled. */
+.js .uno-donors--collapsible .uno-donors__list[data-cd-hidden="false"] .uno-donor {
+  display: block;
+}
+
+
 .uno-donors__amount__suffix {
   margin-inline-start: 0.25rem;
 }
