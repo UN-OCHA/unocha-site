@@ -13,7 +13,9 @@
 {% if figures is not empty %}
 {% set attributes = attributes ?? create_attribute() %}
 <dl{{ attributes.addClass('uno-figures') }}>
-  {{ figures }}
+  {% for figure in figures %}
+  {{ figure|without('#prefix', '#suffix') }}
+  {% endfor %}
 </dl>
 {% endif %}
 
