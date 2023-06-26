@@ -40,6 +40,12 @@ ul.tabs > li > a {
   font-weight: 500;
 }
 
+ul.tabs > li > a:focus {
+  color: var(--brand-primary--dark);
+  outline: 3px solid var(--brand-highlight);
+  background: transparent;
+}
+
 @media (min-width: 576px) {
   ul.tabs > li {
     position: relative;
@@ -78,5 +84,6 @@ ul.tabs > li > a.is-active {
 
 ul.tabs > li > a:focus {
   outline: 3px solid var(--brand-primary--light);
+  color: var(--brand-primary--dark);
   background-color: transparent;
 }
