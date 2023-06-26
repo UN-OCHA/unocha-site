@@ -33,6 +33,16 @@
 .cd-teaser__title a {
   display: inline-block;
   margin-top: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: black;
+}
+.cd-teaser__title {
+  margin-bottom: 0.5rem;
+}
+.cd-teaser__title a:hover,
+.cd-teaser__title a:focus {
+  color: var(--brand-default-text-color);
 }
 
 .cd-teaser__description p {

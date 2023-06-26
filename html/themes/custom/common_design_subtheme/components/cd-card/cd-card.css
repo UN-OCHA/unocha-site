@@ -57,13 +57,21 @@
 .cd-card__title,
 .cd-card__title a {
   display: block;
-  text-decoration: none;
   font-size: 1.25rem;
   font-weight: 500;
+  color: black;
+}
+.cd-card__title {
+  margin-bottom: 0.5rem;
+}
+
+.cd-card__title a:hover,
+.cd-card__title a:focus {
+  color: var(--brand-default-text-color);
 }
 
 .cd-card__title {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 
 .cd-card__description p:last-child {
@@ -79,7 +87,7 @@
   flex-wrap: nowrap;
   flex-shrink: 0;
   justify-content: flex-end;
-  margin-top: 0.5rem;
+  margin-top: 0;
   padding: 0;
   padding-inline-end: 2rem;
   content: "";
@@ -174,8 +182,4 @@ rule but our stock card only has one link so we keep the rule specific.
 */
 .cd-card--clickable .cd-card__link {
   position: relative;
-}
-
-.cd-card .cd-card__title a {
-  text-decoration: none;
 }
