@@ -61,7 +61,9 @@
   padding: 0.5rem 0;
   border-bottom: 1px solid var(--brand-grey);
 }
-
+.uno-nav__list--vertical li:last-child a {
+  border-bottom: 0 none var(--brand-grey);
+}
 .uno-nav__list--vertical li a {
   text-decoration: none;
 }
