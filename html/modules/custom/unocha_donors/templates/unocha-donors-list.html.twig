@@ -5,11 +5,13 @@
  * Template for a list of donors/sectors.
  *
  * Available variables:
+ * - id: unique id for the list
  * - type: type of donor data
  * - attributes: attributes for the container
  * - level: heading level for the title
  * - title: list's title
  * - title_attributes: title attributes
+ * - year: the year of the data
  * - list: list of donors/sectors with name and optional pledged/paid amounts
  * - list_attributes: attributes for the list
  * - item_attributes: attributes for the list items
@@ -19,7 +21,7 @@
 
 #}
 {% if list is not empty %}
-<section{{ attributes.addClass('uno-donors', 'uno-donors--' ~ type|clean_class)}}>
+<section{{ attributes.addClass('uno-donors', 'uno-donors--' ~ type|clean_class).setAttribute('id', id) }}>
   <h{{ level }}{{ title_attributes.addClass('uno-donors__title') }}>{{ title }}</h{{ level }}>
   <ul{{ list_attributes.addClass('uno-donors__list') }}>
     {% for item in list %}

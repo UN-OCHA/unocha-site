@@ -13,6 +13,8 @@ function unocha_donors_theme() {
     // Theme for a list of donors/sectors.
     'unocha_donors_list' => [
       'variables' => [
+        // Unique ID for the list.
+        'id' => NULL,
         // Type of donor data.
         'type' => NULL,
         // Wrapper attributes.
@@ -23,6 +25,8 @@ function unocha_donors_theme() {
         'title' => NULL,
         // Title attributes.
         'title_attributes' => NULL,
+        // The year of the data.
+        'year' => NULL,
         // List of donors/sectors with name and optional pledged/paid amounts.
         'list' => NULL,
         // List attributes.

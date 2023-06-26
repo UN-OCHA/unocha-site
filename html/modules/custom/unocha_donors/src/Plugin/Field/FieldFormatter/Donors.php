@@ -2,6 +2,7 @@
 
 namespace Drupal\unocha_donors\Plugin\Field\FieldFormatter;
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\ocha_key_figures\Plugin\Field\FieldFormatter\KeyFigureBase;
 
@@ -53,6 +54,15 @@ class Donors extends KeyFigureBase {
           if (isset($donor['name'])) {
             $donors[$donor['name']] = $donor;
           }
+          // Special case for the OCT top donors.
+          elseif (isset($donor['DonorName'])) {
+            $donors[$donor['DonorName']] = [
+              'name' => $donor['DonorName'],
+              'earmarked' => $donor['earmarked'] ?? $donor['Earmarked'] ?? 0,
+              'unearmarked' => $donor['unearmarked'] ?? $donor['UnEarmarked'] ?? 0,
+              'total' => $donor['total'] ?? $donor['Total'] ?? 0,
+            ];
+          }
         }
       }
       elseif (isset($data['value'])) {
@@ -67,8 +77,10 @@ class Donors extends KeyFigureBase {
 
         $elements[$delta] = [
           '#theme' => 'unocha_donors_list__' . $type . '__' . $view_mode,
+          '#id' => Html::getUniqueId($type . '-' . $items->getEntity()->id() . '-' . $delta),
           '#type' => $type,
           '#title' => $item->getFigureLabel() ?: $this->t('Top donors'),
+          '#year' => $data['year'] ?? NULL,
           '#list' => $donors,
           '#format' => $format,
           '#precision' => $precision,
