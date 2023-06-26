@@ -20,7 +20,9 @@
 {{ attach_library('common_design_subtheme/uno-donors') }}
 {% set title = 'Top 5 donors' %}
 <section{{ attributes.addClass('uno-donors', 'uno-donors--' ~ type|clean_class)}}>
-  <h{{ level }}{{ title_attributes.addClass('uno-donors__title') }}>{{ title }}</h{{ level }}>
+  <header class="uno-donors__header">
+    <h{{ level }}{{ title_attributes.addClass('uno-donors__title') }}>{{ title }}</h{{ level }}>
+  </header>
   {% apply spaceless %}
   <dl{{ list_attributes.addClass('uno-donors__list', 'uno-donors__list--with-figures') }}>
     {% for item in list|slice(0, 5) %}
