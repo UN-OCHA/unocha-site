@@ -82,10 +82,10 @@
   margin-bottom: 1rem;
 }
 
-.node--view-mode-full .paragraph .field--name-field-title,
+/* .node--view-mode-full .paragraph .field--name-field-title,
 .viewsreference--view-title {
   margin-bottom: 1rem;
-}
+} */
 
 .node--view-mode-full .field--name-field-text,
 .node--type-event.node--view-mode-full .uno-event__link {
@@ -139,7 +139,8 @@
 .paragraph--type--content-list,
 .paragraph--type--reliefweb-document,
 .paragraph--type--subscribe,
-.paragraph--type--cbpf {
+.paragraph--type--cbpf,
+..paragraph--type--donors {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -154,7 +155,8 @@
   .paragraph--type--section.paragraph--view-mode--tabs,
   .paragraph--type--content-list,
   .paragraph--type--subscribe,
-  .paragraph--type--cbpf {
+  .paragraph--type--cbpf,
+  .paragraph--type--donors {
     margin-top: 6rem;
     margin-bottom: 6rem;
   }
@@ -251,7 +253,7 @@
 /* Donors following Figures (in a Section), reduce margin */
 @media screen and (min-width: 768px) {
   .paragraph--type--section + .paragraph--type--donors {
-    margin-top: -6rem;
+    margin-top: -2rem;
     margin-bottom: 2rem;
   }
 }
@@ -323,8 +325,8 @@
   font-weight: 500;
  }
 
-.page-node-type-response .uno-tag,
-.page-node-type-region .uno-tag {
+.node--type-response > header > .uno-tag,
+.node--type-region > header > .uno-tag {
   color: var(--cd-black);
 }
 
@@ -362,9 +364,21 @@
   overflow: hidden;
   width: 12px;
   height: 12px;
-  margin: 0 0 0 3px;
+  margin: 0 0 0 6px;
   content: "";
   background: var(--rw-icons--common--arrow-right--12--dark-blue);
+}
+.uno-stories .uno-stories__view_all a:hover::after,
+.uno-stories .uno-stories__view_all a:focus::after,
+.view-header .views-display-link:hover::after,
+.view-header .views-display-link:focus::after {
+  display: inline-block;
+  overflow: hidden;
+  width: 12px;
+  height: 12px;
+  margin: 0 0 0 6px;
+  content: "";
+  background-position-x: var(--rw-icons--common--12--blue--x);
 }
 
  .view-filters {
@@ -496,4 +510,19 @@ footer.cd-author {
   margin-right: auto;
   margin-left: auto;
   font-size: 12px;
+}
+
+/* WYSIWYG Editor styles */
+.read-more {
+  position: relative;
+}
+
+.read-more::after {
+  display: inline-block;
+  overflow: hidden;
+  width: 8px;
+  height: 8px;
+  margin: 0 0 0 6px;
+  content: "";
+  background: var(--rw-icons--common--arrow-right--8--dark-blue);
 }
