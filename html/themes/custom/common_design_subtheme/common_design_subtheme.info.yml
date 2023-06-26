@@ -42,6 +42,8 @@ libraries:
 libraries-extend:
   common_design/cd-article:
     - common_design_subtheme/cd-article
+  common_design/cd-block-title:
+    - common_design_subtheme/cd-block-title
   common_design/cd-button:
     - common_design_subtheme/cd-button
   common_design/cd-caption:
