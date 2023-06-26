@@ -1,8 +1,8 @@
 diff --git a/config/schema/ocha_key_figures.schema.yml b/config/schema/ocha_key_figures.schema.yml
-index 1c48062..b64774f 100644
+index 1c48062..8c99fba 100644
 --- a/config/schema/ocha_key_figures.schema.yml
 +++ b/config/schema/ocha_key_figures.schema.yml
-@@ -17,3 +17,138 @@ ocha_key_figures.settings:
+@@ -17,3 +17,140 @@ ocha_key_figures.settings:
      max_age:
        type: integer
        label: 'Max age for cache'
@@ -10,53 +10,25 @@ index 1c48062..b64774f 100644
 +# Field types.
 +field.field_settings.key_figure:
 +  type: mapping
++  label: 'Key Figure field settings'
 +  mapping:
-+    label:
++    allowed_providers:
 +      type: string
-+      label: 'Figure label'
-+    value:
++      label: 'Allowed providers'
++    allowed_figure_ids:
 +      type: string
-+      label: 'Figure value'
-+    unit:
-+      type: string
-+      label: 'Figure unit'
-+    provider:
-+      type: string
-+      label: 'Figure provider'
-+    id:
-+      type: string
-+      label: 'Figure ID'
-+    country:
-+      type: string
-+      label: 'Figure country'
-+    year:
-+      type: integer
-+      label: 'Figure year'
++      label: 'Allowed figure IDs'
 +
 +field.field_settings.key_figure_presence:
 +  type: mapping
++  label: 'Key Figure Presence field settings'
 +  mapping:
-+    label:
++    allowed_providers:
 +      type: string
-+      label: 'Figure label'
-+    value:
++      label: 'Allowed providers'
++    allowed_figure_ids:
 +      type: string
-+      label: 'Figure value'
-+    unit:
-+      type: string
-+      label: 'Figure unit'
-+    provider:
-+      type: string
-+      label: 'Figure provider'
-+    id:
-+      type: string
-+      label: 'Figure ID'
-+    ochapresence:
-+      type: string
-+      label: 'Figure ocha presence'
-+    year:
-+      type: integer
-+      label: 'Figure year'
++      label: 'Allowed figure IDs'
 +
 +# Field formatters.
 +field.formatter.settings.key_figure:
@@ -70,15 +42,15 @@ index 1c48062..b64774f 100644
 +      type: integer
 +      label: 'Number of digits after the decimal'
 +    percentage:
-+      type: boolean
++      type: string
 +      label: 'Use currency symbol'
 +    currency_symbol:
-+      type: boolean
++      type: string
 +      label: 'Format percentages'
 +
 +field.formatter.settings.key_figure_extended:
 +  type: mapping
-+  label: 'Key Figure formatter settings'
++  label: 'Key Figure Extended formatter settings'
 +  mapping:
 +    format:
 +      type: string
@@ -87,21 +59,21 @@ index 1c48062..b64774f 100644
 +      type: integer
 +      label: 'Number of digits after the decimal'
 +    percentage:
-+      type: boolean
++      type: string
 +      label: 'Use currency symbol'
 +    currency_symbol:
-+      type: boolean
++      type: string
 +      label: 'Format percentages'
 +    display_sparklines:
-+      type: boolean
++      type: string
 +      label: 'Display sparklines'
 +    output_json_ld:
-+      type: boolean
++      type: string
 +      label: 'Output Json Ld'
 +
 +field.formatter.settings.key_figure_presence:
 +  type: mapping
-+  label: 'Key Figure formatter settings'
++  label: 'Key Figure Presence ormatter settings'
 +  mapping:
 +    format:
 +      type: string
@@ -110,42 +82,415 @@ index 1c48062..b64774f 100644
 +      type: integer
 +      label: 'Number of digits after the decimal'
 +    percentage:
-+      type: boolean
++      type: string
 +      label: 'Use currency symbol'
 +    currency_symbol:
-+      type: boolean
++      type: string
 +      label: 'Format percentages'
 +
-+# Field widgets.
-+field.formatter.settings.key_figure:
++field.formatter.settings.key_figure_presence_extended:
 +  type: mapping
-+  label: 'Key Figure formatter settings'
++  label: 'Key Figure Presence Extended formatter settings'
++  mapping:
++    format:
++      type: string
++      label: 'Number format'
++    precision:
++      type: integer
++      label: 'Number of digits after the decimal'
++    percentage:
++      type: string
++      label: 'Use currency symbol'
++    currency_symbol:
++      type: string
++      label: 'Format percentages'
++    display_sparklines:
++      type: string
++      label: 'Display sparklines'
++    output_json_ld:
++      type: string
++      label: 'Output Json Ld'
++
++# Field widgets.
++field.widget.settings.key_figure:
++  type: mapping
++  label: 'Key Figure widget settings'
 +  mapping:
 +    allow_manual:
-+      type: boolean
++      type: string
 +      label: 'Allow manual numbers'
-+    allowed_providers:
-+      type: string
-+      label: 'Allowed providers'
-+    allowed_figure_ids:
-+      type: string
-+      label: 'Allowed figure IDs'
 +
-+field.formatter.settings.key_figure_presence:
++field.widget.settings.key_figure_multiple:
 +  type: mapping
-+  label: 'Key Figure formatter settings'
++  label: 'Key Figure Multiple widget settings'
 +  mapping:
-+    allowed_providers:
++    allow_manual:
 +      type: string
-+      label: 'Allowed providers'
-+    allowed_figure_ids:
++      label: 'Allow manual numbers'
++
++field.widget.settings.key_figure_presence:
++  type: mapping
++  label: 'Key Figure Presence widget settings'
++  mapping:
++    allow_manual:
 +      type: string
-+      label: 'Allowed figure IDs'
++      label: 'Allow manual numbers'
++
++field.widget.settings.key_figure_presence_multiple:
++  type: mapping
++  label: 'Key Figure Presence Mulitple widget settings'
++  mapping:
++    allow_manual:
++      type: string
++      label: 'Allow manual numbers'
+diff --git a/ocha_key_figures.module b/ocha_key_figures.module
+index 4cc6cd3..d04f54f 100644
+--- a/ocha_key_figures.module
++++ b/ocha_key_figures.module
+@@ -46,6 +46,8 @@ function ocha_key_figures_theme($existing, $type, $theme, $path) {
+         'unit' => NULL,
+         'country' => NULL,
+         'year' => NULL,
++        'prefix' => NULL,
++        'suffix' => NULL,
+       ],
+     ],
+   ];
 diff --git a/src/Controller/OchaKeyFiguresController.php b/src/Controller/OchaKeyFiguresController.php
-index fd55dab..fb462ab 100644
+index fd55dab..14f4534 100644
 --- a/src/Controller/OchaKeyFiguresController.php
 +++ b/src/Controller/OchaKeyFiguresController.php
-@@ -963,7 +963,7 @@ class OchaKeyFiguresController extends ControllerBase {
+@@ -156,7 +156,7 @@ class OchaKeyFiguresController extends ControllerBase {
+ 
+     $results = [];
+     foreach ($data as $row) {
+-      $results[$row['name']] = $row;
++      $results[$row['id']] = $row;
+     }
+ 
+     return $results;
+@@ -181,12 +181,12 @@ class OchaKeyFiguresController extends ControllerBase {
+     $results = [];
+ 
+     foreach ($data as $row) {
+-      if (!isset($results[$row['name']])) {
+-        $results[$row['name']] = $row;
+-        $results[$row['name']]['values'] = [];
++      if (!isset($results[$row['id']])) {
++        $results[$row['id']] = $row;
++        $results[$row['id']]['values'] = [];
+       }
+ 
+-      $results[$row['name']]['values'][] = [
++      $results[$row['id']]['values'][] = [
+         'date' => $row['date'],
+         'value' => $row['value'],
+       ];
+@@ -203,7 +203,7 @@ class OchaKeyFiguresController extends ControllerBase {
+             $date_parts[2] = '01';
+             $date = new \DateTime(implode('-', $date_parts));
+           }
+-          $results[$row['name']]['values'][] = [
++          $results[$row['id']]['values'][] = [
+             'date' => $date,
+             'value' => $fig['value'],
+           ];
+@@ -233,128 +233,9 @@ class OchaKeyFiguresController extends ControllerBase {
+     return $this->getData($prefix . '/' . $path, $query, $use_cache);
+   }
+ 
+-  public function getFiguresWithFigureId(string $provider, array $iso3, string $year) : array {
+-    // Fetch data.
+-    $prefix = $this->getPrefix($provider);
+-
+-    $query = [
+-      'archived' => 0,
+-      'iso3' => $iso3,
+-      'year' => $year,
+-    ];
+-
+-    // Special case for year.
+-    if ($year == 1) {
+-      // No need to filter.
+-      unset($query['year']);
+-    }
+-    elseif ($year == 2) {
+-      $query['year'] = date('Y');
+-    }
+-
+-    $figures = $this->getData($prefix, $query);
+-
+-    $data = [];
+-    if (!empty($figures)) {
+-      foreach ($figures as $figure) {
+-        if (empty($data[$figure['figure_id']])) {
+-          $data[$figure['figure_id']] = $figure;
+-          $data[$figure['figure_id']]['figure_list'] = [];
+-          $data[$figure['figure_id']]['cache_tags'] = $this->getCacheTags($figure);
+-        }
+-        else {
+-          switch ($data[$figure['figure_id']]['value_type']) {
+-            case 'amount':
+-            case 'numeric':
+-              $data[$figure['figure_id']]['value'] += $figure['value'];
+-              break;
+-
+-            case 'percentage':
+-              $data[$figure['figure_id']]['value'] = ($data[$figure['figure_id']]['value'] + $figure['value']) / 2;
+-              break;
+-
+-            case 'list':
+-              // Value is comnma separated list.
+-              $values = explode(',', $data[$figure['figure_id']]['value']);
+-              $values = array_map('trim', $values);
+-
+-              $new_values = explode(',', $figure['value']);
+-              $new_values = array_map('trim', $new_values);
+-              $data[$figure['figure_id']]['value'] = implode(', ', array_unique(array_merge($values, $new_values)));
+-              break;
+-
+-            default:
+-              // @todo needs more logic.
+-              $data[$figure['figure_id']]['value'] += $figure['value'];
+-
+-          }
+-          $data[$figure['figure_id']]['figure_list'][] = $figure;
+-          $data[$figure['figure_id']]['cache_tags'] += $this->getCacheTags($figure);
+-          $data[$figure['figure_id']]['cache_tags'] = array_unique($data[$figure['figure_id']]['cache_tags']);
+-        }
+-      }
+-
+-    }
+-
+-    return $data;
+-  }
+-
+-  /**
+-   * Get aggregated figure by figure id.
+-   */
+-  public function getFigureByFigureId(string $provider, array $iso3, string $year, string $figure_id) : array {
+-    // Fetch data.
+-    $prefix = $this->getPrefix($provider);
+-
+-    $query = [
+-      'iso3' => $iso3,
+-      'year' => $year,
+-      'figure_id' => $figure_id,
+-    ];
+-
+-    $figures = $this->getData($prefix, $query);
+-
+-    $data = [];
+-    if (!empty($figures)) {
+-      foreach ($figures as $figure) {
+-        if (empty($data)) {
+-          $data = $figure;
+-          $data['figure_list'] = [];
+-          $data['cache_tags'] = $this->getCacheTags($figure);
+-        }
+-        else {
+-          switch ($data['value_type']) {
+-            case 'amount':
+-            case 'numeric':
+-              $data['value'] += $figure['value'];
+-              break;
+-
+-            case 'percentage':
+-              $data['value'] = ($data['value'] + $figure['value']) / 2;
+-              break;
+-
+-            case 'list':
+-              // Value is comnma separated list.
+-              $values = explode(',', $data['value']);
+-              $values = array_map('trim', $values);
+-
+-              $new_values = explode(',', $figure['value']);
+-              $new_values = array_map('trim', $new_values);
+-              $data['value'] = implode(', ', array_unique(array_merge($values, $new_values)));
+-              break;
+-
+-            default:
+-              // @todo needs more logic.
+-              $data['value'] += $figure['value'];
+-
+-          }
+-          $data['figure_list'][] = $figure;
+-          $data['cache_tags'] += $this->getCacheTags($figure);
+-        }
+-      }
+-
+-      $data['cache_tags'] = array_unique($data['cache_tags']);
+-    }
++  public function getFigure(string $provider, string $id) : array {
++    $data = $this->query($provider, strtolower($id));
++    $data['cache_tags'] = $this->getCacheTags($data);
+ 
+     return $data;
+   }
+@@ -784,6 +665,10 @@ class OchaKeyFiguresController extends ControllerBase {
+    * Get cache tags
+    */
+   public function getCacheTags(array $figure) {
++    if (!isset($figure['provider'])) {
++      return [];
++    }
++
+     return [
+       $this->cacheId,
+       $this->cacheId . ':' . $this->getPrefix($figure['provider']),
+@@ -904,14 +789,14 @@ class OchaKeyFiguresController extends ControllerBase {
+    * Get OCHA Presence.
+    */
+   public function getOchaPresence(string $id) : array {
+-    return $this->getData('ocha_presences/' . $id);
++    return $this->getData('ocha_presences/' . strtolower($id));
+   }
+ 
+   /**
+    * Delete OCHA Presence.
+    */
+   public function deleteOchaPresence(string $id) : void {
+-    $this->setData('ocha_presences/' . $id, [], 'DELETE');
++    $this->setData('ocha_presences/' . strtolower($id), [], 'DELETE');
+   }
+ 
+   /**
+@@ -922,7 +807,7 @@ class OchaKeyFiguresController extends ControllerBase {
+       return $this->setData('ocha_presences', $data, 'POST');
+     }
+     else {
+-      return $this->setData('ocha_presences/' . $id, $data);
++      return $this->setData('ocha_presences/' . strtolower($id), $data);
+     }
+   }
+ 
+@@ -930,14 +815,14 @@ class OchaKeyFiguresController extends ControllerBase {
+    * Get OCHA Presence.
+    */
+   public function getOchaPresenceExternal(string $id) : array {
+-    return $this->getData('ocha_presence_external_ids/' . $id);
++    return $this->getData('ocha_presence_external_ids/' . strtolower($id));
+   }
+ 
+   /**
+    * Delete OCHA Presence.
+    */
+   public function deleteOchaPresenceExternal(string $id) : void {
+-    $this->setData('ocha_presence_external_ids/' . $id, [], 'DELETE');
++    $this->setData('ocha_presence_external_ids/' . strtolower($id), [], 'DELETE');
+   }
+ 
+   /**
+@@ -948,22 +833,113 @@ class OchaKeyFiguresController extends ControllerBase {
+       return $this->setData('ocha_presence_external_ids', $data, 'POST');
+     }
+     else {
+-      return $this->setData('ocha_presence_external_ids/' . $id, $data);
++      return $this->setData('ocha_presence_external_ids/' . strtolower($id), $data);
+     }
+   }
+ 
+   /**
+    * Get OCHA Presence figures.
+    */
+-  public function getOchaPresenceFigures(string $provider, string $ocha_presence_id, string $year) : array {
++  public function getOchaPresenceFigures(string $provider, string $ocha_presence_id, string $year, $figure_ids = []) : array {
+     $prefix = $this->getPrefix($provider);
+-    return $this->getData($prefix . '/ocha-presences/' . $ocha_presence_id . '/' . $year . '/figures');
++
++    $query = [];
++    if (!empty($figure_ids)) {
++      $query['figure_id'] = $figure_ids;
++    }
++
++    return $this->getData($prefix . '/ocha-presences/' . $ocha_presence_id . '/' . $year . '/figures', $query);
++  }
++
++  /**
++   * Get OCHA Presence figures.
++   */
++  public function getOchaPresenceFiguresParsed(string $provider, string $ocha_presence_id, string $year, $figure_ids = []) : array {
++    $data = $this->getOchaPresenceFigures($provider, $ocha_presence_id, $year, $figure_ids);
++
++    $figures = [];
++
++    // Build aggregated figure.
++    foreach ($data as $item) {
++      if (!isset($figures[$item['figure_id']])) {
++        $figures[$item['figure_id']] = $item;
++        $figures[$item['figure_id']]['figure_list'] = [$item];
++        $figures[$item['figure_id']]['cache_tags'] = $this->getCacheTags($item);
++      }
++      else {
++        $figures[$item['figure_id']]['figure_list'][] = $item;
++        $figures[$item['figure_id']]['cache_tags'] += $this->getCacheTags($item);
++      }
++    }
++
++    foreach ($figures as $key => $row) {
++      // We need unique tags.
++      $figures[$key]['cache_tags'] = array_unique($figures[$key]['cache_tags']);
++
++      // Make sure we have a date.
++      $figures[$key]['date'] = new \DateTime($row['year'] . '-01-01');
++      if (isset($row['updated']) && !empty($row['updated'])) {
++        $figures[$key]['date'] = new \DateTime(substr($row['updated'], 0, 10));
++      }
++
++      // Aggregated values and descriptions.
++      if (count($row['figure_list']) > 1) {
++        $values = [];
++        $descriptions = [];
++
++        foreach ($row['figure_list'] as $f) {
++          $values[] = $f['value'];
++          if (isset($f['description']) && !empty($f['description'])) {
++            $descriptions[] = $f['description'];
++          }
++        }
++
++        $new_value = $row['value'];
++        switch ($row['value_type']) {
++          case 'amount':
++          case 'numeric':
++            $new_value = 0;
++            foreach ($values as $value) {
++              $new_value += $value;
++            }
++            break;
++
++          case 'percentage':
++            $new_value = 0;
++            foreach ($values as $value) {
++              $new_value += $value;
++            }
++            $new_value = round($new_value / count($values), 2);
++            break;
++
++          case 'list':
++            $new_list = [];
++            foreach ($values as $value) {
++              $listitems = explode(',', $value);
++              $listitems = array_map('trim', $listitems);
++              $new_list = array_merge($new_list, $listitems);
++            }
++
++            $new_value = implode(', ', array_unique($new_list));
++            break;
++
++          default:
++            // @todo needs more logic.
++            $figures[$item['figure_id']]['value'] += $item['value'];
++        }
++
++        $figures[$key]['description'] = implode(', ', array_unique($descriptions));
++        $figures[$key]['value'] = $new_value;
++      }
++    }
++
++    return $figures;
+   }
+ 
    /**
     * Get figure by figure id.
     */
@@ -154,75 +499,1290 @@ index fd55dab..fb462ab 100644
      $prefix = $this->getPrefix($provider);
      if ($year == 2) {
        $year = date('Y');
-diff --git a/src/Plugin/Field/FieldFormatter/KeyFigurePresenceCondensed.php b/src/Plugin/Field/FieldFormatter/KeyFigurePresenceCondensed.php
-index 12da7e0..2131113 100644
---- a/src/Plugin/Field/FieldFormatter/KeyFigurePresenceCondensed.php
-+++ b/src/Plugin/Field/FieldFormatter/KeyFigurePresenceCondensed.php
-@@ -99,7 +99,7 @@ class KeyFigurePresenceCondensed extends KeyFigureBase {
-         $value = $item->getFigureValue();
+diff --git a/src/Plugin/Field/FieldFormatter/KeyFigureBase.php b/src/Plugin/Field/FieldFormatter/KeyFigureBase.php
+index 4e5055b..8c18e46 100644
+--- a/src/Plugin/Field/FieldFormatter/KeyFigureBase.php
++++ b/src/Plugin/Field/FieldFormatter/KeyFigureBase.php
+@@ -117,6 +117,9 @@ class KeyFigureBase extends FormatterBase {
+     $summary[] = $this->t('Precision: @value', [
+       '@value' => $this->getSetting('precision') ?? 1,
+     ]);
++    $summary[] = $this->t('Output currency symbol: @value', [
++      '@value' => $this->getSetting('currency_symbol') ?? 'yes',
++    ]);
+     $summary[] = $this->t('Output style percentages: @value', [
+       '@value' => $this->getSetting('percentage') ?? 'yes',
+     ]);
+@@ -166,4 +169,270 @@ class KeyFigureBase extends FormatterBase {
+     return $figures;
+   }
+ 
++  /**
++   * Get the figures available for the figure provider, OCHA Presence and year.
++   *
++   * @param string $provider
++   *   Provider.
++   * @param string $ocha_presence_id
++   *   ISO3 code of a ocha_presence_id.
++   * @param string $year
++   *   Year.
++   *
++   * @return array
++   *   Associative array keyed by figure ID and with figures data as values.
++   */
++  protected function getOchaPresenceFigures($provider, $ocha_presence_id, $year, $figure_ids = []) {
++    $figures = $this->ochaKeyFiguresApiClient->getOchaPresenceFiguresParsed($provider, $ocha_presence_id, $year, $figure_ids);
++
++    asort($figures);
++    return $figures;
++  }
++
++  /**
++   * Add prefix, suffix if needed.
++   */
++  protected function addPrefixSuffix(array &$figure, $langcode = 'en') {
++    $percentage_formatted = $this->getSetting('percentage');
++    $currency_symbol = $this->getSetting('currency_symbol');
++
++    // Set currency prefix if data is financial.
++    if (isset($figure['value_type']) && $figure['value_type'] == 'amount') {
++      $figure['prefix'] = $figure['unit'] ?? 'USD';
++      if ($currency_symbol == 'yes') {
++        $figure['prefix'] = NumberFormatter::getCurrencySymbol($langcode, $figure['prefix']);
++      }
++    }
++
++    // Set percentage suffix if needed.
++    if (isset($figure['value_type']) && $figure['value_type'] == 'percentage') {
++      $figure['unit'] = $figure['unit'] ?? '%';
++      if ($percentage_formatted != 'yes') {
++        $figure['value'] /= 100;
++      }
++    }
++  }
++
++  /**
++   * Format numeric data.
++   */
++  protected function formatNumber($value, $langcode) {
++    $format = $this->getSetting('format');
++    $precision = $this->getSetting('precision');
++    $strict = FALSE;
++
++    return NumberFormatter::format($value, $langcode, $format, $precision, $strict);
++  }
++
++  /**
++   * Build json-ld output
++   */
++  protected function buildJsonLd($data, $item) {
++    if (empty($data)) {
++      return NULL;
++    }
++
++    // Initialize data for JSON-LD.
++    $json_data = [];
++    foreach ($data as $row) {
++      $json_data[$row['name']] = $row['value'];
++      $country = $row['country'] ?? '';
++    }
++
++    $name = t('@title of @country', [
++      '@title' => 'Key figures',
++      '@country' => $country,
++    ]);
++    $description = t('Easily discoverable topline numbers for humanitarian crises in @country', [
++      '@country' => $country,
++    ]);
++
++    $metadata = $this->getMetaDataByProvider($item->getFigureProvider());
++    $metadata += [
++      'name' => $name,
++      'short_name' => 'Key figures',
++      'spatialCoverage' => $country,
++      'description' => $description,
++      'temporalCoverage' => $item->getFigureYear() === FALSE ? '2000-01-01/..' : $item->getFigureYear(),
++    ];
++
++    return $this->addJsonLdData($metadata, $json_data);
++  }
++
++  /**
++   * Get meta data for json ld.
++   */
++  protected function getMetaDataByProvider(string $provider) {
++    switch ($provider) {
++      case 'oct':
++        return [
++          'publisher' => [
++            '@type' => 'Organization',
++            'sameAs' => 'https://ror.org/00aahzn97',
++            'name' => 'OCHA Contribution Tracking (OCT)',
++          ],
++          'creator' => [
++            '@type' => 'Organization',
++            'sameAs' => 'https://ror.org/00aahzn97',
++            'name' => 'OCHA Contribution Tracking (OCT)',
++          ],
++          'license' => [
++            '@type' => 'CreativeWork',
++            'name' => 'Creative Commons Attribution for Intergovernmental Organisations',
++            'url' => 'https://data.humdata.org/faqs/licenses#auto-faq-_Data_Licenses_Content_-Creative_Commons_Attribution_for_Intergovernmental_Organisations__CC_BY_IGO_-a',
++          ],
++        ];
++
++      case 'fts':
++        return [
++          'publisher' => [
++            '@type' => 'Organization',
++            'sameAs' => 'https://ror.org/00aahzn97',
++            'name' => 'OCHA Financial Tracking System (FTS)',
++          ],
++          'creator' => [
++            '@type' => 'Organization',
++            'sameAs' => 'https://ror.org/00aahzn97',
++            'name' => 'OCHA Financial Tracking System (FTS)',
++          ],
++          'license' => [
++            '@type' => 'CreativeWork',
++            'name' => 'Creative Commons Attribution for Intergovernmental Organisations',
++            'url' => 'https://data.humdata.org/faqs/licenses#auto-faq-_Data_Licenses_Content_-Creative_Commons_Attribution_for_Intergovernmental_Organisations__CC_BY_IGO_-a',
++          ],
++        ];
++
++      case 'rw-crisis':
++        return [
++          'publisher' => [
++            '@type' => 'Organization',
++            'name' => 'ReliefWeb',
++          ],
++          'creator' => [
++            '@type' => 'Organization',
++            'name' => 'ReliefWeb',
++          ],
++          'license' => [
++            '@type' => 'CreativeWork',
++            'name' => 'Creative Commons Attribution for Intergovernmental Organisations',
++            'url' => 'https://data.humdata.org/faqs/licenses#auto-faq-_Data_Licenses_Content_-Creative_Commons_Attribution_for_Intergovernmental_Organisations__CC_BY_IGO_-a',
++          ],
++        ];
++
++      case 'inform-risk':
++        return [
++          'publisher' => [
++            '@type' => 'Organization',
++            'name' => 'ACAPS',
++          ],
++          'creator' => [
++            '@type' => 'Organization',
++            'name' => 'ACAPS',
++          ],
++          'license' => [
++            '@type' => 'CreativeWork',
++            'name' => 'Creative Commons Attribution International',
++            'url' => 'https://data.humdata.org/faqs/licenses#auto-faq-_Data_Licenses_Content_-Creative_Commons_Attribution_International_CC_BY_-a',
++          ],
++        ];
++
++      case 'cbpf':
++      case 'cerf':
++        return [
++          'publisher' => [
++            '@type' => 'Organization',
++            'sameAs' => 'https://ror.org/00aahzn97',
++            'name' => 'United Nations Office for the Coordination of Humanitarian Affairs',
++          ],
++          'creator' => [
++            '@type' => 'Organization',
++            'sameAs' => 'https://ror.org/00aahzn97',
++            'name' => 'United Nations Office for the Coordination of Humanitarian Affairs',
++          ],
++          'license' => [
++            '@type' => 'CreativeWork',
++            'name' => 'Creative Commons Attribution International',
++            'url' => 'https://data.humdata.org/faqs/licenses#auto-faq-_Data_Licenses_Content_-Creative_Commons_Attribution_International_CC_BY_-a',
++          ],
++        ];
++
++    }
++
++    // Default to OCHA.
++    return [
++      'publisher' => [
++        '@type' => 'Organization',
++        'sameAs' => 'https://ror.org/00aahzn97',
++        'name' => 'United Nations Office for the Coordination of Humanitarian Affairs',
++      ],
++      'creator' => [
++        '@type' => 'Organization',
++        'sameAs' => 'https://ror.org/00aahzn97',
++        'name' => 'United Nations Office for the Coordination of Humanitarian Affairs',
++      ],
++      'license' => [
++        '@type' => 'CreativeWork',
++        'name' => 'Creative Commons Attribution International',
++        'url' => 'https://data.humdata.org/faqs/licenses#auto-faq-_Data_Licenses_Content_-Creative_Commons_Attribution_International_CC_BY_-a',
++      ],
++    ];
++  }
++
++  /**
++   * Add json ld data.
++   */
++  protected function addJsonLdData($metadata, $data) {
++    $label_column = [];
++    $value_column = [];
++    $keywords = [];
++
++    // Default keyword.
++    $keywords[] = 'ReliefWeb > Numbers > ' . $metadata['spatialCoverage'] . ' > ' . $metadata['short_name'];
++
++    foreach ($data as $label => $value) {
++      $label_column[] = [
++        'csvw:value' => $label,
++        'csvw:primaryKey' => $label,
++      ];
++
++      $value_column[] = [
++        'csvw:value' => $value,
++        'csvw:primaryKey' => $value,
++      ];
++
++      $keywords[] = 'ReliefWeb > Numbers > ' . $metadata['spatialCoverage'] . ' > ' . $metadata['short_name'] . ' > ' . $label;
++    }
++
++    $json_ld = [
++      '@context' => [
++        'https://schema.org',
++        [
++          'csvw' => 'http://www.w3.org/ns/csvw#',
++        ],
++      ],
++      '@type' => 'Dataset',
++      'keywords' => $keywords,
++      'isAccessibleForFree' => TRUE,
++      'mainEntity' => [
++        '@type' => 'csvw:Table',
++        'csvw:tableSchema' => [
++          'csvw:columns' => [
++            [
++              'csvw:name' => 'Label',
++              'csvw:datatype' => 'string',
++              'csvw:cells' => $label_column,
++            ],
++            [
++              'csvw:name' => 'Value',
++              'csvw:datatype' => 'number',
++              'csvw:cells' => $value_column,
++            ],
++          ],
++        ],
++      ],
++    ] + $metadata;
++
++    return json_encode($json_ld);
++  }
++
+ }
+diff --git a/src/Plugin/Field/FieldFormatter/KeyFigureCondensed.php b/src/Plugin/Field/FieldFormatter/KeyFigureCondensed.php
+index 381ab13..f13f18f 100644
+--- a/src/Plugin/Field/FieldFormatter/KeyFigureCondensed.php
++++ b/src/Plugin/Field/FieldFormatter/KeyFigureCondensed.php
+@@ -3,7 +3,6 @@
+ namespace Drupal\ocha_key_figures\Plugin\Field\FieldFormatter;
+ 
+ use Drupal\Core\Field\FieldItemListInterface;
+-use Drupal\ocha_key_figures\Helpers\NumberFormatter;
+ 
+ /**
+  * Plugin implementation of the 'key_figure' formatter.
+@@ -22,11 +21,6 @@ class KeyFigureCondensed extends KeyFigureBase {
+    * {@inheritdoc}
+    */
+   public function viewElements(FieldItemListInterface $items, $langcode) {
+-    $format = $this->getSetting('format');
+-    $precision = $this->getSetting('precision');
+-    $percentage_formatted = $this->getSetting('percentage');
+-    $currency_symbol = $this->getSetting('currency_symbol');
+-
+     $theme_suggestions = implode('__', [
+       $this->viewMode,
+       $items->getEntity()->getEntityTypeId(),
+@@ -53,24 +47,21 @@ class KeyFigureCondensed extends KeyFigureBase {
+       /** @var \Drupal\ocha_key_figures\Plugin\Field\FieldType\KeyFigure $first */
+       $first = $items->first();
+       $figures = $this->getFigures($first->getFigureProvider(), $first->getFigureCountry(), $first->getFigureYear());
+-      foreach ($figures as $figure) {
+-        // Set currency prefix if data is financial.
+-        if (isset($figure['value_type']) && $figure['value_type'] == 'amount') {
+-          $fig['prefix'] = $fig['unit'] ?? 'USD';
+-          if ($currency_symbol == 'yes') {
+-            $fig['prefix'] = NumberFormatter::getCurrencySymbol($langcode, $fig['prefix']);
+-          }
+-        }
+ 
+-        // Set percentage suffix if needed.
+-        if (isset($figure['value_type']) && $figure['value_type'] == 'percentage') {
+-          $figure['unit'] = $figure['unit'] ?? '%';
+-          if ($percentage_formatted != 'yes') {
+-            $figure['value'] /= 100;
++      $allowed_figure_ids = $this->getFieldSetting('allowed_figure_ids');
++      if (!empty($allowed_figure_ids)) {
++        $allowed_figure_ids = array_flip(preg_split('/,\s*/', trim(strtolower($allowed_figure_ids))));
++        foreach ($figures as $id => $figure) {
++          if (!isset($allowed_figure_ids[$figure['figure_id']])) {
++            unset($figures[$id]);
+           }
+         }
++      }
++
++      foreach ($figures as $figure) {
++        $this->addPrefixSuffix($figure, $langcode);
+ 
+-        $value = NumberFormatter::format($figure['value'], $langcode, $format, $precision, FALSE);
++        $value = $this->formatNumber($figure['value'], $langcode);
+         $elements['#figures'][] = [
+           '#theme' => 'ocha_key_figures_figure__' . $theme_suggestions,
+           '#label' => $figure['name'],
+@@ -78,6 +69,8 @@ class KeyFigureCondensed extends KeyFigureBase {
+           '#unit' => $figure['unit'] ?? '',
+           '#country' => $figure['country'],
+           '#year' => $figure['year'],
++          '#prefix' => $figure['prefix'] ?? '',
++          '#suffix' => $figure['suffix'] ?? '',
+           '#cache' => [
+             'max-age' => $this->ochaKeyFiguresApiClient->getMaxAge(),
+             'tags' => $this->ochaKeyFiguresApiClient->getCacheTags($figure),
+@@ -93,16 +86,13 @@ class KeyFigureCondensed extends KeyFigureBase {
          $unit = $item->getFigureUnit();
  
+         if ($item->getFigureProvider() != 'manual') {
+-          $data = $this->ochaKeyFiguresApiClient->query($item->getFigureProvider(), strtolower($item->getFigureId()));
++          $data = $this->ochaKeyFiguresApiClient->getFigure($item->getFigureProvider(), strtolower($item->getFigureId()));
++
+           if (isset($data['value'], $data['value_type'])) {
+             $value = $data['value'];
+             $unit = $data['unit'] ?? '';
+ 
+-            if ($data['value_type'] == 'percentage') {
+-              if ($percentage_formatted == 'no') {
+-                $value /= 100;
+-              }
+-            }
++            $this->addPrefixSuffix($data, $langcode);
+           }
+           else {
+             $value = (string) $this->t('N/A');
+@@ -110,7 +100,7 @@ class KeyFigureCondensed extends KeyFigureBase {
+         }
+ 
+         if (isset($label, $value)) {
+-          $value = NumberFormatter::format($value, $langcode, $format, $precision, FALSE);
++          $value = $this->formatNumber($value, $langcode);
+           $elements['#figures'][$delta] = [
+             '#theme' => 'ocha_key_figures_figure__' . $this->viewMode,
+             '#label' => $label,
+@@ -118,6 +108,8 @@ class KeyFigureCondensed extends KeyFigureBase {
+             '#unit' => $unit,
+             '#country' => $item->getFigureCountry(),
+             '#year' => $item->getFigureYear(),
++            '#prefix' => $data['prefix'] ?? '',
++            '#suffix' => $data['suffix'] ?? '',
+             '#cache' => [
+               'max-age' => $this->ochaKeyFiguresApiClient->getMaxAge(),
+               'tags' => $this->ochaKeyFiguresApiClient->getCacheTagsForFigure($item),
+diff --git a/src/Plugin/Field/FieldFormatter/KeyFigureExtended.php b/src/Plugin/Field/FieldFormatter/KeyFigureExtended.php
+index 17b4a79..94ab3de 100644
+--- a/src/Plugin/Field/FieldFormatter/KeyFigureExtended.php
++++ b/src/Plugin/Field/FieldFormatter/KeyFigureExtended.php
+@@ -6,7 +6,6 @@ use Drupal\Core\Field\FieldDefinitionInterface;
+ use Drupal\Core\Field\FieldItemListInterface;
+ use Drupal\Core\Form\FormStateInterface;
+ use Drupal\ocha_key_figures\Controller\OchaKeyFiguresController;
+-use Drupal\ocha_key_figures\Helpers\NumberFormatter;
+ 
+ /**
+  * Plugin implementation of the 'key_figure' formatter.
+@@ -95,11 +94,6 @@ class KeyFigureExtended extends KeyFigureBase {
+    * {@inheritdoc}
+    */
+   public function viewElements(FieldItemListInterface $items, $langcode) {
+-    $format = $this->getSetting('format');
+-    $precision = $this->getSetting('precision');
+-    $percentage_formatted = $this->getSetting('percentage');
+-    $currency_symbol = $this->getSetting('currency_symbol');
+-
+     $theme_suggestions = implode('__', [
+       $this->viewMode,
+       $items->getEntity()->getEntityTypeId(),
+@@ -121,13 +115,13 @@ class KeyFigureExtended extends KeyFigureBase {
+     ];
+ 
+     $fetch_all = FALSE;
+-    $figure_names = [];
++    $selected_figures = [];
+     foreach ($items as $item) {
+       if ($item->getFigureId() == '_all') {
+         $fetch_all = TRUE;
+       }
+       else {
+-        $figure_names[$item->getFigureLabel()] = $item->getFigureLabel();
++        $selected_figures[$item->getFigureId()] = $item->getFigureLabel();
+       }
+     }
+ 
+@@ -161,9 +155,19 @@ class KeyFigureExtended extends KeyFigureBase {
+     $filtered_results = $results;
+     if (!$fetch_all) {
+       $filtered_results = [];
+-      foreach ($figure_names as $figure_name) {
+-        if (isset($results[$figure_name])) {
+-          $filtered_results[$figure_name] = $results[$figure_name];
++      foreach ($selected_figures as $figure_id => $figure_name) {
++        if (isset($results[$figure_id])) {
++          $filtered_results[$figure_id] = $results[$figure_id];
++        }
++      }
++    }
++
++    $allowed_figure_ids = $this->getFieldSetting('allowed_figure_ids');
++    if (!empty($allowed_figure_ids)) {
++      $allowed_figure_ids = array_flip(preg_split('/,\s*/', trim(strtolower($allowed_figure_ids))));
++      foreach ($filtered_results as $id => $figure) {
++        if (!isset($allowed_figure_ids[$figure['figure_id']])) {
++          unset($filtered_results[$id]);
+         }
+       }
+     }
+@@ -175,31 +179,15 @@ class KeyFigureExtended extends KeyFigureBase {
+     }
+ 
+     foreach ($data as &$fig) {
+-      // Set currency prefix if data is financial.
+-      if (isset($fig['value_type']) && $fig['value_type'] == 'amount') {
+-        $fig['prefix'] = $fig['unit'] ?? 'USD';
+-        if ($currency_symbol == 'yes') {
+-          $fig['prefix'] = NumberFormatter::getCurrencySymbol($langcode, $fig['prefix']);
+-        }
+-      }
+-
+-      // Set percentage suffix if needed.
+-      if (isset($fig['value_type']) && $fig['value_type'] == 'percentage') {
+-        $fig['suffix'] = $fig['unit'] ?? '%';
+-        if ($percentage_formatted != 'yes') {
+-          $fig['value'] /= 100;
+-        }
+-      }
++      $this->addPrefixSuffix($fig, $langcode);
+     }
+ 
+-    $json_ld = NULL;
+     if ($this->getSetting('output_json_ld') == 'yes') {
+-      $json_ld = $this->buildJsonLd($data, $first);
+-      $elements['#jsonld'] = $json_ld;
++      $elements['#jsonld'] = $this->buildJsonLd($data, $first);
+     }
+ 
+     foreach ($data as $figure) {
+-      $figure['value'] = NumberFormatter::format($figure['value'], $langcode, $format, $precision, FALSE);
++      $figure['value'] = $this->formatNumber($figure['value'], $langcode);
+       $elements['#figures'][] = [
+         '#theme' => 'ocha_key_figures_extended_figure__' . $theme_suggestions,
+         '#figure' => $figure,
+@@ -213,211 +201,4 @@ class KeyFigureExtended extends KeyFigureBase {
+     return $elements;
+   }
+ 
+-  /**
+-   * Build json-ld output
+-   */
+-  protected function buildJsonLd($data, $item) {
+-    // Initialize data for JSON-LD.
+-    $json_data = [];
+-    foreach ($data as $row) {
+-      $json_data[$row['name']] = $row['value'];
+-      $country = $row['country'];
+-    }
+-
+-    $name = t('@title of @country', [
+-      '@title' => 'Key figures',
+-      '@country' => $country,
+-    ]);
+-    $description = t('Easily discoverable topline numbers for humanitarian crises in @country', [
+-      '@country' => $country,
+-    ]);
+-
+-    $metadata = $this->getMetaDataByProvider($item->getFigureProvider());
+-    $metadata += [
+-      'name' => $name,
+-      'short_name' => 'Key figures',
+-      'spatialCoverage' => $country,
+-      'description' => $description,
+-      'temporalCoverage' => $item->getFigureYear() === FALSE ? '2000-01-01/..' : $item->getFigureYear(),
+-    ];
+-
+-    return $this->addJsonLdData($metadata, $json_data);
+-  }
+-
+-  /**
+-   * Get meta data for json ld.
+-   */
+-  protected function getMetaDataByProvider(string $provider) {
+-    switch ($provider) {
+-      case 'oct':
+-        return [
+-          'publisher' => [
+-            '@type' => 'Organization',
+-            'sameAs' => 'https://ror.org/00aahzn97',
+-            'name' => 'OCHA Contribution Tracking (OCT)',
+-          ],
+-          'creator' => [
+-            '@type' => 'Organization',
+-            'sameAs' => 'https://ror.org/00aahzn97',
+-            'name' => 'OCHA Contribution Tracking (OCT)',
+-          ],
+-          'license' => [
+-            '@type' => 'CreativeWork',
+-            'name' => 'Creative Commons Attribution for Intergovernmental Organisations',
+-            'url' => 'https://data.humdata.org/faqs/licenses#auto-faq-_Data_Licenses_Content_-Creative_Commons_Attribution_for_Intergovernmental_Organisations__CC_BY_IGO_-a',
+-          ],
+-        ];
+-
+-      case 'fts':
+-        return [
+-          'publisher' => [
+-            '@type' => 'Organization',
+-            'sameAs' => 'https://ror.org/00aahzn97',
+-            'name' => 'OCHA Financial Tracking System (FTS)',
+-          ],
+-          'creator' => [
+-            '@type' => 'Organization',
+-            'sameAs' => 'https://ror.org/00aahzn97',
+-            'name' => 'OCHA Financial Tracking System (FTS)',
+-          ],
+-          'license' => [
+-            '@type' => 'CreativeWork',
+-            'name' => 'Creative Commons Attribution for Intergovernmental Organisations',
+-            'url' => 'https://data.humdata.org/faqs/licenses#auto-faq-_Data_Licenses_Content_-Creative_Commons_Attribution_for_Intergovernmental_Organisations__CC_BY_IGO_-a',
+-          ],
+-        ];
+-
+-      case 'rw-crisis':
+-        return [
+-          'publisher' => [
+-            '@type' => 'Organization',
+-            'name' => 'ReliefWeb',
+-          ],
+-          'creator' => [
+-            '@type' => 'Organization',
+-            'name' => 'ReliefWeb',
+-          ],
+-          'license' => [
+-            '@type' => 'CreativeWork',
+-            'name' => 'Creative Commons Attribution for Intergovernmental Organisations',
+-            'url' => 'https://data.humdata.org/faqs/licenses#auto-faq-_Data_Licenses_Content_-Creative_Commons_Attribution_for_Intergovernmental_Organisations__CC_BY_IGO_-a',
+-          ],
+-        ];
+-
+-      case 'inform-risk':
+-        return [
+-          'publisher' => [
+-            '@type' => 'Organization',
+-            'name' => 'ACAPS',
+-          ],
+-          'creator' => [
+-            '@type' => 'Organization',
+-            'name' => 'ACAPS',
+-          ],
+-          'license' => [
+-            '@type' => 'CreativeWork',
+-            'name' => 'Creative Commons Attribution International',
+-            'url' => 'https://data.humdata.org/faqs/licenses#auto-faq-_Data_Licenses_Content_-Creative_Commons_Attribution_International_CC_BY_-a',
+-          ],
+-        ];
+-
+-      case 'cbpf':
+-      case 'cerf':
+-        return [
+-          'publisher' => [
+-            '@type' => 'Organization',
+-            'sameAs' => 'https://ror.org/00aahzn97',
+-            'name' => 'United Nations Office for the Coordination of Humanitarian Affairs',
+-          ],
+-          'creator' => [
+-            '@type' => 'Organization',
+-            'sameAs' => 'https://ror.org/00aahzn97',
+-            'name' => 'United Nations Office for the Coordination of Humanitarian Affairs',
+-          ],
+-          'license' => [
+-            '@type' => 'CreativeWork',
+-            'name' => 'Creative Commons Attribution International',
+-            'url' => 'https://data.humdata.org/faqs/licenses#auto-faq-_Data_Licenses_Content_-Creative_Commons_Attribution_International_CC_BY_-a',
+-          ],
+-        ];
+-
+-    }
+-
+-    // Default to OCHA.
+-    return [
+-      'publisher' => [
+-        '@type' => 'Organization',
+-        'sameAs' => 'https://ror.org/00aahzn97',
+-        'name' => 'United Nations Office for the Coordination of Humanitarian Affairs',
+-      ],
+-      'creator' => [
+-        '@type' => 'Organization',
+-        'sameAs' => 'https://ror.org/00aahzn97',
+-        'name' => 'United Nations Office for the Coordination of Humanitarian Affairs',
+-      ],
+-      'license' => [
+-        '@type' => 'CreativeWork',
+-        'name' => 'Creative Commons Attribution International',
+-        'url' => 'https://data.humdata.org/faqs/licenses#auto-faq-_Data_Licenses_Content_-Creative_Commons_Attribution_International_CC_BY_-a',
+-      ],
+-    ];
+-  }
+-
+-  /**
+-   * Add json ld data.
+-   */
+-  protected function addJsonLdData($metadata, $data) {
+-    $label_column = [];
+-    $value_column = [];
+-    $keywords = [];
+-
+-    // Default keyword.
+-    $keywords[] = 'ReliefWeb > Numbers > ' . $metadata['spatialCoverage'] . ' > ' . $metadata['short_name'];
+-
+-    foreach ($data as $label => $value) {
+-      $label_column[] = [
+-        'csvw:value' => $label,
+-        'csvw:primaryKey' => $label,
+-      ];
+-
+-      $value_column[] = [
+-        'csvw:value' => $value,
+-        'csvw:primaryKey' => $value,
+-      ];
+-
+-      $keywords[] = 'ReliefWeb > Numbers > ' . $metadata['spatialCoverage'] . ' > ' . $metadata['short_name'] . ' > ' . $label;
+-    }
+-
+-    $json_ld = [
+-      '@context' => [
+-        'https://schema.org',
+-        [
+-          'csvw' => 'http://www.w3.org/ns/csvw#',
+-        ],
+-      ],
+-      '@type' => 'Dataset',
+-      'keywords' => $keywords,
+-      'isAccessibleForFree' => TRUE,
+-      'mainEntity' => [
+-        '@type' => 'csvw:Table',
+-        'csvw:tableSchema' => [
+-          'csvw:columns' => [
+-            [
+-              'csvw:name' => 'Label',
+-              'csvw:datatype' => 'string',
+-              'csvw:cells' => $label_column,
+-            ],
+-            [
+-              'csvw:name' => 'Value',
+-              'csvw:datatype' => 'number',
+-              'csvw:cells' => $value_column,
+-            ],
+-          ],
+-        ],
+-      ],
+-    ] + $metadata;
+-
+-    return json_encode($json_ld);
+-  }
+-
+ }
+diff --git a/src/Plugin/Field/FieldFormatter/KeyFigurePresenceCondensed.php b/src/Plugin/Field/FieldFormatter/KeyFigurePresenceCondensed.php
+index 12da7e0..3b76b46 100644
+--- a/src/Plugin/Field/FieldFormatter/KeyFigurePresenceCondensed.php
++++ b/src/Plugin/Field/FieldFormatter/KeyFigurePresenceCondensed.php
+@@ -3,7 +3,6 @@
+ namespace Drupal\ocha_key_figures\Plugin\Field\FieldFormatter;
+ 
+ use Drupal\Core\Field\FieldItemListInterface;
+-use Drupal\ocha_key_figures\Helpers\NumberFormatter;
+ 
+ /**
+  * Plugin implementation of the 'key_figure' formatter.
+@@ -22,11 +21,6 @@ class KeyFigurePresenceCondensed extends KeyFigureBase {
+    * {@inheritdoc}
+    */
+   public function viewElements(FieldItemListInterface $items, $langcode) {
+-    $format = $this->getSetting('format');
+-    $precision = $this->getSetting('precision');
+-    $percentage_formatted = $this->getSetting('percentage');
+-    $currency_symbol = $this->getSetting('currency_symbol');
+-
+     $theme_suggestions = implode('__', [
+       $this->viewMode,
+       $items->getEntity()->getEntityTypeId(),
+@@ -42,100 +36,67 @@ class KeyFigurePresenceCondensed extends KeyFigureBase {
+     ];
+ 
+     $fetch_all = FALSE;
+-    foreach ($items as $delta => $item) {
++    $selected_figures = [];
++    foreach ($items as $item) {
+       if ($item->getFigureId() == '_all') {
+         $fetch_all = TRUE;
+-        break;
++      }
++      else {
++        $selected_figures[$item->getFigureId()] = $item->getFigureLabel();
+       }
+     }
+ 
+-    if ($fetch_all) {
+-      /** @var \Drupal\ocha_key_figures\Plugin\Field\FieldType\KeyFigureByRegion $first */
+-      $first = $items->first();
++    /** @var \Drupal\ocha_key_figures\Plugin\Field\FieldType\KeyFigurePresence $first */
++    $first = $items->first();
+ 
+-      $ochapresences = $this->ochaKeyFiguresApiClient->getData('ocha_presences/' . $first->getFigureOchaPresence());
+-      $iso3s = [];
+-      foreach ($ochapresences['countries'] as $country) {
+-        $iso3s[] = $country['id'];
+-      }
+ 
+-      $figures = $this->getFigures($first->getFigureProvider(), $iso3s, $first->getFigureYear());
+-      foreach ($figures as $figure) {
+-        // Set currency prefix if data is financial.
+-        if (isset($figure['value_type']) && $figure['value_type'] == 'amount') {
+-          $fig['prefix'] = $fig['unit'] ?? 'USD';
+-          if ($currency_symbol == 'yes') {
+-            $fig['prefix'] = NumberFormatter::getCurrencySymbol($langcode, $fig['prefix']);
+-          }
+-        }
+-
+-        // Set percentage suffix if needed.
+-        if (isset($figure['value_type']) && $figure['value_type'] == 'percentage') {
+-          $figure['unit'] = $figure['unit'] ?? '%';
+-          if ($percentage_formatted != 'yes') {
+-            $figure['value'] /= 100;
+-          }
+-        }
++    // Make sure we have at least 1 figure.
++    if (!$first) {
++      return [];
++    }
+ 
+-        $value = NumberFormatter::format($figure['value'], $langcode, $format, $precision, FALSE);
+-        $elements['#figures'][] = [
+-          '#theme' => 'ocha_key_figures_figure__' . $theme_suggestions,
+-          '#label' => $figure['name'],
+-          '#value' => $value,
+-          '#unit' => $figure['unit'] ?? '',
+-          '#country' => $figure['country'],
+-          '#year' => $figure['year'],
+-          '#cache' => [
+-            'max-age' => $this->ochaKeyFiguresApiClient->getMaxAge(),
+-            'tags' => $this->ochaKeyFiguresApiClient->getCacheTags($figure),
+-          ],
+-        ];
+-      }
++    // If not _all, filter items.
++    if (!$fetch_all) {
++      $figures = $this->getOchaPresenceFigures($first->getFigureProvider(), $first->getFigureOchaPresence(), $first->getFigureYear(), array_keys($selected_figures));
+     }
+     else {
+-      /** @var \Drupal\ocha_key_figures\Plugin\Field\FieldType\KeyFigurePresence $item */
+-      foreach ($items as $delta => $item) {
+-        $label = $item->getFigureLabel();
+-        $value = $item->getFigureValue();
+-        $unit = $item->getFigureUnit();
+-
 -        $data = $this->ochaKeyFiguresApiClient->getgetOchaPresenceFigureByFigureId($item->getFigureProvider(), $item->getFigureOchaPresence(), $item->getFigureYear(), $item->getFigureId());
-+        $data = $this->ochaKeyFiguresApiClient->getOchaPresenceFigureByFigureId($item->getFigureProvider(), $item->getFigureOchaPresence(), $item->getFigureYear(), $item->getFigureId());
-         $data = reset($data);
-         if (isset($data['value'], $data['value_type'])) {
-           $cache_tags = $data['cache_tags'];
-diff --git a/src/Plugin/Field/FieldWidget/KeyFigure.php b/src/Plugin/Field/FieldWidget/KeyFigure.php
-index c1721b7..fd8f1c4 100644
---- a/src/Plugin/Field/FieldWidget/KeyFigure.php
-+++ b/src/Plugin/Field/FieldWidget/KeyFigure.php
-@@ -109,6 +109,8 @@ class KeyFigure extends WidgetBase {
-   public static function defaultSettings() {
-     return [
-       'allow_manual' => 'yes',
+-        $data = reset($data);
+-        if (isset($data['value'], $data['value_type'])) {
+-          $cache_tags = $data['cache_tags'];
+-          unset($data['cache_tags']);
+-
+-          $value = $data['value'];
+-          $unit = $data['unit'] ?? '';
+-
+-          if ($data['value_type'] == 'percentage') {
+-            if ($percentage_formatted == 'no') {
+-              $value /= 100;
+-            }
++      $figures = $this->getOchaPresenceFigures($first->getFigureProvider(), $first->getFigureOchaPresence(), $first->getFigureYear());
++
++      $allowed_figure_ids = $this->getFieldSetting('allowed_figure_ids');
++      if (!empty($allowed_figure_ids)) {
++        $allowed_figure_ids = array_flip(preg_split('/,\s*/', trim(strtolower($allowed_figure_ids))));
++        foreach ($figures as $id => $figure) {
++          if (!isset($allowed_figure_ids[$figure['figure_id']])) {
++            unset($figures[$id]);
+           }
+         }
+-        else {
+-          $value = (string) $this->t('N/A');
+-        }
+-
+-        if (isset($label, $value)) {
+-          $value = NumberFormatter::format($value, $langcode, $format, $precision, FALSE);
+-          $elements['#figures'][$delta] = [
+-            '#theme' => 'ocha_key_figures_figure__' . $this->viewMode,
+-            '#label' => $label,
+-            '#value' => $value,
+-            '#unit' => $unit,
+-            '#country' => $item->getFigureOchaPresence(),
+-            '#year' => $item->getFigureYear(),
+-            '#cache' => [
+-              'max-age' => $this->ochaKeyFiguresApiClient->getMaxAge(),
+-              'tags' => $cache_tags,
+-            ],
+-          ];
+-        }
+       }
+     }
+ 
++    $figures = $this->ochaKeyFiguresApiClient->buildKeyFigures($figures, FALSE);
++
++    foreach ($figures as &$fig) {
++      $this->addPrefixSuffix($fig, $langcode);
++    }
++
++    foreach ($figures as $figure) {
++      $figure['value'] = $this->formatNumber($figure['value'], $langcode);
++      $elements['#figures'][] = [
++        '#theme' => 'ocha_key_figures_figure__' . $theme_suggestions,
++        '#label' => $figure['name'],
++        '#value' => $figure['value'],
++        '#unit' => $figure['unit'],
++        '#country' => $figure['country'],
++        '#year' => $figure['year'],
++        '#prefix' => $figure['prefix'] ?? '',
++        '#suffix' => $figure['suffix'] ?? '',
++        '#cache' => [
++          'max-age' => $this->ochaKeyFiguresApiClient->getMaxAge(),
++          'tags' => $this->ochaKeyFiguresApiClient->getCacheTags($figure),
++        ],
++      ];
++    }
++
+     return $elements;
+   }
+ 
+diff --git a/src/Plugin/Field/FieldFormatter/KeyFigurePresenceExtended.php b/src/Plugin/Field/FieldFormatter/KeyFigurePresenceExtended.php
+new file mode 100644
+index 0000000..1307d1c
+--- /dev/null
++++ b/src/Plugin/Field/FieldFormatter/KeyFigurePresenceExtended.php
+@@ -0,0 +1,114 @@
++<?php
++
++namespace Drupal\ocha_key_figures\Plugin\Field\FieldFormatter;
++
++use Drupal\Core\Field\FieldItemListInterface;
++
++/**
++ * Plugin implementation of the 'key_figure_presence_extended' formatter.
++ *
++ * @FieldFormatter(
++ *   id = "key_figure_presence_extended",
++ *   label = @Translation("Key Figure - Extended"),
++ *   field_types = {
++ *     "key_figure_presence"
++ *   }
++ * )
++ */
++class KeyFigurePresenceExtended extends KeyFigureExtended {
++
++  /**
++   * {@inheritdoc}
++   */
++  public function viewElements(FieldItemListInterface $items, $langcode) {
++    $theme_suggestions = implode('__', [
++      $this->viewMode,
++      $items->getEntity()->getEntityTypeId(),
++      $items->getEntity()->bundle(),
++      $items->getFieldDefinition()->getName(),
++    ]);
++
++    $view_all = '';
++    $view_all_info = '';
++
++    $elements = [
++      '#theme' => 'ocha_key_figures_extended_figure_list__' . $theme_suggestions,
++      '#view_all' => $view_all,
++      '#view_all_info' => $view_all_info,
++      '#weight' => 99,
++      '#cache' => [
++        'max-age' => $this->ochaKeyFiguresApiClient->getMaxAge(),
++      ],
++    ];
++
++    $fetch_all = FALSE;
++    $selected_figures = [];
++    foreach ($items as $item) {
++      if ($item->getFigureId() == '_all') {
++        $fetch_all = TRUE;
++      }
++      else {
++        $selected_figures[$item->getFigureId()] = $item->getFigureLabel();
++      }
++    }
++
++    /** @var \Drupal\ocha_key_figures\Plugin\Field\FieldType\KeyFigurePresence $first */
++    $first = $items->first();
++
++    // Make sure we have at least 1 figure.
++    if (!$first) {
++      return [];
++    }
++
++    $sparklines = FALSE;
++    if ($this->getSetting('display_sparklines') == 'all') {
++      $sparklines = TRUE;
++    }
++    elseif ($this->getSetting('display_sparklines') == 'single') {
++      $sparklines = TRUE;
++    }
++
++    // If not _all, filter items.
++    if (!$fetch_all) {
++      $figures = $this->getOchaPresenceFigures($first->getFigureProvider(), $first->getFigureOchaPresence(), $first->getFigureYear(), array_keys($selected_figures));
++    }
++    else {
++      $figures = $this->getOchaPresenceFigures($first->getFigureProvider(), $first->getFigureOchaPresence(), $first->getFigureYear());
++
++      $allowed_figure_ids = $this->getFieldSetting('allowed_figure_ids');
++      if (!empty($allowed_figure_ids)) {
++        $allowed_figure_ids = array_flip(preg_split('/,\s*/', trim(strtolower($allowed_figure_ids))));
++        foreach ($figures as $id => $figure) {
++          if (!isset($allowed_figure_ids[$figure['figure_id']])) {
++            unset($figures[$id]);
++          }
++        }
++      }
++    }
++
++    $figures = $this->ochaKeyFiguresApiClient->buildKeyFigures($figures, $sparklines);
++
++    foreach ($figures as &$fig) {
++      $this->addPrefixSuffix($fig, $langcode);
++    }
++
++    if ($this->getSetting('output_json_ld') == 'yes') {
++      $elements['#jsonld'] = $this->buildJsonLd($figures, $first);
++    }
++
++    foreach ($figures as $figure) {
++      $figure['value'] = $this->formatNumber($figure['value'], $langcode);
++      $elements['#figures'][] = [
++        '#theme' => 'ocha_key_figures_extended_figure__' . $theme_suggestions,
++        '#figure' => $figure,
++        '#cache' => [
++          'max-age' => $this->ochaKeyFiguresApiClient->getMaxAge(),
++          'tags' => $this->ochaKeyFiguresApiClient->getCacheTags($figure),
++        ],
++      ];
++    }
++
++    return $elements;
++  }
++
++}
+diff --git a/src/Plugin/Field/FieldType/KeyFigure.php b/src/Plugin/Field/FieldType/KeyFigure.php
+index 111436f..92251c9 100644
+--- a/src/Plugin/Field/FieldType/KeyFigure.php
++++ b/src/Plugin/Field/FieldType/KeyFigure.php
+@@ -6,6 +6,7 @@ use Drupal\Component\Utility\Random;
+ use Drupal\Core\Field\FieldDefinitionInterface;
+ use Drupal\Core\Field\FieldItemBase;
+ use Drupal\Core\Field\FieldStorageDefinitionInterface;
++use Drupal\Core\Form\FormStateInterface;
+ use Drupal\Core\StringTranslation\TranslatableMarkup;
+ use Drupal\Core\TypedData\DataDefinition;
+ 
+@@ -30,6 +31,41 @@ class KeyFigure extends FieldItemBase {
+    */
+   protected $config;
+ 
++  /**
++   * {@inheritdoc}
++   */
++  public static function defaultFieldSettings() {
++    return [
 +      'allowed_providers' => '',
 +      'allowed_figure_ids' => '',
-     ] + parent::defaultSettings();
-   }
- 
-@@ -127,6 +129,20 @@ class KeyFigure extends WidgetBase {
-         '#default_value' => $this->getSetting('allow_manual'),
-         '#required' => TRUE,
-       ],
-+      'allowed_providers' => [
-+        '#type' => 'textfield',
-+        '#title' => $this->t('Allowed providers'),
-+        '#default_value' => $this->getSetting('allowed_providers'),
-+        '#description' => $this->t('Comma separated list of allowed providers'),
-+        '#required' => FALSE,
-+      ],
-+      'allowed_figure_ids' => [
-+        '#type' => 'textfield',
-+        '#title' => $this->t('Allowed figure IDs'),
-+        '#default_value' => $this->getSetting('allowed_figure_ids'),
-+        '#description' => $this->t('Comma separated list of allowed figure ids ("figure_id" field)'),
-+        '#required' => FALSE,
-+      ],
-     ];
-   }
- 
-@@ -140,6 +156,20 @@ class KeyFigure extends WidgetBase {
-       '@allow_manual' => $this->getSetting('allow_manual'),
-     ]);
- 
-+    $allowed_providers = $this->getSetting('allowed_providers');
-+    if (!empty($allowed_providers)) {
-+      $summary[] = $this->t('Allowed providers: @allowed_providers', [
-+        '@allowed_providers' => $allowed_providers,
-+      ]);
-+    }
++    ] + parent::defaultFieldSettings();
++  }
 +
-+    $allowed_figure_ids = $this->getSetting('allowed_figure_ids');
-+    if (!empty($allowed_figure_ids)) {
-+      $summary[] = $this->t('Allowed figure IDs: @allowed_figure_ids', [
-+        '@allowed_figure_ids' => $allowed_figure_ids,
-+      ]);
-+    }
++  /**
++   * {@inheritdoc}
++   */
++  public function fieldSettingsForm(array $form, FormStateInterface $form_state) {
++    $element = parent::fieldSettingsForm($form, $form_state);
 +
-     return $summary;
++    $element['allowed_providers'] = [
++      '#type' => 'textfield',
++      '#title' => $this->t('Allowed providers'),
++      '#default_value' => $this->getSetting('allowed_providers'),
++      '#description' => $this->t('Comma separated list of allowed providers'),
++      '#required' => FALSE,
++    ];
++
++    $element['allowed_figure_ids'] = [
++      '#type' => 'textfield',
++      '#title' => $this->t('Allowed figure IDs'),
++      '#default_value' => $this->getSetting('allowed_figure_ids'),
++      '#description' => $this->t('Comma separated list of allowed figure ids ("figure_id" field)'),
++      '#required' => FALSE,
++    ];
++
++    return $element;
++  }
++
+   /**
+    * {@inheritdoc}
+    */
+diff --git a/src/Plugin/Field/FieldType/KeyFigurePresence.php b/src/Plugin/Field/FieldType/KeyFigurePresence.php
+index ced4f8a..f354c76 100644
+--- a/src/Plugin/Field/FieldType/KeyFigurePresence.php
++++ b/src/Plugin/Field/FieldType/KeyFigurePresence.php
+@@ -6,6 +6,7 @@ use Drupal\Component\Utility\Random;
+ use Drupal\Core\Field\FieldDefinitionInterface;
+ use Drupal\Core\Field\FieldItemBase;
+ use Drupal\Core\Field\FieldStorageDefinitionInterface;
++use Drupal\Core\Form\FormStateInterface;
+ use Drupal\Core\StringTranslation\TranslatableMarkup;
+ use Drupal\Core\TypedData\DataDefinition;
+ 
+@@ -30,6 +31,41 @@ class KeyFigurePresence extends FieldItemBase {
+    */
+   protected $config;
+ 
++  /**
++   * {@inheritdoc}
++   */
++  public static function defaultFieldSettings() {
++    return [
++      'allowed_providers' => '',
++      'allowed_figure_ids' => '',
++    ] + parent::defaultFieldSettings();
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function fieldSettingsForm(array $form, FormStateInterface $form_state) {
++    $element = parent::fieldSettingsForm($form, $form_state);
++
++    $element['allowed_providers'] = [
++      '#type' => 'textfield',
++      '#title' => $this->t('Allowed providers'),
++      '#default_value' => $this->getSetting('allowed_providers'),
++      '#description' => $this->t('Comma separated list of allowed providers'),
++      '#required' => FALSE,
++    ];
++
++    $element['allowed_figure_ids'] = [
++      '#type' => 'textfield',
++      '#title' => $this->t('Allowed figure IDs'),
++      '#default_value' => $this->getSetting('allowed_figure_ids'),
++      '#description' => $this->t('Comma separated list of allowed figure ids ("figure_id" field)'),
++      '#required' => FALSE,
++    ];
++
++    return $element;
++  }
++
+   /**
+    * {@inheritdoc}
+    */
+diff --git a/src/Plugin/Field/FieldWidget/KeyFigure.php b/src/Plugin/Field/FieldWidget/KeyFigure.php
+index c1721b7..bc78962 100644
+--- a/src/Plugin/Field/FieldWidget/KeyFigure.php
++++ b/src/Plugin/Field/FieldWidget/KeyFigure.php
+@@ -2,19 +2,9 @@
+ 
+ namespace Drupal\ocha_key_figures\Plugin\Field\FieldWidget;
+ 
+-use Drupal\Component\Utility\Html;
+ use Drupal\Component\Utility\NestedArray;
+-use Drupal\Core\Ajax\AjaxResponse;
+-use Drupal\Core\Ajax\ReplaceCommand;
+-use Drupal\Core\Field\FieldDefinitionInterface;
+ use Drupal\Core\Field\FieldItemListInterface;
+-use Drupal\Core\Field\WidgetBase;
+ use Drupal\Core\Form\FormStateInterface;
+-use Drupal\Core\Logger\LoggerChannelFactoryInterface;
+-use Drupal\Core\Render\RendererInterface;
+-use Drupal\ocha_key_figures\Controller\OchaKeyFiguresController;
+-use Symfony\Component\DependencyInjection\ContainerInterface;
+-use Symfony\Component\HttpFoundation\Request;
+ 
+ /**
+  * Plugin implementation of the 'key_figure' widget.
+@@ -24,124 +14,11 @@ use Symfony\Component\HttpFoundation\Request;
+  *   label = @Translation("Key Figure - Simple"),
+  *   field_types = {
+  *     "key_figure"
+- *   }
++ *   },
++ *   multiple_values = FALSE,
+  * )
+  */
+-class KeyFigure extends WidgetBase {
+-
+-  /**
+-   * The logger service.
+-   *
+-   * @var \Psr\Log\LoggerInterface
+-   */
+-  protected $logger;
+-
+-  /**
+-   * The renderer service.
+-   *
+-   * @var \Drupal\Core\Render\RendererInterface
+-   */
+-  protected $renderer;
+-
+-  /**
+-   * The OCHA Key Figures API client.
+-   *
+-   * @var \Drupal\ocha_key_figures\Controller\OchaKeyFiguresController
+-   */
+-  protected $ochaKeyFiguresApiClient;
+-
+-  /**
+-   * Ajax wrapper ID.
+-   *
+-   * @var string
+-   */
+-  protected $ajaxWrapperId;
+-
+-  /**
+-   * {@inheritdoc}
+-   */
+-  public function __construct(
+-    $plugin_id,
+-    $plugin_definition,
+-    FieldDefinitionInterface $field_definition,
+-    array $settings,
+-    array $third_party_settings,
+-    LoggerChannelFactoryInterface $logger_factory,
+-    RendererInterface $renderer,
+-    OchaKeyFiguresController $ocha_key_figure_api_client
+-  ) {
+-    parent::__construct(
+-      $plugin_id,
+-      $plugin_definition,
+-      $field_definition,
+-      $settings,
+-      $third_party_settings
+-    );
+-    $this->logger = $logger_factory->get('unocha_figure_widget');
+-    $this->renderer = $renderer;
+-    $this->ochaKeyFiguresApiClient = $ocha_key_figure_api_client;
+-  }
+-
+-  /**
+-   * {@inheritdoc}
+-   */
+-  public static function create(
+-    ContainerInterface $container,
+-    array $configuration,
+-    $plugin_id,
+-    $plugin_definition
+-  ) {
+-    return new static(
+-      $plugin_id,
+-      $plugin_definition,
+-      $configuration['field_definition'],
+-      $configuration['settings'],
+-      $configuration['third_party_settings'],
+-      $container->get('logger.factory'),
+-      $container->get('renderer'),
+-      $container->get('ocha_key_figures.key_figures_controller')
+-    );
+-  }
+-
+-  /**
+-   * {@inheritdoc}
+-   */
+-  public static function defaultSettings() {
+-    return [
+-      'allow_manual' => 'yes',
+-    ] + parent::defaultSettings();
+-  }
+-
+-  /**
+-   * {@inheritdoc}
+-   */
+-  public function settingsForm(array $form, FormStateInterface $form_state) {
+-    return [
+-      'allow_manual' => [
+-        '#type' => 'select',
+-        '#options' => [
+-          'yes' => $this->t('Yes'),
+-          'no' => $this->t('No'),
+-        ],
+-        '#title' => $this->t('Allow manual numbers'),
+-        '#default_value' => $this->getSetting('allow_manual'),
+-        '#required' => TRUE,
+-      ],
+-    ];
+-  }
+-
+-  /**
+-   * {@inheritdoc}
+-   */
+-  public function settingsSummary() {
+-    $summary = [];
+-
+-    $summary[] = $this->t('Allow manual figures: @allow_manual', [
+-      '@allow_manual' => $this->getSetting('allow_manual'),
+-    ]);
+-
+-    return $summary;
+-  }
++class KeyFigure extends KeyFigureBaseWidget {
+ 
+   /**
+    * {@inheritdoc}
+@@ -150,29 +27,6 @@ class KeyFigure extends WidgetBase {
+     return FALSE;
    }
  
-@@ -182,6 +212,12 @@ class KeyFigure extends WidgetBase {
+-  /**
+-   * Get the name of the element that triggered the form.
+-   *
+-   * @param \Drupal\Core\Form\FormStateInterface $form_state
+-   *   The form state.
+-   * @param array $element_parents
+-   *   The list of parents of the current key figure field element.
+-   *
+-   * @return string|null
+-   *   The name of the subfield of the element that was the trigger if any.
+-   */
+-  protected function getTrigger(FormStateInterface $form_state, array $element_parents) {
+-    $triggering_element = $form_state->getTriggeringElement();
+-    if (!empty($triggering_element['#array_parents'])) {
+-      $triggering_element_parents = $triggering_element['#array_parents'];
+-      $triggering_element_name = array_pop($triggering_element_parents);
+-      if ($triggering_element_parents === $element_parents) {
+-        return $triggering_element_name;
+-      }
+-    }
+-    return NULL;
+-  }
+-
+   /**
+    * {@inheritdoc}
+    */
+@@ -182,6 +36,12 @@ class KeyFigure extends WidgetBase {
      $element_parents = array_merge($field_parents, ['widget', $delta]);
      $wrapper_id = $this->getAjaxWrapperId($field_parents, $delta);
  
@@ -235,77 +1795,416 @@ index c1721b7..fd8f1c4 100644
      $item = $items[$delta];
      $values = $form_state->getValue(array_merge($field_parents, [$delta]));
  
-@@ -247,10 +283,10 @@ class KeyFigure extends WidgetBase {
-     if ($allow_manual) {
-       $providers = [
-         'manual' => $this->t('Manual'),
--      ] + $this->ochaKeyFiguresApiClient->getSupportedProviders();
-+      ] + $this->getSupportedProviders();
-     }
-     else {
--      $providers = $this->ochaKeyFiguresApiClient->getSupportedProviders();
-+      $providers = $this->getSupportedProviders();
-     }
+@@ -241,27 +101,7 @@ class KeyFigure extends WidgetBase {
+     $element['#prefix'] = '<div id="' . $wrapper_id . '">';
+     $element['#suffix'] = '</div>';
  
-     $element['provider'] = [
-@@ -387,6 +423,22 @@ class KeyFigure extends WidgetBase {
+-    // Get list of providers.
+-    $providers = [];
+-
+-    if ($allow_manual) {
+-      $providers = [
+-        'manual' => $this->t('Manual'),
+-      ] + $this->ochaKeyFiguresApiClient->getSupportedProviders();
+-    }
+-    else {
+-      $providers = $this->ochaKeyFiguresApiClient->getSupportedProviders();
+-    }
+-
+-    $element['provider'] = [
+-      '#type' => 'select',
+-      '#title' => $this->t('Provider'),
+-      '#options' => $providers,
+-      '#default_value' => $provider,
+-      '#ajax' => $this->getAjaxSettings($this->t('Loading figure data...'), $field_parents, $delta, $wrapper_id),
+-      '#empty_option' => $this->t('- Select -'),
+-      '#empty_value' => '',
+-    ];
++    $element['provider'] = $this->getDropdownForProvider($provider, $field_parents, $delta, $wrapper_id, $allow_manual);
+ 
+     // Extra fields to select the data from a provider.
+     if (isset($provider) && !empty($provider) && !$manual) {
+@@ -270,51 +110,11 @@ class KeyFigure extends WidgetBase {
+       $unit = NULL;
+ 
+       // Get the list of countries for the provider.
+-      $countries = $this->getFigureCountries($provider);
+-      if (empty($countries)) {
+-        $show_no_data = TRUE;
+-      }
+-      else {
+-        $country = isset($countries[$country]) ? $country : NULL;
+-
+-        $element['country'] = [
+-          '#type' => 'select',
+-          '#title' => $this->t('Country'),
+-          '#options' => $countries,
+-          '#default_value' => $country,
+-          '#ajax' => $this->getAjaxSettings($this->t('Loading figure data...'), $field_parents, $delta, $wrapper_id),
+-          '#empty_option' => $this->t('- Select -'),
+-          '#empty_value' => '',
+-        ];
+-      }
++      $element['country'] = $this->getDropdownForCountry($provider, $country, $field_parents, $delta, $wrapper_id);
+ 
+       // Get the list of years for the provider and country.
+       if (!empty($country)) {
+-        $years = $this->getFigureYears($provider, $country);
+-        if (empty($years)) {
+-          $show_no_data = TRUE;
+-        }
+-        else {
+-          if ($year > 2) {
+-            $year = isset($years[$year]) ? $year : NULL;
+-          }
+-
+-          // Add option for current year and any year.
+-          $years = [
+-            '1' => $this->t('Any year'),
+-            '2' => $this->t('Current year'),
+-          ] + $years;
+-
+-          $element['year'] = [
+-            '#type' => 'select',
+-            '#title' => $this->t('Year'),
+-            '#options' => $years,
+-            '#default_value' => $year,
+-            '#ajax' => $this->getAjaxSettings($this->t('Loading figure data...'), $field_parents, $delta, $wrapper_id),
+-            '#empty_option' => $this->t('- Select -'),
+-            '#empty_value' => '',
+-          ];
+-        }
++        $element['year'] = $this->getDropdownForYears($provider, $country, $year, $field_parents, $delta, $wrapper_id);
+       }
+ 
+       // Get the list of figures for the provider, country and year.
+@@ -325,11 +125,7 @@ class KeyFigure extends WidgetBase {
+         }
+         else {
+           $figure_id = isset($figures[$figure_id]) ? $figure_id : NULL;
+-
+-          $figure_options = array_map(function ($item) {
+-            return $item['name'];
+-          }, $figures);
+-          asort($figure_options);
++          $figure_options = $this->getOptionsForFigures($figures, [$figure_id]);
+ 
+           $element['id'] = [
+             '#type' => $manual ? 'hidden' : 'select',
+@@ -387,198 +183,4 @@ class KeyFigure extends WidgetBase {
      return $element;
    }
  
+-  /**
+-   * Get the contries available for the figure provider.
+-   *
+-   * @param string $provider
+-   *   Provider.
+-   *
+-   * @return array
+-   *   Associative array keyed by country iso3 code and with country names as
+-   *   values.
+-   */
+-  protected function getFigureCountries($provider) {
+-    if ($provider === 'manual') {
+-      return [];
+-    }
+-    $data = $this->ochaKeyFiguresApiClient->query($provider, 'countries');
+-    $countries = [];
+-    if (!empty($data)) {
+-      foreach ($data as $item) {
+-        $countries[$item['value']] = $item['label'];
+-      }
+-    }
+-
+-    asort($countries);
+-
+-    return $countries;
+-  }
+-
+-  /**
+-   * Get the years available for the figure provider and given country.
+-   *
+-   * @param string $provider
+-   *   Provider.
+-   * @param string $country
+-   *   ISO3 code of a country.
+-   *
+-   * @return array
+-   *   Associative array with year as keys and values.
+-   */
+-  protected function getFigureYears($provider, $country) {
+-    if ($provider === 'manual' && !empty($country)) {
+-      return [];
+-    }
+-    $data = $this->ochaKeyFiguresApiClient->query($provider, 'years', [
+-      'iso3' => $country,
+-      'order' => [
+-        'year' => 'desc',
+-      ],
+-    ]);
+-    $years = [];
+-    if (!empty($data)) {
+-      foreach ($data as $item) {
+-        $years[$item['value']] = $item['label'];
+-      }
+-    }
+-    // @todo add a "Latest" year option to instruct to always fetch the most
+-    // recent figure if available?
+-    return $years;
+-  }
+-
+-  /**
+-   * Get the figures available for the figure provider, country and year.
+-   *
+-   * @param string $provider
+-   *   Provider.
+-   * @param string $country
+-   *   ISO3 code of a country.
+-   * @param string $year
+-   *   Year.
+-   *
+-   * @return array
+-   *   Associative array keyed by figure ID and with figures data as values.
+-   */
+-  protected function getFigures($provider, $country, $year) {
+-    if ($provider === 'manual' || empty($country)) {
+-      return [];
+-    }
+-
+-    $query = [
+-      'iso3' => $country,
+-      'year' => $year,
+-      'archived' => 0,
+-    ];
+-
+-    // Special case for year.
+-    if ($year == 1) {
+-      // No need to filter.
+-      unset($query['year']);
+-    }
+-    elseif ($year == 2) {
+-      $query['year'] = date('Y');
+-    }
+-
+-    $data = $this->ochaKeyFiguresApiClient->query($provider, '', $query);
+-    $figures = [];
+-    if (!empty($data)) {
+-      foreach ($data as $item) {
+-        $figures[$item['id']] = $item;
+-      }
+-    }
+-
+-    asort($figures);
+-
+-    return $figures;
+-  }
+-
+-  /**
+-   * Get the base ajax settings for the operation in the widget.
+-   *
+-   * @param string $message
+-   *   The message to display while the request is being performed.
+-   * @param array $field_parents
+-   *   The parents of the field.
+-   * @param int $delta
+-   *   The delta of the field element.
+-   * @param string $wrapper_id
+-   *   The ID of the wrapping HTML element which is going to be replaced.
+-   *
+-   * @return array
+-   *   Array with the ajax settings.
+-   */
+-  protected function getAjaxSettings($message, array $field_parents, $delta, $wrapper_id) {
+-    $path = array_merge($field_parents, ['widget', $delta]);
+-
+-    return [
+-      'callback' => [static::class, 'rebuildWidgetForm'],
+-      'options' => [
+-        'query' => [
+-          // This will be used in the ::rebuildWidgetForm() callback to
+-          // retrieve the widget.
+-          'element_path' => implode('/', $path),
+-        ],
+-      ],
+-      'wrapper' => $wrapper_id,
+-      'effect' => 'fade',
+-      'progress' => [
+-        'type' => 'throbber',
+-        'message' => $message,
+-      ],
+-      'disable-refocus' => TRUE,
+-    ];
+-  }
+-
+-  /**
+-   * Get the ajax wrapper id for the field.
+-   *
+-   * @param array $field_parents
+-   *   The parents of the field.
+-   * @param int $delta
+-   *   The delta of the field element.
+-   *
+-   * @return string
+-   *   Wrapper ID.
+-   */
+-  protected function getAjaxWrapperId(array $field_parents, $delta) {
+-    return Html::getUniqueId(implode('-', $field_parents) . '-' . $delta . '-ajax-wrapper');
+-  }
+-
+-  /**
+-   * Rebuild form.
+-   *
+-   * @param array $form
+-   *   The build form.
+-   * @param \Drupal\Core\Form\FormStateInterface $form_state
+-   *   The form state.
+-   * @param \Symfony\Component\HttpFoundation\Request $request
+-   *   The current request.
+-   *
+-   * @return \Drupal\Core\Ajax\AjaxResponse
+-   *   The ajax response of the ajax upload.
+-   */
+-  public static function rebuildWidgetForm(array &$form, FormStateInterface $form_state, Request $request) {
+-    // Retrieve the updated widget.
+-    $parameter = $request->query->get('element_path');
+-    $path = is_string($parameter) ? explode('/', trim($parameter)) : NULL;
+-
+-    $response = new AjaxResponse();
+-
+-    if (isset($path)) {
+-      // The array parents are populated in the WidgetBase::afterBuild().
+-      $element = NestedArray::getValue($form, $path);
+-
+-      if (isset($element)) {
+-        // Remove the weight field as it's been handled by the tabledrag script
+-        // and would appear twice otherwise.
+-        unset($element['_weight']);
+-
+-        // This will replace the widget with the new one in the form.
+-        $response->addCommand(new ReplaceCommand(NULL, $element));
+-      }
+-    }
+-
+-    return $response;
+-  }
+-
+ }
+diff --git a/src/Plugin/Field/FieldWidget/KeyFigureBaseWidget.php b/src/Plugin/Field/FieldWidget/KeyFigureBaseWidget.php
+new file mode 100644
+index 0000000..cbed28b
+--- /dev/null
++++ b/src/Plugin/Field/FieldWidget/KeyFigureBaseWidget.php
+@@ -0,0 +1,580 @@
++<?php
++
++namespace Drupal\ocha_key_figures\Plugin\Field\FieldWidget;
++
++use Drupal\Component\Utility\Html;
++use Drupal\Component\Utility\NestedArray;
++use Drupal\Core\Ajax\AjaxResponse;
++use Drupal\Core\Ajax\ReplaceCommand;
++use Drupal\Core\Field\FieldDefinitionInterface;
++use Drupal\Core\Field\WidgetBase;
++use Drupal\Core\Form\FormStateInterface;
++use Drupal\Core\Logger\LoggerChannelFactoryInterface;
++use Drupal\Core\Render\RendererInterface;
++use Drupal\ocha_key_figures\Controller\OchaKeyFiguresController;
++use Symfony\Component\DependencyInjection\ContainerInterface;
++use Symfony\Component\HttpFoundation\Request;
++
++/**
++ * Base widget.
++ */
++abstract class KeyFigureBaseWidget extends WidgetBase {
++
 +  /**
-+   * Get the list of supported providers.
++   * Separator used by PHP and js.
 +   *
-+   * @return array
-+   *   Associative array of providers keyed by IDs.
++   * @var string
 +   */
-+  protected function getSupportedProviders() {
-+    $supported_providers = $this->ochaKeyFiguresApiClient->getSupportedProviders();
-+    $allowed_providers = $this->getSetting('allowed_providers');
-+    if (!empty($allowed_providers)) {
-+      $allowed_providers = array_flip(preg_split('/,\s*/', trim(strtolower($allowed_providers))));
-+      $supported_providers = array_intersect_key($supported_providers, $allowed_providers);
-+    }
-+    return $supported_providers;
++  protected $separator = '|-|';
++
++  /**
++   * The logger service.
++   *
++   * @var \Psr\Log\LoggerInterface
++   */
++  protected $logger;
++
++  /**
++   * The renderer service.
++   *
++   * @var \Drupal\Core\Render\RendererInterface
++   */
++  protected $renderer;
++
++  /**
++   * The OCHA Key Figures API client.
++   *
++   * @var \Drupal\ocha_key_figures\Controller\OchaKeyFiguresController
++   */
++  protected $ochaKeyFiguresApiClient;
++
++  /**
++   * Ajax wrapper ID.
++   *
++   * @var string
++   */
++  protected $ajaxWrapperId;
++
++  /**
++   * {@inheritdoc}
++   */
++  public function __construct(
++    $plugin_id,
++    $plugin_definition,
++    FieldDefinitionInterface $field_definition,
++    array $settings,
++    array $third_party_settings,
++    LoggerChannelFactoryInterface $logger_factory,
++    RendererInterface $renderer,
++    OchaKeyFiguresController $ocha_key_figure_api_client
++  ) {
++    parent::__construct(
++      $plugin_id,
++      $plugin_definition,
++      $field_definition,
++      $settings,
++      $third_party_settings
++    );
++    $this->logger = $logger_factory->get('unocha_figure_widget');
++    $this->renderer = $renderer;
++    $this->ochaKeyFiguresApiClient = $ocha_key_figure_api_client;
 +  }
 +
-   /**
-    * Get the contries available for the figure provider.
-    *
-@@ -479,11 +531,18 @@ class KeyFigure extends WidgetBase {
-       $query['year'] = date('Y');
-     }
- 
-+    $allowed_figure_ids = $this->getSetting('allowed_figure_ids');
-+    if (!empty($allowed_figure_ids)) {
-+      $allowed_figure_ids = array_flip(preg_split('/,\s*/', trim(strtolower($allowed_figure_ids))));
-+    }
++  /**
++   * {@inheritdoc}
++   */
++  public static function create(
++    ContainerInterface $container,
++    array $configuration,
++    $plugin_id,
++    $plugin_definition
++  ) {
++    return new static(
++      $plugin_id,
++      $plugin_definition,
++      $configuration['field_definition'],
++      $configuration['settings'],
++      $configuration['third_party_settings'],
++      $container->get('logger.factory'),
++      $container->get('renderer'),
++      $container->get('ocha_key_figures.key_figures_controller')
++    );
++  }
 +
-     $data = $this->ochaKeyFiguresApiClient->query($provider, '', $query);
-     $figures = [];
-     if (!empty($data)) {
-       foreach ($data as $item) {
--        $figures[$item['id']] = $item;
-+        if (empty($allowed_figure_ids) || isset($item['figure_id'], $allowed_figure_ids[$item['figure_id']])) {
-+          $figures[$item['id']] = $item;
-+        }
-       }
-     }
- 
-diff --git a/src/Plugin/Field/FieldWidget/KeyFigurePresence.php b/src/Plugin/Field/FieldWidget/KeyFigurePresence.php
-index 19ee909..ec3f098 100644
---- a/src/Plugin/Field/FieldWidget/KeyFigurePresence.php
-+++ b/src/Plugin/Field/FieldWidget/KeyFigurePresence.php
-@@ -103,6 +103,61 @@ class KeyFigurePresence extends WidgetBase {
-     );
-   }
- 
 +  /**
 +   * {@inheritdoc}
 +   */
 +  public static function defaultSettings() {
 +    return [
-+      'allowed_providers' => '',
-+      'allowed_figure_ids' => '',
++      'allow_manual' => 'yes',
 +    ] + parent::defaultSettings();
 +  }
 +
@@ -314,19 +2213,15 @@ index 19ee909..ec3f098 100644
 +   */
 +  public function settingsForm(array $form, FormStateInterface $form_state) {
 +    return [
-+      'allowed_providers' => [
-+        '#type' => 'textfield',
-+        '#title' => $this->t('Allowed providers'),
-+        '#default_value' => $this->getSetting('allowed_providers'),
-+        '#description' => $this->t('Comma separated list of allowed providers'),
-+        '#required' => FALSE,
-+      ],
-+      'allowed_figure_ids' => [
-+        '#type' => 'textfield',
-+        '#title' => $this->t('Allowed figure IDs'),
-+        '#default_value' => $this->getSetting('allowed_figure_ids'),
-+        '#description' => $this->t('Comma separated list of allowed figure ids ("figure_id" field)'),
-+        '#required' => FALSE,
++      'allow_manual' => [
++        '#type' => 'select',
++        '#options' => [
++          'yes' => $this->t('Yes'),
++          'no' => $this->t('No'),
++        ],
++        '#title' => $this->t('Allow manual numbers'),
++        '#default_value' => $this->getSetting('allow_manual'),
++        '#required' => TRUE,
 +      ],
 +    ];
 +  }
@@ -337,27 +2232,1044 @@ index 19ee909..ec3f098 100644
 +  public function settingsSummary() {
 +    $summary = [];
 +
-+    $allowed_providers = $this->getSetting('allowed_providers');
-+    if (!empty($allowed_providers)) {
-+      $summary[] = $this->t('Allowed providers: @allowed_providers', [
-+        '@allowed_providers' => $allowed_providers,
-+      ]);
-+    }
-+
-+    $allowed_figure_ids = $this->getSetting('allowed_figure_ids');
-+    if (!empty($allowed_figure_ids)) {
-+      $summary[] = $this->t('Allowed figure IDs: @allowed_figure_ids', [
-+        '@allowed_figure_ids' => $allowed_figure_ids,
-+      ]);
-+    }
++    $summary[] = $this->t('Allow manual figures: @allow_manual', [
++      '@allow_manual' => $this->getSetting('allow_manual'),
++    ]);
 +
 +    return $summary;
 +  }
 +
++  /**
++   * Get the name of the element that triggered the form.
++   *
++   * @param \Drupal\Core\Form\FormStateInterface $form_state
++   *   The form state.
++   * @param array $element_parents
++   *   The list of parents of the current key figure field element.
++   *
++   * @return string|null
++   *   The name of the subfield of the element that was the trigger if any.
++   */
++  protected function getTrigger(FormStateInterface $form_state, array $element_parents) {
++    $triggering_element = $form_state->getTriggeringElement();
++    if (!empty($triggering_element['#array_parents'])) {
++      $triggering_element_parents = $triggering_element['#array_parents'];
++      $triggering_element_name = array_pop($triggering_element_parents);
++      if ($triggering_element_parents === $element_parents) {
++        return $triggering_element_name;
++      }
++    }
++    return NULL;
++  }
++
++  /**
++   * Get the contries available for the figure provider.
++   *
++   * @param string $provider
++   *   Provider.
++   *
++   * @return array
++   *   Associative array keyed by country iso3 code and with country names as
++   *   values.
++   */
++  protected function getFigureCountries($provider) {
++    $data = $this->ochaKeyFiguresApiClient->query($provider, 'countries');
++    $countries = [];
++    if (!empty($data)) {
++      foreach ($data as $item) {
++        $countries[$item['value']] = $item['label'];
++      }
++    }
++
++    asort($countries);
++
++    return $countries;
++  }
++
++  /**
++   * Get the years available for the figure provider and given country.
++   *
++   * @param string $provider
++   *   Provider.
++   * @param string $country
++   *   ISO3 code of a country.
++   *
++   * @return array
++   *   Associative array with year as keys and values.
++   */
++  protected function getFigureYears($provider, $country) {
++    $data = $this->ochaKeyFiguresApiClient->query($provider, 'years', [
++      'iso3' => $country,
++      'order' => [
++        'year' => 'desc',
++      ],
++    ]);
++    $years = [];
++    if (!empty($data)) {
++      foreach ($data as $item) {
++        $years[$item['value']] = $item['label'];
++      }
++    }
++    // @todo add a "Latest" year option to instruct to always fetch the most
++    // recent figure if available?
++    return $years;
++  }
++
++  /**
++   * Get the figures available for the figure provider, country and year.
++   *
++   * @param string $provider
++   *   Provider.
++   * @param string $country
++   *   ISO3 code of a country.
++   * @param string $year
++   *   Year.
++   *
++   * @return array
++   *   Associative array keyed by ID and with figures data as values.
++   */
++  protected function getFigures($provider, $country, $year) {
++    $query = [
++      'iso3' => $country,
++      'year' => $year,
++      'archived' => 0,
++    ];
++
++    // Special case for year.
++    if ($year == 1) {
++      // No need to filter.
++      unset($query['year']);
++    }
++    elseif ($year == 2) {
++      $query['year'] = date('Y');
++    }
++
++    $data = $this->ochaKeyFiguresApiClient->query($provider, '', $query);
++    $figures = [];
++    if (!empty($data)) {
++      foreach ($data as $item) {
++        $figures[$item['id']] = $item;
++      }
++    }
++
++    asort($figures);
++
++    return $figures;
++  }
++
++  /**
++   * Get the base ajax settings for the operation in the widget.
++   *
++   * @param string $message
++   *   The message to display while the request is being performed.
++   * @param array $field_parents
++   *   The parents of the field.
++   * @param string $wrapper_id
++   *   The ID of the wrapping HTML element which is going to be replaced.
++   *
++   * @return array
++   *   Array with the ajax settings.
++   */
++  protected function getAjaxSettings($message, array $field_parents, $delta, $wrapper_id) {
++    if ($delta == '') {
++      $path = array_merge($field_parents, ['widget']);
++    }
++    else {
++      $path = array_merge($field_parents, ['widget', $delta]);
++    }
++
++    return [
++      'callback' => [static::class, 'rebuildWidgetForm'],
++      'options' => [
++        'query' => [
++          // This will be used in the ::rebuildWidgetForm() callback to
++          // retrieve the widget.
++          'element_path' => implode('/', $path),
++        ],
++      ],
++      'wrapper' => $wrapper_id,
++      'effect' => 'fade',
++      'progress' => [
++        'type' => 'throbber',
++        'message' => $message,
++      ],
++      'disable-refocus' => TRUE,
++    ];
++  }
++
++  /**
++   * Get the ajax wrapper id for the field.
++   *
++   * @param array $field_parents
++   *   The parents of the field.
++   *
++   * @return string
++   *   Wrapper ID.
++   */
++  protected function getAjaxWrapperId(array $field_parents, $delta = '') {
++    if ($delta == '') {
++      return Html::getUniqueId(implode('-', $field_parents) . '-ajax-wrapper');
++    }
++
++    return Html::getUniqueId(implode('-', $field_parents) . '-' . $delta . '-ajax-wrapper');
++  }
++
++  /**
++   * Rebuild form.
++   *
++   * @param array $form
++   *   The build form.
++   * @param \Drupal\Core\Form\FormStateInterface $form_state
++   *   The form state.
++   * @param \Symfony\Component\HttpFoundation\Request $request
++   *   The current request.
++   *
++   * @return \Drupal\Core\Ajax\AjaxResponse
++   *   The ajax response of the ajax upload.
++   */
++  public static function rebuildWidgetForm(array &$form, FormStateInterface $form_state, Request $request) {
++    // Retrieve the updated widget.
++    $parameter = $request->query->get('element_path');
++    $path = is_string($parameter) ? explode('/', trim($parameter)) : NULL;
++
++    $response = new AjaxResponse();
++
++    if (isset($path)) {
++      // The array parents are populated in the WidgetBase::afterBuild().
++      $element = NestedArray::getValue($form, $path);
++
++      if (isset($element)) {
++        // Remove the weight field as it's been handled by the tabledrag script
++        // and would appear twice otherwise.
++        unset($element['_weight']);
++
++        // This will replace the widget with the new one in the form.
++        $response->addCommand(new ReplaceCommand(NULL, $element));
++      }
++    }
++
++    return $response;
++  }
++
++  /**
++   * Get the OCHA presences available for the figure provider.
++   *
++   * @param string $provider
++   *   Provider.
++   *
++   * @return array
++   *   Associative array keyed by ochapresence iso3 code and with ochapresence names as
++   *   values.
++   */
++  protected function getFigureOchaPresences($provider) {
++    return $this->ochaKeyFiguresApiClient->getOchaPresencesByProvider($provider);
++  }
++
++  /**
++   * Get the OCHA Presences years available.
++   *
++   * @param string $provider
++   *   Provider.
++   * @param string $ocha_presence_id
++   *   OCHA Presence Id.
++   *
++   * @return array
++   *   Associative array with year as keys and values.
++   */
++  protected function getOchaPresenceYearsByProvider($provider, $ocha_presence_id) {
++    return $this->ochaKeyFiguresApiClient->getOchaPresenceYearsByProvider($provider, $ocha_presence_id);
++  }
++
++  /**
++   * Get the figures available for the figure provider, OCHA Presence and year.
++   *
++   * @param string $provider
++   *   Provider.
++   * @param string $ocha_presence_id
++   *   ISO3 code of a ocha_presence_id.
++   * @param string $year
++   *   Year.
++   *
++   * @return array
++   *   Associative array keyed by figure ID and with figures data as values.
++   */
++  protected function getOchaPresenceFigures($provider, $ocha_presence_id, $year) {
++    $figures = $this->ochaKeyFiguresApiClient->getOchaPresenceFiguresParsed($provider, $ocha_presence_id, $year);
++
++    asort($figures);
++    return $figures;
++  }
++
++  /**
++   * Get provider dropdown.
++   */
++  protected function getDropdownForProvider($provider, $field_parents, $delta, $wrapper_id, $allow_manual = FALSE) {
++    // Get list of providers.
++    $providers = $this->ochaKeyFiguresApiClient->getSupportedProviders();
++
++    $allowed_providers = $this->getFieldSetting('allowed_providers');
++    if (!empty($allowed_providers)) {
++      $allowed_providers = array_flip(preg_split('/,\s*/', trim(strtolower($allowed_providers))));
++      $providers = array_intersect_key($providers, $allowed_providers);
++    }
++
++    if ($allow_manual) {
++      $providers = [
++        'manual' => $this->t('Manual'),
++      ] + $providers;
++    }
++
++    return [
++      '#type' => 'select',
++      '#title' => $this->t('Provider'),
++      '#options' => $providers,
++      '#default_value' => $provider,
++      '#ajax' => $this->getAjaxSettings($this->t('Loading figure data...'), $field_parents, $delta, $wrapper_id),
++      '#empty_option' => $this->t('- Select -'),
++      '#empty_value' => '',
++    ];
++  }
++
++  /**
++   * Get country dropdown.
++   */
++  protected function getDropdownForCountry($provider, $country, $field_parents, $delta, $wrapper_id) {
++    $countries = $this->getFigureCountries($provider);
++
++    return [
++      '#type' => 'select',
++      '#title' => $this->t('Country'),
++      '#options' => $countries,
++      '#default_value' => $country,
++      '#ajax' => $this->getAjaxSettings($this->t('Loading figure data...'), $field_parents, $delta, $wrapper_id),
++      '#empty_option' => $this->t('- Select -'),
++      '#empty_value' => '',
++    ];
++  }
++
++  /**
++   * Get years dropdown.
++   */
++  protected function getDropdownForYears($provider, $country, $year, $field_parents, $delta, $wrapper_id) {
++    $years = $this->getFigureYears($provider, $country);
++
++    if ($year > 2) {
++      $year = isset($years[$year]) ? $year : NULL;
++    }
++
++    // Add option for current year and any year.
++    $years = [
++      '1' => $this->t('Any year'),
++      '2' => $this->t('Current year'),
++    ] + $years;
++
++    return [
++      '#type' => 'select',
++      '#title' => $this->t('Year'),
++      '#options' => $years,
++      '#default_value' => $year,
++      '#ajax' => $this->getAjaxSettings($this->t('Loading figure data...'), $field_parents, $delta, $wrapper_id),
++      '#empty_option' => $this->t('- Select -'),
++      '#empty_value' => '',
++    ];
++  }
++
++  /**
++   * Get OCHA presence dropdown.
++   */
++  protected function getDropdownForOchaPresense($provider, $ochapresence, $field_parents, $delta, $wrapper_id) {
++    $ochapresences = $this->getFigureOchaPresences($provider);
++
++    return [
++      '#type' => 'select',
++      '#title' => $this->t('OCHA regional or country office'),
++      '#options' => $ochapresences,
++      '#default_value' => $ochapresence,
++      '#ajax' => $this->getAjaxSettings($this->t('Loading figure data...'), $field_parents, $delta, $wrapper_id),
++      '#empty_option' => $this->t('- Select -'),
++      '#empty_value' => '',
++    ];
++  }
++
++  /**
++   * Get the OCHA Presences years available.
++   *
++   * @param string $provider
++   *   Provider.
++   * @param string $ocha_presence_id
++   *   OCHA Presence Id.
++   *
++   * @return array
++   *   Associative array with year as keys and values.
++   */
++  protected function getDropdownForOchaPresenceYears($provider, $ocha_presence_id, $year, $field_parents, $delta, $wrapper_id) {
++    $years = $this->getOchaPresenceYearsByProvider($provider, $ocha_presence_id);
++    if ($year > 2) {
++      $year = isset($years[$year]) ? $year : NULL;
++    }
++
++    // Add option for current year.
++    $years = [
++      '2' => $this->t('Current year'),
++    ] + $years;
++
++    return [
++      '#type' => 'select',
++      '#title' => $this->t('Year'),
++      '#options' => $years,
++      '#default_value' => $year,
++      '#ajax' => $this->getAjaxSettings($this->t('Loading figure data...'), $field_parents, $delta, $wrapper_id),
++      '#empty_option' => $this->t('- Select -'),
++      '#empty_value' => '',
++    ];
++  }
++
++  /**
++   * Get figures dropdown options.
++   */
++  protected function getOptionsForFigures(array $figures, array $figure_ids) {
++    // Array of "Figure Ids" not Ids.
++    $allowed_figure_figure_ids = $this->getFieldSetting('allowed_figure_ids');
++    if (!empty($allowed_figure_figure_ids)) {
++      $allowed_figure_figure_ids = array_flip(preg_split('/,\s*/', trim(strtolower($allowed_figure_figure_ids))));
++    }
++
++    // Add options in order.
++    $figure_options = [];
++    foreach ($figure_ids as $figure_id) {
++      if (!$figure_id) {
++        continue;
++      }
++
++      if ($figure_id == '_all') {
++        continue;
++      }
++
++      if (empty($allowed_figure_figure_ids)) {
++        $figure_options[$figure_id] = $figures[$figure_id]['name'];
++      }
++      else {
++        if (isset($allowed_figure_figure_ids[$figures[$figure_id]['figure_id']])) {
++          $figure_options[$figure_id] = $figures[$figure_id]['name'];
++        }
++      }
++
++      unset($figures[$figure_id]);
++    }
++
++    $figure_options_unselected = [];
++    foreach ($figures as $figure_id => $figure) {
++      if (empty($allowed_figure_figure_ids)) {
++        $figure_options_unselected[$figure_id] = $figure['name'];
++      }
++      else {
++        if (isset($allowed_figure_figure_ids[$figure['figure_id']])) {
++          $figure_options_unselected[$figure_id] = $figure['name'];
++        }
++      }
++    }
++
++    asort($figure_options_unselected);
++    $figure_options += $figure_options_unselected;
++
++    return $figure_options;
++  }
++
++}
+diff --git a/src/Plugin/Field/FieldWidget/KeyFigureMultiple.php b/src/Plugin/Field/FieldWidget/KeyFigureMultiple.php
+index 6378227..e861d58 100644
+--- a/src/Plugin/Field/FieldWidget/KeyFigureMultiple.php
++++ b/src/Plugin/Field/FieldWidget/KeyFigureMultiple.php
+@@ -2,22 +2,12 @@
+ 
+ namespace Drupal\ocha_key_figures\Plugin\Field\FieldWidget;
+ 
+-use Drupal\Component\Utility\Html;
+ use Drupal\Component\Utility\NestedArray;
+-use Drupal\Core\Ajax\AjaxResponse;
+-use Drupal\Core\Ajax\ReplaceCommand;
+-use Drupal\Core\Field\FieldDefinitionInterface;
+ use Drupal\Core\Field\FieldItemListInterface;
+-use Drupal\Core\Field\WidgetBase;
+ use Drupal\Core\Form\FormStateInterface;
+-use Drupal\Core\Logger\LoggerChannelFactoryInterface;
+-use Drupal\Core\Render\RendererInterface;
+-use Drupal\ocha_key_figures\Controller\OchaKeyFiguresController;
+-use Symfony\Component\DependencyInjection\ContainerInterface;
+-use Symfony\Component\HttpFoundation\Request;
+ 
+ /**
+- * Plugin implementation of the 'key_figure' widget.
++ * Plugin implementation of the 'key_figure_multiple' widget.
+  *
+  * @FieldWidget(
+  *   id = "key_figure_multiple",
+@@ -28,109 +18,7 @@ use Symfony\Component\HttpFoundation\Request;
+  *   multiple_values = TRUE,
+  * )
+  */
+-class KeyFigureMultiple extends WidgetBase {
+-
+-  /**
+-   * Separator used by PHP and js.
+-   */
+-  protected $separator = '|-|';
+-
+-  /**
+-   * The logger service.
+-   *
+-   * @var \Psr\Log\LoggerInterface
+-   */
+-  protected $logger;
+-
+-  /**
+-   * The renderer service.
+-   *
+-   * @var \Drupal\Core\Render\RendererInterface
+-   */
+-  protected $renderer;
+-
+-  /**
+-   * The OCHA Key Figures API client.
+-   *
+-   * @var \Drupal\ocha_key_figures\Controller\OchaKeyFiguresController
+-   */
+-  protected $ochaKeyFiguresApiClient;
+-
+-  /**
+-   * Ajax wrapper ID.
+-   *
+-   * @var string
+-   */
+-  protected $ajaxWrapperId;
+-
+-  /**
+-   * {@inheritdoc}
+-   */
+-  public function __construct(
+-    $plugin_id,
+-    $plugin_definition,
+-    FieldDefinitionInterface $field_definition,
+-    array $settings,
+-    array $third_party_settings,
+-    LoggerChannelFactoryInterface $logger_factory,
+-    RendererInterface $renderer,
+-    OchaKeyFiguresController $ocha_key_figure_api_client
+-  ) {
+-    parent::__construct(
+-      $plugin_id,
+-      $plugin_definition,
+-      $field_definition,
+-      $settings,
+-      $third_party_settings
+-    );
+-    $this->logger = $logger_factory->get('unocha_figure_widget');
+-    $this->renderer = $renderer;
+-    $this->ochaKeyFiguresApiClient = $ocha_key_figure_api_client;
+-  }
+-
+-  /**
+-   * {@inheritdoc}
+-   */
+-  public static function create(
+-    ContainerInterface $container,
+-    array $configuration,
+-    $plugin_id,
+-    $plugin_definition
+-  ) {
+-    return new static(
+-      $plugin_id,
+-      $plugin_definition,
+-      $configuration['field_definition'],
+-      $configuration['settings'],
+-      $configuration['third_party_settings'],
+-      $container->get('logger.factory'),
+-      $container->get('renderer'),
+-      $container->get('ocha_key_figures.key_figures_controller')
+-    );
+-  }
+-
+-  /**
+-   * {@inheritdoc}
+-   */
+-  public static function defaultSettings() {
+-    return parent::defaultSettings();
+-  }
+-
+-  /**
+-   * {@inheritdoc}
+-   */
+-  public function settingsForm(array $form, FormStateInterface $form_state) {
+-    return [];
+-  }
+-
+-  /**
+-   * {@inheritdoc}
+-   */
+-  public function settingsSummary() {
+-    $summary = [];
+-
+-    return $summary;
+-  }
++class KeyFigureMultiple extends KeyFigureBaseWidget {
+ 
+   /**
+    * {@inheritdoc}
+@@ -139,29 +27,6 @@ class KeyFigureMultiple extends WidgetBase {
+     return TRUE;
+   }
+ 
+-  /**
+-   * Get the name of the element that triggered the form.
+-   *
+-   * @param \Drupal\Core\Form\FormStateInterface $form_state
+-   *   The form state.
+-   * @param array $element_parents
+-   *   The list of parents of the current key figure field element.
+-   *
+-   * @return string|null
+-   *   The name of the subfield of the element that was the trigger if any.
+-   */
+-  protected function getTrigger(FormStateInterface $form_state, array $element_parents) {
+-    $triggering_element = $form_state->getTriggeringElement();
+-    if (!empty($triggering_element['#array_parents'])) {
+-      $triggering_element_parents = $triggering_element['#array_parents'];
+-      $triggering_element_name = array_pop($triggering_element_parents);
+-      if ($triggering_element_parents === $element_parents) {
+-        return $triggering_element_name;
+-      }
+-    }
+-    return NULL;
+-  }
+-
    /**
     * {@inheritdoc}
     */
-@@ -142,6 +197,12 @@ class KeyFigurePresence extends WidgetBase {
+@@ -215,67 +80,15 @@ class KeyFigureMultiple extends WidgetBase {
+     $element['#prefix'] = '<div id="' . $wrapper_id . '">';
+     $element['#suffix'] = '</div>';
+ 
+-    // Get list of providers.
+-    $providers = $this->ochaKeyFiguresApiClient->getSupportedProviders();
+-
+-    $element['provider'] = [
+-      '#type' => 'select',
+-      '#title' => $this->t('Provider'),
+-      '#options' => $providers,
+-      '#default_value' => $provider,
+-      '#ajax' => $this->getAjaxSettings($this->t('Loading figure data...'), $field_parents, $wrapper_id),
+-      '#empty_option' => $this->t('- Select -'),
+-      '#empty_value' => '',
+-    ];
++    $element['provider'] = $this->getDropdownForProvider($provider, $field_parents, '', $wrapper_id);
+ 
+     // Extra fields to select the data from a provider.
+     if (isset($provider)) {
+-      // Get the list of countries for the provider.
+-      $countries = $this->getFigureCountries($provider);
+-      if (empty($countries)) {
+-        $show_no_data = TRUE;
+-      }
+-      else {
+-        $country = isset($countries[$country]) ? $country : NULL;
+-
+-        $element['country'] = [
+-          '#type' => 'select',
+-          '#title' => $this->t('Country'),
+-          '#options' => $countries,
+-          '#default_value' => $country,
+-          '#ajax' => $this->getAjaxSettings($this->t('Loading figure data...'), $field_parents, $wrapper_id),
+-          '#empty_option' => $this->t('- Select -'),
+-          '#empty_value' => '',
+-        ];
+-      }
++      $element['country'] = $this->getDropdownForCountry($provider, $country, $field_parents, '', $wrapper_id);
+ 
+       // Get the list of years for the provider and country.
+       if (!empty($country)) {
+-        $years = $this->getFigureYears($provider, $country);
+-        if (empty($years)) {
+-          $show_no_data = TRUE;
+-        }
+-        else {
+-          if ($year > 2) {
+-            $year = isset($years[$year]) ? $year : NULL;
+-          }
+-
+-          // Add option for current year and any year.
+-          $years = [
+-            '1' => $this->t('Any year'),
+-            '2' => $this->t('Current year'),
+-          ] + $years;
+-
+-          $element['year'] = [
+-            '#type' => 'select',
+-            '#title' => $this->t('Year'),
+-            '#options' => $years,
+-            '#default_value' => $year,
+-            '#ajax' => $this->getAjaxSettings($this->t('Loading figure data...'), $field_parents, $wrapper_id),
+-            '#empty_option' => $this->t('- Select -'),
+-            '#empty_value' => '',
+-          ];
+-        }
++        $element['year'] = $this->getDropdownForYears($provider, $country, $year, $field_parents, '', $wrapper_id);
+       }
+ 
+       // Get the list of figures for the provider, country and year.
+@@ -289,20 +102,7 @@ class KeyFigureMultiple extends WidgetBase {
+             $figure_ids = array_diff_key($figure_ids, $figures);
+           }
+ 
+-          // Add options in order.
+-          $figure_options = [];
+-          foreach ($figure_ids as $figure_id) {
+-            if ($figure_id == '_all') {
+-              continue;
+-            }
+-
+-            $figure_options[$figure_id] = $figures[$figure_id]['name'];
+-            unset($figures[$figure_id]);
+-          }
+-
+-          foreach ($figures as $figure_id => $figure) {
+-            $figure_options[$figure_id] = $figure['name'];
+-          }
++          $figure_options = $this->getOptionsForFigures($figures, $figure_ids);
+ 
+           // Add an "all" option.
+           $figure_options = [
+@@ -399,184 +199,4 @@ class KeyFigureMultiple extends WidgetBase {
+     return $data;
+   }
+ 
+-  /**
+-   * Get the contries available for the figure provider.
+-   *
+-   * @param string $provider
+-   *   Provider.
+-   *
+-   * @return array
+-   *   Associative array keyed by country iso3 code and with country names as
+-   *   values.
+-   */
+-  protected function getFigureCountries($provider) {
+-    $data = $this->ochaKeyFiguresApiClient->query($provider, 'countries');
+-    $countries = [];
+-    if (!empty($data)) {
+-      foreach ($data as $item) {
+-        $countries[$item['value']] = $item['label'];
+-      }
+-    }
+-
+-    asort($countries);
+-
+-    return $countries;
+-  }
+-
+-  /**
+-   * Get the years available for the figure provider and given country.
+-   *
+-   * @param string $provider
+-   *   Provider.
+-   * @param string $country
+-   *   ISO3 code of a country.
+-   *
+-   * @return array
+-   *   Associative array with year as keys and values.
+-   */
+-  protected function getFigureYears($provider, $country) {
+-    $data = $this->ochaKeyFiguresApiClient->query($provider, 'years', [
+-      'iso3' => $country,
+-      'order' => [
+-        'year' => 'desc',
+-      ],
+-    ]);
+-    $years = [];
+-    if (!empty($data)) {
+-      foreach ($data as $item) {
+-        $years[$item['value']] = $item['label'];
+-      }
+-    }
+-    // @todo add a "Latest" year option to instruct to always fetch the most
+-    // recent figure if available?
+-    return $years;
+-  }
+-
+-  /**
+-   * Get the figures available for the figure provider, country and year.
+-   *
+-   * @param string $provider
+-   *   Provider.
+-   * @param string $country
+-   *   ISO3 code of a country.
+-   * @param string $year
+-   *   Year.
+-   *
+-   * @return array
+-   *   Associative array keyed by figure ID and with figures data as values.
+-   */
+-  protected function getFigures($provider, $country, $year) {
+-    $query = [
+-      'iso3' => $country,
+-      'year' => $year,
+-      'archived' => 0,
+-    ];
+-
+-    // Special case for year.
+-    if ($year == 1) {
+-      // No need to filter.
+-      unset($query['year']);
+-    }
+-    elseif ($year == 2) {
+-      $query['year'] = date('Y');
+-    }
+-
+-    $data = $this->ochaKeyFiguresApiClient->query($provider, '', $query);
+-    $figures = [];
+-    if (!empty($data)) {
+-      foreach ($data as $item) {
+-        $figures[$item['id']] = $item;
+-      }
+-    }
+-
+-    asort($figures);
+-
+-    return $figures;
+-  }
+-
+-  /**
+-   * Get the base ajax settings for the operation in the widget.
+-   *
+-   * @param string $message
+-   *   The message to display while the request is being performed.
+-   * @param array $field_parents
+-   *   The parents of the field.
+-   * @param string $wrapper_id
+-   *   The ID of the wrapping HTML element which is going to be replaced.
+-   *
+-   * @return array
+-   *   Array with the ajax settings.
+-   */
+-  protected function getAjaxSettings($message, array $field_parents, $wrapper_id) {
+-    $path = array_merge($field_parents, ['widget']);
+-
+-    return [
+-      'callback' => [static::class, 'rebuildWidgetForm'],
+-      'options' => [
+-        'query' => [
+-          // This will be used in the ::rebuildWidgetForm() callback to
+-          // retrieve the widget.
+-          'element_path' => implode('/', $path),
+-        ],
+-      ],
+-      'wrapper' => $wrapper_id,
+-      'effect' => 'fade',
+-      'progress' => [
+-        'type' => 'throbber',
+-        'message' => $message,
+-      ],
+-      'disable-refocus' => TRUE,
+-    ];
+-  }
+-
+-  /**
+-   * Get the ajax wrapper id for the field.
+-   *
+-   * @param array $field_parents
+-   *   The parents of the field.
+-   *
+-   * @return string
+-   *   Wrapper ID.
+-   */
+-  protected function getAjaxWrapperId(array $field_parents) {
+-    return Html::getUniqueId(implode('-', $field_parents) . '-ajax-wrapper');
+-  }
+-
+-  /**
+-   * Rebuild form.
+-   *
+-   * @param array $form
+-   *   The build form.
+-   * @param \Drupal\Core\Form\FormStateInterface $form_state
+-   *   The form state.
+-   * @param \Symfony\Component\HttpFoundation\Request $request
+-   *   The current request.
+-   *
+-   * @return \Drupal\Core\Ajax\AjaxResponse
+-   *   The ajax response of the ajax upload.
+-   */
+-  public static function rebuildWidgetForm(array &$form, FormStateInterface $form_state, Request $request) {
+-    // Retrieve the updated widget.
+-    $parameter = $request->query->get('element_path');
+-    $path = is_string($parameter) ? explode('/', trim($parameter)) : NULL;
+-
+-    $response = new AjaxResponse();
+-
+-    if (isset($path)) {
+-      // The array parents are populated in the WidgetBase::afterBuild().
+-      $element = NestedArray::getValue($form, $path);
+-
+-      if (isset($element)) {
+-        // Remove the weight field as it's been handled by the tabledrag script
+-        // and would appear twice otherwise.
+-        unset($element['_weight']);
+-
+-        // This will replace the widget with the new one in the form.
+-        $response->addCommand(new ReplaceCommand(NULL, $element));
+-      }
+-    }
+-
+-    return $response;
+-  }
+-
+ }
+diff --git a/src/Plugin/Field/FieldWidget/KeyFigurePresence.php b/src/Plugin/Field/FieldWidget/KeyFigurePresence.php
+index 19ee909..c05c1ae 100644
+--- a/src/Plugin/Field/FieldWidget/KeyFigurePresence.php
++++ b/src/Plugin/Field/FieldWidget/KeyFigurePresence.php
+@@ -2,106 +2,23 @@
+ 
+ namespace Drupal\ocha_key_figures\Plugin\Field\FieldWidget;
+ 
+-use Drupal\Component\Utility\Html;
+ use Drupal\Component\Utility\NestedArray;
+-use Drupal\Core\Ajax\AjaxResponse;
+-use Drupal\Core\Ajax\ReplaceCommand;
+-use Drupal\Core\Field\FieldDefinitionInterface;
+ use Drupal\Core\Field\FieldItemListInterface;
+-use Drupal\Core\Field\WidgetBase;
+ use Drupal\Core\Form\FormStateInterface;
+-use Drupal\Core\Logger\LoggerChannelFactoryInterface;
+-use Drupal\Core\Render\RendererInterface;
+-use Drupal\ocha_key_figures\Controller\OchaKeyFiguresController;
+-use Symfony\Component\DependencyInjection\ContainerInterface;
+-use Symfony\Component\HttpFoundation\Request;
+ 
+ /**
+- * Plugin implementation of the 'key_figure' widget.
++ * Plugin implementation of the 'key_figure_presence' widget.
+  *
+  * @FieldWidget(
+  *   id = "key_figure_presence",
+- *   label = @Translation("Key Figure - Simple"),
++ *   label = @Translation("Key Figure Presence - Simple"),
+  *   field_types = {
+  *     "key_figure_presence"
+- *   }
++ *   },
++ *   multiple_values = FALSE,
+  * )
+  */
+-class KeyFigurePresence extends WidgetBase {
+-
+-  /**
+-   * The logger service.
+-   *
+-   * @var \Psr\Log\LoggerInterface
+-   */
+-  protected $logger;
+-
+-  /**
+-   * The renderer service.
+-   *
+-   * @var \Drupal\Core\Render\RendererInterface
+-   */
+-  protected $renderer;
+-
+-  /**
+-   * The OCHA Key Figures API client.
+-   *
+-   * @var \Drupal\ocha_key_figures\Controller\OchaKeyFiguresController
+-   */
+-  protected $ochaKeyFiguresApiClient;
+-
+-  /**
+-   * Ajax wrapper ID.
+-   *
+-   * @var string
+-   */
+-  protected $ajaxWrapperId;
+-
+-  /**
+-   * {@inheritdoc}
+-   */
+-  public function __construct(
+-    $plugin_id,
+-    $plugin_definition,
+-    FieldDefinitionInterface $field_definition,
+-    array $settings,
+-    array $third_party_settings,
+-    LoggerChannelFactoryInterface $logger_factory,
+-    RendererInterface $renderer,
+-    OchaKeyFiguresController $ocha_key_figure_api_client
+-  ) {
+-    parent::__construct(
+-      $plugin_id,
+-      $plugin_definition,
+-      $field_definition,
+-      $settings,
+-      $third_party_settings
+-    );
+-    $this->logger = $logger_factory->get('unocha_figure_widget');
+-    $this->renderer = $renderer;
+-    $this->ochaKeyFiguresApiClient = $ocha_key_figure_api_client;
+-  }
+-
+-  /**
+-   * {@inheritdoc}
+-   */
+-  public static function create(
+-    ContainerInterface $container,
+-    array $configuration,
+-    $plugin_id,
+-    $plugin_definition
+-  ) {
+-    return new static(
+-      $plugin_id,
+-      $plugin_definition,
+-      $configuration['field_definition'],
+-      $configuration['settings'],
+-      $configuration['third_party_settings'],
+-      $container->get('logger.factory'),
+-      $container->get('renderer'),
+-      $container->get('ocha_key_figures.key_figures_controller')
+-    );
+-  }
++class KeyFigurePresence extends KeyFigureBaseWidget {
+ 
+   /**
+    * {@inheritdoc}
+@@ -110,29 +27,6 @@ class KeyFigurePresence extends WidgetBase {
+     return FALSE;
+   }
+ 
+-  /**
+-   * Get the name of the element that triggered the form.
+-   *
+-   * @param \Drupal\Core\Form\FormStateInterface $form_state
+-   *   The form state.
+-   * @param array $element_parents
+-   *   The list of parents of the current key figure field element.
+-   *
+-   * @return string|null
+-   *   The name of the subfield of the element that was the trigger if any.
+-   */
+-  protected function getTrigger(FormStateInterface $form_state, array $element_parents) {
+-    $triggering_element = $form_state->getTriggeringElement();
+-    if (!empty($triggering_element['#array_parents'])) {
+-      $triggering_element_parents = $triggering_element['#array_parents'];
+-      $triggering_element_name = array_pop($triggering_element_parents);
+-      if ($triggering_element_parents === $element_parents) {
+-        return $triggering_element_name;
+-      }
+-    }
+-    return NULL;
+-  }
+-
+   /**
+    * {@inheritdoc}
+    */
+@@ -142,6 +36,12 @@ class KeyFigurePresence extends WidgetBase {
      $element_parents = array_merge($field_parents, ['widget', $delta]);
      $wrapper_id = $this->getAjaxWrapperId($field_parents, $delta);
  
@@ -370,16 +3282,100 @@ index 19ee909..ec3f098 100644
      $item = $items[$delta];
      $values = $form_state->getValue(array_merge($field_parents, [$delta]));
  
-@@ -201,7 +262,7 @@ class KeyFigurePresence extends WidgetBase {
-     // Get list of providers.
-     $providers = [];
+@@ -198,20 +98,7 @@ class KeyFigurePresence extends WidgetBase {
+     $element['#prefix'] = '<div id="' . $wrapper_id . '">';
+     $element['#suffix'] = '</div>';
  
+-    // Get list of providers.
+-    $providers = [];
+-
 -    $providers = $this->ochaKeyFiguresApiClient->getSupportedProviders();
-+    $providers = $this->getSupportedProviders();
+-
+-    $element['provider'] = [
+-      '#type' => 'select',
+-      '#title' => $this->t('Provider'),
+-      '#options' => $providers,
+-      '#default_value' => $provider,
+-      '#ajax' => $this->getAjaxSettings($this->t('Loading figure data...'), $field_parents, $delta, $wrapper_id),
+-      '#empty_option' => $this->t('- Select -'),
+-      '#empty_value' => '',
+-    ];
++    $element['provider'] = $this->getDropdownForProvider($provider, $field_parents, $delta, $wrapper_id);
  
-     $element['provider'] = [
-       '#type' => 'select',
-@@ -330,10 +391,25 @@ class KeyFigurePresence extends WidgetBase {
+     // Extra fields to select the data from a provider.
+     if (isset($provider) && !empty($provider)) {
+@@ -219,66 +106,23 @@ class KeyFigurePresence extends WidgetBase {
+       $value = NULL;
+       $unit = NULL;
+ 
+-      // Get the list of ochapresences for the provider.
+-      $ochapresences = $this->getFigureOchaPresences($provider);
+-      if (empty($ochapresences)) {
+-        $show_no_data = TRUE;
+-      }
+-      else {
+-        $ochapresence = isset($ochapresences[$ochapresence]) ? $ochapresence : NULL;
+-
+-        $element['ochapresence'] = [
+-          '#type' => 'select',
+-          '#title' => $this->t('ochapresence'),
+-          '#options' => $ochapresences,
+-          '#default_value' => $ochapresence,
+-          '#ajax' => $this->getAjaxSettings($this->t('Loading figure data...'), $field_parents, $delta, $wrapper_id),
+-          '#empty_option' => $this->t('- Select -'),
+-          '#empty_value' => '',
+-        ];
+-      }
++      $element['ochapresence'] = $this->getDropdownForOchaPresense($provider, $ochapresence, $field_parents, $delta, $wrapper_id);
+ 
+       // Get the list of years for the provider and ochapresence.
+       if (!empty($ochapresence)) {
+-        $years = $this->getOchaPresenceYearsByProvider($provider, $ochapresence);
+-        if (empty($years)) {
+-          $show_no_data = TRUE;
+-        }
+-        else {
+-          if ($year > 2) {
+-            $year = isset($years[$year]) ? $year : NULL;
+-          }
+-
+-          // Add option for current year and any year.
+-          $years = [
+-            '2' => $this->t('Current year'),
+-          ] + $years;
+-
+-          $element['year'] = [
+-            '#type' => 'select',
+-            '#title' => $this->t('Year'),
+-            '#options' => $years,
+-            '#default_value' => $year,
+-            '#ajax' => $this->getAjaxSettings($this->t('Loading figure data...'), $field_parents, $delta, $wrapper_id),
+-            '#empty_option' => $this->t('- Select -'),
+-            '#empty_value' => '',
+-          ];
+-        }
++        $element['year'] = $this->getDropdownForOchaPresenceYears($provider, $ochapresence, $year, $field_parents, $delta, $wrapper_id);
+       }
+ 
+       // Get the list of figures for the provider, ochapresence and year.
+       if (!empty($ochapresence) && !empty($year)) {
+-        $figures = $this->getFigures($provider, $ochapresence, $year);
++        $figures = $this->getOchaPresenceFigures($provider, $ochapresence, $year);
+         if (empty($figures)) {
+           $show_no_data = TRUE;
+         }
+         else {
+           $figure_id = isset($figures[$figure_id]) ? $figure_id : NULL;
+ 
+-          $figure_options = array_map(function ($item) {
+-            return $item['name'];
+-          }, $figures);
+-          asort($figure_options);
++          $figure_options = $this->getOptionsForFigures($figures, [$figure_id]);
+ 
+           $element['id'] = [
+             '#type' => 'select',
+@@ -330,155 +174,7 @@ class KeyFigurePresence extends WidgetBase {
        }
      }
  
@@ -387,63 +3383,405 @@ index 19ee909..ec3f098 100644
      return $element;
    }
  
-+  /**
-+   * Get the list of supported providers.
-+   *
-+   * @return array
-+   *   Associative array of providers keyed by IDs.
-+   */
-+  protected function getSupportedProviders() {
-+    $supported_providers = $this->ochaKeyFiguresApiClient->getSupportedProviders();
-+    $allowed_providers = $this->getSetting('allowed_providers');
-+    if (!empty($allowed_providers)) {
-+      $allowed_providers = array_flip(preg_split('/,\s*/', trim(strtolower($allowed_providers))));
-+      $supported_providers = array_intersect_key($supported_providers, $allowed_providers);
-+    }
-+    return $supported_providers;
-+  }
-+
-   /**
-    * Get the contries available for the figure provider.
-    *
-@@ -341,8 +417,8 @@ class KeyFigurePresence extends WidgetBase {
-    *   Provider.
-    *
-    * @return array
+-  /**
+-   * Get the contries available for the figure provider.
+-   *
+-   * @param string $provider
+-   *   Provider.
+-   *
+-   * @return array
 -   *   Associative array keyed by ochapresence iso3 code and with ochapresence names as
 -   *   values.
-+   *   Associative array keyed by ochapresence ids and with ochapresence
-+   *   names as values.
-    */
-   protected function getFigureOchaPresences($provider) {
-     return $this->ochaKeyFiguresApiClient->getOchaPresencesByProvider($provider);
-@@ -353,7 +429,7 @@ class KeyFigurePresence extends WidgetBase {
-    *
-    * @param string $provider
-    *   Provider.
+-   */
+-  protected function getFigureOchaPresences($provider) {
+-    return $this->ochaKeyFiguresApiClient->getOchaPresencesByProvider($provider);
+-  }
+-
+-  /**
+-   * Get the OCHA Presences available for the figure provider.
+-   *
+-   * @param string $provider
+-   *   Provider.
 -   * @param string $ochapresence
-+   * @param string $ocha_presence_id
-    *   OCHA Presence Id.
-    *
-    * @return array
-@@ -379,11 +455,18 @@ class KeyFigurePresence extends WidgetBase {
-   protected function getFigures($provider, $ocha_presence_id, $year) {
-     $data = $this->ochaKeyFiguresApiClient->getOchaPresenceFigures($provider, $ocha_presence_id, $year);
- 
-+    $allowed_figure_ids = $this->getSetting('allowed_figure_ids');
-+    if (!empty($allowed_figure_ids)) {
-+      $allowed_figure_ids = array_flip(preg_split('/,\s*/', trim(strtolower($allowed_figure_ids))));
-+    }
-+
-     $figures = [];
-     if (!empty($data)) {
-       foreach ($data as $item) {
+-   *   OCHA Presence Id.
+-   *
+-   * @return array
+-   *   Associative array with year as keys and values.
+-   */
+-  protected function getOchaPresenceYearsByProvider($provider, $ocha_presence_id) {
+-    return $this->ochaKeyFiguresApiClient->getOchaPresenceYearsByProvider($provider, $ocha_presence_id);
+-  }
+-
+-  /**
+-   * Get the figures available for the figure provider, OCHA Presence and year.
+-   *
+-   * @param string $provider
+-   *   Provider.
+-   * @param string $ocha_presence_id
+-   *   ISO3 code of a ocha_presence_id.
+-   * @param string $year
+-   *   Year.
+-   *
+-   * @return array
+-   *   Associative array keyed by figure ID and with figures data as values.
+-   */
+-  protected function getFigures($provider, $ocha_presence_id, $year) {
+-    $data = $this->ochaKeyFiguresApiClient->getOchaPresenceFigures($provider, $ocha_presence_id, $year);
+-
+-    $figures = [];
+-    if (!empty($data)) {
+-      foreach ($data as $item) {
 -        $figures[$item['figure_id']] = $item;
 -        $figures[$item['figure_id']]['figure_list'] = [];
-+        if (empty($allowed_figure_ids) || isset($item['figure_id'], $allowed_figure_ids[$item['figure_id']])) {
-+          $figures[$item['figure_id']] = $item;
-+          $figures[$item['figure_id']]['figure_list'] = [];
+-      }
+-    }
+-
+-    asort($figures);
+-
+-    return $figures;
+-  }
+-
+-  /**
+-   * Get the base ajax settings for the operation in the widget.
+-   *
+-   * @param string $message
+-   *   The message to display while the request is being performed.
+-   * @param array $field_parents
+-   *   The parents of the field.
+-   * @param int $delta
+-   *   The delta of the field element.
+-   * @param string $wrapper_id
+-   *   The ID of the wrapping HTML element which is going to be replaced.
+-   *
+-   * @return array
+-   *   Array with the ajax settings.
+-   */
+-  protected function getAjaxSettings($message, array $field_parents, $delta, $wrapper_id) {
+-    $path = array_merge($field_parents, ['widget', $delta]);
+-
+-    return [
+-      'callback' => [static::class, 'rebuildWidgetForm'],
+-      'options' => [
+-        'query' => [
+-          // This will be used in the ::rebuildWidgetForm() callback to
+-          // retrieve the widget.
+-          'element_path' => implode('/', $path),
+-        ],
+-      ],
+-      'wrapper' => $wrapper_id,
+-      'effect' => 'fade',
+-      'progress' => [
+-        'type' => 'throbber',
+-        'message' => $message,
+-      ],
+-      'disable-refocus' => TRUE,
+-    ];
+-  }
+-
+-  /**
+-   * Get the ajax wrapper id for the field.
+-   *
+-   * @param array $field_parents
+-   *   The parents of the field.
+-   * @param int $delta
+-   *   The delta of the field element.
+-   *
+-   * @return string
+-   *   Wrapper ID.
+-   */
+-  protected function getAjaxWrapperId(array $field_parents, $delta) {
+-    return Html::getUniqueId(implode('-', $field_parents) . '-' . $delta . '-ajax-wrapper');
+-  }
+-
+-  /**
+-   * Rebuild form.
+-   *
+-   * @param array $form
+-   *   The build form.
+-   * @param \Drupal\Core\Form\FormStateInterface $form_state
+-   *   The form state.
+-   * @param \Symfony\Component\HttpFoundation\Request $request
+-   *   The current request.
+-   *
+-   * @return \Drupal\Core\Ajax\AjaxResponse
+-   *   The ajax response of the ajax upload.
+-   */
+-  public static function rebuildWidgetForm(array &$form, FormStateInterface $form_state, Request $request) {
+-    // Retrieve the updated widget.
+-    $parameter = $request->query->get('element_path');
+-    $path = is_string($parameter) ? explode('/', trim($parameter)) : NULL;
+-
+-    $response = new AjaxResponse();
+-
+-    if (isset($path)) {
+-      // The array parents are populated in the WidgetBase::afterBuild().
+-      $element = NestedArray::getValue($form, $path);
+-
+-      if (isset($element)) {
+-        // Remove the weight field as it's been handled by the tabledrag script
+-        // and would appear twice otherwise.
+-        unset($element['_weight']);
+-
+-        // This will replace the widget with the new one in the form.
+-        $response->addCommand(new ReplaceCommand(NULL, $element));
+-      }
+-    }
+-
+-    return $response;
+-  }
+-
+ }
+diff --git a/src/Plugin/Field/FieldWidget/KeyFigurePresenceMultiple.php b/src/Plugin/Field/FieldWidget/KeyFigurePresenceMultiple.php
+new file mode 100644
+index 0000000..08abd13
+--- /dev/null
++++ b/src/Plugin/Field/FieldWidget/KeyFigurePresenceMultiple.php
+@@ -0,0 +1,235 @@
++<?php
++
++namespace Drupal\ocha_key_figures\Plugin\Field\FieldWidget;
++
++use Drupal\Component\Utility\NestedArray;
++use Drupal\Core\Field\FieldItemListInterface;
++use Drupal\Core\Form\FormStateInterface;
++
++/**
++ * Plugin implementation of the 'key_figure_presence_multiple' widget.
++ *
++ * @FieldWidget(
++ *   id = "key_figure_presence_multiple",
++ *   label = @Translation("Key Figure Presence - Multiple"),
++ *   field_types = {
++ *     "key_figure_presence"
++ *   },
++ *   multiple_values = TRUE,
++ * )
++ */
++class KeyFigurePresenceMultiple extends KeyFigureBaseWidget {
++
++  /**
++   * {@inheritdoc}
++   */
++  protected function handlesMultipleValues() {
++    return TRUE;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
++    $field_name = $this->fieldDefinition->getName();
++    $field_parents = array_merge($form['#parents'], [$field_name]);
++    $element_parents = array_merge($field_parents, ['widget']);
++    $wrapper_id = $this->getAjaxWrapperId($field_parents);
++
++    $values = $form_state->getValue($field_parents);
++
++    // Use the initial item values if there are no form input values.
++    $trigger = $this->getTrigger($form_state, $element_parents);
++    if (!$trigger) {
++      foreach ($items as $item) {
++        $values['provider'] = $item->getFigureProvider();
++        $values['ochapresence'] = $item->getFigureOchaPresence();
++        $values['year'] = $item->getFigureYear();
++        $values['id'][] = $item->getFigureId();
++      }
++    }
++    else {
++      // Unset some values based on the ajax form rebuild triggering.
++      switch ($trigger) {
++        case 'provider':
++          unset($values['ochapresence'], $values['year'], $values['id'], $values['label'], $values['value'], $values['unit']);
++          break;
++
++        case 'ochapresence':
++          unset($values['year'], $values['id'], $values['label'], $values['value'], $values['unit']);
++          break;
++
++        case 'year':
++          unset($values['id'], $values['label'], $values['value'], $values['unit']);
++          break;
++
++        case 'id':
++          unset($values['label'], $values['value'], $values['unit']);
++          break;
++      }
++
++      // Clear the user input so that the form uses the default values.
++      NestedArray::unsetValue($form_state->getUserInput(), $field_parents);
++    }
++
++    // Default values.
++    $provider = $values['provider'] ?? NULL;
++    $ochapresence = $values['ochapresence'] ?? NULL;
++    $year = $values['year'] ?? NULL;
++    $figure_ids = $values['id'] ?? [];
++
++    $show_no_data = FALSE;
++
++    // Add the ajax wrapper.
++    $element['#prefix'] = '<div id="' . $wrapper_id . '">';
++    $element['#suffix'] = '</div>';
++
++    $element['provider'] = $this->getDropdownForProvider($provider, $field_parents, '', $wrapper_id);
++
++    // Extra fields to select the data from a provider.
++    if (isset($provider) && !empty($provider)) {
++      $label = NULL;
++      $value = NULL;
++      $unit = NULL;
++
++      $element['ochapresence'] = $this->getDropdownForOchaPresense($provider, $ochapresence, $field_parents, '', $wrapper_id);
++
++      // Get the list of years for the provider and ochapresence.
++      if (!empty($ochapresence)) {
++        $element['year'] = $this->getDropdownForOchaPresenceYears($provider, $ochapresence, $year, $field_parents, '', $wrapper_id);
++      }
++
++      // Get the list of figures for the provider, ochapresence and year.
++      if (!empty($ochapresence) && !empty($year)) {
++        $figures = $this->getOchaPresenceFigures($provider, $ochapresence, $year);
++        if (empty($figures)) {
++          $show_no_data = TRUE;
 +        }
-       }
-     }
- 
++        else {
++          if (!empty($figure_ids)) {
++            $figure_ids = array_diff_key($figure_ids, $figures);
++          }
++
++          $figure_options = $this->getOptionsForFigures($figures, $figure_ids);
++
++          // Add an "all" option.
++          $figure_options = [
++            '_all' => $this->t('Display all')
++          ] + $figure_options;
++
++          $element['id'] = [
++            '#type' => 'checkboxes',
++            '#multiple' => TRUE,
++            '#title' => $this->t('Key Figures'),
++            '#options' => $figure_options,
++            '#default_value' => $figure_ids,
++            '#attributes' => [
++              'class' => ['ocha-key-figures__list'],
++            ],
++            '#description' => $this->t('Drag and drop the figures to change their display order'),
++          ];
++
++          $element['sort_order'] = [
++            '#type' => 'textarea',
++            '#title' => $this->t('Sort order'),
++            '#default_value' => implode($this->separator, array_keys($figure_options)),
++            '#wrapper_attributes' => [
++              'class' => ['hidden'],
++            ],
++          ];
++
++          $element['sort_order']['#attached']['library'][] = 'ocha_key_figures/admin';
++        }
++      }
++    }
++
++    if ($show_no_data === TRUE) {
++      $element['no_data'] = [
++        '#type' => 'item',
++        '#markup' => $this->t('No data available. This figure will not be saved.'),
++      ];
++    }
++    else {
++      if (isset($label)) {
++        $element['label'] = [
++          '#type' => 'textfield',
++          '#title' => $this->t('Label'),
++          '#default_value' => $label,
++        ];
++      }
++      if (isset($value)) {
++        $element['value'] = [
++          '#type' => 'textfield',
++          '#title' => $this->t('Value'),
++          '#default_value' => $value,
++          '#disabled' => TRUE,
++        ];
++
++        $element['unit'] = [
++          '#type' => 'textfield',
++          '#title' => $this->t('Unit'),
++          '#default_value' => $unit,
++          '#disabled' => TRUE,
++        ];
++      }
++    }
++
++
++    return $element;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function massageFormValues(array $values, array $form, FormStateInterface $form_state) {
++    if (!isset($values['provider'])) {
++      return [];
++    }
++
++    if (!isset($values['ochapresence'])) {
++      return [];
++    }
++
++    if (!isset($values['year'])) {
++      return [];
++    }
++
++    if (!isset($values['id'])) {
++      return [];
++    }
++
++    $sort_order = explode($this->separator, $values['sort_order']);
++    $figures = $this->getOchaPresenceFigures($values['provider'], $values['ochapresence'], $values['year']);
++
++    $ids = $values['id'];
++    $ids = array_filter($ids);
++    $ids = array_intersect($sort_order, $ids);
++
++    $data = [];
++    foreach ($ids as $id) {
++      if ($id == '_all') {
++        $data[] = [
++          'provider' => $values['provider'],
++          'ochapresence' => $values['ochapresence'],
++          'year' => $values['year'],
++          'id' => $id,
++          'value' => '_all',
++          'label' => '_all',
++        ];
++      }
++      elseif (isset($figures[$id])) {
++        $data[] = [
++          'provider' => $values['provider'],
++          'ochapresence' => $values['ochapresence'],
++          'year' => $values['year'],
++          'id' => $id,
++          'value' => $figures[$id]['value'],
++          'label' => $figures[$id]['name'],
++        ];
++      }
++    }
++
++    return $data;
++  }
++
++}
+diff --git a/templates/ocha-key-figures-figure.html.twig b/templates/ocha-key-figures-figure.html.twig
+index 7af6adc..cc6e2ed 100644
+--- a/templates/ocha-key-figures-figure.html.twig
++++ b/templates/ocha-key-figures-figure.html.twig
+@@ -12,6 +12,8 @@
+  * - label: figure label
+  * - value: figure value
+  * - unit: figure unit
++ * - prefix: figure prefix
++ * - suffix: figure suffix
+  * - country: country name
+  * - year: figure year
+  */
