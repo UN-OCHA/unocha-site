@@ -17,5 +17,7 @@ required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_providers: ''
+  allowed_figure_ids: ''
 field_type: key_figure

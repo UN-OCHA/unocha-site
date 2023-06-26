@@ -24,8 +24,6 @@ content:
     region: content
     settings:
       allow_manual: 'no'
-      allowed_providers: 'cbpf,fts,oct'
-      allowed_figure_ids: 'top-donors,earmarked-donors,unearmarked-donors'
     third_party_settings: {  }
   field_figures_footnote:
     type: string_textarea
@@ -40,8 +38,7 @@ content:
     weight: 1
     region: content
     settings:
-      allowed_providers: 'cbpf,fts,oct'
-      allowed_figure_ids: 'top-donors,earmarked-donors,unearmarked-donors'
+      allow_manual: 'no'
     third_party_settings: {  }
   field_url:
     type: link_default
