@@ -22,7 +22,7 @@
   border-bottom: 3px solid var(--brand-grey);
 }
 
-.uno-donors__title {
+.uno-donors__title:not(.cd-block-title) {
   position: relative;
   bottom: -3px;
   display: inline-block;
@@ -147,7 +147,7 @@ ul.uno-donors__list--with-figures .uno-donors__amount {
   position: relative;
   display: inline-block;
   width: 100%;
-  height: 10px;
+  height: 1rem;
   background: var(--brand-primary--light);
 }
 .uno-donors__amount__barchart .uno-donors--unearmarked {
@@ -155,8 +155,11 @@ ul.uno-donors__list--with-figures .uno-donors__amount {
   top: 0;
   left: 0;
   display: inline-block;
-  height: 10px;
+  height: 1rem;
   background: var(--brand-primary--dark);
+}
+.uno-donors__legend > span {
+  margin-inline-end: 1rem;
 }
 .uno-donors__legend__earmarked:after,
 .uno-donors__legend__unearmarked:after {
@@ -173,23 +176,39 @@ ul.uno-donors__list--with-figures .uno-donors__amount {
 
 /* Javascript enabled */
 .js .uno-donors button {
-  display: block;
-  margin: 24px auto 0 auto;
-  padding: 8px 12px;
-  color: var(--brand-primary--dark);
-  border: 1px solid var(--brand-primary--dark);
-  background: white;
-  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0 0;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.6s ease-out, color 0.6s ease-out;
+  text-align: center;
+  color: var(--brand-primary);
+  border: 2px solid transparent;
+  border-color: var(--brand-primary);
+  border-radius: 3px;
+  background-color: var(--cd-white);
+  box-shadow: none;
+  font-size: 1rem;
+  line-height: 1.15;
   fill: var(--brand-primary--dark);
+  -webkit-appearance: none;
 }
 .js .uno-donors--collapsible button svg {
-  fill: currentcolor;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-inline-start: 1rem;
+  margin-inline-end: 0.25rem;
+  transition: fill 0.3s ease-in;
+  fill: currentColor;
 }
 .js .uno-donors--collapsible button:hover,
 .js .uno-donors--collapsible button:active,
 .js .uno-donors--collapsible button:focus {
   color: white;
-  background: var(--brand-primary--dark);
+  border-color: var(--brand-primary--dark);
+  background-color: var(--brand-primary);
 }
 /* Overrides the default behavior when data-cd-hidden is set as the description
  * is always displayed, only the number of paragraphs changes. */
@@ -237,4 +256,16 @@ ul.uno-donors__list--with-figures .uno-donors__amount {
   max-width: var(--cd-max-content-width);
   margin-top: 3rem;
   font-size: var(--cd-font-size--small);
+}
+
+/* OCT Top donors */
+.uno-donors__legend {
+  margin: 3rem 0;
+}
+.uno-donors__list--barchart {
+  max-width: var(--cd-max-content-width);
+}
+
+.uno-donors--oct-top-donors .uno-donors__donor {
+  padding: 0;
 }
