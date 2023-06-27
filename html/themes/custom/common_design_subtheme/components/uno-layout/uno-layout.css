@@ -6,6 +6,7 @@
 :root {
   --uno-card-list-num-cols: 1;
   --uno-card-list-gap-size: 2rem;
+  --uno-card-list-gap-size--twocol: 4rem;
   --uno-card-list-gap-size--reduced: 1rem;
 }
 
@@ -19,16 +20,24 @@
   gap: var(--uno-card-list-gap-size);
 }
 
-.layout--fivecol .layout--row {
-  gap: 1rem;
+.layout--twocol .layout--row {
+  gap: var(--uno-card-list-gap-size--twocol);
 }
 
-.layout--twocol .layout--row > .layout__region,
+.layout--fivecol .layout--row {
+  gap: var(--uno-card-list-gap-size--reduced);
+}
+
 .layout--threecol .layout--row > .layout__region,
 .layout--fourcol .layout--row > .layout__region,
 .layout--fivecol .layout--row > .layout__region {
   /* stylelint-disable-next-line max-line-length */
   flex: 0 1 calc((100% / var(--uno-card-list-num-cols)) - var(--uno-card-list-gap-size) + var(--uno-card-list-gap-size) / var(--uno-card-list-num-cols));
+}
+
+.layout--twocol .layout--row > .layout__region {
+  /* stylelint-disable-next-line max-line-length */
+  flex: 0 1 calc((100% / var(--uno-card-list-num-cols)) - var(--uno-card-list-gap-size--twocol) + var(--uno-card-list-gap-size--twocol) / var(--uno-card-list-num-cols));
 }
 
 .layout--fivecol .layout--row > .layout__region {
