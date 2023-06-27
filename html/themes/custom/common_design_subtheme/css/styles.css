@@ -537,3 +537,12 @@ footer.cd-author {
 .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .rw-river-article.rw-river-article--with-preview .rw-river-article__header {
   flex-basis: 100%;
 }
+
+/* Additional spacing above page title for certain node types,
+  usually those with potentially long titles
+  */
+ @media screen and (min-width: 768px) {
+  .unocha-reliefweb-document .cd-page-title {
+    margin-top: 3rem;
+  }
+}
