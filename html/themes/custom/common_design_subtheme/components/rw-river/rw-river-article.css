@@ -38,7 +38,7 @@
   font-size: 1.25rem;
   font-weight: 500;
   color: black;
-  line-height: 1.5;
+  /* line-height: 1.5; */
 }
 .rw-river-article .rw-river-article__title a {
   color: inherit;
