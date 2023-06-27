@@ -52,9 +52,17 @@
   gap: 0;
 } */
 
+/* Matches cd-block-title */
+.rw-river__title {
+  margin-bottom: 2.5rem;
+}
+
 .layout--twocol-sidebar .cd-layout__content .rw-river__title {
   margin-bottom: 1rem;
 }
+
+
+
 
 @media screen and (min-width: 1024px) {
   .layout--twocol-sidebar .cd-layout__sidebar--wide {
@@ -99,7 +107,7 @@
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river-article .rw-river-article__content img {
   float: none;
   max-height: unset;
-  margin: 2px 0 20px;
+  margin: 2px 0 0.5rem;
   border: 1px solid var(--cd-reliefweb-brand-grey--light);
 }
 
@@ -149,6 +157,7 @@
 .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .uno-tag,
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .uno-tag {
   display: block;
+  margin-bottom: 1rem;
 }
 .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .cd-read-more,
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .cd-read-more {
