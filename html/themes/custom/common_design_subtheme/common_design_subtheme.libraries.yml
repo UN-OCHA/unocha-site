@@ -26,11 +26,17 @@ cd:
   css:
     component:
       components/cd/cd.css: {}
+      components/cd/cd-typography.css: {}
 
 cd-article:
   css:
     component:
       components/cd-article/cd-article.css: {}
+
+cd-block-title:
+  css:
+    component:
+      components/cd-block-title/cd-block-title.css: {}
 
 cd-button:
   css:

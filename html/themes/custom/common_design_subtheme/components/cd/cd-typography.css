@@ -1,0 +1,54 @@
+/**
+ * Typography
+ *
+ * Our defaults balance readability with the desire to show lots of information
+ * on screen, e.g. dashboards, column layouts, and structured content.
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  color: black;
+  font-family: var(--cd-font--roboto);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 0;
+}
+
+h1 {
+  color: var(--cd-default-text-color);
+  font-size: var(--cd-font-size--2xbase);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--cd-font-size--2xbase);
+}
+
+h3 {
+  font-size: var(--cd-font-size--large);
+}
+
+h4 {
+  font-size: var(--cd-font-size--medium);
+}
+
+h5 {
+  font-size: var(--cd-font-size--base);
+}
+
+h6 {
+  font-size: var(--cd-font-size--ref);
+}

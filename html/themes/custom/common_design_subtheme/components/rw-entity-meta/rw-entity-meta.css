@@ -183,3 +183,11 @@
   float: left;
   margin: 0 4px 0 0;
 }
+
+/* UNO display rules */
+.rw-entity-meta--core dt.rw-entity-meta__tag-label--format,
+.rw-entity-meta--core dd.rw-entity-meta__tag-value--format,
+.rw-entity-meta--core dt.rw-entity-meta__tag-label--posted,
+.rw-entity-meta--core dd.rw-entity-meta__tag-value--posted {
+  display: none;
+}

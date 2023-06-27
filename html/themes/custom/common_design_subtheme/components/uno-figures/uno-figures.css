@@ -90,6 +90,9 @@ dd.uno-figure__value {
   padding: 1rem;
   border: 3px solid var(--brand-grey);
 }
+.paragraph--type--figures .rw-river-article__attachment img {
+  width: 132px;
+}
 .paragraph--type--figures .rw-river-article__attachment a {
   display: block;
 }

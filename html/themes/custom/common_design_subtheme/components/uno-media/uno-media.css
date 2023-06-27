@@ -58,9 +58,6 @@
   margin-top: 1.25rem;
 }
 
-.layout--twocol-sidebar {
-  background-color: var(--brand-grey);
-}
 .uno-photo-gallery--two-columns {
   position: relative;
   margin-bottom: 4rem;
@@ -119,11 +116,11 @@
   display: block;
 }
 
-@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
   .layout--twocol-sidebar .cd-layout__sidebar--wide .paragraph:first-child {
     margin-top: -3rem;
   }
-}
+} */
 
 @media screen and (min-width: 1024px) {
   .node--type-media-collection.node--view-mode-card .uno-card__image {

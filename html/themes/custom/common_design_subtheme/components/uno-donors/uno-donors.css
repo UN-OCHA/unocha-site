@@ -2,9 +2,9 @@
   display: flex;
   flex-wrap: wrap;
   align-content: flex-end;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   padding: 0 0 0.5rem;
-  border-bottom: 1px solid var(--brand-grey);
+  /* border-bottom: 1px solid var(--brand-grey); */
   font-size: var(--cd-font-size--ref);
 }
 
@@ -16,9 +16,21 @@
   margin: 0;
 }
 
+.uno-donors__header {
+  position: relative;
+  margin-bottom: 2rem;
+  border-bottom: 3px solid var(--brand-grey);
+}
+
 .uno-donors__title {
-  font-size: var(--cd-font-size--medium);
-  font-weight: bold;
+  position: relative;
+  bottom: -3px;
+  display: inline-block;
+  margin: 0;
+  padding: 0.5rem 1rem 0.5rem 0;
+  border-bottom: 3px solid var(--brand-primary);
+  font-size: var(--cd-font-size--base);
+  font-weight: 500;
 }
 
 @media (min-width: 576px) {
@@ -46,8 +58,8 @@
 @media (min-width: 768px) {
   .uno-donors {
     margin-bottom: 0.75rem;
-    padding: 0.75rem 1rem;
-    border-top: 1px solid var(--brand-grey);
+    padding: 0.75rem 0 0;
+    /* border-top: 1px solid var(--brand-grey); */
   }
 
   .uno-donors + .uno-donors {
@@ -207,12 +219,22 @@ ul.uno-donors__list--with-figures .uno-donors__amount {
 /* External link to Donor sources */
 .uno-donors__more {
   margin-top: 2rem;
-  text-align: center;
+  text-align: left;
 }
+
+.uno-donors__more::after {
+  display: inline-block;
+  overflow: hidden;
+  width: 12px;
+  height: 12px;
+  margin: 0 0 0 3px;
+  content: "";
+  background: var(--rw-icons--common--external-link--12--dark-blue);
+}
+
 /* Donors footnote for OCT Unearmarked */
 .uno-donors__footnote {
   max-width: var(--cd-max-content-width);
-  margin-top: 1rem;
-  padding: 0 1rem;
+  margin-top: 3rem;
   font-size: var(--cd-font-size--small);
 }
