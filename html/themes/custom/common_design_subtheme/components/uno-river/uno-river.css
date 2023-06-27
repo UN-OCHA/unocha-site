@@ -1,7 +1,7 @@
 /* RW River paragraph */
 :root {
   --rw-card-list-num-cols: 1;
-  --rw-card-list-gap-size: 2rem;
+  --rw-card-list-gap-size: 4rem;
 }
 
 .rw-river-article .rw-river-article__header {
@@ -58,7 +58,7 @@
 
 @media screen and (min-width: 1024px) {
   .layout--twocol-sidebar .cd-layout__sidebar--wide {
-    flex-basis: 380px;
+    flex-basis: 33%;
     margin-top: 4.25rem; /* The height of the main column's title */
   }
 }

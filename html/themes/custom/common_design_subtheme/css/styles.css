@@ -247,7 +247,7 @@
 } */
 
 .paragraph--type--donors + .paragraph--type--donors {
-  margin-top: 2rem;
+  margin-top: -4rem;
 }
 
 /* Donors following Figures (in a Section), reduce margin */
@@ -322,7 +322,6 @@
   text-transform: uppercase;
   color: var(--brand-primary--dark);
   font-size: 1.0625rem; /* 17px */
-  font-weight: 500;
  }
 
 .node--type-response > header > .uno-tag,
@@ -525,4 +524,16 @@ footer.cd-author {
   margin: 0 0 0 6px;
   content: "";
   background: var(--rw-icons--common--arrow-right--8--dark-blue);
+}
+
+/* Hide images on RW river items in the sidebar column
+  This is specifically for Humanitarian resources and might positively or not
+  affect other contexts where this layout is used
+*/
+.cd-layout__sidebar--wide .rw-river-article--with-preview .rw-river-article__content img {
+  display: none;
+}
+
+.paragraph--type--reliefweb-river.paragraph--view-mode--teasers .rw-river-article.rw-river-article--with-preview .rw-river-article__header {
+  flex-basis: 100%;
 }
