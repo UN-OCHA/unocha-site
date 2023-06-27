@@ -4,23 +4,48 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.donors.field_countries
+    - field.field.paragraph.donors.field_country_donors
     - field.field.paragraph.donors.field_donor_type
     - field.field.paragraph.donors.field_figures_footnote
+    - field.field.paragraph.donors.field_presence_donors
     - field.field.paragraph.donors.field_url
     - paragraphs.paragraphs_type.donors
   module:
     - link
+    - unocha_donors
 id: paragraph.donors.default
 targetEntityType: paragraph
 bundle: donors
 mode: default
 content:
+  field_country_donors:
+    type: unocha_donors
+    label: hidden
+    settings:
+      format: long
+      precision: '1'
+      currency_symbol: 'yes'
+      percentage: 'yes'
+    third_party_settings: {  }
+    weight: 0
+    region: content
   field_figures_footnote:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 2
+    region: content
+  field_presence_donors:
+    type: unocha_donors
+    label: hidden
+    settings:
+      format: long
+      precision: '1'
+      currency_symbol: 'yes'
+      percentage: 'yes'
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_url:
     type: link
@@ -32,7 +57,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
 hidden:
   field_countries: true
