@@ -70,6 +70,7 @@
   color: var(--brand-default-text-color);
 }
 
+.cd-card__title:first-child,
 .cd-card__title {
   margin-top: 1rem;
 }
@@ -102,7 +103,8 @@
 }
 
 @media screen and (min-width: 480px) {
-  .node--type-response.cd-card .cd-card__footer {
+  /* Story always has a date before the read more in the footer. */
+  article:not(.node--type-story).cd-card .cd-card__footer {
     display: block;
   }
 }
