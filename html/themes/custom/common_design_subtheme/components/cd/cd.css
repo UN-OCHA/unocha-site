@@ -223,6 +223,7 @@ a.cd-footer-social__link svg {
 
 .cd-user-menu a {
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 /* .cd-user-menu li:only-child a {
