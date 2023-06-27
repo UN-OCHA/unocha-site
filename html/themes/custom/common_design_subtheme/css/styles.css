@@ -56,10 +56,15 @@
 
 /* Unset cd-article p auto margins */
 .paragraph--type--section .cd-article p,
-.field--name-body > ul {
+.field--name-body > ul,
+.field--name-field-text > ul {
   max-width: var(--cd-max-content-width);
   margin-right: unset;
   margin-left: unset;
+}
+.field--name-body > ul li,
+.field--name-field-text > ul li {
+  padding-bottom: 0.5rem;
 }
 
 .cd-article p {
