@@ -57,9 +57,9 @@
 .cd-card__title,
 .cd-card__title a {
   display: block;
+  color: black;
   font-size: 1.25rem;
   font-weight: 500;
-  color: black;
 }
 .cd-card__title {
   margin-bottom: 0.5rem;

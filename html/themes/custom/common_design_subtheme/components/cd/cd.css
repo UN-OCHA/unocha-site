@@ -222,8 +222,8 @@ a.cd-footer-social__link svg {
 }
 
 .cd-user-menu a {
-  font-weight: bold;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 /* .cd-user-menu li:only-child a {

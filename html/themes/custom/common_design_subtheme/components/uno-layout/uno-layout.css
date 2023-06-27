@@ -129,6 +129,6 @@
 }
 
 .layout--twocol-sidebar {
-  background-color: var(--brand-grey);
   padding: 2rem;
+  background-color: var(--brand-grey);
 }
