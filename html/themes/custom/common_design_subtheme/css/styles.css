@@ -80,11 +80,15 @@
 
 .node--type-event .field--name-field-event-date,
 .node--type-event .field--name-field-event-location,
-.node--view-mode-full .field--name-field-event-image,
+.node--type-event.node--view-mode-full .field--name-field-event-image,
 .node--type-event .uno-event__link,
 .node--type-event .field--name-field-response,
 .node--type-story .field--name-field-theme {
   margin-bottom: 1rem;
+}
+
+.node--type-event.node--view-mode-card .uno-event__link {
+  margin-bottom: 2rem;
 }
 
 /* .node--view-mode-full .paragraph .field--name-field-title,
@@ -352,6 +356,16 @@
   display: flex;
   align-items: baseline;
 }
+
+/* Match cd-block-title */
+.view-header h2 {
+  margin: 0 0 2.5rem 0;
+  letter-spacing: 0.5px;
+  font-size: var(--cd-font-size--2xbase);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
 .uno-stories .uno-stories__view_all,
 .view-header .views-display-link {
   flex: 1 0 auto;
