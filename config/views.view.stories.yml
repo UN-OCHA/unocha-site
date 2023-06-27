@@ -184,7 +184,7 @@ display:
     display_plugin: block
     position: 1
     display_options:
-      title: 'Latest news and stories'
+      title: 'Latest news'
       empty:
         area_text_custom:
           id: area_text_custom
@@ -219,56 +219,6 @@ display:
           value:
             story: story
           group: 1
-        field_story_type_target_id_verf:
-          id: field_story_type_target_id_verf
-          table: node__field_story_type
-          field: field_story_type_target_id_verf
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: verf
-          operator: in
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_story_type_target_id_verf_op
-            label: 'Story type'
-            description: ''
-            use_operator: false
-            operator: field_story_type_target_id_verf_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: type
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-            reduce: 0
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          verf_target_bundles:
-            story_type: story_type
-            country: '0'
-            event_type: '0'
-            regional_offices: '0'
-            response_type: '0'
-            theme: '0'
-          show_unpublished: 0
         field_country_target_id_verf:
           id: field_country_target_id_verf
           table: node__field_country
@@ -469,7 +419,7 @@ display:
         - taxonomy_term_list
   block_3:
     id: block_3
-    display_title: 'News and Briefings'
+    display_title: News
     display_plugin: block
     position: 2
     display_options:
@@ -518,7 +468,6 @@ display:
           plugin_id: verf
           operator: in
           value:
-            324: '324'
             65: '65'
           group: 1
           exposed: false
