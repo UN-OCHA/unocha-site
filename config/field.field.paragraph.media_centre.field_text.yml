@@ -1,0 +1,26 @@
+uuid: 1f0fd93f-9bfa-406b-b242-413f8abf236f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.media_centre
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - ckeditor
+id: paragraph.media_centre.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: media_centre
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
