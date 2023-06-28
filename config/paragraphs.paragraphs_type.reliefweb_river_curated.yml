@@ -1,0 +1,10 @@
+uuid: c586820d-3b51-4972-9289-85abe40773a0
+langcode: en
+status: true
+dependencies: {  }
+id: reliefweb_river_curated
+label: 'ReliefWeb - River - Curated'
+icon_uuid: null
+icon_default: null
+description: 'Manually curated list of ReliefWeb documents.'
+behavior_plugins: {  }

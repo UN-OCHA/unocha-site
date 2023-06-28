@@ -1,14 +1,15 @@
-uuid: ee828711-2d2f-4ce2-bbf9-5a4d13021ef0
+uuid: 56d99469-180b-49d3-acab-95000fe9153f
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.teasers
-    - field.field.paragraph.reliefweb_river.field_reliefweb_river
-    - field.field.paragraph.reliefweb_river.field_text
-    - field.field.paragraph.reliefweb_river.field_title
-    - field.field.paragraph.reliefweb_river.paragraph_view_mode
-    - paragraphs.paragraphs_type.reliefweb_river
+    - field.field.paragraph.reliefweb_river_curated.field_limit
+    - field.field.paragraph.reliefweb_river_curated.field_reliefweb_documents
+    - field.field.paragraph.reliefweb_river_curated.field_text
+    - field.field.paragraph.reliefweb_river_curated.field_title
+    - field.field.paragraph.reliefweb_river_curated.paragraph_view_mode
+    - paragraphs.paragraphs_type.reliefweb_river_curated
   module:
     - layout_builder
     - text
@@ -17,19 +18,19 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: paragraph.reliefweb_river.teasers
+id: paragraph.reliefweb_river_curated.teasers
 targetEntityType: paragraph
-bundle: reliefweb_river
+bundle: reliefweb_river_curated
 mode: teasers
 content:
-  field_reliefweb_river:
-    type: reliefweb_river
+  field_reliefweb_documents:
+    type: reliefweb_document_river
     label: hidden
     settings:
       white_label: true
+      ocha_only: true
       view_all_link: false
       paginated: false
-      ocha_only: true
     third_party_settings: {  }
     weight: 2
     region: content
@@ -49,4 +50,5 @@ content:
     weight: 0
     region: content
 hidden:
+  field_limit: true
   paragraph_view_mode: true
