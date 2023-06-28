@@ -61,9 +61,6 @@
   margin-bottom: 1rem;
 }
 
-
-
-
 @media screen and (min-width: 1024px) {
   .layout--twocol-sidebar .cd-layout__sidebar--wide {
     flex-basis: 33%;
@@ -213,3 +210,9 @@
 .paragraph--type--reliefweb-river.paragraph--view-mode--default .rw-river__articles article .rw-river-article__title {
   margin: 0.5rem 0 1rem;
 }
+
+.paragraph--view-mode--default-paginated .rw-river-article__title,
+.paragraph--view-mode--default .rw-river-article__title {
+  margin-bottom: 1rem;
+}
+
