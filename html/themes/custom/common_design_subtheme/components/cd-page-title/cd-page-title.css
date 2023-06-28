@@ -24,7 +24,10 @@
 
 .page-node-type-event .cd-page-title,
 .unocha-reliefweb-document .cd-page-title,
-.page-node-type-basic .cd-page-title {
+.page-node-type-basic .cd-page-title,
+.page-node-type-leader .cd-page-title,
+.page-node-type-resource .cd-page-title,
+.page-node-type-media-collection .cd-page-title {
   color: var(--cd-black);
 }
 
