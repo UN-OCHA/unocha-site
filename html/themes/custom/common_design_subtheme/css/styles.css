@@ -150,7 +150,8 @@
 .paragraph--type--subscribe,
 .paragraph--type--cbpf,
 .paragraph--type--donors,
-.paragraph--type--figures {
+.paragraph--type--figures,
+.paragraph--type--media-centre {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -167,7 +168,8 @@
   .paragraph--type--subscribe,
   .paragraph--type--cbpf,
   .paragraph--type--donors,
-  .paragraph--type--figures {
+  .paragraph--type--figures,
+  .paragraph--type--media-centre {
     margin-top: 6rem;
     margin-bottom: 6rem;
   }
