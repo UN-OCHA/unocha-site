@@ -226,6 +226,11 @@ a.cd-footer-social__link svg {
   font-weight: bold;
 }
 
+.cd-user-menu a:hover,
+.cd-user-menu a:focus {
+  color: white;
+}
+
 /* .cd-user-menu li:only-child a {
   font-weight: bold;
   padding-inline-end: 0;
