@@ -7,8 +7,8 @@ dependencies:
     - node.type.media_collection
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.layout
-    - paragraphs.paragraphs_type.media_centre
     - paragraphs.paragraphs_type.reliefweb_document
+    - paragraphs.paragraphs_type.reliefweb_river
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.text_and_image
     - paragraphs.paragraphs_type.video
@@ -28,10 +28,10 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      media_centre: media_centre
       image: image
       layout: layout
       reliefweb_document: reliefweb_document
+      reliefweb_river: reliefweb_river
       text: text
       text_and_image: text_and_image
       video: video
@@ -42,6 +42,9 @@ settings:
         enabled: false
       campaign:
         weight: 24
+        enabled: false
+      cbpf:
+        weight: 28
         enabled: false
       donors:
         weight: 25
@@ -63,9 +66,9 @@ settings:
         enabled: false
       media_centre:
         weight: 24
-        enabled: true
-      media_item:
-        weight: 31
+        enabled: false
+      news_and_stories:
+        weight: 36
         enabled: false
       node:
         weight: 32
@@ -78,6 +81,9 @@ settings:
         enabled: true
       reliefweb_river:
         weight: 35
+        enabled: true
+      reliefweb_river_curated:
+        weight: 41
         enabled: false
       resources:
         weight: 36
