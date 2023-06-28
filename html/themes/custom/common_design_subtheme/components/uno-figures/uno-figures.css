@@ -32,7 +32,7 @@
 dt.uno-figure__label-wrapper {
   flex: 0 0 auto;
   width: 100%;
-  padding: 0 0 1rem 0;
+  padding: 0;
 }
 
 .uno-figure__value {
@@ -90,11 +90,26 @@ dd.uno-figure__value {
   padding: 1rem;
   border: 3px solid var(--brand-grey);
 }
+.paragraph--type--figures .rw-river-article__attachment {
+  width: 12rem;
+  text-align: center;
+}
 .paragraph--type--figures .rw-river-article__attachment img {
-  width: 132px;
+  width: 100%;
 }
 .paragraph--type--figures .rw-river-article__attachment a {
   display: block;
+  font-weight: 500;
+
+}
+.paragraph--type--figures .rw-river-article__attachment a::after {
+  display: inline-block;
+  overflow: hidden;
+  width: 12px;
+  height: 12px;
+  margin: 0 0 0 6px;
+  content: "";
+  background: var(--rw-icons--common--download--12--dark-blue);
 }
 
 @media screen and (min-width: 1024px) {
@@ -102,7 +117,7 @@ dd.uno-figure__value {
     display: flex;
   }
   .uno-figures__wrapper {
-    flex: 1 0 auto;
+    flex: 0 1 100%;
   }
   .paragraph--type--figures .rw-river-article {
     padding-top: 0;
