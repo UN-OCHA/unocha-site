@@ -172,7 +172,7 @@ class ReliefWebRiver extends FormatterBase {
         $pager_id = $this->pagerManager->getMaxPagerElementId() + 1;
       }
 
-      $offset = isset($pager_id) ? $this->pagerManager->findPage($pager_id) : 0;
+      $offset = (isset($pager_id) ? $this->pagerManager->findPage($pager_id) : 0) * $limit;
 
       $data = $this->getReliefWebDocuments()->getRiverDataFromUrl($url, $limit, $offset, NULL, $white_label);
       if (empty($data['entities'])) {

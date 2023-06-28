@@ -104,6 +104,7 @@ class ReliefWebDocuments {
         'label' => $this->t('Jobs'),
         'bundle' => 'job',
         'fields' => ['url_alias'],
+        'sort' => ['date.created:desc'],
         'parse' => [$this, 'parseJobsApiData'],
       ],
       'training' => [
@@ -112,10 +113,11 @@ class ReliefWebDocuments {
         'label' => $this->t('Training'),
         'bundle' => 'training',
         'fields' => ['url_alias'],
+        'sort' => ['date.created:desc'],
         'parse' => [$this, 'parseReportsApiData'],
       ],
       'updates' => [
-        'river' => 'udpates',
+        'river' => 'updates',
         'resource' => 'reports',
         'label' => $this->t('Updates'),
         'bundle' => 'report',
@@ -127,6 +129,7 @@ class ReliefWebDocuments {
           'format',
           'date',
           'body-html',
+          'country',
         ],
         // @todo if all the OCHA documents get tagged with an OCHA product then
         // replace this filter with a `'field' => 'ocha_product'` (ref: RW-765).
@@ -135,6 +138,7 @@ class ReliefWebDocuments {
           'field' => 'source.shortname.exact',
           'value' => 'OCHA',
         ],
+        'sort' => ['date.original:desc'],
         'parse' => [$this, 'parseReportsApiData'],
       ],
     ];
@@ -234,6 +238,72 @@ class ReliefWebDocuments {
   }
 
   /**
+   * Get the parsed data retrieved from the API for a river.
+   *
+   * @param string $river_name
+   *   The ReliefWeb river name for the documents.
+   * @param array $urls
+   *   The URL of the river.
+   * @param int $limit
+   *   Number of items to retrieve from the API. Defaults to 5.
+   * @param int $offset
+   *   Number of items from which to start retrieving results. Defaults to 0.
+   * @param array $filter
+   *   Optional filter to further limit the document to return.
+   * @param bool $white_label
+   *   Whether to white label the ReliefWeb article URL or not.
+   *
+   * @return array
+   *   An associative array with the river information and the document entities
+   *   data usable in templates.
+   */
+  public function getRiverDataFromDocumentUrls($river_name, array $urls, $limit = 5, $offset = 0, array $filter = NULL, $white_label = TRUE) {
+    if (empty($urls)) {
+      return [];
+    }
+
+    $river = $this->getRiver($river_name);
+    if (empty($river)) {
+      return [];
+    }
+
+    $river_url = $this->getConfig()->get('reliefweb_website') . '/' . $river['river'];
+    $payload = $this->getPayloadFromUrl($river_url);
+    if (empty($payload)) {
+      return [];
+    }
+
+    // Filters for the URL lookup to retrieve the ReliefWeb document.
+    $lookup_filter = [
+      'conditions' => [],
+      'operator' => 'OR',
+    ];
+    foreach ($urls as $url) {
+      $lookup_filter['conditions'][] = [
+        'field' => 'url_alias',
+        'value' => $url,
+      ];
+
+      // Also use the "redirects" field for the lookup if instructed so.
+      if (!empty($this->getConfig()->get('reliefweb_api_use_redirects'))) {
+        $lookup_filter['conditions'][] = [
+          'field' => 'redirects',
+          'value' => $url,
+        ];
+      }
+    }
+    $payload = [
+      'filter' => $lookup_filter,
+    ];
+
+    if (!empty($offset)) {
+      $payload['offset'] = $offset;
+    }
+
+    return $this->getDocumentsFromPayload($river, $payload, $limit, $filter, $white_label);
+  }
+
+  /**
    * Get the parsed data retrieved from the API for the given river and paylaod.
    *
    * @param array $river
@@ -278,6 +348,11 @@ class ReliefWebDocuments {
       else {
         $payload['filter'] = $filter;
       }
+    }
+
+    // Set the ordering.
+    if (isset($river['sort'])) {
+      $payload['sort'] = array_unique(array_merge($river['sort'], $payload['sort'] ?? []));
     }
 
     // Get the API data.

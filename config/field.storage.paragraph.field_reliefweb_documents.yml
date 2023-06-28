@@ -1,0 +1,19 @@
+uuid: f6afc0e3-4e89-4f97-938c-ca36e10fd2ae
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - unocha_reliefweb
+id: paragraph.field_reliefweb_documents
+field_name: field_reliefweb_documents
+entity_type: paragraph
+type: reliefweb_document
+settings: {  }
+module: unocha_reliefweb
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
