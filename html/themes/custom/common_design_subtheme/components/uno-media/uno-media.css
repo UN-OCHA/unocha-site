@@ -60,21 +60,14 @@
 
 .uno-photo-gallery--two-columns {
   position: relative;
-  margin-bottom: 4rem;
+  margin: 4rem 0;
   padding: 2rem;
   background-color: var(--brand-grey);
 }
 
-/* .node--view-mode-full .uno-photo-gallery--two-columns .field--name-field-text {
-  margin-bottom: 1rem;
-} */
-
-.uno-photo-gallery--two-columns.cd-layout__sidebar {
-  position: relative;
-}
-
 .uno-button__video {
-  margin-bottom: 2rem;
+  margin: 2rem 0 4rem;
+  text-align: center;
 }
 
 .uno-button__collection {

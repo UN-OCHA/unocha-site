@@ -141,12 +141,14 @@
 
       <div class="cd-layout__sidebar cd-layout__sidebar--wide">
         {% if node.field_video_download.0.url %}
-          <a href="{{ node.field_video_download.0.url }}" target="_blank" class="uno-button__video cd-button cd-button--bold cd-button--icon">
+        <div class="uno-button__video">
+          <a href="{{ node.field_video_download.0.url }}" target="_blank" class="cd-button cd-button--bold cd-button--icon">
             <span class="cd-button__text">{% trans %}Download full-resolution video{% endtrans %}</span>
             <svg class="cd-icon cd-icon--external-link" aria-hidden="true" focusable="false" width="16" height="16">
               <use xlink:href="#cd-icon--external-link"></use>
             </svg>
           </a>
+        </div>
         {% endif %}
       </div>
     </div>
@@ -173,7 +175,7 @@
       {% endif %}
       <div class="cd-author__content">
         <div{{author_attributes.addClass('node__submitted')}}>
-          {% trans %}Submitted on
+          {% trans %}Posted on
           {{ unochaDate }}{% endtrans %}
           {{ metadata }}
         </div>

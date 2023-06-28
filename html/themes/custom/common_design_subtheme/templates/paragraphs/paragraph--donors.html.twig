@@ -52,7 +52,7 @@
       {{ content.donors }}
       {{ content|without('donors', 'field_url', 'field_figures_footnote') }}
 
-      {% if content.field_figures_footnote %}
+      {% if content.field_figures_footnote|render %}
         <div class="uno-donors__footnote">
           {% if paragraph.field_donor_type.0.value == 'oct_unearmarked_donors' %}
             {{ content.field_figures_footnote }}

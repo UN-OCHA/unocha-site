@@ -28,7 +28,7 @@ content:
     settings:
       trim_length: 160
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_response_image:
     type: entity_reference_entity_view
@@ -39,11 +39,6 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
-    region: content
 hidden:
   field_active_response: true
   field_country: true
@@ -53,3 +48,4 @@ hidden:
   field_region: true
   field_response_link: true
   langcode: true
+  links: true

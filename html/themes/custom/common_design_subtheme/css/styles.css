@@ -149,7 +149,8 @@
 .paragraph--type--reliefweb-document,
 .paragraph--type--subscribe,
 .paragraph--type--cbpf,
-.paragraph--type--donors {
+.paragraph--type--donors,
+.paragraph--type--figures {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -165,9 +166,22 @@
   .paragraph--type--content-list,
   .paragraph--type--subscribe,
   .paragraph--type--cbpf,
-  .paragraph--type--donors {
+  .paragraph--type--donors,
+  .paragraph--type--figures {
     margin-top: 6rem;
     margin-bottom: 6rem;
+  }
+}
+
+.paragraph--type--subscribe {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+@media screen and (min-width: 768px) {
+  .paragraph--type--subscribe {
+    margin-top: 12rem;
+    margin-bottom: 12rem;
   }
 }
 
@@ -199,34 +213,14 @@
   }
 }
 
-/* No top margin on first paragraph type */
-.field--name-field-custom-content .paragraph:first-child {
-  margin-top: 0;
-}
-
-.field--name-field-custom-content .paragraph:last-child {
-  margin-bottom: 0;
-}
-
-.node--view-mode-full .cd-layout-main-content > .field--name-body {
-  margin-bottom: 6rem;
-}
-.node--view-mode-full .node--view-mode-teaser .field--name-body {
-  margin-bottom: 0;
-}
-
-.paragraph--type--text-and-image .field--name-field-text > p:first-child,
-.paragraph--type--text .field--name-field-text > p:first-child {
-  margin-top: 0;
-}
-
+/* Layouts vertical rhythm */
 .paragraph--type--layout {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
 @media screen and (min-width: 768px) {
-  .paragraph--type--layout:first-child {
+  .paragraph--type--layout {
     margin-top: 6rem;
     margin-bottom: 6rem;
   }
@@ -255,8 +249,11 @@
   }
 } */
 
-.paragraph--type--donors + .paragraph--type--donors {
-  margin-top: -4rem;
+/* Donors followed by Donors */
+@media screen and (min-width: 768px) {
+  .paragraph--type--donors + .paragraph--type--donors {
+    margin-top: -4rem;
+  }
 }
 
 /* Donors following Figures (in a Section), reduce margin */
@@ -268,12 +265,12 @@
 }
 
 /* Donors followed by layout */
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .paragraph--type--donors + .paragraph--type--layout {
     margin-top: 6rem;
     margin-bottom: 2rem;
   }
-}
+} */
 
 /* River followed by another river */
 .paragraph--type--reliefweb-river + .paragraph--type--reliefweb-river {
@@ -310,6 +307,27 @@
 
 .paragraph--type--cbpf .cd-button {
   margin: 2rem auto 0;
+}
+
+/* No top margin on first paragraph type */
+.field--name-field-custom-content .paragraph:first-child {
+  margin-top: 0;
+}
+
+.field--name-field-custom-content .paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.node--view-mode-full .cd-layout-main-content > .field--name-body {
+  margin-bottom: 6rem;
+}
+.node--view-mode-full .node--view-mode-teaser .field--name-body {
+  margin-bottom: 0;
+}
+
+.paragraph--type--text-and-image .field--name-field-text > p:first-child,
+.paragraph--type--text .field--name-field-text > p:first-child {
+  margin-top: 0;
 }
 
 /* Video embed aspect ratio is calculated in the oembed-video field template. */
@@ -465,6 +483,7 @@
 .pager {
   margin-top: 3rem;
 }
+
 @media screen and (min-width: 768px) {
   .pager {
     margin-top: 6rem;
