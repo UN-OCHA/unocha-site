@@ -62,35 +62,19 @@
   {# Convert the dates to ISO 8601 so we can easily compare the year, month etc. #}
   {% set start = item.value|date('c', timezone) %}
   {% set end = item.end_value|date('c', timezone) %}
-  {% set same_day = start[0:10] == end[0:10] %}
+  {% set same_day = start == end %}
+
   <dl{{ attributes.addClass('field__item', 'uno-event-date') }}>
-    <div class="uno-event-date__wrapper uno-event-date__wrapper--date">
-      <dt class="uno-event-date__label">Date: </dt>
-      {% apply spaceless %}
-      <dd class="uno-event-date__date">
-        {% set start_format = 'unocha_date' %}
-        {% if not same_day %}
-          {# Only show the day for the start date if it's the same month and year. #}
-          {% if start[0:7] == end[0:7] %}
-            {% set start_format = 'unocha_day' %}
-          {# Only show the day and month for the start date if it's the same year. #}
-          {% elseif start[0:4] == end[0:4] %}
-            {% set start_format = 'unocha_day_month' %}
-          {% endif %}
-        {% endif %}
-        <time class="uno-event-date__date__start" datetime="{{ start }}">{{ start|date('U')|format_date(start_format, timezone=timezone) }}</time>
-        {# Do not show the end date if it's the same day. #}
-        {% if not same_day %}
-        <span class="uno-event-date__date__separator">&ndash;</span>
-        <time class="uno-event-date__date__end" datetime="{{ end }}">{{ end|date('U')|format_date('unocha_date', timezone=timezone) }}</time>
-        {% endif %}
-      </dd>
-      {% endapply %}
+    <div class="uno-event-date__wrapper uno-event-date__wrapper--date uno-event-date__wrapper--date--start">
+      <dt class="uno-event-date__label">{{ same_day ? 'Date:'|t : 'Start date:'|t }}</dt>
+      <dd class="uno-event-date__date"><time class="uno-event-date__date__value" datetime="{{ start }}">{{ start|date('U')|format_date('unocha', timezone=timezone) }}</time></dd>
     </div>
-    <div class="uno-event-date__wrapper uno-event-date__wrapper--time">
-      <dt class="uno-event-date__label">Time: </dt>
-      <dd class="uno-event-date__time">{{ start|date('U')|format_date('unocha_time', timezone=timezone) }} - {{ end|date('U')|format_date('unocha_time', timezone=timezone) }}</dd>
+    {% if not same_day %}
+    <div class="uno-event-date__wrapper uno-event-date__wrapper--date uno-event-date__wrapper--date--end">
+      <dt class="uno-event-date__label">{{ 'End date:'|t }}</dt>
+      <dd class="uno-event-date__date"><time class="uno-event-date__date__value" datetime="{{ end }}">{{ end|date('U')|format_date('unocha', timezone=timezone) }}</time></dd>
     </div>
+    {% endif %}
   </dl>
 {% endmacro %}
 
