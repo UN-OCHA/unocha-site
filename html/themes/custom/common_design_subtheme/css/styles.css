@@ -403,7 +403,7 @@
   margin-bottom: 2rem;
  }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .view-filters {
     margin-bottom: 4rem;
   }
@@ -450,7 +450,7 @@
   }
 }
 
-@media (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .views-exposed-form.cd-form .cd-form--inline > .cd-form__item {
     flex: 1 0 20%;
     max-width: 20%;
@@ -459,6 +459,15 @@
 
   .views-exposed-form.cd-form .cd-form--inline .form-actions {
     padding-inline-end: 0;
+  }
+}
+
+.pager {
+  margin-top: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .pager {
+    margin-top: 6rem;
   }
 }
 

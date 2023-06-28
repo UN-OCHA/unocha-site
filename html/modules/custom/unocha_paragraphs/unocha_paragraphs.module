@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Menu\MenuLinkInterface;
 use Drupal\Core\Menu\MenuLinkTreeElement;
@@ -338,4 +339,84 @@ function unocha_paragraphs_get_nodes_from_menu_links(array $menu_links) {
       ->loadMultiple($node_ids);
   }
   return [];
+}
+
+/**
+ * Implements hook_field_widget_single_element_WIDGET_TYPE_form_alter().
+ *
+ * Show a list of event type terms as options for the view argument of
+ * the events paragraph type's field_events.
+ */
+function unocha_paragraphs_field_widget_single_element_viewsreference_select_form_alter(array &$element, FormStateInterface $form_state, array $context) {
+  if (isset($context['items'], $element['options']) && $context['items']->getName() === 'field_events') {
+    $entity_type_manager = \Drupal::entityTypeManager();
+
+    $element['options']['#type'] = 'fieldset';
+
+    // Show the available event types to pass as argument to filter the view.
+    if (isset($element['options']['argument'])) {
+      $entity_type_manager = \Drupal::entityTypeManager();
+
+      $element['options']['argument']['#title'] = t('Event type');
+      $element['options']['argument']['#weight'] = -2;
+
+      $terms = $entity_type_manager->getStorage('taxonomy_term')->loadByProperties([
+        'vid' => 'event_type',
+      ]);
+
+      if (!empty($terms)) {
+        $options = array_map(function ($term) {
+          return $term->label();
+        }, $terms);
+
+        $element['options']['argument']['#type'] = 'select';
+        $element['options']['argument']['#options'] = $options;
+        $element['options']['argument']['#empty_value'] = '';
+        $element['options']['argument']['#empty_option'] = t('All');
+
+        // Retrieve the list of view display IDs that accept an event type
+        // term as argument. We'll only show the argument field for those.
+        $event_type_condition = [];
+        if (isset($element['display_id'])) {
+          $view_id = $element['target_id']['#default_value'];
+          $view = $entity_type_manager->getStorage('view')->load($view_id);
+          if (isset($view)) {
+            foreach ($element['display_id']['#options'] as $display_id => $label) {
+              $display = $view->getDisplay($display_id);
+              if (!empty($display['display_options']['arguments']['field_event_type_target_id'])) {
+                if (!empty($event_type_condition)) {
+                  $event_type_condition[] = 'or';
+                }
+                $event_type_condition[] = ['value' => $display_id];
+              }
+            }
+          }
+        }
+        if (!empty($event_type_condition)) {
+          $element['options']['argument']['#states']['visible'] = [
+            ':input[name="field_events[0][display_id]"]' => $event_type_condition,
+          ];
+        }
+      }
+      else {
+        $element['options']['argument']['#access'] = FALSE;
+      }
+    }
+
+    // Limit the pagination options.
+    if (isset($element['options']['pager']['#options'])) {
+      $element['options']['pager']['#weight'] = -1;
+      $element['options']['pager']['#options'] = [
+        'none' => t('Display all'),
+        'some' => t('Fixed number in total'),
+        'full' => t('Fixed number per page'),
+      ];
+
+      if (isset($element['options']['limit'])) {
+        $element['options']['limit']['#states']['invisible'] = [
+          ':input[name="field_events[0][options][pager]"]' => ['value' => 'none'],
+        ];
+      }
+    }
+  }
 }
