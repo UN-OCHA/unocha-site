@@ -3,9 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.donors.field_countries
     - field.field.paragraph.donors.field_country_donors
-    - field.field.paragraph.donors.field_donor_type
     - field.field.paragraph.donors.field_figures_footnote
     - field.field.paragraph.donors.field_presence_donors
     - field.field.paragraph.donors.field_url
@@ -59,6 +57,4 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-hidden:
-  field_countries: true
-  field_donor_type: true
+hidden: {  }
