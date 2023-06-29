@@ -52,28 +52,30 @@
       {{ content.donors }}
       {{ content|without('donors', 'field_url', 'field_figures_footnote') }}
 
-      {% if content.field_figures_footnote|render %}
-        {% set donor_type = content.field_country_donors.0['#type'] ?? content.field_presence_donors.0['#type'] %}
+      {% set donor_type = content.field_country_donors.0['#type'] ?? content.field_presence_donors.0['#type'] %}
+      {% if donor_type == 'oct_unearmarked_donors' %}
         <div class="uno-donors__footnote">
-          {% if donor_type == 'oct_unearmarked_donors' %}
-            {{ content.field_figures_footnote }}
-            <p>
-            {% trans %}
-            Unearmarked contributions (or commitments) are those for which the donor does not require the funds to be used for a specific project, sector, crisis or country, leaving OCHA to decide how to allocate the funds.
-            {% endtrans %}
-            </p><p>
-            {% trans %}
-            Opening balance may include unearmarked and earmarked funding with implementation dates beyond the calendar year, and excludes miscellaneous income (e.g. adjustments, gain/losses on exchange rate etc.)
-            {% endtrans %}
-            </p><p>
-            {% trans %}
-            Funding information from the OCHA Contributions Tracking System.
-            {% endtrans %}
-            </p>
-        {% else %}
           {{ content.field_figures_footnote }}
-          {% endif %}
+          <p>
+          {% trans %}
+          Unearmarked contributions (or commitments) are those for which the donor does not require the funds to be used for a specific project, sector, crisis or country, leaving OCHA to decide how to allocate the funds.
+          {% endtrans %}
+          </p><p>
+          {% trans %}
+          Opening balance may include unearmarked and earmarked funding with implementation dates beyond the calendar year, and excludes miscellaneous income (e.g. adjustments, gain/losses on exchange rate etc.)
+          {% endtrans %}
+          </p><p>
+          {% trans %}
+          Funding information from the OCHA Contributions Tracking System.
+          {% endtrans %}
+          </p>
         </div>
+      {% else %}
+        {% if content.field_figures_footnote|render %}
+          <div class="uno-donors__footnote">
+            {{ content.field_figures_footnote }}
+          </div>
+        {% endif %}
       {% endif %}
 
       {% if paragraph.field_url.0.url %}
