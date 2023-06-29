@@ -35,7 +35,7 @@ class Donors extends KeyFigureBase {
       if ($field_type === 'key_figure') {
         $data = $this->ochaKeyFiguresApiClient->getFigure(
           $item->getFigureProvider(),
-          $item->getFigureId(),
+          $item->getFigureId()
         );
       }
       else {
@@ -43,7 +43,7 @@ class Donors extends KeyFigureBase {
           $item->getFigureProvider(),
           $item->getFigureOchaPresence(),
           $item->getFigureYear(),
-          $item->getFigureId(),
+          $item->getFigureId()
         );
         $data = reset($data);
       }
