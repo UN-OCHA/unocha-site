@@ -53,8 +53,9 @@ a:focus {
 
 /* Last menu item with coloured background */
 .cd-nav > .menu > .menu-item:last-child a {
-  color: white;
+  color: black;
   background: var(--brand-highlight);
+  padding: 0 20px;
 }
 
 /* Soft footer */
@@ -119,7 +120,7 @@ a:focus {
 }
 
 .cd-soft-footer .cd-soft-footer__nav-responses a {
-  color: var(--cd-white);
+  color: black;
 }
 
 .cd-soft-footer .cd-soft-footer__nav-responses a:hover,
