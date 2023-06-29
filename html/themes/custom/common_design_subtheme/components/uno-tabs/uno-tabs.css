@@ -7,15 +7,19 @@
   display: inline-block;
 }
 
+@media screen and (min-width: 768px) {
+  /* No left padding on first item for left alignment */
+  .uno-tabs li:first-child a {
+    padding: 0.5rem 1rem 0.5rem 0;
+  }
+}
+
 .uno-tabs [role="tablist"] a {
   position: relative;
   bottom: -3px;
   padding: 0.5rem 1rem;
   text-decoration: none;
   font-weight: 500;
-}
-.uno-tabs li:first-child a {
-  padding: 0.5rem 1rem 0.5rem 0;
 }
 
 .uno-tabs [role="tablist"] [aria-selected] {
