@@ -55,7 +55,12 @@ a:focus {
 .cd-nav > .menu > .menu-item:last-child a {
   color: black;
   background: var(--brand-highlight);
-  padding: 0 20px;
+}
+
+@media screen and (min-width: 1024px) {
+  .cd-nav > .menu > .menu-item:last-child a {
+    padding: 0 20px;
+  }
 }
 
 /* Soft footer */

@@ -124,8 +124,8 @@
 @media screen and (min-width: 1024px) {
   .node--type-media-collection.node--view-mode-card .uno-card__image {
     display: flex;
-    flex-direction: column;
     overflow: hidden;
+    flex-direction: column;
     justify-content: center;
     max-height: 200px;
     margin-bottom: 0.25rem;

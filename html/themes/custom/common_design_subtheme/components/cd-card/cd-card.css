@@ -104,7 +104,7 @@
 
 @media screen and (min-width: 480px) {
   /* Story always has a date before the read more in the footer. */
-  article:not(.node--type-story):not(.node--type-media-collection).cd-card .cd-card__footer {
+  article:not(.node--type-story, .node--type-media-collection).cd-card .cd-card__footer {
     display: block;
   }
 }
