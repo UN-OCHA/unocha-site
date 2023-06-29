@@ -198,14 +198,14 @@ function common_design_subtheme_preprocess_field__field_children_menu(array &$va
     $content = [
       '#theme' => 'menu_local_tasks__children_menu',
     ];
-    foreach ($links as $index => $link) {
+    foreach ($links as $link) {
       $content['#primary'][] = [
         '#theme' => 'menu_local_task__children_menu',
         '#link' => [
           'title' => $link->getTitle(),
           'url' => $link->getUrlObject(),
         ],
-        '#weight' => $index,
+        '#weight' => $link->getWeight(),
         '#active' => $current_menu_link->getPluginId() === $link->getPluginId(),
       ];
     }
