@@ -18,6 +18,6 @@
   {% set link = link|merge({'#title': 'Latest'|t}) %}
 {% endif %}
 {% if element['#link'].title == 'News and stories'|t %}
-  {% set link = link|merge({'#title': 'Latest news'|t}) %}
+  {% set link = link|merge({'#title': 'News'|t}) %}
 {% endif %}
 <li{{ attributes }}>{{ link }}</li>
