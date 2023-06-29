@@ -73,6 +73,13 @@
   }
 }
 
+/* Vertical rhythm for Views lists using Cards view mode */
+.view-stories .view-content .cd-card__container,
+.view-events .view-content .cd-card__container,
+.view-media-centre .view-content .cd-card__container {
+  padding: 0 0 1rem;
+}
+
 /* Promoted item to span full width */
 .page-node-type-basic .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child,
 .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child,
