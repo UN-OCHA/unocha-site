@@ -468,7 +468,7 @@ display:
           plugin_id: verf
           operator: in
           value:
-            65: '65'
+            251: '251'
           group: 1
           exposed: false
           expose:
@@ -759,7 +759,7 @@ display:
           plugin_id: verf
           operator: in
           value:
-            64: '64'
+            250: '250'
           group: 1
           exposed: false
           expose:
@@ -796,6 +796,7 @@ display:
             story_type: story_type
             country: '0'
             event_type: '0'
+            office_type: '0'
             regional_offices: '0'
             response_type: '0'
             theme: '0'
