@@ -1,0 +1,23 @@
+uuid: ec8a9d0c-442b-4243-8361-11aa456b5ddd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_presence_figures
+    - paragraphs.paragraphs_type.figures
+  module:
+    - ocha_key_figures
+id: paragraph.figures.field_presence_figures
+field_name: field_presence_figures
+entity_type: paragraph
+bundle: figures
+label: 'Regional / country office figures'
+description: 'Use this field for regional or country office figures.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers: ''
+  allowed_figure_ids: ''
+field_type: key_figure_presence
