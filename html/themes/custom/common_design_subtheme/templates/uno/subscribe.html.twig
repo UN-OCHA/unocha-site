@@ -13,7 +13,7 @@
       {% if logo is not empty %}
       <span class="uno-subscribe__logo">
         <span class="visually-hidden">{{ 'United Nations Office for the Coordination of Humanitarian Affairs'|t }}</span>
-        {{ source('@common_design_subtheme/img/logos/ocha-lockup.svg') }}
+        {{ source('@common_design_subtheme/img/logos/ocha-lockup.svg')|replace({'<?xml version="1.0" encoding="UTF-8"?>':''})|raw }}
       </span>
       {% endif %}
       <div id="mc_embed_signup_scroll">

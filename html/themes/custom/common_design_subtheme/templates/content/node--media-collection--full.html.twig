@@ -115,6 +115,16 @@
       <div class="cd-layout__content">
 
         {{ content.field_media_video }}
+        {% if node.field_video_download.0.url %}
+        <div class="uno-button__video">
+          <a href="{{ node.field_video_download.0.url }}" target="_blank" class="cd-button cd-button--bold cd-button--icon">
+            <span class="cd-button__text">{% trans %}Download full-resolution video{% endtrans %}</span>
+            <svg class="cd-icon cd-icon--external-link" aria-hidden="true" focusable="false" width="16" height="16">
+              <use xlink:href="#cd-icon--external-link"></use>
+            </svg>
+          </a>
+        </div>
+        {% endif %}
 
         {{ content|without('field_media_image', 'field_media_video', 'field_video_download', 'field_canto_collection', 'field_custom_content') }}
 
@@ -140,31 +150,9 @@
       </div>
 
       <div class="cd-layout__sidebar cd-layout__sidebar--wide">
-        {% if node.field_video_download.0.url %}
-        <div class="uno-button__video">
-          <a href="{{ node.field_video_download.0.url }}" target="_blank" class="cd-button cd-button--bold cd-button--icon">
-            <span class="cd-button__text">{% trans %}Download full-resolution video{% endtrans %}</span>
-            <svg class="cd-icon cd-icon--external-link" aria-hidden="true" focusable="false" width="16" height="16">
-              <use xlink:href="#cd-icon--external-link"></use>
-            </svg>
-          </a>
-        </div>
-        {% endif %}
+        {# intentionally empty #}
       </div>
     </div>
-
-    {# <div class="cd-alert">
-      <div aria-live="polite">
-        <div class="cd-alert__container cd-max-width [ cd-flow ]">
-          <div class="cd-alert__title">
-            This is the default informative alert.
-          </div>
-          <div class="cd-alert__message">
-            <p>Visit <a href="https://unocha.canto.com/v/Test/landing?viewIndex=0">OCHA's digital asset library</a> to download this press pack.</p>
-          </div>
-        </div>
-      </div>
-    </div> #}
 
   {% if display_submitted %}
     <footer class="cd-author node__meta [ cd-bumper ]">

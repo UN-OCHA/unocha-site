@@ -254,7 +254,7 @@
 /* Donors followed by Donors */
 @media screen and (min-width: 768px) {
   .paragraph--type--donors + .paragraph--type--donors {
-    margin-top: -4rem;
+    margin-top: -2rem;
   }
 }
 
