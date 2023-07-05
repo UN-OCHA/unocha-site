@@ -1,0 +1,23 @@
+/**
+ * CD Typography
+ */
+hr {
+  margin: 3.5rem auto;
+  border-top: 3px solid var(--brand-grey);
+}
+
+blockquote {
+  border-inline-start: 3px solid var(--brand-grey);
+  padding: 1rem 2rem;
+  margin: 3rem 0;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+p.title {
+  margin: 3rem 0;
+  font-size: var(--cd-font-size--2xmedium);
+  text-align: center;
+}

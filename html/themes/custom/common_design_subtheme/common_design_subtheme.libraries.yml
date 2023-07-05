@@ -93,6 +93,11 @@ cd-teaser:
     component:
       components/cd-teaser/cd-teaser.css: {}
 
+cd-typography:
+  css:
+    component:
+      components/cd-typography/cd-typography.css: {}
+
 rw-brand:
   css:
     theme:
