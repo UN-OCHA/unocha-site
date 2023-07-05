@@ -62,6 +62,9 @@ settings:
         -
           label: 'Read more'
           element: '<a class="read-more">'
+        -
+          label: Title
+          element: '<p class="title">'
     linkit_extension:
       linkit_enabled: true
       linkit_profile: default
