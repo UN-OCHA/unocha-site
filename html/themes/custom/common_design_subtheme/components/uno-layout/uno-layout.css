@@ -67,7 +67,7 @@
   }
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .layout--twocol .layout--row > .layout__region {
     --uno-card-list-num-cols: 2;
   }
