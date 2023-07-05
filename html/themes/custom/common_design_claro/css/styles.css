@@ -93,6 +93,7 @@
 
 blockquote {
   border-inline-start: 3px solid grey;
+  padding: 0.25rem 1rem;
 }
 
 p.title {
