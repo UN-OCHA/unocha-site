@@ -116,7 +116,7 @@
         {% block date %}
           {% if display_submitted %}
             <div class="cd-card__date">
-              <time datetime="{{ node.getCreatedTime|date }}">{{ unochaDate }}</time>
+              <time datetime="{{ node.getCreatedTime|date('Y-m-d H:i:s') }}">{{ unochaDate }}</time>
             </div>
           {% endif %}
         {% endblock %}
