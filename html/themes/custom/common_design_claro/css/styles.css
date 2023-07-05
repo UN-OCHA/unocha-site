@@ -90,3 +90,18 @@
 .form-type--select .choices__list--dropdown, .choices__list[aria-expanded] {
   z-index: 1000;
 }
+
+blockquote {
+  border-inline-start: 3px solid grey;
+}
+
+p.title {
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Disable elements.css quote icon */
+blockquote::before {
+  /* content: open-quote; */
+  content: none;
+}
