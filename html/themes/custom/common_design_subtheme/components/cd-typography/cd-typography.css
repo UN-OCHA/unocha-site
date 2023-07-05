@@ -7,9 +7,9 @@ hr {
 }
 
 blockquote {
-  border-inline-start: 3px solid var(--brand-grey);
-  padding: 1rem 2rem;
   margin: 3rem 0;
+  padding: 1rem 2rem;
+  border-inline-start: 3px solid var(--brand-grey);
 }
 
 blockquote p:last-child {
@@ -17,7 +17,7 @@ blockquote p:last-child {
 }
 
 p.title {
-  margin: 3rem 0;
-  font-size: var(--cd-font-size--2xmedium);
+  margin: 6rem 0;
   text-align: center;
+  font-size: var(--cd-font-size--2xmedium);
 }
