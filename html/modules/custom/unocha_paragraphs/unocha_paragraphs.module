@@ -35,7 +35,7 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
     if ($parent->bundle() === 'response') {
       // Get the stories tagged with the response.
       $stories = unocha_paragraphs_get_stories([
-        ['field_response', $parent->id(), '='],
+        ['field_responses', $parent->id(), '='],
       ], $limit);
 
       // Filter the News and Stories page by the response.
@@ -47,7 +47,7 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
         $region = unocha_paragraphs_get_node_parent_node($parent);
         if (isset($region) && $region->bundle() === 'region') {
           $stories += unocha_paragraphs_get_stories([
-            ['field_region', $region->id(), '='],
+            ['field_regions', $region->id(), '='],
           ], $limit - count($stories));
 
           // Also add the region as filter to have consistent results in the
@@ -59,7 +59,7 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
     elseif ($parent->bundle() === 'region') {
       // Get the stories tagged with the region.
       $stories = unocha_paragraphs_get_stories([
-        ['field_region', $parent->id(), '='],
+        ['field_regions', $parent->id(), '='],
       ], $limit);
 
       // Filter the News and Stories page by the region.
@@ -72,8 +72,8 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
       // Add conditions on the referenced entities.
       $conditions = [];
       $fields = [
-        'field_response' => 'response',
-        'field_region' => 'region',
+        'field_responses' => 'response',
+        'field_regions' => 'region',
         'field_country' => 'country',
       ];
       foreach ($fields as $field => $filter) {
