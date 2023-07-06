@@ -12,7 +12,6 @@ WORKDIR /srv/www
 
 # Clean up previous composer installation and run new one.
 RUN rm -rf ./vendor && \
-    # @todo remove after removing preserve-paths from composer.
     composer self-update && \
     composer install --no-interaction --no-dev
 
