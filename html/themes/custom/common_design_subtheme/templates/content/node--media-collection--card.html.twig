@@ -86,9 +86,9 @@
 
   {% block card_title %}
     {% if content.field_media_video|render %}
-      <span class="uno-media-collection-type uno-tag">{% trans %}Video{% endtrans %}</span>
+      <span class="uno-media-collection-type uno-tag">{% trans %}B-roll{% endtrans %}</span>
     {% else %}
-      <span class="uno-media-collection-type uno-tag">{% trans %}Images{% endtrans %}</span>
+      <span class="uno-media-collection-type uno-tag">{% trans %}Photos{% endtrans %}</span>
     {% endif %}
     <h3 class="uno-card__title cd-card__title">
       <a href="{{ url }}">{{ label }}</a>
@@ -102,7 +102,7 @@
       {% block date %}
         {% if display_submitted %}
           <div class="cd-card__date">
-            <time datetime="{{ node.getCreatedTime|date }}">{{ unochaDate }}</time>
+            <time datetime="{{ node.getCreatedTime|date('Y-m-d H:i:s') }}">{{ unochaDate }}</time>
           </div>
         {% endif %}
       {% endblock %}

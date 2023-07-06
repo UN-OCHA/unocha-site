@@ -1,0 +1,48 @@
+uuid: 15b8d6c5-36bb-4b51-aff2-de1bd5b3be99
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.campaign
+    - field.field.node.response.body
+    - field.field.node.response.field_active_response
+    - field.field.node.response.field_country
+    - field.field.node.response.field_custom_content
+    - field.field.node.response.field_has_response
+    - field.field.node.response.field_office_type
+    - field.field.node.response.field_region
+    - field.field.node.response.field_response_image
+    - field.field.node.response.field_response_link
+    - node.type.response
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.response.campaign
+targetEntityType: node
+bundle: response
+mode: campaign
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 160
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_active_response: true
+  field_country: true
+  field_custom_content: true
+  field_has_response: true
+  field_office_type: true
+  field_region: true
+  field_response_image: true
+  field_response_link: true
+  langcode: true
+  links: true

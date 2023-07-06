@@ -8,7 +8,7 @@
 .cd-site-logo {
   background:
     linear-gradient(transparent, transparent),
-    var(--brand-logo-mobile-url) center no-repeat;
+    url("../../../img/logos/ocha-logo-blue.svg") center no-repeat;
 }
 
 @media screen and (min-width: 768px) {

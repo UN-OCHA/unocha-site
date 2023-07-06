@@ -1,0 +1,19 @@
+uuid: 107d93c0-44e0-4faf-839b-9d2083231bce
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_regions
+field_name: field_regions
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

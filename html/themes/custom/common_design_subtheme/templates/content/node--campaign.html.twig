@@ -109,7 +109,7 @@
 
   <div class="cd-campaign__description">
     {% block campaign_content %}
-      {{ content|without('field_story_image', 'body') }}
+      {{ content|without('body') }}
 
       {% set contentBody %}
         {{ content.body }}
@@ -120,7 +120,7 @@
     {% endblock %}
 
     {% block cta %}
-      <a href="{{ url }}" class="cd-button cd-button--outline cd-button--bold cd-button--wide cd-button--uppercase call-to-action" target="_blank">{% trans %}Donate{% endtrans %}</a>
+      <a href="{{ url }}" class="cd-button cd-button--outline cd-button--bold cd-button--wide cd-button--uppercase uno-cta">{% trans %}Find out more{% endtrans %}</a>
     {% endblock %}
   </div>
 

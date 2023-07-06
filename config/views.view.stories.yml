@@ -269,10 +269,10 @@ display:
             story_type: '0'
             theme: '0'
           show_unpublished: 0
-        field_response_target_id_verf:
-          id: field_response_target_id_verf
-          table: node__field_response
-          field: field_response_target_id_verf
+        field_responses_target_id_verf:
+          id: field_responses_target_id_verf
+          table: node__field_responses
+          field: field_responses_target_id_verf
           relationship: none
           group_type: group
           admin_label: ''
@@ -282,11 +282,11 @@ display:
           group: 2
           exposed: true
           expose:
-            operator_id: field_response_target_id_verf_op
+            operator_id: field_responses_target_id_verf_op
             label: Response
             description: ''
             use_operator: false
-            operator: field_response_target_id_verf_op
+            operator: field_responses_target_id_verf_op
             operator_limit_selection: false
             operator_list: {  }
             identifier: response
@@ -315,14 +315,16 @@ display:
             response: response
             basic: '0'
             event: '0'
+            leader: '0'
+            media_collection: '0'
             region: '0'
             resource: '0'
             story: '0'
           show_unpublished: 0
-        field_region_target_id_verf:
-          id: field_region_target_id_verf
-          table: node__field_region
-          field: field_region_target_id_verf
+        field_regions_target_id_verf:
+          id: field_regions_target_id_verf
+          table: node__field_regions
+          field: field_regions_target_id_verf
           relationship: none
           group_type: group
           admin_label: ''
@@ -332,11 +334,11 @@ display:
           group: 2
           exposed: true
           expose:
-            operator_id: field_region_target_id_verf_op
+            operator_id: field_regions_target_id_verf_op
             label: Region
             description: ''
             use_operator: false
-            operator: field_region_target_id_verf_op
+            operator: field_regions_target_id_verf_op
             operator_limit_selection: false
             operator_list: {  }
             identifier: region
@@ -365,6 +367,8 @@ display:
             region: region
             basic: '0'
             event: '0'
+            leader: '0'
+            media_collection: '0'
             resource: '0'
             response: '0'
             story: '0'
@@ -468,7 +472,7 @@ display:
           plugin_id: verf
           operator: in
           value:
-            65: '65'
+            251: '251'
           group: 1
           exposed: false
           expose:
@@ -560,10 +564,10 @@ display:
             story_type: '0'
             theme: '0'
           show_unpublished: 0
-        field_response_target_id_verf:
-          id: field_response_target_id_verf
-          table: node__field_response
-          field: field_response_target_id_verf
+        field_responses_target_id_verf:
+          id: field_responses_target_id_verf
+          table: node__field_responses
+          field: field_responses_target_id_verf
           relationship: none
           group_type: group
           admin_label: ''
@@ -573,11 +577,11 @@ display:
           group: 2
           exposed: true
           expose:
-            operator_id: field_response_target_id_verf_op
+            operator_id: field_responses_target_id_verf_op
             label: Response
             description: ''
             use_operator: false
-            operator: field_response_target_id_verf_op
+            operator: field_responses_target_id_verf_op
             operator_limit_selection: false
             operator_list: {  }
             identifier: response
@@ -606,14 +610,16 @@ display:
             response: response
             basic: '0'
             event: '0'
+            leader: '0'
+            media_collection: '0'
             region: '0'
             resource: '0'
             story: '0'
           show_unpublished: 0
-        field_region_target_id_verf:
-          id: field_region_target_id_verf
-          table: node__field_region
-          field: field_region_target_id_verf
+        field_regions_target_id_verf:
+          id: field_regions_target_id_verf
+          table: node__field_regions
+          field: field_regions_target_id_verf
           relationship: none
           group_type: group
           admin_label: ''
@@ -623,11 +629,11 @@ display:
           group: 2
           exposed: true
           expose:
-            operator_id: field_region_target_id_verf_op
+            operator_id: field_regions_target_id_verf_op
             label: Region
             description: ''
             use_operator: false
-            operator: field_region_target_id_verf_op
+            operator: field_regions_target_id_verf_op
             operator_limit_selection: false
             operator_list: {  }
             identifier: region
@@ -656,6 +662,8 @@ display:
             region: region
             basic: '0'
             event: '0'
+            leader: '0'
+            media_collection: '0'
             resource: '0'
             response: '0'
             story: '0'
@@ -759,7 +767,7 @@ display:
           plugin_id: verf
           operator: in
           value:
-            64: '64'
+            250: '250'
           group: 1
           exposed: false
           expose:
@@ -796,6 +804,7 @@ display:
             story_type: story_type
             country: '0'
             event_type: '0'
+            office_type: '0'
             regional_offices: '0'
             response_type: '0'
             theme: '0'
@@ -850,10 +859,10 @@ display:
             story_type: '0'
             theme: '0'
           show_unpublished: 0
-        field_response_target_id_verf:
-          id: field_response_target_id_verf
-          table: node__field_response
-          field: field_response_target_id_verf
+        field_responses_target_id_verf:
+          id: field_responses_target_id_verf
+          table: node__field_responses
+          field: field_responses_target_id_verf
           relationship: none
           group_type: group
           admin_label: ''
@@ -863,11 +872,11 @@ display:
           group: 2
           exposed: true
           expose:
-            operator_id: field_response_target_id_verf_op
+            operator_id: field_responses_target_id_verf_op
             label: Response
             description: ''
             use_operator: false
-            operator: field_response_target_id_verf_op
+            operator: field_responses_target_id_verf_op
             operator_limit_selection: false
             operator_list: {  }
             identifier: response
@@ -896,14 +905,16 @@ display:
             response: response
             basic: '0'
             event: '0'
+            leader: '0'
+            media_collection: '0'
             region: '0'
             resource: '0'
             story: '0'
           show_unpublished: 0
-        field_region_target_id_verf:
-          id: field_region_target_id_verf
-          table: node__field_region
-          field: field_region_target_id_verf
+        field_regions_target_id_verf:
+          id: field_regions_target_id_verf
+          table: node__field_regions
+          field: field_regions_target_id_verf
           relationship: none
           group_type: group
           admin_label: ''
@@ -913,11 +924,11 @@ display:
           group: 2
           exposed: true
           expose:
-            operator_id: field_region_target_id_verf_op
+            operator_id: field_regions_target_id_verf_op
             label: Region
             description: ''
             use_operator: false
-            operator: field_region_target_id_verf_op
+            operator: field_regions_target_id_verf_op
             operator_limit_selection: false
             operator_list: {  }
             identifier: region
@@ -946,6 +957,8 @@ display:
             region: region
             basic: '0'
             event: '0'
+            leader: '0'
+            media_collection: '0'
             resource: '0'
             response: '0'
             story: '0'

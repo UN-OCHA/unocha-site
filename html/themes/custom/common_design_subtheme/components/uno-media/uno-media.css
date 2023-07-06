@@ -64,10 +64,15 @@
   padding: 2rem;
   background-color: var(--brand-grey);
 }
+.cd-layout__content div.uno-photo-gallery--two-columns:first-child {
+  margin-top: 0;
+  padding: 0;
+  background-color: transparent;
+}
 
 .uno-button__video {
-  margin: 2rem 0 4rem;
-  text-align: center;
+  margin: 0 0 4rem;
+  text-align: left;
 }
 
 .uno-button__collection {
@@ -115,11 +120,15 @@
   }
 } */
 
+/* Reduce height of Media collection image div to height of video */
 @media screen and (min-width: 1024px) {
   .node--type-media-collection.node--view-mode-card .uno-card__image {
     display: flex;
+    overflow: hidden;
     flex-direction: column;
-    height: 246px;
+    justify-content: center;
+    max-height: 200px;
+    margin-bottom: 0.25rem;
   }
   .node--type-media-collection.node--view-mode-card .uno-card__image .field--name-field-media-video {
     flex: 0 1 auto;
@@ -129,3 +138,8 @@
 .node--type-media-collection.node--view-mode-full .field--name-field-media-video {
   margin-bottom: 2rem;
 }
+
+.node--type-media-collection .cd-layout__sidebar--wide {
+  background-color: transparent;
+}
+

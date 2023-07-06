@@ -134,7 +134,7 @@
 
 @media screen and (min-width: 768px) {
   .paragraph--type--campaign {
-    margin-bottom: 6rem;
+    margin-bottom: 8rem;
   }
 }
 
@@ -150,7 +150,8 @@
 .paragraph--type--subscribe,
 .paragraph--type--cbpf,
 .paragraph--type--donors,
-.paragraph--type--figures {
+.paragraph--type--figures,
+.paragraph--type--media-centre {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -167,7 +168,8 @@
   .paragraph--type--subscribe,
   .paragraph--type--cbpf,
   .paragraph--type--donors,
-  .paragraph--type--figures {
+  .paragraph--type--figures,
+  .paragraph--type--media-centre {
     margin-top: 6rem;
     margin-bottom: 6rem;
   }
@@ -252,7 +254,7 @@
 /* Donors followed by Donors */
 @media screen and (min-width: 768px) {
   .paragraph--type--donors + .paragraph--type--donors {
-    margin-top: -4rem;
+    margin-top: 0;
   }
 }
 

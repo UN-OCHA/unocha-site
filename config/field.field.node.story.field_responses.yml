@@ -1,29 +1,29 @@
-uuid: 7c9da489-b905-485c-9e5b-41a24a0526bc
+uuid: e4bba94e-3da4-4075-a101-4050e58e6c8c
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_country
+    - field.storage.node.field_responses
+    - node.type.response
     - node.type.story
-    - taxonomy.vocabulary.country
-id: node.story.field_country
-field_name: field_country
+id: node.story.field_responses
+field_name: field_responses
 entity_type: node
 bundle: story
-label: Countries
+label: Responses
 description: ''
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:taxonomy_term'
+  handler: 'default:node'
   handler_settings:
     target_bundles:
-      country: country
+      response: response
     sort:
-      field: name
-      direction: asc
+      field: _none
+      direction: ASC
     auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

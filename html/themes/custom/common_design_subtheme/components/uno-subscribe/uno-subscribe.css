@@ -102,6 +102,11 @@
   line-height: 1.15; /* match cd-button */
 }
 
+.uno-subscribe .email:focus {
+  outline: 2px solid var(--brand-primary--light);
+  outline-offset: -2px;
+}
+
 @media screen and (min-width: 768px) {
   .uno-subscribe .email,
   .uno-subscribe .cd-button {
