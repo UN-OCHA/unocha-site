@@ -60,7 +60,7 @@ done
 # Stop and remove the containers.
 if [ "$shutdown" = "yes" ]; then
   echo "Stop and remove the containers."
-  PROXY=$proxy_name docker-compose -p unocha-local -f local/docker-compose.yml down $shutdown_options || true
+  PROXY=$proxy_name docker compose -p unocha-local -f local/docker-compose.yml down $shutdown_options || true
   exit 0
 fi
 
@@ -73,7 +73,7 @@ fi;
 
 # Create the site, memcache and mysql containers.
 echo "Create the site, memcache and mysql containers."
-PROXY=$proxy_name docker-compose -p unocha-local -f local/docker-compose.yml up -d
+PROXY=$proxy_name docker compose -p unocha-local -f local/docker-compose.yml up -d --remove-orphans
 
 # Wait a bit for memcache and mysql to be ready.
 echo "Wait a bit for memcache and mysql to be ready."
