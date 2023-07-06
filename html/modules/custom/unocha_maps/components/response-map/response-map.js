@@ -111,6 +111,10 @@
           response.setAttribute('data-marker-id', id);
         }
 
+        if (response.hasAttribute('data-marker-classes')) {
+          element.classList.add(...response.getAttribute('data-marker-classes').split(' '));
+        }
+
         var [lon, lat] = coordinates;
 
         var marker = new mapboxgl.Marker({
