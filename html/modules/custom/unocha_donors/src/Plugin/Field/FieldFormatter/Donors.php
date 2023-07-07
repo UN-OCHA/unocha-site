@@ -65,6 +65,13 @@ class Donors extends KeyFigureBase {
           }
         }
       }
+      elseif (isset($data['sectors'])) {
+        foreach ($data['sectors'] as $sector) {
+          if (isset($sector['name'])) {
+            $donors[$sector['name']] = $sector;
+          }
+        }
+      }
       elseif (isset($data['value'])) {
         foreach (preg_split('/,\s+/', trim($data['value'])) as $name) {
           $donors[$name]['name'] = $name;
