@@ -28,7 +28,8 @@
   </header>
   {% apply spaceless %}
   <ul{{ list_attributes.addClass('uno-donors__list') }}>
-    {% for item in list %}
+    {# Sort alphabetically. #}
+    {% for item in list|taglist %}
     <li{{ item_attributes.addClass('uno-donors__list__item') }}>{{ item.name }}</li>
     {% endfor %}
   </ul>

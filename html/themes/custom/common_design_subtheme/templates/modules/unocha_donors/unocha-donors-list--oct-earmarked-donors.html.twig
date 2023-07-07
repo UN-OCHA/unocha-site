@@ -28,7 +28,8 @@
   </header>
   {% apply spaceless %}
   <dl{{ list_attributes.addClass('uno-donors__list', 'uno-donors__list--with-figures') }}>
-    {% for item in list %}
+    {# Sort alphabetically. #}
+    {% for item in list|taglist %}
     <div{{item_attributes.addClass('uno-donor')}}>
       <dt class="uno-donors__donor">{{ item.name }}</dt>
       <dd class="uno-donors__amount"> ${{ item.total|format_number_compact(null, format ?? 'long', precision ?? 1, true)  }}</dd>

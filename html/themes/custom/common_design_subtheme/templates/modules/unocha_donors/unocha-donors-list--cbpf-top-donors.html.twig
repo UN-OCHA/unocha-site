@@ -29,7 +29,8 @@
   </header>
   {% apply spaceless %}
   <dl{{ list_attributes.addClass('uno-donors__list', 'uno-donors__list--with-figures') }}>
-    {% for item in list|slice(0, 5) %}
+    {# Sort by pledged amount descending. #}
+    {% for item in list|sort((a, b) => b.pledged <=> a.pledged)|slice(0, 5) %}
     {% set amount = item.paid ? item.paid : item.pledged %}
     {% set suffix = item.paid ? 'paid'|t : 'pledged'|t %}
     <div{{ item_attributes.addClass('uno-donor') }}>
