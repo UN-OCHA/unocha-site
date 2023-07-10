@@ -11,6 +11,7 @@ module:
   config: 0
   config_split: 0
   config_translation: 0
+  contact: 0
   contextual: 0
   csp: 0
   ctools: 0
@@ -76,6 +77,7 @@ module:
   toolbar: 0
   unocha_breadcrumbs: 0
   unocha_canto: 0
+  unocha_contact: 0
   unocha_donors: 0
   unocha_maps: 0
   unocha_menus: 0

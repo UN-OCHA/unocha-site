@@ -1,0 +1,30 @@
+uuid: afb2971a-3a19-4339-b403-73b77d5fa62a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.contacts.field_emails
+    - taxonomy.vocabulary.contacts
+  module:
+    - text
+id: taxonomy_term.contacts.default
+targetEntityType: taxonomy_term
+bundle: contacts
+mode: default
+content:
+  description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_emails:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
