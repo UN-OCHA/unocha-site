@@ -35,7 +35,8 @@
   </p>
   {% apply spaceless %}
   <dl{{ list_attributes.addClass('uno-donors__list', 'uno-donors__list--barchart').setAttribute('id', list_id) }}>
-    {% for item in list %}
+    {# Sort by total funding descending. #}
+    {% for item in list|sort((a, b) => b.total <=> a.total) %}
     <div{{item_attributes.addClass('uno-donor')}}>
       <dt class="uno-donors__donor">{{ item.name }}</dt>
       <dd class="uno-donors__amount">
