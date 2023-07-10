@@ -83,7 +83,7 @@
 {# Extra classes for the article and its map marker. #}
 {% set marker_classes = [] %}
 
-{% if node.field_has_response.value is not empty %}
+{% if node.field_has_response.value %}
   {% set marker_classes = marker_classes|merge(['marker--has-response']) %}
   {% set attributes = attributes.addClass('uno-response--has-response') %}
 {% endif %}
