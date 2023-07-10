@@ -106,9 +106,9 @@
 
   <div class="uno-card__content cd-card__container">
 
-    {# {% if content.field_office_type %}
-      <span class="uno-office-type uno-tag">placeholder</span>
-    {% endif %} #}
+    {% if node.field_office_type.0.entity %}
+      <span class="uno-office-type uno-tag">{{ node.field_office_type.0.entity.label() }}</span>
+    {% endif %}
 
     {% block card_title %}
       <h3 class="uno-card__title cd-card__title">
