@@ -106,8 +106,10 @@
 
   <div class="uno-card__content cd-card__container">
 
-    {% if node.field_office_type.0.entity %}
-      <span class="uno-office-type uno-tag">{{ node.field_office_type.0.entity.label() }}</span>
+    {% if not is_front %}
+      {% if node.field_office_type.0.entity %}
+        <span class="uno-office-type uno-tag">{{ node.field_office_type.0.entity.label() }}</span>
+      {% endif %}
     {% endif %}
 
     {% block card_title %}

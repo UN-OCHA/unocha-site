@@ -293,8 +293,3 @@
     display: none;
   }
 }
-
-/* Hide Office type label on homepage map as it is Response focused */
-.unocha-response-map__content--global .uno-office-type {
-  display: none;
-}
