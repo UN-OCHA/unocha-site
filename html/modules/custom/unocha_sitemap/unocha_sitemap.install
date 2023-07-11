@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Install file for the unocha_sitemap module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function unocha_sitemap_install($is_syncing) {
+  $schema = \Drupal::database()?->schema();
+  if (isset($schema) && $schema->tableExists('xmlsitemap')) {
+    if (\Drupal::moduleHandler()->loadInclude('xmlsitemap', 'install') !== FALSE) {
+      $xmlsitemap_schema = xmlsitemap_schema()['xmlsitemap'] ?? [];
+
+      if (isset($xmlsitemap_schema['fields']['loc'])) {
+        // Drop the indexes using the loc field.
+        $indexes = $xmlsitemap_schema['indexes'] ?? [];
+        foreach ($indexes as $name => $fields) {
+          if (!in_array('loc', $fields)) {
+            unset($indexes[$name]);
+          }
+          else {
+            $schema->dropIndex('xmlsitemap', $name);
+          }
+        }
+
+        // Increase the length of the loc field.
+        $xmlsitemap_schema['fields']['loc']['length'] = 2024;
+
+        // Update the loc field with the new spec.
+        $schema->changeField('xmlsitemap', 'loc', 'loc', $xmlsitemap_schema['fields']['loc']);
+
+        // Recreate the indexes using the loc field.
+        foreach ($indexes as $name => $fields) {
+          $schema->addIndex('xmlsitemap', $name, $fields, $xmlsitemap_schema);
+        }
+      }
+    }
+  }
+}
