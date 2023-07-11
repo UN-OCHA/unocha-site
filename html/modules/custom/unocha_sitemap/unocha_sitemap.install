@@ -27,7 +27,7 @@ function unocha_sitemap_install($is_syncing) {
         }
 
         // Increase the length of the loc field.
-        $xmlsitemap_schema['fields']['loc']['length'] = 2024;
+        $xmlsitemap_schema['fields']['loc']['length'] = 2048;
 
         // Update the loc field with the new spec.
         $schema->changeField('xmlsitemap', 'loc', 'loc', $xmlsitemap_schema['fields']['loc']);
