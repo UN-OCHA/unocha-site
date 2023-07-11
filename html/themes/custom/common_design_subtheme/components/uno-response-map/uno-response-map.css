@@ -116,9 +116,6 @@
   background: var(--rw-icons--map-marker--marker--44--red);
   will-change: transform;
 }
-.js .unocha-response-map[data-map-enabled] .mapboxgl-marker[data-active] {
-  background: var(--rw-icons--map-marker--marker--44--blue);
-}
 .js .unocha-response-map[data-map-enabled] .mapboxgl-marker:after {
   position: absolute;
   top: 7px;
@@ -128,19 +125,19 @@
   content: "";
 }
 
-.js .unocha-response-map[data-map-enabled] .mapboxgl-marker.marker--has-response {
-  background: var(--rw-icons--map-marker--marker--44--red);
-}
-
 .js .unocha-response-map[data-map-enabled] .mapboxgl-marker.marker--hat,
+.js .unocha-response-map[data-map-enabled] .mapboxgl-marker.marker--country-office,
 .js .unocha-response-map[data-map-enabled] .mapboxgl-marker.marker--regional-office {
   background: var(--rw-icons--map-marker--marker--44--grey);
 }
 
-.js .unocha-response-map[data-map-enabled] .mapboxgl-marker.marker--has-response[data-active] {
+.js .unocha-response-map[data-map-enabled] .mapboxgl-marker.marker--has-response {
+  background: var(--rw-icons--map-marker--marker--44--red);
+}
+/* Active marker */
+.js .unocha-response-map[data-map-enabled] .mapboxgl-marker[data-active] {
   background: var(--rw-icons--map-marker--marker--44--blue);
 }
-
 /**
  * Mapbox styling.
  *
