@@ -6,9 +6,7 @@ dependencies:
     - field.field.node.story.body
     - field.field.node.story.field_country
     - field.field.node.story.field_custom_content
-    - field.field.node.story.field_region
     - field.field.node.story.field_regions
-    - field.field.node.story.field_response
     - field.field.node.story.field_responses
     - field.field.node.story.field_story_image
     - field.field.node.story.field_story_type
@@ -42,9 +40,7 @@ content:
 hidden:
   field_country: true
   field_custom_content: true
-  field_region: true
   field_regions: true
-  field_response: true
   field_responses: true
   field_story_type: true
   field_theme: true
