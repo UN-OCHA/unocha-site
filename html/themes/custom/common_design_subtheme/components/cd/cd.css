@@ -13,6 +13,11 @@ a:focus {
   color: var(--brand-primary);
 }
 
+.field--type-text-with-summary a,
+.field--name-field-text a {
+  text-decoration: underline;
+}
+
 .cd-global-header {
   background: var(--brand-primary--dark);
 }
