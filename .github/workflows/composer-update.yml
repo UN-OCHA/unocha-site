@@ -19,5 +19,4 @@ jobs:
         patch_maintainers: ${{ secrets.DRUPAL_MAINTAINERS }}
         php_version: '8.2'
         slack_bot_token: ${{ secrets.SLACK_BOT_TOKEN }}
-        slack_channel_name: ${{ secrets.SLACK_CHANNEL }}
-        flowdock_token: ${{ secrets.FLOWDOCK_TOKEN }}
+        slack_channel_name: ${{ vars.SLACK_CHANNEL }}
