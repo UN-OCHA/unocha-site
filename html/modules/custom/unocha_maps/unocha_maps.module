@@ -19,9 +19,11 @@ function unocha_maps_preprocess_paragraph__response_map(array &$variables) {
   // Retrieve the closest node parent.
   $parent = unocha_paragraphs_get_paragraph_parent_node($paragraph);
 
+  $map_type = 'global';
   if (!empty($parent)) {
     $entity_type_manager = \Drupal::entityTypeManager();
     if ($parent->bundle() === 'region') {
+      $map_type = 'regional';
       $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
 
       // Get the menu links referencing this node.
@@ -190,7 +192,10 @@ function unocha_maps_preprocess_paragraph__response_map(array &$variables) {
       $variables['content']['responses'] = [
         '#type' => 'container',
         '#attributes' => [
-          'class' => 'unocha-response-map__content',
+          'class' => [
+            'unocha-response-map__content',
+            'unocha-response-map__content--' . $map_type,
+          ],
           'data-map-content' => '',
         ],
         'responses' => $build,
