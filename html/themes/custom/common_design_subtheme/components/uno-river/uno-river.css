@@ -69,15 +69,17 @@
 }
 
 /* Card view mode */
-.paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river__articles {
-  display: flex;
-  flex-flow: row wrap;
-  gap: var(--rw-card-list-gap-size);
-}
+@media screen and (min-width: 768px) {
+  .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river__articles {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--rw-card-list-gap-size);
+  }
 
-.paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river__articles article {
-  /* stylelint-disable-next-line max-line-length */
-  flex: 0 1 calc((100% / var(--rw-card-list-num-cols)) - var(--rw-card-list-gap-size) + var(--rw-card-list-gap-size) / var(--rw-card-list-num-cols));
+  .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river__articles article {
+    /* stylelint-disable-next-line max-line-length */
+    flex: 0 1 calc((100% / var(--rw-card-list-num-cols)) - var(--rw-card-list-gap-size) + var(--rw-card-list-gap-size) / var(--rw-card-list-num-cols));
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -89,8 +91,10 @@
 /* cd-flow reset for 2nd item on rw-river items because
   we are displaying as cards now
 */
-.paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river__articles.cd-flow article:nth-child(2) {
-  margin-top: 0;
+@media screen and (min-width: 768px) {
+  .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river__articles.cd-flow article:nth-child(2) {
+    margin-top: 0;
+  }
 }
 
 /* rw-article reset for last item on rw-river items because
