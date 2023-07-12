@@ -18,23 +18,23 @@ image_style_mappings:
   -
     image_mapping_type: image_style
     image_mapping: story
+    breakpoint_id: common_design_subtheme.xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: story
+    breakpoint_id: common_design_subtheme.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: story
     breakpoint_id: common_design_subtheme.xxl
     multiplier: 2x
   -
     image_mapping_type: image_style
     image_mapping: story
     breakpoint_id: common_design_subtheme.xl
-    multiplier: 1x
-  -
-    image_mapping_type: image_style
-    image_mapping: story
-    breakpoint_id: common_design_subtheme.xl
     multiplier: 2x
-  -
-    image_mapping_type: image_style
-    image_mapping: story
-    breakpoint_id: common_design_subtheme.lg
-    multiplier: 1x
   -
     image_mapping_type: image_style
     image_mapping: story
@@ -55,16 +55,16 @@ image_style_mappings:
     image_mapping: story_thumbnail
     breakpoint_id: common_design_subtheme.sm
     multiplier: 1x
-  -
-    image_mapping_type: image_style
-    image_mapping: story_thumbnail
-    breakpoint_id: common_design_subtheme.sm
-    multiplier: 2x
   -
     image_mapping_type: image_style
     image_mapping: story_thumbnail
     breakpoint_id: common_design_subtheme.xs
     multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: story_thumbnail
+    breakpoint_id: common_design_subtheme.sm
+    multiplier: 2x
   -
     image_mapping_type: image_style
     image_mapping: story_thumbnail

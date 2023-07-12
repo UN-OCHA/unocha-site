@@ -17,23 +17,23 @@ image_style_mappings:
   -
     image_mapping_type: image_style
     image_mapping: event
+    breakpoint_id: common_design_subtheme.xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: event
+    breakpoint_id: common_design_subtheme.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: event
     breakpoint_id: common_design_subtheme.xxl
     multiplier: 2x
   -
     image_mapping_type: image_style
     image_mapping: event
     breakpoint_id: common_design_subtheme.xl
-    multiplier: 1x
-  -
-    image_mapping_type: image_style
-    image_mapping: event
-    breakpoint_id: common_design_subtheme.xl
     multiplier: 2x
-  -
-    image_mapping_type: image_style
-    image_mapping: event
-    breakpoint_id: common_design_subtheme.lg
-    multiplier: 1x
   -
     image_mapping_type: image_style
     image_mapping: event

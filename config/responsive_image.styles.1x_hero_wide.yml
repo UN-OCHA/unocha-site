@@ -18,23 +18,23 @@ image_style_mappings:
   -
     image_mapping_type: image_style
     image_mapping: hero_wide
+    breakpoint_id: common_design.xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: hero_wide
+    breakpoint_id: common_design.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: hero_wide
     breakpoint_id: common_design.xxl
     multiplier: 2x
   -
     image_mapping_type: image_style
     image_mapping: hero_wide
     breakpoint_id: common_design.xl
-    multiplier: 1x
-  -
-    image_mapping_type: image_style
-    image_mapping: hero_wide
-    breakpoint_id: common_design.xl
     multiplier: 2x
-  -
-    image_mapping_type: image_style
-    image_mapping: hero_wide
-    breakpoint_id: common_design.lg
-    multiplier: 1x
   -
     image_mapping_type: image_style
     image_mapping: hero_wide
@@ -55,16 +55,16 @@ image_style_mappings:
     image_mapping: hero_thumbnail
     breakpoint_id: common_design.sm
     multiplier: 1x
-  -
-    image_mapping_type: image_style
-    image_mapping: hero_thumbnail
-    breakpoint_id: common_design.sm
-    multiplier: 2x
   -
     image_mapping_type: image_style
     image_mapping: hero_thumbnail
     breakpoint_id: common_design.xs
     multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: hero_thumbnail
+    breakpoint_id: common_design.sm
+    multiplier: 2x
   -
     image_mapping_type: image_style
     image_mapping: hero_thumbnail
