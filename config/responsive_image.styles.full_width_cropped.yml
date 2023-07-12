@@ -43,14 +43,14 @@ image_style_mappings:
     multiplier: 1x
   -
     image_mapping_type: image_style
-    image_mapping: tablet_cropped_x2
-    breakpoint_id: common_design.sm
-    multiplier: 2x
-  -
-    image_mapping_type: image_style
     image_mapping: mobile_cropped_x1
     breakpoint_id: common_design.xs
     multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: tablet_cropped_x2
+    breakpoint_id: common_design.sm
+    multiplier: 2x
   -
     image_mapping_type: image_style
     image_mapping: mobile_cropped_x2
