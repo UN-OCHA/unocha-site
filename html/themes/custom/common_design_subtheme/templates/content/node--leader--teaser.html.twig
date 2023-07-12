@@ -86,7 +86,9 @@
 
 <article{{ attributes.addClass(classes) }}>
 
-  <a href="{{ url }}">{{ content.field_leader_portrait }}</a>
+  <div class="uno-leader__image">
+    <a href="{{ url }}">{{ content.field_leader_portrait }}</a>
+  </div>
 
   {{ title_prefix }}
   <h2{{ title_attributes.addClass('uno-leader__name') }}>

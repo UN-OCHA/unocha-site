@@ -86,7 +86,7 @@
     grid-area: link;
     justify-self: flex-start;
   }
-  .uno-leader--title .field--name-field-leader-portrait {
+  .uno-leader--title .uno-leader__image {
     grid-area: image;
   }
 }
