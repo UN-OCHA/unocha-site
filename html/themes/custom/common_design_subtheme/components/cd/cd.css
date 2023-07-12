@@ -13,6 +13,11 @@ a:focus {
   color: var(--brand-primary);
 }
 
+.field--type-text-with-summary a,
+.field--name-field-text a {
+  text-decoration: underline;
+}
+
 .cd-global-header {
   background: var(--brand-primary--dark);
 }
@@ -58,8 +63,27 @@ a:focus {
 }
 
 @media screen and (min-width: 1024px) {
+  /* Dontate button */
   .cd-nav > .menu > .menu-item:last-child a {
     padding: 0 20px;
+  }
+
+  /* Second last menu item dropdown aligns right since Donate button is not wide
+    enough to prevent 2nd last item overflowing the right edge */
+  [dir=ltr] .cd-nav > .menu > .menu-item:nth-last-child(2) > ul.menu {
+    right: 0;
+  }
+
+  [dir=rtl] .cd-nav > .menu > .menu-item:nth-last-child(2) > ul.menu {
+    left: 0;
+  }
+
+  /* If the menu items wrap, make sure they sit above the hero image */
+  #main-content {
+    z-index: 1;
+  }
+  .cd-header {
+    z-index: 2;
   }
 }
 

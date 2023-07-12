@@ -20,8 +20,16 @@
   margin-top: -2rem;
 }
 
+.cd-page-layout-container main [data-drupal-messages] + .cd-hero {
+  margin-top: 0;
+}
+
 @media screen and (min-width: 1024px) {
   .cd-page-layout-container main .cd-hero {
     margin-top: -3rem;
+  }
+
+  .cd-page-layout-container main [data-drupal-messages] + .cd-hero {
+    margin-top: 0;
   }
 }

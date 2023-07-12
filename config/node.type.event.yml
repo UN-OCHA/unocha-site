@@ -6,8 +6,9 @@ dependencies:
     - menu_ui
 third_party_settings:
   menu_ui:
-    available_menus: {  }
-    parent: ''
+    available_menus:
+      - main
+    parent: 'main:menu_link_content:99552f38-0538-419c-9730-f04e708279ae'
 name: Event
 type: event
 description: 'Event with date, time, location, additional information and associated Response, Regions, and/or Country optional.'
