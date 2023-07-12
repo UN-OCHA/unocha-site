@@ -1,6 +1,6 @@
 uuid: 25b6a48c-99c9-49b6-9552-e37595a9c3e0
 langcode: en
-status: false
+status: true
 dependencies: {  }
 id: config_dev
 label: config_dev
@@ -10,6 +10,7 @@ stackable: false
 storage: folder
 folder: ../config_dev
 module:
+  stage_file_proxy: 0
   config_filter: 0
   dblog: 0
   devel: 0
