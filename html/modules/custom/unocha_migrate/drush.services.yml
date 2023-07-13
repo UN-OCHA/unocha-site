@@ -1,6 +1,6 @@
 services:
   unocha_migrate.commands:
     class: \Drupal\unocha_migrate\Commands\MigrateCommands
-    arguments: ['@entity_type.manager', '@reliefweb_api.client']
+    arguments: ['@config.factory', '@entity_type.manager', '@path_alias.manager', '@redirect.repository', '@reliefweb_api.client']
     tags:
       - { name: drush.command }
