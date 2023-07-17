@@ -1,4 +1,4 @@
-uuid: 7f7b7916-f1ec-49eb-b371-ed8de88bdc77
+uuid: 1fb3c69c-f895-40f2-9635-13661b731d6b
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - image.style.event
   theme:
     - common_design_subtheme
-id: 1x_event
-label: '1x event'
+id: event
+label: Event
 image_style_mappings:
   -
     image_mapping_type: image_style
