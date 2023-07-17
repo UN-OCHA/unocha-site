@@ -1,0 +1,79 @@
+uuid: 4690d393-54c8-41e1-8ae1-af11de9930aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.full_width_100
+    - image.style.full_width_133
+    - image.style.full_width_180
+    - image.style.full_width_200
+    - image.style.full_width_50
+    - image.style.full_width_66
+    - image.style.full_width_90
+  theme:
+    - common_design_subtheme
+id: original_resized
+label: 'Original resized'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_100
+    breakpoint_id: common_design_subtheme.xxl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_100
+    breakpoint_id: common_design_subtheme.xl
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_100
+    breakpoint_id: common_design_subtheme.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_200
+    breakpoint_id: common_design_subtheme.xxl
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_200
+    breakpoint_id: common_design_subtheme.xl
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_200
+    breakpoint_id: common_design_subtheme.lg
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_90
+    breakpoint_id: common_design_subtheme.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_180
+    breakpoint_id: common_design_subtheme.md
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_66
+    breakpoint_id: common_design_subtheme.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_50
+    breakpoint_id: common_design_subtheme.xs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_133
+    breakpoint_id: common_design_subtheme.sm
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_100
+    breakpoint_id: common_design_subtheme.xs
+    multiplier: 2x
+breakpoint_group: common_design_subtheme
+fallback_image_style: full_width_50
