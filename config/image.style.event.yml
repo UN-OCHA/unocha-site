@@ -10,7 +10,7 @@ effects:
     id: image_scale
     weight: 1
     data:
-      width: 800
+      width: 820
       height: null
       upscale: false
 pipeline: convert_to_webp
