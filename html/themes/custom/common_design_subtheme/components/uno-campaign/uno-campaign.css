@@ -1,12 +1,11 @@
 .node--view-mode-campaign {
-  padding: 2rem;
+  padding: 2rem 0;
   /* border: 3px solid var(--brand-grey); */
 }
 
 @media screen and (min-width: 768px) {
   .node--view-mode-campaign {
     display: flex;
-    padding: 2rem 0;
   }
 }
 
