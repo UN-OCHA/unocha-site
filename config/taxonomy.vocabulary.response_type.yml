@@ -1,8 +1,0 @@
-uuid: 8d3db80d-d636-494d-897a-2340579fb86d
-langcode: en
-status: true
-dependencies: {  }
-name: 'Response type'
-vid: response_type
-description: ''
-weight: 0

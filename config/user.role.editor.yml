@@ -19,8 +19,6 @@ dependencies:
     - taxonomy.vocabulary.country
     - taxonomy.vocabulary.event_type
     - taxonomy.vocabulary.office_type
-    - taxonomy.vocabulary.regional_offices
-    - taxonomy.vocabulary.response_type
     - taxonomy.vocabulary.story_type
     - taxonomy.vocabulary.theme
   module:
@@ -60,8 +58,6 @@ permissions:
   - 'create terms in country'
   - 'create terms in event_type'
   - 'create terms in office_type'
-  - 'create terms in regional_offices'
-  - 'create terms in response_type'
   - 'create terms in story_type'
   - 'create terms in theme'
   - 'create url aliases'
@@ -101,8 +97,6 @@ permissions:
   - 'delete terms in country'
   - 'delete terms in event_type'
   - 'delete terms in office_type'
-  - 'delete terms in regional_offices'
-  - 'delete terms in response_type'
   - 'delete terms in story_type'
   - 'delete terms in theme'
   - 'edit any basic content'
@@ -129,8 +123,6 @@ permissions:
   - 'edit terms in country'
   - 'edit terms in event_type'
   - 'edit terms in office_type'
-  - 'edit terms in regional_offices'
-  - 'edit terms in response_type'
   - 'edit terms in story_type'
   - 'edit terms in theme'
   - 'revert all revisions'
