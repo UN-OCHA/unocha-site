@@ -18,30 +18,35 @@
     <path d="M7.879 33.121l14 14a2.999 2.999 0 0 0 4.242 0l14-14a3 3 0 1 0-4.242-4.242L27 37.758V12a3 3 0 0 0-6 0v25.758l-8.879-8.88a3 3 0 1 0-4.242 4.243z"/>
     <path d="M45.799 0H2.2A2.373 2.373 0 0 0 0 2.514v8.972A2.373 2.373 0 0 0 2.201 14H18v-2a6 6 0 0 1 12 0v2h15.799A2.373 2.373 0 0 0 48 11.486V2.514A2.373 2.373 0 0 0 45.799 0zM36 9a2 2 0 1 1 2-2 2 2 0 0 1-2 2zm7 0a2 2 0 1 1 2-2 2 2 0 0 1-2 2z"/>
   </symbol>
+  <symbol id="common--external-link" viewBox="0 0 48 48">
+    <path d="M35,20.65V42H6V18H22.09l9-9H4.2A2.2,2.2,0,0,0,2,11.2V43.8A2.2,2.2,0,0,0,4.2,46H36.8A2.2,2.2,0,0,0,39,43.8V16.65ZM12.5,12A1.5,1.5,0,1,1,11,13.5,1.5,1.5,0,0,1,12.5,12Zm-5,0A1.5,1.5,0,1,1,6,13.5,1.5,1.5,0,0,1,7.5,12Z"/>
+    <path d="M44,2H23a2,2,0,0,0,0,4H39L16.51,28.52a2.1,2.1,0,0,0,3,3L42,9V25a2,2,0,0,0,4,0V4A2,2,0,0,0,44,2Z"/>
+  </symbol>
   <symbol id="common--help" viewBox="0 0 28 48">
     <circle cx="14" cy="44" r="4"/>
     <path d="M28 14a14 14 0 0 0-28 0 4 4 0 0 0 8 0 6 6 0 1 1 6 6 4 4 0 0 0-4 4v9a4 4 0 0 0 8 0v-5.59A14.02 14.02 0 0 0 28 14z"/>
   </symbol>
-  <symbol id="group-common" viewBox="0 0 48 192">
+  <symbol id="group-common" viewBox="0 0 48 240">
     <use xlink:href="#common--arrow-right" width="48" height="48"/>
     <use xlink:href="#common--close" width="48" height="48" y="48"/>
     <use xlink:href="#common--download" width="48" height="48" y="96"/>
-    <use xlink:href="#common--help" width="48" height="48" y="144"/>
+    <use xlink:href="#common--external-link" width="48" height="48" y="144"/>
+    <use xlink:href="#common--help" width="48" height="48" y="192"/>
   </symbol>
-  <symbol id="group-common--8" viewBox="0 0 16 32">
-    <use xlink:href="#group-common" width="8" height="32" class="dark-blue"/>
-    <use xlink:href="#group-common" width="8" height="32" x="8" class="dark-grey"/>
+  <symbol id="group-common--8" viewBox="0 0 16 40">
+    <use xlink:href="#group-common" width="8" height="40" class="dark-blue"/>
+    <use xlink:href="#group-common" width="8" height="40" x="8" class="dark-grey"/>
   </symbol>
-  <symbol id="group-common--12" viewBox="0 0 48 48">
-    <use xlink:href="#group-common" width="12" height="48" class="blue"/>
-    <use xlink:href="#group-common" width="12" height="48" x="12" class="dark-blue"/>
-    <use xlink:href="#group-common" width="12" height="48" x="24" class="dark-grey"/>
-    <use xlink:href="#group-common" width="12" height="48" x="36" class="white"/>
+  <symbol id="group-common--12" viewBox="0 0 48 60">
+    <use xlink:href="#group-common" width="12" height="60" class="blue"/>
+    <use xlink:href="#group-common" width="12" height="60" x="12" class="dark-blue"/>
+    <use xlink:href="#group-common" width="12" height="60" x="24" class="dark-grey"/>
+    <use xlink:href="#group-common" width="12" height="60" x="36" class="white"/>
   </symbol>
-  <symbol id="group-common--18" viewBox="0 0 54 72">
-    <use xlink:href="#group-common" width="18" height="72" class="dark-blue"/>
-    <use xlink:href="#group-common" width="18" height="72" x="18" class="dark-grey"/>
-    <use xlink:href="#group-common" width="18" height="72" x="36" class="white"/>
+  <symbol id="group-common--18" viewBox="0 0 54 90">
+    <use xlink:href="#group-common" width="18" height="90" class="dark-blue"/>
+    <use xlink:href="#group-common" width="18" height="90" x="18" class="dark-grey"/>
+    <use xlink:href="#group-common" width="18" height="90" x="36" class="white"/>
   </symbol>
   <symbol id="content--infographic" viewBox="0 0 48 48">
     <path d="M10 24H2c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V26c0-1.1-.9-2-2-2zM28 13h-7.9c-1.1 0-2 .9-2 2v29c0 1.1.9 2 2 2H28c1.1 0 2-.9 2-2V15c0-1.1-.9-2-2-2zM46 2h-8c-1.1 0-2 .9-2 2v40c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
@@ -114,9 +119,9 @@
     <use xlink:href="#group-map-marker" width="44" height="44" x="88" class="orange"/>
     <use xlink:href="#group-map-marker" width="44" height="44" x="132" class="red"/>
   </symbol>
-  <use xlink:href="#group-common--8" width="16" height="32"/>
-  <use xlink:href="#group-common--12" width="48" height="48" x="16"/>
-  <use xlink:href="#group-common--18" width="54" height="72" x="64"/>
+  <use xlink:href="#group-common--8" width="16" height="40"/>
+  <use xlink:href="#group-common--12" width="48" height="60" x="16"/>
+  <use xlink:href="#group-common--18" width="54" height="90" x="64"/>
   <use xlink:href="#group-content--16" width="16" height="96" x="118"/>
   <use xlink:href="#group-content--24" width="24" height="144" x="134"/>
   <use xlink:href="#group-content--36" width="36" height="216" x="158"/>
