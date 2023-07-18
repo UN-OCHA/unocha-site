@@ -139,6 +139,7 @@
 }
 
 .paragraph--type--image,
+.paragraph--type--text-and-image,
 .paragraph--type--embed,
 .paragraph--type--call-to-action,
 .paragraph--type--video,
@@ -158,6 +159,7 @@
 
 @media screen and (min-width: 768px) {
   .paragraph--type--image,
+  .paragraph--type--text-and-image,
   .paragraph--type--embed,
   .paragraph--type--call-to-action,
   .paragraph--type--video,
@@ -309,6 +311,10 @@
 
 .paragraph--type--cbpf .cd-button {
   margin: 2rem auto 0;
+}
+
+.paragraph--type--image {
+  text-align: center;
 }
 
 /* No top margin on first paragraph type */
