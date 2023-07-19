@@ -104,6 +104,10 @@
   {% endif %}
   {{ title_suffix }}
 
+  {% if componentsModule %}
+    {% include '@uno-components/cd-social-links/cd-social-links.html.twig' %}
+  {% endif %}
+
   {{ local_tasks }}
 
   <div{{ content_attributes.addClass('cd-layout-main-content') }}>
