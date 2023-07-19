@@ -26,16 +26,19 @@ dependencies:
     - file
     - filter
     - media
+    - menu_link_content
     - node
     - paragraphs
     - path
     - taxonomy
     - toolbar
+    - unocha_canto
 id: editor
 label: Editor
 weight: 3
 is_admin: null
 permissions:
+  - 'access canto api'
   - 'access content overview'
   - 'access files overview'
   - 'access media overview'
@@ -135,8 +138,25 @@ permissions:
   - 'revert response revisions'
   - 'revert story revisions'
   - 'translate any entity'
+  - 'translate basic node'
   - 'translate contacts taxonomy_term'
+  - 'translate country taxonomy_term'
   - 'translate editable entities'
+  - 'translate event node'
+  - 'translate event_type taxonomy_term'
+  - 'translate image media'
+  - 'translate leader node'
+  - 'translate media_collection node'
+  - 'translate menu_link_content'
+  - 'translate office_type taxonomy_term'
+  - 'translate paragraph'
+  - 'translate region node'
+  - 'translate resource node'
+  - 'translate response node'
+  - 'translate story node'
+  - 'translate story_type taxonomy_term'
+  - 'translate theme taxonomy_term'
+  - 'translate video media'
   - 'update any media'
   - 'update content translations'
   - 'update media'
