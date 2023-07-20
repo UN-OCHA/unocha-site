@@ -242,12 +242,12 @@
   }
 }
 /* A layout following another layout, reduce margin */
-/* .paragraph--type--layout + .paragraph--type--layout {
-  margin-top: -2rem;
+.paragraph--type--layout + .paragraph--type--layout {
+  margin-top:2rem;
   margin-bottom: 2rem;
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .paragraph--type--layout + .paragraph--type--layout {
     margin-bottom: 6rem;
   }
