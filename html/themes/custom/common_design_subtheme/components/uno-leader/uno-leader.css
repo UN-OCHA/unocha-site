@@ -34,9 +34,9 @@
 
   .uno-leader--full .field--name-field-leader-title {
     grid-area: name;
+    margin-top: 0;
     padding-inline-end: 2rem;
     font-size: var(--cd-font-size--medium);
-    margin-top: 0;
   }
 
   .uno-leader--full .field--name-field-leader-portrait {
