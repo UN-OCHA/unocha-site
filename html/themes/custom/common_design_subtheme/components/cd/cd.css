@@ -254,6 +254,7 @@ a.cd-footer-social__link svg {
 .cd-user-menu a {
   text-transform: uppercase;
   font-weight: bold;
+  padding-inline: 20px;
 }
 
 .cd-user-menu a:hover,
