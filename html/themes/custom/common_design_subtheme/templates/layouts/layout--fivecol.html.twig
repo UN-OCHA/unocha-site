@@ -52,6 +52,7 @@
       {% endif %}
     </div>
 
+  {% if content.sixth|render or content.seventh|render or content.eighth|render or content.ninth|render or content.tenth|render %}
     <div class="layout--row">
       {% if content.sixth %}
         <div {{ region_attributes.sixth.addClass('layout__region', 'layout__region--sixth') }}>
@@ -83,6 +84,7 @@
         </div>
       {% endif %}
     </div>
+  {% endif %}
 
   </div>
 {% endif %}
