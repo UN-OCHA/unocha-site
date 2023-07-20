@@ -34,9 +34,9 @@
 
   .uno-leader--full .field--name-field-leader-title {
     grid-area: name;
+    margin-top: 0;
     padding-inline-end: 2rem;
     font-size: var(--cd-font-size--medium);
-    margin-top: 0;
   }
 
   .uno-leader--full .field--name-field-leader-portrait {
@@ -111,6 +111,10 @@
     max-width: 50%;
     margin: 0 auto;
   }
+
+  .uno-leader__image img {
+    display: block;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -154,7 +158,7 @@
 
 .field--name-field-custom-content .paragraph--type--leader,
 .field--name-field-custom-content .paragraph--type--leader:last-child {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .paragraph--type--leader.paragraph--view-mode--small {
@@ -176,12 +180,22 @@
   }
 
   .paragraph--type--leader.paragraph--view-mode--small {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 
   .paragraph--type--leader.paragraph--view-mode--small:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
     border-bottom: 0 solid var(--brand-grey);
+  }
+
+  /* When in layouts */
+  .field--name-field-custom-content .layout--threecol .paragraph--type--leader,
+  .field--name-field-custom-content .layout--threecol .paragraph--type--leader:last-child {
+    margin-bottom: 3rem;
+  }
+
+  .field--name-field-custom-content > .layout .paragraph--type--leader.paragraph--view-mode--small {
+    margin-bottom: 0;
   }
 }
