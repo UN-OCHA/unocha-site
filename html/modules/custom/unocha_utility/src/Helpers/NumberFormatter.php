@@ -326,10 +326,6 @@ class NumberFormatter {
       if ($number < 1e6) {
         $n = $n / 1000;
         $p = $p + 1;
-        $precision = 2;
-      }
-      else {
-        $precision = 1;
       }
     }
 
