@@ -49,7 +49,7 @@ content:
     label: hidden
     settings:
       format: short
-      precision: 2
+      precision: 1
       percentage: 'yes'
       currency_symbol: 'yes'
     third_party_settings: {  }
