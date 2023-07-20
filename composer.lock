@@ -2362,16 +2362,16 @@
         },
         {
             "name": "drupal/coder",
-            "version": "8.3.20",
+            "version": "8.3.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pfrenssen/coder.git",
-                "reference": "88055e40931a56074b6510a631d3403794c91625"
+                "reference": "a0b76c6c8ea277b07d58fa75dcacf102a203ad51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pfrenssen/coder/zipball/88055e40931a56074b6510a631d3403794c91625",
-                "reference": "88055e40931a56074b6510a631d3403794c91625",
+                "url": "https://api.github.com/repos/pfrenssen/coder/zipball/a0b76c6c8ea277b07d58fa75dcacf102a203ad51",
+                "reference": "a0b76c6c8ea277b07d58fa75dcacf102a203ad51",
                 "shasum": ""
             },
             "require": {
@@ -2409,7 +2409,7 @@
                 "issues": "https://www.drupal.org/project/issues/coder",
                 "source": "https://www.drupal.org/project/coder"
             },
-            "time": "2023-06-15T07:16:09+00:00"
+            "time": "2023-07-17T15:36:49+00:00"
         },
         {
             "name": "drupal/components",
@@ -6387,16 +6387,16 @@
         },
         {
             "name": "mck89/peast",
-            "version": "v1.15.1",
+            "version": "v1.15.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mck89/peast.git",
-                "reference": "cf06286910b7efc9dce7503553ebee314df3d3d3"
+                "reference": "07d82a271d372c6f37897a70b0381ca2ec2e364a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mck89/peast/zipball/cf06286910b7efc9dce7503553ebee314df3d3d3",
-                "reference": "cf06286910b7efc9dce7503553ebee314df3d3d3",
+                "url": "https://api.github.com/repos/mck89/peast/zipball/07d82a271d372c6f37897a70b0381ca2ec2e364a",
+                "reference": "07d82a271d372c6f37897a70b0381ca2ec2e364a",
                 "shasum": ""
             },
             "require": {
@@ -6409,7 +6409,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15.1-dev"
+                    "dev-master": "1.15.2-dev"
                 }
             },
             "autoload": {
@@ -6431,9 +6431,9 @@
             "description": "Peast is PHP library that generates AST for JavaScript code",
             "support": {
                 "issues": "https://github.com/mck89/peast/issues",
-                "source": "https://github.com/mck89/peast/tree/v1.15.1"
+                "source": "https://github.com/mck89/peast/tree/v1.15.2"
             },
-            "time": "2023-01-21T13:18:17+00:00"
+            "time": "2023-07-15T12:25:27+00:00"
         },
         {
             "name": "mglaman/phpstan-drupal",
@@ -7785,16 +7785,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.25",
+            "version": "1.10.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "578f4e70d117f9a90699324c555922800ac38d8c"
+                "reference": "5d660cbb7e1b89253a47147ae44044f49832351f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/578f4e70d117f9a90699324c555922800ac38d8c",
-                "reference": "578f4e70d117f9a90699324c555922800ac38d8c",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/5d660cbb7e1b89253a47147ae44044f49832351f",
+                "reference": "5d660cbb7e1b89253a47147ae44044f49832351f",
                 "shasum": ""
             },
             "require": {
@@ -7843,7 +7843,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-07-06T12:11:37+00:00"
+            "time": "2023-07-19T12:44:37+00:00"
         },
         {
             "name": "phpstan/phpstan-phpunit",
