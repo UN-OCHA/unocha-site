@@ -41,6 +41,7 @@
       {% endif %}
     </div>
 
+  {% if content.fourth|render or content.fifth|render or content.sixth|render %}
     <div class="layout--row">
       {% if content.fourth %}
         <div {{ region_attributes.fourth.addClass('layout__region', 'layout__region--fourth') }}>
@@ -60,6 +61,7 @@
         </div>
       {% endif %}
     </div>
+  {% endif %}
 
   </div>
 {% endif %}

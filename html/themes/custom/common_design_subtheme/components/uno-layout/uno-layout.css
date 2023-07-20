@@ -17,15 +17,15 @@
 .layout--fivecol .layout--row {
   display: flex;
   flex-flow: row wrap;
-  gap: 0 var(--uno-card-list-gap-size);
+  gap: var(--uno-card-list-gap-size);
 }
 
 .layout--twocol .layout--row {
-  gap: 0 var(--uno-card-list-gap-size--twocol);
+  gap: var(--uno-card-list-gap-size--twocol);
 }
 
 .layout--fivecol .layout--row {
-  gap: 0 var(--uno-card-list-gap-size--reduced);
+  gap: var(--uno-card-list-gap-size--reduced);
 }
 
 .layout--threecol .layout--row > .layout__region,
@@ -68,22 +68,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .layout--twocol .layout--row,
-  .layout--twocol-siderbar,
-  .layout--threecol .layout--row,
-  .layout--fourcol .layout--row,
-  .layout--fivecol .layout--row {
-    gap: var(--uno-card-list-gap-size);
-  }
-
-  .layout--twocol .layout--row {
-    gap: var(--uno-card-list-gap-size--twocol);
-  }
-
-  .layout--fivecol .layout--row {
-    gap: var(--uno-card-list-gap-size--reduced);
-  }
-
   .layout--twocol .layout--row > .layout__region {
     --uno-card-list-num-cols: 2;
   }
