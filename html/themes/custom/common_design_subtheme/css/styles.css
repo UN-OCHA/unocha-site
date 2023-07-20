@@ -583,7 +583,7 @@ footer.cd-author {
   affect other contexts where this layout is used in the future.
 */
 
-.cd-layout__content .rw-river-article--with-preview .rw-river-article__content img,
+.layout--twocol-sidebar .cd-layout__content .rw-river-article--with-preview .rw-river-article__content img,
 .cd-layout__sidebar--wide .rw-river-article--with-preview .rw-river-article__content img {
   display: none;
 }
