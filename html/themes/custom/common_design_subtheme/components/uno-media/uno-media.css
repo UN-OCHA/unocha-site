@@ -42,11 +42,16 @@
     flex-basis: auto;
     flex-grow: 0;
     flex-shrink: 0;
-    width: 33%;
+    width: 33.33%;
   }
 
   .uno-photo-gallery--two-columns .uno-photo-gallery__photo:first-child {
-    width: 66%;
+    width: 100%;
+  }
+
+  .uno-photo-gallery--two-columns .uno-photo-gallery__photos[data-count="2"] .uno-photo-gallery__photo:first-child,
+  .uno-photo-gallery--two-columns .uno-photo-gallery__photos[data-count="5"] .uno-photo-gallery__photo:first-child {
+    width: 66.66%;
   }
 }
 
