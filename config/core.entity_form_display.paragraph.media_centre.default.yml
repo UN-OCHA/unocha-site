@@ -9,11 +9,18 @@ dependencies:
     - paragraphs.paragraphs_type.media_centre
   module:
     - text
+    - viewsreference
 id: paragraph.media_centre.default
 targetEntityType: paragraph
 bundle: media_centre
 mode: default
 content:
+  field_media_centre_list:
+    type: viewsreference_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_text:
     type: text_textarea
     weight: 1
@@ -32,16 +39,15 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 3
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   translation:
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   created: true
-  field_media_centre_list: true
