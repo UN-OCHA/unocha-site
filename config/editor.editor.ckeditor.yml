@@ -65,6 +65,9 @@ settings:
         -
           label: Title
           element: '<p class="title">'
+        -
+          label: Headline
+          element: '<p class="headline">'
     linkit_extension:
       linkit_enabled: true
       linkit_profile: default
