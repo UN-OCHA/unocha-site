@@ -18,9 +18,13 @@
   margin: 0.25rem auto 2rem;
   padding: 0 var(--cd-container-padding);
 }
-.cd-container .cd-hero .cd-caption .field--name-field-image-caption,
-.cd-container .cd-bleed .cd-caption .field--name-field-image-caption {
+.cd-container .cd-hero .cd-caption .cd-caption__inner,
+.cd-container .cd-bleed .cd-caption .cd-caption__inner {
   max-width: var(--cd-max-content-width);
+}
+
+.cd-container .node--type-story .cd-bleed .cd-caption .cd-caption__inner {
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 768px) {
