@@ -11,6 +11,7 @@ url:
     fr: fr
     es: es
     ru: ru
+    '': null
   domains:
     ar: ''
     zh-hans: ''
