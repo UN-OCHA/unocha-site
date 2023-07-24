@@ -606,3 +606,13 @@ footer.cd-author {
     margin-top: 3rem;
   }
 }
+
+.path-frontpage .layout--twocol-66-33 .layout__region--first p.headline {
+  /* Align top so it matches paragraph in next region */
+  margin-top: -4px;
+}
+
+.path-frontpage .field--name-field-custom-content .paragraph--type--layout:nth-child(2) .layout--threecol .cd-block-title {
+  color: var(--brand-primary);
+  margin-bottom: 1rem;
+}
