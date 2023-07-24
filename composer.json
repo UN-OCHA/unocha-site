@@ -53,6 +53,7 @@
         "drupal/menu_breadcrumb": "^2.0@alpha",
         "drupal/metatag": "^1.22",
         "drupal/oembed_providers": "^2.1",
+        "drupal/openid_connect_windows_aad": "^2.0@beta",
         "drupal/paragraph_view_mode": "^3.0",
         "drupal/paragraphs": "^1.15",
         "drupal/paragraphs_admin": "^1.4",
