@@ -46,8 +46,10 @@
   {% if content.field_image_caption and content.field_image_copyright %}
     {{ content|without('field_image_caption', 'field_image_copyright') }}
     <div class="cd-caption">
-      {{ content.field_image_caption}}
-      {{ content.field_image_copyright}}
+      <div class="cd-caption__inner">
+        {{ content.field_image_caption.0 }}
+        {{ content.field_image_copyright.0 }}
+      </div>
     </div>
   {% elseif content %}
     {{ content }}
