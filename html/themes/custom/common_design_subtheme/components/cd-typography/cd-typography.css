@@ -29,6 +29,7 @@ p.headline {
   font-weight: bold;
   line-height: 1.2;
 }
+
 @media screen and (min-width: 1024px) {
   p.headline {
     font-size: 52px;

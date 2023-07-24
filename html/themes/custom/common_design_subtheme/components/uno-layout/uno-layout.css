@@ -85,9 +85,10 @@
   }
 
   .layout--twocol-66-33 {
+    --uno-card-list-num-cols: 2;
+
     display: flex;
     gap: var(--uno-card-list-gap-size);
-    --uno-card-list-num-cols: 2;
   }
   .layout--twocol-66-33 > .layout__region--first {
     flex: 0 1 66%;
