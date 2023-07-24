@@ -35,7 +35,21 @@
       {% endif %}
     </div>
 
-  {% if 'Administrator' in user.getroles() or 'Editor' in user.getroles() %}
+  {% if logged_in %}
+    <div class="layout--row">
+      {% if content.third %}
+        <div {{ region_attributes.third.addClass('layout__region', 'layout__region--third') }}>
+          {{ content.third }}
+        </div>
+      {% endif %}
+
+      {% if content.fourth %}
+        <div {{ region_attributes.fourth.addClass('layout__region', 'layout__region--fourth') }}>
+          {{ content.fourth }}
+        </div>
+      {% endif %}
+    </div>
+  {% else %}
     {% if content.third|render or content.fourth %}
       <div class="layout--row">
         {% if content.third %}
@@ -51,20 +65,6 @@
         {% endif %}
       </div>
     {% endif %}
-  {% else %}
-    <div class="layout--row">
-      {% if content.third %}
-        <div {{ region_attributes.third.addClass('layout__region', 'layout__region--third') }}>
-          {{ content.third }}
-        </div>
-      {% endif %}
-
-      {% if content.fourth %}
-        <div {{ region_attributes.fourth.addClass('layout__region', 'layout__region--fourth') }}>
-          {{ content.fourth }}
-        </div>
-      {% endif %}
-    </div>
   {% endif %}
 
   </div>
