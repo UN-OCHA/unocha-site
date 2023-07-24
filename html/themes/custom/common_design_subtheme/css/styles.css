@@ -607,6 +607,7 @@ footer.cd-author {
   }
 }
 
+/* Homepage styles */
 .path-frontpage .layout--twocol-66-33 .layout__region--first p.headline {
   /* Align top so it matches paragraph in next region */
   margin-top: -4px;
@@ -615,4 +616,19 @@ footer.cd-author {
 .path-frontpage .field--name-field-custom-content .paragraph--type--layout:nth-child(2) .layout--threecol .cd-block-title {
   color: var(--brand-primary);
   margin-bottom: 1rem;
+}
+
+/* Hide teaser images on homepage */
+.path-frontpage .paragraph--type--node.paragraph--view-mode--teasers .cd-teaser__image {
+  display: none;
+}
+
+/* When in a layout, reset cd-bumper value */
+.layout .paragraph--type--node.paragraph--view-mode--teasers .cd-teaser__container {
+  padding-left: 0;
+}
+
+/* When in a layout, add margin to teaser title */
+.layout .paragraph--type--node.paragraph--view-mode--teasers .cd-teaser__title {
+  margin-top: 1rem;
 }
