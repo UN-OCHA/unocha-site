@@ -52,7 +52,7 @@
       {% endif %}
     </div>
 
-  {% if content.sixth|render or content.seventh|render or content.eighth|render or content.ninth|render or content.tenth|render %}
+  {% if logged_in %}
     <div class="layout--row">
       {% if content.sixth %}
         <div {{ region_attributes.sixth.addClass('layout__region', 'layout__region--sixth') }}>
@@ -84,7 +84,40 @@
         </div>
       {% endif %}
     </div>
-  {% endif %}
+  {% else %}
+    {% if content.sixth|render or content.seventh|render or content.eighth|render or content.ninth|render or content.tenth|render %}
+      <div class="layout--row">
+        {% if content.sixth %}
+          <div {{ region_attributes.sixth.addClass('layout__region', 'layout__region--sixth') }}>
+            {{ content.sixth }}
+          </div>
+        {% endif %}
 
+        {% if content.seventh %}
+          <div {{ region_attributes.seventh.addClass('layout__region', 'layout__region--seventh') }}>
+            {{ content.seventh }}
+          </div>
+        {% endif %}
+
+        {% if content.eighth %}
+          <div {{ region_attributes.eighth.addClass('layout__region', 'layout__region--eighth') }}>
+            {{ content.eighth }}
+          </div>
+        {% endif %}
+
+        {% if content.ninth %}
+          <div {{ region_attributes.ninth.addClass('layout__region', 'layout__region--ninth') }}>
+            {{ content.ninth }}
+          </div>
+        {% endif %}
+
+        {% if content.tenth %}
+          <div {{ region_attributes.tenth.addClass('layout__region', 'layout__region--tenth') }}>
+            {{ content.tenth }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endif %}
   </div>
 {% endif %}

@@ -206,7 +206,6 @@ a:focus {
 
 .cd-soft-footer nav a {
   display: block;
-  text-transform: uppercase;
   font-size: var(--cd-font-size--tiny);
   font-weight: 500;
   line-height: 1.2;

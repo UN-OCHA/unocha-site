@@ -33,7 +33,7 @@
 } */
 .rw-river-article .rw-river-article__title {
   /* display: inline; */
-  margin: 0;
+  margin-top: 0;
   color: black;
   /* font-size: 17px; */
   font-size: 1.25rem;

@@ -33,6 +33,21 @@ layout_twocol_sidebar:
     second:
       label: Second
 
+layout_twocol_66_33:
+  label: 'UNO Two column 66% 33%'
+  category: 'Common Design Layouts'
+  path: templates/layouts
+  template: layout--twocol-66-33
+  library: common_design_subtheme/uno-layout
+  default_region: first
+  icon_map:
+    - [first, first, second]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+
 layout_threecol:
   label: 'UNO Three column'
   category: 'Common Design Layouts'
