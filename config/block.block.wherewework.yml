@@ -11,7 +11,7 @@ dependencies:
 id: wherewework
 theme: common_design_subtheme
 region: footer_soft
-weight: -8
+weight: -9
 provider: null
 plugin: 'system_menu_block:where-we-work'
 settings:
