@@ -119,21 +119,18 @@
   display: block;
 }
 
-/* @media screen and (min-width: 1024px) {
-  .layout--twocol-sidebar .cd-layout__sidebar--wide .paragraph:first-child {
-    margin-top: -3rem;
-  }
-} */
-
+.node--type-media-collection.node--view-mode-card .uno-card__image {
+  margin-bottom: 0.25rem;
+}
 /* Reduce height of Media collection image div to height of video */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 480px) {
   .node--type-media-collection.node--view-mode-card .uno-card__image {
     display: flex;
     overflow: hidden;
     flex-direction: column;
     justify-content: center;
-    max-height: 200px;
-    margin-bottom: 0.25rem;
+    height: 200px;
+    background-color: var(--brand-grey);
   }
   .node--type-media-collection.node--view-mode-card .uno-card__image .field--name-field-media-video {
     flex: 0 1 auto;
