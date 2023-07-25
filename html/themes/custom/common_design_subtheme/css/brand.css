@@ -6,10 +6,13 @@
    *
    * In the future the Component library will adhere to these vars as well.
    */
+  /* OCHA blue is one colour ramp darker than brand blue */
   --cd-ocha-blue: #1f69b3;
   --brand-primary: #1f69b3;
+  /* Brighter blue is two colour ramps higher than brand blue */
   --cd-blue--brighter: #82b5e9;
   --brand-primary--light: var(--cd-blue--brighter);
+  /* Dark blue is two colour ramps darker than brand blue */
   --brand-primary--dark: #144372;
   --brand-highlight: #E56A54;
   /* https: //polypane.app/color-contrast/#fg=%23fff&bg=%23E56A54&level=aa&format=hex&algo=WCAG2&filter=none */

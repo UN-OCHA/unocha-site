@@ -139,6 +139,12 @@
     flex-basis: 400px;
     padding: 0;
   }
+
+  /* This ensures the second column aligns with the third column in the 3 column
+    layout that follows on the homepage */
+  .layout--twocol-66-33 > .layout__region--first {
+    flex: 1 0 66%;
+  }
 }
 
 .layout--twocol-sidebar {

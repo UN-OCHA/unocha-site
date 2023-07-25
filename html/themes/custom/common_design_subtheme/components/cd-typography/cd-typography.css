@@ -22,7 +22,6 @@ p.title {
   font-size: var(--cd-font-size--2xmedium);
 }
 
-
 p.headline {
   color: var(--brand-primary);
   font-size: var(--cd-font-size--2xmedium);
@@ -32,7 +31,7 @@ p.headline {
 
 @media screen and (min-width: 1024px) {
   p.headline {
-    font-size: 52px;
+    font-size: 50px;
     line-height: 1.2;
   }
 }
