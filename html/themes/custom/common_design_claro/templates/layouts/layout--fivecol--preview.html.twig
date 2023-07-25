@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Default theme implementation for a three-column layout.
+ * Default theme implementation for a four-column 25%-25%-25%-25% layout.
  *
  * Available variables:
  * - in_preview: Whether the plugin is being rendered in preview mode.
@@ -14,14 +14,12 @@
 {%
   set classes = [
     'layout',
-    'layout--threecol',
+    'layout--fivecol',
   ]
 %}
-
 {% if content %}
   <div{{ attributes.addClass(classes) }}>
 
-  {% if content.first|length > 1 or content.second|length > 1 or content.third|length > 1 %}
     <div class="layout--row">
       {% if content.first %}
         <div {{ region_attributes.first.addClass('layout__region', 'layout__region--first') }}>
@@ -40,11 +38,7 @@
           {{ content.third }}
         </div>
       {% endif %}
-    </div>
-  {% endif %}
 
-  {% if content.fourth|length > 1 or content.fifth|length > 1 or content.sixth|length > 1 %}
-    <div class="layout--row">
       {% if content.fourth %}
         <div {{ region_attributes.fourth.addClass('layout__region', 'layout__region--fourth') }}>
           {{ content.fourth }}
@@ -56,14 +50,39 @@
           {{ content.fifth }}
         </div>
       {% endif %}
+    </div>
 
+    <div class="layout--row">
       {% if content.sixth %}
         <div {{ region_attributes.sixth.addClass('layout__region', 'layout__region--sixth') }}>
           {{ content.sixth }}
         </div>
       {% endif %}
+
+      {% if content.seventh %}
+        <div {{ region_attributes.seventh.addClass('layout__region', 'layout__region--seventh') }}>
+          {{ content.seventh }}
+        </div>
+      {% endif %}
+
+      {% if content.eighth %}
+        <div {{ region_attributes.eighth.addClass('layout__region', 'layout__region--eighth') }}>
+          {{ content.eighth }}
+        </div>
+      {% endif %}
+
+      {% if content.ninth %}
+        <div {{ region_attributes.ninth.addClass('layout__region', 'layout__region--ninth') }}>
+          {{ content.ninth }}
+        </div>
+      {% endif %}
+
+      {% if content.tenth %}
+        <div {{ region_attributes.tenth.addClass('layout__region', 'layout__region--tenth') }}>
+          {{ content.tenth }}
+        </div>
+      {% endif %}
     </div>
-  {% endif %}
 
   </div>
 {% endif %}
