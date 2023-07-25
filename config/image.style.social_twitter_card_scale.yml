@@ -1,0 +1,16 @@
+uuid: c7162146-2e06-4016-9e15-1c239a97d7a4
+langcode: en
+status: true
+dependencies: {  }
+name: social_twitter_card_scale
+label: 'Social: Twitter card - scale'
+effects:
+  b3976252-39fe-4fad-87fc-8730e93054e1:
+    uuid: b3976252-39fe-4fad-87fc-8730e93054e1
+    id: image_scale
+    weight: 1
+    data:
+      width: 1024
+      height: 536
+      upscale: true
+pipeline: __default__

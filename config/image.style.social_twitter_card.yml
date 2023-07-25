@@ -1,0 +1,16 @@
+uuid: 2ce0e628-0abc-4d8f-b1fd-6412700bfd72
+langcode: en
+status: true
+dependencies: {  }
+name: social_twitter_card
+label: 'Social: Twitter card'
+effects:
+  18823ca2-2ae0-43f3-bb8e-d633e1a0341e:
+    uuid: 18823ca2-2ae0-43f3-bb8e-d633e1a0341e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1024
+      height: 536
+      anchor: center-center
+pipeline: __default__
