@@ -208,7 +208,6 @@ a:focus {
   display: block;
   font-size: var(--cd-font-size--tiny);
   font-weight: 500;
-  line-height: 1.2;
 }
 
 .cd-soft-footer h2 {
