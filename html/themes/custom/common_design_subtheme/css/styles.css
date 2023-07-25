@@ -613,9 +613,17 @@ footer.cd-author {
   margin-top: -4px;
 }
 
+/* Increase font size in second column on homepage */
+.path-frontpage .layout--twocol-66-33 .layout__region--second p {
+  color: #707070;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
 .path-frontpage .field--name-field-custom-content .paragraph--type--layout:nth-child(2) .layout--threecol .cd-block-title {
   margin-bottom: 1rem;
   color: var(--brand-primary);
+  font-size: 24px;
 }
 
 /* Hide teaser images on homepage */
