@@ -16,6 +16,9 @@
     "drupal/pathauto": {
       "PHP 8.2 compatibility": "PATCHES/pathauto-php-82-compatibility.patch"
     },
+    "drupal/stage_file_proxy": {
+      "Stage file proxy attempts to fetch aggregated JS/CSS": "PATCHES/stage_file_proxy_3372105.patch"
+    },
     "drupal/user_expire": {
       "Allow the notification email to be customised": "PATCHES/user_expire-customize-notification-email.patch",
       "Reset expiration when user is reactivated": "PATCHES/user_expire-reset-expiration-on-reactivation.patch"
