@@ -1,0 +1,16 @@
+uuid: af662361-09b3-4950-935b-1ecf21088b02
+langcode: en
+status: true
+dependencies: {  }
+name: social_facebook_og_scale
+label: 'Social: Facebook OG - scale'
+effects:
+  eb13cbb7-591d-42fc-9fcb-425e5be5a093:
+    uuid: eb13cbb7-591d-42fc-9fcb-425e5be5a093
+    id: image_scale
+    weight: 1
+    data:
+      width: 1200
+      height: 630
+      upscale: true
+pipeline: __default__
