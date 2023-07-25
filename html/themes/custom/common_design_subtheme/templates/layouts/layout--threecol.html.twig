@@ -21,6 +21,7 @@
 {% if content %}
   <div{{ attributes.addClass(classes) }}>
 
+  {% if content.first|length > 1 or content.second|length > 1 or content.third|length > 1 %}
     <div class="layout--row">
       {% if content.first %}
         <div {{ region_attributes.first.addClass('layout__region', 'layout__region--first') }}>
@@ -40,8 +41,9 @@
         </div>
       {% endif %}
     </div>
+  {% endif %}
 
-  {% if logged_in %}
+  {% if content.fourth|length > 1 or content.fifth|length > 1 or content.sixth|length > 1 %}
     <div class="layout--row">
       {% if content.fourth %}
         <div {{ region_attributes.fourth.addClass('layout__region', 'layout__region--fourth') }}>
@@ -61,28 +63,6 @@
         </div>
       {% endif %}
     </div>
-  {% else %}
-    {% if content.fourth|render or content.fifth|render or content.sixth|render %}
-      <div class="layout--row">
-        {% if content.fourth %}
-          <div {{ region_attributes.fourth.addClass('layout__region', 'layout__region--fourth') }}>
-            {{ content.fourth }}
-          </div>
-        {% endif %}
-
-        {% if content.fifth %}
-          <div {{ region_attributes.fifth.addClass('layout__region', 'layout__region--fifth') }}>
-            {{ content.fifth }}
-          </div>
-        {% endif %}
-
-        {% if content.sixth %}
-          <div {{ region_attributes.sixth.addClass('layout__region', 'layout__region--sixth') }}>
-            {{ content.sixth }}
-          </div>
-        {% endif %}
-      </div>
-    {% endif %}
   {% endif %}
 
   </div>
