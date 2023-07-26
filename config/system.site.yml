@@ -4,7 +4,7 @@ langcode: en
 uuid: 8b187b50-276f-4848-a7e5-f1c218f62345
 name: OCHA
 mail: unocha@test.test
-slogan: ''
+slogan: 'United Nations Office for the Coordination of Humanitarian Affairs'
 page:
   403: ''
   404: /node/279
