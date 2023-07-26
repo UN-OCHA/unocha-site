@@ -1,4 +1,5 @@
 {{ attach_library('common_design_subtheme/cd-social-links') }}
+{% set shareText = label|render|striptags|default(title|render|striptags) %}
 <footer class="cd-social-links clearfix">
   <div role="status" class="cd-social-links__announce"></div>
   <div class="cd-social-links__wrapper">
@@ -29,7 +30,7 @@
           </a>
         </li>
         <li class="cd-social-links__item">
-          <a class="cd-social-links__link cd-social-links__link--email" href="mailto:?subject=UNOCHA&amp;body=?url={{ url('<current>') }}">
+          <a class="cd-social-links__link cd-social-links__link--email" href="mailto:?subject={{ shareText|url_encode }}&amp;body={{ url('<current>') }}">
             <span class="visually-hidden">{{ 'Share by Email'|t }}</span>
             <svg class="cd-icon cd-icon--social-links--email" aria-hidden="true" focusable="false" width="16" height="16">
               <use xlink:href="#cd-icon--social-links--email"></use>
