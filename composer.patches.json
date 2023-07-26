@@ -3,7 +3,7 @@
     "drupal/core": {
       "https://www.drupal.org/project/drupal/issues/3370828": "PATCHES/core-css-js-aggregation-3370828.patch",
       "https://www.drupal.org/project/drupal/issues/3376927": "PATCHES/core-css-js-aggregation-3376927.patch",
-      "Regression: infinite height prevention disables scrolling in Source view": "https://www.drupal.org/files/issues/2023-07-11/3372922-19.patch"
+      "Regression: infinite height prevention disables scrolling in Source view": "https://www.drupal.org/files/issues/2023-07-11/3372922-19.patch",
     },
     "drupal/csp": {
       "Simplify log format": "PATCHES/csp-log-format.patch"
