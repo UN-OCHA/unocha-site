@@ -1,0 +1,19 @@
+uuid: 410dbd3a-19b0-407b-b4e3-9a417291f4bf
+langcode: en
+status: true
+dependencies:
+  module:
+    - ocha_key_figures
+    - paragraphs
+id: paragraph.field_presence_donors
+field_name: field_presence_donors
+entity_type: paragraph
+type: key_figure_presence
+settings: {  }
+module: ocha_key_figures
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

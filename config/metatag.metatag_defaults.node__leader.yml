@@ -1,0 +1,16 @@
+uuid: c3e8bb38-0af0-4d6b-86bb-bcccbcca8176
+langcode: en
+status: true
+dependencies: {  }
+id: node__leader
+label: 'Content: Leader'
+tags:
+  og_description: '[node:summary]'
+  og_image: '[node:field_leader_portrait:social_facebook_og_scale:url]'
+  og_image_alt: '[node:field_leader_portrait:alt]'
+  og_image_height: '[node:field_leader_portrait:social_facebook_og_scale:height]'
+  og_image_scale: '[node:field_leader_portrait:social_facebook_og_scale:width]'
+  twitter_cards_description: '[node:summary]'
+  twitter_cards_image: '[node:field_leader_portrait:social_twitter_card_scale:url]'
+  twitter_cards_image_alt: '[node:field_leader_portrait:alt]'
+  twitter_cards_type: summary_large_image

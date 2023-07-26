@@ -1,0 +1,36 @@
+uuid: cb0ebf92-2778-4553-a223-fc317ff3c3b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.media_collection.body
+    - field.field.node.media_collection.field_canto_collection
+    - field.field.node.media_collection.field_custom_content
+    - field.field.node.media_collection.field_media_image
+    - field.field.node.media_collection.field_media_video
+    - field.field.node.media_collection.field_video_download
+    - node.type.media_collection
+  module:
+    - text
+    - user
+id: node.media_collection.default
+targetEntityType: node
+bundle: media_collection
+mode: default
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_canto_collection: true
+  field_custom_content: true
+  field_media_image: true
+  field_media_video: true
+  field_video_download: true
+  langcode: true
+  links: true

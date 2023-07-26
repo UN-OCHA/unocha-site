@@ -7,6 +7,8 @@ dependencies:
     - field.field.node.response.field_active_response
     - field.field.node.response.field_country
     - field.field.node.response.field_custom_content
+    - field.field.node.response.field_has_response
+    - field.field.node.response.field_office_type
     - field.field.node.response.field_region
     - field.field.node.response.field_response_image
     - field.field.node.response.field_response_link
@@ -35,20 +37,20 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   field_active_response:
     type: boolean_checkbox
-    weight: 5
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_country:
     type: choices_widget
-    weight: 7
+    weight: 8
     region: content
     settings:
       configuration_options: ''
@@ -63,9 +65,22 @@ content:
       require_layouts: 0
       empty_message: 'Placeholder message to display when field is empty'
     third_party_settings: {  }
+  field_has_response:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_office_type:
+    type: options_buttons
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_region:
     type: choices_widget
-    weight: 6
+    weight: 7
     region: content
     settings:
       configuration_options: ''
@@ -87,34 +102,34 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 8
+    weight: 10
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 13
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 11
+    weight: 14
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 15
+    weight: 18
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 12
+    weight: 15
     region: content
     settings:
       display_label: true
@@ -127,9 +142,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  translation:
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 9
+    weight: 11
     region: content
     settings:
       match_operator: CONTAINS
@@ -138,7 +158,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 14
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }

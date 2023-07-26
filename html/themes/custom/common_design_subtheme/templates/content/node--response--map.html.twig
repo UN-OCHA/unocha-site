@@ -67,24 +67,75 @@
  *
  */
 #}
-<article{{ attributes }}>
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'uno-card cd-card'
+  ]
+%}
+{{ attach_library('common_design/cd-card') }}
 
-  {{ title_prefix }}
-  {% if not page %}
-    <h3{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h3>
+{# Extra classes for the article and its map marker. #}
+{% set marker_classes = [] %}
+
+{% if node.field_has_response.value %}
+  {% set marker_classes = marker_classes|merge(['marker--has-response']) %}
+  {% set attributes = attributes.addClass('uno-response--has-response') %}
+{% endif %}
+
+{% for item in node.field_office_type %}
+  {% set office_type = item.entity ? item.entity.label() : '' %}
+  {% if office_type is not empty %}
+    {% set office_type = office_type|clean_class %}
+    {% set marker_classes = marker_classes|merge(['marker--' ~ office_type]) %}
+    {% set attributes = attributes.addClass('uno-response--' ~ office_type) %}
   {% endif %}
-  {{ title_suffix }}
+{% endfor %}
 
-  <div{{ content_attributes.addClass('unocha-response-map__article__content') }}>
-    {{ content|without('related') }}
+
+<article{{ attributes.addClass(classes).setAttribute('data-marker-classes', marker_classes|join(' ')) }}>
+
+  <div class="uno-card__image">
+    {{ content.field_response_image }}
   </div>
+
+  <div class="uno-card__content cd-card__container">
+
+    {% if not is_front %}
+      {% if node.field_office_type.0.entity %}
+        <span class="uno-office-type uno-tag">{{ node.field_office_type.0.entity.label() }}</span>
+      {% endif %}
+    {% endif %}
+
+    {% block card_title %}
+      <h3 class="uno-card__title cd-card__title">
+        <a href="{{ url }}">{{ label }}</a>
+      </h3>
+    {% endblock %}
+
+    <div{{ content_attributes.addClass('unocha-response-map__article__content') }}>
+      {{ content|without('related', 'field_response_image') }}
+    </div>
 
   {% if content.related is not empty %}
   <footer class="unocha-response-map__article__footer">
     {{ content.related }}
   </footer>
   {% endif %}
+
+  {% block read_more %}
+    <a href="{{ url }}" class="cd-card__link cd-read-more">
+      {% trans %}Learn more{% endtrans %}
+      <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
+        <use xlink:href="#cd-icon--arrow-right"></use>
+      </svg>
+    </a>
+  {% endblock %}
+  </div>
 
 </article>

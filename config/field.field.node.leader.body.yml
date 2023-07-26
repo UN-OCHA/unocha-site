@@ -10,8 +10,7 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    allowed_formats:
-      - text_editor_simple
+    allowed_formats: {  }
 id: node.leader.body
 field_name: body
 entity_type: node
@@ -25,4 +24,5 @@ default_value_callback: ''
 settings:
   display_summary: true
   required_summary: false
+  allowed_formats: {  }
 field_type: text_with_summary

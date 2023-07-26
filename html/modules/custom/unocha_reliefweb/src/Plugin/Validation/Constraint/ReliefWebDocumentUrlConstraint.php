@@ -33,6 +33,6 @@ class ReliefWebDocumentUrlConstraint extends Constraint {
    *
    * @var string
    */
-  public $mustBeValidRiverUrl = 'The %field is not a valid ReliefWeb Document URL such as https://reliefweb.int/report/country/title';
+  public $mustBeValidDocumentUrl = 'The %field is not a valid ReliefWeb Document URL such as https://reliefweb.int/report/country/title';
 
 }

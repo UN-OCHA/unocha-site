@@ -34,6 +34,7 @@
   height: 100%;
   margin: 0;
   padding: 0;
+  border-left: 1px solid var(--brand-grey);
 }
 .js .unocha-response-map[data-map-enabled] .unocha-response-map__map .mapboxgl-map {
   position: absolute;
@@ -72,7 +73,7 @@
   width: 30%;
   height: 100%;
   margin: 0;
-  padding: 12px;
+  padding: 2rem;
 }
 .js .unocha-response-map[data-map-enabled] [data-use-popup] .unocha-response-map__article[data-active] > * {
   padding: 0;
@@ -112,11 +113,8 @@
   width: 44px;
   height: 44px;
   cursor: pointer;
-  background: var(--rw-icons--map-marker--marker--44--grey);
+  background: var(--rw-icons--map-marker--marker--44--red);
   will-change: transform;
-}
-.js .unocha-response-map[data-map-enabled] .mapboxgl-marker[data-active] {
-  background: var(--rw-icons--map-marker--marker--44--blue);
 }
 .js .unocha-response-map[data-map-enabled] .mapboxgl-marker:after {
   position: absolute;
@@ -127,6 +125,19 @@
   content: "";
 }
 
+.js .unocha-response-map[data-map-enabled] .mapboxgl-marker.marker--hat,
+.js .unocha-response-map[data-map-enabled] .mapboxgl-marker.marker--country-office,
+.js .unocha-response-map[data-map-enabled] .mapboxgl-marker.marker--regional-office {
+  background: var(--rw-icons--map-marker--marker--44--grey);
+}
+
+.js .unocha-response-map[data-map-enabled] .mapboxgl-marker.marker--has-response {
+  background: var(--rw-icons--map-marker--marker--44--red);
+}
+/* Active marker */
+.js .unocha-response-map[data-map-enabled] .mapboxgl-marker[data-active] {
+  background: var(--rw-icons--map-marker--marker--44--blue);
+}
 /**
  * Mapbox styling.
  *

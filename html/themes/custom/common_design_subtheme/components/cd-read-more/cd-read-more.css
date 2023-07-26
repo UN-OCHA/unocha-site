@@ -9,6 +9,9 @@
 .cd-read-more svg {
   width: 0.5rem;
   height: 0.5rem;
+  fill: var(--brand-primary--dark);
+}
+.cd-read-more:hover svg {
   fill: var(--brand-primary);
 }
 

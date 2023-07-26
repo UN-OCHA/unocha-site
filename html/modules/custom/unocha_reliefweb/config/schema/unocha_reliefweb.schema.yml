@@ -30,18 +30,36 @@ unocha_reliefweb.settings:
       type: boolean
       label: 'Also use the "redirects" field for URL lookups.'
 
+field.field_settings.reliefweb_document:
+  type: mapping
+  mapping:
+    river:
+      type: string
+      label: 'Allowed river'
+
 field.field_settings.reliefweb_river:
   type: mapping
   mapping:
-    url:
+    rivers:
       type: string
-      label: 'ReliefWeb River URL'
-    title:
-      type: string
-      label: 'River Title'
-    limit:
-      type: integer
-      label: 'Maximum number of documents to request'
+      label: 'Allowed rivers'
+
+field.formatter.settings.reliefweb_document_river:
+  type: mapping
+  label: 'ReliefWeb River formatter settings'
+  mapping:
+    white_label:
+      type: boolean
+      label: 'Convert ReliefWeb URLs to UNOCHA URLs'
+    ocha_only:
+      type: boolean
+      label: 'Only include OCHA documents'
+    view_all_link:
+      type: boolean
+      label: 'Display a link to the full list of articles'
+    paginated:
+      type: boolean
+      label: 'User a pager to navigate the list'
 
 field.formatter.settings.reliefweb_river:
   type: mapping
@@ -50,6 +68,9 @@ field.formatter.settings.reliefweb_river:
     white_label:
       type: boolean
       label: 'Convert ReliefWeb URLs to UNOCHA URLs'
+    ocha_only:
+      type: boolean
+      label: 'Only include OCHA documents'
     view_all_link:
       type: boolean
       label: 'Display a link to the full list of articles'

@@ -8,6 +8,8 @@ dependencies:
     - field.field.node.response.field_active_response
     - field.field.node.response.field_country
     - field.field.node.response.field_custom_content
+    - field.field.node.response.field_has_response
+    - field.field.node.response.field_office_type
     - field.field.node.response.field_region
     - field.field.node.response.field_response_image
     - field.field.node.response.field_response_link
@@ -26,7 +28,7 @@ content:
     settings:
       trim_length: 160
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_response_image:
     type: entity_reference_entity_view
@@ -37,15 +39,13 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
-    region: content
 hidden:
   field_active_response: true
   field_country: true
   field_custom_content: true
+  field_has_response: true
+  field_office_type: true
   field_region: true
   field_response_link: true
   langcode: true
+  links: true

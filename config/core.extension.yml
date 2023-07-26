@@ -11,6 +11,7 @@ module:
   config: 0
   config_split: 0
   config_translation: 0
+  contact: 0
   contextual: 0
   csp: 0
   ctools: 0
@@ -22,6 +23,7 @@ module:
   editor: 0
   entity_reference_revisions: 0
   entity_usage: 0
+  externalauth: 0
   field: 0
   field_ui: 0
   file: 0
@@ -51,6 +53,9 @@ module:
   menu_breadcrumb: 0
   menu_link_content: 0
   menu_ui: 0
+  metatag: 0
+  metatag_open_graph: 0
+  metatag_twitter_cards: 0
   mysql: 0
   node: 0
   ocha_key_figures: 0
@@ -64,6 +69,7 @@ module:
   redirect: 0
   responsive_image: 0
   serialization: 0
+  samlauth: 0
   social_api: 0
   social_auth: 0
   social_auth_hid: 0
@@ -76,17 +82,20 @@ module:
   toolbar: 0
   unocha_breadcrumbs: 0
   unocha_canto: 0
+  unocha_contact: 0
   unocha_donors: 0
-  unocha_figures: 0
   unocha_maps: 0
+  unocha_menus: 0
   unocha_migrate: 0
   unocha_paragraphs: 0
   unocha_reliefweb: 0
+  unocha_sitemap: 0
   unocha_utility: 0
   update: 0
   user: 0
   user_display_name: 0
   user_expire: 0
+  username_enumeration_prevention: 0
   verf: 0
   viewsreference: 0
   xmlsitemap_engines: 0

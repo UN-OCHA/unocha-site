@@ -1,0 +1,20 @@
+diff --git a/src/EventSubscriber/StageFileProxySubscriber.php b/src/EventSubscriber/StageFileProxySubscriber.php
+index ba18d2a60703ad69d689e93b60b5f053d2eaf1ff..3f2d36987b274f4aac4161af6a939195f1675083 100644
+--- a/src/EventSubscriber/StageFileProxySubscriber.php
++++ b/src/EventSubscriber/StageFileProxySubscriber.php
+@@ -122,6 +122,15 @@ class StageFileProxySubscriber implements EventSubscriberInterface {
+       return;
+     }
+ 
++    // Quit if the extension is in the list of excluded extensions.
++    $excluded_extensions = $config->get('excluded_extensions') ?
++      array_map('trim', explode(',', $config->get('excluded_extensions'))) : [];
++
++    $extension = pathinfo($request_path)['extension'];
++    if (in_array($extension, $excluded_extensions)) {
++      return;
++    }
++
+     $alter_excluded_paths_event = new AlterExcludedPathsEvent([]);
+     $this->eventDispatcher->dispatch($alter_excluded_paths_event, 'stage_file_proxy.alter_excluded_paths');
+     $excluded_paths = $alter_excluded_paths_event->getExcludedPaths();

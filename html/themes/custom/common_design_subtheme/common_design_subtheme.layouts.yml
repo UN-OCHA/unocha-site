@@ -7,17 +7,37 @@ layout_twocol:
   default_region: first
   icon_map:
     - [first, second]
+    - [third, fourth]
   regions:
     first:
       label: First
     second:
       label: Second
+    third:
+      label: Third
+    fourth:
+      label: Fourth
 
 layout_twocol_sidebar:
   label: 'UNO Two column Sidebar'
   category: 'Common Design Layouts'
   path: templates/layouts
   template: layout--twocol-sidebar
+  library: common_design_subtheme/uno-layout
+  default_region: first
+  icon_map:
+    - [first, first, second]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+
+layout_twocol_66_33:
+  label: 'UNO Two column 66% 33%'
+  category: 'Common Design Layouts'
+  path: templates/layouts
+  template: layout--twocol-66-33
   library: common_design_subtheme/uno-layout
   default_region: first
   icon_map:
@@ -37,6 +57,7 @@ layout_threecol:
   default_region: second
   icon_map:
     - [first, second, third]
+    - [fourth, fifth, sixth]
   regions:
     first:
       label: First
@@ -44,6 +65,12 @@ layout_threecol:
       label: Second
     third:
       label: Third
+    fourth:
+      label: Fourth
+    fifth:
+      label: Fifth
+    sixth:
+      label: Sixth
 
 layout_fourcol:
   label: 'UNO Four column'
@@ -54,6 +81,7 @@ layout_fourcol:
   default_region: first
   icon_map:
     - [first, second, third, fourth]
+    - [fifth, sixth, seventh, eighth]
   regions:
     first:
       label: First
@@ -63,3 +91,43 @@ layout_fourcol:
       label: Third
     fourth:
       label: Fourth
+    fifth:
+      label: Fifth
+    sixth:
+      label: Sixth
+    seventh:
+      label: Seventh
+    eighth:
+      label: Eighth
+
+layout_fivecol:
+  label: 'UNO Five column'
+  category: 'Common Design Layouts'
+  path: templates/layouts
+  template: layout--fivecol
+  library: common_design_subtheme/uno-layout
+  default_region: first
+  icon_map:
+    - [first, second, third, fourth, fifth]
+    - [sixth, seventh, eighth, ninth, tenth]
+  regions:
+    first:
+      label: First
+    second:
+      label: Second
+    third:
+      label: Third
+    fourth:
+      label: Fourth
+    fifth:
+      label: Fifth
+    sixth:
+      label: Sixth
+    seventh:
+      label: Seventh
+    eighth:
+      label: Eighth
+    ninth:
+      label: ninth
+    tenth:
+      label: Tenth

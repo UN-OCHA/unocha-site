@@ -4,7 +4,7 @@
 
 ul.tabs {
   display: block;
-  margin: 1rem 0 2rem;
+  margin: 1rem 0 3rem;
   padding: 0;
   list-style: none;
   border-bottom: 3px solid var(--brand-grey);
@@ -38,6 +38,12 @@ ul.tabs > li > a {
   border-radius: 0;
   background: none;
   font-weight: 500;
+}
+
+ul.tabs > li > a:focus {
+  color: var(--brand-primary--dark);
+  outline: 3px solid var(--brand-highlight);
+  background: transparent;
 }
 
 @media (min-width: 576px) {
@@ -77,6 +83,7 @@ ul.tabs > li > a.is-active {
 }
 
 ul.tabs > li > a:focus {
+  color: var(--brand-primary--dark);
   outline: 3px solid var(--brand-primary--light);
   background-color: transparent;
 }

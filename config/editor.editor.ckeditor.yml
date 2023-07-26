@@ -23,6 +23,7 @@ settings:
       - blockQuote
       - '|'
       - heading
+      - style
       - '|'
       - sourceEditing
   plugins:
@@ -56,6 +57,17 @@ settings:
         - '<ul type>'
         - '<ol type>'
         - '<img data-entity-type data-entity-uuid>'
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Read more'
+          element: '<a class="read-more">'
+        -
+          label: Title
+          element: '<p class="title">'
+        -
+          label: Headline
+          element: '<p class="headline">'
     linkit_extension:
       linkit_enabled: true
       linkit_profile: default

@@ -73,7 +73,13 @@
 {% embed '@common_design_subtheme/content/node--card.html.twig'
 %}
   {% block card_image %}
-    {{ content.field_region_image }}
+    <a href="{{ url }}">{{ content.field_region_image }}</a>
+  {% endblock %}
+
+  {% block card_title %}
+    <h3 class="uno-card__title cd-card__title">
+      <a href="{{ url }}">{{ label }}</a>
+    </h3>
   {% endblock %}
 
   {% block card_content %}

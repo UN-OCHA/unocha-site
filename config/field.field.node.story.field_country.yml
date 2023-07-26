@@ -10,7 +10,7 @@ id: node.story.field_country
 field_name: field_country
 entity_type: node
 bundle: story
-label: Country
+label: Countries
 description: ''
 required: false
 translatable: true

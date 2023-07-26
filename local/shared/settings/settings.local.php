@@ -154,3 +154,9 @@ if (isset($settings['config_exclude_modules']) && is_array($settings['config_exc
   $settings['config_exclude_modules'] = ['dev_mode'];
 }
 
+// Ensure the devel module configuration is not saved.
+if (isset($settings['config_exclude_modules']) && is_array($settings['config_exclude_modules'])) {
+  $settings['config_exclude_modules'][] = 'devel';
+} else {
+  $settings['config_exclude_modules'] = ['devel'];
+}

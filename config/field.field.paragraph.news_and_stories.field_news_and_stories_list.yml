@@ -1,0 +1,54 @@
+uuid: 59d5ad33-627b-4b50-ba6b-68ec87054dac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_news_and_stories_list
+    - paragraphs.paragraphs_type.news_and_stories
+    - views.view.stories
+  module:
+    - viewsreference
+id: paragraph.news_and_stories.field_news_and_stories_list
+field_name: field_news_and_stories_list
+entity_type: paragraph
+bundle: news_and_stories
+label: 'News and Stories list'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    display_id: block_2
+    data: 'a:5:{s:8:"argument";N;s:5:"title";N;s:5:"limit";N;s:5:"pager";N;s:6:"offset";N;}'
+    target_uuid: a6a942f0-5613-4349-b330-78b17295967d
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: 0
+  plugin_types:
+    block: block
+    default: 0
+    page: 0
+    feed: 0
+  preselect_views:
+    stories: stories
+    content: 0
+    events: 0
+    files: 0
+    frontpage: 0
+    media: 0
+    media_library: 0
+    redirect: 0
+    regions: 0
+    responses: 0
+    user_admin_people: 0
+    watchdog: 0
+  enabled_settings:
+    argument: 0
+    title: 0
+    limit: 0
+    pager: 0
+    offset: 0
+field_type: viewsreference

@@ -6,6 +6,7 @@ dependencies:
     - field.storage.paragraph.field_campaign
     - node.type.basic
     - node.type.event
+    - node.type.media_collection
     - node.type.region
     - node.type.response
     - node.type.story
@@ -26,6 +27,7 @@ settings:
     target_bundles:
       basic: basic
       event: event
+      media_collection: media_collection
       region: region
       response: response
       story: story

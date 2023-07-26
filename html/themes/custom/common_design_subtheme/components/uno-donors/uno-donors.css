@@ -2,9 +2,9 @@
   display: flex;
   flex-wrap: wrap;
   align-content: flex-end;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   padding: 0 0 0.5rem;
-  border-bottom: 1px solid var(--brand-grey);
+  /* border-bottom: 1px solid var(--brand-grey); */
   font-size: var(--cd-font-size--ref);
 }
 
@@ -16,9 +16,21 @@
   margin: 0;
 }
 
-.uno-donors__title {
-  font-size: var(--cd-font-size--medium);
-  font-weight: bold;
+.uno-donors__header {
+  position: relative;
+  margin-bottom: 2rem;
+  border-bottom: 3px solid var(--brand-grey);
+}
+
+.uno-donors__title:not(.cd-block-title) {
+  position: relative;
+  bottom: -3px;
+  display: inline-block;
+  margin: 0;
+  padding: 0.5rem 1rem 0.5rem 0;
+  border-bottom: 3px solid var(--brand-primary);
+  font-size: var(--cd-font-size--base);
+  font-weight: 500;
 }
 
 @media (min-width: 576px) {
@@ -46,8 +58,8 @@
 @media (min-width: 768px) {
   .uno-donors {
     margin-bottom: 0.75rem;
-    padding: 0.75rem 1rem;
-    border-top: 1px solid var(--brand-grey);
+    padding: 0.75rem 0 0;
+    /* border-top: 1px solid var(--brand-grey); */
   }
 
   .uno-donors + .uno-donors {
@@ -118,6 +130,142 @@ ul.uno-donors__list--with-figures .uno-donors__amount {
   display: inline;
 }
 
+.uno-donors__list--barchart .uno-donor {
+  flex-basis: 100%;
+}
+.uno-donors__list--barchart .uno-donor .uno-donors__amount {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+.uno-donors__list--barchart .uno-donor .uno-donors__amount__figure {
+  width: 120px;
+  white-space: nowrap;
+}
+.uno-donors__amount__barchart.uno-donors--earmarked {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 1rem;
+  background: var(--brand-primary--light);
+}
+.uno-donors__amount__barchart .uno-donors--unearmarked {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  height: 1rem;
+  background: var(--brand-primary--dark);
+}
+.uno-donors__legend > span {
+  margin-inline-end: 1rem;
+}
+.uno-donors__legend__earmarked:after,
+.uno-donors__legend__unearmarked:after {
+  display: inline-block;
+  width: 25px;
+  height: 10px;
+  margin: 0 5px;
+  content: '';
+  background: var(--brand-primary--light);
+}
+.uno-donors__legend__unearmarked:after {
+  background: var(--brand-primary--dark);
+}
+
+/* Javascript enabled */
+.js .uno-donors button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0 0;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.6s ease-out, color 0.6s ease-out;
+  text-align: center;
+  color: var(--brand-primary);
+  border: 2px solid transparent;
+  border-color: var(--brand-primary);
+  border-radius: 3px;
+  background-color: var(--cd-white);
+  box-shadow: none;
+  font-size: 1rem;
+  line-height: 1.15;
+  fill: var(--brand-primary--dark);
+  -webkit-appearance: none;
+}
+.js .uno-donors--collapsible button svg {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-inline-start: 1rem;
+  margin-inline-end: 0.25rem;
+  transition: fill 0.3s ease-in;
+  fill: currentColor;
+}
+.js .uno-donors--collapsible button:hover,
+.js .uno-donors--collapsible button:active,
+.js .uno-donors--collapsible button:focus {
+  color: white;
+  border-color: var(--brand-primary--dark);
+  background-color: var(--brand-primary);
+}
+/* Overrides the default behavior when data-cd-hidden is set as the description
+ * is always displayed, only the number of paragraphs changes. */
+.js .uno-donors--collapsible .uno-donors__list[data-cd-hidden] {
+  display: block;
+}
+.js .uno-donors--collapsible .uno-donors__list .uno-donor {
+  display: none;
+}
+/* Display only the first 3 paragraphs. */
+.js .uno-donors--collapsible .uno-donors__list .uno-donor {
+  display: none;
+}
+.js .uno-donors--collapsible .uno-donors__list .uno-donor:nth-child(-n+10) {
+  display: block;
+}
+/* Show all the paragraphs when toggled. */
+.js .uno-donors--collapsible .uno-donors__list[data-cd-hidden="false"] .uno-donor {
+  display: block;
+}
+
+
 .uno-donors__amount__suffix {
   margin-inline-start: 0.25rem;
+}
+
+/* External link to Donor sources */
+.uno-donors__more {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.uno-donors__more::after {
+  display: inline-block;
+  overflow: hidden;
+  width: 12px;
+  height: 12px;
+  margin: 0 0 0 3px;
+  content: "";
+  background: var(--rw-icons--common--external-link--12--dark-blue);
+}
+
+/* Donors footnote for OCT Unearmarked */
+.uno-donors__footnote {
+  max-width: var(--cd-max-content-width);
+  margin-top: 3rem;
+  font-size: var(--cd-font-size--small);
+}
+
+/* OCT Top donors */
+.uno-donors__legend {
+  margin: 3rem 0;
+}
+.uno-donors__list--barchart {
+  max-width: var(--cd-max-content-width);
+}
+
+.uno-donors--oct-top-donors .uno-donors__donor {
+  padding: 0;
 }

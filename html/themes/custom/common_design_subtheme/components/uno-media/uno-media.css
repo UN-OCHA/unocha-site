@@ -1,0 +1,147 @@
+/**
+ * Base photo gallery.
+ */
+.uno-photo-gallery__photos {
+  /* Compensate for the padding of the photos */
+  margin: -0.75rem -0.625rem;
+}
+
+.uno-photo-gallery__photo {
+  padding: 0.75rem 0.625rem;
+}
+
+/**
+ * Single column gallery.
+ *
+ * In this mode, the images (responsive) span the entire width of the pages's
+ * content region.
+ */
+.uno-photo-gallery--single-column .uno-photo-gallery__photos {
+  max-width: var(--reading-width);
+}
+
+/**
+ * Two columns gallery.
+ *
+ * In this mode, the images (responsive) span the half of the width the pages's
+ * content region on desktop and the entire width like the single column, on
+ * smaller screens.
+ */
+@media screen and (min-width: 768px) {
+  .uno-photo-gallery--two-columns .uno-photo-gallery__photos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  .uno-photo-gallery--two-columns .uno-photo-gallery__photo {
+    /* Not using flex-basis to determine the width because it doesn't work well
+     * in IE11 wih the padding and negative margins on the parent. Using the
+     * width works everywhere. */
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 33.33%;
+  }
+
+  .uno-photo-gallery--two-columns .uno-photo-gallery__photo:first-child {
+    width: 100%;
+  }
+
+  .uno-photo-gallery--two-columns .uno-photo-gallery__photos[data-count="2"] .uno-photo-gallery__photo:first-child,
+  .uno-photo-gallery--two-columns .uno-photo-gallery__photos[data-count="5"] .uno-photo-gallery__photo:first-child {
+    width: 66.66%;
+  }
+}
+
+/**
+ * Caption below images.
+ */
+.uno-photo-gallery__caption {
+  max-width: var(--reading-width);
+  margin-top: 1.25rem;
+}
+
+.uno-photo-gallery--two-columns {
+  position: relative;
+  margin: 4rem 0;
+  padding: 2rem;
+  background-color: var(--brand-grey);
+}
+.cd-layout__content div.uno-photo-gallery--two-columns:first-child {
+  margin-top: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.uno-button__video {
+  margin: 0 0 4rem;
+  text-align: left;
+}
+
+.uno-button__collection {
+  margin-top: 2rem;
+}
+
+.uno-photo-gallery--two-columns .field--name-field-title {
+  max-width: var(--cd-max-content-width);
+}
+
+@media screen and (min-width: 768px) {
+  .layout--twocol .uno-photo-gallery--two-columns .uno-photo-gallery__photos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  .layout--twocol .uno-photo-gallery--two-columns .uno-photo-gallery__photo {
+    /* Not using flex-basis to determine the width because it doesn't work well
+     * in IE11 wih the padding and negative margins on the parent. Using the
+     * width works everywhere. */
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 33%;
+  }
+
+  .layout--twocol .uno-photo-gallery--two-columns .uno-photo-gallery__photo:first-child {
+    width: 100%;
+  }
+}
+
+.layout--twocol-sidebar .cd-layout__sidebar .paragraph--type--video {
+  margin-top: 0;
+}
+
+.layout--twocol-sidebar  .cd-layout__sidebar .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river__articles {
+  display: block;
+}
+
+.node--type-media-collection.node--view-mode-card .uno-card__image {
+  margin-bottom: 0.25rem;
+}
+/* Reduce height of Media collection image div to height of video */
+@media screen and (min-width: 480px) {
+  .node--type-media-collection.node--view-mode-card .uno-card__image {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    height: 200px;
+    background-color: var(--brand-grey);
+  }
+  .node--type-media-collection.node--view-mode-card .uno-card__image .field--name-field-media-video {
+    flex: 0 1 auto;
+  }
+}
+
+.node--type-media-collection.node--view-mode-full .field--name-field-media-video {
+  margin-bottom: 2rem;
+}
+
+.node--type-media-collection .cd-layout__sidebar--wide {
+  background-color: transparent;
+}
+

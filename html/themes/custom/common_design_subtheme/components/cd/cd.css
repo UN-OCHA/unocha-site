@@ -2,6 +2,22 @@ body {
   color: var(--brand-default-text-color);
 }
 
+a {
+  text-decoration: none;
+  color: var(--brand-primary--dark);
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  color: var(--brand-primary);
+}
+
+.field--type-text-with-summary a,
+.field--name-field-text a {
+  text-decoration: underline;
+}
+
 .cd-global-header {
   background: var(--brand-primary--dark);
 }
@@ -42,8 +58,33 @@ body {
 
 /* Last menu item with coloured background */
 .cd-nav > .menu > .menu-item:last-child a {
-  color: white;
+  color: black;
   background: var(--brand-highlight);
+}
+
+@media screen and (min-width: 1024px) {
+  /* Dontate button */
+  .cd-nav > .menu > .menu-item:last-child a {
+    padding: 0 20px;
+  }
+
+  /* Second last menu item dropdown aligns right since Donate button is not wide
+    enough to prevent 2nd last item overflowing the right edge */
+  [dir=ltr] .cd-nav > .menu > .menu-item:nth-last-child(2) > ul.menu {
+    right: 0;
+  }
+
+  [dir=rtl] .cd-nav > .menu > .menu-item:nth-last-child(2) > ul.menu {
+    left: 0;
+  }
+
+  /* If the menu items wrap, make sure they sit above the hero image */
+  #main-content {
+    z-index: 1;
+  }
+  .cd-header {
+    z-index: 2;
+  }
 }
 
 /* Soft footer */
@@ -89,8 +130,7 @@ body {
 
 .cd-soft-footer .cd-soft-footer__nav-responses nav {
   padding: 1rem;
-  color: var(--brand-highlight-contrast);
-  border: 1px solid #707070;
+  color: black;
   background-color: var(--brand-highlight);
 }
 
@@ -109,11 +149,16 @@ body {
 }
 
 .cd-soft-footer .cd-soft-footer__nav-responses a {
-  color: var(--cd-white);
+  color: black;
+}
+
+.cd-soft-footer .cd-soft-footer__nav-responses a:hover,
+.cd-soft-footer .cd-soft-footer__nav-responses a:focus {
+  color: black;
 }
 
 .cd-soft-footer .cd-soft-footer__nav-responses h2 {
-  color: var(--brand-primary--dark);
+  color: black;
 }
 
 .cd-soft-footer .cd-soft-footer__nav-wrapper > nav {
@@ -154,10 +199,6 @@ body {
   color: var(--cd-default-text-color);
 }
 
-.cd-soft-footer a {
-  text-decoration: none;
-}
-
 .cd-soft-footer nav li {
   margin-bottom: 12px;
   margin-inline-end: 1rem;
@@ -165,10 +206,8 @@ body {
 
 .cd-soft-footer nav a {
   display: block;
-  text-transform: uppercase;
   font-size: var(--cd-font-size--tiny);
   font-weight: 500;
-  line-height: 1.2;
 }
 
 .cd-soft-footer h2 {
@@ -209,3 +248,19 @@ a.cd-footer-social__link svg {
   display: block;
   text-align: start;
 }
+
+.cd-user-menu a {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-inline: 20px;
+}
+
+.cd-user-menu a:hover,
+.cd-user-menu a:focus {
+  color: white;
+}
+
+/* .cd-user-menu li:only-child a {
+  font-weight: bold;
+  padding-inline-end: 0;
+} */

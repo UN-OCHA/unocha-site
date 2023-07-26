@@ -86,10 +86,14 @@
 
 <article{{ attributes.addClass(classes) }}>
 
-  {{ content.field_leader_portrait }}
+  <div class="uno-leader__image">
+    <a href="{{ url }}">{{ content.field_leader_portrait }}</a>
+  </div>
 
   {{ title_prefix }}
-  <h2{{ title_attributes.addClass('uno-leader__name') }}>{{ label }}</h2>
+  <h2{{ title_attributes.addClass('uno-leader__name') }}>
+    <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+  </h2>
   {{ title_suffix }}
 
   {{ content|without('field_leader_portrait') }}

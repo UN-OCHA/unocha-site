@@ -1,0 +1,44 @@
+uuid: f37231c7-2c12-40ca-8358-75c421842eb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.campaign
+    - field.field.node.event.body
+    - field.field.node.event.field_custom_content
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_link
+    - field.field.node.event.field_event_location
+    - field.field.node.event.field_event_type
+    - node.type.event
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.event.campaign
+targetEntityType: node
+bundle: event
+mode: campaign
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 160
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_custom_content: true
+  field_event_date: true
+  field_event_image: true
+  field_event_link: true
+  field_event_location: true
+  field_event_type: true
+  langcode: true
+  links: true

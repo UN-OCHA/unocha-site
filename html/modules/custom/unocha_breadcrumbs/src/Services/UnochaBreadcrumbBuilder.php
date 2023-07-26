@@ -81,7 +81,7 @@ class UnochaBreadcrumbBuilder implements BreadcrumbBuilderInterface {
       // Latest / News and Stories.
       case 'story':
         $links[] = Link::createFromRoute($this->t('Latest'), '<nolink>', [], $url_options);
-        $links[] = Link::fromTextAndUrl($this->t('New and Stories'), Url::fromUserInput('/latest/news-and-stories'));
+        $links[] = Link::fromTextAndUrl($this->t('News and Stories'), Url::fromUserInput('/latest/news-and-stories'));
         break;
 
       // Skip.

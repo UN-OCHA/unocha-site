@@ -26,11 +26,17 @@ cd:
   css:
     component:
       components/cd/cd.css: {}
+      components/cd/cd-typography.css: {}
 
 cd-article:
   css:
     component:
       components/cd-article/cd-article.css: {}
+
+cd-block-title:
+  css:
+    component:
+      components/cd-block-title/cd-block-title.css: {}
 
 cd-button:
   css:
@@ -46,6 +52,11 @@ cd-card:
   css:
     component:
       components/cd-card/cd-card.css: {}
+
+cd-header:
+  css:
+    component:
+      components/cd/cd-header/cd-logo.css: {}
 
 cd-hero:
   css:
@@ -81,6 +92,11 @@ cd-teaser:
   css:
     component:
       components/cd-teaser/cd-teaser.css: {}
+
+cd-typography:
+  css:
+    component:
+      components/cd-typography/cd-typography.css: {}
 
 rw-brand:
   css:
@@ -182,6 +198,11 @@ uno-leader:
   css:
     theme:
       components/uno-leader/uno-leader.css: {}
+
+uno-media:
+  css:
+    theme:
+      components/uno-media/uno-media.css: {}
 
 uno-mega-menu:
   css:

@@ -57,13 +57,22 @@
 .cd-card__title,
 .cd-card__title a {
   display: block;
-  text-decoration: none;
+  color: black;
   font-size: 1.25rem;
   font-weight: 500;
 }
-
 .cd-card__title {
-  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cd-card__title a:hover,
+.cd-card__title a:focus {
+  color: var(--brand-default-text-color);
+}
+
+.cd-card__title:first-child,
+.cd-card__title {
+  margin-top: 1rem;
 }
 
 .cd-card__description p:last-child {
@@ -79,7 +88,7 @@
   flex-wrap: nowrap;
   flex-shrink: 0;
   justify-content: flex-end;
-  margin-top: 0.5rem;
+  margin-top: 0;
   padding: 0;
   padding-inline-end: 2rem;
   content: "";
@@ -94,7 +103,8 @@
 }
 
 @media screen and (min-width: 480px) {
-  .node--type-response.cd-card .cd-card__footer {
+  /* Story always has a date before the read more in the footer. */
+  article:not(.node--type-story, .node--type-media-collection).cd-card .cd-card__footer {
     display: block;
   }
 }
@@ -174,8 +184,4 @@ rule but our stock card only has one link so we keep the rule specific.
 */
 .cd-card--clickable .cd-card__link {
   position: relative;
-}
-
-.cd-card .cd-card__title a {
-  text-decoration: none;
 }

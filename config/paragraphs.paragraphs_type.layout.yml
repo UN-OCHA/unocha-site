@@ -8,12 +8,14 @@ id: layout
 label: Layout
 icon_uuid: null
 icon_default: null
-description: 'Layout containers for paragraphs - 2, 3, 4 columns available.'
+description: 'Layout containers for paragraphs - 2, 3, 4, 5 columns available.'
 behavior_plugins:
   layout_paragraphs:
     enabled: true
     available_layouts:
       layout_twocol: 'UNO Two column'
       layout_twocol_sidebar: 'UNO Two column Sidebar'
+      layout_twocol_66_33: 'UNO Two column 66% 33%'
       layout_threecol: 'UNO Three column'
       layout_fourcol: 'UNO Four column'
+      layout_fivecol: 'UNO Five column'

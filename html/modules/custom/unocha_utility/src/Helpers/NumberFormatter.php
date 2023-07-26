@@ -291,7 +291,7 @@ class NumberFormatter {
    * @see http://st.unicode.org/cldr-apps/v#/fr/Compact_Decimal_Formatting
    */
   public static function formatNumberCompact($number, $langcode, $type = 'long', $precision = 2, $use_gho_specifics = FALSE) {
-    if ($number <= 0) {
+    if (!is_numeric($number) || $number < 0) {
       return '-';
     }
     elseif ($number < 1000) {
@@ -326,10 +326,6 @@ class NumberFormatter {
       if ($number < 1e6) {
         $n = $n / 1000;
         $p = $p + 1;
-        $precision = 2;
-      }
-      else {
-        $precision = 1;
       }
     }
 

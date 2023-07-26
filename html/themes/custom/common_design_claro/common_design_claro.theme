@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Template overrides, preprocess, and hooks for the Common Design claro theme.
+ */
+
+/**
+ * Implements hook_preprocess_paragraph__preview().
+ */
+function common_design_claro_preprocess_paragraph__layout__preview(array &$variables) {
+  // Add the preview suffix to the theme so that we can use different templates
+  // than the frontend ones and display all the regions to be able to fill them.
+  if (isset($variables['content']['regions']['#theme'])) {
+    $variables['content']['regions']['#theme'] .= '__preview';
+  }
+}

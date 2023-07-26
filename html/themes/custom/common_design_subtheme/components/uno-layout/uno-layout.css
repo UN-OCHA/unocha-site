@@ -6,49 +6,95 @@
 :root {
   --uno-card-list-num-cols: 1;
   --uno-card-list-gap-size: 2rem;
+  --uno-card-list-gap-size--twocol: 4rem;
+  --uno-card-list-gap-size--reduced: 1rem;
 }
 
-.layout--twocol,
+.layout--twocol .layout--row,
 .layout--twocol-siderbar,
-.layout--threecol,
-.layout--fourcol {
+.layout--threecol .layout--row,
+.layout--fourcol .layout--row,
+.layout--fivecol .layout--row {
   display: flex;
   flex-flow: row wrap;
   gap: var(--uno-card-list-gap-size);
 }
 
-.layout--twocol > .layout__region,
-.layout--threecol > .layout__region,
-.layout--fourcol > .layout__region {
+.layout--twocol .layout--row {
+  gap: var(--uno-card-list-gap-size--twocol);
+}
+
+.layout--fivecol .layout--row {
+  gap: var(--uno-card-list-gap-size--reduced);
+}
+
+.layout--threecol .layout--row > .layout__region,
+.layout--fourcol .layout--row > .layout__region,
+.layout--fivecol .layout--row > .layout__region {
   /* stylelint-disable-next-line max-line-length */
   flex: 0 1 calc((100% / var(--uno-card-list-num-cols)) - var(--uno-card-list-gap-size) + var(--uno-card-list-gap-size) / var(--uno-card-list-num-cols));
 }
 
+.layout--twocol .layout--row > .layout__region {
+  /* stylelint-disable-next-line max-line-length */
+  flex: 0 1 calc((100% / var(--uno-card-list-num-cols)) - var(--uno-card-list-gap-size--twocol) + var(--uno-card-list-gap-size--twocol) / var(--uno-card-list-num-cols));
+}
+
+.layout--fivecol .layout--row > .layout__region {
+  /* stylelint-disable-next-line max-line-length */
+  flex: 0 1 calc((100% / var(--uno-card-list-num-cols)) - var(--uno-card-list-gap-size--reduced) + var(--uno-card-list-gap-size--reduced) / var(--uno-card-list-num-cols));
+}
+
+.layout--fivecol .layout--row > .layout__region {
+  --uno-card-list-num-cols: 2;
+}
+
 @media screen and (min-width: 576px) {
-  .layout--twocol > .layout__region {
+  .layout--twocol .layout--row > .layout__region {
     --uno-card-list-num-cols: 2;
   }
 
-  .layout--threecol > .layout__region {
+  .layout--threecol .layout--row > .layout__region {
     --uno-card-list-num-cols: 1;
   }
 
-  .layout--fourcol > .layout__region {
+  .layout--fourcol .layout--row > .layout__region {
     --uno-card-list-num-cols: 2;
+  }
+
+  .layout--fivecol .layout--row > .layout__region {
+    --uno-card-list-num-cols: 3;
   }
 }
 
-@media screen and (min-width: 750px) {
-  .layout--twocol > .layout__region {
+@media screen and (min-width: 768px) {
+  .layout--twocol .layout--row > .layout__region {
     --uno-card-list-num-cols: 2;
   }
 
-  .layout--threecol > .layout__region {
+  .layout--threecol .layout--row > .layout__region {
     --uno-card-list-num-cols: 3;
   }
 
-  .layout--fourcol > .layout__region {
+  .layout--fourcol .layout--row > .layout__region {
     --uno-card-list-num-cols: 4;
+  }
+
+  .layout--fivecol .layout--row > .layout__region {
+    --uno-card-list-num-cols: 5;
+  }
+
+  .layout--twocol-66-33 {
+    --uno-card-list-num-cols: 2;
+
+    display: flex;
+    gap: var(--uno-card-list-gap-size);
+  }
+  .layout--twocol-66-33 > .layout__region--first {
+    flex: 0 1 66%;
+  }
+  .layout--twocol-66-33 > .layout__region--second {
+    flex: 1 0 33%;
   }
 }
 
@@ -66,7 +112,7 @@
   .cd-layout {
     display: flex;
     flex-flow: row nowrap;
-    gap: 2rem;
+    gap: 4rem;
   }
 
   /**
@@ -91,5 +137,17 @@
     */
   .cd-layout__sidebar--wide {
     flex-basis: 400px;
+    padding: 0;
   }
+
+  /* This ensures the second column aligns with the third column in the 3 column
+    layout that follows on the homepage */
+  .layout--twocol-66-33 > .layout__region--first {
+    flex: 1 0 66%;
+  }
+}
+
+.layout--twocol-sidebar {
+  padding: 2rem;
+  background-color: var(--brand-grey);
 }

@@ -1,6 +1,0 @@
-ocha_key_figures_api_url: 'https://keyfigures.api.unocha.org/api/v1'
-ocha_key_figures_api_key: null
-ocha_key_figures_api_appname: unocha.org
-ocha_key_figures_api_cache_enabled: true
-ocha_key_figures_api_cache_lifetime: 300
-ocha_key_figures_api_verify_ssl: true

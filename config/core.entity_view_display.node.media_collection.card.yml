@@ -1,0 +1,50 @@
+uuid: 357eaca7-ceef-4448-a10a-84ba33a6662e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.media_collection.body
+    - field.field.node.media_collection.field_canto_collection
+    - field.field.node.media_collection.field_custom_content
+    - field.field.node.media_collection.field_media_image
+    - field.field.node.media_collection.field_media_video
+    - field.field.node.media_collection.field_video_download
+    - node.type.media_collection
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.media_collection.card
+targetEntityType: node
+bundle: media_collection
+mode: card
+content:
+  field_media_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: gallery
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_media_video:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  body: true
+  field_canto_collection: true
+  field_custom_content: true
+  field_video_download: true
+  langcode: true
+  links: true

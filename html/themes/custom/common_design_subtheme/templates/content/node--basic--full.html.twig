@@ -88,7 +88,7 @@
 
 {% set unochaDate = node.getCreatedTime|date('j F Y') %}
 
-<article{{ attributes.addClass(classes) }}>
+<article{{ attributes.addClass(classes)|without('role') }}>
   {{ title_prefix }}
   {% if page %}
     {% if title %}
@@ -109,7 +109,9 @@
 
   <div{{ content_attributes.addClass('cd-layout-main-content') }}>
 
-    <div class="cd-bleed">{{ content.field_basic_image }}</div>
+    {% if content.field_basic_image|render %}
+      <div class="cd-bleed">{{ content.field_basic_image }}</div>
+    {% endif %}
 
     <div class="uno-content--custom">
       {{ content|without('field_basic_image') }}

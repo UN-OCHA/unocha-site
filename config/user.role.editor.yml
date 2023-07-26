@@ -5,15 +5,20 @@ dependencies:
   config:
     - filter.format.ckeditor
     - filter.format.text_editor_simple
+    - media.type.image
+    - media.type.video
     - node.type.basic
     - node.type.event
+    - node.type.leader
+    - node.type.media_collection
     - node.type.region
+    - node.type.resource
     - node.type.response
     - node.type.story
+    - taxonomy.vocabulary.contacts
     - taxonomy.vocabulary.country
     - taxonomy.vocabulary.event_type
-    - taxonomy.vocabulary.regional_offices
-    - taxonomy.vocabulary.response_type
+    - taxonomy.vocabulary.office_type
     - taxonomy.vocabulary.story_type
     - taxonomy.vocabulary.theme
   module:
@@ -21,16 +26,19 @@ dependencies:
     - file
     - filter
     - media
+    - menu_link_content
     - node
     - paragraphs
     - path
     - taxonomy
     - toolbar
+    - unocha_canto
 id: editor
 label: Editor
 weight: 3
 is_admin: null
 permissions:
+  - 'access canto api'
   - 'access content overview'
   - 'access files overview'
   - 'access media overview'
@@ -41,65 +49,114 @@ permissions:
   - 'create basic content'
   - 'create content translations'
   - 'create event content'
+  - 'create image media'
+  - 'create leader content'
   - 'create media'
+  - 'create media_collection content'
   - 'create region content'
+  - 'create resource content'
   - 'create response content'
   - 'create story content'
+  - 'create terms in contacts'
   - 'create terms in country'
   - 'create terms in event_type'
-  - 'create terms in regional_offices'
-  - 'create terms in response_type'
+  - 'create terms in office_type'
   - 'create terms in story_type'
   - 'create terms in theme'
   - 'create url aliases'
+  - 'create video media'
   - 'delete any basic content'
   - 'delete any event content'
+  - 'delete any image media'
+  - 'delete any leader content'
   - 'delete any media'
+  - 'delete any media_collection content'
   - 'delete any region content'
+  - 'delete any resource content'
   - 'delete any response content'
   - 'delete any story content'
+  - 'delete any video media'
   - 'delete basic revisions'
   - 'delete content translations'
   - 'delete event revisions'
+  - 'delete leader revisions'
   - 'delete media'
+  - 'delete media_collection revisions'
   - 'delete own basic content'
   - 'delete own event content'
+  - 'delete own image media'
+  - 'delete own leader content'
+  - 'delete own media_collection content'
   - 'delete own region content'
+  - 'delete own resource content'
   - 'delete own response content'
   - 'delete own story content'
+  - 'delete own video media'
   - 'delete region revisions'
+  - 'delete resource revisions'
   - 'delete response revisions'
   - 'delete story revisions'
+  - 'delete terms in contacts'
   - 'delete terms in country'
   - 'delete terms in event_type'
-  - 'delete terms in regional_offices'
-  - 'delete terms in response_type'
+  - 'delete terms in office_type'
   - 'delete terms in story_type'
   - 'delete terms in theme'
   - 'edit any basic content'
   - 'edit any event content'
+  - 'edit any image media'
+  - 'edit any leader content'
+  - 'edit any media_collection content'
   - 'edit any region content'
+  - 'edit any resource content'
   - 'edit any response content'
   - 'edit any story content'
+  - 'edit any video media'
   - 'edit own basic content'
   - 'edit own event content'
+  - 'edit own image media'
+  - 'edit own leader content'
+  - 'edit own media_collection content'
   - 'edit own region content'
+  - 'edit own resource content'
   - 'edit own response content'
   - 'edit own story content'
+  - 'edit own video media'
+  - 'edit terms in contacts'
   - 'edit terms in country'
   - 'edit terms in event_type'
-  - 'edit terms in regional_offices'
-  - 'edit terms in response_type'
+  - 'edit terms in office_type'
   - 'edit terms in story_type'
   - 'edit terms in theme'
   - 'revert all revisions'
   - 'revert basic revisions'
   - 'revert event revisions'
+  - 'revert leader revisions'
+  - 'revert media_collection revisions'
   - 'revert region revisions'
+  - 'revert resource revisions'
   - 'revert response revisions'
   - 'revert story revisions'
   - 'translate any entity'
+  - 'translate basic node'
+  - 'translate contacts taxonomy_term'
+  - 'translate country taxonomy_term'
   - 'translate editable entities'
+  - 'translate event node'
+  - 'translate event_type taxonomy_term'
+  - 'translate image media'
+  - 'translate leader node'
+  - 'translate media_collection node'
+  - 'translate menu_link_content'
+  - 'translate office_type taxonomy_term'
+  - 'translate paragraph'
+  - 'translate region node'
+  - 'translate resource node'
+  - 'translate response node'
+  - 'translate story node'
+  - 'translate story_type taxonomy_term'
+  - 'translate theme taxonomy_term'
+  - 'translate video media'
   - 'update any media'
   - 'update content translations'
   - 'update media'
@@ -109,9 +166,12 @@ permissions:
   - 'view all revisions'
   - 'view basic revisions'
   - 'view event revisions'
+  - 'view leader revisions'
+  - 'view media_collection revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view region revisions'
+  - 'view resource revisions'
   - 'view response revisions'
   - 'view story revisions'
   - 'view unpublished paragraphs'

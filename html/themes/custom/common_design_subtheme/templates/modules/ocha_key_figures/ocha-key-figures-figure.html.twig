@@ -22,6 +22,7 @@
 {% set label_attributes = label_attributes ?? create_attribute() %}
 {% set value_attributes = value_attributes ?? create_attribute() %}
 {% set unit_attributes = unit_attributes ?? create_attribute() %}
+{% set unit = unit ?: (figure.value_type == 'percentage' ? '%' : '') %}
 <div{{ attributes.addClass('uno-figure') }}>
   <dt{{ label_attributes.addClass('uno-figure__label-wrapper') }}>
     <span{{ label_attributes.addClass('uno-figure__label') }}>{{ label }}</span>
@@ -29,7 +30,7 @@
       <small{{ unit_attribute.addClass('uno-figure__unit') }}> ({{ unit }})</small>
     {%- endif -%}
   </dt>
-  <dd{{ value_attributes.addClass('uno-figure__value') }}>{{ value }}</dd>
+  <dd{{ value_attributes.addClass('uno-figure__value') }}>{{ value == 0 ? 0 : value }}</dd>
 </div>
 {% endif %}
 

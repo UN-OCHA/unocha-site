@@ -14,6 +14,7 @@
 .paragraph--type--content-list.paragraph--view-mode--cards .view .view-content,
 .view-stories .view-content,
 .uno-stories .uno-stories__content,
+.view-events .view-content,
 .view-display-id-regional_responses .view-content,
 .view-display-id-active_responses .view-content,
 .view-media-centre .view-content,
@@ -29,6 +30,7 @@
 .paragraph--type--content-list.paragraph--view-mode--cards article,
 .view-stories .view-content article,
 .uno-stories .uno-stories__content article,
+.view-events .view-content article,
 .view-display-id-regional_responses .view-content li,
 .view-display-id-active_responses .view-content article,
 .view-media-centre .view-content article,
@@ -42,6 +44,7 @@
   .paragraph--type--content-list.paragraph--view-mode--cards .view .view-content,
   .view-stories .view-content,
   .uno-stories .uno-stories__content,
+  .view-events .view-content,
   .view-display-id-regional_responses .view-content,
   .view-display-id-active_responses .view-content,
   .view-media-centre .view-content,
@@ -55,6 +58,7 @@
   .paragraph--type--content-list.paragraph--view-mode--cards .view .view-content,
   .view-stories .view-content,
   .uno-stories .uno-stories__content,
+  .view-events .view-content,
   .view-display-id-regional_responses .view-content,
   .view-display-id-active_responses .view-content,
   .view-media-centre .view-content,
@@ -67,6 +71,13 @@
   .view-display-id-active_responses .view-content {
     --uno-card-list-num-cols: 4;
   }
+}
+
+/* Vertical rhythm for Views lists using Cards view mode */
+.view-stories .view-content .cd-card__container,
+.view-events .view-content .cd-card__container,
+.view-media-centre .view-content .cd-card__container {
+  padding: 0 0 1rem;
 }
 
 /* Promoted item to span full width */
@@ -110,6 +121,12 @@ article.node--type-story.node--view-mode-card .field--name-body {
     flex: 1 0 100%;
     padding-top: 2rem;
   }
+
+  .page-node-type-basic .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__title a,
+  .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__title a,
+  .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__title a {
+    font-size: var(--cd-font-size--medium);
+  }
 }
 
 /* Promoted item to span full width */
@@ -125,7 +142,7 @@ article.node--type-story.node--view-mode-card .field--name-body {
   .page-node-type-basic .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__title a,
   .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__title a,
   .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__title a {
-    font-size: 45px;
+    font-size: var(--cd-font-size--2xbase);
   }
 
   .page-node-type-basic .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .field--name-body,
@@ -187,6 +204,12 @@ article.node--type-story.node--view-mode-card .field--name-body {
   .node--sticky.node--view-mode-card.cd-card--clickable:first-child .cd-card__title a:focus::after,
   .node--sticky.node--view-mode-card.cd-card--clickable:first-child .cd-card__title a:active::after {
     outline: 3px solid var(--brand-primary--light);
+  }
+
+  .page-node-type-basic .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__title a,
+  .path-frontpage .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__title a,
+  .page-node-type-region .paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__title a {
+    font-size: var(--cd-font-size--2xmedium);
   }
 }
 

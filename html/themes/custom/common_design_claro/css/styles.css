@@ -41,6 +41,12 @@
   outline: 3px solid greenyellow;
 }
 
+/* Space out the paragraphs so empty ones can be better located */
+.js-lpb-component-list > .js-lpb-component.paragraph {
+  margin: 0 0 1rem;
+  padding: 1rem;
+  outline: 1px dashed grey;
+}
 
 /* Adjust the width of the sidebar for the Content Editor form */
 .cd-layout__sidebar--wide {
@@ -59,11 +65,11 @@
 }
 
 /* Video embed aspect ratio is calculated in the oembed-video field template. */
-.field--name-field-video .field--name-field-media-oembed-video {
+.field--name-field-media-oembed-video {
   position: relative;
 }
 
-.field--name-field-video .field--name-field-media-oembed-video iframe {
+.field--name-field-media-oembed-video iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -83,4 +89,20 @@
 }
 .form-type--select .choices__list--dropdown, .choices__list[aria-expanded] {
   z-index: 1000;
+}
+
+blockquote {
+  border-inline-start: 3px solid grey;
+  padding: 0.25rem 1rem;
+}
+
+p.title {
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Disable elements.css quote icon */
+blockquote::before {
+  /* content: open-quote; */
+  content: none;
 }

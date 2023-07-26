@@ -73,11 +73,15 @@
 {% embed '@common_design_subtheme/content/node--card.html.twig'
 %}
   {% block card_image %}
-    {{ content.field_event_image }}
+    <a href="{{ url }}">{{ content.field_event_image }}</a>
   {% endblock %}
 
   {% block card_content %}
-    {{ content|without('field_event_image') }}
+    {{ content|without('field_event_image', 'field_event_link') }}
+
+    {% if node.field_event_link.0.url %}
+      <a class="uno-event__link cd-button cd-button--bold " href="{{ node.field_event_link.0.url }}" target="_blank">{{ node.field_event_link.0.title }}</a>
+    {% endif %}
   {% endblock %}
 
 {% endembed %}

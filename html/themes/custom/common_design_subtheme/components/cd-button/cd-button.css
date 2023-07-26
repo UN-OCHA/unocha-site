@@ -15,7 +15,7 @@
   text-align: center;
   color: var(--cd-white);
   border: 2px solid transparent;
-  border-radius: 3px;
+  border-radius: 0;
   background-color: var(--brand-primary);
   box-shadow: none;
   font-size: 1rem;
@@ -25,6 +25,7 @@
 
 .cd-button:hover,
 .cd-button:focus {
+  text-decoration: none;
   color: var(--cd-white);
   background-color: var(--brand-primary--light);
 }

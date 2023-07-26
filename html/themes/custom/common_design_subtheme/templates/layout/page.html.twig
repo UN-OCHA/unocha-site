@@ -45,10 +45,7 @@
 
 {%
   set layout_classes = [
-  'cd-container',
-  page.sidebar_first|render and not page.sidebar_second|render ? 'cd-layout--sidebar-first',
-  page.sidebar_second|render and not page.sidebar_first|render ? 'cd-layout--sidebar-second',
-  page.sidebar_first|render and page.sidebar_second|render ? 'cd-layout--sidebar-both',
+  'cd-container'
 ]
 %}
 
@@ -78,7 +75,7 @@
 
   {% block main %}
     {# Link to skip to the main content is in html.html.twig #}
-    <main role="main" {{ attributes.setAttribute('id', 'main-content').addClass(layout_classes) }}>
+    <main aria-label="{{ 'Page content'|t }}" id="main-content" {{ attributes.addClass(layout_classes) }}>
 
       {{ page.page_title }}
 
@@ -111,10 +108,6 @@
 
   {% block footer %}
     {% include '@common_design_subtheme/cd/cd-footer/cd-footer.html.twig' %}
-  {% endblock %}
-
-  {% block gho %}
-    {% include '@common_design_subtheme/uno/gho.html.twig' %}
   {% endblock %}
 
 </div>{# /.cd-page-layout-container #}

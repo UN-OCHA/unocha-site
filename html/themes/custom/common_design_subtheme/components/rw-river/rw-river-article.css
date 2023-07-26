@@ -25,30 +25,44 @@
 .rw-river-article:only-child {
   padding-bottom: 0;
 }
-.rw-river-article .rw-river-article__header p.rw-entity-country-slug {
+/* .rw-river-article .rw-river-article__header p.rw-entity-country-slug {
   margin: 2px 6px 0 0;
   padding: 1px 8px;
   font-size: 14px;
   line-height: 22px;
-}
+} */
 .rw-river-article .rw-river-article__title {
-  display: inline;
-  margin: 0;
-  color: var(--cd-reliefweb-brand-blue--dark);
-  font-size: 17px;
-  font-weight: bold;
-  line-height: 28px;
+  /* display: inline; */
+  margin-top: 0;
+  color: black;
+  /* font-size: 17px; */
+  font-size: 1.25rem;
+  font-weight: 500;
+  /* line-height: 1.5; */
 }
 .rw-river-article .rw-river-article__title a {
   color: inherit;
 }
+.rw-river-article .rw-river-article__title a:hover,
+.rw-river-article .rw-river-article__title a:focus {
+  color: var(--brand-default-text-color);
+}
 .rw-river-article .rw-river-article__content {
-  display: flex;
-  flex: 1 0 auto;
-  align-items: center;
-  padding-top: 16px;
+  /* display: flex; */
+  /* flex: 1 0 auto; */
+  /* align-items: center; */
+  /* padding-top: 16px; */
   color: var(--cd-reliefweb-brand-grey--mid);
 }
+
+@media screen and (min-width: 768px) {
+  .rw-river-article .rw-river-article__header {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+  }
+}
+
 /* Article with a thumbnail preview (typically Map and Infographic). */
 .rw-river-article .rw-river-article__content img {
   float: left;

@@ -11,11 +11,13 @@ id: paragraph.figures.field_figures
 field_name: field_figures
 entity_type: paragraph
 bundle: figures
-label: Figures
-description: ''
+label: 'Country figures'
+description: 'Use this field for country figures.'
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_providers: ''
+  allowed_figure_ids: ''
 field_type: key_figure

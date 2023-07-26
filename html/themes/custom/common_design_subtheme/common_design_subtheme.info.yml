@@ -42,12 +42,16 @@ libraries:
 libraries-extend:
   common_design/cd-article:
     - common_design_subtheme/cd-article
+  common_design/cd-block-title:
+    - common_design_subtheme/cd-block-title
   common_design/cd-button:
     - common_design_subtheme/cd-button
   common_design/cd-caption:
     - common_design_subtheme/cd-caption
   common_design/cd-card:
     - common_design_subtheme/cd-card
+  common_design/cd-header:
+    - common_design_subtheme/cd-header
   common_design/cd-page-title:
     - common_design_subtheme/cd-page-title
   common_design/cd-read-more:
@@ -58,12 +62,15 @@ libraries-extend:
     - common_design_subtheme/cd-tabs
   common_design/cd-teaser:
     - common_design_subtheme/cd-teaser
+  common_design/cd-typography:
+    - common_design_subtheme/cd-typography
 ###
 # Override libraries to replace specific base-theme components. Now, when the
 # base-theme component would have been used, instead ONLY yours will apply.
-#
-# libraries-override:
-#   common_design/cd-tabs: common_design_subtheme/cd-tabs-overridden
+libraries-override:
+  common_design/cd-dropdown:
+    js:
+      components/cd-dropdown/cd-dropdown.js: components/cd-dropdown/cd-dropdown.js
 
 ###
 # Custom namespace - requires Components module

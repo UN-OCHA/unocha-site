@@ -6,13 +6,14 @@
  */
 
 use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
 use Drupal\Core\Menu\MenuLinkInterface;
 use Drupal\Core\Menu\MenuLinkTreeElement;
-use Drupal\Core\Link;
+use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\Core\Url;
 use Drupal\node\NodeInterface;
 use Drupal\paragraphs\ParagraphInterface;
-use Drupal\Core\Menu\MenuTreeParameters;
 
 /**
  * Implements hook_preprocess_paragraph__type().
@@ -34,7 +35,7 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
     if ($parent->bundle() === 'response') {
       // Get the stories tagged with the response.
       $stories = unocha_paragraphs_get_stories([
-        ['field_response', $parent->id(), '='],
+        ['field_responses', $parent->id(), '='],
       ], $limit);
 
       // Filter the News and Stories page by the response.
@@ -46,7 +47,7 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
         $region = unocha_paragraphs_get_node_parent_node($parent);
         if (isset($region) && $region->bundle() === 'region') {
           $stories += unocha_paragraphs_get_stories([
-            ['field_region', $region->id(), '='],
+            ['field_regions', $region->id(), '='],
           ], $limit - count($stories));
 
           // Also add the region as filter to have consistent results in the
@@ -58,7 +59,7 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
     elseif ($parent->bundle() === 'region') {
       // Get the stories tagged with the region.
       $stories = unocha_paragraphs_get_stories([
-        ['field_region', $parent->id(), '='],
+        ['field_regions', $parent->id(), '='],
       ], $limit);
 
       // Filter the News and Stories page by the region.
@@ -71,8 +72,8 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
       // Add conditions on the referenced entities.
       $conditions = [];
       $fields = [
-        'field_response' => 'response',
-        'field_region' => 'region',
+        'field_responses' => 'response',
+        'field_regions' => 'region',
         'field_country' => 'country',
       ];
       foreach ($fields as $field => $filter) {
@@ -338,4 +339,84 @@ function unocha_paragraphs_get_nodes_from_menu_links(array $menu_links) {
       ->loadMultiple($node_ids);
   }
   return [];
+}
+
+/**
+ * Implements hook_field_widget_single_element_WIDGET_TYPE_form_alter().
+ *
+ * Show a list of event type terms as options for the view argument of
+ * the events paragraph type's field_events.
+ */
+function unocha_paragraphs_field_widget_single_element_viewsreference_select_form_alter(array &$element, FormStateInterface $form_state, array $context) {
+  if (isset($context['items'], $element['options']) && $context['items']->getName() === 'field_events') {
+    $entity_type_manager = \Drupal::entityTypeManager();
+
+    $element['options']['#type'] = 'fieldset';
+
+    // Show the available event types to pass as argument to filter the view.
+    if (isset($element['options']['argument'])) {
+      $entity_type_manager = \Drupal::entityTypeManager();
+
+      $element['options']['argument']['#title'] = t('Event type');
+      $element['options']['argument']['#weight'] = -2;
+
+      $terms = $entity_type_manager->getStorage('taxonomy_term')->loadByProperties([
+        'vid' => 'event_type',
+      ]);
+
+      if (!empty($terms)) {
+        $options = array_map(function ($term) {
+          return $term->label();
+        }, $terms);
+
+        $element['options']['argument']['#type'] = 'select';
+        $element['options']['argument']['#options'] = $options;
+        $element['options']['argument']['#empty_value'] = '';
+        $element['options']['argument']['#empty_option'] = t('All');
+
+        // Retrieve the list of view display IDs that accept an event type
+        // term as argument. We'll only show the argument field for those.
+        $event_type_condition = [];
+        if (isset($element['display_id'])) {
+          $view_id = $element['target_id']['#default_value'];
+          $view = $entity_type_manager->getStorage('view')->load($view_id);
+          if (isset($view)) {
+            foreach ($element['display_id']['#options'] as $display_id => $label) {
+              $display = $view->getDisplay($display_id);
+              if (!empty($display['display_options']['arguments']['field_event_type_target_id'])) {
+                if (!empty($event_type_condition)) {
+                  $event_type_condition[] = 'or';
+                }
+                $event_type_condition[] = ['value' => $display_id];
+              }
+            }
+          }
+        }
+        if (!empty($event_type_condition)) {
+          $element['options']['argument']['#states']['visible'] = [
+            ':input[name="field_events[0][display_id]"]' => $event_type_condition,
+          ];
+        }
+      }
+      else {
+        $element['options']['argument']['#access'] = FALSE;
+      }
+    }
+
+    // Limit the pagination options.
+    if (isset($element['options']['pager']['#options'])) {
+      $element['options']['pager']['#weight'] = -1;
+      $element['options']['pager']['#options'] = [
+        'none' => t('Display all'),
+        'some' => t('Fixed number in total'),
+        'full' => t('Fixed number per page'),
+      ];
+
+      if (isset($element['options']['limit'])) {
+        $element['options']['limit']['#states']['invisible'] = [
+          ':input[name="field_events[0][options][pager]"]' => ['value' => 'none'],
+        ];
+      }
+    }
+  }
 }

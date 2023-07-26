@@ -103,9 +103,21 @@
   align-items: center;
   justify-content: flex-end;
 }
+
 .paragraph--type--reliefweb-document.paragraph--view-mode--teasers .rw-river-article .rw-river-article__footer dl,
 .paragraph--type--reliefweb-document.paragraph--view-mode--cards .rw-river-article .rw-river-article__footer dl {
   flex: 1 auto;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .paragraph--type--reliefweb-document.paragraph--view-mode--teasers .rw-river-article .rw-river-article__footer,
+  .paragraph--type--reliefweb-document.paragraph--view-mode--cards .rw-river-article .rw-river-article__footer {
+    display: block;
+  }
+  .paragraph--type--reliefweb-document.paragraph--view-mode--teasers .rw-river-article .rw-river-article__footer dl,
+  .paragraph--type--reliefweb-document.paragraph--view-mode--cards .rw-river-article .rw-river-article__footer dl {
+    margin-bottom: 1rem;
+  }
 }
 
 /* rw-article teasers view mode */

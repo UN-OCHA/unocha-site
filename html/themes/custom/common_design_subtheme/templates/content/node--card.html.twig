@@ -78,7 +78,7 @@
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    'uno-card cd-card cd-card--clickable'
+    'uno-card cd-card'
   ]
 %}
 
@@ -96,13 +96,13 @@
 
   <div class="uno-card__image">
   {% block card_image %}
-    {{ content.field_image }}
+    <a href="{{ url }}">{{ content.field_image }}</a>
   {% endblock %}
   </div>
 
   <div class="uno-card__content cd-card__container">
     {% block card_title %}
-    <h3 class="uno-card__title cd-card__t">
+    <h3 class="uno-card__title cd-card__title">
       <a href="{{ url }}">{{ label }}</a>
     </h3>
     {% endblock %}
@@ -116,7 +116,7 @@
         {% block date %}
           {% if display_submitted %}
             <div class="cd-card__date">
-              <time datetime="{{ node.getCreatedTime|date }}">{{ unochaDate }}</time>
+              <time datetime="{{ node.getCreatedTime|date('Y-m-d H:i:s') }}">{{ unochaDate }}</time>
             </div>
           {% endif %}
         {% endblock %}
