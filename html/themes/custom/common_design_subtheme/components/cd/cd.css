@@ -249,7 +249,8 @@ a.cd-footer-social__link svg {
   text-align: start;
 }
 
-.cd-user-menu a {
+/* Change the menu item style for the Media Centre (top menu) only */
+.cd-global-header__actions > nav:first-child .cd-user-menu a {
   text-transform: uppercase;
   font-weight: bold;
   padding-inline: 20px;
@@ -259,8 +260,3 @@ a.cd-footer-social__link svg {
 .cd-user-menu a:focus {
   color: white;
 }
-
-/* .cd-user-menu li:only-child a {
-  font-weight: bold;
-  padding-inline-end: 0;
-} */
