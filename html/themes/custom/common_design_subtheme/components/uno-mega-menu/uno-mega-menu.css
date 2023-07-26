@@ -32,7 +32,7 @@
     flex-direction: column;
     width: 100%;
     max-width: var(--cd-max-width);
-    max-height: 270px;
+    max-height: 280px;
     margin: 0 auto;
     /* We could also add the cd-container to the <ul> but then we would have to
      * unset the padding on smaller screen. */
