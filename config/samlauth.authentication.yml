@@ -12,21 +12,20 @@ drupal_login_roles:
   authenticated: '0'
   administrator: '0'
   editor: '0'
-sp_entity_id: UNOCHA.ORG
+sp_entity_id: ''
 sp_name_id_format: ''
 sp_x509_certificate: ''
 sp_new_certificate: ''
 sp_private_key: ''
 metadata_valid_secs: 60
 metadata_cache_http: false
-idp_entity_id: 'https://sts.windows.net/0f9e35db-544f-4f60-bdcc-5ea416e6dc70/'
-idp_single_sign_on_service: 'https://login.microsoftonline.com/0f9e35db-544f-4f60-bdcc-5ea416e6dc70/saml2'
-idp_single_log_out_service: 'https://login.microsoftonline.com/0f9e35db-544f-4f60-bdcc-5ea416e6dc70/saml2'
+idp_entity_id: ''
+idp_single_sign_on_service: ''
+idp_single_log_out_service: ''
 idp_change_password_service: ''
-idp_certs:
-  - MIIC8DCCAdigAwIBAgIQauKYXnej771Oqy+sQyEEczANBgkqhkiG9w0BAQsFADA0MTIwMAYDVQQDEylNaWNyb3NvZnQgQXp1cmUgRmVkZXJhdGVkIFNTTyBDZXJ0aWZpY2F0ZTAeFw0yMzA3MTIxMzQ0MDlaFw0yNjA3MTIxMzQ0MDlaMDQxMjAwBgNVBAMTKU1pY3Jvc29mdCBBenVyZSBGZWRlcmF0ZWQgU1NPIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5SUkLE7dLP2853pbLsFrfnXQU1r9aCF6/xSMpIUVsjw2Q9YHQdPc1JaGzOMo1cS3dbmA/b9DDdft33PfEjn9WY+48Zx7Ka7EkClKoOfdXJAIXvMjisERC+HYprRPuCOjJZDyS4p97oAK5Qxl3hihPDNpiDF9179KFpRBNQ2vyMW+iHOgDs66gsApUPnyuFoJ+TVnoLcLNLthJl/dSeDJb1616u2vHHRik6VMQxCOsd0QLfpEHoQN5ly/w74Tr27AAqxiSlKH75asPCYtATp0S5+UI/pxeSAA8AAB1hw3iaeH3Hlch2pmezwnZRhAiQ/wGtVJKxFx6TSkDGtnHkAmZQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQA4lco7DvomlVYlStJ9RG9mQnGULEnJYX2giWgnOZ2KTY0q7HFOJgfG3Q9HTFFHObpkUpH2SCKmmilbj4JEaozlRPGVhZd5nmcYn/Hum0W9evnKvNUoS2+rR5YOF37uVkc7dhRRyLyIqYbxmJl2SizyDDTA1U0KlqQcGw4MXjQY1I7uJi54hS4v5HZBM52EsP89MPYYhSdUK00XQQNQ1XTHkEBmzmGOTDr8uz7TQrZcqYSmRk4IX47hfzHyvt2NcXTzj5b90FXkx4l8J8AHSTOa8JFnmnsgh/0ge/8As8utQ54tzSMDc6EuNq6E5gaXjvUF3NS0JlVGwVnxif1mcHTX
+idp_certs: ''
 idp_cert_encryption: ''
-unique_id_attribute: 'http://schemas.microsoft.com/identity/claims/objectidentifier'
+unique_id_attribute: 'oid'
 map_users: false
 map_users_name: false
 map_users_mail: false
@@ -36,8 +35,8 @@ map_users_roles:
 create_users: true
 sync_name: true
 sync_mail: true
-user_name_attribute: 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'
-user_mail_attribute: 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'
+user_name_attribute: 'name'
+user_mail_attribute: 'mail'
 request_set_name_id_policy: false
 strict: true
 security_metadata_sign: false
@@ -56,10 +55,10 @@ security_request_authn_context: false
 security_lowercase_url_encoding: false
 security_logout_reuse_sigs: false
 security_allow_repeat_attribute_name: false
-debug_display_error_details: true
+debug_display_error_details: false
 debug_log_in: false
-debug_log_saml_in: true
-debug_log_saml_out: true
+debug_log_saml_in: false
+debug_log_saml_out: false
 debug_phpsaml: false
 use_proxy_headers: false
 use_base_url: true
