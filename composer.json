@@ -59,6 +59,7 @@
         "drupal/paragraphs_admin": "^1.4",
         "drupal/pathauto": "^1.8",
         "drupal/redirect": "^1.8",
+        "drupal/samlauth": "^3.8",
         "drupal/social_auth_hid": "^3.2",
         "drupal/stable": "^2.0",
         "drupal/stage_file_proxy": "^2.1",

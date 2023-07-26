@@ -23,6 +23,7 @@ module:
   editor: 0
   entity_reference_revisions: 0
   entity_usage: 0
+  externalauth: 0
   field: 0
   field_ui: 0
   file: 0
@@ -68,6 +69,7 @@ module:
   redirect: 0
   responsive_image: 0
   serialization: 0
+  samlauth: 0
   social_api: 0
   social_auth: 0
   social_auth_hid: 0
