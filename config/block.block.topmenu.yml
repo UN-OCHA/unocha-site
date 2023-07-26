@@ -11,7 +11,7 @@ dependencies:
 id: topmenu
 theme: common_design_subtheme
 region: header_top
-weight: 0
+weight: -10
 provider: null
 plugin: 'system_menu_block:top-menu'
 settings:
