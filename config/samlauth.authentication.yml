@@ -1,0 +1,65 @@
+_core:
+  default_config_hash: oDGEkhP0h5rXXqlDplxeBDre0goLigOJupHKMDMwcqM
+login_menu_item_title: 'In Log'
+logout_menu_item_title: 'Out Log'
+login_redirect_url: ''
+logout_redirect_url: ''
+error_redirect_url: ''
+error_throw: false
+local_login_saml_error: false
+logout_different_user: false
+drupal_login_roles:
+  authenticated: '0'
+  administrator: '0'
+  editor: '0'
+sp_entity_id: UNOCHA.ORG
+sp_name_id_format: ''
+sp_x509_certificate: ''
+sp_new_certificate: ''
+sp_private_key: ''
+metadata_valid_secs: 60
+metadata_cache_http: false
+idp_entity_id: 'https://sts.windows.net/0f9e35db-544f-4f60-bdcc-5ea416e6dc70/'
+idp_single_sign_on_service: 'https://login.microsoftonline.com/0f9e35db-544f-4f60-bdcc-5ea416e6dc70/saml2'
+idp_single_log_out_service: 'https://login.microsoftonline.com/0f9e35db-544f-4f60-bdcc-5ea416e6dc70/saml2'
+idp_change_password_service: ''
+idp_certs:
+  - MIIC8DCCAdigAwIBAgIQauKYXnej771Oqy+sQyEEczANBgkqhkiG9w0BAQsFADA0MTIwMAYDVQQDEylNaWNyb3NvZnQgQXp1cmUgRmVkZXJhdGVkIFNTTyBDZXJ0aWZpY2F0ZTAeFw0yMzA3MTIxMzQ0MDlaFw0yNjA3MTIxMzQ0MDlaMDQxMjAwBgNVBAMTKU1pY3Jvc29mdCBBenVyZSBGZWRlcmF0ZWQgU1NPIENlcnRpZmljYXRlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5SUkLE7dLP2853pbLsFrfnXQU1r9aCF6/xSMpIUVsjw2Q9YHQdPc1JaGzOMo1cS3dbmA/b9DDdft33PfEjn9WY+48Zx7Ka7EkClKoOfdXJAIXvMjisERC+HYprRPuCOjJZDyS4p97oAK5Qxl3hihPDNpiDF9179KFpRBNQ2vyMW+iHOgDs66gsApUPnyuFoJ+TVnoLcLNLthJl/dSeDJb1616u2vHHRik6VMQxCOsd0QLfpEHoQN5ly/w74Tr27AAqxiSlKH75asPCYtATp0S5+UI/pxeSAA8AAB1hw3iaeH3Hlch2pmezwnZRhAiQ/wGtVJKxFx6TSkDGtnHkAmZQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQA4lco7DvomlVYlStJ9RG9mQnGULEnJYX2giWgnOZ2KTY0q7HFOJgfG3Q9HTFFHObpkUpH2SCKmmilbj4JEaozlRPGVhZd5nmcYn/Hum0W9evnKvNUoS2+rR5YOF37uVkc7dhRRyLyIqYbxmJl2SizyDDTA1U0KlqQcGw4MXjQY1I7uJi54hS4v5HZBM52EsP89MPYYhSdUK00XQQNQ1XTHkEBmzmGOTDr8uz7TQrZcqYSmRk4IX47hfzHyvt2NcXTzj5b90FXkx4l8J8AHSTOa8JFnmnsgh/0ge/8As8utQ54tzSMDc6EuNq6E5gaXjvUF3NS0JlVGwVnxif1mcHTX
+idp_cert_encryption: ''
+unique_id_attribute: 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'
+map_users: false
+map_users_name: false
+map_users_mail: false
+map_users_roles:
+  administrator: '0'
+  editor: '0'
+create_users: true
+sync_name: true
+sync_mail: true
+user_name_attribute: 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'
+user_mail_attribute: 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'
+request_set_name_id_policy: false
+strict: true
+security_metadata_sign: false
+security_authn_requests_sign: false
+security_logout_requests_sign: false
+security_logout_responses_sign: false
+security_nameid_encrypt: false
+security_signature_algorithm: ''
+security_encryption_algorithm: ''
+security_messages_sign: false
+security_assertions_signed: false
+security_assertions_encrypt: false
+security_nameid_encrypted: false
+security_want_name_id: false
+security_request_authn_context: false
+security_lowercase_url_encoding: false
+security_logout_reuse_sigs: false
+security_allow_repeat_attribute_name: false
+debug_display_error_details: true
+debug_log_in: false
+debug_log_saml_in: true
+debug_log_saml_out: true
+debug_phpsaml: false
+use_proxy_headers: false
+use_base_url: true
