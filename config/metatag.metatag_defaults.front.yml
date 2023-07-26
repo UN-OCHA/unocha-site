@@ -8,5 +8,10 @@ id: front
 label: 'Front page'
 tags:
   canonical_url: '[site:url]'
+  description: '[site:slogan]'
+  og_description: '[site:slogan]'
+  og_title: '[site:name]'
   shortlink: '[site:url]'
   title: '[site:name]'
+  twitter_cards_description: '[site:slogan]'
+  twitter_cards_title: '[site:name]'
