@@ -30,6 +30,7 @@ dependencies:
     - node
     - paragraphs
     - path
+    - system
     - taxonomy
     - toolbar
     - unocha_canto
@@ -174,4 +175,5 @@ permissions:
   - 'view resource revisions'
   - 'view response revisions'
   - 'view story revisions'
+  - 'view the administration theme'
   - 'view unpublished paragraphs'
