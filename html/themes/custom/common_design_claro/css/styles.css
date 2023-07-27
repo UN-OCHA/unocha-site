@@ -101,6 +101,12 @@ p.title {
   font-size: 24px;
 }
 
+p.headline {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
 /* Disable elements.css quote icon */
 blockquote::before {
   /* content: open-quote; */
