@@ -1,20 +1,28 @@
 {
-    "name": "United Nations Office for the Coordination of Humanitarian Affairs",
-    "short_name": "OCHA",
-    "icons": [
-        {
-            "src": "img/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "img/android-chrome-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#1f69b3",
-    "background_color": "#ffffff",
-    "display": "standalone",
-    "start_url": "/"
+  "name": "UN OCHA",
+  "short_name": "OCHA",
+  "description": "United Nations Office for the Coordination of Humanitarian Affairs",
+  "theme_color": "#1f69b3",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "icons": [
+    {
+        "src": "img/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    },
+    {
+        "src": "img/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    },
+    {
+      "//": "All-purpose SVG",
+      "src": "img/logos/ocha-logo-vertical.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
 }
