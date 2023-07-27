@@ -8,5 +8,15 @@ id: front
 label: 'Front page'
 tags:
   canonical_url: '[site:url]'
+  description: '[site:slogan]'
+  image_src: /themes/custom/common_design_subtheme/img/logos/UNOCHA_logo_horizontal_text_blue_RGB_1200x630.jpg
+  og_description: '[site:slogan]'
+  og_image: /themes/custom/common_design_subtheme/img/logos/UNOCHA_logo_horizontal_text_blue_RGB_1200x630.jpg
+  og_image_alt: 'UNOCHA logo'
+  og_title: '[site:name]'
   shortlink: '[site:url]'
   title: '[site:name]'
+  twitter_cards_description: '[site:slogan]'
+  twitter_cards_image: /themes/custom/common_design_subtheme/img/logos/UNOCHA_logo_horizontal_text_blue_RGB_1200x630.jpg
+  twitter_cards_image_alt: 'UNOCHA logo'
+  twitter_cards_title: '[site:name]'

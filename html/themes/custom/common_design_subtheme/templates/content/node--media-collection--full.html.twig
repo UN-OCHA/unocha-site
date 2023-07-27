@@ -126,8 +126,6 @@
         </div>
         {% endif %}
 
-        {{ content|without('field_media_image', 'field_media_video', 'field_video_download', 'field_canto_collection', 'field_custom_content') }}
-
         {% if node.field_canto_collection.0.value or node.field_media_image.0.value %}
           <div class="uno-photo-gallery--two-columns">
 
@@ -145,7 +143,7 @@
           </div>
         {% endif %}
 
-      {{ content.field_custom_content }}
+        {{ content|without('field_media_image', 'field_media_video', 'field_video_download', 'field_canto_collection') }}
 
       </div>
 

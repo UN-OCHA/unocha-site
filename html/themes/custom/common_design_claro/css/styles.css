@@ -92,13 +92,19 @@
 }
 
 blockquote {
-  border-inline-start: 3px solid grey;
   padding: 0.25rem 1rem;
+  border-inline-start: 3px solid grey;
 }
 
 p.title {
-  font-size: 24px;
   text-align: center;
+  font-size: 24px;
+}
+
+p.headline {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.2;
 }
 
 /* Disable elements.css quote icon */
@@ -106,3 +112,163 @@ blockquote::before {
   /* content: open-quote; */
   content: none;
 }
+
+/**
+ * Style adjustments for the preview of the paragraphs.
+ */
+
+form .paragraph--view-mode--preview {
+  /* Adjust typography from @claro/css/base/variables.css to be smaller. */
+  --font-size-xl: 1.4rem; /* ~36px */
+  --font-size-h1: 1.3rem; /* ~32px */
+  --font-size-h2: 1.2rem; /* ~29px */
+  --font-size-h3: 1.1rem; /* ~26px */
+  --font-size-h4: 1rem; /* ~23px */
+  --font-size-h5: 0.9rem; /* ~20px */
+  --font-size-h6: 0.8rem; /* 18px */
+  --font-size-s: 0.7rem; /* ~14px */
+  --font-size-xs: 0.6rem; /* ~13px */
+  --font-size-xxs: 0.5rem; /* ~11px */
+
+  /* Adjust the gap for the grid type paragraph view modes. */
+  --uno-card-list-gap-size: 1rem;
+}
+
+/* Map. */
+form .paragraph--view-mode--preview.unocha-response-map[data-map-enabled] .unocha-response-map__article[data-active] {
+  padding: 0;
+}
+
+/* Stories. */
+form .paragraph--view-mode--preview.paragraph--type--news-and-stories .viewsreference--view-title {
+  font-size: var(--font-size-h2);
+  font-weight: bold;;
+}
+form .paragraph--view-mode--preview.paragraph--type--news-and-stories .view-header {
+  margin-bottom: 1rem;
+}
+form .paragraph--view-mode--preview.paragraph--type--news-and-stories .view-filters {
+  display: none;
+}
+form .paragraph--view-mode--preview.paragraph--type--news-and-stories .view-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--uno-card-list-gap-size);
+}
+form .paragraph--view-mode--preview article.node--type-story.node--view-mode-card {
+  display: flex;
+  flex: 1 0 calc(33.33% - var(--uno-card-list-gap-size));
+  flex-direction: column;
+}
+form .paragraph--view-mode--preview article.node--type-story.node--view-mode-card h2 {
+  font-size: var(--font-size-h3);
+}
+form .paragraph--view-mode--preview article.node--type-story.node--view-mode-card .node__content {
+  order: -1;
+  margin-right: 1rem;
+}
+form .paragraph--view-mode--preview article.node--type-story.node--view-mode-card .field--name-field-story-type {
+  font-size: var(--font-size-h5);
+}
+form .paragraph--view-mode--preview.paragraph--type--news-and-stories .uno-stories__content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--uno-card-list-gap-size);
+}
+form .paragraph--view-mode--preview.paragraph--type--content-list .uno-stories__header {
+  margin-bottom: 1rem;
+}
+form .paragraph--view-mode--preview.paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card .node__content {
+  min-width: 220px;
+}
+
+/* Events. */
+form .paragraph--view-mode--preview.paragraph--type--events .viewsreference--view-title {
+  margin-bottom: 1rem;
+  font-size: var(--font-size-h2);
+  font-weight: bold;
+}
+form .paragraph--view-mode--preview.paragraph--type--events .view-header h2 {
+  display: none;
+}
+form .paragraph--view-mode--preview.paragraph--type--events .view-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--uno-card-list-gap-size);
+}
+form .paragraph--view-mode--preview article.node--type-event.node--view-mode-card {
+  display: flex;
+  flex: 1 0 calc(33.33% - var(--uno-card-list-gap-size));
+  flex-direction: column;
+}
+form .paragraph--view-mode--preview article.node--type-event.node--view-mode-card h2 {
+  font-size: var(--font-size-h3);
+}
+form .paragraph--view-mode--preview article.node--type-event.node--view-mode-card .node__content {
+  order: -1;
+  margin-right: 1rem;
+}
+form .paragraph--view-mode--preview article.node--type-event.node--view-mode-card .field--name-field-event-date,
+form .paragraph--view-mode--preview article.node--type-event.node--view-mode-card .field--name-field-event-location {
+  display: none;
+  font-size: var(--font-size-h5);
+}
+
+/* Nodes. */
+form .paragraph--view-mode--preview.paragraph--type--node article.node h2 {
+  font-size: var(--font-size-h3);
+}
+form .paragraph--view-mode--preview.paragraph--type--node article.node .node__content {
+  display: none;
+}
+
+/* ReliefWeb rivers. */
+form .paragraph--view-mode--preview.paragraph--type--reliefweb-river .rw-river-article__content,
+form .paragraph--view-mode--preview.paragraph--type--reliefweb-river .rw-river-article__footer {
+  display: none;
+}
+form .paragraph--view-mode--preview.paragraph--type--reliefweb-document .rw-river-article__content {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+}
+form .paragraph--view-mode--preview .rw-river-article .rw-river-article__content .rw-river-article__title {
+  font-size: var(--font-size-h3);
+}
+form .paragraph--view-mode--preview .rw-river-article .rw-river-article__content img[src*="styles/thumbnail/"] {
+  max-width: 100px;
+  max-height: 140px;
+  margin: 0 0 1rem 0;
+}
+
+/* Subscribe. */
+form .paragraph--view-mode--preview.paragraph--type--subscribe .mc-field-group {
+  align-items: center;
+}
+form .paragraph--view-mode--preview.paragraph--type--subscribe .email {
+  height: 3rem;
+  border: 1px solid black;
+}
+
+/* Media centre. */
+form .paragraph--view-mode--preview.paragraph--type--media-centre .viewsreference--view-title {
+  display: none;
+}
+form .paragraph--view-mode--preview.paragraph--type--media-centre .uno-media-centre__header {
+  margin-bottom: 1rem;
+}
+form .paragraph--view-mode--preview.paragraph--type--media-centre article.node--type-media-collection .node__content > .field--name-field-media-image > .field__item:nth-child(n+2) {
+  display: none;
+}
+form .paragraph--view-mode--preview.paragraph--type--media-centre article.node--type-media-collection {
+  display: flex;
+  flex-direction: column;
+}
+form .paragraph--view-mode--preview.paragraph--type--media-centre article.node--type-media-collection h2 {
+  font-size: var(--font-size-h3);
+}
+form .paragraph--view-mode--preview.paragraph--type--media-centre article.node--type-media-collection .node__content {
+  order: -1;
+  margin-right: 1rem;
+}
+

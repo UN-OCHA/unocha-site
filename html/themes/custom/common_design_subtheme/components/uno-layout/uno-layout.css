@@ -90,11 +90,9 @@
     display: flex;
     gap: var(--uno-card-list-gap-size);
   }
-  .layout--twocol-66-33 > .layout__region--first {
-    flex: 0 1 66%;
-  }
+  .layout--twocol-66-33 > .layout__region--first,
   .layout--twocol-66-33 > .layout__region--second {
-    flex: 1 0 33%;
+    flex: 0 1 50%;
   }
 }
 
@@ -144,6 +142,9 @@
     layout that follows on the homepage */
   .layout--twocol-66-33 > .layout__region--first {
     flex: 1 0 66%;
+  }
+  .layout--twocol-66-33 > .layout__region--second {
+    flex: 0 1 33%;
   }
 }
 

@@ -1,0 +1,13 @@
+{% extends '@common_design_subtheme/paragraphs/paragraph--events.html.twig' %}
+
+{% block content %}
+  {% if content.field_events['#items'] %}
+    {{ content }}
+  {% elseif paragraph.field_events.entity and paragraph.field_events.display_id %}
+    {% set display = paragraph.field_events.entity.getDisplay(paragraph.field_events.display_id) %}
+    {% if display %}
+      <div class="viewsreference--view-title">{{ display.display_title }}</div>
+      <div class="views-element-container">{% trans %}No events currently. This section will only be displayed when there are events.{% endtrans %}</div>
+    {% endif %}
+  {% endif %}
+{% endblock %}
