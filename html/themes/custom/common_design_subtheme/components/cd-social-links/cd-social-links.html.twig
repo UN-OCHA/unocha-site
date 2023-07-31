@@ -14,7 +14,7 @@
           </a>
         </li>
         <li class="cd-social-links__item">
-          <a class="cd-social-links__link cd-social-links__link--twitter" target="_blank" href="https://twitter.com/intent/tweet/?{{ url('<current>') }}">
+          <a class="cd-social-links__link cd-social-links__link--twitter" target="_blank" href="https://twitter.com/intent/tweet/?url={{ url('<current>') }}">
             <span class="visually-hidden">{{ 'Share on Twitter'|t }}</span>
             <svg class="cd-icon cd-icon--social-links--twitter" aria-hidden="true" focusable="false" width="16" height="16">
               <use xlink:href="#cd-icon--social-links--twitter"></use>
@@ -30,7 +30,7 @@
           </a>
         </li>
         <li class="cd-social-links__item">
-          <a class="cd-social-links__link cd-social-links__link--email" href="mailto:?subject={{ shareText|url_encode }}&amp;body={{ url('<current>') }}">
+          <a class="cd-social-links__link cd-social-links__link--email" href="mailto:?subject={{ 'OCHA - ' ~ shareText|url_encode }}&amp;body={{ url('<current>') }}">
             <span class="visually-hidden">{{ 'Share by Email'|t }}</span>
             <svg class="cd-icon cd-icon--social-links--email" aria-hidden="true" focusable="false" width="16" height="16">
               <use xlink:href="#cd-icon--social-links--email"></use>
