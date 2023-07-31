@@ -30,6 +30,7 @@ dependencies:
     - node
     - paragraphs
     - path
+    - redirect
     - system
     - taxonomy
     - toolbar
@@ -47,6 +48,7 @@ permissions:
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'administer nodes'
+  - 'administer redirects'
   - 'administer taxonomy'
   - 'create basic content'
   - 'create content translations'
