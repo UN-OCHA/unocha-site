@@ -253,7 +253,16 @@ a.cd-footer-social__link svg {
 .cd-global-header__actions > nav:first-child .cd-user-menu a {
   text-transform: uppercase;
   font-weight: bold;
-  padding-inline: 20px;
+}
+
+@media screen and (min-width: 1024px) {
+  .cd-global-header__actions > nav:first-child .cd-user-menu a {
+    margin-inline-end: -14px;
+  }
+
+  .user-logged-in .cd-global-header__actions > nav:first-child .cd-user-menu a {
+    margin-inline-end: unset;
+  }
 }
 
 .cd-user-menu a:hover,

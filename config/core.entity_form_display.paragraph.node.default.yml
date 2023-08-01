@@ -44,14 +44,14 @@ content:
     third_party_settings: {  }
   paragraph_view_mode:
     type: paragraph_view_mode
-    weight: 0
+    weight: -100
     region: content
     settings:
       view_modes:
-        default: Default
-        cards: Cards
-        teasers: Teasers
-      default_view_mode: default
+        cards: cards
+        teasers: teasers
+        default: '0'
+      default_view_mode: cards
       form_mode_bind: true
     third_party_settings: {  }
   status:
