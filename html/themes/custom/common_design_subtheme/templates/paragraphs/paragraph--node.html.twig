@@ -51,11 +51,7 @@
 {{ attach_library('common_design_subtheme/uno-card-list')}}
 
 {% block paragraph %}
-  <div{{ attributes
-    .addClass(classes)
-    .setAttribute('data-type', paragraph.bundle)
-    .setAttribute('id', paragraph.bundle ~ '-' ~ paragraph.id())
-  }}>
+  <div{{ attributes.addClass(classes) }}>
     {% block content %}
       {{ content }}
     {% endblock %}
