@@ -30,6 +30,8 @@ dependencies:
     - node
     - paragraphs
     - path
+    - redirect
+    - system
     - taxonomy
     - toolbar
     - unocha_canto
@@ -38,13 +40,16 @@ label: Editor
 weight: 3
 is_admin: null
 permissions:
+  - 'access administration pages'
   - 'access canto api'
   - 'access content overview'
   - 'access files overview'
   - 'access media overview'
   - 'access taxonomy overview'
   - 'access toolbar'
+  - 'administer menu'
   - 'administer nodes'
+  - 'administer redirects'
   - 'administer taxonomy'
   - 'create basic content'
   - 'create content translations'
@@ -174,4 +179,5 @@ permissions:
   - 'view resource revisions'
   - 'view response revisions'
   - 'view story revisions'
+  - 'view the administration theme'
   - 'view unpublished paragraphs'

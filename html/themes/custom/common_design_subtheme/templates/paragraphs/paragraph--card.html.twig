@@ -23,11 +23,7 @@
 %}
 
 {% block paragraph %}
-  <div{{ attributes
-    .addClass(classes)
-    .setAttribute('data-type', paragraph.bundle)
-    .setAttribute('id', paragraph.bundle ~ '-' ~ paragraph.id())
-  }}>
+  <div{{ attributes.addClass(classes) }}>
     {% block content %}
       {% set destination = paragraph.field_card_link.0.url %}
       <div class="uno-card__content">

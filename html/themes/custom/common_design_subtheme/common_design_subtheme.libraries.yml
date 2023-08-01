@@ -27,6 +27,7 @@ cd:
     component:
       components/cd/cd.css: {}
       components/cd/cd-typography.css: {}
+      components/cd/cd-print.css: {}
 
 cd-article:
   css:

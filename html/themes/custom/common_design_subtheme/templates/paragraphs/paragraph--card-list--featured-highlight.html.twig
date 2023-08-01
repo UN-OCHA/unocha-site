@@ -22,11 +22,7 @@
   ]
 %}
 {% block paragraph %}
-  <article{{ attributes
-    .addClass(classes)
-    .setAttribute('data-type', paragraph.bundle)
-    .setAttribute('id', paragraph.bundle ~ '-' ~ paragraph.id())
-  }}>
+  <div{{ attributes.addClass(classes) }}>
     {% block content %}
       {% set destination = paragraph.field_destination.0.url %}
       <div{{ content_attributes.addClass('node__content').addClass('uno-card__content') }}>
