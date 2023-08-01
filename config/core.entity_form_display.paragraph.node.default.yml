@@ -44,7 +44,7 @@ content:
     third_party_settings: {  }
   paragraph_view_mode:
     type: paragraph_view_mode
-    weight: 0
+    weight: -100
     region: content
     settings:
       view_modes:
