@@ -71,14 +71,13 @@
  */
 #}
 
-{% embed '@common_design_subtheme/content/node--card.html.twig'
-%}
+{% embed '@common_design_subtheme/content/node--card.html.twig' %}
   {% block card_image %}
     <a href="{{ url }}">{{ content.field_story_image }}</a>
   {% endblock %}
 
   {% block card_title %}
-    {% if node.isSticky %}
+    {% if attributes.hasClass('featured') %}
       <span class="uno-featured uno-tag">{% trans %}Featured{% endtrans %}</span>
     {% else %}
       {% if content.field_story_type|render %}
@@ -91,7 +90,7 @@
   {% endblock %}
 
   {% block card_content %}
-    {% if node.isSticky %}
+    {% if attributes.hasClass('featured') %}
       {{ content|without('field_story_image', 'field_story_type') }}
     {% else %}
       {{ content|without('field_story_image', 'body', 'field_story_type') }}

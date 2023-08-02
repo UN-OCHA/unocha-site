@@ -26,83 +26,95 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
   // Retrieve the closest node parent.
   $parent = unocha_paragraphs_get_paragraph_parent_node($paragraph);
 
+  // Retrieve the featured stories.
+  $featured = array_slice($paragraph->field_node?->referencedEntities() ?? [], 0, $limit, TRUE);
+
+  // Add the featured stories to the story list. They are ordered by delta so
+  // reflect the order in the form.
+  $stories = [];
+  foreach ($featured as $story) {
+    $stories[$story->id()] = $story;
+  }
+  $limit = $limit - count($stories);
+
   // Parameters for the "view all" link.
   $view_all_query = [];
 
   // Filter the stories based on the parent entity.
-  $stories = [];
-  if (isset($parent) && $parent instanceof NodeInterface && !empty($parent->id())) {
-    if ($parent->bundle() === 'response') {
-      // Get the stories tagged with the response.
-      $stories = unocha_paragraphs_get_stories([
-        ['field_responses', $parent->id(), '='],
-      ], $limit);
+  if ($limit > 0) {
+    if (isset($parent) && $parent instanceof NodeInterface && !empty($parent->id())) {
+      if ($parent->bundle() === 'response') {
+        // Get the stories tagged with the response.
+        $stories += unocha_paragraphs_get_stories([
+          ['field_responses', $parent->id(), '='],
+        ], $limit, $stories);
 
-      // Filter the News and Stories page by the response.
-      $view_all_query['response'] = $parent->id();
+        // Filter the News and Stories page by the response.
+        $view_all_query['response'] = $parent->id();
 
-      // If we don't have enough stories for the response, complete with
-      // stories from the region.
-      if (count($stories) < $limit) {
-        $region = unocha_paragraphs_get_node_parent_node($parent);
-        if (isset($region) && $region->bundle() === 'region') {
-          $stories += unocha_paragraphs_get_stories([
-            ['field_regions', $region->id(), '='],
-          ], $limit - count($stories));
+        // If we don't have enough stories for the response, complete with
+        // stories from the region.
+        if (count($stories) < $limit) {
+          $region = unocha_paragraphs_get_node_parent_node($parent);
+          if (isset($region) && $region->bundle() === 'region') {
+            $stories += unocha_paragraphs_get_stories([
+              ['field_regions', $region->id(), '='],
+            ], $limit - count($stories), $stories);
 
-          // Also add the region as filter to have consistent results in the
-          // News and Stories landing page.
-          $view_all_query['region'] = $region->id();
+            // Also add the region as filter to have consistent results in the
+            // News and Stories landing page.
+            $view_all_query['region'] = $region->id();
+          }
         }
       }
-    }
-    elseif ($parent->bundle() === 'region') {
-      // Get the stories tagged with the region.
-      $stories = unocha_paragraphs_get_stories([
-        ['field_regions', $parent->id(), '='],
-      ], $limit);
+      elseif ($parent->bundle() === 'region') {
+        // Get the stories tagged with the region.
+        $stories += unocha_paragraphs_get_stories([
+          ['field_regions', $parent->id(), '='],
+        ], $limit, $stories);
 
-      // Filter the News and Stories page by the region.
-      $view_all_query['region'] = $parent->id();
-    }
-    else {
-      // Exclude the current story so we can show related ones only.
-      $exclude = $parent->bundle() === 'story' ? $parent->id() : NULL;
+        // Filter the News and Stories page by the region.
+        $view_all_query['region'] = $parent->id();
+      }
+      else {
+        // Add conditions on the referenced entities.
+        $conditions = [];
+        $fields = [
+          'field_responses' => 'response',
+          'field_regions' => 'region',
+          'field_country' => 'country',
+        ];
+        foreach ($fields as $field => $filter) {
+          if ($parent->hasField($field)) {
+            $ids = [];
+            foreach ($parent->get($field)->filterEmptyItems() as $item) {
+              if (isset($item->target_id)) {
+                $ids[] = $item->target_id;
+              }
+            }
+            if (!empty($ids)) {
+              $conditions[] = [$field, $ids, 'IN'];
 
-      // Add conditions on the referenced entities.
-      $conditions = [];
-      $fields = [
-        'field_responses' => 'response',
-        'field_regions' => 'region',
-        'field_country' => 'country',
-      ];
-      foreach ($fields as $field => $filter) {
-        if ($parent->hasField($field)) {
-          $ids = [];
-          foreach ($parent->get($field)->filterEmptyItems() as $item) {
-            if (isset($item->target_id)) {
-              $ids[] = $item->target_id;
+              // @todo review if we allow multiple selections for the filters.
+              // Filter the News and Stories page.
+              $view_all_query[$filter] = reset($ids);
             }
           }
-          if (!empty($ids)) {
-            $conditions[] = [$field, $ids, 'IN'];
-
-            // @todo review if we allow multiple selections for the filters.
-            // Filter the News and Stories page.
-            $view_all_query[$filter] = reset($ids);
-          }
         }
-      }
 
-      $stories = unocha_paragraphs_get_stories($conditions, $limit, $exclude);
+        // Exclude the current story so we can show related ones only.
+        $exclude = array_merge($stories, $parent->bundle() === 'story' ? [$parent] : []);
+
+        $stories += unocha_paragraphs_get_stories($conditions, $limit, $exclude);
+      }
     }
-  }
-  // If there are no valid parent, we just show the latest stories,
-  // for example when adding a stories paragraph type to a response as the
-  // paragraph doesn't yet have a parent as it's not yet saved.
-  // @todo add disclaimer in the preview in the form?
-  else {
-    $stories = unocha_paragraphs_get_stories([], $limit);
+    // If there are no valid parent, we just show the latest stories,
+    // for example when adding a stories paragraph type to a response as the
+    // paragraph doesn't yet have a parent as it's not yet saved.
+    // @todo add disclaimer in the preview in the form?
+    else {
+      $stories += unocha_paragraphs_get_stories([], $limit, $stories);
+    }
   }
 
   // Filter out stories that cannot be accessed by the current user.
@@ -120,10 +132,21 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
       'query' => $view_all_query,
     ]);
     $variables['content']['view_all'] = Link::fromTextAndUrl(t('View all'), $view_all_url)->toRenderable();
-    // @todo get the view mode from the paragraph view mode?
-    $variables['content']['stories'] = \Drupal::entityTypeManager()
+
+    // Generate the render array with the stories.
+    $build = \Drupal::entityTypeManager()
       ->getViewBuilder('node')
       ->viewMultiple($stories, 'card');
+
+    // Add a class to featured stories.
+    foreach ($build as $key => $item) {
+      if (is_array($item) && isset($item['#node']) && in_array($item['#node'], $featured)) {
+        $build[$key]['#attributes']['class'][] = 'featured';
+      }
+    }
+
+    // @todo get the view mode from the paragraph view mode?
+    $variables['content']['stories'] = $build;
   }
 }
 
@@ -204,14 +227,13 @@ function unocha_paragraphs_preprocess_paragraph__resources(array &$variables) {
  *   List of conditions. Each condition has field, value and operator.
  * @param int $limit
  *   Number of stories to return.
- * @param int|null $exclude
- *   ID of story to exclude. This is mostly for when showing other stories on a
- *   story page.
+ * @param array $exclude
+ *   Stories to exclude.
  *
  * @return \Drupal\node\NodeInterface[]
  *   List of story nodes.
  */
-function unocha_paragraphs_get_stories(array $conditions = [], $limit = 3, $exclude = NULL) {
+function unocha_paragraphs_get_stories(array $conditions = [], $limit = 3, array $exclude = []) {
   $storage = \Drupal::entityTypeManager()->getStorage('node');
 
   $query = $storage
@@ -219,14 +241,15 @@ function unocha_paragraphs_get_stories(array $conditions = [], $limit = 3, $excl
     ->accessCheck(TRUE)
     ->condition('type', 'story')
     ->condition('status', 1)
-    ->sort('sticky', 'desc')
-    ->sort('promote', 'desc')
     ->sort('created', 'desc')
     ->range(0, $limit);
 
-  // Exclude a story.
+  // Exclude stories.
   if (!empty($exclude)) {
-    $query->condition('nid', $exclude, '<>');
+    $excluded_ids = array_map(function ($story) {
+      return $story->id();
+    }, $exclude);
+    $query->condition('nid', $excluded_ids, 'NOT IN');
   }
 
   // Additional conditions.
