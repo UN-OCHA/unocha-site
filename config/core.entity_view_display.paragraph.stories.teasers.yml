@@ -1,25 +1,19 @@
-uuid: ebd7cae0-adf9-473c-a812-e046252da661
+uuid: db4f70f8-7475-49ef-8df3-30c1477b5704
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.teasers
     - field.field.paragraph.stories.field_limit
     - field.field.paragraph.stories.field_node
     - field.field.paragraph.stories.field_title
     - paragraphs.paragraphs_type.stories
-id: paragraph.stories.default
+id: paragraph.stories.teasers
 targetEntityType: paragraph
 bundle: stories
-mode: default
-content:
-  field_title:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
+mode: teasers
+content: {  }
 hidden:
   field_limit: true
   field_node: true
+  field_title: true

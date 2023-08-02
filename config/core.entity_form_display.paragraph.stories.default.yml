@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.stories.field_limit
+    - field.field.paragraph.stories.field_node
     - field.field.paragraph.stories.field_title
     - paragraphs.paragraphs_type.stories
 id: paragraph.stories.default
@@ -18,6 +19,16 @@ content:
     settings:
       placeholder: ''
     third_party_settings: {  }
+  field_node:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: STARTS_WITH
+      match_limit: 10
+      size: 60
+      placeholder: 'Enter story title...'
+    third_party_settings: {  }
   field_title:
     type: string_textfield
     weight: 0
@@ -28,13 +39,13 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 3
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   translation:
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
