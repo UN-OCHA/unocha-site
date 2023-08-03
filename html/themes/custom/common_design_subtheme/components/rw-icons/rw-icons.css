@@ -78,16 +78,8 @@
   --rw-icons--map-marker--24--grey--x: -218px;
   --rw-icons--map-marker--24--orange--x: -242px;
   --rw-icons--map-marker--24--red--x: -266px;
-  --rw-icons--map-marker--44--blue--x: -290px;
-  --rw-icons--map-marker--44--grey--x: -334px;
-  --rw-icons--map-marker--44--orange--x: -378px;
-  --rw-icons--map-marker--44--red--x: -422px;
   --rw-icons--map-marker--marker--24--blue: url("/themes/custom/common_design_subtheme/components/rw-icons/img/rw-icons-sprite.svg?v=1.1.0") -194px 0 no-repeat;
   --rw-icons--map-marker--marker--24--grey: url("/themes/custom/common_design_subtheme/components/rw-icons/img/rw-icons-sprite.svg?v=1.1.0") -218px 0 no-repeat;
   --rw-icons--map-marker--marker--24--orange: url("/themes/custom/common_design_subtheme/components/rw-icons/img/rw-icons-sprite.svg?v=1.1.0") -242px 0 no-repeat;
   --rw-icons--map-marker--marker--24--red: url("/themes/custom/common_design_subtheme/components/rw-icons/img/rw-icons-sprite.svg?v=1.1.0") -266px 0 no-repeat;
-  --rw-icons--map-marker--marker--44--blue: url("/themes/custom/common_design_subtheme/components/rw-icons/img/rw-icons-sprite.svg?v=1.1.0") -290px 0 no-repeat;
-  --rw-icons--map-marker--marker--44--grey: url("/themes/custom/common_design_subtheme/components/rw-icons/img/rw-icons-sprite.svg?v=1.1.0") -334px 0 no-repeat;
-  --rw-icons--map-marker--marker--44--orange: url("/themes/custom/common_design_subtheme/components/rw-icons/img/rw-icons-sprite.svg?v=1.1.0") -378px 0 no-repeat;
-  --rw-icons--map-marker--marker--44--red: url("/themes/custom/common_design_subtheme/components/rw-icons/img/rw-icons-sprite.svg?v=1.1.0") -422px 0 no-repeat;
 }
