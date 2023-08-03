@@ -18,7 +18,8 @@
 .view-display-id-regional_responses .view-content,
 .view-display-id-active_responses .view-content,
 .view-media-centre .view-content,
-.view-regions .view-content {
+.view-regions .view-content,
+.view-responses .view-content {
   display: flex;
   flex-flow: row wrap;
   gap: var(--uno-card-list-gap-size);
@@ -34,7 +35,8 @@
 .view-display-id-regional_responses .view-content li,
 .view-display-id-active_responses .view-content article,
 .view-media-centre .view-content article,
-.view-regions .view-content article {
+.view-regions .view-content article,
+.view-responses .view-content article {
   /* stylelint-disable-next-line max-line-length */
   flex: 0 1 calc((100% / var(--uno-card-list-num-cols)) - var(--uno-card-list-gap-size) + var(--uno-card-list-gap-size) / var(--uno-card-list-num-cols));
 }
@@ -48,7 +50,8 @@
   .view-display-id-regional_responses .view-content,
   .view-display-id-active_responses .view-content,
   .view-media-centre .view-content,
-  .view-regions .view-content {
+  .view-regions .view-content,
+  .view-responses .view-content {
     --uno-card-list-num-cols: 2;
   }
 }
@@ -62,7 +65,8 @@
   .view-display-id-regional_responses .view-content,
   .view-display-id-active_responses .view-content,
   .view-media-centre .view-content,
-  .view-regions .view-content {
+  .view-regions .view-content,
+  .view-responses .view-content {
     --uno-card-list-num-cols: 3;
   }
 }
@@ -76,7 +80,8 @@
 /* Vertical rhythm for Views lists using Cards view mode */
 .view-stories .view-content .cd-card__container,
 .view-events .view-content .cd-card__container,
-.view-media-centre .view-content .cd-card__container {
+.view-media-centre .view-content .cd-card__container,
+.view-responses .view-content .cd-card__container {
   padding: 0 0 1rem;
 }
 

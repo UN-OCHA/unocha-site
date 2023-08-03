@@ -136,7 +136,7 @@ display:
           hide_alter_empty: true
           view_mode: media_library
       pager:
-        type: mini
+        type: full
         options:
           offset: 0
           items_per_page: 24
@@ -145,6 +145,8 @@ display:
           tags:
             next: ››
             previous: ‹‹
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -153,6 +155,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          quantity: 9
       exposed_form:
         type: basic
         options:
@@ -478,13 +481,25 @@ display:
     cache_metadata:
       max-age: 0
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.image.card'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.event'
+        - 'config:core.entity_view_display.media.image.gallery'
+        - 'config:core.entity_view_display.media.image.hero'
+        - 'config:core.entity_view_display.media.image.media_library'
+        - 'config:core.entity_view_display.media.image.original_resized'
+        - 'config:core.entity_view_display.media.image.story'
+        - 'config:core.entity_view_display.media.video.default'
+        - 'config:core.entity_view_display.media.video.gallery'
+        - 'config:core.entity_view_display.media.video.media_library'
   page:
     id: page
     display_title: Page
@@ -781,7 +796,18 @@ display:
         - 'url.query_args:sort_by'
         - user
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.image.card'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.event'
+        - 'config:core.entity_view_display.media.image.gallery'
+        - 'config:core.entity_view_display.media.image.hero'
+        - 'config:core.entity_view_display.media.image.media_library'
+        - 'config:core.entity_view_display.media.image.original_resized'
+        - 'config:core.entity_view_display.media.image.story'
+        - 'config:core.entity_view_display.media.video.default'
+        - 'config:core.entity_view_display.media.video.gallery'
+        - 'config:core.entity_view_display.media.video.media_library'
   widget:
     id: widget
     display_title: Widget
@@ -1101,7 +1127,18 @@ display:
         - url.query_args
         - 'url.query_args:sort_by'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:core.entity_view_display.media.image.card'
+        - 'config:core.entity_view_display.media.image.default'
+        - 'config:core.entity_view_display.media.image.event'
+        - 'config:core.entity_view_display.media.image.gallery'
+        - 'config:core.entity_view_display.media.image.hero'
+        - 'config:core.entity_view_display.media.image.media_library'
+        - 'config:core.entity_view_display.media.image.original_resized'
+        - 'config:core.entity_view_display.media.image.story'
+        - 'config:core.entity_view_display.media.video.default'
+        - 'config:core.entity_view_display.media.video.gallery'
+        - 'config:core.entity_view_display.media.video.media_library'
   widget_table:
     id: widget_table
     display_title: 'Widget (table)'
