@@ -35,6 +35,7 @@ dependencies:
     - taxonomy
     - toolbar
     - unocha_canto
+    - unocha_reliefweb
 id: editor
 label: Editor
 weight: 3
@@ -50,6 +51,7 @@ permissions:
   - 'administer menu'
   - 'administer nodes'
   - 'administer redirects'
+  - 'administer reliefweb breadcrumbs'
   - 'administer taxonomy'
   - 'create basic content'
   - 'create content translations'
