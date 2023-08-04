@@ -4,11 +4,15 @@ namespace Drupal\unocha_reliefweb\Services;
 
 use Drupal\Core\Breadcrumb\Breadcrumb;
 use Drupal\Core\Breadcrumb\BreadcrumbBuilderInterface;
+use Drupal\Core\Breadcrumb\ChainBreadcrumbBuilderInterface;
 use Drupal\Core\Controller\ControllerResolverInterface;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Link;
+use Drupal\Core\Routing\AccessAwareRouterInterface;
+use Drupal\Core\Routing\RouteMatch;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\State\StateInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Url;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -42,6 +46,27 @@ class ReliefWebBreadcrumbBuilder implements BreadcrumbBuilderInterface {
   protected $languageManager;
 
   /**
+   * The state service.
+   *
+   * @var \Drupal\Core\State\StateInterface
+   */
+  protected $state;
+
+  /**
+   * The breadcrumb manager service.
+   *
+   * @var \Drupal\Core\Breadcrumb\ChainBreadcrumbBuilderInterface
+   */
+  protected $breadcrumbManager;
+
+  /**
+   * The access aware router service.
+   *
+   * @var \Drupal\Core\Routing\AccessAwareRouterInterface
+   */
+  protected $router;
+
+  /**
    * Constructs the BookBreadcrumbBuilder.
    *
    * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
@@ -50,15 +75,27 @@ class ReliefWebBreadcrumbBuilder implements BreadcrumbBuilderInterface {
    *   Ther controller resolver service.
    * @param \Drupal\Core\Language\LanguageManagerInterface $language_manager
    *   The language manager service.
+   * @param \Drupal\Core\State\StateInterface $state
+   *   The state service.
+   * @param \Drupal\Core\Breadcrumb\ChainBreadcrumbBuilderInterface $breadcrumb_manager
+   *   The breadcrumb manager service.
+   * @param \Drupal\Core\Routing\AccessAwareRouterInterface $router
+   *   The router service.
    */
   public function __construct(
     RequestStack $request_stack,
     ControllerResolverInterface $controller_resolver,
-    LanguageManagerInterface $language_manager
+    LanguageManagerInterface $language_manager,
+    StateInterface $state,
+    ChainBreadcrumbBuilderInterface $breadcrumb_manager,
+    AccessAwareRouterInterface $router
   ) {
     $this->requestStack = $request_stack;
     $this->controllerResolver = $controller_resolver;
     $this->languageManager = $language_manager;
+    $this->state = $state;
+    $this->breadcrumbManager = $breadcrumb_manager;
+    $this->router = $router;
   }
 
   /**
@@ -72,8 +109,6 @@ class ReliefWebBreadcrumbBuilder implements BreadcrumbBuilderInterface {
    * {@inheritdoc}
    */
   public function build(RouteMatchInterface $route_match) {
-    $breadcrumb = new Breadcrumb();
-
     try {
       // @see 'unocha_reliefweb.publications.document' route.
       $controller = $this->controllerResolver->getController($this->requestStack->getCurrentRequest());
@@ -82,41 +117,84 @@ class ReliefWebBreadcrumbBuilder implements BreadcrumbBuilderInterface {
       $title = call_user_func([$class, 'getPageTitle']);
     }
     catch (\Exception $exception) {
-      return $breadcrumb;
+      return new Breadcrumb();
     }
 
     $current_language = $this->languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT);
-
     $url_options = ['language' => $current_language];
 
-    // Homepage.
-    $links = [Link::createFromRoute($this->t('Home'), '<front>', [], $url_options)];
-
+    // Determine the parent based on the OCHA product.
     switch ($ocha_product) {
       // Press releases.
       case 'Press Release':
-        $links[] = Link::fromTextAndUrl($this->t('Press Releases'), Url::fromUserInput('/press-releases', $url_options));
+        $path = $this->state->get('reliefweb_breadcrumb_press_releases_parent', '/latest/press-releases');
+        $breadcrumb = $this->getBreadcrumbForPath($path);
         break;
 
       // Latest / Speeches and Statements.
       case 'Statement/Speech':
-        $links[] = Link::createFromRoute($this->t('Latest'), '<nolink>', [], $url_options);
-        $links[] = Link::fromTextAndUrl($this->t('Speeches and Statements'), Url::fromUserInput('/speeches-and-statements', $url_options));
+        $path = $this->state->get('reliefweb_breadcrumb_speeches_and_statements_parent', '/latest/speeches-and-statements');
+        $breadcrumb = $this->getBreadcrumbForPath($path);
         break;
+    }
 
-      // Latest / Publications.
-      default:
-        $links[] = Link::createFromRoute($this->t('Latest'), '<nolink>', [], $url_options);
-        $links[] = Link::fromTextAndUrl($this->t('Publications'), Url::fromUserInput('/publications', $url_options));
+    if (empty($breadcrumb)) {
+      $path = $this->state->get('reliefweb_breadcrumb_publications_parent', '/publications');
+      $breadcrumb = $this->getBreadcrumbForPath($path);
+    }
+
+    if (empty($breadcrumb)) {
+      $breadcrumb = new Breadcrumb();
+
+      // Homepage.
+      $breadcrumb->addLink(Link::createFromRoute($this->t('Home'), '<front>', [], $url_options));
     }
 
     // Document's title.
-    $links[] = Link::createFromRoute($title, '<nolink>', [], $url_options);
+    $breadcrumb->addLink(Link::createFromRoute($title, '<nolink>', [], $url_options));
 
     $breadcrumb->addCacheContexts(['languages:' . LanguageInterface::TYPE_CONTENT]);
     $breadcrumb->addCacheContexts(['url.path']);
-    $breadcrumb->setLinks(array_filter($links));
     return $breadcrumb;
+  }
+
+  /**
+   * Get the breadcrumb object for a path.
+   *
+   * @param string $path
+   *   Path.
+   *
+   * @return \Drupal\Core\Breadcrumb\Breadcrumb
+   *   Breadcrumb object.
+   */
+  protected function getBreadcrumbForPath($path) {
+    try {
+      $route = $this->router->match($path);
+      if (!empty($route)) {
+        $route_name = $route['_route'];
+        $route_object = $route['_route_object'];
+        $parameters = $route_object->getOption('parameters');
+        $raw_parameters = $route['_raw_variables']->all();
+        $route_match = new RouteMatch($route_name, $route_object, $parameters, $raw_parameters);
+        if ($this->breadcrumbManager->applies($route_match)) {
+          $breadcrumb = $this->breadcrumbManager->build($route_match);
+          // Make sure the last item which corresponds to the path normally,
+          // has a proper URL.
+          $links = $breadcrumb->getLinks();
+          $link = array_pop($links);
+          $links[] = $link->setUrl(Url::fromRouteMatch($route_match));
+          // Return a new breadcrumb because we cannot alter the links of
+          // an existing breadcrumb.
+          return (new Breadcrumb())
+            ->addCacheableDependency($breadcrumb)
+            ->setLinks($links);
+        }
+      }
+      return NULL;
+    }
+    catch (\Exception $exception) {
+      return NULL;
+    }
   }
 
 }
