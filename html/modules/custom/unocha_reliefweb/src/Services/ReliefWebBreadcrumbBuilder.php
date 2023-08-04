@@ -113,7 +113,7 @@ class ReliefWebBreadcrumbBuilder implements BreadcrumbBuilderInterface {
       // @see 'unocha_reliefweb.publications.document' route.
       $controller = $this->controllerResolver->getController($this->requestStack->getCurrentRequest());
       $class = reset($controller);
-      $ocha_product = call_user_func([$class, 'getOchaProduct']);
+      $ocha_product = mb_strtolower(call_user_func([$class, 'getOchaProduct']));
       $title = call_user_func([$class, 'getPageTitle']);
     }
     catch (\Exception $exception) {
@@ -123,26 +123,20 @@ class ReliefWebBreadcrumbBuilder implements BreadcrumbBuilderInterface {
     $current_language = $this->languageManager->getCurrentLanguage(LanguageInterface::TYPE_CONTENT);
     $url_options = ['language' => $current_language];
 
-    // Determine the parent based on the OCHA product.
-    switch ($ocha_product) {
-      // Press releases.
-      case 'Press Release':
-        $path = $this->state->get('reliefweb_breadcrumb_press_releases_parent', '/latest/press-releases');
-        $breadcrumb = $this->getBreadcrumbForPath($path);
-        break;
+    $ocha_product_paths = $this->state->get('unocha_reliefweb.breadcrumb.ocha_product_paths', []);
 
-      // Latest / Speeches and Statements.
-      case 'Statement/Speech':
-        $path = $this->state->get('reliefweb_breadcrumb_speeches_and_statements_parent', '/latest/speeches-and-statements');
-        $breadcrumb = $this->getBreadcrumbForPath($path);
-        break;
+    // Try the parent path defined for the OCHA product.
+    if (isset($ocha_product_paths[$ocha_product]['path'])) {
+      $breadcrumb = $this->getBreadcrumbForPath($ocha_product_paths[$ocha_product]['path']);
     }
 
+    // Try the default path.
     if (empty($breadcrumb)) {
-      $path = $this->state->get('reliefweb_breadcrumb_publications_parent', '/publications');
-      $breadcrumb = $this->getBreadcrumbForPath($path);
+      $default_path = $this->state->get('unocha_reliefweb.breadcrumb.default_path', '');
+      $breadcrumb = $this->getBreadcrumbForPath($default_path);
     }
 
+    // Default to the homepage.
     if (empty($breadcrumb)) {
       $breadcrumb = new Breadcrumb();
 
@@ -168,6 +162,9 @@ class ReliefWebBreadcrumbBuilder implements BreadcrumbBuilderInterface {
    *   Breadcrumb object.
    */
   protected function getBreadcrumbForPath($path) {
+    if (empty($path)) {
+      return NULL;
+    }
     try {
       $route = $this->router->match($path);
       if (!empty($route)) {
