@@ -10,8 +10,11 @@ global-styling:
       css/brand.css: {}
   dependencies:
     - common_design_subtheme/uno-card-list
+    - common_design_subtheme/cd-article
+    - common_design_subtheme/cd-typography
     - common_design_subtheme/cd
     - common_design/cd-read-more
+    - common_design/cd-block-title
 
 ###
 # Define Drupal libraries for your custom components.
@@ -168,27 +171,10 @@ uno-donors:
     theme:
       components/uno-donors/uno-donors.css: {}
 
-uno-embed:
-  css:
-    component:
-      components/uno-embed/uno-embed.css: {}
-  js:
-    components/uno-embed/uno-embed.js: {}
-
-uno-event-date:
-  css:
-    theme:
-      components/uno-event-date/uno-event-date.css: {}
-
 uno-figures:
   css:
     theme:
       components/uno-figures/uno-figures.css: {}
-
-uno-gho:
-  css:
-    theme:
-      components/uno-gho/uno-gho.css: {}
 
 uno-layout:
   css:
@@ -226,11 +212,6 @@ uno-river:
   css:
     theme:
       components/uno-river/uno-river.css: {}
-
-uno-rss-feed:
-  css:
-    theme:
-      components/uno-rss-feed/uno-rss-feed.css: {}
 
 uno-subscribe:
   css:
