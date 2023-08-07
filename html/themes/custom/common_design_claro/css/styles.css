@@ -179,6 +179,9 @@ form .paragraph--view-mode--preview.paragraph--type--news-and-stories .uno-stori
 form .paragraph--view-mode--preview.paragraph--type--content-list .uno-stories__header {
   margin-bottom: 1rem;
 }
+form .paragraph--view-mode--preview.paragraph--type--content-list .uno-stories__view_all {
+  display: none;
+}
 form .paragraph--view-mode--preview.paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card .node__content {
   min-width: 220px;
 }
