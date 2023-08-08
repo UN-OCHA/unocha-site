@@ -59,8 +59,8 @@
         <span class="uno-stories__view_all">{{- content.view_all -}}</span>
       </header>
 
-      {# Slice excludes #sorted and #pre_render from array #}
-      <div class="uno-stories__content" data-count="{{ content.stories|slice(2)|length }}">
+      {# Stories have a '#node' property. #}
+      <div class="uno-stories__content" data-count="{{ content.stories|filter(i => i['#node'])|length }}">
         {{ content|without('field_title', 'view_all') }}
       </div>
     {% endblock %}
