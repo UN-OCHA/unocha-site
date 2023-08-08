@@ -176,29 +176,31 @@ form .paragraph--view-mode--preview.paragraph--type--news-and-stories .uno-stori
   flex-wrap: wrap;
   gap: var(--uno-card-list-gap-size);
 }
-form .paragraph--view-mode--preview.paragraph--type--content-list .uno-stories__header {
+form .paragraph--view-mode--preview.paragraph--type--stories .uno-stories__header {
   margin-bottom: 1rem;
 }
-form .paragraph--view-mode--preview.paragraph--type--content-list .uno-stories__view_all {
+form .paragraph--view-mode--preview.paragraph--type--stories .uno-stories__view_all {
   display: none;
 }
-form .paragraph--view-mode--preview.paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card .node__content {
+form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story.node--view-mode-card .node__content {
   min-width: 220px;
 }
-form .paragraph--view-mode--preview.paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .uno-card__image {
+form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story.node--view-mode-card:first-child .uno-card__image {
   max-width: 220px;
 }
-form .paragraph--view-mode--preview.paragraph--type--content-list article.node--type-story.node--sticky.node--view-mode-card:first-child .cd-card__container {
+form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story.node--view-mode-card:first-child .cd-card__container {
   display: block;
 }
-form .paragraph--view-mode--preview.paragraph--type--content-list article.node--type-story .cd-card__container {
+form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story .cd-card__container {
   padding: 0;
 }
-form .paragraph--view-mode--preview.paragraph--type--content-list article.node--type-story .cd-card__footer {
+form .paragraph--view-mode--preview.paragraph--type--news-and-stories article.node--type-story .cd-card__footer,
+form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story .cd-card__footer {
   padding: 0;
   font-size: var(--font-size-h5);
 }
-form .paragraph--view-mode--preview.paragraph--type--content-list article.node--type-story .cd-read-more  {
+form .paragraph--view-mode--preview.paragraph--type--news-and-stories article.node--type-story .cd-read-more,
+form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story .cd-read-more  {
   display: none;
 }
 
