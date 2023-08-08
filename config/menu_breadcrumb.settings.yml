@@ -12,7 +12,7 @@ add_home: true
 front_title: 0
 exclude_empty_url: false
 exclude_disabled_menu_items: false
-derived_active_trail: false
+derived_active_trail: true
 menu_breadcrumb_menus:
   main:
     enabled: 1
@@ -44,11 +44,6 @@ menu_breadcrumb_menus:
     weight: 0
     taxattach: 0
     langhandle: 0
-  help:
-    enabled: 1
-    weight: 0
-    taxattach: 0
-    langhandle: 0
   latest:
     enabled: 1
     weight: 0
@@ -64,7 +59,17 @@ menu_breadcrumb_menus:
     weight: 0
     taxattach: 0
     langhandle: 0
+  take-action:
+    enabled: 0
+    weight: 0
+    taxattach: 0
+    langhandle: 0
   tools:
+    enabled: 0
+    weight: 0
+    taxattach: 0
+    langhandle: 0
+  top-menu:
     enabled: 0
     weight: 0
     taxattach: 0

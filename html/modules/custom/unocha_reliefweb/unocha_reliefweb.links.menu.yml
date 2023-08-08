@@ -1,0 +1,5 @@
+unocha_reliefweb.breadcrumb.settings:
+  title: ReliefWeb Breadcrumb
+  description: 'Configure ReliefWeb Breadcrumb settings'
+  route_name: unocha_reliefweb.breadcrumb.settings
+  parent: system.admin_config_ui

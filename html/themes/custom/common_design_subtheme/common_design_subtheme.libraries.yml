@@ -232,6 +232,11 @@ uno-rss-feed:
     theme:
       components/uno-rss-feed/uno-rss-feed.css: {}
 
+uno-stories:
+  css:
+    theme:
+      components/uno-stories/uno-stories.css: {}
+
 uno-subscribe:
   css:
     theme:

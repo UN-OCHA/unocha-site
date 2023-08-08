@@ -65,7 +65,7 @@
     "map-marker": {
       "source": "img/icons/map",
       "sizes": {
-        "44": [
+        "24": [
           "blue",
           "grey",
           "orange",
