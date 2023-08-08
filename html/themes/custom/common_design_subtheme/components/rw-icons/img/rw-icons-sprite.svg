@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 370 216" width="370" height="216">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 290 216" width="290" height="216">
   <style>
     .dark-blue { fill: #144372; }
     .dark-grey { fill: #2e3436; }
@@ -90,7 +90,7 @@
     <style xmlns:default="http://www.w3.org/2000/svg">
     .shadow {
       fill: #000000;
-      fill-opacity: 0.04;
+      fill-opacity: 0.00;
     }
     .border {
       fill: #000000;
@@ -113,11 +113,11 @@
   <symbol id="group-map-marker" viewBox="0 0 48 48">
     <use xlink:href="#map-marker--marker" width="48" height="48"/>
   </symbol>
-  <symbol id="group-map-marker--44" viewBox="0 0 176 44">
-    <use xlink:href="#group-map-marker" width="44" height="44" class="blue"/>
-    <use xlink:href="#group-map-marker" width="44" height="44" x="44" class="grey"/>
-    <use xlink:href="#group-map-marker" width="44" height="44" x="88" class="orange"/>
-    <use xlink:href="#group-map-marker" width="44" height="44" x="132" class="red"/>
+  <symbol id="group-map-marker--24" viewBox="0 0 96 24">
+    <use xlink:href="#group-map-marker" width="24" height="24" class="blue"/>
+    <use xlink:href="#group-map-marker" width="24" height="24" x="24" class="grey"/>
+    <use xlink:href="#group-map-marker" width="24" height="24" x="48" class="orange"/>
+    <use xlink:href="#group-map-marker" width="24" height="24" x="72" class="red"/>
   </symbol>
   <use xlink:href="#group-common--8" width="16" height="40"/>
   <use xlink:href="#group-common--12" width="48" height="60" x="16"/>
@@ -125,5 +125,5 @@
   <use xlink:href="#group-content--16" width="16" height="96" x="118"/>
   <use xlink:href="#group-content--24" width="24" height="144" x="134"/>
   <use xlink:href="#group-content--36" width="36" height="216" x="158"/>
-  <use xlink:href="#group-map-marker--44" width="176" height="44" x="194"/>
+  <use xlink:href="#group-map-marker--24" width="96" height="24" x="194"/>
 </svg>

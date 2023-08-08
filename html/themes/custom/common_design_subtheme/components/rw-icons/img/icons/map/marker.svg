@@ -2,7 +2,7 @@
   <style>
     .shadow {
       fill: #000000;
-      fill-opacity: 0.04;
+      fill-opacity: 0.00;
     }
     .border {
       fill: #000000;

@@ -26,16 +26,6 @@ targetEntityType: node
 bundle: response
 mode: card
 content:
-  field_active_response:
-    type: boolean
-    label: hidden
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_response_image:
     type: entity_reference_entity_view
     label: hidden
@@ -47,6 +37,7 @@ content:
     region: content
 hidden:
   body: true
+  field_active_response: true
   field_country: true
   field_custom_content: true
   field_has_response: true
