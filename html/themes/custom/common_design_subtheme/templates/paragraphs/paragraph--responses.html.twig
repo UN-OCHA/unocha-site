@@ -36,11 +36,6 @@
  * @see template_preprocess_paragraph()
  *
  * @ingroup themeable
- *
- * @todo remove the 'view-stories', 'view-display-id-stories',
- * 'paragraph--type--content-list', 'view-header' and 'view-content' which are
- * just there for compatibility with the existing styling from the
- * 'uno-card-list' component.
  */
 #}
 {{ attach_library('common_design/cd-bleed') }}
@@ -51,8 +46,7 @@
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    'uno-responses',
-    'paragraph--type--content-list'
+    'uno-responses'
   ]
 %}
 {% block paragraph %}

@@ -91,11 +91,6 @@
   margin-bottom: 2rem;
 }
 
-/* .node--view-mode-full .paragraph .field--name-field-title,
-.viewsreference--view-title {
-  margin-bottom: 1rem;
-} */
-
 .node--view-mode-full .field--name-field-text,
 .node--type-event.node--view-mode-full .uno-event__link {
   margin-bottom: 2rem;
@@ -146,7 +141,9 @@
 .paragraph--type--node,
 .paragraph--type--section.paragraph--view-mode--default,
 .paragraph--type--section.paragraph--view-mode--tabs,
-.paragraph--type--content-list,
+.paragraph--type--events,
+.paragraph--type--regions,
+.paragraph--type--responses,
 .paragraph--type--stories,
 .paragraph--type--reliefweb-document,
 .paragraph--type--subscribe,
@@ -167,7 +164,9 @@
   .paragraph--type--node,
   .paragraph--type--section.paragraph--view-mode--default,
   .paragraph--type--section.paragraph--view-mode--tabs,
-  .paragraph--type--content-list,
+  .paragraph--type--events,
+  .paragraph--type--regions,
+  .paragraph--type--responses,
   .paragraph--type--stories,
   .paragraph--type--subscribe,
   .paragraph--type--cbpf,
@@ -249,12 +248,6 @@
   margin-bottom: 2rem;
 }
 
-/* @media screen and (min-width: 768px) {
-  .paragraph--type--layout + .paragraph--type--layout {
-    margin-bottom: 6rem;
-  }
-} */
-
 /* Donors followed by Donors */
 @media screen and (min-width: 768px) {
   .paragraph--type--donors + .paragraph--type--donors {
@@ -269,14 +262,6 @@
     margin-bottom: 2rem;
   }
 }
-
-/* Donors followed by layout */
-/* @media screen and (min-width: 768px) {
-  .paragraph--type--donors + .paragraph--type--layout {
-    margin-top: 6rem;
-    margin-bottom: 2rem;
-  }
-} */
 
 /* River followed by another river */
 .paragraph--type--reliefweb-river + .paragraph--type--reliefweb-river {
