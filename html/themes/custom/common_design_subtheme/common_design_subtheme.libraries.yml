@@ -12,6 +12,7 @@ global-styling:
     - common_design_subtheme/uno-card-list
     - common_design_subtheme/cd-article
     - common_design_subtheme/cd-typography
+    - common_design_subtheme/uno-node
     - common_design_subtheme/cd
     - common_design/cd-read-more
     - common_design/cd-block-title
@@ -201,6 +202,16 @@ uno-nav:
     theme:
       components/uno-nav/uno-nav.css: {}
 
+uno-node:
+  css:
+    theme:
+      components/uno-node/uno-node.css: {}
+
+uno-paragraphs:
+  css:
+    theme:
+      components/uno-paragraphs/uno-paragraphs.css: {}
+
 uno-response-map:
   css:
     theme:
@@ -217,6 +228,8 @@ uno-stories:
   css:
     theme:
       components/uno-stories/uno-stories.css: {}
+  dependencies:
+    - common_design_subtheme/uno-view-all
 
 uno-subscribe:
   css:
@@ -234,6 +247,21 @@ uno-text-image:
   css:
     theme:
       components/uno-text-image/uno-text-image.css: {}
+
+uno-view-all:
+  css:
+    theme:
+      components/uno-view-all/uno-view-all.css: {}
+  dependencies:
+    - common_design_subtheme/rw-icons
+
+uno-views:
+  css:
+    theme:
+      components/uno-views/uno-views.css: {}
+  dependencies:
+    - common_design_subtheme/uno-view-all
+
 ###
 # Define Drupal libraries for additional webfonts.
 #
