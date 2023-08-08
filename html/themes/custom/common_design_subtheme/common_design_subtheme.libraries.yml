@@ -213,6 +213,11 @@ uno-river:
     theme:
       components/uno-river/uno-river.css: {}
 
+uno-stories:
+  css:
+    theme:
+      components/uno-stories/uno-stories.css: {}
+
 uno-subscribe:
   css:
     theme:
