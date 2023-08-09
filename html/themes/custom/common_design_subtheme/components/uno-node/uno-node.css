@@ -110,3 +110,18 @@ footer.cd-author {
   margin-left: auto;
   font-size: 12px;
 }
+
+/* Labels for "Featured", "News", "B-roll", "Regional Office" etc */
+.uno-tag {
+  display: inline-block;
+  padding-inline-end: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--brand-primary--dark);
+  font-size: 1.0625rem; /* 17px */
+ }
+
+.node--type-response > header > .uno-tag,
+.node--type-region > header > .uno-tag {
+  color: var(--cd-black);
+}
