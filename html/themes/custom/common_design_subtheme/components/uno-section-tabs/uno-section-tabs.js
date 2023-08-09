@@ -2,7 +2,7 @@
 
   'use strict';
 
-  Drupal.behaviors.unoTabs = {
+  Drupal.behaviors.unoSectionTabs = {
     attach: function (context, settings) {
       // The tab switching function.
       const switchTab = (tabs, panels, oldTab, newTab) => {
@@ -24,14 +24,14 @@
 
       // Enhanced tabbed section.
       const enhanceSection = (section) => {
-        section.setAttribute('data-uno-tabs-processed', '');
+        section.setAttribute('data-uno-section-tabs-processed', '');
 
         // Get relevant elements and collections.
-        const tablist = section.querySelector('.uno-tabs ul');
-        const tabs = tablist.querySelectorAll('.uno-tabs ul a');
+        const tablist = section.querySelector('.uno-section-tabs ul');
+        const tabs = tablist.querySelectorAll('.uno-section-tabs ul a');
         const panels = section.querySelectorAll('[id^="section"]');
 
-        // Add the tablist role to the first <ul> in the .uno-tabs container.
+        // Add the tablist role to the first <ul> in the .uno-section-tabs container.
         tablist.setAttribute('role', 'tablist');
 
         // Add semantics are remove user focusability for each tab.
@@ -95,7 +95,7 @@
       };
 
       // Enhance tabbed sections.
-      const sections = document.querySelectorAll('.uno-tabs:not([data-uno-tabs-processed])');
+      const sections = document.querySelectorAll('.uno-section-tabs:not([data-uno-section-tabs-processed])');
       if (sections) {
         Array.prototype.forEach.call(sections, enhanceSection);
       }

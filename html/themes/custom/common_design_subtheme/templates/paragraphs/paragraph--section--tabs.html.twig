@@ -45,7 +45,7 @@
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    'uno-tabs'
+    'uno-section-tabs'
   ]
 %}
 {% block paragraph %}
@@ -53,7 +53,7 @@
     {% block content %}
 
     {{ content.field_title }}
-      <ul class="uno-tabs__list">
+      <ul class="uno-section-tabs__list">
       {% for section in content.regions.content %}
         {% set paragraph = section['#paragraph'] %}
         {# Skip paragraphs without a title #}
@@ -67,7 +67,7 @@
         {% set paragraph = section['#paragraph'] %}
         {# Skip paragraphs without a title #}
         {% if paragraph.field_title.value is not empty %}
-        <section class="uno-tabs__section" id="section--{{ paragraph.id() }}">
+        <section class="uno-section-tabs__section" id="section--{{ paragraph.id() }}">
           {{ section }}
         </section>
         {% endif %}
