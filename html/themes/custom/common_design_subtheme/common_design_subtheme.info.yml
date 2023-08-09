@@ -62,6 +62,8 @@ libraries-extend:
     - common_design_subtheme/cd-tabs
   common_design/cd-teaser:
     - common_design_subtheme/cd-teaser
+  common_design/cd-typography:
+    - common_design_subtheme/uno-typography
 
 ###
 # Override libraries to replace specific base-theme components. Now, when the
