@@ -249,6 +249,11 @@ uno-typography:
     component:
       components/uno-typography/uno-typography.css: {}
 
+uno-video:
+  css:
+    theme:
+      components/uno-video/uno-video.css: {}
+
 uno-view-all:
   css:
     theme:
