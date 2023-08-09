@@ -40,7 +40,3 @@
     padding: 0 var(--cd-container-padding-xlarge);
   }
 }
-
-[dir="rtl"] .cd-caption {
-  text-align: right;
-}

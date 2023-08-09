@@ -14,7 +14,3 @@
 .cd-read-more:hover svg {
   fill: var(--brand-primary);
 }
-
-[dir="rtl"] .cd-read-more svg {
-  transform: scale(-1, 1);
-}
