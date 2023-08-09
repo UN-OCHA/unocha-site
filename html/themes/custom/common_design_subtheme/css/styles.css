@@ -1,6 +1,19 @@
-
+/* Field vertical rhythm */
 .field--name-body + .field--name-field-custom-content {
   margin-top: 2rem;
+}
+
+/* No top margin on first paragraph type */
+.field--name-field-custom-content .paragraph:first-child {
+  margin-top: 0;
+}
+
+.field--name-field-custom-content .paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.field__item > p:first-child {
+  margin-top: 0;
 }
 
 /* Fields with inline labels */
@@ -48,61 +61,6 @@
 /* Restrict width for lists in articles */
 .cd-article ol {
   max-width: var(--cd-max-content-width);
-}
-
-/* No top margin on first paragraph type */
-.field--name-field-custom-content .paragraph:first-child {
-  margin-top: 0;
-}
-
-.field--name-field-custom-content .paragraph:last-child {
-  margin-bottom: 0;
-}
-
-/* Video embed aspect ratio is calculated in the oembed-video field template. */
-.field--name-field-media-oembed-video {
-  position: relative;
-}
-.field--name-field-media-oembed-video iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.uno-tag {
-  display: inline-block;
-  padding-inline-end: 1rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--brand-primary--dark);
-  font-size: 1.0625rem; /* 17px */
- }
-
-.node--type-response > header > .uno-tag,
-.node--type-region > header > .uno-tag {
-  color: var(--cd-black);
-}
-
-/* Generic typography, might need increased specificity */
-.field__item > p:first-child {
-  margin-top: 0;
-}
-
-/* WYSIWYG Editor styles */
-.read-more {
-  position: relative;
-}
-
-.read-more::after {
-  display: inline-block;
-  overflow: hidden;
-  width: 8px;
-  height: 8px;
-  margin: 0 0 0 6px;
-  content: "";
-  background: var(--rw-icons--common--arrow-right--8--dark-blue);
 }
 
 /* Hide images on RW river items in the main and sidebar column. This is
