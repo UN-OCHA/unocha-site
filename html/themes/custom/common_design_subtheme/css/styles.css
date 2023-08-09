@@ -41,26 +41,14 @@
   margin-bottom: 1rem;
 }
 
-/* Unset cd-article p auto margins */
-.paragraph--type--section .cd-article p,
+/* Lists in text areas */
 .field--name-body > ul,
 .field--name-field-text > ul {
   max-width: var(--cd-max-content-width);
-  margin-right: unset;
-  margin-left: unset;
 }
 .field--name-body > ul li,
 .field--name-field-text > ul li {
   padding-bottom: 0.5rem;
-}
-
-.cd-article p {
-  margin-right: 0;
-  margin-left: 0;
-}
-/* Restrict width for lists in articles */
-.cd-article ol {
-  max-width: var(--cd-max-content-width);
 }
 
 /* Hide images on RW river items in the main and sidebar column. This is
