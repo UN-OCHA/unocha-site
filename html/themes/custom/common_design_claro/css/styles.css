@@ -293,3 +293,6 @@ form .paragraph--view-mode--preview.paragraph--type--media-centre article.node--
   order: -1;
   margin-right: 1rem;
 }
+form .paragraph--view-mode--preview.paragraph--type--media-centre .uno-media-centre__view_all {
+  display: none;
+}
