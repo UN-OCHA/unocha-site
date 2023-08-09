@@ -1,89 +1,122 @@
 /**
- * HR.info Card
+ * CD Card
  *
- * There isn't a corresponding Paragraph Type for this component. Instead, the
- * Featured Highlight uses it as an alternate display mode.
- *
- * @see html/themes/custom/common_design_subtheme/templates/paragraph--landing-page--featured-highlight.html.twig
+ * Is capable of several variants:
+ *  - Optional image
+ *  - Image can be rectangular or rounded
+ *  - Optional footer
  */
-.uno-card {
-  --uno-card-border-color: #ddd;
-  --uno-card-padding: 1.5rem;
 
-  height: 100%;
-  border: 1px solid var(--uno-card-border-color);
+/**
+ * Card container
+ */
+ .cd-card {
+  display: flex;
+  flex-flow: column nowrap;
+  border: 0 solid var(--brand-grey);
+  background-color: var(--cd-white);
 }
 
 /**
- * Have our card contents stretch to fill the flex item, and set its position
- * for the read-more link defined below.
+ * Card image
  */
-.uno-card__content {
-  position: relative;
-  height: 100%;
+.cd-card__image img {
+  width: 100%;
+  height: 13rem;
 }
 
-/* Image */
-.uno-card .field--type-image {
-  position: relative;
-  margin-bottom: var(--uno-card-padding);
-  aspect-ratio: 2 / 1;
+@supports (object-fit: cover) {
+  .cd-card__image img {
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
 }
-.uno-card img::before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+
+.cd-card__image--rounded {
+  min-width: 7rem;
+  max-width: 13rem;
+  min-height: 7rem;
+  max-height: 13rem;
+  margin-top: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.cd-card__image + .cd-card__container {
+  padding: 1rem 2rem;
+}
+
+/**
+ * Card contents
+ */
+.cd-card__container {
+  flex-grow: 1;
+  padding: 0;
+}
+
+.cd-card__title,
+.cd-card__title a {
+  display: block;
+  color: black;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.cd-card__title {
+  margin-bottom: 0.5rem;
+}
+
+.cd-card__title a:hover,
+.cd-card__title a:focus {
+  color: var(--brand-default-text-color);
+}
+
+.cd-card__title:first-child,
+.cd-card__title {
+  margin-top: 1rem;
+}
+
+.cd-card__description p:last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * Card footer
+ */
+.cd-card__footer {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  justify-content: flex-end;
+  margin-top: 0;
+  padding: 0;
+  padding-inline-end: 2rem;
   content: "";
-  border-bottom: 1px solid #ddd;
-  background: var(--cd-grey--light);
 }
-.uno-card img::after {
-  position: absolute;
-  z-index: 10;
-  top: 50%;
-  left: 50%;
-  content: "Broken image:  " attr(alt);
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #888;
-}
-
-/* Article title */
-.uno-card .uno-card__title {
-  margin: 1.25rem 0 1.5rem;
-  padding: 0 var(--uno-card-padding);
-  color: var(--cd-black);
-  font-size: var(--cd-font-size--base);
-  font-weight: 700;
-}
-
-/* Text summary */
-.uno-card__summary {
-  margin: 0 0 2.25rem;
-  padding: 0 var(--uno-card-padding);
-  font-size: 1rem;
-}
-
-/**
- * We're using an invisible hyperlink that stretches over the top of each card
- * so that the entire surface is clickable/tappable.
- */
-.uno-card__link {
+.cd-card__footer::before {
   position: absolute;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  color: transparent;
+  width: 6rem;
+  height: 3px;
+  background-color: var(--brand-primary);
 }
-.uno-card__link:hover {
-  color: transparent;
-  outline: 3px solid var(--uno-card-border-color);
+
+@media screen and (min-width: 480px) {
+  /* Story always has a date before the read more in the footer. */
+  article:not(.node--type-story, .node--type-media-collection).cd-card .cd-card__footer {
+    display: block;
+  }
 }
-.uno-card__link:focus,
-.uno-card__link:active {
-  color: transparent;
-  outline: 3px solid black;
+
+.cd-card__date {
+  display: inline-block;
+  flex: 1 auto;
+  font-size: 0.875rem;
+}
+
+.cd-card__link {
+  padding: 0;
+  text-decoration: none;
+  border-top: 0 solid var(--brand-grey);
 }
