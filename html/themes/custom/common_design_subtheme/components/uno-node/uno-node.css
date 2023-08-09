@@ -83,6 +83,7 @@ footer.cd-author {
 .uno-content--custom > a.uno-button + .field {
   clear: both;
 }
+
 @media (min-width: 1200px) {
   .uno-content--custom {
     position: relative;
