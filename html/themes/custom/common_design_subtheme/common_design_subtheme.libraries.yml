@@ -11,11 +11,12 @@ global-styling:
   dependencies:
     - common_design_subtheme/uno-card-list
     - common_design_subtheme/cd-article
-    - common_design_subtheme/cd-typography
+    - common_design_subtheme/uno-typography
     - common_design_subtheme/uno-node
     - common_design_subtheme/cd
     - common_design/cd-read-more
     - common_design/cd-block-title
+    - common_design_subtheme/rw-icons
 
 ###
 # Define Drupal libraries for your custom components.
@@ -97,11 +98,6 @@ cd-teaser:
   css:
     component:
       components/cd-teaser/cd-teaser.css: {}
-
-cd-typography:
-  css:
-    component:
-      components/cd-typography/cd-typography.css: {}
 
 rw-brand:
   css:
@@ -247,6 +243,11 @@ uno-text-image:
   css:
     theme:
       components/uno-text-image/uno-text-image.css: {}
+
+uno-typography:
+  css:
+    component:
+      components/uno-typography/uno-typography.css: {}
 
 uno-view-all:
   css:

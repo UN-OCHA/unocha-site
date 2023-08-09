@@ -1,0 +1,45 @@
+/* WYSIWYG Editor styles
+  These also exist in common_design_claro styles.css
+  with some adjustments for best display on Content Editor form */
+  .read-more {
+    position: relative;
+  }
+
+  .read-more::after {
+    display: inline-block;
+    overflow: hidden;
+    width: 8px;
+    height: 8px;
+    margin: 0 0 0 6px;
+    content: "";
+    background: var(--rw-icons--common--arrow-right--8--dark-blue);
+  }
+
+  blockquote {
+    margin: 3rem 0;
+    padding: 1rem 2rem;
+    border-inline-start: 3px solid var(--brand-grey);
+  }
+
+  blockquote p:last-child {
+    margin-bottom: 0;
+  }
+
+  p.title {
+    margin: 6rem 0;
+    text-align: center;
+    font-size: var(--cd-font-size--2xmedium);
+  }
+
+  p.headline {
+    color: var(--brand-primary);
+    font-size: var(--cd-font-size--2xmedium);
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  @media screen and (min-width: 1024px) {
+    p.headline {
+      font-size: 50px;
+      line-height: 1.2;
+    }
+  }
