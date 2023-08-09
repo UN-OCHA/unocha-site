@@ -83,7 +83,7 @@
 {% set unochaDate = node.getCreatedTime|date('j F Y') %}
 
   {% if content.field_basic_image|render %}
-    {% embed '@uno-components/cd-hero/cd-hero.html.twig' %}
+    {% embed '@uno-components/uno-hero/uno-hero.html.twig' %}
       {% block hero_image %}
         {{ content.field_basic_image }}
       {% endblock %}
@@ -104,7 +104,7 @@
   {{ title_suffix }}
 
   {% if componentsModule %}
-    {% include '@uno-components/cd-social-links/cd-social-links.html.twig' %}
+    {% include '@uno-components/uno-social-links/uno-social-links.html.twig' %}
   {% endif %}
 
   {{ local_tasks }}
