@@ -1,4 +1,4 @@
 UNOCHA Article
 ==============
 
-This component provides styling for cd-article overrides
+This component provides styling for cd-article overrides.
