@@ -64,15 +64,6 @@
   flex-basis: 100%;
 }
 
-/* Additional spacing above page title for certain node types,
-  usually those with potentially long titles
-  */
- @media screen and (min-width: 768px) {
-  .unocha-reliefweb-document .cd-page-title {
-    margin-top: 3rem;
-  }
-}
-
 /* Homepage styles */
 .path-frontpage .layout--twocol-66-33 .layout__region--first p.headline {
   /* Align top so it matches paragraph in next region */
