@@ -194,6 +194,8 @@ uno-river:
   css:
     theme:
       components/uno-river/uno-river.css: {}
+  dependencies:
+    - common_design_subtheme/rw-river
 
 uno-section-tabs:
   css:

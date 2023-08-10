@@ -25,20 +25,11 @@
 .rw-river-article:only-child {
   padding-bottom: 0;
 }
-/* .rw-river-article .rw-river-article__header p.rw-entity-country-slug {
-  margin: 2px 6px 0 0;
-  padding: 1px 8px;
-  font-size: 14px;
-  line-height: 22px;
-} */
 .rw-river-article .rw-river-article__title {
-  /* display: inline; */
   margin-top: 0;
   color: black;
-  /* font-size: 17px; */
   font-size: 1.25rem;
   font-weight: 500;
-  /* line-height: 1.5; */
 }
 .rw-river-article .rw-river-article__title a {
   color: inherit;
@@ -48,10 +39,6 @@
   color: var(--brand-default-text-color);
 }
 .rw-river-article .rw-river-article__content {
-  /* display: flex; */
-  /* flex: 1 0 auto; */
-  /* align-items: center; */
-  /* padding-top: 16px; */
   color: var(--cd-reliefweb-brand-grey--mid);
 }
 
@@ -73,12 +60,6 @@
 .rw-river-article .rw-river-article__content img + p {
   margin-top: 0;
 }
-
-/* @media all and (max-width: 479px) {
-  .rw-river-article .rw-river-article__content img {
-    display: none;
-  }
-} */
 .rw-river-article .rw-river-article__footer {
   /* Clear any floating from the content. */
   clear: both;

@@ -5,4 +5,4 @@ This component provides rules for the "country slug" displayed before the title 
 
 ## Notes
 
-This is a copy of https://github.com/UN-OCHA/rwint9-site/tree/develop/html/themes/custom/common_design_subtheme/components/rw-country-slug
+This is a copy of https://github.com/UN-OCHA/rwint9-site/tree/develop/html/themes/custom/common_design_subtheme/components/rw-country-slug with adjustments for UNOCHA.

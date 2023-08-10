@@ -9,4 +9,4 @@ This also provides the rules for the display of all the "tags" in the sidebar on
 
 ## Notes
 
-This is a copy of https://github.com/UN-OCHA/rwint9-site/tree/develop/html/themes/custom/common_design_subtheme/components/rw-entity-meta
+This is a copy of https://github.com/UN-OCHA/rwint9-site/tree/develop/html/themes/custom/common_design_subtheme/components/rw-entity-meta with adjustments for UNOCHA.

@@ -1,4 +1,5 @@
 UNOCHA River
 =============
 
-This component provides styling overrides for RW Rivers paragraph type.
+This component provides styling for RW Rivers paragraph type and overrides for
+rw-river components.
