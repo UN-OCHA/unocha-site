@@ -20,8 +20,6 @@ display:
             format_custom_true: 已发布
         changed:
           label: 已更新
-        operations:
-          label: 操作
       pager:
         options:
           tags:
