@@ -1,13 +1,4 @@
 /**
- * CD Card
- *
- * Is capable of several variants:
- *  - Optional image
- *  - Image can be rectangular or rounded
- *  - Optional footer
- */
-
-/**
  * Card container
  */
  .cd-card {
@@ -30,20 +21,6 @@
     object-fit: cover;
     object-position: 50% 50%;
   }
-}
-
-.cd-card__image--rounded {
-  min-width: 7rem;
-  max-width: 13rem;
-  min-height: 7rem;
-  max-height: 13rem;
-  margin-top: 1rem;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.cd-card__image + .cd-card__container {
-  padding: 1rem 2rem;
 }
 
 /**
