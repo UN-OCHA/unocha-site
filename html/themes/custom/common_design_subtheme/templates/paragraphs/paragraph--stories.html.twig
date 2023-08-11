@@ -39,6 +39,7 @@
  *
  */
 #}
+{% if content.stories %}
 {{ attach_library('common_design_subtheme/uno-stories') }}
 {{ attach_library('common_design_subtheme/rw-icons') }}
 
@@ -66,3 +67,4 @@
     {% endblock %}
   </div>
 {% endblock paragraph %}
+{% endif %}
