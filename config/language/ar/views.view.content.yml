@@ -20,6 +20,8 @@ display:
             format_custom_true: منشور
         changed:
           label: التحديث
+        operations:
+          label: عمليات
       pager:
         options:
           tags:

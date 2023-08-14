@@ -20,6 +20,8 @@ display:
             format_custom_true: Publié
         changed:
           label: 'Mis à jour'
+        operations:
+          label: Actions
       pager:
         options:
           tags:
