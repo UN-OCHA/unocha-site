@@ -1,5 +1,5 @@
 /**
- * Card List
+ * UNO Card List
  *
  */
 
@@ -9,7 +9,6 @@
 }
 
 .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node,
-.paragraph--type--content-list.paragraph--view-mode--cards .view .view-content,
 .view-stories .view-content,
 .uno-stories .uno-stories__content,
 .view-events .view-content,
@@ -26,7 +25,6 @@
   gap: 0 var(--uno-card-list-gap-size);
 }
 .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node article,
-.paragraph--type--content-list.paragraph--view-mode--cards article,
 .view-stories .view-content article,
 .uno-stories .uno-stories__content article,
 .view-events .view-content article,
@@ -41,7 +39,6 @@
 
 @media screen and (min-width: 480px) {
   .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node,
-  .paragraph--type--content-list.paragraph--view-mode--cards .view .view-content,
   .view-stories .view-content,
   .uno-stories .uno-stories__content,
   .view-events .view-content,
@@ -56,7 +53,6 @@
 
 @media screen and (min-width: 750px) {
   .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node,
-  .paragraph--type--content-list.paragraph--view-mode--cards .view .view-content,
   .view-stories .view-content,
   .uno-stories .uno-stories__content,
   .view-events .view-content,

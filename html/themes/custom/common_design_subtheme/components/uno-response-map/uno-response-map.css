@@ -136,8 +136,8 @@
 }
 /* Active marker */
 .js .unocha-response-map[data-map-enabled] .mapboxgl-marker[data-active] {
-  background: var(--rw-icons--map-marker--marker--24--blue);
   z-index: 1;
+  background: var(--rw-icons--map-marker--marker--24--blue);
 }
 /**
  * Mapbox styling.

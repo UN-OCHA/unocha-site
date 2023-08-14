@@ -2,12 +2,6 @@
  * ReliefWeb document page.
  */
 
-/* Date. */
-/* .unocha-reliefweb-document__date {
-  font-weight: bold;
-  font-style: italic;
-} */
-
 /* Lists in content. */
 .unocha-reliefweb-document li {
   margin: 8px 0 0;
@@ -70,11 +64,9 @@
   margin-top: 0;
 }
 
-/* .unocha-reliefweb-document .cd-page-title {
-  font-size: var(--cd-font-size--large);
-}
-@media screen and (min-width: 1024px) {
-  .unocha-reliefweb-document .cd-page-title {
-    font-size: var(--cd-font-size--2xbase);
+/* Additional spacing above page title */
+  @media screen and (min-width: 768px) {
+    .unocha-reliefweb-document .cd-page-title {
+      margin-top: 3rem;
+    }
   }
-} */

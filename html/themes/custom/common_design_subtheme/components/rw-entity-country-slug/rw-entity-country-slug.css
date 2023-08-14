@@ -8,8 +8,6 @@
   overflow: hidden;
   max-width: 100%;
   padding-inline-end: 1rem;
-  /* margin: 4px 8px 0 0; */
-  /* padding: 0 12px; */
   vertical-align: top;
   white-space: nowrap;
   letter-spacing: 1px;
@@ -17,10 +15,6 @@
   text-overflow: ellipsis;
   color: var(--brand-primary--dark);
   font-size: 1.0625rem; /* 17px */
-  /* color: var(--cd-reliefweb-brand-grey--dark); */
-  /* background: var(--cd-reliefweb-brand-grey--light); */
-  /* font-size: 18px; */
-  /* font-weight: bold; */
   line-height: 30px;
 }
 p.rw-entity-country-slug {

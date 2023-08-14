@@ -1,8 +1,7 @@
-/* stylelint-disable max-line-length */
 /**
  * RW River Views
  *
- * Taken directly from RW9. Any cusotmizations will appear in a separate file.
+ * Taken directly from RW9.
  *
  * @see https://raw.githubusercontent.com/UN-OCHA/rwint9-site/38e66da1b0fa4d6f316aaa7c961db859e2ef5d4b/html/themes/custom/common_design_subtheme/components/rw-river/rw-river-views.css
  */
@@ -10,7 +9,6 @@
 /* View selector */
 .rw-river-page .rw-river-views {
   width: 100%;
-  /* margin: 8px 0; */
   padding: 0;
   list-style: none;
 }

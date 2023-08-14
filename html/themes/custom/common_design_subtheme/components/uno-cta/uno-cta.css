@@ -1,6 +1,3 @@
-/**
- * HR.info CTA button
- */
 .paragraph--type--call-to-action {
   padding: 3rem 2rem 4rem;
 }
@@ -20,10 +17,4 @@
 /* If the CTA paragraph is the last on the page, no background */
 .field--name-field-custom-content .paragraph:last-child.paragraph--type--call-to-action.cd-bleed {
   background-color: transparent;
-}
-
-.paragraph--type--call-to-action .uno-subscribe {
-  max-width: var(--cd-max-content-width);
-  margin-right: auto;
-  margin-left: auto;
 }

@@ -9,9 +9,14 @@ global-styling:
       css/styles.css: {}
       css/brand.css: {}
   dependencies:
-    - common_design_subtheme/uno-card-list
-    - common_design_subtheme/cd
+    - common_design/cd-article
+    - common_design/cd-block-title
     - common_design/cd-read-more
+    - common_design/cd-typography
+    - common_design_subtheme/cd
+    - common_design_subtheme/rw-icons
+    - common_design_subtheme/uno-card-list
+    - common_design_subtheme/uno-node
 
 ###
 # Define Drupal libraries for your custom components.
@@ -29,75 +34,10 @@ cd:
       components/cd/cd-typography.css: {}
       components/cd/cd-print.css: {}
 
-cd-article:
-  css:
-    component:
-      components/cd-article/cd-article.css: {}
-
-cd-block-title:
-  css:
-    component:
-      components/cd-block-title/cd-block-title.css: {}
-
-cd-button:
-  css:
-    component:
-      components/cd-button/cd-button.css: {}
-
-cd-caption:
-  css:
-    component:
-      components/cd-caption/cd-caption.css: {}
-
-cd-card:
-  css:
-    component:
-      components/cd-card/cd-card.css: {}
-
 cd-header:
   css:
     component:
       components/cd/cd-header/cd-logo.css: {}
-
-cd-hero:
-  css:
-    component:
-      components/cd-hero/cd-hero.css: {}
-
-cd-hero--style-three:
-  css:
-    component:
-      components/cd-hero/cd-hero--style-three.css: {}
-
-cd-page-title:
-  css:
-    component:
-      components/cd-page-title/cd-page-title.css: {}
-
-cd-read-more:
-  css:
-    component:
-      components/cd-read-more/cd-read-more.css: {}
-
-cd-social-links:
-  css:
-    component:
-      components/cd-social-links/cd-social-links.css: {}
-
-cd-tabs:
-  css:
-    component:
-      components/cd-tabs/cd-tabs.css: {}
-
-cd-teaser:
-  css:
-    component:
-      components/cd-teaser/cd-teaser.css: {}
-
-cd-typography:
-  css:
-    component:
-      components/cd-typography/cd-typography.css: {}
 
 rw-brand:
   css:
@@ -130,6 +70,16 @@ rw-river:
     - common_design_subtheme/rw-brand
     - common_design_subtheme/rw-icons
 
+uno-article:
+  css:
+    component:
+      components/uno-article/uno-article.css: {}
+
+uno-block-title:
+  css:
+    component:
+      components/uno-block-title/uno-block-title.css: {}
+
 uno-breadcrumb:
   css:
     theme:
@@ -139,6 +89,11 @@ uno-campaign:
   css:
     theme:
       components/uno-campaign/uno-campaign.css: {}
+
+uno-caption:
+  css:
+    component:
+      components/uno-caption/uno-caption.css: {}
 
 uno-card:
   css:
@@ -168,13 +123,6 @@ uno-donors:
     theme:
       components/uno-donors/uno-donors.css: {}
 
-uno-embed:
-  css:
-    component:
-      components/uno-embed/uno-embed.css: {}
-  js:
-    components/uno-embed/uno-embed.js: {}
-
 uno-event-date:
   css:
     theme:
@@ -185,10 +133,10 @@ uno-figures:
     theme:
       components/uno-figures/uno-figures.css: {}
 
-uno-gho:
+uno-hero:
   css:
-    theme:
-      components/uno-gho/uno-gho.css: {}
+    component:
+      components/uno-hero/uno-hero.css: {}
 
 uno-layout:
   css:
@@ -215,6 +163,26 @@ uno-nav:
     theme:
       components/uno-nav/uno-nav.css: {}
 
+uno-node:
+  css:
+    theme:
+      components/uno-node/uno-node.css: {}
+
+uno-page-title:
+  css:
+    component:
+      components/uno-page-title/uno-page-title.css: {}
+
+uno-paragraphs:
+  css:
+    theme:
+      components/uno-paragraphs/uno-paragraphs.css: {}
+
+uno-read-more:
+  css:
+    component:
+      components/uno-read-more/uno-read-more.css: {}
+
 uno-response-map:
   css:
     theme:
@@ -227,15 +195,24 @@ uno-river:
     theme:
       components/uno-river/uno-river.css: {}
 
-uno-rss-feed:
+uno-section-tabs:
   css:
     theme:
-      components/uno-rss-feed/uno-rss-feed.css: {}
+      components/uno-section-tabs/uno-section-tabs.css: {}
+  js:
+    components/uno-section-tabs/uno-section-tabs.js: {}
+
+uno-social-links:
+  css:
+    component:
+      components/uno-social-links/uno-social-links.css: {}
 
 uno-stories:
   css:
     theme:
       components/uno-stories/uno-stories.css: {}
+  dependencies:
+    - common_design_subtheme/uno-view-all
 
 uno-subscribe:
   css:
@@ -244,15 +221,43 @@ uno-subscribe:
 
 uno-tabs:
   css:
-    theme:
+    component:
       components/uno-tabs/uno-tabs.css: {}
-  js:
-    components/uno-tabs/uno-tabs.js: {}
+
+uno-teaser:
+  css:
+    component:
+      components/uno-teaser/uno-teaser.css: {}
 
 uno-text-image:
   css:
     theme:
       components/uno-text-image/uno-text-image.css: {}
+
+uno-typography:
+  css:
+    component:
+      components/uno-typography/uno-typography.css: {}
+
+uno-video:
+  css:
+    theme:
+      components/uno-video/uno-video.css: {}
+
+uno-view-all:
+  css:
+    theme:
+      components/uno-view-all/uno-view-all.css: {}
+  dependencies:
+    - common_design_subtheme/rw-icons
+
+uno-views:
+  css:
+    theme:
+      components/uno-views/uno-views.css: {}
+  dependencies:
+    - common_design_subtheme/uno-view-all
+
 ###
 # Define Drupal libraries for additional webfonts.
 #

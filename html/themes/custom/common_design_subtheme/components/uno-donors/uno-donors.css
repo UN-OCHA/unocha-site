@@ -4,7 +4,6 @@
   align-content: flex-end;
   margin-bottom: 1rem;
   padding: 0 0 0.5rem;
-  /* border-bottom: 1px solid var(--brand-grey); */
   font-size: var(--cd-font-size--ref);
 }
 
@@ -59,7 +58,6 @@
   .uno-donors {
     margin-bottom: 0.75rem;
     padding: 0.75rem 0 0;
-    /* border-top: 1px solid var(--brand-grey); */
   }
 
   .uno-donors + .uno-donors {
@@ -229,7 +227,6 @@ ul.uno-donors__list--with-figures .uno-donors__amount {
 .js .uno-donors--collapsible .uno-donors__list[data-cd-hidden="false"] .uno-donor {
   display: block;
 }
-
 
 .uno-donors__amount__suffix {
   margin-inline-start: 0.25rem;
