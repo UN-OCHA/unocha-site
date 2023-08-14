@@ -173,6 +173,11 @@ uno-page-title:
     component:
       components/uno-page-title/uno-page-title.css: {}
 
+uno-pager:
+  css:
+    component:
+      components/uno-pager/uno-pager.css: {}
+
 uno-paragraphs:
   css:
     theme:
@@ -194,6 +199,8 @@ uno-river:
   css:
     theme:
       components/uno-river/uno-river.css: {}
+  dependencies:
+    - common_design_subtheme/uno-pager
 
 uno-section-tabs:
   css:
@@ -257,6 +264,7 @@ uno-views:
       components/uno-views/uno-views.css: {}
   dependencies:
     - common_design_subtheme/uno-view-all
+    - common_design_subtheme/uno-pager
 
 ###
 # Define Drupal libraries for additional webfonts.
