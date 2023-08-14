@@ -97,13 +97,6 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
       $stories = unocha_paragraphs_get_stories($conditions, $limit, $exclude);
     }
   }
-  // If there are no valid parent, we just show the latest stories,
-  // for example when adding a stories paragraph type to a response as the
-  // paragraph doesn't yet have a parent as it's not yet saved.
-  // @todo add disclaimer in the preview in the form?
-  else {
-    $stories = unocha_paragraphs_get_stories([], $limit);
-  }
 
   // Filter out stories that cannot be accessed by the current user.
   if (!empty($stories)) {
