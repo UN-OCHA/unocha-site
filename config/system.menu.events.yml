@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: events
 label: Events
-description: ''
+description: 'Footer menu: Events'
 locked: false

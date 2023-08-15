@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: take-action
 label: 'Take action'
-description: ''
+description: 'Footer menu: Take action'
 locked: false
