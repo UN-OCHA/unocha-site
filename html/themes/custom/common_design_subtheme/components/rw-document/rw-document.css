@@ -9,9 +9,12 @@
 
 /* Attachments. */
 .unocha-reliefweb-attachment-list {
+  max-width: var(--cd-max-content-width);
+  margin: 0 0 24px 0;
+}
+.unocha-reliefweb-attachment-list--report {
   max-width: 220px;
   margin: 0 auto 24px auto;
-  padding-top: 0;
 }
 .unocha-reliefweb-attachment-list ul {
   margin: 0;
@@ -45,11 +48,32 @@
   font-size: 14px;
 }
 
+.unocha-reliefweb-attachment-list__footer {
+  margin-top: 24px;
+}
+.unocha-reliefweb-attachment-list__footer a[target="_blank"][rel~="noopener"]:after {
+  display: inline-block;
+  overflow: hidden;
+  width: 12px;
+  height: 12px;
+  margin: -2px 0 0 6px;
+  content: "";
+  vertical-align: middle;
+  background: var(--rw-icons--common--external-link--12--dark-blue);
+}
+
 @media screen and (min-width: 480px) {
-  .unocha-reliefweb-attachment-list {
+  .unocha-reliefweb-attachment-list--report {
     float: right;
     margin-left: 24px;
   }
+}
+
+/* Attachments for interactive content. */
+.unocha-reliefweb-attachment-list--interactive .unocha-reliefweb-attachment-list__title {
+  margin: 0 0 24px 0;
+  font-size: var(--cd-font-size--base);
+  font-weight: normal;
 }
 
 /* Reading width. */
