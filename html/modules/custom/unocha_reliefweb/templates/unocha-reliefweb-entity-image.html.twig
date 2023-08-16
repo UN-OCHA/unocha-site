@@ -6,16 +6,17 @@
  *
  * Available variables;
  * - attributes: figure attributes
- * - style: image style
- * - image: array with uri, alt, width, height, alt and copyright
- *   and optionally the loading mode.
+ * - image: array with urls (different sizes), alt, width, height, alt and
+ *   copyright and optionally the loading mode.
  * - caption: flag to indicate whether to show the caption or not.
  * - loading: flag to indicate the default loading mode: lazy or eager.
  *
- * @todo handle responsive image styles when/if introduced.
+ * @todo add 'image['url-extra-large'] }}' image source if this image
+ * style is added in ReliefWeb (UNO-771).
  */
 
 #}
+{% if image.url %}
 <figure{{ attributes
   .addClass([
     'rw-entity-image',
@@ -23,22 +24,19 @@
     image.copyright is not empty ? 'rw-entity-image--with-copyright',
   ])
 }}>
-  {% if style is not empty %}
-    {{ render_var({
-      '#theme': 'image_style',
-      '#style_name': style,
-      '#uri': image.uri,
-      '#alt': image.alt,
-      '#attributes': {
-        'class': ['rw-entity-image__image'],
-        'loading': image.loading is not empty ? image.loading : loading,
-      },
-      '#width': image.width,
-      '#height': image.height
-    }) }}
-  {% else %}
-    <img class="rw-entity-image__image" src="{{ image.uri }}" alt="{{ image.alt }}" loading="{{ image.loading is not empty ? image.loading : loading }}">
-  {% endif %}
+
+
+  <picture class="rw-entity-image__image">
+    <source srcset="{{ image['url-small'] }}" media="(max-width: 220px)" />
+    <source srcset="{{ image['url-medium'] }}" media="(max-width: 450px)" />
+    <source srcset="{{ image['url-large'] }}" />
+    <img
+      src="{{ image['url-small'] }}"
+      alt="{{ image.alt }}"
+      loading="{{ image.loading is not empty ? image.loading : loading }}"
+      style="aspect-ratio: {{ image.width }} / {{ image.height }};"
+    />
+  </picture>
 
   {% if caption and image.alt is not empty %}
   {# We use aria-hidden="true" because we already set the image alt. This
@@ -54,3 +52,4 @@
   </footer>
   {% endif %}
 </figure>
+{% endif %}

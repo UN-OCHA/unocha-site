@@ -96,6 +96,9 @@ class ReliefWebDocumentController extends ControllerBase {
     if (!empty($data['attachments'])) {
       $content['attachments'] = $this->renderAttachmentList($data['attachments']);
     }
+    if (!empty($data['image'])) {
+      $content['image'] = $this->renderImage($data['image']);
+    }
     if (!empty($data['body-html'])) {
       $content['body'] = ['#markup' => $data['body-html']];
     }
@@ -140,6 +143,24 @@ class ReliefWebDocumentController extends ControllerBase {
       $ocha_product = $mapping[$data['format']] ?? 'Other';
     }
     return $ocha_product;
+  }
+
+  /**
+   * Render a report image.
+   *
+   * @param array $image
+   *   Image data.
+   *
+   * @return array
+   *   Render array.
+   */
+  protected function renderImage(array $image) {
+    return [
+      '#theme' => 'unocha_reliefweb_entity_image',
+      '#image' => $image,
+      '#caption' => TRUE,
+      '#loading' => 'eager',
+    ];
   }
 
   /**

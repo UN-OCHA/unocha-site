@@ -59,6 +59,14 @@
   max-width: var(--cd-max-content-width);
 }
 
+.unocha-reliefweb-document .unocha-reliefweb-document__content .rw-entity-image {
+  max-width: var(--cd-max-content-width);
+  margin: 0;
+}
+.unocha-reliefweb-document .unocha-reliefweb-document__content .rw-entity-image img {
+  width: 100%;
+}
+
 .unocha-reliefweb-document .unocha-reliefweb-document__content p:first-child,
 .unocha-reliefweb-document .unocha-reliefweb-document__content > .unocha-reliefweb-attachment-list + p {
   margin-top: 0;
