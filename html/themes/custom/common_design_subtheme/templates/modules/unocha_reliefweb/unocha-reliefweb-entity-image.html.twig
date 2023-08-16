@@ -17,6 +17,7 @@
 
 #}
 {% if image.url %}
+{{ attach_library('common_design/cd-caption') }}
 <figure{{ attributes
   .addClass([
     'rw-entity-image',
@@ -24,7 +25,6 @@
     image.copyright is not empty ? 'rw-entity-image--with-copyright',
   ])
 }}>
-
 
   <picture class="rw-entity-image__image">
     <source srcset="{{ image['url-small'] }}" media="(max-width: 220px)" />
@@ -38,18 +38,13 @@
     />
   </picture>
 
-  {% if caption and image.alt is not empty %}
+  {% if image.alt or image.copyright %}
   {# We use aria-hidden="true" because we already set the image alt. This
      prevents the alt text to be read twice by screen readers. #}
-  <figcaption class="rw-entity-image__caption" aria-hidden="true">
-    {{ image.alt }}
+  <figcaption class="rw-entity-image__caption cd-caption" aria-hidden="true">
+    {{ caption ? image.alt }}
+    {{ image.copyright }}
   </figcaption>
-  {% endif %}
-
-  {% if image.copyright is not empty %}
-  <footer class="rw-entity-image__copyright">
-    <small>&copy; {{ image.copyright }}</small>
-  </footer>
   {% endif %}
 </figure>
 {% endif %}

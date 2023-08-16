@@ -124,7 +124,6 @@ class ReliefWebDocuments {
         'fields' => [
           'url_alias',
           'file',
-          'image',
           'headline',
           'format',
           'date',
@@ -582,12 +581,22 @@ class ReliefWebDocuments {
       }
 
       // Image.
-      if (!empty($fields['image'])) {
-        $data['image'] = $fields['image'];
+      if (!empty($fields['image']['url'])) {
+        $image = $fields['image'];
+        // Add a URL for the medium styles as they are not in the API.
+        // @todo add a `url-extra-large` as well if this style is added to
+        // ReliefWeb (UNO-771).
+        if (isset($image['url-large'])) {
+          $image['url-medium'] = str_replace('/large/', '/medium/', $image['url-large']);
+        }
         // Change the URLs of the image to be an unocha.org URL.
         if ($white_label) {
-          $this->getApiClient()->updateApiUrls($data['image'], $unocha_url);
+          $this->getApiClient()->updateApiUrls($image, $unocha_url);
         }
+        // Fix the alternative text and copyright.
+        $image['alt'] = $image['alt'] ?? $image['caption'] ?? '';
+        $image['copyright'] = trim($image['copyright'] ?? '', " \n\r\t\v\0@");
+        $data['image'] = $image;
       }
 
       // Compute the language code from the resource's data.
