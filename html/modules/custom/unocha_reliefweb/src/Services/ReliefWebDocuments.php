@@ -529,6 +529,7 @@ class ReliefWebDocuments {
         'format' => $format,
         'tags' => $tags,
         'body-html' => $fields['body-html'] ?? '',
+        'origin' => $fields['origin'] ?? '',
       ];
 
       // Url to the article.

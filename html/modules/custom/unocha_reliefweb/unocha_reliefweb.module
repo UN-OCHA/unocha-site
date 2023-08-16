@@ -40,6 +40,8 @@ function unocha_reliefweb_theme() {
         'title' => t('Attachments'),
         // Section title attributes.
         'title_attributes' => NULL,
+        // Type of attachments.
+        'type' => NULL,
         // List of files. Each item has the following properties:
         // - url: link to the file
         // - name: file name
@@ -54,7 +56,7 @@ function unocha_reliefweb_theme() {
         'footer_attributes' => NULL,
         // Flag to indicate if the first attachment's preview should be lazy
         // loaded or not.
-        'lazy_load_first_preview' => TRUE,
+        'lazy_load_first_preview' => FALSE,
       ],
     ],
     // Theme for a list of articles.
