@@ -201,11 +201,11 @@ class ReliefWebDocumentController extends ControllerBase {
     }
 
     if ($type === 'map') {
-      $label = $this->t('Download Map');
+      $label = $this->t('Download map');
       $size = 'large';
     }
     elseif ($type === 'infographic') {
-      $label = $this->t('Download Infographic');
+      $label = $this->t('Download infographic');
       $size = 'large';
     }
     elseif ($type === 'interactive') {
@@ -213,7 +213,7 @@ class ReliefWebDocumentController extends ControllerBase {
     }
     else {
       $type = 'report';
-      $label = $this->t('download Attachment');
+      $label = $this->t('Download attachment');
       $size = 'small';
     }
 
