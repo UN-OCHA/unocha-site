@@ -51,19 +51,6 @@
   padding-bottom: 0.5rem;
 }
 
-/* Hide images on RW river items in the main and sidebar column. This is
-  specifically for Humanitarian resources on Response pages and might negatively
-  affect other contexts where this layout is used in the future.
-*/
-.layout--twocol-sidebar .cd-layout__content .rw-river-article--with-preview .rw-river-article__content img,
-.cd-layout__sidebar--wide .rw-river-article--with-preview .rw-river-article__content img {
-  display: none;
-}
-
-.paragraph--type--reliefweb-river.paragraph--view-mode--teasers .rw-river-article.rw-river-article--with-preview .rw-river-article__header {
-  flex-basis: 100%;
-}
-
 /* Homepage styles */
 .path-frontpage .layout--twocol-66-33 .layout__region--first p.headline {
   /* Align top so it matches paragraph in next region */
