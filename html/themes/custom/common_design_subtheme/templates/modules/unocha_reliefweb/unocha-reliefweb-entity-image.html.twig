@@ -1,0 +1,50 @@
+{#
+
+/**
+ * @file
+ * Template file for an image displayed in an entity article.
+ *
+ * Available variables;
+ * - attributes: figure attributes
+ * - image: array with urls (different sizes), alt, width, height, alt and
+ *   copyright and optionally the loading mode.
+ * - caption: flag to indicate whether to show the caption or not.
+ * - loading: flag to indicate the default loading mode: lazy or eager.
+ *
+ * @todo add 'image['url-extra-large'] }}' image source if this image
+ * style is added in ReliefWeb (UNO-771).
+ */
+
+#}
+{% if image.url %}
+{{ attach_library('common_design/cd-caption') }}
+<figure{{ attributes
+  .addClass([
+    'rw-entity-image',
+    caption and image.alt is not empty ? 'rw-entity-image--with-caption',
+    image.copyright is not empty ? 'rw-entity-image--with-copyright',
+  ])
+}}>
+
+  <picture class="rw-entity-image__image">
+    <source srcset="{{ image['url-small'] }}" media="(max-width: 220px)" />
+    <source srcset="{{ image['url-medium'] }}" media="(max-width: 450px)" />
+    <source srcset="{{ image['url-large'] }}" />
+    <img
+      src="{{ image['url-small'] }}"
+      alt="{{ image.alt }}"
+      loading="{{ image.loading is not empty ? image.loading : loading }}"
+      style="aspect-ratio: {{ image.width }} / {{ image.height }};"
+    />
+  </picture>
+
+  {% if image.alt or image.copyright %}
+  {# We use aria-hidden="true" because we already set the image alt. This
+     prevents the alt text to be read twice by screen readers. #}
+  <figcaption class="rw-entity-image__caption cd-caption" aria-hidden="true">
+    {{ caption ? image.alt }}
+    {{ image.copyright }}
+  </figcaption>
+  {% endif %}
+</figure>
+{% endif %}
