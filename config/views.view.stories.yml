@@ -239,7 +239,7 @@ display:
             operator: field_country_target_id_verf_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: country
+            identifier: countries
             required: false
             remember: false
             multiple: false
@@ -263,9 +263,9 @@ display:
             group_items: {  }
           verf_target_bundles:
             country: country
+            contacts: '0'
             event_type: '0'
-            regional_offices: '0'
-            response_type: '0'
+            office_type: '0'
             story_type: '0'
             theme: '0'
           show_unpublished: 0
@@ -289,7 +289,7 @@ display:
             operator: field_responses_target_id_verf_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: response
+            identifier: responses
             required: false
             remember: false
             multiple: false
@@ -341,7 +341,7 @@ display:
             operator: field_regions_target_id_verf_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: region
+            identifier: regions
             required: false
             remember: false
             multiple: false
@@ -534,7 +534,7 @@ display:
             operator: field_country_target_id_verf_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: country
+            identifier: countries
             required: false
             remember: false
             multiple: false
@@ -558,9 +558,9 @@ display:
             group_items: {  }
           verf_target_bundles:
             country: country
+            contacts: '0'
             event_type: '0'
-            regional_offices: '0'
-            response_type: '0'
+            office_type: '0'
             story_type: '0'
             theme: '0'
           show_unpublished: 0
@@ -584,7 +584,7 @@ display:
             operator: field_responses_target_id_verf_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: response
+            identifier: responses
             required: false
             remember: false
             multiple: false
@@ -636,7 +636,7 @@ display:
             operator: field_regions_target_id_verf_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: region
+            identifier: regions
             required: false
             remember: false
             multiple: false
@@ -829,7 +829,7 @@ display:
             operator: field_country_target_id_verf_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: country
+            identifier: countries
             required: false
             remember: false
             multiple: false
@@ -853,9 +853,9 @@ display:
             group_items: {  }
           verf_target_bundles:
             country: country
+            contacts: '0'
             event_type: '0'
-            regional_offices: '0'
-            response_type: '0'
+            office_type: '0'
             story_type: '0'
             theme: '0'
           show_unpublished: 0
@@ -879,7 +879,7 @@ display:
             operator: field_responses_target_id_verf_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: response
+            identifier: responses
             required: false
             remember: false
             multiple: false
@@ -931,7 +931,7 @@ display:
             operator: field_regions_target_id_verf_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: region
+            identifier: regions
             required: false
             remember: false
             multiple: false

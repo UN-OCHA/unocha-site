@@ -1,0 +1,16 @@
+/**
+ * CD Article component
+ */
+
+.cd-article p {
+  max-width: var(--cd-max-content-width);
+}
+
+.cd-article p:first-child {
+  margin-top: 0;
+}
+
+/* Restrict width for lists in articles */
+.cd-article ol {
+  max-width: var(--cd-max-content-width);
+}

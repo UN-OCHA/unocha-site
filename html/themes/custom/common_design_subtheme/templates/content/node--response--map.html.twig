@@ -75,7 +75,8 @@
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    'uno-card cd-card'
+    'uno-card',
+    'cd-card'
   ]
 %}
 {{ attach_library('common_design/cd-card') }}

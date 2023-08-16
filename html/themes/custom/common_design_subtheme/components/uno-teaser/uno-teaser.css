@@ -1,0 +1,84 @@
+/**
+ * CD Teaser
+ */
+
+:root {
+  --cd-bumper-space: 2rem;
+  --cd-flow-space: 1rem;
+}
+
+.cd-teaser {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--brand-grey);
+}
+
+@media screen and (min-width: 768px) {
+  .cd-teaser {
+    padding-bottom: 3rem;
+  }
+}
+
+.view-content .cd-teaser:first-child {
+  padding-top: 2rem;
+  border-top: 1px solid var(--brand-grey);
+}
+
+@media screen and (min-width: 768px) {
+  .view-content .cd-teaser:first-child {
+    padding-top: 3rem;
+  }
+}
+
+.cd-teaser__title,
+.cd-teaser__title a {
+  display: inline-block;
+  margin-top: 0;
+  color: black;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.cd-teaser__title {
+  margin-bottom: 0.5rem;
+}
+.cd-teaser__title a:hover,
+.cd-teaser__title a:focus {
+  color: var(--brand-default-text-color);
+}
+
+.cd-teaser__description p {
+  margin-bottom: 0;
+}
+
+[dir="ltr"] .cd-bumper .cd-teaser__image:empty + .cd-teaser__container {
+  padding-left: 0;
+}
+
+.cd-teaser__image {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 576px) {
+  .cd-teaser__image {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.cd-flow > .node--type-event.node--view-mode-teaser + .node--type-event.node--view-mode-teaser {
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .cd-flow > .node--type-event.node--view-mode-teaser + .node--type-event.node--view-mode-teaser {
+    margin-top: 3rem;
+  }
+}
+
+/* Match teaser title typography with card title */
+.cd-teaser__title,
+.cd-teaser__title a {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+}

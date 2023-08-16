@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: what-we-do
 label: 'What we do'
-description: ''
+description: 'Footer menu: What we do'
 locked: false

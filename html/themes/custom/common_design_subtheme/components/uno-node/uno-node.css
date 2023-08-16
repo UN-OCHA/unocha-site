@@ -1,0 +1,128 @@
+/* Restrict width and centre horizontally */
+.node--type-story .cd-layout-main-content > .field--label-inline,
+.node--type-story .cd-caption,
+.node--type-story .field--name-field-theme,
+.node--type-story .field--type-text-with-summary,
+.node--type-story .field--name-field-text,
+.node--type-story .cd-layout-main-content > footer,
+.node--type-basic .cd-caption,
+.node--type-region .cd-caption,
+.node--type-response .cd-caption {
+  max-width: var(--cd-max-content-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Basic vertical rhythm, will need adjusting */
+.node--type-event .field--name-field-event-date,
+.node--type-event .field--name-field-event-location,
+.node--type-event.node--view-mode-full .field--name-field-event-image,
+.node--type-event .uno-event__link,
+.node--type-event .field--name-field-response,
+.node--type-story .field--name-field-theme {
+  margin-bottom: 1rem;
+}
+
+.node--type-event.node--view-mode-card .uno-event__link {
+  margin-bottom: 2rem;
+}
+
+.node--view-mode-full .field--name-field-text,
+.node--type-event.node--view-mode-full .uno-event__link {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .node--view-mode-full .field--name-field-text {
+    margin-bottom: 6rem;
+  }
+}
+
+/* When a Text paragraph is in a layout */
+.node--view-mode-full .paragraph .field--name-field-text {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .node--view-mode-full .paragraph .field--name-field-text {
+    margin-bottom: 3rem;
+  }
+}
+
+.node--view-mode-full .layout .paragraph .field--name-field-text {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .node--view-mode-full .layout .paragraph .field--name-field-text {
+    margin-bottom: 0;
+  }
+}
+
+.node--view-mode-full .cd-layout-main-content > .field--name-body {
+  margin-bottom: 6rem;
+}
+.node--view-mode-full .node--view-mode-teaser .field--name-body {
+  margin-bottom: 0;
+}
+
+/* Story node */
+footer.cd-author {
+  margin-top: 3rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--brand-grey);
+}
+
+/* CTA link on Response and Region pages */
+.uno-content--custom > a.uno-button {
+  float: right;
+  margin-bottom: 0.75rem;
+  margin-inline-start: 0.75rem;
+}
+/* Prevent the floated button overlapping the next field */
+.uno-content--custom > a.uno-button + .field {
+  clear: both;
+}
+
+@media (min-width: 1200px) {
+  .uno-content--custom {
+    position: relative;
+  }
+
+  .uno-content--custom > a.cd-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+/* Center Hero images within the cd-bleed container */
+.field--name-field-story-image,
+.field--name-field-basic-image,
+.field--name-field-response-image,
+.field--name-field-region-image {
+  text-align: center;
+}
+
+/* When images are missing, restrict width of alt text */
+.field--name-field-media-image {
+  max-width: var(--cd-max-body-width);
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 12px;
+}
+
+/* Labels for "Featured", "News", "B-roll", "Regional Office" etc */
+.uno-tag {
+  display: inline-block;
+  padding-inline-end: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--brand-primary--dark);
+  font-size: 1.0625rem; /* 17px */
+ }
+
+.node--type-response > header > .uno-tag,
+.node--type-region > header > .uno-tag {
+  color: var(--cd-black);
+}

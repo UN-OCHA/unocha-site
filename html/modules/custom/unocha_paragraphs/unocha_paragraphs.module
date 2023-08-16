@@ -39,7 +39,7 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
       ], $limit);
 
       // Filter the News and Stories page by the response.
-      $view_all_query['response'] = $parent->id();
+      $view_all_query['responses'] = $parent->id();
 
       // If we don't have enough stories for the response, complete with
       // stories from the region.
@@ -52,7 +52,7 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
 
           // Also add the region as filter to have consistent results in the
           // News and Stories landing page.
-          $view_all_query['region'] = $region->id();
+          $view_all_query['regions'] = $region->id();
         }
       }
     }
@@ -63,7 +63,7 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
       ], $limit);
 
       // Filter the News and Stories page by the region.
-      $view_all_query['region'] = $parent->id();
+      $view_all_query['regions'] = $parent->id();
     }
     else {
       // Exclude the current story so we can show related ones only.
@@ -72,9 +72,9 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
       // Add conditions on the referenced entities.
       $conditions = [];
       $fields = [
-        'field_responses' => 'response',
-        'field_regions' => 'region',
-        'field_country' => 'country',
+        'field_responses' => 'responses',
+        'field_regions' => 'regions',
+        'field_country' => 'countries',
       ];
       foreach ($fields as $field => $filter) {
         if ($parent->hasField($field)) {
@@ -96,13 +96,6 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
 
       $stories = unocha_paragraphs_get_stories($conditions, $limit, $exclude);
     }
-  }
-  // If there are no valid parent, we just show the latest stories,
-  // for example when adding a stories paragraph type to a response as the
-  // paragraph doesn't yet have a parent as it's not yet saved.
-  // @todo add disclaimer in the preview in the form?
-  else {
-    $stories = unocha_paragraphs_get_stories([], $limit);
   }
 
   // Filter out stories that cannot be accessed by the current user.

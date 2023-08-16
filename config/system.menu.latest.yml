@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: latest
 label: Latest
-description: ''
+description: 'Footer menu: Latest menu'
 locked: false

@@ -7,7 +7,7 @@
     <h{{ level }}{{ title_attributes.addClass('unocha-reliefweb-document__title') }}>{{ title }}</h{{ level }}>
     {% if componentsModule %}
       {%
-        include '@uno-components/cd-social-links/cd-social-links.html.twig' with {
+        include '@uno-components/uno-social-links/uno-social-links.html.twig' with {
           'label': title,
           'title': title,
           'url': path('<current>')

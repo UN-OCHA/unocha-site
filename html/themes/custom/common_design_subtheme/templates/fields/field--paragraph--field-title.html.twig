@@ -27,6 +27,5 @@
 {{ attach_library('common_design/cd-block-title') }}
 
 {% for item in items %}
-<h2{{attributes.addClass(classes,'field__item','cd-block-title')}}>{{ item.content }}</h2>
-
+  <h2{{attributes.addClass(classes,'field__item','cd-block-title')}}>{{ item.content }}</h2>
 {% endfor %}

@@ -15,7 +15,7 @@
  *   Calling other methods, such as node.delete(), will result in an exception.
  *   See \Drupal\node\Entity\Node for a full list of public properties and
  *   methods for the node object.
- * - label: (optional) The title of the node.
+ * - label: The title of the node.
  * - content: All node items. Use {{ content }} to print them all,
  *   or print a subset such as {{ content.field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
@@ -23,8 +23,8 @@
  * - author_picture: The node author user entity, rendered using the "compact"
  *   view mode.
  * - metadata: Metadata for this node.
- * - date: (optional) Themed creation date field.
- * - author_name: (optional) Themed author name field.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
  * - url: Direct URL of the current node.
  * - display_submitted: Whether submission information should be displayed.
  * - attributes: HTML attributes for the containing element.
@@ -65,9 +65,6 @@
  *
  * @see template_preprocess_node()
  *
- * @todo Remove the id attribute (or make it a class), because if that gets
- *   rendered twice on a page this is invalid CSS for example: two lists
- *   in different view modes.
  */
 #}
 {%
@@ -78,19 +75,15 @@
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    'uno-card cd-card'
+    'uno-card',
+    'cd-card'
   ]
 %}
 
 {% set unochaDate = node.getCreatedTime|date('j F Y') %}
 
 {{ attach_library('common_design/cd-flow') }}
-{{ attach_library('common_design/cd-utilities') }}
-{{ attach_library('common_design/cd-typography') }}
-{{ attach_library('common_design/cd-button') }}
-{{ attach_library('common_design/cd-read-more') }}
 {{ attach_library('common_design/cd-card') }}
-{{ attach_library('common_design_subtheme/uno-card-list')}}
 
 <article{{ attributes.addClass(classes) }}>
 

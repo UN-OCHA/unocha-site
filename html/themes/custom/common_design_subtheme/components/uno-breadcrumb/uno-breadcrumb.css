@@ -45,8 +45,8 @@
   content: none;
 }
 
-/* Hide the current page title in breadcrumbs for
-  Stories, Events, Publications */
+/* Hide the current page title in breadcrumbs for Stories, Events,
+  Publications */
 .path-publications .uno-breadcrumb ol li:last-child,
 .page-node-type-event .uno-breadcrumb ol li:last-child,
 .page-node-type-story .uno-breadcrumb ol li:last-child {
