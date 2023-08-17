@@ -8,9 +8,9 @@ networks:
     external: TRUE
 
 volumes:
-  unocha-local-site-database:
-  unocha-local-site-public:
-  unocha-local-site-private:
+  site-database:
+  site-public:
+  site-private:
 
 services:
   memcache:
@@ -33,7 +33,7 @@ services:
       - MYSQL_USER=unocha
       - MYSQL_PASS=unocha
     volumes:
-      - "unocha-local-site-database:/var/lib/mysql:rw"
+      - "site-database:/var/lib/mysql:rw"
     networks:
       - default
 
@@ -47,8 +47,8 @@ services:
     volumes:
       - "./shared/settings:/srv/www/shared/settings:ro"
       # Mount volumes for the private and public files.
-      - "unocha-local-site-public:/srv/www/html/sites/default/files:rw"
-      - "unocha-local-site-private:/srv/www/html/sites/default/private:rw"
+      - "site-public:/srv/www/html/sites/default/files:rw"
+      - "site-private:/srv/www/html/sites/default/private:rw"
       # Mount the folders needed for the tests.
       - "../phpcs.xml:/srv/www/phpcs.xml:ro"
       - "../phpunit.xml:/srv/www/phpunit.xml:ro"
