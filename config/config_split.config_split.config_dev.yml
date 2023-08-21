@@ -11,6 +11,7 @@ storage: folder
 folder: ../config_dev
 module:
   dblog: 0
+  environment_indicator_ui: 0
   stage_file_proxy: 0
   views_ui: 0
 theme: {  }
