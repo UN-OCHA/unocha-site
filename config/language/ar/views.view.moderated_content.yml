@@ -1,0 +1,50 @@
+label: 'محتوى خاضع للإشراف'
+display:
+  default:
+    display_title: الافتراضي
+    display_options:
+      title: 'محتوى خاضع للإشراف'
+      fields:
+        title:
+          label: العنوان
+          separator: ', '
+        type:
+          label: 'نوع المحتوى'
+          separator: ', '
+        name:
+          label: المؤلف
+          separator: ', '
+        moderation_state:
+          separator: ', '
+        changed:
+          label: التحديث
+          separator: ', '
+        operations:
+          label: عمليات
+      pager:
+        options:
+          tags:
+            next: 'التالي ›'
+            previous: '‹ السابق'
+          expose:
+            items_per_page_options_all_label: '- الكل -'
+            offset_label: الإزاحة
+      exposed_form:
+        options:
+          submit_button: انتقاء
+          reset_button_label: 'إعادة الضبط'
+          exposed_sorts_label: 'الترتيب حسب'
+          sort_asc_label: تصاعدي
+          sort_desc_label: تنازلي
+      filters:
+        title:
+          expose:
+            label: العنوان
+        type:
+          expose:
+            label: 'نوع المحتوى'
+        langcode:
+          expose:
+            label: اللغة
+  moderated_content:
+    display_title: 'محتوى خاضع للإشراف'
