@@ -22,8 +22,8 @@ dependencies:
     - taxonomy.vocabulary.story_type
     - taxonomy.vocabulary.theme
   module:
+    - content_moderation
     - content_translation
-    - file
     - filter
     - media
     - menu_link_content
@@ -45,7 +45,6 @@ permissions:
   - 'access administration pages'
   - 'access canto api'
   - 'access content overview'
-  - 'access files overview'
   - 'access media overview'
   - 'access taxonomy overview'
   - 'access toolbar'
@@ -156,10 +155,12 @@ permissions:
   - 'use text format text_editor_simple'
   - 'view all media revisions'
   - 'view all revisions'
+  - 'view any unpublished content'
   - 'view basic revisions'
   - 'view event revisions'
   - 'view events menu in menu list'
   - 'view latest menu in menu list'
+  - 'view latest version'
   - 'view leader revisions'
   - 'view main menu in menu list'
   - 'view media_collection revisions'
