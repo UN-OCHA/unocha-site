@@ -6,6 +6,8 @@ use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Http\Exception\CacheableNotFoundHttpException;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 use Drupal\unocha_reliefweb\Helpers\UrlHelper;
 use Drupal\unocha_reliefweb\Services\ReliefWebDocuments;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -92,9 +94,31 @@ class ReliefWebDocumentController extends ControllerBase {
       return [];
     }
 
+    $type = isset($data['format']) ? strtolower($data['format']) : 'report';
+
     $content = [];
     if (!empty($data['attachments'])) {
-      $content['attachments'] = $this->renderAttachmentList($data['attachments']);
+      $content['attachments'] = $this->renderAttachmentList($data['attachments'], $type);
+
+      if ($type === 'interactive' && !empty($content['attachments'])) {
+        $content['attachments']['#title'] = $this->t('Screenshot(s) of the interactive content as of @date', [
+          '@date' => $data['published']->format('j m Y'),
+        ]);
+        if (!empty($data['origin'])) {
+          $content['attachments']['#footer'] = Link::fromTextAndUrl(
+            $this->t('View the interactive content page'),
+            Url::fromUri($data['origin'], [
+              'attributes' => [
+                'target' => '_blank',
+                'rel' => 'noopener',
+              ],
+            ])
+          )->toRenderable();
+        }
+      }
+    }
+    if (!empty($data['image'])) {
+      $content['image'] = $this->renderImage($data['image']);
     }
     if (!empty($data['body-html'])) {
       $content['body'] = ['#markup' => $data['body-html']];
@@ -143,38 +167,88 @@ class ReliefWebDocumentController extends ControllerBase {
   }
 
   /**
-   * Render a list of attachemnts.
+   * Render a report image.
    *
-   * @param array $attachments
-   *   List of attachments.
+   * @param array $image
+   *   Image data.
    *
    * @return array
    *   Render array.
    */
-  protected function renderAttachmentList(array $attachments) {
+  protected function renderImage(array $image) {
+    return [
+      '#theme' => 'unocha_reliefweb_entity_image',
+      '#image' => $image,
+      '#caption' => TRUE,
+      '#loading' => 'eager',
+    ];
+  }
+
+  /**
+   * Render a list of attachemnts.
+   *
+   * @param array $attachments
+   *   List of attachments.
+   * @param string $type
+   *   One of `map`, `infographic`, `interactive` or `report`.
+   *
+   * @return array
+   *   Render array.
+   */
+  protected function renderAttachmentList(array $attachments, $type) {
     if (empty($attachments)) {
       return [];
     }
 
+    if ($type === 'map') {
+      $label = $this->t('Download map');
+      $size = 'large';
+    }
+    elseif ($type === 'infographic') {
+      $label = $this->t('Download infographic');
+      $size = 'large';
+    }
+    elseif ($type === 'interactive') {
+      $size = 'large';
+    }
+    else {
+      $type = 'report';
+      $label = $this->t('Download attachment');
+      $size = 'small';
+    }
+
     $list = [];
-    foreach ($attachments as $attachment) {
+    foreach ($attachments as $index => $attachment) {
       $extension = $this->extractFileExtension($attachment['filename']);
-      $list[] = [
-        'url' => $attachment['url'],
-        'name' => $attachment['filename'],
-        'preview' => $this->renderAttachmentPreview($attachment),
-        'label' => $this->t('Download Attachment'),
-        'description' => '(' . implode(' | ', array_filter([
-          mb_strtoupper($extension),
-          format_size($attachment['filesize']),
-          $attachment['description'] ?? '',
-        ])) . ')',
-      ];
+
+      if ($type === 'interactive') {
+        $description = $this->t('Screenshot @index', [
+          '@index' => $index + 1,
+        ]);
+        $list[] = [
+          'preview' => $this->renderAttachmentPreview($attachment, $size, $description),
+          'description' => $description,
+        ];
+      }
+      else {
+        $list[] = [
+          'url' => $attachment['url'],
+          'name' => $attachment['filename'],
+          'preview' => $this->renderAttachmentPreview($attachment, $size),
+          'label' => $label,
+          'description' => '(' . implode(' | ', array_filter([
+            mb_strtoupper($extension),
+            format_size($attachment['filesize']),
+            $attachment['description'] ?? '',
+          ])) . ')',
+        ];
+      }
     }
 
     return [
-      '#theme' => 'unocha_reliefweb_attachment_list',
+      '#theme' => 'unocha_reliefweb_attachment_list__' . $type,
       '#list' => $list,
+      '#type' => $type,
     ];
   }
 
@@ -183,21 +257,23 @@ class ReliefWebDocumentController extends ControllerBase {
    *
    * @param array $attachment
    *   The attachment data.
+   * @param string $size
+   *   Size of the image to use: small or large.
+   * @param string $alt
+   *   Alternative text for the preview.
    *
    * @return array
    *   Render array.
    */
-  public function renderAttachmentPreview(array $attachment) {
+  public function renderAttachmentPreview(array $attachment, $size = 'small', $alt = '') {
     if (empty($attachment['preview'])) {
       return [];
     }
 
-    // @todo review when deciding on how to deal with image styles for
-    // images coming from ReliefWeb.
     return [
       '#theme' => 'image',
-      '#uri' => $attachment['preview']['url-small'] . '?' . $attachment['preview']['version'],
-      '#alt' => $this->t('Preview of @filename', [
+      '#uri' => $attachment['preview']['url-' . $size] . '?' . $attachment['preview']['version'],
+      '#alt' => $alt ?: $this->t('Preview of @filename', [
         '@filename' => $attachment['filename'],
       ]),
       '#attributes' => [

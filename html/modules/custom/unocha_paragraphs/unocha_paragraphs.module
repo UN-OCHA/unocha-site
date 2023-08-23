@@ -413,3 +413,43 @@ function unocha_paragraphs_field_widget_single_element_viewsreference_select_for
     }
   }
 }
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for 'node_form'.
+ */
+function unocha_paragraphs_form_node_form_alter(array &$form, FormStateInterface &$form_state, $form_id) {
+  // Disable the option to promote content.
+  if (isset($form['promote'])) {
+    $form['promote']['#access'] = FALSE;
+  }
+  // Change the label of the `sticky` option to something possibly more
+  // understandable for editors.
+  if (isset($form['sticky'])) {
+    $form['sticky']['widget']['value']['#title'] = t('Featured');
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for ''.
+ */
+function unocha_paragraphs_preprocess_select(array &$variables) {
+  // Change `sticky/unsticky` to `featured/unfeatured` in the content view
+  // bulk operations.
+  //
+  // Unfortunately we do not have a more specific way to alter only the
+  // select element used for the bulk operations in the content view so we
+  // use a generic preprocess_select hook and check if the `sticky` option
+  // exists.
+  if (isset($variables['element']['#options']['node_make_sticky_action'])) {
+    $variables['element']['#options']['node_make_sticky_action'] = t('Make content featured');
+    $variables['element']['#options']['node_make_unsticky_action'] = t('Make content unfeatured');
+    foreach ($variables['options'] ?? [] as $key => $option) {
+      if ($option['value'] === 'node_make_sticky_action') {
+        $variables['options'][$key]['label'] = t('Make content featured');
+      }
+      if ($option['value'] === 'node_make_unsticky_action') {
+        $variables['options'][$key]['label'] = t('Make content unfeatured');
+      }
+    }
+  }
+}
