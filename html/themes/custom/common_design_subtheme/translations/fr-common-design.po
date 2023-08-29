@@ -1,0 +1,276 @@
+# French translation of Common Design Header and Footer
+#
+msgid "Skip to main content"
+msgstr "Aller au contenu principal"
+
+msgid "Related Platforms"
+msgstr "Plateformes associées"
+
+msgid "Other OCHA Services"
+msgstr "Autres services OCHA"
+
+msgid "See all"
+msgstr "Tout voir"
+
+msgid "Log in"
+msgstr "S'identifier"
+
+msgid "My account"
+msgstr ""
+
+msgid "Log out"
+msgstr ""
+
+msgid "Service provided by"
+msgstr "Service fourni par"
+
+msgid ""
+"OCHA coordinates the global emergency response to save lives and "
+"protect people in humanitarian crises. We advocate for effective and "
+"principled humanitarian action by all, for all."
+msgstr ""
+"OCHA coordonne la réponse globale pour sauver des vies et protéger "
+"les personnes en cas de crises humanitaires. Nous plaidons en faveur "
+"de la mise en oeuvre, par tous et pour tous, d’une action "
+"humanitaire efficace et fondée sur des principes."
+
+msgid ""
+"Except where otherwise noted, content on this site is licensed under a "
+"<a href=\"https://creativecommons.org/licenses/by/4.0/\">Creative "
+"Commons Attribution 4.0</a> International license."
+msgstr ""
+"Sauf indication contraire, le contenu de ce site est concédé sous "
+"une licence <a "
+"href=\"https://creativecommons.org/licenses/by/4.0/deed.fr\">Creative "
+"Commons Attribution 4.0 International</a>."
+
+msgid "OCHA Services"
+msgstr "Services OCHA"
+
+msgid "Creative Commons BY 4.0"
+msgstr "Creative Commons BY 4.0"
+
+# common_design_subtheme/templates/cd/cd-footer/cd-copyright.html.twig #
+msgid "© United Nations Office for the Coordination of Humanitarian Affairs"
+msgstr "Bureau des Nations Unies pour la coordination des affaires humanitaires"
+
+# common_design_subtheme/templates/navigation/breadcrumb.html.twig #
+msgid "Breadcrumb"
+msgstr ""
+
+# common_design_subtheme/templates/cd/cd-footer/cd-footer.html.twig #
+msgid "Site footer"
+msgstr ""
+
+# common_design_subtheme/templates/layout/maintenance-page.html.twig #
+msgid "Site header"
+msgstr ""
+
+msgid "Front page"
+msgstr ""
+
+msgid "Page content"
+msgstr ""
+
+# common_design_subtheme/templates/layout/page--404.html.twig #
+msgid "Page not found"
+msgstr ""
+
+# common_design_subtheme/templates/navigation/menu-local-task--children-menu.html.twig #
+msgid "Publications"
+msgstr ""
+
+msgid "Latest"
+msgstr ""
+
+msgid "News and stories"
+msgstr ""
+
+msgid "News"
+msgstr ""
+
+# common_design_subtheme/templates/content/node--teaser.html.twig #
+msgid "Read more"
+msgstr ""
+
+# common_design_subtheme/templates/content/node--campaign.html.twig #
+msgid "Find out more"
+msgstr ""
+
+# common_design_subtheme/templates/content/node--response--map.html.twig #
+msgid "Learn more"
+msgstr ""
+
+# common_design_subtheme/templates/content/node--full.html.twig #
+msgid "Submitted on"
+msgstr ""
+
+# common_design_subtheme/templates/content/node--story--full.html.twig #
+msgid "Posted on"
+msgstr ""
+
+# common_design_subtheme/templates/content/node--story--card.html.twig #
+msgid "Featured"
+msgstr ""
+
+# common_design_subtheme/templates/content/node--leader--teaser.html.twig #
+msgid "See biography"
+msgstr ""
+
+# common_design_subtheme/templates/content/node--region--full.html.twig #
+msgid "Regional office for"
+msgstr ""
+
+# common_design_subtheme/templates/fields/field--node--field-event-date.html.twig #
+msgid "Date:"
+msgstr ""
+
+msgid "Start date:"
+msgstr ""
+
+msgid "End date:"
+msgstr ""
+
+# common_design_subtheme/templates/content/node--media-collection--teaser.html.twig #
+msgid "B-roll"
+msgstr ""
+
+msgid "Photos"
+msgstr ""
+
+# common_design_subtheme/templates/content/node--media-collection--full.html.twig #
+msgid "Download full-resolution video"
+msgstr ""
+
+msgid "View the entire collection"
+msgstr ""
+
+# common_design_subtheme/templates/paragraphs/paragraph--media-centre.html.twig #
+msgid "View all"
+msgstr ""
+
+# common_design_subtheme/templates/views/views-view.html.twig #
+msgid "Filter results"
+msgstr ""
+
+# common_design_subtheme/templates/paragraphs/paragraph--donors.html.twig #
+msgid "Unearmarked contributions (or commitments) are those for which the donor does not require the funds to be used for a specific project, sector, crisis or country, leaving OCHA to decide how to allocate the funds."
+msgstr ""
+
+msgid "Opening balance may include unearmarked and earmarked funding with implementation dates beyond the calendar year, and excludes miscellaneous income (e.g. adjustments, gain/losses on exchange rate etc.)"
+msgstr ""
+
+msgid "Funding information from the OCHA Contributions Tracking System."
+msgstr ""
+
+# common_design_subtheme/templates/modules/unocha_donors/unocha-donors-list--cbpf-top-donors.html.twig #
+msgid "Top 5 donors"
+msgstr ""
+
+msgid "paid"
+msgstr ""
+
+msgid "pledged"
+msgstr ""
+
+# common_design_subtheme/templates/modules/unocha_donors/unocha-donors-list--fts-top-sectors.html.twig #
+msgid "Top 5 funded sectors"
+msgstr ""
+
+# common_design_subtheme/templates/modules/unocha_donors/unocha-donors-list--oct-earmarked-donors.html.twig #
+msgid "Earmarked contributions"
+msgstr ""
+
+# common_design_subtheme/templates/modules/unocha_donors/unocha-donors-list--oct-top-donors.html.twig #
+msgid "The graphic below shows the top 10 OCHA donors for this year. The bar represents the percentage of earmarked vs. unearmarked funds per donor. For a complete listing of OCHA's donors, please click the button below."
+msgstr ""
+
+msgid "Show all donors"
+msgstr ""
+
+msgid "Show top 10 donors"
+msgstr ""
+
+msgid "OCHA donors in @year"
+msgstr ""
+
+msgid "OCHA donors"
+msgstr ""
+
+msgid "Unearmaked"
+msgstr ""
+
+msgid "Earmaked"
+msgstr ""
+
+# common_design_subtheme/templates/modules/unocha_donors/unocha-donors-list--oct-unearmarked-donors.html.twig #
+msgid "Unearmarked contributions"
+msgstr ""
+
+# common_design_subtheme/templates/modules/unocha_reliefweb/unocha-reliefweb-river-article--report--figures.html.twig #
+msgid "Download report"
+msgstr ""
+
+# /common_design_subtheme/templates/modules/unocha_reliefweb/unocha-reliefweb-river-article--report.html.twig #
+msgid "Format"
+msgstr ""
+
+msgid "Posted"
+msgstr ""
+
+msgid "Originally published"
+msgstr ""
+
+msgid "Sources"
+msgstr ""
+
+msgid "Source"
+msgstr ""
+
+# common_design_subtheme/templates/uno/subscribe.html.twig #
+msgid "Subscribe to UNOCHA mailing list"
+msgstr ""
+
+msgid "Subscribe to our newsletter"
+msgstr ""
+
+msgid "Subscribe"
+msgstr ""
+
+msgid "Enter your email address"
+msgstr ""
+
+msgid "Do not fill in this field"
+msgstr ""
+
+# common_design_subtheme/components/uno-social-links/uno-social-links.html.twig #
+msgid "Share"
+msgstr ""
+
+msgid "Share on Facebook"
+msgstr ""
+
+msgid "Share on Twitter"
+msgstr ""
+
+msgid "Share on LinkedIn"
+msgstr ""
+
+msgid "Share by Email"
+msgstr ""
+
+# common_design_subtheme/templates/cd/cd-footer/cd-social-menu.html.twig #
+msgid "Facebook"
+msgstr ""
+
+msgid "Twitter"
+msgstr ""
+
+msgid "YouTube"
+msgstr ""
+
+msgid "LinkedIn"
+msgstr ""
+
+msgid "Instagram"
+msgstr ""
