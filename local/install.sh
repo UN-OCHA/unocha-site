@@ -10,7 +10,6 @@ usage() {
   echo "-i                    : Install site" >&2
   echo "-c                    : Use existing config to install site" >&2
   echo "-d                    : Install dev dependencies" >&2
-  echo "-p network            : Indicate the local proxy network name (defaults to 'proxy')" >&2
   echo "-x                    : Shutdown and remove the site containers" >&2
   echo "-v                    : Also remove the volumes when shutting down the containers" >&2
   exit 1
@@ -20,12 +19,11 @@ create_image="no"
 install_site="no"
 use_existing_config="no"
 install_dev_dependencies="no"
-proxy_name="proxy"
 shutdown="no"
 shutdown_options=""
 
 # Parse options.
-while getopts "hmicdp:xv" opt; do
+while getopts "hmicdxv" opt; do
   case $opt in
     h)
       usage
@@ -42,9 +40,6 @@ while getopts "hmicdp:xv" opt; do
     d)
       install_dev_dependencies="yes"
       ;;
-    p)
-      proxy_name="${OPTARG//,/ }"
-      ;;
     x)
       shutdown="yes"
       ;;
@@ -57,23 +52,30 @@ while getopts "hmicdp:xv" opt; do
   esac
 done
 
+function docker_compose {
+  docker compose -f local/docker-compose.yml "$@"
+}
+
+# Load the environment variables.
+# They are only available in this script as we don't export them.
+source local/.env
+
 # Stop and remove the containers.
 if [ "$shutdown" = "yes" ]; then
   echo "Stop and remove the containers."
-  PROXY=$proxy_name docker compose -p unocha-local -f local/docker-compose.yml down $shutdown_options || true
+  docker_compose down $shutdown_options || true
   exit 0
 fi
-
 
 # Build local image.
 if [ "$create_image" = "yes" ]; then
   echo "Build local image."
-  make
+  make IMAGE_NAME=$IMAGE_NAME IMAGE_TAG=$IMAGE_TAG
 fi;
 
 # Create the site, memcache and mysql containers.
 echo "Create the site, memcache and mysql containers."
-PROXY=$proxy_name docker compose -p unocha-local -f local/docker-compose.yml up -d --remove-orphans
+docker_compose up -d --remove-orphans
 
 # Wait a bit for memcache and mysql to be ready.
 echo "Wait a bit for memcache and mysql to be ready."
@@ -81,43 +83,61 @@ sleep 10
 
 # Dump some information about the created containers.
 echo "Dump some information about the created containers."
-docker ps -a -fname=unocha-local
+docker_compose ps -a
 
 # Install the site.
 if [ "$install_site" = "yes" ]; then
   # Ensure the file directories are writable.
   echo "Ensure the file directories are writable."
-  docker exec -it unocha-local-site chmod -R 777 /srv/www/html/sites/default/files /srv/www/html/sites/default/private
+  docker_compose exec site chmod -R 777 /srv/www/html/sites/default/files /srv/www/html/sites/default/private
 
-  # Install the dev dependencies.
-  echo "Install the dev dependencies."
-  docker exec -it -w /srv/www unocha-local-site composer install
+  # Copy the existing settings.php and ensure the settings.php file is writable.
+  echo "Ensure the settings.php writable."
+  docker_compose exec site sh -c "cp /srv/www/html/sites/default/settings.php /srv/www/html/sites/default/settings.php.backup"
+  docker_compose exec site chmod 666 /srv/www/html/sites/default/settings.php
 
   # Install the subtheme.
   echo "Install the common design subtheme if not present already."
-  docker exec -it -w /srv/www unocha-local-site composer run sub-theme
+  docker_compose exec -w /srv/www site composer run sub-theme || true
 
   # Install the site with the existing config.
   if [ "$use_existing_config" = "yes" ]; then
     echo "Install the site with the existing config."
-    docker exec -it unocha-local-site drush -y si --existing-config minimal install_configure_form.enable_update_status_emails=NULL
+    docker_compose exec -u appuser site drush -y si --existing-config minimal install_configure_form.enable_update_status_emails=NULL
   else
     echo "Install the site from scratch."
-    docker exec -it unocha-local-site drush -y si minimal install_configure_form.enable_update_status_emails=NULL
+    docker_compose exec -u appuser site drush -y si minimal install_configure_form.enable_update_status_emails=NULL
   fi
 
   # Import the configuration.
-  docker exec -it unocha-local-site drush -y cim
+  docker_compose exec -u appuser site drush -y cim
+
+  # Restore the our copy of the settings.php.
+  echo "Restore the settings.php."
+  docker_compose exec site sh -c "mv /srv/www/html/sites/default/settings.php.backup /srv/www/html/sites/default/settings.php"
+fi
 
 # Install the dev dependencies and re-import the configuration.
-elif [ "$install_dev_dependencies" = "yes" ]; then
+if [ "$install_dev_dependencies" = "yes" ]; then
   # Install the dev dependencies.
   echo "Install the dev dependencies."
-  docker exec -it -w /srv/www unocha-local-site composer install
+  docker_compose exec -w /srv/www site composer install
 
   # Import the configuration.
-  docker exec -it unocha-local-site drush -y cr
+  docker_compose exec -u appuser site drush -y cr
 
   # Import the configuration.
-  docker exec -it unocha-local-site drush -y cim
+  docker_compose exec  -u appuser site drush -y updatedb --no-post-updates
+
+  # Import the configuration.
+  docker_compose exec  -u appuser site drush -y cim
+
+  # Import the configuration.
+  docker_compose exec  -u appuser site drush -y updatedb
+
+  # Enable the devel module.
+  docker_compose exec  -u appuser site drush -y en devel
+
+  # Enable the stage file proxy module.
+  docker_compose exec  -u appuser site drush -y en stage_file_proxy
 fi
