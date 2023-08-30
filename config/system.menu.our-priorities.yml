@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: our-priorities
 label: 'Our priorities'
-description: ''
+description: 'Footer menu: Our priorities'
 locked: false

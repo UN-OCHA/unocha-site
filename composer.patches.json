@@ -1,9 +1,8 @@
 {
   "patches": {
     "drupal/core": {
-      "https://www.drupal.org/project/drupal/issues/3370828": "PATCHES/core-css-js-aggregation-3370828.patch",
       "https://www.drupal.org/project/drupal/issues/3376927": "PATCHES/core-css-js-aggregation-3376927.patch",
-      "Regression: infinite height prevention disables scrolling in Source view": "https://www.drupal.org/files/issues/2023-07-11/3372922-19.patch"
+      "https://www.drupal.org/project/drupal/issues/3351600": "PATCHES/core-ckeditor5-dialog-fix-3351600.patch"
     },
     "drupal/csp": {
       "Simplify log format": "PATCHES/csp-log-format.patch"
@@ -30,9 +29,6 @@
     },
     "drupal/username_enumeration_prevention": {
       "Avoid leaking the path via Drupal.settings json": "PATCHES/username_enumeration_prevention-user-login-block-form-3312288.patch"
-    },
-    "drupal/xmlsitemap": {
-      "https://www.drupal.org/project/xmlsitemap/issues/3323148": "https://git.drupalcode.org/project/xmlsitemap/-/merge_requests/23.diff"
     }
   }
 }

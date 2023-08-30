@@ -1,0 +1,11 @@
+uuid: 7ade545d-384a-4359-b010-8175cf389011
+langcode: en
+status: true
+dependencies: {  }
+machine: feature
+description: null
+name: Feature
+weight: '0'
+url: ''
+fg_color: '#ffffff'
+bg_color: '#b23c72'

@@ -6,5 +6,5 @@ _core:
   default_config_hash: Q2Ra3jfoIVk0f3SjxJX61byRQFVBAbpzYDQOiY-kno8
 id: main
 label: 'Main menu'
-description: 'Main menu with mega menu'
+description: 'Main navigation menu'
 locked: true

@@ -9,6 +9,7 @@
  * - title: section title
  * - title_attributes: attributes for the title
  * - level: heading level for the title
+ * - type: type of attachments
  * - list: list of attachments with a preview, label, description and url
  * - list_attributes: attributes for the list
  * - lazy_load_first_preview: also lazy load the first attachment preview
@@ -16,31 +17,47 @@
 
 #}
 {% if list is not empty %}
-<section{{ attributes.addClass('unocha-reliefweb-attachment-list') }}>
-  <h{{ level }}{{ title_attributes.addClass('visually-hidden') }}>{{ title }}</h{{ level }}>
+<section{{ attributes.addClass('unocha-reliefweb-attachment-list', 'unocha-reliefweb-attachment-list--' ~ type) }}>
+  <h{{ level }}{{ title_attributes.addClass('unocha-reliefweb-attachment-list__title', type != 'interactive' ? 'visually-hidden') }}>{{ title }}</h{{ level }}>
   <ul{{ list_attributes }}>
     {% for item in list %}
-    <li>
-      <a href="{{ item.url }}">
-        {% if item.preview is not empty and loop.index == 1 and not lazy_load_first_preview %}
-          {%
-            set item = item|merge({
-              'preview': item.preview|merge({
-                '#attributes': (item.preview['#attributes'] ?? {})|merge({
-                  'loading': 'eager'
-                })
-              })
+    {# Load the first preview as eager unless specified otherwise, for better UX. #}
+    {% if item.preview is not empty and loop.index == 1 and not lazy_load_first_preview %}
+      {%
+        set item = item|merge({
+          'preview': item.preview|merge({
+            '#attributes': (item.preview['#attributes'] ?? {})|merge({
+              'loading': 'eager'
             })
-          %}
-        {% endif %}
+          })
+        })
+      %}
+    {% endif %}
+    <li>
+      {% if item.url %}
+      <a href="{{ item.url }}">
+      {% endif %}
 
         {{ item.preview }}
+        {% if item.label %}
         <strong class="unocha-reliefweb-attachment-list__label">{{ item.label }}</strong>
+        {% endif %}
+        {% if item.description %}
         <span class="unocha-reliefweb-attachment-list__description">{{ item.description }}</span>
+        {% endif %}
+
+      {% if item.url %}
       </a>
+      {% endif %}
     </li>
     {% endfor %}
   </ul>
+
+  {% if footer %}
+  <footer{{ footer_attributes.addClass('unocha-reliefweb-attachment-list__footer') }}>
+    {{ footer }}
+  </footer>
+  {% endif %}
 </section>
 {% endif %}
 

@@ -1,0 +1,9 @@
+{{ attach_library('common_design_subtheme/uno-hero') }}
+{{ attach_library('common_design/cd-bleed') }}
+<div class="cd-hero cd-bleed">
+  <div class="cd-hero__image">
+    {% block hero_image %}
+      {{ content.field_image }}
+    {% endblock %}
+  </div>
+</div>

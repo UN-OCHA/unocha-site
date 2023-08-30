@@ -9,6 +9,8 @@
   <head>
     <css-placeholder token="{{ placeholder_token }}">
   </head>
+  {# Overflow control is set inline to prevent vertical scroll on <video>
+    elements from Canto #}
   <body style="margin: 0; overflow: hidden;">
     {{ media|raw }}
   </body>

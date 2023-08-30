@@ -81,7 +81,7 @@ dd.uno-figure__value {
   font-size: var(--cd-font-size--small);
 }
 
-/* RW document */
+/* RW document in Figures paragraph type */
 .paragraph--type--figures .rw-river-article {
   display: inline-block;
   padding-top: 1.5rem;

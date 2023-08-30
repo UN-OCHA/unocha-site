@@ -37,13 +37,10 @@
  *
  * @ingroup themeable
  *
- * @todo remove the 'view-stories', 'view-display-id-stories',
- * 'paragraph--type--content-list', 'view-header' and 'view-content' which are
- * just there for compatibility with the existing styling from the
- * 'uno-card-list' component.
  */
 #}
-{{ attach_library('common_design_subtheme/uno-card-list') }}
+{% if content.stories %}
+{{ attach_library('common_design_subtheme/uno-stories') }}
 {{ attach_library('common_design_subtheme/rw-icons') }}
 
 {%
@@ -52,8 +49,7 @@
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished',
-    'uno-stories',
-    'paragraph--type--content-list'
+    'uno-stories'
   ]
 %}
 {% block paragraph %}
@@ -63,9 +59,12 @@
         {{- content.field_title -}}
         <span class="uno-stories__view_all">{{- content.view_all -}}</span>
       </header>
-      <div class="uno-stories__content">
+
+      {# Stories have a '#node' property. #}
+      <div class="uno-stories__content" data-count="{{ content.stories|filter(i => i['#node'])|length }}">
         {{ content|without('field_title', 'view_all') }}
       </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}
+{% endif %}

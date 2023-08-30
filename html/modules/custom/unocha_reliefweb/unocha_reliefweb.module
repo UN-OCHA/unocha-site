@@ -40,6 +40,8 @@ function unocha_reliefweb_theme() {
         'title' => t('Attachments'),
         // Section title attributes.
         'title_attributes' => NULL,
+        // Type of attachments.
+        'type' => NULL,
         // List of files. Each item has the following properties:
         // - url: link to the file
         // - name: file name
@@ -54,7 +56,7 @@ function unocha_reliefweb_theme() {
         'footer_attributes' => NULL,
         // Flag to indicate if the first attachment's preview should be lazy
         // loaded or not.
-        'lazy_load_first_preview' => TRUE,
+        'lazy_load_first_preview' => FALSE,
       ],
     ],
     // Theme for a list of articles.
@@ -142,6 +144,19 @@ function unocha_reliefweb_theme() {
         // List of countries with the a url to either the country page or the
         // river filtered by the country, a name and a shortname.
         'countries' => [],
+      ],
+    ],
+    'unocha_reliefweb_entity_image' => [
+      'variables' => [
+        // Wrapper attributes.
+        'attributes' => NULL,
+        // Image information with urls (different sizes), width, height, alt
+        // and copyright and optionally the loading mode.
+        'image' => [],
+        // Flag to indicate whether to show the caption or not.
+        'caption' => TRUE,
+        // Flag to indicate the default loading mode: lazy or eager.
+        'loading' => 'lazy',
       ],
     ],
     // Theme for an article's detailed information (ex: source, format).

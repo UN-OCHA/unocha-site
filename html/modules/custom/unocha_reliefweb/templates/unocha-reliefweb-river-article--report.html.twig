@@ -47,16 +47,6 @@
     }) }}
   </header>
 
-  {# Image (ex: headline). #}
-  {% if entity.image is not empty %}
-    {{ render_var({
-      '#theme': 'unocha_reliefweb_entity_image',
-      '#style': 'medium',
-      '#image': entity.image,
-      '#caption': false,
-    }) }}
-  {% endif %}
-
   {# Article attachment preview and/or summary. #}
   {% if entity.summary is not empty or entity.preview is not empty %}
   <div class="rw-river-article__content" lang="{{ entity.langcode }}">
