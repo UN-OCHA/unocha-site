@@ -11,11 +11,6 @@
     ],
     "repositories": [
         {
-           "type": "vcs",
-           "url": "https://github.com/orakili/canto_connector.git",
-           "no-api": true
-        },
-        {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
@@ -25,7 +20,7 @@
         }
     ],
     "require": {
-        "php": ">=8.1",
+        "php": ">=8.2",
         "bower-asset/choices.js": "^10.2",
         "composer/installers": "^1.12",
         "cweagans/composer-patches": "^1.7",
@@ -114,9 +109,7 @@
             "drupal/core-project-message": true,
             "oomphinc/composer-installers-extender": true,
             "orakili/composer-drupal-info-file-patch-helper": true,
-            "phpstan/extension-installer": true,
-            "symfony/flex": true,
-            "drupal-composer/preserve-paths": true
+            "phpstan/extension-installer": true
         }
     },
     "extra": {
@@ -233,9 +226,6 @@
         "release:minor": "conventional-changelog --minor",
         "release:major": "conventional-changelog --major",
         "git-hooks": "git config core.hooksPath git-hooks || exit 0",
-        "sass-prepare": "cd html/themes/custom/common_design_subtheme && npm install",
-        "sass-build": "cd html/themes/custom/common_design_subtheme && ./node_modules/.bin/sass sass:build",
-        "sass-cleanup": "cd html/themes/custom/common_design_subtheme && rm -rf ./node_modules",
         "sub-theme": "test -d html/themes/custom/common_design_subtheme || (cp -r html/themes/contrib/common_design/common_design_subtheme html/themes/custom/ && mv html/themes/custom/common_design_subtheme/common_design_subtheme.info.yml.example html/themes/custom/common_design_subtheme/common_design_subtheme.info.yml)",
         "sass": [
             "@sass-prepare",
