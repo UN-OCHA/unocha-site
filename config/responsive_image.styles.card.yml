@@ -1,0 +1,56 @@
+uuid: 33009b74-1cb7-434c-b58e-0b7e0039e41b
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.full_width_3_2_100
+    - image.style.full_width_3_2_40
+    - image.style.full_width_3_2_50
+    - image.style.full_width_3_2_80
+  theme:
+    - common_design
+id: card
+label: Card
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_3_2_50
+    breakpoint_id: common_design.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_3_2_100
+    breakpoint_id: common_design.lg
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_3_2_40
+    breakpoint_id: common_design.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_3_2_80
+    breakpoint_id: common_design.md
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_3_2_50
+    breakpoint_id: common_design.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_3_2_40
+    breakpoint_id: common_design.xs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_3_2_100
+    breakpoint_id: common_design.sm
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_3_2_80
+    breakpoint_id: common_design.xs
+    multiplier: 2x
+breakpoint_group: common_design
+fallback_image_style: full_width_3_2_50

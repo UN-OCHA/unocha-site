@@ -32,21 +32,3 @@ unocha_canto.settings:
     canto_oembed_base_url:
       type: string
       label: 'UNOCHA Canto OEmbed base URL (ex: current site URL).'
-
-field.field_settings.canto_portal:
-  type: mapping
-  mapping:
-    url:
-      type: string
-      label: 'URL of a Canto portal'
-
-field.formatter.settings.canto_portal:
-  type: mapping
-  label: 'Canto portal formatter settings'
-  mapping:
-    width:
-      type: integer
-      label: 'Content width'
-    precision:
-      type: integer
-      label: 'Content height'

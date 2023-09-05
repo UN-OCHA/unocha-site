@@ -1,0 +1,16 @@
+uuid: 3b2d8b35-3609-4b46-9829-22848de4f610
+langcode: en
+status: true
+dependencies: {  }
+name: full_width_3_2_50
+label: 'Full width - 3:2 - 50%'
+effects:
+  4f8d674c-7d2b-4257-9bd9-d41ef3fea2f9:
+    uuid: 4f8d674c-7d2b-4257-9bd9-d41ef3fea2f9
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 534
+      anchor: center-center
+pipeline: convert_to_webp
