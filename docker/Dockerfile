@@ -56,5 +56,6 @@ COPY --from=builder /srv/www/composer.patches.json /srv/www/composer.patches.jso
 COPY --from=builder /srv/www/composer.lock /srv/www/composer.lock
 COPY --from=builder /srv/www/PATCHES /srv/www/PATCHES
 COPY --from=builder /srv/www/scripts /srv/www/scripts
+COPY --from=builder /srv/www/docker/etc/nginx/apps/drupal/drupal.conf /etc/nginx/apps/drupal/drupal.conf
 COPY --from=builder /srv/www/docker/etc/nginx/custom /etc/nginx/custom/
 COPY --from=builder /srv/www/docker/etc/nginx/sites-enabled/02_mapbox_proxy_cache.conf /etc/nginx/sites-enabled/02_mapbox_proxy_cache.conf
