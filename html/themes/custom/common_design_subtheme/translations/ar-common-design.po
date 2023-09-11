@@ -202,10 +202,10 @@ msgstr ""
 msgid "OCHA donors"
 msgstr ""
 
-msgid "Unearmaked"
+msgid "Unearmarked"
 msgstr ""
 
-msgid "Earmaked"
+msgid "Earmarked"
 msgstr ""
 
 # common_design_subtheme/templates/modules/unocha_donors/unocha-donors-list--oct-unearmarked-donors.html.twig #
