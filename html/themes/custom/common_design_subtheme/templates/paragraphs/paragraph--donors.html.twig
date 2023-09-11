@@ -48,11 +48,25 @@
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
+    {% set donor_type = content.field_country_donors.0['#type'] ?? content.field_presence_donors.0['#type'] %}
+    {% set title = 'Funding for OCHA'|t %}
+    {% set text = 'The graphic below shows the top 10 OCHA donors for this year. The bar represents the percentage of earmarked vs. unearmarked funds per donor. For a complete listing of OCHA\'s donors, please click the button below.'|t %}
+    {% set text_formatted %}<p class="uno-donors__description">{{ text }}</p>{% endset %}
     {% block content %}
-      {{ content.donors }}
-      {{ content|without('donors', 'field_url', 'field_figures_footnote') }}
 
-      {% set donor_type = content.field_country_donors.0['#type'] ?? content.field_presence_donors.0['#type'] %}
+      {% if donor_type == 'oct_top_donors' %}
+        <h2{{ title_attributes.addClass('uno-donors__title', 'cd-block-title') }}>
+          {{ content.field_title[0]['#context']['value'] ? content.field_title[0]['#context']['value'] : title }}
+        </h2>
+        {{ content.field_text|render is not empty ? content.field_text : text_formatted }}
+      {% else %}
+        {{ content.field_title }}
+        {{ content.field_text }}
+      {% endif %}
+
+      {{ content.donors }}
+      {{ content|without('field_title', 'field_text', 'donors', 'field_url', 'field_figures_footnote') }}
+
       {% if donor_type == 'oct_unearmarked_donors' %}
         <div class="uno-donors__footnote">
           {{ content.field_figures_footnote }}
