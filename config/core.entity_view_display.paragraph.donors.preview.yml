@@ -7,6 +7,8 @@ dependencies:
     - field.field.paragraph.donors.field_country_donors
     - field.field.paragraph.donors.field_figures_footnote
     - field.field.paragraph.donors.field_presence_donors
+    - field.field.paragraph.donors.field_text
+    - field.field.paragraph.donors.field_title
     - field.field.paragraph.donors.field_url
     - paragraphs.paragraphs_type.donors
   module:
@@ -63,4 +65,6 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-hidden: {  }
+hidden:
+  field_text: true
+  field_title: true
