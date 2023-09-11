@@ -25,9 +25,15 @@
 {% set title = year ? 'Funding for OCHA in @year'|t({'@year': year}) : 'Funding for OCHA'|t %}
 {% set title_id = id ~ '-title' %}
 {% set list_id = id ~ '-list' %}
+{% set url = link('https://fts.unocha.org/home/2023/donors/view'|t, 'https://fts.unocha.org/home/2023/donors/view')|render %}
+
 <section{{ attributes.addClass('uno-donors', 'uno-donors--' ~ type|clean_class, 'uno-donors--collapsible').setAttribute('id', id) }}>
   <h{{ level }}{{ title_attributes.addClass('uno-donors__title', 'cd-block-title').setAttribute('id', title_id) }}>{{ title }}</h{{ level }}>
-  <p class="uno-donors__description">{% trans %}The graphic below shows the top 10 OCHA donors for this year. The bar represents the percentage of earmarked vs. unearmarked funds per donor. For a complete listing of OCHA's donors, please click the button below.{% endtrans %}</p>
+  <p class="uno-donors__description">
+    {% trans %}
+      The graphic below shows the top 10 OCHA donors for this year. The bar represents the percentage of earmarked vs. unearmarked funds per donor. For a complete listing of OCHA's donors, please click the button below. For a comprehensive overview of humanitarian funding, visit: {{ url }}
+    {% endtrans %}
+  </p>
   <p class="uno-donors__legend">
     <span class="uno-donors__legend__unearmarked">{{ 'Unearmarked %'|t }}</span>
     <span class="uno-donors__legend__earmarked">{{ 'Earmarked %'|t }}</span>
