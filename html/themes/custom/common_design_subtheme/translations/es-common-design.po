@@ -191,7 +191,7 @@ msgstr ""
 msgid "Show top 10 donors"
 msgstr ""
 
-msgid "OCHA donors in @year"
+msgid "Funding for OCHA in @year"
 msgstr ""
 
 msgid "OCHA donors"
