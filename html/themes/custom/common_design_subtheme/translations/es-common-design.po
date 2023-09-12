@@ -185,7 +185,7 @@ msgstr ""
 msgid "The graphic below shows the top 10 OCHA donors for this year. The bar represents the percentage of earmarked vs. unearmarked funds per donor. For a complete listing of OCHA's donors, please click the button below. For a comprehensive overview of humanitarian funding, visit: @link"
 msgstr ""
 
-msgid "https://fts.unocha.org/home/@year/donors/view"
+msgid "https://fts.unocha.org"
 msgstr ""
 
 msgid "Show all donors"
