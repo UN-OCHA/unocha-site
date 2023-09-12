@@ -28,7 +28,7 @@
 {% set list_id = id ~ '-list' %}
 {# We use t() for the URL so that, in theory, we could have different URLs for
    different languages. #}
-{% set url = 'https://fts.unocha.org/home/@year/donors/view'|t({'@year': year}) %}
+{% set url = 'https://fts.unocha.org'|t %}
 {% set link = link(url, url)|render %}
 
 <section{{ attributes.addClass('uno-donors', 'uno-donors--' ~ type|clean_class, 'uno-donors--collapsible').setAttribute('id', id) }}>
