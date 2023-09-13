@@ -25,7 +25,7 @@
 #}
 {% if list is not empty %}
 {{ attach_library('common_design_subtheme/uno-donors') }}
-{% set title = title ?: 'Funding of OCHA in @year'|t({'@year': year ?? date('Y')}) %}
+{% set title = title ?: 'Funding for OCHA in @year'|t({'@year': year ?? date('Y')}) %}
 {% set title_id = id ~ '-title' %}
 {% set list_id = id ~ '-list' %}
 <section{{ attributes.addClass('uno-donors', 'uno-donors--' ~ type|clean_class, 'uno-donors--collapsible').setAttribute('id', id) }}>
