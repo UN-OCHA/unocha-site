@@ -54,7 +54,7 @@
 }
 
 /* Matches .cd-block-title */
-.field--name-field-title {
+.field--name-field-title:not(.form-wrapper) {
   margin: 0 0 1rem 0;
   margin-top: 0;
   margin-bottom: 1rem;
@@ -112,6 +112,11 @@ p.headline {
 blockquote::before {
   /* content: open-quote; */
   content: none;
+}
+
+/* Prevent excessive spacing between text widget and description. */
+.field--widget-text-textarea .filter-wrapper {
+  float: right;
 }
 
 /**

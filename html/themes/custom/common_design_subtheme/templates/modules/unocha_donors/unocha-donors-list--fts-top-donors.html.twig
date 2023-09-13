@@ -11,21 +11,27 @@
  * - level: heading level for the title
  * - title: list's title
  * - title_attributes: title attributes
+ * - description: list's description
+ * - description_attributes: description attributes
  * - year: the year of the data
  * - list: list of donors/sectors with name and optional pledged/paid amounts
  * - list_attributes: attributes for the list
  * - item_attributes: attributes for the list items
  * - format: number format
  * - precision: number format precision
+ * - item: KeyFigure or KeyFigurePresence item
  */
 
 #}
 {% if list is not empty %}
 {{ attach_library('common_design_subtheme/uno-donors') }}
-{% set title = 'Top 5 donors'|t %}
+{% set title = title ?: 'Top 5 donors'|t %}
 <section{{ attributes.addClass('uno-donors', 'uno-donors--' ~ type|clean_class).setAttribute('id', id) }}>
   <header class="uno-donors__header">
     <h{{ level }}{{ title_attributes.addClass('uno-donors__title') }}>{{ title }}</h{{ level }}>
+    {% if description %}
+      <div{{ description_attributes.addClass('uno-donors__description') }}>{{ description }}</div>
+    {% endif %}
   </header>
   {% apply spaceless %}
   <dl{{ list_attributes.addClass('uno-donors__list', 'uno-donors__list--with-figures') }}>
