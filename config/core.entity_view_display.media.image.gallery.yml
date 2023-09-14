@@ -1,0 +1,44 @@
+uuid: 944a241f-9797-44aa-b0ab-44e5a6b81e2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.gallery
+    - field.field.media.image.field_canto_asset_id
+    - field.field.media.image.field_image_caption
+    - field.field.media.image.field_image_copyright
+    - field.field.media.image.field_media_image
+    - image.style.story
+    - media.type.image
+  module:
+    - image
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.image.gallery
+targetEntityType: media
+bundle: image
+mode: gallery
+content:
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: story
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_canto_asset_id: true
+  field_image_caption: true
+  field_image_copyright: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

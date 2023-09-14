@@ -1,0 +1,54 @@
+uuid: c0a3132e-663b-492c-a74b-a0b2911336c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_responses
+    - paragraphs.paragraphs_type.responses
+    - views.view.responses
+  module:
+    - viewsreference
+id: paragraph.responses.field_responses
+field_name: field_responses
+entity_type: paragraph
+bundle: responses
+label: Responses
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    display_id: active_responses
+    data: 'a:5:{s:5:"title";N;s:5:"pager";N;s:6:"offset";N;s:8:"argument";N;s:5:"limit";N;}'
+    target_uuid: 183871df-2e3b-49cb-b42a-69eaa3e878ae
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: 0
+  plugin_types:
+    block: block
+    default: 0
+    page: 0
+    feed: 0
+  preselect_views:
+    responses: responses
+    content: 0
+    events: 0
+    files: 0
+    frontpage: 0
+    media: 0
+    media_centre: 0
+    media_library: 0
+    redirect: 0
+    regions: 0
+    stories: 0
+    user_admin_people: 0
+  enabled_settings:
+    title: title
+    pager: 0
+    offset: 0
+    argument: 0
+    limit: 0
+field_type: viewsreference

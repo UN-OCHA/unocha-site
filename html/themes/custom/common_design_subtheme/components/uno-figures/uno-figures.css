@@ -1,0 +1,125 @@
+.uno-figures {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 480px) {
+  .uno-figures {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+  .field--name-field-text + .uno-figures {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.uno-figure {
+  flex-basis: 100%;
+  padding: 0 0 1rem;
+}
+
+.uno-figure__label {
+  font-size: 1rem;
+  font-weight: bold;
+}
+dt.uno-figure__label-wrapper {
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 0;
+}
+
+.uno-figure__value {
+  color: var(--brand-primary);
+  font-size: 1.625rem;
+  font-weight: bold;
+}
+dd.uno-figure__value {
+  margin: 0;
+}
+
+@media screen and (min-width: 480px) {
+  .uno-figure {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 50%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    align-content: flex-end;
+    padding-inline-end: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .uno-figure {
+    flex-basis: 33%;
+  }
+
+  .uno-figure__label {
+    font-size: 1.125rem;
+  }
+
+  .uno-figure__value {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .uno-figure {
+    flex-basis: 25%;
+  }
+}
+
+.uno-figures__footnote {
+  max-width: var(--cd-max-content-width);
+  font-size: var(--cd-font-size--small);
+}
+
+/* RW document in Figures paragraph type */
+.paragraph--type--figures .rw-river-article {
+  display: inline-block;
+  padding-top: 1.5rem;
+}
+.paragraph--type--figures .rw-river-article__attachment {
+  padding: 1rem;
+  border: 3px solid var(--brand-grey);
+}
+.paragraph--type--figures .rw-river-article__attachment {
+  width: 12rem;
+  text-align: center;
+}
+.paragraph--type--figures .rw-river-article__attachment img {
+  width: 100%;
+}
+.paragraph--type--figures .rw-river-article__attachment a {
+  display: block;
+  font-weight: 500;
+
+}
+.paragraph--type--figures .rw-river-article__attachment a::after {
+  display: inline-block;
+  overflow: hidden;
+  width: 12px;
+  height: 12px;
+  margin: 0 0 0 6px;
+  content: "";
+  background: var(--rw-icons--common--download--12--dark-blue);
+}
+
+@media screen and (min-width: 1024px) {
+  .paragraph--type--figures {
+    display: flex;
+  }
+  .uno-figures__wrapper {
+    flex: 0 1 100%;
+  }
+  .paragraph--type--figures .rw-river-article {
+    padding-top: 0;
+  }
+}

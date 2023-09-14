@@ -1,0 +1,7 @@
+type: module
+name: UNOCHA Canto
+description: 'Provides integration with Canto.'
+package: unocha
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:unocha_utility

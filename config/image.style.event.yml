@@ -1,0 +1,16 @@
+uuid: ccf8e5f2-6bc6-4d6b-9641-42e3e392fd97
+langcode: en
+status: true
+dependencies: {  }
+name: event
+label: Event
+effects:
+  7f02a2f7-4626-42c6-aae3-d323d5ea7cf9:
+    uuid: 7f02a2f7-4626-42c6-aae3-d323d5ea7cf9
+    id: image_scale
+    weight: 1
+    data:
+      width: 820
+      height: null
+      upscale: false
+pipeline: convert_to_webp

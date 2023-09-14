@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * @file
+ * Module file for the unocha_contact module.
+ */
+
+use Drupal\contact\MessageInterface;
+
+/**
+ * Implements hook_mail_alter().
+ */
+function unocha_contact_mail_alter(array &$message) {
+  if (isset($message['id']) && $message['id'] === 'contact_page_mail') {
+    if (isset($message['params']['contact_message']) && $message['params']['contact_message'] instanceof MessageInterface) {
+      $contact_message = $message['params']['contact_message'];
+
+      /** @var \Drupal\taxonomy\TermInterface[] $contacts */
+      $contacts = $contact_message->field_contacts?->referencedEntities();
+
+      $emails = [];
+      $categories = [];
+      foreach ($contacts as $contact) {
+        $categories[$contact->id()] = $contact->label();
+        foreach ($contact->field_emails as $item) {
+          $email = trim($item->value ?? '');
+          if (!empty($email)) {
+            $emails[] = $email;
+          }
+        }
+      }
+
+      $subject = $contact_message->subject?->value;
+      if (!empty($subject) && !empty($categories)) {
+        $message['subject'] = (string) t('[@categories] @subject', [
+          '@categories' => implode(', ', $categories),
+          '@subject' => $subject,
+        ]);
+      }
+
+      $mail = trim($contact_message->mail?->value ?? '');
+      $site_name = \Drupal::config('system.site')->get('name');
+      if (!empty($mail) && !empty($site_name) && !empty($message['from'])) {
+        $message['headers']['From'] = (string) t('"@mail via @site_name" <@from>', [
+          '@mail' => $mail,
+          '@site_name' => $site_name,
+          '@from' => $message['from'],
+        ]);
+      }
+    }
+
+    if (empty($emails)) {
+      $message['send'] = FALSE;
+    }
+    else {
+      $message['to'] = implode(',', $emails);
+    }
+  }
+}

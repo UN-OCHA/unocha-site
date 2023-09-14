@@ -1,11 +1,27 @@
-{% embed '@common_design/cd/cd-footer/cd-footer.html.twig' %}
+{# Displays the site footer #}
+
+{{ attach_library('common_design/cd-ocha-services') }}
+
+<footer class="cd-footer" aria-label="{{ 'Site footer'|t }}">
+  <div class="cd-container cd-footer__inner">
+
+  {% include '@common_design_subtheme/uno/subscribe.html.twig' %}
+
+  {% block footer_menu %}
+    {% include '@common_design/cd/cd-footer/cd-footer-menu.html.twig' %}
+  {% endblock %}
 
   {% block social_menu %}
     {% include '@common_design_subtheme/cd/cd-footer/cd-social-menu.html.twig' %}
   {% endblock %}
 
-  {% block ocha %}
-    {% include '@common_design_subtheme/cd/cd-header/cd-ocha.html.twig' %}
+  {% block copyright %}
+    {% include '@common_design_subtheme/cd/cd-footer/cd-copyright.html.twig' %}
   {% endblock %}
 
-{% endembed %}
+  {% block ocha %}
+    {# Intentionally empty to exclude block from base theme #}
+  {% endblock %}
+
+  </div>
+</footer>

@@ -6,13 +6,14 @@ dependencies:
     - field.field.node.story.body
     - field.field.node.story.field_country
     - field.field.node.story.field_custom_content
-    - field.field.node.story.field_image_caption
-    - field.field.node.story.field_regional_office
+    - field.field.node.story.field_regions
+    - field.field.node.story.field_responses
     - field.field.node.story.field_story_image
     - field.field.node.story.field_story_type
     - field.field.node.story.field_theme
     - node.type.story
   module:
+    - choices
     - layout_paragraphs
     - media_library
     - path
@@ -24,7 +25,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 3
+    weight: 2
     region: content
     settings:
       rows: 9
@@ -34,39 +35,40 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   field_country:
-    type: options_select
-    weight: 6
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_custom_content:
-    type: layout_paragraphs
+    type: choices_widget
     weight: 8
     region: content
     settings:
-      preview_view_mode: default
-      nesting_depth: 0
-      require_layouts: 0
-      empty_message: ''
+      configuration_options: ''
     third_party_settings: {  }
-  field_image_caption:
-    type: string_textfield
-    weight: 2
+  field_custom_content:
+    type: layout_paragraphs
+    weight: 3
     region: content
     settings:
-      size: 60
-      placeholder: ''
+      preview_view_mode: preview
+      nesting_depth: 2
+      require_layouts: 0
+      empty_message: 'Placeholder message to display when field is empty'
     third_party_settings: {  }
-  field_regional_office:
-    type: options_select
+  field_regions:
+    type: choices_widget
+    weight: 6
+    region: content
+    settings:
+      configuration_options: ''
+    third_party_settings: {  }
+  field_responses:
+    type: choices_widget
     weight: 7
     region: content
-    settings: {  }
+    settings:
+      configuration_options: ''
     third_party_settings: {  }
   field_story_image:
     type: media_library_widget
@@ -82,10 +84,11 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_theme:
-    type: options_select
+    type: choices_widget
     weight: 5
     region: content
-    settings: {  }
+    settings:
+      configuration_options: ''
     third_party_settings: {  }
   langcode:
     type: language_select
@@ -96,27 +99,27 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 14
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 12
+    weight: 13
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 16
+    weight: 17
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 13
+    weight: 14
     region: content
     settings:
       display_label: true
@@ -129,6 +132,11 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  translation:
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
     weight: 10
@@ -140,7 +148,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 15
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }

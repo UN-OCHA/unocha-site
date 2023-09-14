@@ -1,0 +1,83 @@
+uuid: 2069baf8-044f-4232-9bf4-5c31f7ec754d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.figures
+    - field.field.paragraph.figures.field_figures
+    - field.field.paragraph.figures.field_figures_footnote
+    - field.field.paragraph.figures.field_presence_figures
+    - field.field.paragraph.figures.field_reliefweb_document
+    - field.field.paragraph.figures.field_text
+    - field.field.paragraph.figures.field_title
+    - field.field.paragraph.figures.paragraph_view_mode
+    - paragraphs.paragraphs_type.figures
+  module:
+    - layout_builder
+    - ocha_key_figures
+    - text
+    - unocha_reliefweb
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.figures.figures
+targetEntityType: paragraph
+bundle: figures
+mode: figures
+content:
+  field_figures:
+    type: key_figure
+    label: hidden
+    settings:
+      format: decimal
+      precision: 1
+      percentage: 'yes'
+      currency_symbol: 'yes'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_figures_footnote:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_presence_figures:
+    type: key_figure_presence
+    label: hidden
+    settings:
+      format: decimal
+      precision: 1
+      percentage: 'yes'
+      currency_symbol: 'yes'
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_reliefweb_document:
+    type: reliefweb_document
+    label: hidden
+    settings:
+      white_label: true
+      ocha_only: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  paragraph_view_mode: true

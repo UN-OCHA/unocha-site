@@ -1,0 +1,48 @@
+uuid: f00193f5-76d9-4867-a421-a7d1bf506c6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.reliefweb_river_curated.field_limit
+    - field.field.paragraph.reliefweb_river_curated.field_reliefweb_documents
+    - field.field.paragraph.reliefweb_river_curated.field_text
+    - field.field.paragraph.reliefweb_river_curated.field_title
+    - field.field.paragraph.reliefweb_river_curated.paragraph_view_mode
+    - paragraphs.paragraphs_type.reliefweb_river_curated
+  module:
+    - text
+    - unocha_reliefweb
+id: paragraph.reliefweb_river_curated.default
+targetEntityType: paragraph
+bundle: reliefweb_river_curated
+mode: default
+content:
+  field_reliefweb_documents:
+    type: reliefweb_document_river
+    label: hidden
+    settings:
+      white_label: true
+      ocha_only: true
+      view_all_link: false
+      paginated: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_limit: true
+  paragraph_view_mode: true

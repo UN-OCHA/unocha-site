@@ -1,0 +1,7 @@
+type: module
+name: UNOCHA Migrate
+description: 'Migrate/create content.'
+package: unocha
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:unocha_reliefweb

@@ -1,0 +1,10 @@
+uuid: 4d4edca1-5711-4beb-b227-335e56878baa
+langcode: en
+status: true
+dependencies: {  }
+id: text_and_image
+label: 'Text and Image'
+icon_uuid: null
+icon_default: null
+description: 'Text and image with alignment.'
+behavior_plugins: {  }

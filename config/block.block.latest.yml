@@ -1,0 +1,25 @@
+uuid: 27707afb-1c9d-4e7a-88d6-21531eb90d47
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.latest
+  module:
+    - system
+  theme:
+    - common_design_subtheme
+id: latest
+theme: common_design_subtheme
+region: footer_soft
+weight: -8
+provider: null
+plugin: 'system_menu_block:latest'
+settings:
+  id: 'system_menu_block:latest'
+  label: Latest
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

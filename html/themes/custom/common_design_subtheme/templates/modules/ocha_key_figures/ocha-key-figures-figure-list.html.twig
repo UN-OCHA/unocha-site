@@ -1,0 +1,19 @@
+{#
+
+/**
+ * @file
+ * Template for a list of files.
+ *
+ * Available variables:
+ * - attributes: list attributes
+ * - figures: list of renderable figures.
+ */
+
+#}
+{% if figures is not empty %}
+{% set attributes = attributes ?? create_attribute() %}
+<dl{{ attributes.addClass('uno-figures') }}>
+  {{ figures }}
+</dl>
+{% endif %}
+

@@ -1,0 +1,25 @@
+uuid: 29d3c07e-5af1-467f-ad26-afc7f6a9d48b
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - common_design_claro
+id: common_design_claro_useraccountmenu
+theme: common_design_claro
+region: header
+weight: -1
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

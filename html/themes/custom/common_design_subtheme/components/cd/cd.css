@@ -1,0 +1,271 @@
+body {
+  color: var(--brand-default-text-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--brand-primary--dark);
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  color: var(--brand-primary);
+}
+
+.field--type-text-with-summary a,
+.field--name-field-text a {
+  text-decoration: underline;
+}
+
+.cd-global-header {
+  background: var(--brand-primary--dark);
+}
+
+.cd-global-header__inner {
+  /* OCHA Services is removed so we adjust this */
+  justify-content: flex-end;
+}
+
+.js .cd-global-header__actions {
+  background: linear-gradient(to bottom, var(--brand-primary--dark), var(--brand-primary--dark) 33.33%, var(--cd-white) 33.33%, var(--cd-white) 66.66%, var(--brand-primary--dark) 66.66%);
+}
+
+.js .cd-global-header__actions > * {
+  background: var(--brand-primary--dark);
+}
+
+.cd-layout-highlighted {
+  background: var(--brand-primary);
+}
+
+.cd-global-header__dropdown {
+  background: var(--brand-primary--dark);
+}
+
+.cd-global-header button[aria-expanded="true"]::before {
+  border-color: transparent transparent var(--brand-primary--dark);
+}
+
+.cd-language-switcher__dropdown {
+  background-color: var(--brand-primary--dark);
+}
+
+/* Set bg colour so when menu items break layout, we can see them */
+.cd-nav__menu-item--level-1 {
+  background-color: white;
+}
+
+/* Last menu item with coloured background */
+.cd-nav > .menu > .menu-item:last-child a {
+  color: black;
+  background: var(--brand-highlight);
+}
+
+@media screen and (min-width: 1024px) {
+  /* Dontate button */
+  .cd-nav > .menu > .menu-item:last-child a {
+    padding: 0 20px;
+  }
+
+  /* Second last menu item dropdown aligns right since Donate button is not wide
+    enough to prevent 2nd last item overflowing the right edge */
+  [dir=ltr] .cd-nav > .menu > .menu-item:nth-last-child(2) > ul.menu {
+    right: 0;
+  }
+
+  [dir=rtl] .cd-nav > .menu > .menu-item:nth-last-child(2) > ul.menu {
+    left: 0;
+  }
+
+  /* If the menu items wrap, make sure they sit above the hero image */
+  #main-content {
+    z-index: 1;
+  }
+  .cd-header {
+    z-index: 2;
+  }
+}
+
+/* Soft footer */
+.cd-soft-footer {
+  text-align: left;
+}
+
+.cd-soft-footer h3 {
+  color: white;
+}
+
+.cd-soft-footer ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.cd-soft-footer,
+.cd-footer {
+  color: var(--cd-default-text-color);
+  background: var(--brand-grey);
+}
+
+.cd-soft-footer {
+  padding: 3rem 0 0;
+}
+
+@media screen and (min-width: 576px) {
+  .cd-soft-footer {
+    padding: 4rem 0 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .cd-soft-footer {
+    padding: 6rem 0 0;
+  }
+}
+
+.cd-soft-footer__inner {
+  align-items: flex-start;
+}
+
+.cd-soft-footer .cd-soft-footer__nav-responses nav {
+  padding: 1rem;
+  color: black;
+  background-color: var(--brand-highlight);
+}
+
+@media screen and (min-width: 576px) {
+  .cd-soft-footer .cd-soft-footer__inner .cd-soft-footer__nav-responses {
+    max-width: 45%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cd-soft-footer .cd-soft-footer__nav-responses {
+    /* Height of nav h2 and its bottom margin */
+    max-width: unset;
+    margin-top: -18px;
+  }
+}
+
+.cd-soft-footer .cd-soft-footer__nav-responses a {
+  color: black;
+}
+
+.cd-soft-footer .cd-soft-footer__nav-responses a:hover,
+.cd-soft-footer .cd-soft-footer__nav-responses a:focus {
+  color: black;
+}
+
+.cd-soft-footer .cd-soft-footer__nav-responses h2 {
+  color: black;
+}
+
+.cd-soft-footer .cd-soft-footer__nav-wrapper > nav {
+  margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 576px) {
+  .cd-soft-footer .cd-soft-footer__inner .cd-soft-footer__nav-wrapper {
+    display: flex;
+    flex: 1 0 75%;
+    flex-wrap: wrap;
+    align-items: flex-start
+  }
+
+  .cd-soft-footer .cd-soft-footer__nav-wrapper > nav {
+    flex: 0 1 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cd-soft-footer__inner {
+    display: flex;
+  }
+
+  .cd-soft-footer .cd-soft-footer__inner .cd-soft-footer__nav-responses {
+    flex: 0 1 25%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .cd-soft-footer .cd-soft-footer__nav-wrapper > nav {
+    flex: 0 1 33%;
+  }
+}
+
+.cd-footer a,
+.cd-soft-footer a {
+  color: var(--cd-default-text-color);
+}
+
+.cd-soft-footer nav li {
+  margin-bottom: 12px;
+  margin-inline-end: 1rem;
+}
+
+.cd-soft-footer nav a {
+  display: block;
+  font-size: var(--cd-font-size--tiny);
+  font-weight: 500;
+}
+
+.cd-soft-footer h2 {
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: var(--brand-primary);
+  font-size: var(--cd-font-size--ref);
+  font-weight: 700;
+}
+
+.cd-footer a:hover,
+.cd-soft-footer a:hover,
+.cd-soft-footer a:focus {
+  color: var(--cd-default-text-color);
+}
+
+a.cd-footer-social__link svg {
+  fill: var(--brand-primary);
+}
+
+.cd-mandate svg,
+.cd-footer-copyright svg {
+  fill: var(--cd-default-text-color);
+}
+
+@media screen and (min-width: 1024px) {
+  .cd-footer__section--menu,
+  .cd-footer__section--social {
+    padding-bottom: 0;
+  }
+}
+
+.cd-footer__section--copyright {
+  flex: 1 0 auto;
+}
+
+.cd-footer-copyright {
+  display: block;
+  text-align: start;
+}
+
+/* Change the menu item style for the Media Centre (top menu) only */
+.cd-global-header__actions > nav:first-child .cd-user-menu a {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 1024px) {
+  .cd-global-header__actions > nav:first-child .cd-user-menu a {
+    margin-inline-end: -14px;
+  }
+
+  .user-logged-in .cd-global-header__actions > nav:first-child .cd-user-menu a {
+    margin-inline-end: unset;
+  }
+}
+
+.cd-user-menu a:hover,
+.cd-user-menu a:focus {
+  color: white;
+}

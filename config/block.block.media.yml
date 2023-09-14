@@ -1,0 +1,25 @@
+uuid: 7c9900f5-5dce-4516-a268-95d5603285ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.media
+  module:
+    - system
+  theme:
+    - common_design_subtheme
+id: media
+theme: common_design_subtheme
+region: footer_soft
+weight: -5
+provider: null
+plugin: 'system_menu_block:media'
+settings:
+  id: 'system_menu_block:media'
+  label: Media
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

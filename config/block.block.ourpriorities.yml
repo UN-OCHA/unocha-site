@@ -1,0 +1,25 @@
+uuid: 610dce7f-644a-4bf6-b68d-6af493ea8830
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.our-priorities
+  module:
+    - system
+  theme:
+    - common_design_subtheme
+id: ourpriorities
+theme: common_design_subtheme
+region: footer_soft
+weight: -7
+provider: null
+plugin: 'system_menu_block:our-priorities'
+settings:
+  id: 'system_menu_block:our-priorities'
+  label: 'Our priorities'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

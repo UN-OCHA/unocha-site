@@ -1,0 +1,34 @@
+uuid: 430566bb-70e3-4154-8fd1-c26e0a35f1ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.events.field_events
+    - paragraphs.paragraphs_type.events
+  module:
+    - viewsreference
+id: paragraph.events.default
+targetEntityType: paragraph
+bundle: events
+mode: default
+content:
+  field_events:
+    type: viewsreference_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true

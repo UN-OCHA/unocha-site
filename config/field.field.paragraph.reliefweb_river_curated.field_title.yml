@@ -1,0 +1,19 @@
+uuid: 4c7fdc9e-135e-43df-aa4a-381d25bd8ca3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.reliefweb_river_curated
+id: paragraph.reliefweb_river_curated.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: reliefweb_river_curated
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

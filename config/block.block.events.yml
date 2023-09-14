@@ -1,0 +1,25 @@
+uuid: b389b0e9-2622-461f-861d-593f2d3620dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.events
+  module:
+    - system
+  theme:
+    - common_design_subtheme
+id: events
+theme: common_design_subtheme
+region: footer_soft
+weight: -6
+provider: null
+plugin: 'system_menu_block:events'
+settings:
+  id: 'system_menu_block:events'
+  label: Events
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

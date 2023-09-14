@@ -1,0 +1,8 @@
+uuid: b71843cf-c05c-471a-aa8d-60d885e16c82
+langcode: en
+status: true
+dependencies: {  }
+name: 'Office type'
+vid: office_type
+description: ''
+weight: 0

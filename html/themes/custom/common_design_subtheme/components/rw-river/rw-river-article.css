@@ -1,0 +1,70 @@
+:root {
+  --cd-flow-space: 24px;
+}
+
+/**
+ * Article in a river.
+ */
+.rw-river-article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 24px 0;
+  border-bottom: 1px solid var(--cd-reliefweb-brand-grey--light);
+}
+/* Prevent overflow in IE11 */
+@media all and (min-width: 768px) and (-ms-high-contrast: none) {
+  .rw-river-article {
+    flex: 1 0 100%;
+  }
+}
+.rw-river-article:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.rw-river-article:only-child {
+  padding-bottom: 0;
+}
+.rw-river-article .rw-river-article__title {
+  margin-top: 0;
+  color: black;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.rw-river-article .rw-river-article__title a {
+  color: inherit;
+}
+.rw-river-article .rw-river-article__title a:hover,
+.rw-river-article .rw-river-article__title a:focus {
+  color: var(--brand-default-text-color);
+}
+.rw-river-article .rw-river-article__content {
+  color: var(--cd-reliefweb-brand-grey--mid);
+}
+
+@media screen and (min-width: 768px) {
+  .rw-river-article .rw-river-article__header {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+  }
+}
+
+/* Article with a thumbnail preview (typically Map and Infographic). */
+.rw-river-article .rw-river-article__content img {
+  float: left;
+  max-height: 118px;
+  margin: 2px 20px 0 0;
+  border: 1px solid var(--cd-reliefweb-brand-grey--light);
+}
+.rw-river-article .rw-river-article__content img + p {
+  margin-top: 0;
+}
+.rw-river-article .rw-river-article__footer {
+  /* Clear any floating from the content. */
+  clear: both;
+  padding-top: 16px;
+}
+.rw-river-article .rw-river-article__header + .rw-river-article__footer {
+  padding-top: 12px;
+}

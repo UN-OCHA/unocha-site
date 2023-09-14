@@ -14,34 +14,64 @@ bundle: event
 label: 'Custom content'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles: null
+    target_bundles: {  }
     negate: 1
     target_bundles_drag_drop:
-      card:
-        weight: 7
+      call_to_action:
+        weight: 19
         enabled: false
-      card_list:
-        weight: 9
+      content_list:
+        weight: 21
+        enabled: false
+      datawrapper:
+        weight: 22
         enabled: false
       embed:
         weight: 8
         enabled: false
-      image_caption:
-        weight: 10
+      figures:
+        weight: 24
+        enabled: false
+      image:
+        weight: 25
         enabled: false
       layout:
         weight: 11
         enabled: false
-      node_list:
-        weight: 13
+      node:
+        weight: 27
+        enabled: false
+      reliefweb_document:
+        weight: 28
+        enabled: false
+      reliefweb_river:
+        weight: 29
+        enabled: false
+      rss_feed:
+        weight: 30
+        enabled: false
+      rw_key_figures:
+        weight: 31
+        enabled: false
+      tab:
+        weight: 32
+        enabled: true
+      tabs:
+        weight: 33
         enabled: false
       text:
         weight: 12
+        enabled: false
+      text_and_image:
+        weight: 35
+        enabled: false
+      video:
+        weight: 36
         enabled: false
 field_type: entity_reference_revisions

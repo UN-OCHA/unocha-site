@@ -47,25 +47,13 @@
   ]
 %}
 
-{%
-  set viewmode_classes = [
-    paragraph.field_display_mode.value ? 'paragraph--type--list--' ~ paragraph.field_display_mode.value : 'paragraph--type--list--teaser',
-  ]
-%}
 {{ attach_library('common_design_subtheme/cd-cards')}}
 {{ attach_library('common_design_subtheme/uno-card-list')}}
 
-
 {% block paragraph %}
-  <div{{attributes.addClass(viewmode_classes)}}>
-      <div{{ attributes
-        .addClass(classes)
-        .setAttribute('data-type', paragraph.bundle)
-        .setAttribute('id', paragraph.bundle ~ '-' ~ paragraph.id())
-      }}>
-        {% block content %}
-          {{ content }}
-        {% endblock %}
-      </div>
-    </div>
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  </div>
 {% endblock paragraph %}

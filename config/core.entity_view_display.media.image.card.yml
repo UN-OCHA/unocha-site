@@ -1,0 +1,44 @@
+uuid: 853d3594-a660-4b8f-9979-7756ad4960ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.card
+    - field.field.media.image.field_canto_asset_id
+    - field.field.media.image.field_image_caption
+    - field.field.media.image.field_image_copyright
+    - field.field.media.image.field_media_image
+    - media.type.image
+    - responsive_image.styles.card
+  module:
+    - layout_builder
+    - responsive_image
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.image.card
+targetEntityType: media
+bundle: image
+mode: card
+content:
+  field_media_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: card
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_canto_asset_id: true
+  field_image_caption: true
+  field_image_copyright: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

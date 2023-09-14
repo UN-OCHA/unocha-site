@@ -1,0 +1,22 @@
+uuid: a0501eab-e0c7-4d24-9abf-209525bebaac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_reliefweb_documents
+    - paragraphs.paragraphs_type.reliefweb_river_curated
+  module:
+    - unocha_reliefweb
+id: paragraph.reliefweb_river_curated.field_reliefweb_documents
+field_name: field_reliefweb_documents
+entity_type: paragraph
+bundle: reliefweb_river_curated
+label: Documents
+description: 'ReliefWeb document URLs.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  river: updates
+field_type: reliefweb_document

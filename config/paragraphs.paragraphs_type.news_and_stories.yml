@@ -1,0 +1,10 @@
+uuid: fec4ed6f-d7c6-4268-a297-9770763a85dd
+langcode: en
+status: true
+dependencies: {  }
+id: news_and_stories
+label: 'News and Stories'
+icon_uuid: null
+icon_default: null
+description: 'Displays a list of news and stories.'
+behavior_plugins: {  }

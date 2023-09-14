@@ -1,0 +1,8 @@
+uuid: e2c705e7-95ae-4d5b-bfd9-cd2da754d34b
+langcode: en
+status: true
+dependencies: {  }
+id: our-priorities
+label: 'Our priorities'
+description: 'Footer menu: Our priorities'
+locked: false

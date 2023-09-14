@@ -1,15 +1,10 @@
 uuid: 78f3af09-d568-4cd2-8419-ad31ea31c5cf
 langcode: en
 status: true
-dependencies:
-  module:
-    - layout_paragraphs
+dependencies: {  }
 id: reliefweb_river
-label: 'Reliefweb - Feed'
+label: 'ReliefWeb - River'
 icon_uuid: null
 icon_default: null
-description: ''
-behavior_plugins:
-  layout_paragraphs:
-    enabled: false
-    available_layouts: {  }
+description: 'List of documents from ReliefWeb.'
+behavior_plugins: {  }

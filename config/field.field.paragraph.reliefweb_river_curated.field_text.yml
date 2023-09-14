@@ -1,0 +1,26 @@
+uuid: 37699d21-70fb-46b1-8022-5c3f96b9986f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.reliefweb_river_curated
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - text_editor_simple
+id: paragraph.reliefweb_river_curated.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: reliefweb_river_curated
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

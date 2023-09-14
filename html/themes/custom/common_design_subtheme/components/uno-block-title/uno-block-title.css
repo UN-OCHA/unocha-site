@@ -1,0 +1,11 @@
+/**
+ * CD Block Title
+ */
+
+.cd-block-title {
+  margin: 0 0 2.5rem 0;
+  letter-spacing: 0.5px;
+  font-size: var(--cd-font-size--2xbase);
+  font-weight: 700;
+  line-height: 1.3;
+}

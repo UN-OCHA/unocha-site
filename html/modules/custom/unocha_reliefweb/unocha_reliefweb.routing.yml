@@ -1,2 +1,15 @@
-route_callbacks:
-  - '\Drupal\unocha_reliefweb\Routing\ReliefWebDocumentRoutes::routes'
+unocha_reliefweb.publications.document:
+  path: '/publications/{type}/{country}/{title}'
+  defaults:
+    _controller: '\Drupal\unocha_reliefweb\Controller\ReliefWebDocumentController::getPageContent'
+    _title_callback: '\Drupal\unocha_reliefweb\Controller\ReliefWebDocumentController::getPageTitle'
+  requirements:
+    _permission: 'access content'
+
+unocha_reliefweb.breadcrumb.settings:
+  path: '/admin/config/user-interface/reliefweb-breadcrumb'
+  defaults:
+    _title: 'ReliefWeb Breadcrumb'
+    _form: '\Drupal\unocha_reliefweb\Form\BreadcrumbSettingsForm'
+  requirements:
+    _permission: 'administer reliefweb breadcrumbs'

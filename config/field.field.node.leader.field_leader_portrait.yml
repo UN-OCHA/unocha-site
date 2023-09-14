@@ -1,0 +1,45 @@
+uuid: 8e08d994-04f3-43bd-b193-3a06da8f2a3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_leader_portrait
+    - node.type.leader
+  module:
+    - content_translation
+    - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
+id: node.leader.field_leader_portrait
+field_name: field_leader_portrait
+entity_type: node
+bundle: leader
+label: Portrait
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: images/portraits
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

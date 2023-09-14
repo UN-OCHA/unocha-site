@@ -1,0 +1,10 @@
+uuid: 1476ad4a-8920-4382-86e6-630d24e39adb
+langcode: en
+status: true
+dependencies: {  }
+id: response_map
+label: 'Response Map'
+icon_uuid: null
+icon_default: null
+description: 'Map of Responses for a Region, or for all Responses.'
+behavior_plugins: {  }

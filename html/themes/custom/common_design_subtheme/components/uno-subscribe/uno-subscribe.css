@@ -1,0 +1,121 @@
+@media screen and (min-width: 768px) {
+  .paragraph--type--subscribe {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .paragraph--type--subscribe .field--name-field-title,
+  .paragraph--type--subscribe .field--type-text-long {
+    flex: 1 0 100%;
+  }
+}
+
+.paragraph--type--subscribe .field--name-field-text p {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.node--view-mode-full .paragraph--type--subscribe .field--type-text-long {
+  margin-bottom: 1rem;
+}
+
+.uno-subscribe {
+  margin-bottom: 3rem;
+}
+
+.cd-footer .uno-subscribe {
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--brand-grey--border);
+  border-bottom: 1px solid var(--brand-grey--border);
+}
+
+@media screen and (min-width: 768px) {
+  .uno-subscribe {
+    flex: 0 1 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .uno-subscribe {
+    flex: 1 0 auto;
+  }
+
+  .cd-footer .uno-subscribe {
+    margin-bottom: 6rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .uno-subscribe form {
+    display: flex;
+    align-items: center;
+  }
+
+  .paragraph--type--subscribe .uno-subscribe form {
+    justify-content: center;
+  }
+}
+
+.uno-subscribe .uno-subscribe__logo {
+  display: block;
+  margin-bottom: 0.5rem;
+  margin-inline-end: 3rem;
+}
+
+.uno-subscribe .uno-subscribe__logo svg {
+  fill: var(--brand-primary);
+}
+
+.uno-subscribe .mc-field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .uno-subscribe .mc-field-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .uno-subscribe .uno-subscribe__logo {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .uno-subscribe .mc-field-group {
+    flex-wrap: nowrap;
+  }
+}
+
+.uno-subscribe .cd-button {
+  height: 4rem;
+  border-radius: 0;
+}
+
+.uno-subscribe .email {
+  height: 4rem;
+  padding: 0.5rem 1rem;
+  padding-inline-start: 2rem;
+  border: 1px solid var(--brand-grey);
+  line-height: 1.15; /* match cd-button */
+}
+
+.uno-subscribe .email:focus {
+  outline: 2px solid var(--brand-primary--light);
+  outline-offset: -2px;
+}
+
+@media screen and (min-width: 768px) {
+  .uno-subscribe .email,
+  .uno-subscribe .cd-button {
+    flex: 1 0 auto;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .uno-subscribe .email {
+    flex: 1 0 400px;
+  }
+}

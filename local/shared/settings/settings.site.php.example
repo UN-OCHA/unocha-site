@@ -1,0 +1,44 @@
+<?php
+
+// @codingStandardsIgnoreFile
+
+/**
+ * @file
+ * Settings/configuration particular to this site.
+ *
+ * For example, HID credentials etc.
+ */
+
+// Allow insecure images.
+$config['image.settings']['allow_insecure_derivatives'] = TRUE;
+
+// ReliefWeb API.
+$config['unocha_reliefweb.settings']['reliefweb_api_url'] = 'https://api.reliefweb.int/v1';
+$config['unocha_reliefweb.settings']['reliefweb_website'] = 'https://reliefweb.int';
+$config['unocha_reliefweb.settings']['reliefweb_api_use_redirects'] = FALSE;
+
+// OCHA API.
+$config['ocha_key_figures.settings']['ocha_api_url'] = 'https://keyfigures.api.unocha.org/api/v1';
+$config['ocha_key_figures.settings']['ocha_api_key'] = 'REPLACE_WITH_OCHA_KEY_FIGURES_API_KEY';
+$config['ocha_key_figures.settings']['ocha_app_name'] = 'unocha.org';
+
+// Canto API.
+$config['unocha_canto.settings']['canto_api_app_id'] = 'REPLACE_WITH_CANTO_API_ID';
+$config['unocha_canto.settings']['canto_api_app_secret'] = 'REPLACE_WITH_CANTO_APP_SECRET';
+// Replace with the SITE_DOMAIN set in the `.env` file if it's different.
+// The `http` is on purpose to avoid certificate issues.
+$config['unocha_canto.settings']['canto_oembed_base_url'] = 'http://unocha-local.test';
+
+// Mapbox.
+$config['unocha_maps.settings']['mapbox_key'] = 'REPLACE_WITH_MAPBOX_KEY';
+
+// Stage file proxy.
+$config['stage_file_proxy.settings']['hotlink'] = FALSE;
+$config['stage_file_proxy.settings']['origin'] = 'https://www.unocha.org';
+$config['stage_file_proxy.settings']['origin_dir'] = 'sites/default/files';
+$config['stage_file_proxy.settings']['use_imagecache_root'] = TRUE;
+$config['stage_file_proxy.settings']['verify'] = FALSE;
+$config['stage_file_proxy.settings']['excluded_extensions'] = 'css,gz,js';
+
+// Set the debug var dumper.
+$config['devel.settings']['devel_dumper'] = 'var_dumper';

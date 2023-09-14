@@ -3,14 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.country.field_country_image
-    - field.field.taxonomy_term.country.field_custom_content
-    - field.field.taxonomy_term.country.field_regional_office
-    - field.field.taxonomy_term.country.field_response_type
+    - field.field.taxonomy_term.country.field_iso3
+    - field.field.taxonomy_term.country.field_location
+    - field.field.taxonomy_term.country.field_shortname
     - taxonomy.vocabulary.country
   module:
-    - layout_paragraphs
-    - media_library
+    - geofield
     - path
     - text
 id: taxonomy_term.country.default
@@ -20,44 +18,38 @@ mode: default
 content:
   description:
     type: text_textarea
-    weight: 2
+    weight: 3
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_country_image:
-    type: media_library_widget
+  field_iso3:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_location:
+    type: geofield_latlon
+    weight: 4
+    region: content
+    settings:
+      html5_geolocation: false
+    third_party_settings: {  }
+  field_shortname:
+    type: string_textfield
     weight: 1
     region: content
     settings:
-      media_types: {  }
-    third_party_settings: {  }
-  field_custom_content:
-    type: layout_paragraphs
-    weight: 3
-    region: content
-    settings:
-      preview_view_mode: preview
-      nesting_depth: 0
-      require_layouts: 0
-      empty_message: ''
-    third_party_settings: {  }
-  field_regional_office:
-    type: options_select
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_response_type:
-    type: options_select
-    weight: 4
-    region: content
-    settings: {  }
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 6
+    weight: 5
     region: content
     settings:
       include_locked: true
@@ -72,15 +64,20 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 7
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 8
+    weight: 7
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

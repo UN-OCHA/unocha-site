@@ -1,0 +1,8 @@
+uuid: 8ab85ed4-9fb0-4703-bf20-b16f308c5e3a
+langcode: en
+status: true
+dependencies: {  }
+id: where-we-work
+label: 'Where we work'
+description: 'Footer menu: Where we work'
+locked: false

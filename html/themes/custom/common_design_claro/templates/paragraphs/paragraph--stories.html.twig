@@ -1,0 +1,11 @@
+{%
+  include '@common_design_subtheme/paragraphs/paragraph--stories.html.twig' with {
+    'content': content|merge({
+      'stories': content.stories ? content.stories : [
+        {
+          '#markup': 'No stories currently for this page.'|t
+        }
+      ]
+    })
+  }
+%}

@@ -10,18 +10,18 @@
  */
 
 /* Import the font(s). */
-@import url('//fonts.googleapis.com/earlyaccess/notokufiarabic.css');
+@import '//fonts.googleapis.com/earlyaccess/notokufiarabic.css';
 
 /* Dubai font face. */
 @font-face {
-  font-display: swap;
   font-family: 'Dubai Regular';
-  font-style: normal;
-  font-weight: 400;
   src: local('DubaiW23 Regular'),
        local('DubaiW23-Regular'),
        url('fonts/dubaiw23-regular.woff2') format('woff2'),
        url('fonts/dubaiw23-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* Set the css variable(s) for the font(s). */

@@ -1,0 +1,42 @@
+/**
+ * Article country information.
+ *
+ * Country prefix above article title.
+ */
+.rw-entity-country-slug {
+  display: inline-block;
+  overflow: hidden;
+  max-width: 100%;
+  padding-inline-end: 1rem;
+  vertical-align: top;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  color: var(--brand-primary--dark);
+  font-size: 1.0625rem; /* 17px */
+  line-height: 30px;
+}
+p.rw-entity-country-slug {
+  margin-bottom: 0;
+}
+.rw-entity-country-slug--above {
+  margin: 0 0 16px 0;
+  padding: 3px 8px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.rw-entity-country-slug__link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+}
+.rw-entity-country-slug__more {
+  color: inherit;
+  font-weight: normal;
+}
+a.rw-entity-country-slug__link:hover,
+a.rw-entity-country-slug__link:focus,
+a.rw-entity-country-slug__link:active {
+  text-decoration: underline;
+}

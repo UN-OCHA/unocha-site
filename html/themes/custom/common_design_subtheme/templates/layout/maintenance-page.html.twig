@@ -1,0 +1,59 @@
+{#
+/**
+ * @file
+ * Theme override to display a single Drupal page while offline.
+ *
+ * All available variables are mirrored in page.html.twig.
+ * Some may be blank but they are provided for consistency.
+ *
+ * @see template_preprocess_maintenance_page()
+ */
+#}
+<div class="cd-page-layout-container">
+
+  <header class="cd-header" aria-label="{{ 'Site header'|t }}">
+
+    <div class="cd-global-header">
+      <div class="cd-container cd-global-header__inner">
+        &nbsp;
+      </div>
+    </div>
+
+    <div class="cd-site-header">
+      <div class="cd-container cd-site-header__inner">
+
+        <div class="region region-header-logo">
+          <h1>
+            <a href="{{ path('<front>') }}" title="{{ 'Front page'|t }}" rel="home" class="cd-site-logo">
+              <img src="{{ logo }}" alt="{{ site_name }}" aria-hidden="true">
+              <span class="visually-hidden">{{ site_name }}</span>
+            </a>
+          </h1>
+        </div>
+
+        <div class="cd-site-header__actions">
+          &nbsp;
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  {# Link to skip to the main content is in html.html.twig #}
+  <main aria-label="{{ 'Page content'|t }}" id="main-content" class="cd-container">
+
+    <h1 class="cd-page-title">{{ title }}</h1>
+
+    <div class="cd-layout">
+      <div class="cd-layout__content">
+        {{ page.content }}
+      </div>{# /.layout-content #}
+    </div>
+  </main>
+
+  {% block footer %}
+    {% include '@common_design_subtheme/cd/cd-footer/cd-footer.html.twig' %}
+  {% endblock %}
+
+</div>{# /.cd-page-layout-container #}

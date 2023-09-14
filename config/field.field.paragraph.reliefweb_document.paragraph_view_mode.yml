@@ -1,0 +1,21 @@
+uuid: a54a2e98-16e2-49ea-ae2e-88fa4bac5cb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.paragraph_view_mode
+    - paragraphs.paragraphs_type.reliefweb_document
+  module:
+    - paragraph_view_mode
+id: paragraph.reliefweb_document.paragraph_view_mode
+field_name: paragraph_view_mode
+entity_type: paragraph
+bundle: reliefweb_document
+label: 'Paragraph view mode'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: paragraph_view_mode

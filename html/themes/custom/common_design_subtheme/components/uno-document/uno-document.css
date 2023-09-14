@@ -1,0 +1,153 @@
+:root {
+  --rw-card-list-num-cols: 1;
+  --rw-card-list-gap-size: 2rem;
+}
+
+/* There is only ever a single document */
+.paragraph--type--reliefweb-document.paragraph--view-mode--default .rw-river-article:only-child {
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--cd-reliefweb-brand-grey--light);
+}
+
+.paragraph--type--reliefweb-document .rw-river-article .rw-river-article__header + .rw-river-article__footer dd {
+  font-size: 0.875rem;
+}
+
+.paragraph--type--reliefweb-document .rw-river-article .rw-river-article__title a {
+  text-decoration: none;
+  color: var(--cd-black);
+}
+
+/* Hide icons */
+.paragraph--type--reliefweb-document .rw-entity-meta dd.rw-entity-meta__tag-value--format::before {
+  content: none;
+}
+
+.paragraph--type--reliefweb-document .cd-read-more,
+.paragraph--type--reliefweb-document .uno-tag {
+  display: none;
+}
+
+/* Documents in Layouts */
+.layout--twocol .paragraph--type--reliefweb-document,
+.layout--twocol-sidebar .paragraph--type--reliefweb-document,
+.layout--threecol .paragraph--type--reliefweb-document {
+  margin-bottom: 2rem;
+  padding: 2rem 2rem 1rem;
+}
+
+/* Card view mode */
+.paragraph--type--reliefweb-document.paragraph--view-mode--cards article .rw-river-article__content {
+  order: 1;
+}
+
+.paragraph--type--reliefweb-document.paragraph--view-mode--cards article .rw-river-article__header {
+  order: 2;
+}
+
+.paragraph--type--reliefweb-document.paragraph--view-mode--cards article .rw-river-article__footer {
+  order: 3;
+}
+
+.paragraph--type--reliefweb-document.paragraph--view-mode--cards .rw-river-article .rw-river-article__content img {
+  float: none;
+  max-height: unset;
+  margin: 2px auto 20px;
+  border: 1px solid var(--cd-reliefweb-brand-grey--light);
+}
+
+/* Control markup display for view modes */
+.paragraph--type--reliefweb-document.paragraph--view-mode--teasers .cd-read-more,
+.paragraph--type--reliefweb-document.paragraph--view-mode--cards .cd-read-more {
+  display: inline-block;
+}
+
+.paragraph--type--reliefweb-document.paragraph--view-mode--teasers .rw-river-article__header p.rw-entity-country-slug,
+.paragraph--type--reliefweb-document.paragraph--view-mode--teasers .rw-river-article__content p,
+.paragraph--type--reliefweb-document.paragraph--view-mode--teasers .rw-entity-meta dt,
+.paragraph--type--reliefweb-document.paragraph--view-mode--teasers .rw-entity-meta dd,
+.paragraph--type--reliefweb-document.paragraph--view-mode--cards .rw-river-article__header p.rw-entity-country-slug,
+.paragraph--type--reliefweb-document.paragraph--view-mode--cards .rw-river-article__content p,
+.paragraph--type--reliefweb-document.paragraph--view-mode--cards .rw-entity-meta dt,
+.paragraph--type--reliefweb-document.paragraph--view-mode--cards .rw-entity-meta dd {
+  display: none;
+}
+
+.paragraph--type--reliefweb-document.paragraph--view-mode--teasers .rw-entity-meta .rw-entity-meta__tag-value--posted,
+.paragraph--type--reliefweb-document.paragraph--view-mode--cards .rw-entity-meta .rw-entity-meta__tag-value--posted {
+  display: inline-block;
+}
+
+.paragraph--type--reliefweb-document.paragraph--view-mode--teasers .rw-entity-meta .rw-entity-meta__tag-value--posted,
+.paragraph--type--reliefweb-document.paragraph--view-mode--cards .rw-entity-meta .rw-entity-meta__tag-value--posted,
+.paragraph--type--reliefweb-document.paragraph--view-mode--teasers .cd-read-more,
+.paragraph--type--reliefweb-document.paragraph--view-mode--cards .cd-read-more {
+  font-size: var(--cd-font-size--small);
+}
+
+/* Hide list bullet */
+.paragraph--type--reliefweb-document.paragraph--view-mode--teasers .rw-entity-meta--core dd::after,
+.paragraph--type--reliefweb-document.paragraph--view-mode--cards .rw-entity-meta--core dd::after {
+  content: none;
+}
+
+.paragraph--type--reliefweb-document.paragraph--view-mode--teasers .rw-river-article .uno-tag,
+.paragraph--type--reliefweb-document.paragraph--view-mode--cards .rw-river-article .uno-tag {
+  color: var(--brand-highlight);
+}
+
+.paragraph--type--reliefweb-document.paragraph--view-mode--teasers .rw-river-article .rw-river-article__footer,
+.paragraph--type--reliefweb-document.paragraph--view-mode--cards .rw-river-article .rw-river-article__footer {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.paragraph--type--reliefweb-document.paragraph--view-mode--teasers .rw-river-article .rw-river-article__footer dl,
+.paragraph--type--reliefweb-document.paragraph--view-mode--cards .rw-river-article .rw-river-article__footer dl {
+  flex: 1 auto;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .paragraph--type--reliefweb-document.paragraph--view-mode--teasers .rw-river-article .rw-river-article__footer,
+  .paragraph--type--reliefweb-document.paragraph--view-mode--cards .rw-river-article .rw-river-article__footer {
+    display: block;
+  }
+  .paragraph--type--reliefweb-document.paragraph--view-mode--teasers .rw-river-article .rw-river-article__footer dl,
+  .paragraph--type--reliefweb-document.paragraph--view-mode--cards .rw-river-article .rw-river-article__footer dl {
+    margin-bottom: 1rem;
+  }
+}
+
+/* rw-article teasers view mode */
+.paragraph--type--reliefweb-document.paragraph--view-mode--teasers .rw-river-article {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.paragraph--type--reliefweb-document.paragraph--view-mode--teasers .rw-river-article .rw-river-article__content {
+  flex: 0 1 auto;
+  align-items: flex-start;
+  padding-top: 0;
+}
+
+.paragraph--type--reliefweb-document.paragraph--view-mode--teasers .rw-river-article .rw-river-article__header {
+  flex: 0 1 50%;
+}
+
+.paragraph--type--reliefweb-document.paragraph--view-mode--teasers .rw-river-article .rw-river-article__footer {
+  flex: 1 0 100%;
+}
+
+.paragraph--type--reliefweb-document.paragraph--view-mode--teasers article .rw-river-article__content {
+  order: 1;
+}
+
+.paragraph--type--reliefweb-document.paragraph--view-mode--teasers article .rw-river-article__header {
+  order: 2;
+}
+
+.paragraph--type--reliefweb-document.paragraph--view-mode--teasers article .rw-river-article__footer {
+  order: 3;
+}

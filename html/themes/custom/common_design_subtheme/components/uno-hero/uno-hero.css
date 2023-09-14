@@ -1,0 +1,35 @@
+/**
+ * CD Hero
+ */
+:root {
+  --cd-max-width--hero: 1400px; /* width for 3:2 aspect ratio */
+}
+
+.cd-hero__image {
+  max-width: var(--cd-max-width--hero);
+  margin-right: auto;
+  margin-left: auto;
+}
+.cd-hero__image picture,
+.cd-hero__image picture img {
+  display: block;
+}
+
+/* Hero flush to main nav */
+.cd-page-layout-container main .cd-hero {
+  margin-top: -2rem;
+}
+
+.cd-page-layout-container main [data-drupal-messages] + .cd-hero {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .cd-page-layout-container main .cd-hero {
+    margin-top: -3rem;
+  }
+
+  .cd-page-layout-container main [data-drupal-messages] + .cd-hero {
+    margin-top: 0;
+  }
+}

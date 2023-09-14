@@ -1,0 +1,8 @@
+uuid: be3e46c2-57e8-4e27-a723-8c9a7471a6d2
+langcode: en
+status: true
+dependencies: {  }
+id: take-action
+label: 'Take action'
+description: 'Footer menu: Take action'
+locked: false

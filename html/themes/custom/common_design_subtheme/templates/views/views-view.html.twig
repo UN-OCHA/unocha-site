@@ -39,6 +39,10 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id
   ]
 %}
+{{ attach_library('common_design/cd-dropdown') }}
+{{ attach_library('common_design/cd-filter') }}
+{{ attach_library('common_design_subtheme/uno-views') }}
+
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if title %}
@@ -52,7 +56,21 @@
   {% endif %}
   {% if exposed %}
     <div class="view-filters">
-      {{ exposed }}
+      <div{{ attributes
+      .setAttribute('id', 'cd-filter')
+      .setAttribute('data-cd-toggable','Filter results'|t)
+      .setAttribute('data-cd-icon', 'arrow-down')
+      .setAttribute('data-cd-component', 'cd-filter')
+      .setAttribute('data-cd-toggable-keep', 'true')
+      .addClass('cd-filter')
+      }}>
+        <div class="cd-filter__container [ cd-flow ]">
+          <h2 class="visually-hidden">{% trans %}Filter results{% endtrans %}</h2>
+          <div class="cd-filter__form [ cd-flow ]">
+            {{ exposed }}
+          </div>
+        </div>
+      </div>
     </div>
   {% endif %}
   {% if attachment_before %}
@@ -61,15 +79,17 @@
     </div>
   {% endif %}
 
-  {% if rows %}
-    <div class="view-content">
-      {{ rows }}
-    </div>
-  {% elseif empty %}
-    <div class="view-empty">
-      {{ empty }}
-    </div>
-  {% endif %}
+  {% block view_content %}
+    {% if rows %}
+      <div class="view-content">
+        {{ rows }}
+      </div>
+    {% elseif empty %}
+      <div class="view-empty">
+        {{ empty }}
+      </div>
+    {% endif %}
+  {% endblock %}
 
   {% if pager %}
     {{ pager }}

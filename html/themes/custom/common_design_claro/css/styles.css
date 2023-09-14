@@ -1,0 +1,298 @@
+/* This fixes the issue with the CKeditor anchor modal in Layout paragraphs,
+  documented here:
+  https: //www.drupal.org/project/drupal/issues/3328425
+  See https: //www.drupal.org/project/drupal/issues/3274937#comment-14824232
+*/
+
+.ck-body-wrapper .ck {
+  --ck-z-modal: 1261;
+}
+
+.ui-dialog~.ck-body-wrapper {
+  --ck-z-modal: 1261;
+}
+
+/* Specific paragraph previews */
+.paragraph.paragraph--view-mode--preview .media--type-image {
+  max-width: 220px;
+}
+
+/* Colours to demonstrate nested paragraphs */
+.lp-builder:not(.is-navigating) .js-lpb-component:hover,
+.lp-builder:not(.is-navigating) .js-lpb-component:focus-within {
+  outline-width: 3px;
+}
+
+.lp-builder:not(.is-navigating) .js-lpb-component:hover .js-lpb-component:hover,
+.lp-builder:not(.is-navigating) .js-lpb-component:hover .js-lpb-component:focus-within,
+.lp-builder:not(.is-navigating) .js-lpb-component:focus-within .js-lpb-component:focus-within,
+.lp-builder:not(.is-navigating) .js-lpb-component:focus-within .js-lpb-component:hover {
+  outline: 3px solid magenta;
+}
+
+.lp-builder:not(.is-navigating) .js-lpb-component:hover .js-lpb-component:hover .js-lpb-component:hover,
+.lp-builder:not(.is-navigating) .js-lpb-component:hover .js-lpb-component:hover .js-lpb-component:focus-within,
+.lp-builder:not(.is-navigating) .js-lpb-component:hover .js-lpb-component:focus-within .js-lpb-component:hover,
+.lp-builder:not(.is-navigating) .js-lpb-component:hover .js-lpb-component:focus-within .js-lpb-component:focus-within,
+.lp-builder:not(.is-navigating) .js-lpb-component:focus-within .js-lpb-component:hover .js-lpb-component:hover,
+.lp-builder:not(.is-navigating) .js-lpb-component:focus-within .js-lpb-component:hover .js-lpb-component:focus-within,
+.lp-builder:not(.is-navigating) .js-lpb-component:focus-within .js-lpb-component:focus-within .js-lpb-component:hover,
+.lp-builder:not(.is-navigating) .js-lpb-component:focus-within .js-lpb-component:focus-within .js-lpb-component:focus-within {
+  outline: 3px solid greenyellow;
+}
+
+/* Space out the paragraphs so empty ones can be better located */
+.js-lpb-component-list > .js-lpb-component.paragraph {
+  margin: 0 0 1rem;
+  padding: 1rem;
+  outline: 1px dashed grey;
+}
+
+/* Adjust the width of the sidebar for the Content Editor form */
+.cd-layout__sidebar--wide {
+  flex-basis: 285px !important;
+}
+
+/* Matches .cd-block-title */
+.field--name-field-title {
+  margin: 0 0 1rem 0;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Video embed aspect ratio is calculated in the oembed-video field template. */
+.field--name-field-media-oembed-video {
+  position: relative;
+}
+
+.field--name-field-media-oembed-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.form-type--select .choices {
+  width: 100%;
+}
+.form-type--select .choices__list--multiple .choices__item {
+  border-color: #282828;
+  background-color: #585858;
+}
+.form-type--select .choices[data-type*=select-multiple] .choices__button, .choices[data-type*=text] .choices__button {
+  border-left-color: #282828;
+}
+.form-type--select .choices__list--dropdown, .choices__list[aria-expanded] {
+  z-index: 1000;
+}
+
+/* WYSIWYG Styles */
+blockquote {
+  padding: 0.25rem 1rem;
+  border-inline-start: 3px solid grey;
+}
+
+p.title {
+  text-align: center;
+  font-size: 24px;
+}
+
+p.headline {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Disable elements.css quote icon */
+blockquote::before {
+  /* content: open-quote; */
+  content: none;
+}
+
+/**
+ * Style adjustments for the preview of the paragraphs.
+ */
+
+form .paragraph--view-mode--preview {
+  /* Adjust typography from @claro/css/base/variables.css to be smaller. */
+  --font-size-xl: 1.4rem; /* ~36px */
+  --font-size-h1: 1.3rem; /* ~32px */
+  --font-size-h2: 1.2rem; /* ~29px */
+  --font-size-h3: 1.1rem; /* ~26px */
+  --font-size-h4: 1rem; /* ~23px */
+  --font-size-h5: 0.9rem; /* ~20px */
+  --font-size-h6: 0.8rem; /* 18px */
+  --font-size-s: 0.7rem; /* ~14px */
+  --font-size-xs: 0.6rem; /* ~13px */
+  --font-size-xxs: 0.5rem; /* ~11px */
+
+  /* Adjust the gap for the grid type paragraph view modes. */
+  --uno-card-list-gap-size: 1rem;
+}
+
+/* Map. */
+form .paragraph--view-mode--preview.unocha-response-map[data-map-enabled] .unocha-response-map__article[data-active] {
+  padding: 0;
+}
+
+/* Stories. */
+form .paragraph--view-mode--preview.paragraph--type--news-and-stories .viewsreference--view-title {
+  font-size: var(--font-size-h2);
+  font-weight: bold;;
+}
+form .paragraph--view-mode--preview.paragraph--type--news-and-stories .view-header {
+  margin-bottom: 1rem;
+}
+form .paragraph--view-mode--preview.paragraph--type--news-and-stories .view-filters {
+  display: none;
+}
+form .paragraph--view-mode--preview.paragraph--type--news-and-stories .view-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--uno-card-list-gap-size);
+}
+form .paragraph--view-mode--preview article.node--type-story.node--view-mode-card {
+  display: flex;
+  flex: 1 0 calc(33.33% - var(--uno-card-list-gap-size));
+  flex-direction: column;
+}
+form .paragraph--view-mode--preview article.node--type-story.node--view-mode-card h2 {
+  font-size: var(--font-size-h3);
+}
+form .paragraph--view-mode--preview article.node--type-story.node--view-mode-card .node__content {
+  order: -1;
+  margin-right: 1rem;
+}
+form .paragraph--view-mode--preview article.node--type-story.node--view-mode-card .field--name-field-story-type {
+  font-size: var(--font-size-h5);
+}
+form .paragraph--view-mode--preview.paragraph--type--news-and-stories .uno-stories__content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--uno-card-list-gap-size);
+}
+form .paragraph--view-mode--preview.paragraph--type--stories .uno-stories__header {
+  margin-bottom: 1rem;
+}
+form .paragraph--view-mode--preview.paragraph--type--stories .uno-stories__view_all {
+  display: none;
+}
+form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story.node--view-mode-card .node__content {
+  min-width: 220px;
+}
+form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story.node--view-mode-card:first-child .uno-card__image {
+  max-width: 220px;
+}
+form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story.node--view-mode-card:first-child .cd-card__container {
+  display: block;
+}
+form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story .cd-card__container {
+  padding: 0;
+}
+form .paragraph--view-mode--preview.paragraph--type--news-and-stories article.node--type-story .cd-card__footer,
+form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story .cd-card__footer {
+  padding: 0;
+  font-size: var(--font-size-h5);
+}
+form .paragraph--view-mode--preview.paragraph--type--news-and-stories article.node--type-story .cd-read-more,
+form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story .cd-read-more  {
+  display: none;
+}
+
+/* Events. */
+form .paragraph--view-mode--preview.paragraph--type--events .viewsreference--view-title {
+  margin-bottom: 1rem;
+  font-size: var(--font-size-h2);
+  font-weight: bold;
+}
+form .paragraph--view-mode--preview.paragraph--type--events .view-header h2 {
+  display: none;
+}
+form .paragraph--view-mode--preview.paragraph--type--events .view-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--uno-card-list-gap-size);
+}
+form .paragraph--view-mode--preview article.node--type-event.node--view-mode-card {
+  display: flex;
+  flex: 1 0 calc(33.33% - var(--uno-card-list-gap-size));
+  flex-direction: column;
+}
+form .paragraph--view-mode--preview article.node--type-event.node--view-mode-card h2 {
+  font-size: var(--font-size-h3);
+}
+form .paragraph--view-mode--preview article.node--type-event.node--view-mode-card .node__content {
+  order: -1;
+  margin-right: 1rem;
+}
+form .paragraph--view-mode--preview article.node--type-event.node--view-mode-card .field--name-field-event-date,
+form .paragraph--view-mode--preview article.node--type-event.node--view-mode-card .field--name-field-event-location {
+  display: none;
+  font-size: var(--font-size-h5);
+}
+
+/* Nodes. */
+form .paragraph--view-mode--preview.paragraph--type--node article.node h2 {
+  font-size: var(--font-size-h3);
+}
+form .paragraph--view-mode--preview.paragraph--type--node article.node .node__content {
+  display: none;
+}
+
+/* ReliefWeb rivers. */
+form .paragraph--view-mode--preview.paragraph--type--reliefweb-river .rw-river-article__content,
+form .paragraph--view-mode--preview.paragraph--type--reliefweb-river .rw-river-article__footer {
+  display: none;
+}
+form .paragraph--view-mode--preview.paragraph--type--reliefweb-document .rw-river-article__content {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+}
+form .paragraph--view-mode--preview .rw-river-article .rw-river-article__content .rw-river-article__title {
+  font-size: var(--font-size-h3);
+}
+form .paragraph--view-mode--preview .rw-river-article .rw-river-article__content img[src*="styles/thumbnail/"] {
+  max-width: 100px;
+  max-height: 140px;
+  margin: 0 0 1rem 0;
+}
+
+/* Subscribe. */
+form .paragraph--view-mode--preview.paragraph--type--subscribe .mc-field-group {
+  align-items: center;
+}
+form .paragraph--view-mode--preview.paragraph--type--subscribe .email {
+  height: 3rem;
+  border: 1px solid black;
+}
+
+/* Media centre. */
+form .paragraph--view-mode--preview.paragraph--type--media-centre .viewsreference--view-title {
+  display: none;
+}
+form .paragraph--view-mode--preview.paragraph--type--media-centre .uno-media-centre__header {
+  margin-bottom: 1rem;
+}
+form .paragraph--view-mode--preview.paragraph--type--media-centre article.node--type-media-collection .node__content > .field--name-field-media-image > .field__item:nth-child(n+2) {
+  display: none;
+}
+form .paragraph--view-mode--preview.paragraph--type--media-centre article.node--type-media-collection {
+  display: flex;
+  flex-direction: column;
+}
+form .paragraph--view-mode--preview.paragraph--type--media-centre article.node--type-media-collection h2 {
+  font-size: var(--font-size-h3);
+}
+form .paragraph--view-mode--preview.paragraph--type--media-centre article.node--type-media-collection .node__content {
+  order: -1;
+  margin-right: 1rem;
+}
+form .paragraph--view-mode--preview.paragraph--type--media-centre .uno-media-centre__view_all {
+  display: none;
+}

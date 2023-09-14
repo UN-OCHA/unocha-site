@@ -1,0 +1,35 @@
+uuid: 433dd8f5-97ba-46ae-a5be-a8cc0fc6216a
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.full_width_1_1_100
+    - image.style.full_width_1_1_25
+    - image.style.full_width_1_1_50
+  theme:
+    - common_design
+id: portrait
+label: Portrait
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_1_1_50
+    breakpoint_id: common_design.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_1_1_25
+    breakpoint_id: common_design.xs
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_1_1_100
+    breakpoint_id: common_design.sm
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_1_1_50
+    breakpoint_id: common_design.xs
+    multiplier: 2x
+breakpoint_group: common_design
+fallback_image_style: full_width_1_1_50

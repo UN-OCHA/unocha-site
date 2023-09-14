@@ -1,0 +1,19 @@
+uuid: 21da9fb9-cda7-41fa-bd00-c2a197bfee8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_emails
+    - taxonomy.vocabulary.contacts
+id: taxonomy_term.contacts.field_emails
+field_name: field_emails
+entity_type: taxonomy_term
+bundle: contacts
+label: Emails
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

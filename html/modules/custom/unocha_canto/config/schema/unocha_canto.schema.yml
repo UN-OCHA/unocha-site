@@ -1,0 +1,34 @@
+unocha_canto.settings:
+  type: config_object
+  label: 'UNOCHA Canto settings'
+  mapping:
+    canto_api_url:
+      type: string
+      label: 'The URL of the Canto API.'
+    canto_api_app_id:
+      type: string
+      label: 'Application ID to query the Canto API.'
+    canto_api_app_secret:
+      type: string
+      label: 'Application Secret to query the Canto API.'
+    canto_api_app_website:
+      type: boolean
+      label: 'The website URL registered with the application ID.'
+    canto_api_cache_enabled:
+      type: boolean
+      label: 'Cache the API query results.'
+    canto_api_cache_lifetime:
+      type: integer
+      label: 'How long to cache the API query results.'
+    canto_api_verify_ssl:
+      type: boolean
+      label: 'Verify the SSL certificate of the API query performing requests.'
+    canto_oauth_domain_url:
+      type: string
+      label: 'Canto OAuth domain url.'
+    canto_site_base_url:
+      type: string
+      label: 'Base URL of the UNOCHA Canto site.'
+    canto_oembed_base_url:
+      type: string
+      label: 'UNOCHA Canto OEmbed base URL (ex: current site URL).'

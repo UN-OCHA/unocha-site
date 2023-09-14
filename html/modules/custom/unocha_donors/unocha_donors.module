@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * Module file for the unocha_donors module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function unocha_donors_theme() {
+  $themes = [
+    // Theme for a list of donors/sectors.
+    'unocha_donors_list' => [
+      'variables' => [
+        // Unique ID for the list.
+        'id' => NULL,
+        // Type of donor data.
+        'type' => NULL,
+        // Wrapper attributes.
+        'attributes' => NULL,
+        // Heading level.
+        'level' => 2,
+        // Title.
+        'title' => NULL,
+        // Title attributes.
+        'title_attributes' => NULL,
+        // The year of the data.
+        'year' => NULL,
+        // List of donors/sectors with name and optional pledged/paid amounts.
+        'list' => NULL,
+        // List attributes.
+        'list_attributes' => NULL,
+        // List item attributes.
+        'item_attributes' => NULL,
+        // Number format.
+        'format' => NULL,
+        // Number format precision.
+        'precision' => NULL,
+      ],
+    ],
+  ];
+
+  return $themes;
+}

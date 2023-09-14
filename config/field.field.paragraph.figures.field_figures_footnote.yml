@@ -1,0 +1,19 @@
+uuid: d106cc2e-99ac-4909-96a5-d69f3ef97eb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_figures_footnote
+    - paragraphs.paragraphs_type.figures
+id: paragraph.figures.field_figures_footnote
+field_name: field_figures_footnote
+entity_type: paragraph
+bundle: figures
+label: 'Figures footnote'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

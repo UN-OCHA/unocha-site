@@ -1,0 +1,23 @@
+uuid: 14c4c1bc-2067-4506-ba99-a961eeeed297
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_figures
+    - paragraphs.paragraphs_type.figures
+  module:
+    - ocha_key_figures
+id: paragraph.figures.field_figures
+field_name: field_figures
+entity_type: paragraph
+bundle: figures
+label: 'Country figures'
+description: 'Use this field for country figures.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers: ''
+  allowed_figure_ids: ''
+field_type: key_figure

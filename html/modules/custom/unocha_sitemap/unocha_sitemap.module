@@ -1,0 +1,213 @@
+<?php
+
+/**
+ * @file
+ * Module file for the unocha_sitemap module.
+ */
+
+use Drupal\unocha_reliefweb\Helpers\UrlHelper;
+
+/**
+ * Provide information on the type of links this module provides.
+ *
+ * @see hook_entity_info()
+ * @see hook_entity_info_alter()
+ */
+function unocha_sitemap_xmlsitemap_link_info() {
+  return [
+    'reliefweb_documents' => [
+      'label' => t('Whitelabelled ReliefWeb documents'),
+      'xmlsitemap' => [
+        // Callback to create sitemap links.
+        'process callback' => 'unocha_sitemap_process_reliefweb_links',
+        // Callback to rebuild sitemap links.
+        'rebuild callback' => 'unocha_sitemap_rebuild_reliefweb_links',
+      ],
+    ],
+  ];
+}
+
+/**
+ * Callback to rebuild the sitemap links for the ReliefWeb documents.
+ *
+ * @param string $link_type_id
+ *   The type of sitemap links.
+ * @param mixed $context
+ *   Batch context.
+ */
+function unocha_sitemap_rebuild_reliefweb_links($link_type_id, &$context) {
+  if (!isset($context['sandbox']['info'])) {
+    $context['sandbox']['info'] = xmlsitemap_get_link_info($link_type_id);
+    $context['sandbox']['progress'] = 0;
+    $context['sandbox']['last_id'] = 0;
+  }
+
+  $info = $context['sandbox']['info'];
+  $last_id = $context['sandbox']['last_id'] ?? 0;
+
+  $payload = [
+    'fields' => [
+      'include' => [
+        'id',
+        'url_alias',
+        'date',
+      ],
+    ],
+    'filter' => [
+      'conditions' => [
+        [
+          'field' => 'source.shortname.exact',
+          'value' => 'OCHA',
+        ],
+        [
+          'field' => 'id',
+          'value' => [
+            'from' => $last_id + 1,
+          ],
+        ],
+      ],
+      'operator' => 'AND',
+    ],
+    'sort' => ['id:asc'],
+    'limit' => 1000,
+  ];
+
+  $data = \Drupal::service('reliefweb_api.client')->request('reports', $payload, TRUE, 10);
+
+  if (!isset($context['sandbox']['max'])) {
+    $context['sandbox']['max'] = $data['totalCount'] ?? 0;
+
+    // If there are no items to process, skip everything else.
+    if (!$context['sandbox']['max']) {
+      $context['finished'] = 1;
+      return;
+    }
+  }
+
+  // Process the links.
+  if (!empty($data['data'][0]['id'])) {
+    $info['xmlsitemap']['process callback']($link_type_id, $data['data']);
+
+    $context['sandbox']['last_id'] = end($data['data'])['id'];
+    $context['sandbox']['progress'] += count($data['data']);
+    $context['message'] = t('Processed %link_type_id @last_id (@progress of @count).', [
+      '%link_type_id' => $link_type_id,
+      '@last_id' => $context['sandbox']['last_id'],
+      '@progress' => $context['sandbox']['progress'],
+      '@count' => $context['sandbox']['max'],
+    ]);
+
+    if ($context['sandbox']['progress'] >= $context['sandbox']['max']) {
+      $context['finished'] = 1;
+    }
+    else {
+      $context['finished'] = $context['sandbox']['progress'] / $context['sandbox']['max'];
+    }
+  }
+  else {
+    $context['finished'] = 1;
+  }
+}
+
+/**
+ * Callback to generate sitemap links for ReliefWeb documents.
+ *
+ * @param string $link_type_id
+ *   The type of sitemap links.
+ * @param array $items
+ *   List of items returned by the ReliefWeb API.
+ */
+function unocha_sitemap_process_reliefweb_links($link_type_id, array $items) {
+  /** @var \Drupal\xmlsitemap\XmlSitemapLinkStorageInterface $link_storage */
+  $link_storage = \Drupal::service('xmlsitemap.link_storage');
+
+  foreach ($items as $item) {
+    if (isset($item['fields'])) {
+      $link = unocha_sitemap_xmlsitemap_create_link($link_type_id, $item['fields']);
+      if (!empty($link)) {
+        $link_storage->save($link);
+      }
+    }
+  }
+}
+
+/**
+ * Create a sitemap link from the ReliefWeb data for a resource.
+ *
+ * @param string $link_type_id
+ *   The type of sitemap links.
+ * @param array $data
+ *   Fields of a resource item from the ReliefWeb API.
+ */
+function unocha_sitemap_xmlsitemap_create_link($link_type_id, array $data) {
+  if (!isset($data['url_alias'])) {
+    return [];
+  }
+
+  $url = UrlHelper::getUnochaUrlFromReliefWebUrl($data['url_alias']);
+  $loc = '/' . ltrim(preg_replace('#^https?://[^/]+#', '', $url), '/');
+
+  $link = [
+    'type' => $link_type_id,
+    'id' => (string) $data['id'],
+    'subtype' => '',
+    'loc' => $loc,
+  ];
+
+  $timestamps['now'] = time();
+  if (isset($data['date']['changed'])) {
+    $timestamps['changed'] = strtotime($data['date']['changed']);
+  }
+  if (isset($data['date']['created'])) {
+    $timestamps['created'] = strtotime($data['date']['created']);
+  }
+
+  $link['changefreq'] = unocha_sitemap_get_change_frequency($timestamps);
+  $link['lastmod'] = $timestamps['changed'] ?? $timestamps['created'] ?? 0;
+
+  return $link;
+}
+
+/**
+ * Calculate the change frequency based on a list of timestamps.
+ *
+ * @param array $timestamps
+ *   List of timestamps (for each change to an entity for example).
+ *
+ * @return string
+ *   The name of the change frequency.
+ */
+function unocha_sitemap_get_change_frequency(array $timestamps) {
+  static $frequencies;
+  if (!isset($frequencies)) {
+    $frequencies = [
+      'always'  => 60,
+      'hourly'  => 60 * 60,
+      'daily'   => 24 * 60 * 60,
+      'weekly'  => 7 * 24 * 60 * 60,
+      'monthly' => 30 * 24 * 60 * 60,
+      'yearly'  => 365 * 24 * 60 * 60,
+    ];
+  }
+
+  if (count($timestamps) > 1) {
+    sort($timestamps);
+    $count = count($timestamps) - 1;
+    $diff = 0;
+
+    for ($i = 0; $i < $count; $i++) {
+      $diff += $timestamps[$i + 1] - $timestamps[$i];
+    }
+
+    $interval = round($diff / $count);
+
+    foreach ($frequencies as $value) {
+      if ($interval <= $value) {
+        return $value;
+      }
+    }
+  }
+
+  // Never.
+  return 0;
+}

@@ -1,0 +1,23 @@
+uuid: 538ca92a-cf51-4aaa-bc05-c86bb7327df3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.leader.field_single_node
+    - field.field.paragraph.leader.paragraph_view_mode
+    - paragraphs.paragraphs_type.leader
+id: paragraph.leader.default
+targetEntityType: paragraph
+bundle: leader
+mode: default
+content:
+  field_single_node:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  paragraph_view_mode: true

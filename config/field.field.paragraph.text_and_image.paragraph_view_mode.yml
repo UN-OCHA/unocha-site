@@ -1,0 +1,23 @@
+uuid: 0266509c-2a00-482d-bed0-56b06f88fce4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.paragraph_view_mode
+    - paragraphs.paragraphs_type.text_and_image
+  module:
+    - paragraph_view_mode
+id: paragraph.text_and_image.paragraph_view_mode
+field_name: paragraph_view_mode
+entity_type: paragraph
+bundle: text_and_image
+label: 'Image align'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: paragraph_view_mode

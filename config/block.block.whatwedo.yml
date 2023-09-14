@@ -1,0 +1,25 @@
+uuid: 5b333237-b42c-45df-a822-4be06ceb46fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.what-we-do
+  module:
+    - system
+  theme:
+    - common_design_subtheme
+id: whatwedo
+theme: common_design_subtheme
+region: footer_soft
+weight: -10
+provider: null
+plugin: 'system_menu_block:what-we-do'
+settings:
+  id: 'system_menu_block:what-we-do'
+  label: 'What we do'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

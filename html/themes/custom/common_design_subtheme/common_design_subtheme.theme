@@ -5,6 +5,10 @@
  * Template overrides, preprocess, and hooks for the OCHA Common Design theme.
  */
 
+use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\Core\Menu\MenuLinkInterface;
+use Drupal\Core\Menu\MenuTreeParameters;
+
 /**
  * Implements hook_theme_suggestions_page_alter().
  */
@@ -31,4 +35,208 @@ function common_design_subtheme_theme_suggestions_taxonomy_term_alter(array &$su
   $suggestions[] = 'taxonomy_term__' . $sanitized_view_mode;
   $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
   $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function common_design_subtheme_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+  $is_front = \Drupal::service('path.matcher')->isFrontPage();
+  $suggestions = [];
+  $node = $variables['elements']['#node'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+  $suggestions[] = 'node__' . $sanitized_view_mode;
+  $suggestions[] = 'node__' . $node
+    ->bundle();
+  $suggestions[] = 'node__' . $node
+    ->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'node__' . $node
+    ->id();
+  $suggestions[] = 'node__' . $node
+    ->id() . '__' . $sanitized_view_mode;
+  if ($is_front && $node = \Drupal::routeMatch()->getParameter('node')) {
+    $suggestions[] = 'node__front__' . $node
+      ->bundle() . '__' . $sanitized_view_mode;
+  }
+  return $suggestions;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function common_design_subtheme_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+  $entity_type = $variables['element']['#entity_type'];
+  $bundle = $variables['element']['#bundle'];
+  $field_name = $variables['element']['#field_name'];
+  $sanitized_view_mode = strtr($variables['element']['#view_mode'], '.', '_');
+  $suggestions[] = 'field__' . $entity_type . '__' . $sanitized_view_mode . '__' . $field_name;
+  $suggestions[] = 'field__' . $entity_type . '__' . $bundle . '__' . $sanitized_view_mode . '__' . $field_name;
+  return $suggestions;
+}
+
+/**
+ * Implements hook_preprocess_menu().
+ *
+ * Flag main navigation menu items with more than 2 nested levels of children as
+ * "mega menus"s to ease styling.
+ */
+function common_design_subtheme_preprocess_menu__main(array &$variables) {
+  if (!empty($variables['items'])) {
+    foreach ($variables['items'] as $key => $item) {
+      if (!empty($item['below'])) {
+        foreach ($item['below'] as $child) {
+          // When the current page corresponds to the $child menu item or one of
+          // its children and the menu item has enabled children then Drupal
+          // marks it as expanded and populates the `below` property regardless
+          // of the `expanded` property of the menu item. So to have a bit of
+          // control on what is displayed as a mega menu, we explicitly check
+          // the menu link item's `expanded` property to decide whether to
+          // display it as a mega menu or not.
+          // @see \Drupal\Core\Menu\MenuLinkTree::buildItems()
+          if (!empty($child['below']) && isset($child['original_link']) && $child['original_link']->isExpanded()) {
+            $variables['items'][$key]['is_mega_menu'] = TRUE;
+            $variables['items'][$key]['max_level'] = 2;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_field__field_children_menu().
+ *
+ * Display a menu of child pages of a basic page if "children menu" is selected.
+ */
+function common_design_subtheme_preprocess_field__field_children_menu(array &$variables) {
+  $field_item_list = $variables['element']['#items'];
+  $entity = $field_item_list->getEntity();
+  $value = $field_item_list->first()->value;
+
+  $links = [];
+  $current_menu_link = NULL;
+  $cache_metadata = CacheableMetadata::createFromRenderArray($variables);
+  $cache_metadata->addCacheableDependency($entity);
+
+  // Retrieve the menu link associated with the parent entity of the field.
+  // We'll display this menu or its parent as tabs.
+  if (isset($entity) && $entity->getEntityTypeId() === 'node') {
+    $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+
+    // Get the menu link referencing this node in the main menu.
+    $menu_links = $menu_link_manager->loadLinksByRoute('entity.node.canonical', [
+      'node' => $entity->id(),
+    ], 'main');
+    $current_menu_link = reset($menu_links);
+
+    // Get the menu link ID, it will be used to load the menu tree.
+    $menu_link_id = NULL;
+    if (!empty($current_menu_link)) {
+      // If the "children menu" is not checked, retrieve the parent menu item.
+      // If the parent entity attached to the menu item has the "children menu"
+      // checked then we display its menu. This ensures we see the same tabs
+      // on the parent and the children nodes.
+      if (empty($value)) {
+        $parent_menu_link = $menu_link_manager->createInstance($current_menu_link->getParent());
+
+        if (!empty($parent_menu_link) &&
+          $parent_menu_link instanceof MenuLinkInterface &&
+          $parent_menu_link->getRouteName() === 'entity.node.canonical' &&
+          !empty($parent_menu_link->getRouteParameters()['node'])
+        ) {
+          $node_id = $parent_menu_link->getRouteParameters()['node'];
+          $parent_entity = \Drupal::entityTypeManager()->getStorage('node')->load($node_id);
+
+          if (isset($parent_entity) && $parent_entity->hasField('field_children_menu')) {
+            $cache_metadata->addCacheableDependency($parent_entity);
+
+            if (!empty($parent_entity->field_children_menu->value)) {
+              $menu_link_id = $parent_menu_link->getPluginId();
+            }
+          }
+        }
+      }
+      else {
+        $menu_link_id = $current_menu_link->getPluginId();
+      }
+    }
+
+    // Load the menu links for the tree.
+    if (isset($menu_link_id)) {
+      $tree_parameters = new MenuTreeParameters();
+      $tree_parameters->setRoot($menu_link_id);
+      $tree_parameters->setMaxDepth(2);
+
+      // Get the child links.
+      /** @var \Drupal\Core\Menu\MenuLinkTreeElement[] $menu_elements. */
+      $menu_tree = \Drupal::service('menu.link_tree')->load('main', $tree_parameters);
+
+      // Flatten the tree links as they will be displayed as tabs (local tasks)
+      // without a hierarchy but with the parent as first link.
+      foreach ($menu_tree as $menu_tree_element) {
+        $links[] = $menu_tree_element->link;
+        if (!empty($menu_tree_element)) {
+          foreach ($menu_tree_element->subtree as $element) {
+            $links[] = $element->link;
+          }
+        }
+      }
+
+      // Add the cache metadata of the links and filter out links that are not
+      // accessible.
+      foreach ($links as $key => $link) {
+        $cache_metadata->addCacheableDependency($link);
+        if (!$link->getUrlObject()->access()) {
+          unset($links[$key]);
+        }
+      }
+    }
+  }
+
+  // Replace the field's content with a tabular menu (local tasks).
+  if (count($links) > 1) {
+    $content = [
+      '#theme' => 'menu_local_tasks__children_menu',
+    ];
+    foreach ($links as $link) {
+      $content['#primary'][] = [
+        '#theme' => 'menu_local_task__children_menu',
+        '#link' => [
+          'title' => $link->getTitle(),
+          'url' => $link->getUrlObject(),
+        ],
+        '#weight' => $link->getWeight(),
+        '#active' => $current_menu_link->getPluginId() === $link->getPluginId(),
+      ];
+    }
+
+    $variables['items'] = [['content' => $content]];
+  }
+  // Hide the field.
+  else {
+    $variables['items'] = [];
+  }
+
+  $cache_metadata->applyTo($variables);
+}
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function common_design_subtheme_preprocess_html(&$vars) {
+  // Get path to active theme.
+  $theme_handler = \Drupal::service('theme_handler');
+  $theme_path = $theme_handler->getTheme($theme_handler->getDefault())->getPath();
+  // Define manifest file.
+  $manifest = [
+    '#tag' => 'link',
+    '#attributes' => [
+      'rel' => 'manifest',
+      'href' => '/' . $theme_path . '/site.webmanifest',
+    ],
+  ];
+  $vars['page']['#attached']['html_head'][] = [
+    $manifest,
+    'manifest',
+  ];
 }

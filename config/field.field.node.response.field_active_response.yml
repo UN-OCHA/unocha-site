@@ -1,0 +1,23 @@
+uuid: c0a03931-c74f-4efc-9877-8bf6fc0f530b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_active_response
+    - node.type.response
+id: node.response.field_active_response
+field_name: field_active_response
+entity_type: node
+bundle: response
+label: 'Priority response'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

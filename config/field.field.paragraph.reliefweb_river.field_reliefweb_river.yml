@@ -1,0 +1,29 @@
+uuid: 47165db5-69fd-4d42-9389-d7dfcc15746e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_reliefweb_river
+    - paragraphs.paragraphs_type.reliefweb_river
+  module:
+    - unocha_reliefweb
+id: paragraph.reliefweb_river.field_reliefweb_river
+field_name: field_reliefweb_river
+entity_type: paragraph
+bundle: reliefweb_river
+label: 'ReliefWeb River'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    title: ''
+    limit: '5'
+    url: ''
+default_value_callback: ''
+settings:
+  rivers:
+    updates: updates
+    jobs: 0
+    training: 0
+field_type: reliefweb_river

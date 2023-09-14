@@ -1,0 +1,18 @@
+uuid: 6861a6df-afd6-4db2-87e9-496d24997b63
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.cbpf
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.cbpf
+target_entity_type_id: paragraph
+target_bundle: cbpf
+default_langcode: site_default
+language_alterable: false

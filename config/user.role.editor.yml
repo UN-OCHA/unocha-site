@@ -3,45 +3,176 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.ckeditor
     - filter.format.text_editor_simple
+    - media.type.image
+    - media.type.video
+    - node.type.basic
+    - node.type.event
+    - node.type.leader
+    - node.type.media_collection
+    - node.type.region
+    - node.type.resource
+    - node.type.response
+    - node.type.story
+    - taxonomy.vocabulary.contacts
+    - taxonomy.vocabulary.country
+    - taxonomy.vocabulary.event_type
+    - taxonomy.vocabulary.office_type
+    - taxonomy.vocabulary.story_type
+    - taxonomy.vocabulary.theme
   module:
+    - content_moderation
     - content_translation
-    - file
     - filter
     - media
     - menu_link_content
     - node
     - paragraphs
     - path
+    - redirect
+    - simple_menu_permissions
+    - system
     - taxonomy
     - toolbar
+    - unocha_canto
+    - unocha_reliefweb
 id: editor
 label: Editor
 weight: 3
 is_admin: null
 permissions:
+  - 'access administration pages'
+  - 'access canto api'
   - 'access content overview'
-  - 'access files overview'
   - 'access media overview'
   - 'access taxonomy overview'
   - 'access toolbar'
+  - 'add new links to events menu'
+  - 'add new links to latest menu'
+  - 'add new links to main menu'
+  - 'add new links to our-priorities menu'
+  - 'add new links to take-action menu'
+  - 'add new links to what-we-do menu'
+  - 'add new links to where-we-work menu'
+  - 'administer menu'
+  - 'administer nodes'
+  - 'administer redirects'
+  - 'administer reliefweb breadcrumbs'
   - 'administer taxonomy'
+  - 'create basic content'
   - 'create content translations'
+  - 'create event content'
+  - 'create image media'
+  - 'create leader content'
   - 'create media'
+  - 'create media_collection content'
+  - 'create region content'
+  - 'create resource content'
+  - 'create response content'
+  - 'create story content'
+  - 'create terms in contacts'
+  - 'create terms in country'
+  - 'create terms in event_type'
+  - 'create terms in office_type'
+  - 'create terms in story_type'
+  - 'create terms in theme'
   - 'create url aliases'
-  - 'delete any media'
-  - 'delete content translations'
-  - 'delete media'
+  - 'create video media'
+  - 'edit any basic content'
+  - 'edit any event content'
+  - 'edit any image media'
+  - 'edit any leader content'
+  - 'edit any media_collection content'
+  - 'edit any region content'
+  - 'edit any resource content'
+  - 'edit any response content'
+  - 'edit any story content'
+  - 'edit any video media'
+  - 'edit events menu'
+  - 'edit latest menu'
+  - 'edit links in events menu'
+  - 'edit links in latest menu'
+  - 'edit links in main menu'
+  - 'edit links in our-priorities menu'
+  - 'edit links in take-action menu'
+  - 'edit links in what-we-do menu'
+  - 'edit links in where-we-work menu'
+  - 'edit main menu'
+  - 'edit our-priorities menu'
+  - 'edit own basic content'
+  - 'edit own event content'
+  - 'edit own image media'
+  - 'edit own leader content'
+  - 'edit own media_collection content'
+  - 'edit own region content'
+  - 'edit own resource content'
+  - 'edit own response content'
+  - 'edit own story content'
+  - 'edit own video media'
+  - 'edit take-action menu'
+  - 'edit terms in contacts'
+  - 'edit terms in country'
+  - 'edit terms in event_type'
+  - 'edit terms in office_type'
+  - 'edit terms in story_type'
+  - 'edit terms in theme'
+  - 'edit what-we-do menu'
+  - 'edit where-we-work menu'
   - 'revert all revisions'
+  - 'revert basic revisions'
+  - 'revert event revisions'
+  - 'revert leader revisions'
+  - 'revert media_collection revisions'
+  - 'revert region revisions'
+  - 'revert resource revisions'
+  - 'revert response revisions'
+  - 'revert story revisions'
   - 'translate any entity'
+  - 'translate basic node'
+  - 'translate contacts taxonomy_term'
+  - 'translate country taxonomy_term'
   - 'translate editable entities'
+  - 'translate event node'
+  - 'translate event_type taxonomy_term'
+  - 'translate image media'
+  - 'translate leader node'
+  - 'translate media_collection node'
   - 'translate menu_link_content'
+  - 'translate office_type taxonomy_term'
+  - 'translate paragraph'
+  - 'translate region node'
+  - 'translate resource node'
+  - 'translate response node'
+  - 'translate story node'
+  - 'translate story_type taxonomy_term'
+  - 'translate theme taxonomy_term'
+  - 'translate video media'
   - 'update any media'
   - 'update content translations'
   - 'update media'
+  - 'use text format ckeditor'
   - 'use text format text_editor_simple'
   - 'view all media revisions'
   - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view basic revisions'
+  - 'view event revisions'
+  - 'view events menu in menu list'
+  - 'view latest menu in menu list'
+  - 'view latest version'
+  - 'view leader revisions'
+  - 'view main menu in menu list'
+  - 'view media_collection revisions'
+  - 'view our-priorities menu in menu list'
   - 'view own unpublished content'
   - 'view own unpublished media'
+  - 'view region revisions'
+  - 'view resource revisions'
+  - 'view response revisions'
+  - 'view story revisions'
+  - 'view take-action menu in menu list'
+  - 'view the administration theme'
   - 'view unpublished paragraphs'
+  - 'view what-we-do menu in menu list'
+  - 'view where-we-work menu in menu list'

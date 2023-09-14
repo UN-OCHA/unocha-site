@@ -5,10 +5,11 @@ dependencies:
   config:
     - field.field.node.basic.body
     - field.field.node.basic.field_basic_image
+    - field.field.node.basic.field_children_menu
     - field.field.node.basic.field_custom_content
-    - field.field.node.basic.field_image_caption
     - node.type.basic
   module:
+    - allowed_formats
     - layout_paragraphs
     - media_library
     - path
@@ -23,11 +24,14 @@ content:
     weight: 3
     region: content
     settings:
-      rows: 24
+      rows: 9
       summary_rows: 3
       placeholder: ''
       show_summary: false
-    third_party_settings: {  }
+    third_party_settings:
+      allowed_formats:
+        hide_help: '0'
+        hide_guidelines: '0'
   created:
     type: datetime_timestamp
     weight: 7
@@ -36,10 +40,17 @@ content:
     third_party_settings: {  }
   field_basic_image:
     type: media_library_widget
-    weight: 1
+    weight: 2
     region: content
     settings:
       media_types: {  }
+    third_party_settings: {  }
+  field_children_menu:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_custom_content:
     type: layout_paragraphs
@@ -47,17 +58,9 @@ content:
     region: content
     settings:
       preview_view_mode: preview
-      nesting_depth: 0
+      nesting_depth: 2
       require_layouts: 0
       empty_message: 'Placeholder message to display when field is empty'
-    third_party_settings: {  }
-  field_image_caption:
-    type: string_textfield
-    weight: 2
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select
@@ -100,6 +103,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete

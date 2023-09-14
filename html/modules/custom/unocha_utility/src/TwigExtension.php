@@ -4,6 +4,8 @@ namespace Drupal\unocha_utility;
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\unocha_utility\Helpers\HtmlSanitizer;
+use Drupal\unocha_utility\Helpers\LocalizationHelper;
+use Drupal\unocha_utility\Helpers\NumberFormatter;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
@@ -18,12 +20,15 @@ class TwigExtension extends AbstractExtension {
    */
   public function getFilters() {
     return [
+      new TwigFilter('taglist', [$this, 'getTagList']),
       new TwigFilter('sanitize_html', [$this, 'sanitizeHtml'], [
         'is_safe' => ['html'],
       ]),
       new TwigFilter('dpm', 'dpm'),
       new TwigFilter('values', 'array_values'),
       new TwigFilter('hide_nested_label', [$this, 'hideNestedLabel']),
+      new TwigFilter('format_number_compact', [$this, 'formatNumberCompact']),
+      new TwigFilter('format_number_decimal', [$this, 'formatNumberDecimal']),
     ];
   }
 
@@ -39,6 +44,57 @@ class TwigExtension extends AbstractExtension {
         'is_safe' => ['html'],
       ]),
     ];
+  }
+
+  /**
+   * Get a sorted list of tags.
+   *
+   * @param array $list
+   *   List of tags.
+   * @param int $count
+   *   Number of items to return, NULL to return all the items.
+   * @param string $sort
+   *   Porperty to use for sorting.
+   *
+   * @return array
+   *   Sorted and sliced list of tags.
+   */
+  public static function getTagList(array $list, $count = NULL, $sort = 'name') {
+    if (empty($list) || !is_array($list)) {
+      return [];
+    }
+    // Sort the tags if requested.
+    if (!empty($sort)) {
+      foreach ($list as $key => $item) {
+        $sort_value = $item[$sort] ?? $item['name'] ?? $key;
+        $list[$key] = [
+          // Prefix with a space for the main item (ex: primary country),
+          // to ensure it's the first.
+          'sort' => (!empty($item['main']) ? ' ' : '') . $sort_value,
+          'item' => $item,
+        ];
+      }
+      LocalizationHelper::collatedSort($list, 'sort');
+      foreach ($list as $key => $item) {
+        $list[$key] = $item['item'];
+      }
+    }
+    // Get the number of items before slicing, this is used to mark the real
+    // last item as being last. This way we can also simply check if 'last'
+    // is set in the resulting tag list to know if there are more items.
+    $last = count($list) - 1;
+    // Get a subet of the data if requested.
+    if (isset($count)) {
+      $list = array_slice($list, 0, $count);
+    }
+    // Prepare the list of tags, marking the last item.
+    $tags = [];
+    $index = 0;
+    foreach ($list as &$item) {
+      $key = $index === $last ? 'last' : $index++;
+      $tags[$key] = &$item;
+    }
+    return $tags;
   }
 
   /**
@@ -128,6 +184,47 @@ class TwigExtension extends AbstractExtension {
       }
     }
     return $element;
+  }
+
+  /**
+   * Format a number with language aware compact decimal formatting.
+   *
+   * If the language is not supported or no pattern was found, the returned
+   * number will be formatted with the grouped thousands formatting.
+   *
+   * @param float|int $number
+   *   Number to format.
+   * @param string $langcode
+   *   Language code. Defaults to the current one.
+   * @param string $type
+   *   Either 'short' or 'long' (default).
+   * @param int $precision
+   *   Precision for the rounding of the number once compacted.
+   * @param bool $use_gho_specifics
+   *   When TRUE, apply some extra transformations like on the GHO site.
+   *
+   * @return string
+   *   Formatted number.
+   */
+  public static function formatNumberCompact($number, $langcode = NULL, $type = 'long', $precision = 2, $use_gho_specifics = FALSE) {
+    $langcode = $langcode ?? \Drupal::languageManager()->getCurrentLanguage()->getId();
+    return NumberFormatter::formatNumberCompact($number, $langcode, $type, $precision, $use_gho_specifics);
+  }
+
+  /**
+   * Format a number with grouped thousands.
+   *
+   * @param float|int $number
+   *   Number to format. Defaults to the current one.
+   * @param string $langcode
+   *   Language code.
+   *
+   * @return string
+   *   Formatted number.
+   */
+  public static function formatNumberDecimal($number, $langcode) {
+    $langcode = $langcode ?? \Drupal::languageManager()->getCurrentLanguage()->getId();
+    return NumberFormatter::formatNumberDecimal($number, $langcode);
   }
 
 }

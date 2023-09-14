@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Basic
 type: basic
-description: ''
+description: 'Generic page with no direct association to a Region, Response, Country or Office.'
 help: ''
 new_revision: true
 preview_mode: 1

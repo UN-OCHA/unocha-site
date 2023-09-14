@@ -2,16 +2,15 @@
 
 namespace Drupal\unocha_reliefweb\Controller;
 
-use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Http\Exception\CacheableNotFoundHttpException;
-use Drupal\unocha_reliefweb\Services\ReliefWebApiClient;
-use Drupal\unocha_utility\Helpers\DateHelper;
-use Drupal\unocha_utility\Helpers\HtmlSanitizer;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
+use Drupal\unocha_reliefweb\Helpers\UrlHelper;
+use Drupal\unocha_reliefweb\Services\ReliefWebDocuments;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * Controller for page showing a document retrieved from ReliefWeb.
@@ -26,18 +25,11 @@ class ReliefWebDocumentController extends ControllerBase {
   protected $config;
 
   /**
-   * The request stack.
-   *
-   * @var \Symfony\Component\HttpFoundation\RequestStack
-   */
-  protected $requestStack;
-
-  /**
    * The ReliefWeb API Client.
    *
-   * @var \Drupal\unocha_reliefweb\Services\ReliefWebApiClient
+   * @var \Drupal\unocha_reliefweb\Services\ReliefWebDocuments
    */
-  protected $apiClient;
+  protected $reliefwebDocuments;
 
   /**
    * The parse API data for the document.
@@ -47,23 +39,26 @@ class ReliefWebDocumentController extends ControllerBase {
   protected $data;
 
   /**
+   * Static cache for the parsed data retrieved from the API.
+   *
+   * @var array
+   */
+  protected static $cache = [];
+
+  /**
    * Constructor.
    *
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The config factory.
-   * @param \Symfony\Component\HttpFoundation\RequestStack $request_stack
-   *   The request stack.
-   * @param \Drupal\unocha_reliefweb\Services\ReliefWebApiClient $api_client
-   *   The ReliefWeb API Client.
+   * @param \Drupal\unocha_reliefweb\Services\ReliefWebDocuments $reliefweb_documents
+   *   The ReliefWeb Documents service.
    */
   public function __construct(
     ConfigFactoryInterface $config_factory,
-    RequestStack $request_stack,
-    ReliefWebApiClient $api_client
+    ReliefWebDocuments $reliefweb_documents
   ) {
     $this->config = $config_factory->get('unocha_reliefweb.settings');
-    $this->requestStack = $request_stack;
-    $this->apiClient = $api_client;
+    $this->reliefwebDocuments = $reliefweb_documents;
   }
 
   /**
@@ -72,53 +67,120 @@ class ReliefWebDocumentController extends ControllerBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('config.factory'),
-      $container->get('request_stack'),
-      $container->get('reliefweb_api.client')
+      $container->get('reliefweb.documents')
     );
   }
 
   /**
    * Get the page title.
    *
-   * @param string $ocha_product
-   *   The type of document.
-   *
    * @return string|\Drupal\Component\Render\MarkupInterface
    *   Page title.
    */
-  public function getPageTitle($ocha_product) {
-    $this->retrieveApiData($ocha_product);
-    return $this->data['title'] ?? '';
+  public function getPageTitle() {
+    $data = $this->getDocumentData();
+    return $data['title'] ?? '';
   }
 
   /**
    * Get the page content.
    *
-   * @param string $ocha_product
-   *   The type of document.
-   *
    * @return array
    *   Render array.
    */
-  public function getPageContent($ocha_product) {
-    $this->retrieveApiData($ocha_product);
-    if (empty($this->data)) {
+  public function getPageContent() {
+    $data = $this->getDocumentData();
+    if (empty($data)) {
       return [];
     }
 
+    $type = isset($data['format']) ? strtolower($data['format']) : 'report';
+
     $content = [];
-    if (!empty($this->data['attachments'])) {
-      $content['attachments'] = $this->renderAttachmentList($this->data['attachments']);
+    if (!empty($data['attachments'])) {
+      $content['attachments'] = $this->renderAttachmentList($data['attachments'], $type);
+
+      if ($type === 'interactive' && !empty($content['attachments'])) {
+        $content['attachments']['#title'] = $this->t('Screenshot(s) of the interactive content as of @date', [
+          '@date' => $data['published']->format('j m Y'),
+        ]);
+        if (!empty($data['origin'])) {
+          $content['attachments']['#footer'] = Link::fromTextAndUrl(
+            $this->t('View the interactive content page'),
+            Url::fromUri($data['origin'], [
+              'attributes' => [
+                'target' => '_blank',
+                'rel' => 'noopener',
+              ],
+            ])
+          )->toRenderable();
+        }
+      }
     }
-    if (!empty($this->data['body'])) {
-      $content['body'] = ['#markup' => $this->data['body']];
+    if (!empty($data['image'])) {
+      $content['image'] = $this->renderImage($data['image']);
+    }
+    if (!empty($data['body-html'])) {
+      $content['body'] = ['#markup' => $data['body-html']];
     }
 
     return [
       '#theme' => 'unocha_reliefweb_document',
-      '#title' => $this->data['title'],
-      '#date' => $this->data['date'],
+      '#title' => $data['title'],
+      '#date' => $data['published'],
       '#content' => $content,
+    ];
+  }
+
+  /**
+   * Get the OCHA product of the document.
+   *
+   * @return string
+   *   OCHA product.
+   */
+  public function getOchaProduct() {
+    $data = $this->getDocumentData();
+    if (empty($data['bundle']) || $data['bundle'] !== 'report') {
+      return '';
+    }
+
+    // We use a temporary mapping because some OCHA documents prior to the
+    // introduction of the OCHA product field don't have one.
+    // @todo remove if tagged with a OCHA product (ref: RW-765).
+    $ocha_product = $data['tags']['ocha_product'][0]['name'] ?? '';
+    if (empty($ocha_product) && !empty($data['format'])) {
+      $mapping = [
+        'Analysis' => 'Humanitarian Needs Overview',
+        'Appeal' => 'Other',
+        'Assessment' => 'Other',
+        'Evaluation and Lessons Learned' => 'Other',
+        'Infographic' => 'Infographic',
+        'Manual and Guideline' => 'Other',
+        'Map' => 'Thematic Map',
+        'News and Press Release' => 'Press Release',
+        'Other' => 'Other',
+        'Situation Report' => 'Situation Report',
+      ];
+      $ocha_product = $mapping[$data['format']] ?? 'Other';
+    }
+    return $ocha_product;
+  }
+
+  /**
+   * Render a report image.
+   *
+   * @param array $image
+   *   Image data.
+   *
+   * @return array
+   *   Render array.
+   */
+  protected function renderImage(array $image) {
+    return [
+      '#theme' => 'unocha_reliefweb_entity_image',
+      '#image' => $image,
+      '#caption' => TRUE,
+      '#loading' => 'eager',
     ];
   }
 
@@ -127,34 +189,66 @@ class ReliefWebDocumentController extends ControllerBase {
    *
    * @param array $attachments
    *   List of attachments.
+   * @param string $type
+   *   One of `map`, `infographic`, `interactive` or `report`.
    *
    * @return array
    *   Render array.
    */
-  protected function renderAttachmentList(array $attachments) {
+  protected function renderAttachmentList(array $attachments, $type) {
     if (empty($attachments)) {
       return [];
     }
 
+    if ($type === 'map') {
+      $label = $this->t('Download map');
+      $size = 'large';
+    }
+    elseif ($type === 'infographic') {
+      $label = $this->t('Download infographic');
+      $size = 'large';
+    }
+    elseif ($type === 'interactive') {
+      $size = 'large';
+    }
+    else {
+      $type = 'report';
+      $label = $this->t('Download attachment');
+      $size = 'small';
+    }
+
     $list = [];
-    foreach ($attachments as $attachment) {
+    foreach ($attachments as $index => $attachment) {
       $extension = $this->extractFileExtension($attachment['filename']);
-      $list[] = [
-        'url' => $attachment['url'],
-        'name' => $attachment['filename'],
-        'preview' => $this->renderAttachmentPreview($attachment),
-        'label' => $this->t('Download Attachment'),
-        'description' => '(' . implode(' | ', array_filter([
-          mb_strtoupper($extension),
-          format_size($attachment['filesize']),
-          $attachment['description'] ?? '',
-        ])) . ')',
-      ];
+
+      if ($type === 'interactive') {
+        $description = $this->t('Screenshot @index', [
+          '@index' => $index + 1,
+        ]);
+        $list[] = [
+          'preview' => $this->renderAttachmentPreview($attachment, $size, $description),
+          'description' => $description,
+        ];
+      }
+      else {
+        $list[] = [
+          'url' => $attachment['url'],
+          'name' => $attachment['filename'],
+          'preview' => $this->renderAttachmentPreview($attachment, $size),
+          'label' => $label,
+          'description' => '(' . implode(' | ', array_filter([
+            mb_strtoupper($extension),
+            format_size($attachment['filesize']),
+            $attachment['description'] ?? '',
+          ])) . ')',
+        ];
+      }
     }
 
     return [
-      '#theme' => 'unocha_reliefweb_attachment_list',
+      '#theme' => 'unocha_reliefweb_attachment_list__' . $type,
       '#list' => $list,
+      '#type' => $type,
     ];
   }
 
@@ -163,21 +257,23 @@ class ReliefWebDocumentController extends ControllerBase {
    *
    * @param array $attachment
    *   The attachment data.
+   * @param string $size
+   *   Size of the image to use: small or large.
+   * @param string $alt
+   *   Alternative text for the preview.
    *
    * @return array
    *   Render array.
    */
-  public function renderAttachmentPreview(array $attachment) {
+  public function renderAttachmentPreview(array $attachment, $size = 'small', $alt = '') {
     if (empty($attachment['preview'])) {
       return [];
     }
 
-    // @todo review when deciding on how to deal with image styles for
-    // images coming from ReliefWeb.
     return [
       '#theme' => 'image',
-      '#uri' => $attachment['preview']['url-small'] . '?' . $attachment['preview']['version'],
-      '#alt' => $this->t('Preview of @filename', [
+      '#uri' => $attachment['preview']['url-' . $size] . '?' . $attachment['preview']['version'],
+      '#alt' => $alt ?: $this->t('Preview of @filename', [
         '@filename' => $attachment['filename'],
       ]),
       '#attributes' => [
@@ -187,101 +283,35 @@ class ReliefWebDocumentController extends ControllerBase {
   }
 
   /**
-   * Retrieve the data from the ReliefWeb API.
+   * Retrieve the ReliefWeb document data.
    *
-   * @param string $ocha_product
-   *   The type of document.
+   * @return array
+   *   Data from the RW API or empty array if nothing was found.
    */
-  protected function retrieveApiData($ocha_product) {
-    if (empty($ocha_product)) {
-      $this->throwNotFound();
+  protected function getDocumentData() {
+    if (!isset($this->data)) {
+      // Get the ReliefWeb URL matching the current URL.
+      $url = UrlHelper::getReliefWebUrlFromUnochaUrl();
+
+      // Get the data from the API for the document matching this URL.
+      // We store it in a static cache so that we don't need to retrieve it
+      // again when a new instance of the controller is used, for example
+      // when building the breadcrumbs.
+      // @see Drupal\unocha_reliefweb\Services\ReliefWebBreadcrumbBuilder::build()
+      if (!isset(static::$cache[$url])) {
+        static::$cache[$url] = $this->getReliefWebDocuments()->getDocumentDataFromUrl('updates', $url);
+      }
+
+      $this->data = static::$cache[$url]['entity'] ?? [];
     }
 
-    $base_url = $this->config->get('reliefweb_website') ?? 'https://reliefweb.int';
-
-    $url = $this->requestStack->getCurrentRequest()->getRequestUri();
-    $url_parts = UrlHelper::parse($url);
-    $url_path = preg_replace('#^/?[^/]+/#', 'report/', $url_parts['path']);
-    $url_alias = $base_url . '/' . $url_path;
-
-    $payload = [
-      'filter' => [
-        'conditions' => [
-          [
-            // @todo review in case we want to use the term ID.
-            'field' => 'ocha_product.name.exact',
-            'value' => $ocha_product,
-          ],
-          [
-            // @todo review in case we can use the node ID.
-            // @todo review in case other aliases are indexed in the RW API.
-            'field' => 'url_alias',
-            'value' => $url_alias,
-          ],
-        ],
-        'operator' => 'AND',
-      ],
-      'limit' => 1,
-      'fields' => [
-        'include' => [
-          'title',
-          'body-html',
-          'date.original',
-          // @todo we propably need to provide our own image_style_downloader to
-          // get the image from RW and convert it to the appropriate style.
-          'image',
-          'file',
-          // @todo use it as alternate or canonical URL?
-          'url_alias',
-        ],
-      ],
-    ];
-
-    $data = $this->apiClient->request('reports', $payload);
-    if (!empty($data['data'])) {
-      $this->data = $this->parseApiData($data);
+    if (!empty($this->data)) {
+      return $this->data;
     }
     else {
       $this->throwNotFound();
     }
-  }
-
-  /**
-   * Parse the ReliefWeb API data.
-   *
-   * @param array $raw
-   *   Raw data from the ReliefWeb API.
-   *
-   * @return array
-   *   The parsed API data.
-   */
-  protected function parseApiData(array $raw) {
-    if (empty($raw['data'][0]['fields'])) {
-      return [];
-    }
-
-    $data = [];
-    $fields = $raw['data'][0]['fields'];
-    $unocha_url = $this->requestStack->getCurrentRequest()->getSchemeAndHttpHost() . '/';
-
-    $data['title'] = $fields['title'];
-    $data['date'] = DateHelper::getDateTimeStamp($fields['date']['original']);
-    $data['body'] = HtmlSanitizer::sanitize($fields['body-html']);
-
-    if (!empty($fields['file'])) {
-      $data['attachments'] = $fields['file'];
-      // Change the URLs of the attachment to be an unocha.org URL.
-      $this->apiClient::updateApiUrls($data['attachments'], $unocha_url);
-    }
-
-    if (!empty($fields['image'])) {
-      $data['image'] = $fields['image'];
-      // Change the URLs of the attachment to be an unocha.org URL.
-      $this->apiClient::updateApiUrls($data['image'], $unocha_url);
-    }
-
-    // @todo handle image.
-    return $data;
+    return [];
   }
 
   /**
@@ -308,6 +338,16 @@ class ReliefWebDocumentController extends ControllerBase {
       return '';
     }
     return mb_strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+  }
+
+  /**
+   * Get the ReliefWeb Documents service.
+   *
+   * @return \Drupal\unocha_reliefweb\Services\ReliefWebDocuments
+   *   The ReliefWeb docuements service.
+   */
+  protected function getReliefWebDocuments() {
+    return $this->reliefwebDocuments;
   }
 
 }

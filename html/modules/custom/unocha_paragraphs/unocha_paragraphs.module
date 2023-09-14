@@ -1,0 +1,455 @@
+<?php
+
+/**
+ * @file
+ * Module file for the unocha_paragraphs module.
+ */
+
+use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Menu\MenuLinkInterface;
+use Drupal\Core\Menu\MenuLinkTreeElement;
+use Drupal\Core\Menu\MenuTreeParameters;
+use Drupal\Core\Url;
+use Drupal\node\NodeInterface;
+use Drupal\paragraphs\ParagraphInterface;
+
+/**
+ * Implements hook_preprocess_paragraph__type().
+ */
+function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+  $limit = $paragraph->field_limit->value ?? 3;
+
+  // Retrieve the closest node parent.
+  $parent = unocha_paragraphs_get_paragraph_parent_node($paragraph);
+
+  // Parameters for the "view all" link.
+  $view_all_query = [];
+
+  // Filter the stories based on the parent entity.
+  $stories = [];
+  if (isset($parent) && $parent instanceof NodeInterface && !empty($parent->id())) {
+    if ($parent->bundle() === 'response') {
+      // Get the stories tagged with the response.
+      $stories = unocha_paragraphs_get_stories([
+        ['field_responses', $parent->id(), '='],
+      ], $limit);
+
+      // Filter the News and Stories page by the response.
+      $view_all_query['responses'] = $parent->id();
+
+      // If we don't have enough stories for the response, complete with
+      // stories from the region.
+      if (count($stories) < $limit) {
+        $region = unocha_paragraphs_get_node_parent_node($parent);
+        if (isset($region) && $region->bundle() === 'region') {
+          $stories += unocha_paragraphs_get_stories([
+            ['field_regions', $region->id(), '='],
+          ], $limit - count($stories));
+
+          // Also add the region as filter to have consistent results in the
+          // News and Stories landing page.
+          $view_all_query['regions'] = $region->id();
+        }
+      }
+    }
+    elseif ($parent->bundle() === 'region') {
+      // Get the stories tagged with the region.
+      $stories = unocha_paragraphs_get_stories([
+        ['field_regions', $parent->id(), '='],
+      ], $limit);
+
+      // Filter the News and Stories page by the region.
+      $view_all_query['regions'] = $parent->id();
+    }
+    else {
+      // Exclude the current story so we can show related ones only.
+      $exclude = $parent->bundle() === 'story' ? $parent->id() : NULL;
+
+      // Add conditions on the referenced entities.
+      $conditions = [];
+      $fields = [
+        'field_responses' => 'responses',
+        'field_regions' => 'regions',
+        'field_country' => 'countries',
+      ];
+      foreach ($fields as $field => $filter) {
+        if ($parent->hasField($field)) {
+          $ids = [];
+          foreach ($parent->get($field)->filterEmptyItems() as $item) {
+            if (isset($item->target_id)) {
+              $ids[] = $item->target_id;
+            }
+          }
+          if (!empty($ids)) {
+            $conditions[] = [$field, $ids, 'IN'];
+
+            // @todo review if we allow multiple selections for the filters.
+            // Filter the News and Stories page.
+            $view_all_query[$filter] = reset($ids);
+          }
+        }
+      }
+
+      $stories = unocha_paragraphs_get_stories($conditions, $limit, $exclude);
+    }
+  }
+
+  // Filter out stories that cannot be accessed by the current user.
+  if (!empty($stories)) {
+    foreach ($stories as $key => $story) {
+      if (!$story->access('view')) {
+        unset($stories[$key]);
+      }
+    }
+  }
+
+  // Add the renderable stories.
+  if (!empty($stories)) {
+    $view_all_url = Url::fromUserInput('/latest/news-and-stories', [
+      'query' => $view_all_query,
+    ]);
+    $variables['content']['view_all'] = Link::fromTextAndUrl(t('View all'), $view_all_url)->toRenderable();
+    // @todo get the view mode from the paragraph view mode?
+    $variables['content']['stories'] = \Drupal::entityTypeManager()
+      ->getViewBuilder('node')
+      ->viewMultiple($stories, 'card');
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph__type().
+ */
+function unocha_paragraphs_preprocess_paragraph__resources(array &$variables) {
+  $cache_metadata = CacheableMetadata::createFromRenderArray($variables);
+
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+
+  // Retrieve the closest node parent.
+  $parent = unocha_paragraphs_get_paragraph_parent_node($paragraph);
+
+  if (!empty($parent)) {
+    $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+
+    // Get the menu links referencing this node.
+    $menu_links = $menu_link_manager->loadLinksByRoute('entity.node.canonical', [
+      'node' => $parent->id(),
+    ]);
+
+    // Get the ID of the menu link for the node in the main navigation menu.
+    $menu_link_id = NULL;
+    if (!empty($menu_links)) {
+      foreach ($menu_links as $menu_link) {
+        if ($menu_link->getMenuName() === 'main') {
+          $menu_link_id = $menu_link->getPluginId();
+        }
+      }
+    }
+
+    if (isset($menu_link_id)) {
+      $tree_parameters = new MenuTreeParameters();
+      $tree_parameters->setRoot($menu_link_id);
+      $tree_parameters->setMaxDepth(1);
+      $tree_parameters->excludeRoot();
+
+      // Get the child links.
+      $menu_links = \Drupal::service('menu.link_tree')
+        ->load('main', $tree_parameters);
+
+      // Get the associated nodes.
+      $nodes = unocha_paragraphs_get_nodes_from_menu_links($menu_links);
+
+      // Extract the title and url of the nodes that are resources to build
+      // the resource list.
+      $links = [];
+      foreach ($nodes as $node) {
+        if ($node->bundle() === 'resource') {
+          $cache_metadata->addCacheableDependency($node);
+          if ($node->access('view')) {
+            $links[] = [
+              'title' => $node->label(),
+              'url' => $node->toUrl(),
+            ];
+          }
+        }
+      }
+
+      if (!empty($links)) {
+        $variables['content']['resources'] = [
+          '#theme' => 'links__resources',
+          '#links' => $links,
+        ];
+      }
+    }
+  }
+
+  $cache_metadata->applyTo($variables);
+}
+
+/**
+ * Get story node entities from the given conditions and limit.
+ *
+ * @param array $conditions
+ *   List of conditions. Each condition has field, value and operator.
+ * @param int $limit
+ *   Number of stories to return.
+ * @param int|null $exclude
+ *   ID of story to exclude. This is mostly for when showing other stories on a
+ *   story page.
+ *
+ * @return \Drupal\node\NodeInterface[]
+ *   List of story nodes.
+ */
+function unocha_paragraphs_get_stories(array $conditions = [], $limit = 3, $exclude = NULL) {
+  $storage = \Drupal::entityTypeManager()->getStorage('node');
+
+  $query = $storage
+    ->getQuery()
+    ->accessCheck(TRUE)
+    ->condition('type', 'story')
+    ->condition('status', 1)
+    ->sort('sticky', 'desc')
+    ->sort('promote', 'desc')
+    ->sort('created', 'desc')
+    ->range(0, $limit);
+
+  // Exclude a story.
+  if (!empty($exclude)) {
+    $query->condition('nid', $exclude, '<>');
+  }
+
+  // Additional conditions.
+  if (!empty($conditions)) {
+    $or_condition_group = $query->orConditionGroup();
+    foreach ($conditions as $condition) {
+      $or_condition_group->condition(...$condition);
+    }
+    $query->condition($or_condition_group);
+  }
+
+  return $storage->loadMultiple($query->execute() ?? []);
+}
+
+/**
+ * Get the parent node from the menu link associated with the given node.
+ *
+ * @param \Drupal\node\NodeInterface $node
+ *   Child node in the menu hierarchy.
+ * @param string $menu_name
+ *   Menu in which to look for the parent.
+ *
+ * @return \Drupal\node\NodeInteface|null
+ *   Parent node.
+ */
+function unocha_paragraphs_get_node_parent_node(NodeInterface $node, $menu_name = 'main') {
+  $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+
+  // Get the menu links referencing this node.
+  $menu_links = $menu_link_manager->loadLinksByRoute('entity.node.canonical', [
+    'node' => $node->id(),
+  ]);
+
+  // Get the parent link in the main navigation menu, which should be a link
+  // to the region node.
+  $parent_link_id = NULL;
+  if (!empty($menu_links)) {
+    foreach ($menu_links as $menu_link) {
+      if ($menu_link->getMenuName() === $menu_name) {
+        $parent_link_id = $menu_link->getParent();
+      }
+    }
+  }
+
+  // Try to retrieve the region node from the parent menu link.
+  if (!empty($parent_link_id)) {
+    $nodes = unocha_paragraphs_get_nodes_from_menu_links([$parent_link_id]);
+    return !empty($nodes) ? reset($nodes) : NULL;
+  }
+
+  return NULL;
+}
+
+/**
+ * Get the parent node of a paragaph.
+ *
+ * @param \Drupal\paragaph\ParagraphInterface $paragraph
+ *   Paragrah entity.
+ *
+ * @return \Drupal\node\NodeInterface|null
+ *   Parent node.
+ */
+function unocha_paragraphs_get_paragraph_parent_node(ParagraphInterface $paragraph) {
+  // Retrieve the closest node parent. We need to do loop because the paragraph
+  // maybe nested in another paragraph or other entity for example.
+  $parent = $paragraph->getParentEntity();
+  while (isset($parent) && !($parent instanceof NodeInterface)) {
+    if ($parent instanceof ParagraphInterface) {
+      $parent = $parent->getParentEntity();
+    }
+    else {
+      $parent = NULL;
+    }
+  }
+  return $parent;
+}
+
+/**
+ * Get a nodes from a menu link items pointing at them.
+ *
+ * @param array $menu_links
+ *   List of menu link objects or IDs.
+ *
+ * @return \Drupal\node\NodeInterface[]
+ *   Nodes corresponding to the menu links.
+ */
+function unocha_paragraphs_get_nodes_from_menu_links(array $menu_links) {
+  $node_ids = [];
+  foreach ($menu_links as $menu_link) {
+    if (is_string($menu_link)) {
+      $menu_link = \Drupal::service('plugin.manager.menu.link')
+        ->createInstance($menu_link);
+    }
+    elseif ($menu_link instanceof MenuLinkTreeElement) {
+      $menu_link = $menu_link->link;
+    }
+
+    if (isset($menu_link) &&
+      $menu_link instanceof MenuLinkInterface &&
+      $menu_link->getRouteName() === 'entity.node.canonical' &&
+      !empty($menu_link->getRouteParameters()['node'])
+    ) {
+      $node_id = $menu_link->getRouteParameters()['node'];
+      $node_ids[$node_id] = $node_id;
+    }
+  }
+  if (!empty($node_ids)) {
+    return \Drupal::entityTypeManager()
+      ->getStorage('node')
+      ->loadMultiple($node_ids);
+  }
+  return [];
+}
+
+/**
+ * Implements hook_field_widget_single_element_WIDGET_TYPE_form_alter().
+ *
+ * Show a list of event type terms as options for the view argument of
+ * the events paragraph type's field_events.
+ */
+function unocha_paragraphs_field_widget_single_element_viewsreference_select_form_alter(array &$element, FormStateInterface $form_state, array $context) {
+  if (isset($context['items'], $element['options']) && $context['items']->getName() === 'field_events') {
+    $entity_type_manager = \Drupal::entityTypeManager();
+
+    $element['options']['#type'] = 'fieldset';
+
+    // Show the available event types to pass as argument to filter the view.
+    if (isset($element['options']['argument'])) {
+      $entity_type_manager = \Drupal::entityTypeManager();
+
+      $element['options']['argument']['#title'] = t('Event type');
+      $element['options']['argument']['#weight'] = -2;
+
+      $terms = $entity_type_manager->getStorage('taxonomy_term')->loadByProperties([
+        'vid' => 'event_type',
+      ]);
+
+      if (!empty($terms)) {
+        $options = array_map(function ($term) {
+          return $term->label();
+        }, $terms);
+
+        $element['options']['argument']['#type'] = 'select';
+        $element['options']['argument']['#options'] = $options;
+        $element['options']['argument']['#empty_value'] = '';
+        $element['options']['argument']['#empty_option'] = t('All');
+
+        // Retrieve the list of view display IDs that accept an event type
+        // term as argument. We'll only show the argument field for those.
+        $event_type_condition = [];
+        if (isset($element['display_id'])) {
+          $view_id = $element['target_id']['#default_value'];
+          $view = $entity_type_manager->getStorage('view')->load($view_id);
+          if (isset($view)) {
+            foreach ($element['display_id']['#options'] as $display_id => $label) {
+              $display = $view->getDisplay($display_id);
+              if (!empty($display['display_options']['arguments']['field_event_type_target_id'])) {
+                if (!empty($event_type_condition)) {
+                  $event_type_condition[] = 'or';
+                }
+                $event_type_condition[] = ['value' => $display_id];
+              }
+            }
+          }
+        }
+        if (!empty($event_type_condition)) {
+          $element['options']['argument']['#states']['visible'] = [
+            ':input[name="field_events[0][display_id]"]' => $event_type_condition,
+          ];
+        }
+      }
+      else {
+        $element['options']['argument']['#access'] = FALSE;
+      }
+    }
+
+    // Limit the pagination options.
+    if (isset($element['options']['pager']['#options'])) {
+      $element['options']['pager']['#weight'] = -1;
+      $element['options']['pager']['#options'] = [
+        'none' => t('Display all'),
+        'some' => t('Fixed number in total'),
+        'full' => t('Fixed number per page'),
+      ];
+
+      if (isset($element['options']['limit'])) {
+        $element['options']['limit']['#states']['invisible'] = [
+          ':input[name="field_events[0][options][pager]"]' => ['value' => 'none'],
+        ];
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for 'node_form'.
+ */
+function unocha_paragraphs_form_node_form_alter(array &$form, FormStateInterface &$form_state, $form_id) {
+  // Disable the option to promote content.
+  if (isset($form['promote'])) {
+    $form['promote']['#access'] = FALSE;
+  }
+  // Change the label of the `sticky` option to something possibly more
+  // understandable for editors.
+  if (isset($form['sticky'])) {
+    $form['sticky']['widget']['value']['#title'] = t('Featured');
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for ''.
+ */
+function unocha_paragraphs_preprocess_select(array &$variables) {
+  // Change `sticky/unsticky` to `featured/unfeatured` in the content view
+  // bulk operations.
+  //
+  // Unfortunately we do not have a more specific way to alter only the
+  // select element used for the bulk operations in the content view so we
+  // use a generic preprocess_select hook and check if the `sticky` option
+  // exists.
+  if (isset($variables['element']['#options']['node_make_sticky_action'])) {
+    $variables['element']['#options']['node_make_sticky_action'] = t('Make content featured');
+    $variables['element']['#options']['node_make_unsticky_action'] = t('Make content unfeatured');
+    foreach ($variables['options'] ?? [] as $key => $option) {
+      if ($option['value'] === 'node_make_sticky_action') {
+        $variables['options'][$key]['label'] = t('Make content featured');
+      }
+      if ($option['value'] === 'node_make_unsticky_action') {
+        $variables['options'][$key]['label'] = t('Make content unfeatured');
+      }
+    }
+  }
+}

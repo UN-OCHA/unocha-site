@@ -1,0 +1,26 @@
+uuid: 4cc65ad2-e753-4d22-8961-864e65a95d70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.cbpf
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - text_editor_simple
+id: paragraph.cbpf.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: cbpf
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

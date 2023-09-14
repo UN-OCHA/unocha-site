@@ -14,23 +14,20 @@ bundle: story
 label: 'Custom content'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles: null
-    negate: 0
+    target_bundles: {  }
+    negate: 1
     target_bundles_drag_drop:
       call_to_action:
         weight: 16
         enabled: false
-      card:
-        weight: 17
-        enabled: false
-      card_list:
-        weight: 18
+      content_list:
+        weight: 21
         enabled: false
       datawrapper:
         weight: 19
@@ -38,17 +35,17 @@ settings:
       embed:
         weight: 20
         enabled: false
-      image_caption:
-        weight: 21
+      figures:
+        weight: 24
+        enabled: false
+      image:
+        weight: 25
         enabled: false
       layout:
         weight: 22
         enabled: false
       node:
         weight: 23
-        enabled: false
-      node_list:
-        weight: 24
         enabled: false
       reliefweb_document:
         weight: 25
@@ -62,8 +59,17 @@ settings:
       rw_key_figures:
         weight: 28
         enabled: false
+      tab:
+        weight: 32
+        enabled: true
+      tabs:
+        weight: 33
+        enabled: false
       text:
         weight: 29
+        enabled: false
+      text_and_image:
+        weight: 35
         enabled: false
       video:
         weight: 30

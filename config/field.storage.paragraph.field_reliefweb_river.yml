@@ -1,0 +1,19 @@
+uuid: 12b50a5c-a5df-48fb-82af-94e7f0cd47ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - unocha_reliefweb
+id: paragraph.field_reliefweb_river
+field_name: field_reliefweb_river
+entity_type: paragraph
+type: reliefweb_river
+settings: {  }
+module: unocha_reliefweb
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

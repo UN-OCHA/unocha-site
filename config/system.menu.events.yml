@@ -1,0 +1,8 @@
+uuid: 266d9195-e023-485b-8840-397ea78e0677
+langcode: en
+status: true
+dependencies: {  }
+id: events
+label: Events
+description: 'Footer menu: Events'
+locked: false

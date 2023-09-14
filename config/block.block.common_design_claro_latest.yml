@@ -1,0 +1,25 @@
+uuid: fc982e76-3374-4643-8ec4-23e931ab48cf
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.latest
+  module:
+    - system
+  theme:
+    - common_design_claro
+id: common_design_claro_latest
+theme: common_design_claro
+region: header
+weight: -3
+provider: null
+plugin: 'system_menu_block:latest'
+settings:
+  id: 'system_menu_block:latest'
+  label: Latest
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

@@ -1,13 +1,13 @@
 uuid: 34182677-c973-4e52-a302-5243d2d3a9d7
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.basic.body
     - field.field.node.basic.field_basic_image
+    - field.field.node.basic.field_children_menu
     - field.field.node.basic.field_custom_content
-    - field.field.node.basic.field_image_caption
     - node.type.basic
   module:
     - layout_builder
@@ -28,24 +28,37 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 2
+    region: content
+  field_basic_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: hero
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_children_menu:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_custom_content:
     type: layout_paragraphs
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 102
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 3
     region: content
 hidden:
-  field_basic_image: true
-  field_image_caption: true
   langcode: true
   layout_builder__layout: true
+  links: true

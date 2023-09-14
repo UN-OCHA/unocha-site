@@ -1,0 +1,165 @@
+uuid: 38c40621-d884-4822-8510-ead3118e1d9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.response.body
+    - field.field.node.response.field_active_response
+    - field.field.node.response.field_country
+    - field.field.node.response.field_custom_content
+    - field.field.node.response.field_has_response
+    - field.field.node.response.field_office_type
+    - field.field.node.response.field_region
+    - field.field.node.response.field_response_image
+    - field.field.node.response.field_response_link
+    - node.type.response
+  module:
+    - choices
+    - layout_paragraphs
+    - link
+    - media_library
+    - path
+    - text
+id: node.response.default
+targetEntityType: node
+bundle: response
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 3
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_active_response:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_country:
+    type: choices_widget
+    weight: 8
+    region: content
+    settings:
+      configuration_options: ''
+    third_party_settings: {  }
+  field_custom_content:
+    type: layout_paragraphs
+    weight: 4
+    region: content
+    settings:
+      preview_view_mode: preview
+      nesting_depth: 2
+      require_layouts: 0
+      empty_message: 'Placeholder message to display when field is empty'
+    third_party_settings: {  }
+  field_has_response:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_office_type:
+    type: options_buttons
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_region:
+    type: choices_widget
+    weight: 7
+    region: content
+    settings:
+      configuration_options: ''
+    third_party_settings: {  }
+  field_response_image:
+    type: media_library_widget
+    weight: 1
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_response_link:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 10
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 14
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 18
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 11
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

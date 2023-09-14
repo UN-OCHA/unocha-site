@@ -1,0 +1,49 @@
+uuid: 6980607b-3eaf-4391-a504-fa5ae0752d72
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.contacts.field_emails
+    - taxonomy.vocabulary.contacts
+  module:
+    - text
+id: taxonomy_term.contacts.default
+targetEntityType: taxonomy_term
+bundle: contacts
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_emails:
+    type: email_default
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  path: true
+  translation: true

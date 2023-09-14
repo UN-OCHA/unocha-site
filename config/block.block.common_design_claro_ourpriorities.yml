@@ -1,0 +1,25 @@
+uuid: 9fab89f4-ead1-49f6-a817-5547127dd264
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.our-priorities
+  module:
+    - system
+  theme:
+    - common_design_claro
+id: common_design_claro_ourpriorities
+theme: common_design_claro
+region: header
+weight: -8
+provider: null
+plugin: 'system_menu_block:our-priorities'
+settings:
+  id: 'system_menu_block:our-priorities'
+  label: 'Our priorities'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

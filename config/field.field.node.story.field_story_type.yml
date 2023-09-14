@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_story_type
     - node.type.story
-    - taxonomy.vocabulary.story
+    - taxonomy.vocabulary.story_type
 id: node.story.field_story_type
 field_name: field_story_type
 entity_type: node
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      story: story
+      story_type: story_type
     sort:
       field: name
       direction: asc

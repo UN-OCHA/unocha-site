@@ -1,0 +1,24 @@
+{% embed '@common_design_subtheme/layout/page.html.twig' %}
+
+  {% block main %}
+    {# Link to skip to the main content is in html.html.twig #}
+    <main  aria-label="{{ 'Page content'|t }}" id="main-content" class="cd-container">
+
+      {% if page.page_title is not empty %}
+      {{ page.page_title }}
+      {% else %}
+      {% include '@common_design_subtheme/layout/page-title.html.twig' with {'title': 'Page not found'|t} %}
+      {% endif %}
+
+      <div class="cd-layout">
+
+        <div class="cd-layout__content">
+          {{ page.content }}
+        </div>{# /.cd-layout__content #}
+
+      </div>
+
+    </main>
+  {% endblock %}
+
+{% endembed %}

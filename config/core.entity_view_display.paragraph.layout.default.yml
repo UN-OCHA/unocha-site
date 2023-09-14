@@ -7,7 +7,12 @@ dependencies:
     - field.field.paragraph.layout.field_title
     - paragraphs.paragraphs_type.layout
   module:
+    - layout_builder
     - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
 id: paragraph.layout.default
 targetEntityType: paragraph
 bundle: layout

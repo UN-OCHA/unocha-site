@@ -1,0 +1,10 @@
+uuid: a2c45d7a-17c7-4803-bad7-2216f2f73a05
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.default_paginated
+label: 'Default (paginated)'
+targetEntityType: paragraph
+cache: true

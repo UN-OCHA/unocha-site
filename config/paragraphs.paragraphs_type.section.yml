@@ -1,0 +1,16 @@
+uuid: c40862b5-e7ce-4ae1-a8f7-ffb4e0ea4647
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+id: section
+label: Section
+icon_uuid: null
+icon_default: null
+description: 'Section paragraph that can contain other paragraphs or sections, and optional display as Tabs.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: true
+    available_layouts:
+      layout_onecol: 'One column'

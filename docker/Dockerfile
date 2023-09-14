@@ -1,5 +1,5 @@
 # Build the code.
-FROM public.ecr.aws/unocha/php-k8s:8.2-unstable as builder
+FROM public.ecr.aws/unocha/php-k8s:8.2-stable as builder
 
 ARG  BRANCH_ENVIRONMENT
 
@@ -11,7 +11,7 @@ COPY . /srv/www
 WORKDIR /srv/www
 
 # Clean up previous composer installation and run new one.
-RUN rm -rf ./vendor && composer install --no-interaction --no-dev
+RUN rm -rf ./vendor && composer install --no-dev --no-interaction
 
 # Copy settings to default site location.
 RUN cp -a docker/settings.php docker/services.yml docker/memcache.services.yml html/sites/default
@@ -19,7 +19,7 @@ RUN cp -a docker/settings.php docker/services.yml docker/memcache.services.yml h
 ################################################################################
 
 # Generate the image.
-FROM public.ecr.aws/unocha/php-k8s:8.2-unstable
+FROM public.ecr.aws/unocha/php-k8s:8.2-stable
 
 ARG VCS_REF
 ARG VCS_URL
@@ -42,6 +42,10 @@ LABEL info.humanitarianresponse.build.date=$BUILD_DATE \
       info.humanitarianresponse.build.vcs-url=$VCS_URL \
       info.humanitarianresponse.build.vcs-ref=$VCS_REF
 
+RUN mkdir -p /etc/nginx/custom && \
+    # Permit nginx access to the MAPBX_SECRET env variable.
+    sed -i 's/env NGINX_OVERRIDE_PROTOCOL;/env NGINX_OVERRIDE_PROTOCOL;\n\n## Mapbox access token.\nenv MAPBOX_TOKEN;/' /etc/nginx/nginx.conf
+
 COPY --from=builder /srv/www/assets /srv/www/assets
 COPY --from=builder /srv/www/config /srv/www/config
 COPY --from=builder /srv/www/config_dev /srv/www/config_dev
@@ -50,7 +54,7 @@ COPY --from=builder /srv/www/vendor /srv/www/vendor
 COPY --from=builder /srv/www/composer.json /srv/www/composer.json
 COPY --from=builder /srv/www/composer.patches.json /srv/www/composer.patches.json
 COPY --from=builder /srv/www/composer.lock /srv/www/composer.lock
-COPY --from=builder /srv/www/patches /srv/www/patches
+COPY --from=builder /srv/www/PATCHES /srv/www/PATCHES
 COPY --from=builder /srv/www/scripts /srv/www/scripts
 COPY --from=builder /srv/www/docker/etc/nginx/custom /etc/nginx/custom/
-COPY --from=builder /srv/www/docker/etc/nginx/apps/drupal/fastcgi_drupal.conf /etc/nginx/apps/drupal/fastcgi_drupal.conf
+COPY --from=builder /srv/www/docker/etc/nginx/sites-enabled/02_mapbox_proxy_cache.conf /etc/nginx/sites-enabled/02_mapbox_proxy_cache.conf

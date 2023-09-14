@@ -1,0 +1,56 @@
+uuid: c9ba7653-8517-48bb-ac61-84fb4eeb7490
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.map
+    - field.field.node.response.body
+    - field.field.node.response.field_active_response
+    - field.field.node.response.field_country
+    - field.field.node.response.field_custom_content
+    - field.field.node.response.field_has_response
+    - field.field.node.response.field_office_type
+    - field.field.node.response.field_region
+    - field.field.node.response.field_response_image
+    - field.field.node.response.field_response_link
+    - node.type.response
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.response.map
+targetEntityType: node
+bundle: response
+mode: map
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 160
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_response_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_active_response: true
+  field_country: true
+  field_custom_content: true
+  field_has_response: true
+  field_office_type: true
+  field_region: true
+  field_response_link: true
+  langcode: true
+  links: true

@@ -2,13 +2,13 @@ _core:
   default_config_hash: l58O_yEXSo-SeJi19LXdzTU1tNJG3lmnIhCitRkM1tk
 langcode: en
 uuid: 8b187b50-276f-4848-a7e5-f1c218f62345
-name: UN-OCHA
+name: OCHA
 mail: unocha@test.test
-slogan: ''
+slogan: 'United Nations Office for the Coordination of Humanitarian Affairs'
 page:
   403: ''
-  404: ''
-  front: /node/1
+  404: /node/279
+  front: /node/42
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en

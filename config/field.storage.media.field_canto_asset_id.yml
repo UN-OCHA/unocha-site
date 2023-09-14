@@ -1,0 +1,21 @@
+uuid: 91315b46-0034-4eb0-af15-428a3ad343b1
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.field_canto_asset_id
+field_name: field_canto_asset_id
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,7 @@
+type: module
+name: UNOCHA Contact
+description: 'Handles the contact form.'
+package: unocha
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:contact

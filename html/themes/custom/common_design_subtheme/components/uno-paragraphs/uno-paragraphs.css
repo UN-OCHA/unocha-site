@@ -1,0 +1,205 @@
+.paragraph > .field {
+  margin-bottom: 1rem;
+}
+
+.paragraph > .field--name-field-title {
+   margin-bottom: 2rem;
+ }
+
+.paragraph--type--node-teaser > .field > .field__items > .field__item {
+  margin-bottom: 2rem;
+}
+
+.paragraph--type--campaign {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .paragraph--type--campaign {
+    margin-bottom: 8rem;
+  }
+}
+
+.paragraph--type--image,
+.paragraph--type--text-and-image,
+.paragraph--type--embed,
+.paragraph--type--call-to-action,
+.paragraph--type--video,
+.paragraph--type--node,
+.paragraph--type--section.paragraph--view-mode--default,
+.paragraph--type--section.paragraph--view-mode--tabs,
+.paragraph--type--events,
+.paragraph--type--regions,
+.paragraph--type--responses,
+.paragraph--type--stories,
+.paragraph--type--reliefweb-document,
+.paragraph--type--subscribe,
+.paragraph--type--cbpf,
+.paragraph--type--donors,
+.paragraph--type--figures,
+.paragraph--type--media-centre {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .paragraph--type--image,
+  .paragraph--type--text-and-image,
+  .paragraph--type--embed,
+  .paragraph--type--call-to-action,
+  .paragraph--type--video,
+  .paragraph--type--node,
+  .paragraph--type--section.paragraph--view-mode--default,
+  .paragraph--type--section.paragraph--view-mode--tabs,
+  .paragraph--type--events,
+  .paragraph--type--regions,
+  .paragraph--type--responses,
+  .paragraph--type--stories,
+  .paragraph--type--subscribe,
+  .paragraph--type--cbpf,
+  .paragraph--type--donors,
+  .paragraph--type--figures,
+  .paragraph--type--media-centre {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+}
+
+.paragraph--type--subscribe {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+@media screen and (min-width: 768px) {
+  .paragraph--type--subscribe {
+    margin-top: 12rem;
+    margin-bottom: 12rem;
+  }
+}
+
+.paragraph--type--reliefweb-document {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .paragraph--type--reliefweb-document {
+    margin-bottom: 6rem;
+  }
+}
+
+/* Paragraphs in layouts or nested, remove margins */
+.layout__region .paragraph--type--node,
+.paragraph--type--section.paragraph--view-mode--tabs .paragraph--type--section,
+.layout__region .paragraph--type--reliefweb-document {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .layout__region .paragraph--type--node,
+  .paragraph--type--section.paragraph--view-mode--tabs .paragraph--type--section,
+  .layout__region .paragraph--type--reliefweb-document {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+/* Layouts vertical rhythm */
+.paragraph--type--layout {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .paragraph--type--layout {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+}
+
+.paragraph--type--layout:first-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .paragraph--type--layout:first-child {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+/* A layout following another layout, reduce margin */
+.paragraph--type--layout + .paragraph--type--layout {
+  margin-top:2rem;
+  margin-bottom: 2rem;
+}
+
+/* Donors followed by Donors */
+@media screen and (min-width: 768px) {
+  .paragraph--type--donors + .paragraph--type--donors {
+    margin-top: 0;
+  }
+}
+
+/* Donors following Figures (in a Section), reduce margin */
+@media screen and (min-width: 768px) {
+  .paragraph--type--section + .paragraph--type--donors {
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* River followed by another river */
+.paragraph--type--reliefweb-river + .paragraph--type--reliefweb-river {
+  margin-top: 4rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .paragraph--type--reliefweb-river + .paragraph--type--reliefweb-river {
+    margin-top: 6rem;
+  }
+}
+
+/* Full-width paragraphs */
+.paragraph--type--responses.cd-bleed,
+.paragraph--type--response-map.cd-bleed {
+  padding: 2rem 0;
+  background-color: var(--brand-grey);
+}
+
+.paragraph--type--response-map.cd-bleed + .paragraph--type--responses.cd-bleed {
+  margin-top: -2rem;
+}
+
+/* CBPF Paragraph type, center align everything so button is centered */
+.paragraph--type--cbpf {
+  text-align: center;
+}
+
+/* Left align Title and Text fields */
+.paragraph--type--cbpf .field--name-field-title,
+.paragraph--type--cbpf .field--name-field-text {
+  text-align: left;
+}
+
+.paragraph--type--cbpf .cd-button {
+  margin: 2rem auto 0;
+}
+
+.paragraph--type--image {
+  text-align: center;
+}
+
+.paragraph--type--text-and-image .field--name-field-text > p:first-child,
+.paragraph--type--text .field--name-field-text > p:first-child {
+  margin-top: 0;
+}
+
+.paragraph--type--node.paragraph--view-mode--teasers article + article {
+  margin-top: 2rem;
+}
+
+.paragraph--type--layout .cd-teaser {
+  border-bottom: 0 solid;
+}

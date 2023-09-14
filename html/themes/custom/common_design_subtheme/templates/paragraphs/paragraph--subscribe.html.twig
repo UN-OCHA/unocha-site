@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * @overrides html/themes/custom/common_design_subtheme/templates/paragraph.html.twig
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('common_design/cd-button') }}
+
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished',
+    'cd-align--center',
+  ]
+%}
+
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+
+    {{ content|without('field_url')}}
+
+    {%
+      include '@common_design_subtheme/uno/subscribe.html.twig' with {
+        'title': paragraph.field_title.0.value,
+        'url': paragraph.field_url.0.url,
+        'submit': paragraph.field_url.0.title,
+        'logo': '',
+      }
+    %}
+
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

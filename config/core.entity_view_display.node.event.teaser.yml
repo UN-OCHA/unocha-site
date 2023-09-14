@@ -5,15 +5,16 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.event.body
-    - field.field.node.event.field_country
     - field.field.node.event.field_custom_content
     - field.field.node.event.field_event_date
     - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_link
+    - field.field.node.event.field_event_location
     - field.field.node.event.field_event_type
-    - field.field.node.event.field_image_caption
     - node.type.event
   module:
-    - datetime_range
+    - datetime_range_timezone
+    - link
     - text
     - user
 id: node.event.teaser
@@ -21,21 +22,13 @@ targetEntityType: node
 bundle: event
 mode: teaser
 content:
-  body:
-    type: text_trimmed
+  field_event_date:
+    type: daterange_timezone
     label: hidden
     settings:
-      trim_length: 160
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_event_date:
-    type: daterange_default
-    label: inline
-    settings:
-      timezone_override: ''
-      format_type: unocha
       separator: '-'
+      format_type: unocha
+      display_timezone: true
     third_party_settings: {  }
     weight: 1
     region: content
@@ -43,22 +36,33 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: teaser
+      view_mode: event
       link: false
     third_party_settings: {  }
     weight: 0
     region: content
-  field_event_type:
-    type: entity_reference_label
-    label: inline
+  field_event_link:
+    type: link
+    label: hidden
     settings:
-      link: true
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_event_location:
+    type: text_default
+    label: inline
+    settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
 hidden:
-  field_country: true
+  body: true
   field_custom_content: true
-  field_image_caption: true
+  field_event_type: true
   langcode: true
   links: true

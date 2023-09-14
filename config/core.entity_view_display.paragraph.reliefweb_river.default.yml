@@ -3,19 +3,30 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.reliefweb_river.field_hide_thumbnail
-    - field.field.paragraph.reliefweb_river.field_max_number_of_items
-    - field.field.paragraph.reliefweb_river.field_reliefweb_url
+    - field.field.paragraph.reliefweb_river.field_reliefweb_river
     - field.field.paragraph.reliefweb_river.field_text
     - field.field.paragraph.reliefweb_river.field_title
+    - field.field.paragraph.reliefweb_river.paragraph_view_mode
     - paragraphs.paragraphs_type.reliefweb_river
   module:
     - text
+    - unocha_reliefweb
 id: paragraph.reliefweb_river.default
 targetEntityType: paragraph
 bundle: reliefweb_river
 mode: default
 content:
+  field_reliefweb_river:
+    type: reliefweb_river
+    label: hidden
+    settings:
+      white_label: true
+      view_all_link: false
+      paginated: false
+      ocha_only: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_text:
     type: text_default
     label: hidden
@@ -32,6 +43,4 @@ content:
     weight: 0
     region: content
 hidden:
-  field_hide_thumbnail: true
-  field_max_number_of_items: true
-  field_reliefweb_url: true
+  paragraph_view_mode: true

@@ -1,0 +1,10 @@
+uuid: b38520e7-be86-4eac-a26c-8c98f088a25d
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.original_resized
+label: 'Original resized'
+targetEntityType: media
+cache: true

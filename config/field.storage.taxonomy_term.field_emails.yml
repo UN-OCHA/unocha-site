@@ -1,0 +1,18 @@
+uuid: a29d600a-9756-4a7a-aec3-d765db6f1be2
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_emails
+field_name: field_emails
+entity_type: taxonomy_term
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,25 @@
+uuid: a70433a0-2643-4ca1-9512-0568a794ce86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_limit
+    - paragraphs.paragraphs_type.reliefweb_river_curated
+id: paragraph.reliefweb_river_curated.field_limit
+field_name: field_limit
+entity_type: paragraph
+bundle: reliefweb_river_curated
+label: Limit
+description: 'Maximum number of documents to show at once in the list.'
+required: true
+translatable: true
+default_value:
+  -
+    value: 5
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

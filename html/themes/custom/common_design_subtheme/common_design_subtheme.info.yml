@@ -12,8 +12,8 @@ regions:
   header_logo: Header logo
   header_navigation: Header navigation
   highlighted: Highlighted
-  header_mega_menu: Mega menu
   responses_nav: Responses navigation
+  breadcrumb: Breadcrumb
   page_title: Page title
   content: Content
   sidebar_first: First sidebar
@@ -40,28 +40,34 @@ libraries:
 # @see common_design_subtheme.libraries.yml
 #
 libraries-extend:
-  common_design/cd-button:
-    - common_design_subtheme/cd-button
-
+  common_design/cd-article:
+    - common_design_subtheme/uno-article
+  common_design/cd-block-title:
+    - common_design_subtheme/uno-block-title
   common_design/cd-caption:
-    - common_design_subtheme/cd-caption
-  common_design/cd-hero:
-    - common_design_subtheme/cd-hero
-  common_design/cd-hero--style-one:
-    - common_design_subtheme/cd-hero--style-one
-  common_design/cd-hero--style-two:
-    - common_design_subtheme/cd-hero--style-two
-  common_design/cd-hero--style-three:
-    - common_design_subtheme/cd-hero--style-three
-  common_design/cd-social-links:
-    - common_design_subtheme/cd-social-links
+    - common_design_subtheme/uno-caption
+  common_design/cd-card:
+    - common_design_subtheme/uno-card
+  common_design/cd-header:
+    - common_design_subtheme/cd-header
+  common_design/cd-page-title:
+    - common_design_subtheme/uno-page-title
+  common_design/cd-read-more:
+    - common_design_subtheme/uno-read-more
+  common_design/cd-tabs:
+    - common_design_subtheme/uno-tabs
+  common_design/cd-teaser:
+    - common_design_subtheme/uno-teaser
+  common_design/cd-typography:
+    - common_design_subtheme/uno-typography
 
 ###
 # Override libraries to replace specific base-theme components. Now, when the
 # base-theme component would have been used, instead ONLY yours will apply.
-#
-# libraries-override:
-#   common_design/cd-tabs: common_design_subtheme/cd-tabs-overridden
+libraries-override:
+  common_design/cd-dropdown:
+    js:
+      components/cd-dropdown/cd-dropdown.js: components/cd-dropdown/cd-dropdown.js
 
 ###
 # Custom namespace - requires Components module

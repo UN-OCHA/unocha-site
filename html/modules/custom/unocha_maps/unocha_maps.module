@@ -1,0 +1,222 @@
+<?php
+
+/**
+ * @file
+ * Module file for the unocha_maps module.
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Menu\MenuTreeParameters;
+use Drupal\unocha_utility\Helpers\LocalizationHelper;
+
+/**
+ * Implements hook_preprocess_paragraph__type().
+ */
+function unocha_maps_preprocess_paragraph__response_map(array &$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+
+  // Retrieve the closest node parent.
+  $parent = unocha_paragraphs_get_paragraph_parent_node($paragraph);
+
+  $map_type = 'global';
+  if (!empty($parent)) {
+    $entity_type_manager = \Drupal::entityTypeManager();
+    if ($parent->bundle() === 'region') {
+      $map_type = 'regional';
+      $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+
+      // Get the menu links referencing this node.
+      $menu_links = $menu_link_manager->loadLinksByRoute('entity.node.canonical', [
+        'node' => $parent->id(),
+      ]);
+
+      // Get the ID of the menu link for the node in the main navigation menu.
+      $menu_link_id = NULL;
+      if (!empty($menu_links)) {
+        foreach ($menu_links as $menu_link) {
+          if ($menu_link->getMenuName() === 'main') {
+            $menu_link_id = $menu_link->getPluginId();
+          }
+        }
+      }
+
+      if (isset($menu_link_id)) {
+        $tree_parameters = new MenuTreeParameters();
+        $tree_parameters->setRoot($menu_link_id);
+        $tree_parameters->setMaxDepth(1);
+        $tree_parameters->excludeRoot();
+
+        // Get the child links.
+        $menu_links = \Drupal::service('menu.link_tree')
+          ->load('main', $tree_parameters);
+
+        // Get the associated nodes.
+        $responses = unocha_paragraphs_get_nodes_from_menu_links($menu_links);
+        $title = t('Regional coverage');
+
+        // Remove responses that are tagged only with Liaison Office.
+        if (!empty($responses)) {
+          $terms = $entity_type_manager->getStorage('taxonomy_term')->loadByProperties([
+            'vid' => 'office_type',
+            'name' => 'Liaison Office',
+            'langcode' => 'en',
+          ]);
+          if (!empty($terms)) {
+            foreach ($responses as $key => $response) {
+              if (isset($response->field_office_type) && !$response->field_office_type->isEmpty()) {
+                foreach ($response->field_office_type as $item) {
+                  if (!isset($terms[$item->target_id])) {
+                    continue 2;
+                  }
+                }
+                unset($responses[$key]);
+              }
+            }
+          }
+        }
+      }
+    }
+    else {
+      // Get the list of responses that have an actual response.
+      $responses = $entity_type_manager->getStorage('node')->loadByProperties([
+        'type' => 'response',
+        'status' => 1,
+        'field_has_response' => 1,
+      ]);
+      $title = t('Current responses');
+    }
+
+    // Filter out responses without a country because we cannot display them
+    // on the map.
+    if (!empty($responses)) {
+      foreach ($responses as $key => $response) {
+        if (!$response->access('view') || !isset($response->field_country) || $response->field_country->isEmpty()) {
+          unset($responses[$key]);
+        }
+      }
+    }
+
+    // Add the responses to render.
+    if (!empty($responses)) {
+      // Sort responses by priority and name.
+      $collator = LocalizationHelper::getCollator();
+      uasort($responses, function ($a, $b) use ($collator) {
+        $a_active = (int) ($a->field_active_response?->value ?? 0);
+        $b_active = (int) ($b->field_active_response?->value ?? 0);
+
+        if ($a_active === $b_active) {
+          return $collator->compare($a->label(), $b->label());
+        }
+        return $b_active <=> $a_active;
+      });
+
+      // Group responses by countries.
+      $grouped = [];
+      foreach ($responses as $response) {
+        foreach ($response->field_country as $item) {
+          $country = $item->target_id;
+          if (isset($grouped[$country])) {
+            $grouped[$country]['related'][$response->id()] = $response;
+          }
+          else {
+            $grouped[$country]['response'] = $response;
+          }
+        }
+      }
+
+      $id = Html::getUniqueId('response-map');
+
+      $build = $entity_type_manager
+        ->getViewBuilder('node')
+        ->viewMultiple($responses, 'map');
+
+      // Add the coordinates of the response's countries as attributes.
+      foreach ($responses as $response) {
+        if (isset($build[$response->id()])) {
+          $coordinates = [];
+          $related = [];
+
+          // Add the coordinates for each country the response is tagged with
+          // and store the related responses.
+          foreach ($response->field_country as $item) {
+            $country = $item->entity;
+            if (isset($country->field_location->lon, $country->field_location->lat)) {
+              $coordinates[] = $country->field_location->lon . 'x' . $country->field_location->lat;
+
+              // Add the related responses.
+              $country_responses = $grouped[$country->id()] ?? [];
+              // First add the main response for the country.
+              if (isset($country_responses['response'])) {
+                $related[$country_responses['response']->id()] = $country_responses['response'];
+              }
+              // Then add the related responses.
+              if (isset($country_responses['related'])) {
+                $related += $country_responses['related'];
+              }
+              // Remove the current response from the list of related responses.
+              unset($related[$response->id()]);
+            }
+          }
+
+          $build[$response->id()]['#attributes']['data-response'] = $response->id();
+          $build[$response->id()]['#attributes']['data-coordinates'] = implode('|', $coordinates);
+          $build[$response->id()]['#attributes']['class'][] = 'unocha-response-map__article';
+
+          // Add the related responses as a list of links to their pages.
+          if (!empty($related)) {
+            // Sort the related responses alphabetically.
+            uasort($related, function ($a, $b) use ($collator) {
+              return $collator->compare($a->label(), $b->label());
+            });
+
+            $build[$response->id()]['related'] = [
+              '#theme' => 'links',
+              '#links' => array_map(function ($response) {
+                return [
+                  'title' => $response->label(),
+                  'url' => $response->toUrl(),
+                ];
+              }, $related),
+              '#heading' => [
+                'level' => 'h4',
+                'text' => t('Related responses'),
+              ],
+              '#weight' => 100,
+            ];
+          }
+        }
+      }
+
+      $variables['content']['title']['#markup'] = $title;
+      $variables['content']['responses'] = [
+        '#type' => 'container',
+        '#attributes' => [
+          'class' => [
+            'unocha-response-map__content',
+            'unocha-response-map__content--' . $map_type,
+          ],
+          'data-map-content' => '',
+        ],
+        'responses' => $build,
+      ];
+      $variables['attributes']['data-response-map'] = $id;
+      $variables['attributes']['class'][] = 'unocha-response-map';
+
+      // Attach the map library.
+      $variables['#attached']['library'][] = 'unocha_maps/response-map';
+      $variables['#attached']['drupalSettings']['unochaResponseMap'] = [
+        'mapboxKey' => \Drupal::config('unocha_maps.settings')->get('mapbox_key') ?? '',
+        // It's replaced server side.
+        'mapboxToken' => 'token',
+        'maps' => [
+          $id => [
+            'close' => t('Close'),
+            'fitBounds' => TRUE,
+            'usePopup' => FALSE,
+          ],
+        ],
+      ];
+    }
+  }
+}

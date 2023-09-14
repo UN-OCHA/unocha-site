@@ -2,59 +2,68 @@
  * UNO nav
  */
 
-.uno-nav {
-  padding: 1rem;
-  background-color: var(--brand-primary);
-  color: white;
+:root {
+  --uno-nav-list-num-cols: 1;
+  --uno-nav-list-gap-size: 2rem;
 }
 
-.uno-nav__container {
-  max-width: var(--cd-max-width);
-  text-align: center;
-  margin: 0 auto;
-}
-
-.uno-nav__title,
-.uno-nav__list li:first-child a {
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-.uno-nav__title a {
-  color: white;
-}
 .uno-nav__list {
-  list-style-type: none;
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
+
 .uno-nav__list li {
   padding: 0;
 }
-.uno-nav__list li a {
-  display: block;
-  color: white;
-  padding: 0.5rem 1rem;
+
+.uno-nav__list--horizontal li {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0 1rem;
+  border-top: 1px solid var(--brand-grey);
+}
+
+.uno-nav__list--horizontal li a {
   text-decoration: none;
 }
-.uno-nav__list li a:hover {
-  text-decoration: underline;
+
+.uno-nav__list--horizontal {
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--uno-nav-list-gap-size);
 }
-.uno-nav__list li a.is-active {
-  background-color: var(--brand-primary--dark);
+
+.uno-nav__list--horizontal {
+  gap: 0 var(--uno-nav-list-gap-size);
 }
 
-@media screen and (min-width: 767px) {
-.uno-nav__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.uno-nav__list--horizontal li {
+  /* stylelint-disable-next-line max-line-length */
+  flex: 0 1 calc((100% / var(--uno-nav-list-num-cols)) - var(--uno-nav-list-gap-size) + var(--uno-nav-list-gap-size) / var(--uno-nav-list-num-cols));
+}
 
-  .uno-nav__list {
-    display: flex;
+@media screen and (min-width: 480px) {
+  .uno-nav__list--horizontal {
+    --uno-nav-list-num-cols: 2;
   }
+}
 
-  .uno-nav__list li {
-    padding: 0;
+@media screen and (min-width: 750px) {
+  .uno-nav__list--horizontal {
+    --uno-nav-list-num-cols: 3;
   }
+}
+
+.uno-nav__list--vertical li a {
+  display: block;
+  max-width: 16rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--brand-grey);
+}
+.uno-nav__list--vertical li:last-child a {
+  border-bottom: 0 none var(--brand-grey);
+}
+.uno-nav__list--vertical li a {
+  text-decoration: none;
 }

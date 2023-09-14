@@ -1,278 +1,86 @@
-.cd-global-header,
-.js .cd-global-header__actions > * {
-  background: var(--brand-grey);
-}
-
-.cd-header button,
-.cd-footer button {
-  color: var(--cd-default-text-color);
-}
-
-button[aria-expanded] .cd-icon--arrow-down {
-  fill: var(--cd-default-text-color);
-}
-
-.cd-ocha__logo {
-  fill: var(--cd-default-text-color);
-}
-
-.cd-global-header__dropdown {
-  background: var(--brand-grey);
-}
-
-.cd-ocha-dropdown__heading,
-.cd-global-header__dropdown a,
-.cd-global-header__dropdown a:hover {
-  color: var(--cd-default-text-color);
-}
-
-.cd-user-menu__dropdown li a {
-  color: var(--cd-default-text-color);
-}
-
-.cd-global-header button[aria-expanded="true"]::before {
-  border-color: transparent transparent var(--brand-grey);
-}
-
-.language-switcher-language-url ul li a {
-  color: var(--cd-default-text-color);
-}
-.language-switcher-language-url ul li a::before {
-  background: var(--cd-default-text-color);
-}
-
-.js .cd-global-header__language-switcher + .cd-global-header__user-menu::before {
-  background: var(--cd-default-text-color);
-}
-
-.cd-user-menu svg,
-.cd-global-header .menu svg {
-  fill: var(--cd-default-text-color);
-}
-
-.cd-user-menu__item,
-.cd-global-header .menu>li a,
-.cd-global-header .menu>li button {
-  color: var(--cd-default-text-color);
-}
-
-.cd-layout-highlighted {
-  background: var(--brand-primary);
-}
-
-#block-emergencies {
-  color: var(--cd-white);
-  display: flex;
-  gap: 1rem;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-#block-emergencies h2 {
-  color: var(--cd-white);
-  margin: 0;
-  font-size: 1.25rem;
-}
-
-#block-emergencies ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 1rem;
-  justify-content: space-around;
-}
-
-#block-emergencies ul li a {
-  color: var(--cd-white);
-  padding: 1rem 2rem;
-  display: block;
-}
-
-/* Paragraphs */
-.paragraph {
-  margin: 4rem 0 4rem;
-}
-
-.paragraph > .field {
-  margin-bottom: 1rem;
-}
-
-/* Nodes and Terms */
-.layout + .layout {
-  margin-top: 2rem;
-}
-
-.paragraph--type--node-teaser>.field > .field__items > .field__item {
-  margin-bottom: 2rem;
-}
-
+/* Field vertical rhythm */
 .field--name-body + .field--name-field-custom-content {
   margin-top: 2rem;
 }
 
-.field--name-field-custom-content > .field__item + .field__item {
-  margin-top: 6rem;
+/* No top margin on first paragraph type */
+.field--name-field-custom-content .paragraph:first-child {
+  margin-top: 0;
 }
 
-/* .field__label {
-  font-weight: bold;
-  color: var(--cd-grey--dark);
-  text-transform: uppercase;
-  display: none;
-} */
+.field--name-field-custom-content .paragraph:last-child {
+  margin-bottom: 0;
+}
 
-/* .paragraph .field__label {
-  font-weight: bold;
-  color: var(--cd-grey--mid);
-  text-transform: initial;
-} */
+.field__item > p:first-child {
+  margin-top: 0;
+}
 
+/* Fields with inline labels */
 .field--label-inline {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .field--label-inline > .field__label {
   margin-inline-end: 0.5rem;
+  font-weight: 500;
 }
 
 .field--label-inline > .field__label::after {
-  content: ':'
+  content: ":";
 }
 
-/* Restrict width and centre horizontally */
-.node--type-landing-page .cd-page-title,
-.node--type-landing-page .field--name-body,
-.node--type-landing-page .field--name-description,
-.node--type-landing-page .field--name-field-text,
-.node--type-landing-page .field--name-field-title,
-.node--type-landing-page .paragraph--type--list--teaser,
-.taxonomy-term--country .field--name-description,
-.taxonomy-term--country .field--name-field-text,
-.taxonomy-term--country .field--name-field-title,
-.paragraph--type--rss-feed,
-.paragraph--type--reliefweb-document,
-.paragraph--type--reliefweb-river,
-.viewsreference--view-title {
+.field--label-inline > .field__item {
+  flex: 0 1 auto;
+}
+
+/* Restrict width and centre horizontally all fields that are inline */
+.cd-layout-main-content > .field--label-inline {
   max-width: var(--cd-max-content-width);
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 1rem;
 }
 
-.node--type-landing-page .field--name-body,
-.node--type-landing-page .field--name-description,
-.node--type-landing-page .field--name-field-text,
-.node--type-landing-page .field--name-field-title,
-.taxonomy-term--country .field--name-field-text,
-.taxonomy-term--country .field--name-field-title {
-  margin-top: 2rem;
-  margin-bottom: 4rem;
+/* Lists in text areas */
+.field--name-body > ul,
+.field--name-field-text > ul {
+  max-width: var(--cd-max-content-width);
+}
+.field--name-body > ul li,
+.field--name-field-text > ul li {
+  padding-bottom: 0.5rem;
 }
 
-.node--type-landing-page .field--name-field-title,
-.taxonomy-term--country .field--name-field-title,
-.viewsreference--view-title {
-  margin-bottom: 2rem;
+/* Homepage styles */
+.path-frontpage .layout--twocol-66-33 .layout__region--first p.headline {
+  /* Align top so it matches paragraph in next region */
+  margin-top: -4px;
 }
 
-/* Paragraph Text and Image with alignment */
-@media screen and (min-width: 575px) {
-  .paragraph--type--text.paragraph__image--align-left,
-  .paragraph--type--text.paragraph__image--align-right {
-    display: flex;
-  }
-  .paragraph--type--text {
-    flex-wrap: wrap;
-  }
-  .paragraph--type--text.paragraph__image--align-left .field--name-field-text-image,
-  .paragraph--type--text.paragraph__image--align-right .field--name-field-text-image {
-    flex: 0 1 33%;
-  }
-  .paragraph--type--text.paragraph__image--align-left .field--name-field-text,
-  .paragraph--type--text.paragraph__image--align-right .field--name-field-text {
-    flex: 0 1 66%;
-  }
-
-  .field--name-field-title {
-    flex: 1 0 100%;
-  }
-
-  .paragraph__image--align-left .field--name-field-text {
-    order: 2;
-    padding-inline-start: 4rem;
-  }
-  .paragraph__image--align-left .field--name-field-text-image {
-    order: 1;
-  }
-  .paragraph__image--align-right .field--name-field-text,
-  .paragraph__image--align-right .field--name-field-title {
-    order: 1;
-    padding-inline-end: 4rem;
-    text-align: left;
-  }
-  .paragraph__image--align-right .field--name-field-text-image {
-    order: 2;
-  }
+/* Increase font size in second column on homepage */
+.path-frontpage .layout--twocol-66-33 .layout__region--second p {
+  color: #707070;
+  font-size: 20px;
+  line-height: 1.5;
 }
 
-.paragraph__image--align-center .field--name-field-title,
-.paragraph__image--align-center .field--name-field-text {
-  text-align: left;
-}
-.paragraph__image--align-center .field--name-field-media-image .field__item img {
-  display: inline-block;
-  margin: 0 auto;
+.path-frontpage .field--name-field-custom-content .paragraph--type--layout:nth-child(2) .layout--threecol .cd-block-title {
+  margin-bottom: 1rem;
+  color: var(--brand-primary);
+  font-size: 24px;
 }
 
-.paragraph--type--call-to-action.cd-bleed {
-  margin-right: calc(50% - 50vw + var(--cd-bleed-scrollbar-width) / 2);
-  margin-left: calc(50% - 50vw + var(--cd-bleed-scrollbar-width) / 2);
-  background-color: var(--brand-grey);
-}
-
-.cd-layout-sidebar-first > div + * {
-  margin-top: 2rem;
-}
-
-/* Video embed */
-.field--name-field-video .field--name-field-media-oembed-video {
-  position: relative;
-  float: none;
-  clear: both;
-  width: 100%;
-  height: 0;
-  padding-top: 25px;
-  padding-bottom: 56.25%;
-}
-
-.field--name-field-video .field--name-field-media-oembed-video iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.cd-soft-footer {
-  text-align: left;
-}
-.cd-soft-footer h3 {
-  color: white;
-}
-.cd-soft-footer ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-/* Hide fields to use as Heros */
-.node--view-mode-full .field--name-field-landing-page-image,
-.node--view-mode-full .field--name-field-article-image-caption,
-.taxonomy-term--full .field--name-field-country-image {
+/* Hide teaser images on homepage */
+.path-frontpage .paragraph--type--node.paragraph--view-mode--teasers .cd-teaser__image {
   display: none;
 }
 
-/* Set bg colour so when menu items break layout, we can see them */
-.cd-nav__menu-item--level-1 {
-  background-color: white;
+/* When in a layout, reset cd-bumper value */
+.layout .paragraph--type--node.paragraph--view-mode--teasers .cd-teaser__container {
+  padding-left: 0;
+}
+
+/* When in a layout, add margin to teaser title */
+.layout .paragraph--type--node.paragraph--view-mode--teasers .cd-teaser__title {
+  margin-top: 1rem;
 }

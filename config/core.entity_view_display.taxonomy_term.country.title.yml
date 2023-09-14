@@ -1,0 +1,27 @@
+uuid: b08d3107-7424-495f-b089-baffd75a44f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.title
+    - field.field.taxonomy_term.country.field_iso3
+    - field.field.taxonomy_term.country.field_location
+    - field.field.taxonomy_term.country.field_shortname
+    - taxonomy.vocabulary.country
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: taxonomy_term.country.title
+targetEntityType: taxonomy_term
+bundle: country
+mode: title
+content: {  }
+hidden:
+  description: true
+  field_iso3: true
+  field_location: true
+  field_shortname: true
+  langcode: true

@@ -4,6 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.media.media_library
+    - field.field.media.image.field_canto_asset_id
+    - field.field.media.image.field_image_caption
+    - field.field.media.image.field_image_copyright
     - field.field.media.image.field_media_image
     - image.style.thumbnail
     - media.type.image
@@ -14,9 +17,25 @@ targetEntityType: media
 bundle: image
 mode: media_library
 content:
+  field_image_caption:
+    type: string_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_image_copyright:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_media_image:
     type: image_image
-    weight: 5
+    weight: 1
     region: content
     settings:
       progress_indicator: throbber
@@ -30,8 +49,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   created: true
+  field_canto_asset_id: true
   langcode: true
   path: true
   status: true

@@ -23,3 +23,71 @@ unocha_reliefweb.settings:
     reliefweb_document_not_found_max_age:
       type: integer
       label: 'Max age when for a ReliefWeb document page not found response.'
+    reliefweb_api_converter:
+      type: string
+      label: 'URL of the ReliefWeb API converter.'
+    reliefweb_api_use_redirects:
+      type: boolean
+      label: 'Also use the "redirects" field for URL lookups.'
+
+field.field_settings.reliefweb_document:
+  type: mapping
+  mapping:
+    river:
+      type: string
+      label: 'Allowed river'
+
+field.field_settings.reliefweb_river:
+  type: mapping
+  mapping:
+    rivers:
+      type: sequence
+      label: 'Allowed rivers'
+      sequence:
+        type: string
+        label: 'Allowed river'
+
+field.formatter.settings.reliefweb_document:
+  type: mapping
+  label: 'ReliefWeb River formatter settings'
+  mapping:
+    white_label:
+      type: boolean
+      label: 'Convert ReliefWeb URLs to UNOCHA URLs'
+    ocha_only:
+      type: boolean
+      label: 'Only include OCHA documents'
+
+field.formatter.settings.reliefweb_document_river:
+  type: mapping
+  label: 'ReliefWeb River formatter settings'
+  mapping:
+    white_label:
+      type: boolean
+      label: 'Convert ReliefWeb URLs to UNOCHA URLs'
+    ocha_only:
+      type: boolean
+      label: 'Only include OCHA documents'
+    view_all_link:
+      type: boolean
+      label: 'Display a link to the full list of articles'
+    paginated:
+      type: boolean
+      label: 'User a pager to navigate the list'
+
+field.formatter.settings.reliefweb_river:
+  type: mapping
+  label: 'ReliefWeb River formatter settings'
+  mapping:
+    white_label:
+      type: boolean
+      label: 'Convert ReliefWeb URLs to UNOCHA URLs'
+    ocha_only:
+      type: boolean
+      label: 'Only include OCHA documents'
+    view_all_link:
+      type: boolean
+      label: 'Display a link to the full list of articles'
+    paginated:
+      type: boolean
+      label: 'User a pager to navigate the list'

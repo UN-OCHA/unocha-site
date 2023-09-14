@@ -1,0 +1,77 @@
+{
+  "version": "./VERSION",
+  "style": "../../css/brand.css",
+  "path": "/themes/custom/common_design_subtheme/components/rw-icons",
+  "colors": {
+    "dark-blue": "--brand-primary--dark",
+    "dark-grey": "#2e3436",
+    "grey": "#b6c8d0",
+    "white": "white",
+    "blue": "--brand-primary",
+    "green": "#88bb09",
+    "orange": "#eb8705",
+    "red": "#f65c51"
+  },
+  "icons": {
+    "common": {
+      "source": "img/icons/common",
+      "include": [
+        "arrow-right",
+        "close",
+        "download",
+        "external-link",
+        "help"
+      ],
+      "sizes": {
+        "8": [
+          "dark-blue",
+          "dark-grey"
+        ],
+        "12": [
+          "blue",
+          "dark-blue",
+          "dark-grey",
+          "white"
+        ],
+        "18": [
+          "dark-blue",
+          "dark-grey",
+          "white"
+        ]
+      }
+    },
+    "content": {
+      "source": "img/icons/common",
+      "include": [
+        "job",
+        "training",
+        "report",
+        "map",
+        "infographic",
+        "interactive"
+      ],
+      "sizes": {
+        "16": [
+          "dark-grey"
+        ],
+        "24": [
+          "grey"
+        ],
+        "36": [
+          "dark-blue"
+        ]
+      }
+    },
+    "map-marker": {
+      "source": "img/icons/map",
+      "sizes": {
+        "24": [
+          "blue",
+          "grey",
+          "orange",
+          "red"
+        ]
+      }
+    }
+  }
+}

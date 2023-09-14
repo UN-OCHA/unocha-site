@@ -1,0 +1,5 @@
+type: module
+name: UNOCHA breadcrumbs
+description: 'Provides breadcrumbs for the different pages.'
+package: unocha
+core_version_requirement: ^9 || ^10

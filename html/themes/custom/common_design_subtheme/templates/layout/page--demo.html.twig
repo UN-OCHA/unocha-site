@@ -70,51 +70,59 @@
   h3.cd-styleguide > a[id*="cd-"] {
     flex: 1;
   }
-
-  .cd-footer {
-  --cd-footer-row-number: 6;
-    grid-row: var(--cd-footer-row-number) / var(--cd-footer-row-number);
-  }
-
 </style>
-
-<div class="cd-layout-container">
+{%
+  set layout_classes = [
+  'cd-container'
+]
+%}
+<div class="cd-page-layout-container">
 
   {% block header %}
-    {% include '@common_design_subtheme/cd/cd-header/cd-header.html.twig' %}
+    {% include '@common_design/cd/cd-header/cd-header.html.twig' %}
   {% endblock %}
 
-  {% block hero %}
-    <div class="cd-layout-hero">
-      <h3 class="visually-hidden"><a id="cd-hero">cd-hero</a></h3>
-      {% if componentsModule %}
-        {% include '@uno-components/cd-hero/cd-hero.html.twig' %}
-      {% endif %}
-    </div>
+  {% if page.breadcrumb %}
+    {% block breadcrumb %}
+      <div class="cd-layout-breadcrumb cd-container">
+        {{ page.breadcrumb }}
+      </div>
+    {% endblock %}
+  {% endif %}
+
+  {% if page.highlighted %}
+    {% block highlighted %}
+      <div class="cd-layout-highlighted cd-container">
+        {{ page.highlighted }}
+      </div>
+    {% endblock %}
+  {% endif %}
+
+  {{ page.help }}
+
+  {% block main %}
+    {# Link to skip to the main content is in html.html.twig #}
+    <main aria-label="{{ 'Page content'|t }}" id="main-content" {{ attributes.addClass(layout_classes) }}>
+
+      {{ page.page_title }}
+
+      <div class="cd-layout">
+
+        <div class="cd-layout__content">
+          {{ page.content }}
+        </div>{# /.cd-layout__content #}
+
+      </div>
+
+    </main>
   {% endblock %}
-
-  <div class="cd-container">
-    {{ page.page_title }}
-  </div>
-
-  {# Link to skip to the main content is in html.html.twig #}
-  <main role="main" id="main-content" class="cd-container">
-
-    <div class="cd-layout-content">
-
-      {{ page.content }}
-
-    </div>{# /.layout-content #}
-
-  </main>
 
   {% block footer_soft %}
-    {{ page.footer_soft }}
+    {% include '@common_design_subtheme/cd/cd-footer/cd-soft-footer.html.twig' %}
   {% endblock %}
 
   {% block footer %}
     {% include '@common_design_subtheme/cd/cd-footer/cd-footer.html.twig' %}
   {% endblock %}
 
-
-</div>{# /.cd-layout-container #}
+</div>{# /.cd-page-layout-container #}

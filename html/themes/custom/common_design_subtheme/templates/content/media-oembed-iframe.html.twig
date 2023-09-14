@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Theme override to display an oEmbed resource in an iframe.
+ */
+#}
+<!DOCTYPE html>
+<html>
+  <head>
+    <css-placeholder token="{{ placeholder_token }}">
+  </head>
+  {# Overflow control is set inline to prevent vertical scroll on <video>
+    elements from Canto #}
+  <body style="margin: 0; overflow: hidden;">
+    {{ media|raw }}
+  </body>
+</html>

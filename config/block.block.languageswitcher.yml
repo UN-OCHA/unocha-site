@@ -1,6 +1,6 @@
 uuid: 6248aea1-e25b-4e0e-879d-f354984ad5a5
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - language
@@ -9,7 +9,7 @@ dependencies:
 id: languageswitcher
 theme: common_design_subtheme
 region: header_top
-weight: -5
+weight: -8
 provider: null
 plugin: 'language_block:language_interface'
 settings:

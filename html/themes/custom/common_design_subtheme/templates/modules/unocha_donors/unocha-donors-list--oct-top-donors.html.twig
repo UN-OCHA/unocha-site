@@ -1,0 +1,119 @@
+{#
+
+/**
+ * @file
+ * Template for a list of donors/sectors.
+ *
+ * Available variables:
+ * - id: unique id for the list
+ * - type: type of donor data
+ * - attributes: attributes for the container
+ * - level: heading level for the title
+ * - title: list's title
+ * - title_attributes: title attributes
+ * - year: the year of the data
+ * - list: list of donors/sectors with name and optional pledged/paid amounts
+ * - list_attributes: attributes for the list
+ * - item_attributes: attributes for the list items
+ * - format: number format
+ * - precision: number format precision
+ */
+
+#}
+{% if list is not empty %}
+{{ attach_library('common_design_subtheme/uno-donors') }}
+{% set year = year ?? date('Y') %}
+{% set title = 'Funding for OCHA in @year'|t({'@year': year}) %}
+{% set title_id = id ~ '-title' %}
+{% set list_id = id ~ '-list' %}
+{# We use t() for the URL so that, in theory, we could have different URLs for
+   different languages. #}
+{% set url = 'https://fts.unocha.org'|t %}
+{% set link = link(url, url)|render %}
+
+<section{{ attributes.addClass('uno-donors', 'uno-donors--' ~ type|clean_class, 'uno-donors--collapsible').setAttribute('id', id) }}>
+  <h{{ level }}{{ title_attributes.addClass('uno-donors__title', 'cd-block-title').setAttribute('id', title_id) }}>{{ title }}</h{{ level }}>
+  <p class="uno-donors__description">
+    {% trans %}
+      The graphic below shows the top 10 OCHA donors for this year. The bar represents the percentage of earmarked vs. unearmarked funds per donor. For a complete listing of OCHA's donors, please click the button below. For a comprehensive overview of humanitarian funding, visit: {{ link }}.
+    {% endtrans %}
+  </p>
+  <p class="uno-donors__legend">
+    <span class="uno-donors__legend__unearmarked">{{ 'Unearmarked %'|t }}</span>
+    <span class="uno-donors__legend__earmarked">{{ 'Earmarked %'|t }}</span>
+  </p>
+  {% apply spaceless %}
+  <dl{{ list_attributes.addClass('uno-donors__list', 'uno-donors__list--barchart').setAttribute('id', list_id) }}>
+    {# Sort by total funding descending. #}
+    {% for item in list|sort((a, b) => b.total <=> a.total) %}
+    <div{{item_attributes.addClass('uno-donor')}}>
+      <dt class="uno-donors__donor">{{ item.name }}</dt>
+      <dd class="uno-donors__amount">
+        {# @todo shall we show the actual numbers for accessibility? #}
+        {% set width = 100 * (item.unearmarked ?? 0) / (item.total ?? 1) %}
+        <span class="uno-donors__amount__barchart uno-donors--earmarked"><span class="uno-donors--unearmarked" style="width: {{ width }}%;"></span></span>
+        <span class="uno-donors__amount__figure">${{ item.total|format_number_compact(null, format ?? 'long', precision ?? 1, true)  }}</span>
+      </dd>
+    </div>
+    {% endfor %}
+  </dl>
+  {% endapply %}
+</section>
+
+{# Script to show only the first 10 donors with a button to see the full list. #}
+<script>
+  (function () {
+    'use strict';
+
+    // If there are more than 3 paragraphs/lists etc. in the content, we only
+    // display the last 3 ones and add a toggling button to show the full
+    // content.
+    var content = document.getElementById('{{ list_id }}');
+    var title = document.getElementById('{{ title_id }}');
+    var children = content.childNodes;
+    var count = 0;
+    for (var i = 0, l = children.length; i < l; i++) {
+      if (children[i].nodeType === 1) {
+        count++;
+      }
+    }
+    if (count > 10) {
+      content.setAttribute('data-cd-toggable', '{% trans %}Show all donors{% endtrans %}');
+      content.setAttribute('data-cd-toggable-expanded', '{% trans %}Show top 10 donors{% endtrans %}');
+      content.setAttribute('data-cd-toggable-keep', '');
+      content.setAttribute('data-cd-insert-after', '');
+      content.setAttribute('data-cd-icon', 'arrow-down');
+      content.setAttribute('data-cd-component', 'uno-donors');
+      content.setAttribute('data-cd-replace', '{{ list_id }}-dummy');
+    }
+
+    // Scroll to the title of the section containing the text content when
+    // expanding it so that users can read the full description and use the
+    // keyboard navigation to go through the content. When hiding the text,
+    // scroll to the toggler to avoid jumping lower on the page.
+    if ('MutationObserver' in window) {
+      var observer = new MutationObserver(function (mutations) {
+        for (var mutation of mutations) {
+          if (mutation.type === 'attributes' && mutation.attributeName === 'data-cd-hidden') {
+            if (mutation.target.getAttribute('data-cd-hidden') === 'false') {
+              if (title) {
+                title.setAttribute('tabindex', 0);
+                title.focus();
+                title.scrollIntoView();
+                title.removeAttribute('tabindex');
+              }
+            }
+            else if (mutation.oldValue === 'false') {
+              var toggler = document.getElementById('{{ list_id }}-toggler');
+              if (toggler) {
+                toggler.scrollIntoView();
+              }
+            }
+          }
+        }
+      });
+      observer.observe(content, {attributes: true, attributeOldValue: true});
+    }
+  })();
+</script>
+{% endif %}

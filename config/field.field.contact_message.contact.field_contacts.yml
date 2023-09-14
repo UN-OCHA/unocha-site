@@ -1,0 +1,29 @@
+uuid: a71265ea-0cc9-4a96-b9f9-fbbdddb5c13a
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.contact
+    - field.storage.contact_message.field_contacts
+    - taxonomy.vocabulary.contacts
+id: contact_message.contact.field_contacts
+field_name: field_contacts
+entity_type: contact_message
+bundle: contact
+label: Category
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      contacts: contacts
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -15,7 +15,7 @@
  *   Calling other methods, such as node.delete(), will result in an exception.
  *   See \Drupal\node\Entity\Node for a full list of public properties and
  *   methods for the node object.
- * - label: (optional) The title of the node.
+ * - label: The title of the node.
  * - content: All node items. Use {{ content }} to print them all,
  *   or print a subset such as {{ content.field_example }}. Use
  *   {{ content|without('field_example') }} to temporarily suppress the printing
@@ -23,8 +23,8 @@
  * - author_picture: The node author user entity, rendered using the "compact"
  *   view mode.
  * - metadata: Metadata for this node.
- * - date: (optional) Themed creation date field.
- * - author_name: (optional) Themed author name field.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
  * - url: Direct URL of the current node.
  * - display_submitted: Whether submission information should be displayed.
  * - attributes: HTML attributes for the containing element.
@@ -65,9 +65,6 @@
  *
  * @see template_preprocess_node()
  *
- * @todo Remove the id attribute (or make it a class), because if that gets
- *   rendered twice on a page this is invalid CSS for example: two lists
- *   in different view modes.
  */
 #}
 {%
@@ -82,12 +79,18 @@
   ]
 %}
 {{ attach_library('common_design/cd-article') }}
-{{ attach_library('common_design/cd-author') }}
-{{ attach_library('common_design/cd-typography') }}
 
 {% set unochaDate = node.getCreatedTime|date('j F Y') %}
-<article{{ attributes.addClass(classes) }}>
 
+  {% if content.field_basic_image|render %}
+    {% embed '@uno-components/uno-hero/uno-hero.html.twig' %}
+      {% block hero_image %}
+        {{ content.field_basic_image }}
+      {% endblock %}
+    {% endembed %}
+  {% endif %}
+
+<article{{attributes.addClass(classes)|without('role')}}>
   {{ title_prefix }}
   {% if page %}
     {% if title %}
@@ -100,41 +103,32 @@
   {% endif %}
   {{ title_suffix }}
 
-  {{ local_tasks }}
-
-  {% if display_submitted %}
-    <footer class="cd-author node__meta [ cd-bumper ]">
-      {% if author_picture %}
-        <div class="cd-author__image cd-author__image--rounded">
-          {{ author_picture }}
-        </div>
-      {% endif %}
-      <div class="cd-author__content">
-        <div{{ author_attributes.addClass('node__submitted') }}>
-          {% trans %}Submitted by {{ author_name }} on {{ unochaDate }}{% endtrans %}
-          {{ metadata }}
-        </div>
-      </div>
-    </footer>
+  {% if componentsModule %}
+    {% include '@uno-components/uno-social-links/uno-social-links.html.twig' %}
   {% endif %}
 
-  <div{{ content_attributes }}>
+  {{ local_tasks }}
 
-    {{ content }}
+  <div{{ content_attributes.addClass('cd-layout-main-content') }}>
 
-{#    {% block section %}#}
-{#      <div class="cd-layout-two-col">#}
+    {{ content|without('field_basic_image') }}
 
-{#        <div class="cd-layout-main-content">#}
-{#          {{ content }}#}
-{#        </div>#}
-
-{#        <div class="cd-layout-sidebar-first" role="complementary">#}
-{#          Other fields on the node can be printed here to create a faux sidebar layout.#}
-{#        </div>#}
-
-{#      </div>#}
-{#    {% endblock %}#}
+    {% if display_submitted %}
+      <footer class="cd-author node__meta [ cd-bumper ]">
+        {% if author_picture %}
+          <div class="cd-author__image cd-author__image--rounded">
+            {{ author_picture }}
+          </div>
+        {% endif %}
+        <div class="cd-author__content">
+          <div{{author_attributes.addClass('node__submitted')}}>
+            {% trans %}Submitted on
+            {{ unochaDate }}{% endtrans %}
+            {{ metadata }}
+          </div>
+        </div>
+      </footer>
+    {% endif %}
 
   </div>
 

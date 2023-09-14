@@ -1,0 +1,25 @@
+uuid: 8d0616e4-b8bb-402b-b5c3-ff5b200e3caf
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.media
+  module:
+    - system
+  theme:
+    - common_design_claro
+id: common_design_claro_media
+theme: common_design_claro
+region: header
+weight: -4
+provider: null
+plugin: 'system_menu_block:media'
+settings:
+  id: 'system_menu_block:media'
+  label: Media
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

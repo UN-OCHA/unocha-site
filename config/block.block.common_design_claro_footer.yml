@@ -1,0 +1,25 @@
+uuid: 497ef5d3-47f4-43ab-9e5d-1abf6426c6c0
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - common_design_claro
+id: common_design_claro_footer
+theme: common_design_claro
+region: header
+weight: 1
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Footer
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

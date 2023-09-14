@@ -3,6 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.image.field_canto_asset_id
+    - field.field.media.image.field_image_caption
+    - field.field.media.image.field_image_copyright
     - field.field.media.image.field_media_image
     - image.style.large
     - media.type.image
@@ -13,6 +16,21 @@ targetEntityType: media
 bundle: image
 mode: default
 content:
+  field_image_caption:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image_copyright:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_media_image:
     type: image
     label: visually_hidden
@@ -26,6 +44,7 @@ content:
     region: content
 hidden:
   created: true
+  field_canto_asset_id: true
   langcode: true
   name: true
   thumbnail: true

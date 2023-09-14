@@ -1,0 +1,10 @@
+uuid: 8e6ef1d7-639a-4290-a731-8e14be220063
+langcode: en
+status: true
+dependencies: {  }
+id: donors
+label: Donors
+icon_uuid: null
+icon_default: null
+description: 'Top donors, earmarked donors etc.'
+behavior_plugins: {  }

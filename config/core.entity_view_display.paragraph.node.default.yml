@@ -3,14 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.node.field_display_mode
     - field.field.paragraph.node.field_node
-    - field.field.paragraph.node.field_term
     - field.field.paragraph.node.field_text
     - field.field.paragraph.node.field_title
+    - field.field.paragraph.node.paragraph_view_mode
     - paragraphs.paragraphs_type.node
   module:
-    - entity_reference_display
     - text
 id: paragraph.node.default
 targetEntityType: paragraph
@@ -18,24 +16,13 @@ bundle: node
 mode: default
 content:
   field_node:
-    type: entity_reference_display_default
+    type: entity_reference_entity_view
     label: hidden
     settings:
       view_mode: default
-      link: true
-      display_field: null
+      link: false
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_term:
-    type: entity_reference_display_default
-    label: hidden
-    settings:
-      view_mode: default
-      link: true
-      display_field: null
-    third_party_settings: {  }
-    weight: 3
     region: content
   field_text:
     type: text_default
@@ -53,4 +40,4 @@ content:
     weight: 0
     region: content
 hidden:
-  field_display_mode: true
+  paragraph_view_mode: true
