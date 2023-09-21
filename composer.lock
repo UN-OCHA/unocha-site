@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "70e92b6c5b2214ad816cde08592801bf",
+    "content-hash": "389611e641c58c31a4ee7c6179a1b918",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -14227,16 +14227,16 @@
         },
         {
             "name": "unocha/common_design",
-            "version": "v9.0.1",
+            "version": "v9.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/common_design.git",
-                "reference": "084f9403f23e43e44661a269181734d6ea425094"
+                "reference": "b58e4f2ec8508942b5e08acaeccfe58e928a8042"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/common_design/zipball/084f9403f23e43e44661a269181734d6ea425094",
-                "reference": "084f9403f23e43e44661a269181734d6ea425094",
+                "url": "https://api.github.com/repos/UN-OCHA/common_design/zipball/b58e4f2ec8508942b5e08acaeccfe58e928a8042",
+                "reference": "b58e4f2ec8508942b5e08acaeccfe58e928a8042",
                 "shasum": ""
             },
             "require": {
@@ -14251,9 +14251,9 @@
             "description": "OCHA Common Design base theme for Drupal 9+",
             "support": {
                 "issues": "https://github.com/UN-OCHA/common_design/issues",
-                "source": "https://github.com/UN-OCHA/common_design/tree/v9.0.1"
+                "source": "https://github.com/UN-OCHA/common_design/tree/v9.1.0"
             },
-            "time": "2023-07-10T07:28:12+00:00"
+            "time": "2023-09-13T11:46:43+00:00"
         },
         {
             "name": "unocha/ocha_key_figures",
@@ -15839,5 +15839,5 @@
         "php": ">=8.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
