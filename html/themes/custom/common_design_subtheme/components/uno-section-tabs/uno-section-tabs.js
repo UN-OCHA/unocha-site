@@ -34,10 +34,10 @@
         // Add the tablist role to the first <ul> in the .uno-section-tabs container.
         tablist.setAttribute('role', 'tablist');
 
-        // Add semantics are remove user focusability for each tab.
-        Array.prototype.forEach.call(tabs, (tab, i) => {
+        // Add semantics to remove user focusability for each tab.
+        Array.prototype.forEach.call(tabs, tab => {
           tab.setAttribute('role', 'tab');
-          tab.setAttribute('id', 'tab' + (i + 1));
+          tab.setAttribute('id', tab.id);
           tab.setAttribute('tabindex', '-1');
           tab.parentNode.setAttribute('role', 'presentation');
 
