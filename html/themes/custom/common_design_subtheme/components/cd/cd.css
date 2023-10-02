@@ -24,7 +24,7 @@ a:focus {
 
 /* The nav h2 is visually-hidden. Setting its colour prevents contrast issues in
   accessibility scans */
-.cd-global-header nav h2 {
+.cd-global-header nav h2[id] {
   color: white;
 }
 
