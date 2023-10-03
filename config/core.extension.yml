@@ -71,6 +71,7 @@ module:
   redirect: 0
   responsive_image: 0
   samlauth: 0
+  samples: 0
   serialization: 0
   simple_menu_permissions: 0
   social_api: 0
