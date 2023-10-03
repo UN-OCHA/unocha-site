@@ -1,0 +1,23 @@
+uuid: 09cf8a00-5c15-412a-8882-f94322cd88ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.paragraph_view_mode
+    - paragraphs.paragraphs_type.stories
+  module:
+    - paragraph_view_mode
+id: paragraph.stories.paragraph_view_mode
+field_name: paragraph_view_mode
+entity_type: paragraph
+bundle: stories
+label: 'Paragraph view mode'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: cards
+default_value_callback: ''
+settings: {  }
+field_type: paragraph_view_mode
