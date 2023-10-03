@@ -1,16 +1,23 @@
-uuid: ebd7cae0-adf9-473c-a812-e046252da661
+uuid: 5001dde9-e93b-4cd3-a602-0e66faa1c320
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.cards
     - field.field.paragraph.stories.field_limit
     - field.field.paragraph.stories.field_title
     - field.field.paragraph.stories.paragraph_view_mode
     - paragraphs.paragraphs_type.stories
-id: paragraph.stories.default
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.stories.cards
 targetEntityType: paragraph
 bundle: stories
-mode: default
+mode: cards
 content:
   field_title:
     type: string
