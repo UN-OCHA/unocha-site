@@ -257,7 +257,7 @@ function common_design_subtheme_page_attachments_alter(array &$attachments) {
         '#value' => '{
             "@context" : "https://schema.org",
             "@type" : "WebSite",
-            "name" : "UN OCHA",
+            "name" : "UNOCHA",
             "url" : "https://www.unocha.org"
           }',
         '#attributes' => ['type' => 'application/ld+json'],
