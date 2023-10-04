@@ -6,11 +6,11 @@
  */
 
 /**
- * Implements hook_post_update_NAME().
+ * Implements hook_deploy_NAME().
  *
  * Change the view mode of the stories paragraphs.
  */
-function unocha_paragraphs_post_update_stories_paragraph_view_mode(&$sandbox) {
+function unocha_paragraphs_deploy_stories_paragraph_view_mode(&$sandbox) {
   $paragraphs = \Drupal::entityTypeManager()
     ->getStorage('paragraph')
     ->loadByProperties([
