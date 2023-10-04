@@ -240,3 +240,29 @@ function common_design_subtheme_preprocess_html(&$vars) {
     'manifest',
   ];
 }
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function common_design_subtheme_page_attachments_alter(array &$attachments) {
+  $is_front = \Drupal::service('path.matcher')->isFrontPage();
+
+  // Required on homepage only.
+  // https://developers.google.com/search/docs/appearance/site-names#json-ld.
+  if ($is_front) {
+    $attachments['#attached']['html_head'][] = [
+      [
+        '#type' => 'html_tag',
+        '#tag' => 'script',
+        '#value' =>'{
+            "@context" : "https://schema.org",
+            "@type" : "WebSite",
+            "name" : "UN OCHA",
+            "url" : "https://www.unocha.org"
+          }',
+        '#attributes' => ['type' => 'application/ld+json'],
+      ],
+      'json_ld',
+    ];
+  }
+}
