@@ -22,6 +22,12 @@ a:focus {
   background: var(--brand-primary--dark);
 }
 
+/* The nav h2 is visually-hidden. Setting its colour prevents contrast issues in
+  accessibility scans */
+.cd-global-header nav h2[id] {
+  color: white;
+}
+
 .cd-global-header__inner {
   /* OCHA Services is removed so we adjust this */
   justify-content: flex-end;

@@ -1,0 +1,10 @@
+uuid: d4d2c984-9125-40b9-b4ce-c4831a3878f9
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.cards_with_featured
+label: 'Cards with featured'
+targetEntityType: paragraph
+cache: true

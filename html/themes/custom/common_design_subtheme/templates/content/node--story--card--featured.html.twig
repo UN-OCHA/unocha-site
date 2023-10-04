@@ -71,53 +71,10 @@
  */
 #}
 
-{% embed '@common_design_subtheme/content/node--card.html.twig'
-%}
-  {% block card_image %}
-    <a href="{{ url }}">{{ content.field_story_image }}</a>
-  {% endblock %}
+{% embed '@common_design_subtheme/content/node--story--card.html.twig' %}
 
-  {% block card_title %}
-    {% if node.isSticky %}
-      <span class="uno-featured uno-tag">{% trans %}Featured{% endtrans %}</span>
-    {% else %}
-      {% if content.field_story_type|render %}
-        <span class="uno-story-type uno-tag">{{ content.field_story_type[0]["#plain_text"] }}</span>
-      {% endif %}
-    {% endif %}
-    <h3 class="uno-card__title cd-card__title">
-      <a href="{{ url }}">{{ label }}</a>
-    </h3>
-  {% endblock %}
-
-  {% block card_content %}
-    {% block story_content %}
-      {{ content|without('field_story_image', 'body', 'field_story_type') }}
-    {% endblock %}
-
-    <div class="cd-card__footer">
-      {% block date %}
-        {% if display_submitted %}
-          <div class="cd-card__date">
-            <time datetime="{{ node.getCreatedTime|date('Y-m-d H:i:s') }}">{{ unochaDate }}</time>
-          </div>
-        {% endif %}
-      {% endblock %}
-
-      {% block read_more %}
-        <a href="{{ url }}" class="cd-card__link cd-read-more">
-          {% trans %}Read more{% endtrans %}
-          <svg class="cd-icon cd-icon--arrow-right" aria-hidden="true" focusable="false" width="16" height="16">
-            <use xlink:href="#cd-icon--arrow-right"></use>
-          </svg>
-        </a>
-      {% endblock %}
-    </div>
-
-  {% endblock %}
-
-  {# This is empty because we use its markup above instead #}
-  {% block card_footer %}
+  {% block story_content %}
+    {{ content|without('field_story_image', 'field_story_type') }}
   {% endblock %}
 
 {% endembed %}
