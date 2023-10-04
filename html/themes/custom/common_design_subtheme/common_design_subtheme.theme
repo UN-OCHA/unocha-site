@@ -254,7 +254,7 @@ function common_design_subtheme_page_attachments_alter(array &$attachments) {
       [
         '#type' => 'html_tag',
         '#tag' => 'script',
-        '#value' =>'{
+        '#value' => '{
             "@context" : "https://schema.org",
             "@type" : "WebSite",
             "name" : "UN OCHA",
