@@ -125,8 +125,12 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
       $keys = Element::children($variables['content']['stories']);
       $first = reset($keys);
       if ($first !== FALSE && isset($variables['content']['stories'][$first]['#node'])) {
+        // Update the view mode, theme and cache key.
         $variables['content']['stories'][$first]['#view_mode'] = 'featured';
         $variables['content']['stories'][$first]['#theme'] = 'node__story__card__featured';
+        $variables['content']['stories'][$first]['#cache']['keys'] = array_map(function ($key) {
+          return $key === 'card' ? 'featured' : $key;
+        }, $variables['content']['stories'][$first]['#cache']['keys'] ?? []);
       }
     }
   }
