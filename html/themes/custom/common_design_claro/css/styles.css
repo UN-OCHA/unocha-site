@@ -315,3 +315,9 @@ form .paragraph--view-mode--preview.paragraph--type--media-centre .uno-media-cen
 .layout-node-form .field--name-samples-status {
   margin-top: 3rem;
 }
+
+/* Increase the height of the Canto modal */
+.canto-library {
+  height: auto;
+  min-height: 75vh;
+}
