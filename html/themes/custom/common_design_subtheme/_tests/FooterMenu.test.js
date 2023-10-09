@@ -7,15 +7,17 @@ describe('FooterLinks', () => {
 
   it('should contain specific links in the Footer menu', async() => {
     const footerMenuItems = [
-      'Privacy',
-      'Terms of use'
+      'Copyright',
+      'Terms of Use',
+      'Privacy'
     ];
     const footerMenuItemsHref = [
-      'https://www.un.org/en/about-us/privacy-notice',
-      'https://www.un.org/en/about-us/terms-of-use'
+      'https://www.un.org/en/about-us/copyright',
+      'https://www.un.org/en/about-us/terms-of-use',
+      'https://www.un.org/en/about-us/privacy-notice'
     ];
-    const footerLinks = await page.$$eval('.cd-footer ul a', text => { return text.map(text => text.textContent) });
-    const footerLinksHref = await page.$$eval('.cd-footer ul a', anchors => { return anchors.map(anchor => anchor.href) });
+    const footerLinks = await page.$$eval('.cd-footer .cd-footer__section--menu ul a', text => { return text.map(text => text.textContent) });
+    const footerLinksHref = await page.$$eval('.cd-footer .cd-footer__section--menu ul a', anchors => { return anchors.map(anchor => anchor.href) });
     await expect(footerLinks).toEqual(expect.arrayContaining(footerMenuItems));
     await expect(footerLinksHref).toEqual(expect.arrayContaining(footerMenuItemsHref));
   });
