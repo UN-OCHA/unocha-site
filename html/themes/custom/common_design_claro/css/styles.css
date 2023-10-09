@@ -185,10 +185,10 @@ form .paragraph--view-mode--preview.paragraph--type--stories .uno-stories__view_
 form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story.node--view-mode-card .node__content {
   min-width: 220px;
 }
-form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story.node--view-mode-card:first-child .uno-card__image {
-  max-width: 220px;
+form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story.node--view-mode-featured .uno-card__image {
+  flex: 0 1 50%;
 }
-form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story.node--view-mode-card:first-child .cd-card__container {
+form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story.node--view-mode-featured .cd-card__container {
   display: block;
 }
 form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story .cd-card__container {
