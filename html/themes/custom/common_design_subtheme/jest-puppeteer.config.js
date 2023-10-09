@@ -2,8 +2,8 @@
 const config = {
   browserContext: 'incognito',
   launch: {
-    slowMo: 10,
-    headless: true,
+    slowMo: 250,
+    headless: 'new',
     ignoreHTTPSErrors: true,
   },
   testTimeout: 10000,
@@ -16,8 +16,9 @@ const DEBUG_MODE = process.argv.includes('--debug');
 if (DEBUG_MODE) {
   config.launch.headless = false;
   config.testTimeout = 10000;
-  config.launch.slowMo = 100;
+  config.launch.slowMo = 500;
 }
 
 // Export
 module.exports = config;
+

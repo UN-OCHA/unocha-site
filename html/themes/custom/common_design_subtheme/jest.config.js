@@ -16,3 +16,4 @@ config.preset = (E2E_MODE) ? 'jest-puppeteer' : '';
 config.collectCoverage = !E2E_MODE;
 
 module.exports = config;
+
