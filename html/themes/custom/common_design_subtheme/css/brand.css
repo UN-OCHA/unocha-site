@@ -15,9 +15,8 @@
   /* Dark blue is two colour ramps darker than brand blue */
   --brand-primary--dark: #144372;
   --brand-highlight: #E56A54;
-  /* https: //polypane.app/color-contrast/#fg=%23fff&bg=%23E56A54&level=aa&format=hex&algo=WCAG2&filter=none */
-  /* --brand-highlight: #d64200; */
-  --brand-highlight-contrast: #000;
+  /* https://polypane.app/color-contrast/#fg=%23E56A54&bg=%23f5f5f5&level=aa&format=hex&algo=WCAG2&filter=none */
+  --brand-highlight-contrast: #cc3e00;
   --brand-grey: #f5f5f5;
   --brand-grey--border: #ccc;
   --brand-grey--text: #767676;
