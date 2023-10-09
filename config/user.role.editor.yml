@@ -31,6 +31,7 @@ dependencies:
     - paragraphs
     - path
     - redirect
+    - samples
     - simple_menu_permissions
     - system
     - taxonomy
@@ -45,6 +46,7 @@ permissions:
   - 'access administration pages'
   - 'access canto api'
   - 'access content overview'
+  - 'access content samples'
   - 'access media overview'
   - 'access taxonomy overview'
   - 'access toolbar'
@@ -55,6 +57,7 @@ permissions:
   - 'add new links to take-action menu'
   - 'add new links to what-we-do menu'
   - 'add new links to where-we-work menu'
+  - 'administer content samples'
   - 'administer menu'
   - 'administer nodes'
   - 'administer redirects'

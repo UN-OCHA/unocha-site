@@ -11,6 +11,7 @@ use Drupal\Core\Link;
 use Drupal\Core\Menu\MenuLinkInterface;
 use Drupal\Core\Menu\MenuLinkTreeElement;
 use Drupal\Core\Menu\MenuTreeParameters;
+use Drupal\Core\Render\Element;
 use Drupal\Core\Url;
 use Drupal\node\NodeInterface;
 use Drupal\paragraphs\ParagraphInterface;
@@ -113,10 +114,25 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
       'query' => $view_all_query,
     ]);
     $variables['content']['view_all'] = Link::fromTextAndUrl(t('View all'), $view_all_url)->toRenderable();
-    // @todo get the view mode from the paragraph view mode?
+
+    // Render the stories as cards by default.
     $variables['content']['stories'] = \Drupal::entityTypeManager()
       ->getViewBuilder('node')
       ->viewMultiple($stories, 'card');
+
+    // Change the view mode of the story based on the paragraph view mode.
+    if (isset($variables['view_mode']) && $variables['view_mode'] === 'cards_with_featured') {
+      $keys = Element::children($variables['content']['stories']);
+      $first = reset($keys);
+      if ($first !== FALSE && isset($variables['content']['stories'][$first]['#node'])) {
+        // Update the view mode, theme and cache key.
+        $variables['content']['stories'][$first]['#view_mode'] = 'featured';
+        $variables['content']['stories'][$first]['#theme'] = 'node__story__card__featured';
+        $variables['content']['stories'][$first]['#cache']['keys'] = array_map(function ($key) {
+          return $key === 'card' ? 'featured' : $key;
+        }, $variables['content']['stories'][$first]['#cache']['keys'] ?? []);
+      }
+    }
   }
 }
 
