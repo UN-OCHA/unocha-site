@@ -20,4 +20,5 @@ theme: {  }
 complete_list:
   - environment_indicator.indicator
   - environment_indicator.switcher.local
+  - core.entity_view_mode.social_auth.token
 partial_list: {  }
