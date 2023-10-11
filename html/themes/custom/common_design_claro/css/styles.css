@@ -186,7 +186,7 @@ form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-
   min-width: 220px;
 }
 form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story.node--view-mode-featured .uno-card__image {
-  flex: 0 1 50%;
+  flex: 0 1 35%;
 }
 form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story.node--view-mode-featured .cd-card__container {
   display: block;
