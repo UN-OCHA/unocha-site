@@ -75,8 +75,6 @@ module:
   serialization: 0
   simple_menu_permissions: 0
   social_api: 0
-  social_auth: 0
-  social_auth_hid: 0
   sophron: 0
   syslog: 0
   system: 0
