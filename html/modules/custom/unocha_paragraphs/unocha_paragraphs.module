@@ -339,14 +339,21 @@ function unocha_paragraphs_get_nodes_from_menu_links(array $menu_links) {
       !empty($menu_link->getRouteParameters()['node'])
     ) {
       $node_id = $menu_link->getRouteParameters()['node'];
-      $node_ids[$node_id] = $node_id;
+      $node_ids[$node_id] = $menu_link->getWeight();
     }
   }
   if (!empty($node_ids)) {
-    return \Drupal::entityTypeManager()
+    $nodes = \Drupal::entityTypeManager()
       ->getStorage('node')
-      ->loadMultiple($node_ids);
+      ->loadMultiple(array_keys($node_ids));
+
+    // Preserve the order of the menu links.
+    uasort($nodes, function ($a, $b) use ($node_ids) {
+      return $node_ids[$a->id()] <=> $node_ids[$b->id()];
+    });
+    return $nodes;
   }
+
   return [];
 }
 
