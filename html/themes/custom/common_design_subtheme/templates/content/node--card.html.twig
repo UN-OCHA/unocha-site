@@ -87,11 +87,11 @@
 
 <article{{ attributes.addClass(classes) }}>
 
-  <div class="uno-card__image">
   {% block card_image %}
-    <a href="{{ url }}">{{ content.field_image }}</a>
+    <div class="uno-card__image">
+      <a href="{{ url }}">{{ content.field_image }}</a>
+    </div>
   {% endblock %}
-  </div>
 
   <div class="uno-card__content cd-card__container">
     {% block card_title %}
