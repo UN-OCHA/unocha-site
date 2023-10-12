@@ -11,7 +11,7 @@
 .js .unocha-response-map[data-map-enabled] .unocha-response-map__title {
   margin-bottom: 0;
   padding: 4px 8px 4px 8px;
-  background: var(--brand-highlight-contrast);
+  /* background: var(--brand-highlight-contrast); */
   font-size: 18px;
 }
 .js .unocha-response-map[data-map-enabled] .unocha-response-map__header {

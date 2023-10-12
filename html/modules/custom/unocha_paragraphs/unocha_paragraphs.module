@@ -120,8 +120,17 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
       ->getViewBuilder('node')
       ->viewMultiple($stories, 'card');
 
+    $view_mode = $variables['view_mode'] ?? '';
+    $cards_with_featured = $view_mode === 'cards_with_featured';
+
+    // Special case for the forms where the paragraph is rendered with the
+    // preview view mode.
+    if ($view_mode === 'preview') {
+      $cards_with_featured = $paragraph->paragraph_view_mode?->value === 'cards_with_featured';
+    }
+
     // Change the view mode of the story based on the paragraph view mode.
-    if (isset($variables['view_mode']) && $variables['view_mode'] === 'cards_with_featured') {
+    if ($cards_with_featured) {
       $keys = Element::children($variables['content']['stories']);
       $first = reset($keys);
       if ($first !== FALSE && isset($variables['content']['stories'][$first]['#node'])) {
@@ -339,14 +348,21 @@ function unocha_paragraphs_get_nodes_from_menu_links(array $menu_links) {
       !empty($menu_link->getRouteParameters()['node'])
     ) {
       $node_id = $menu_link->getRouteParameters()['node'];
-      $node_ids[$node_id] = $node_id;
+      $node_ids[$node_id] = $menu_link->getWeight();
     }
   }
   if (!empty($node_ids)) {
-    return \Drupal::entityTypeManager()
+    $nodes = \Drupal::entityTypeManager()
       ->getStorage('node')
-      ->loadMultiple($node_ids);
+      ->loadMultiple(array_keys($node_ids));
+
+    // Preserve the order of the menu links.
+    uasort($nodes, function ($a, $b) use ($node_ids) {
+      return $node_ids[$a->id()] <=> $node_ids[$b->id()];
+    });
+    return $nodes;
   }
+
   return [];
 }
 
