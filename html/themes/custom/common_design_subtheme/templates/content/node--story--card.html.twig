@@ -73,8 +73,13 @@
 
 {% embed '@common_design_subtheme/content/node--card.html.twig'
 %}
+
   {% block card_image %}
-    <a href="{{ url }}">{{ content.field_story_image }}</a>
+    {% if content.field_story_image|render %}
+      <div class="uno-card__image">
+        <a href="{{ url }}">{{ content.field_story_image }}</a>
+      </div>
+    {% endif %}
   {% endblock %}
 
   {% block card_title %}
