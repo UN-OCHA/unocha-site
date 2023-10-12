@@ -72,14 +72,16 @@
   {% block card_image %}
     {{ attach_library('common_design_subtheme/uno-media') }}
 
-    {% if content.field_media_video|render %}
-      {{ content.field_media_video }}
+    {% set rendered_video = content.field_media_video|render %}
+    {% if rendered_video|striptags('<iframe>')|trim is not empty %}
+      {{ rendered_video }}
     {% else %}
 
       {# Display first image #}
-      {% if content.field_media_image|render %}
+      {% set rendered_image = content.field_media_image.0|render %}
+      {% if rendered_image|striptags('<img>')|trim is not empty %}
         <div class="uno-card__image">
-          <a href="{{ url }}"> {{ content.field_media_image.0 }}</a>
+          <a href="{{ url }}"> {{ rendered_image }}</a>
         </div>
       {% endif %}
 
