@@ -70,9 +70,10 @@
 {% embed '@common_design_subtheme/content/node--card.html.twig'
 %}
   {% block card_image %}
-    {% if content.field_basic_image|render %}
+    {% set rendered_image = content.field_basic_image|render %}
+    {% if rendered_image|striptags('<img>')|trim is not empty %}
       <div class="uno-card__image">
-        <a href="{{ url }}">{{ content.field_basic_image }}</a>
+        <a href="{{ url }}">{{ rendered_image }}</a>
       </div>
     {% endif %}
   {% endblock %}
