@@ -153,6 +153,11 @@
   color: var(--brand-highlight);
 }
 
+.layout--twocol-sidebar .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .rw-river-article .uno-tag,
+.layout--twocol-sidebar .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river-article .uno-tag {
+  color: var(--brand-highlight-contrast);
+}
+
 .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .rw-river-article .rw-river-article__footer,
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river-article .rw-river-article__footer {
   display: flex;
