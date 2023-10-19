@@ -17,3 +17,4 @@ hidden:
   field_limit: true
   field_node: true
   field_title: true
+  paragraph_view_mode: true

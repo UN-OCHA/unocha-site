@@ -6,7 +6,10 @@ dependencies:
     - field.field.paragraph.stories.field_limit
     - field.field.paragraph.stories.field_node
     - field.field.paragraph.stories.field_title
+    - field.field.paragraph.stories.paragraph_view_mode
     - paragraphs.paragraphs_type.stories
+  module:
+    - paragraph_view_mode
 id: paragraph.stories.default
 targetEntityType: paragraph
 bundle: stories
@@ -36,6 +39,18 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  paragraph_view_mode:
+    type: paragraph_view_mode
+    weight: -100
+    region: content
+    settings:
+      view_modes:
+        cards: cards
+        cards_with_featured: cards_with_featured
+        default: '0'
+      default_view_mode: cards
+      form_mode_bind: false
     third_party_settings: {  }
   status:
     type: boolean_checkbox

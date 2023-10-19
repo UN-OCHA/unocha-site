@@ -60,8 +60,7 @@
         <span class="uno-stories__view_all">{{- content.view_all -}}</span>
       </header>
 
-      {# Stories have a '#node' property. #}
-      <div class="uno-stories__content" data-count="{{ content.stories|filter(i => i['#node'])|length }}">
+      <div class="uno-stories__content">
         {{ content|without('field_title', 'view_all') }}
       </div>
     {% endblock %}

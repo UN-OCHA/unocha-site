@@ -1,11 +1,10 @@
-uuid: 5001dde9-e93b-4cd3-a602-0e66faa1c320
+uuid: efed41f5-5a37-48dc-997b-1b00804b4a23
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.paragraph.cards
+    - core.entity_view_mode.paragraph.cards_with_featured
     - field.field.paragraph.stories.field_limit
-    - field.field.paragraph.stories.field_node
     - field.field.paragraph.stories.field_title
     - field.field.paragraph.stories.paragraph_view_mode
     - paragraphs.paragraphs_type.stories
@@ -15,10 +14,10 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-id: paragraph.stories.cards
+id: paragraph.stories.cards_with_featured
 targetEntityType: paragraph
 bundle: stories
-mode: cards
+mode: cards_with_featured
 content:
   field_title:
     type: string
@@ -30,5 +29,4 @@ content:
     region: content
 hidden:
   field_limit: true
-  field_node: true
   paragraph_view_mode: true

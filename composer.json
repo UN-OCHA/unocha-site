@@ -56,6 +56,7 @@
         "drupal/pathauto": "^1.8",
         "drupal/redirect": "^1.8",
         "drupal/samlauth": "^3.8",
+        "drupal/samples": "^1.0@beta",
         "drupal/simple_menu_permissions": "^2.0",
         "drupal/social_auth_hid": "^3.2",
         "drupal/stable": "^2.0",
@@ -69,7 +70,7 @@
         "drush/drush": "^11.3",
         "oomphinc/composer-installers-extender": "^2.0",
         "orakili/composer-drupal-info-file-patch-helper": "^1",
-        "unocha/common_design": "^9.0",
+        "unocha/common_design": "^9.1",
         "unocha/ocha_key_figures": "^2.0",
         "unocha/ocha_search": "^1.0",
         "webflo/drupal-finder": "^1.2.2"

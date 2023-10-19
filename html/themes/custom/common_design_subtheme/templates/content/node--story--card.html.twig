@@ -71,9 +71,16 @@
  */
 #}
 
+
 {% embed '@common_design_subtheme/content/node--card.html.twig' %}
+
   {% block card_image %}
-    <a href="{{ url }}">{{ content.field_story_image }}</a>
+    {% set rendered_image = content.field_story_image|render %}
+    {% if rendered_image|striptags('<img>')|trim is not empty %}
+      <div class="uno-card__image">
+        <a href="{{ url }}">{{ rendered_image }}</a>
+      </div>
+    {% endif %}
   {% endblock %}
 
   {% block card_title %}
@@ -90,11 +97,9 @@
   {% endblock %}
 
   {% block card_content %}
-    {% if attributes.hasClass('featured') %}
-      {{ content|without('field_story_image', 'field_story_type') }}
-    {% else %}
+    {% block story_content %}
       {{ content|without('field_story_image', 'body', 'field_story_type') }}
-    {% endif %}
+    {% endblock %}
 
     <div class="cd-card__footer">
       {% block date %}
