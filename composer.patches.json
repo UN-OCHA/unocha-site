@@ -17,9 +17,6 @@
     "drupal/maintenance200": {
       "Drupal 10 compatibility": "PATCHES/maintenance200-drupal-10-compatibility.patch"
     },
-    "drupal/pathauto": {
-      "PHP 8.2 compatibility": "PATCHES/pathauto-php-82-compatibility.patch"
-    },
     "drupal/stage_file_proxy": {
       "Stage file proxy attempts to fetch aggregated JS/CSS": "PATCHES/stage_file_proxy_3372105.patch"
     },
