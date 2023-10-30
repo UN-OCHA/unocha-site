@@ -296,3 +296,28 @@ form .paragraph--view-mode--preview.paragraph--type--media-centre article.node--
 form .paragraph--view-mode--preview.paragraph--type--media-centre .uno-media-centre__view_all {
   display: none;
 }
+
+/* Samples module */
+/* Styles from common_design/components/cd-alert/cd-alert.css */
+.field--name-samples-status {
+  --cd-orange: #db7b18;
+  --cd-orange--light: #fae6d1;
+  --cd-alert-color: var(--cd-orange);
+  --cd-alert-color-bg: var(--cd-orange--light);
+  margin: 1rem 0 2rem;
+  padding: 1rem;
+  color: var(--cd-grey--dark);
+  border: 1px solid var(--cd-alert-color);
+  border-radius: 0.25rem;
+  background-color: var(--cd-alert-color-bg);
+  box-shadow: -8px 0 0 var(--cd-alert-color);
+}
+.layout-node-form .field--name-samples-status {
+  margin-top: 3rem;
+}
+
+/* Increase the height of the Canto modal */
+.canto-library {
+  height: auto;
+  min-height: 75vh;
+}
