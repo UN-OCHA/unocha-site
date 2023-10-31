@@ -30,13 +30,12 @@
         const tablist = section.querySelector('.uno-section-tabs ul');
         const tabs = tablist.querySelectorAll('.uno-section-tabs ul a');
         const panels = section.querySelectorAll('[id^="section"]');
-        console.log(tabs.length, panels.length);
 
         // Add the tablist role to the first <ul> in the .uno-section-tabs container.
         tablist.setAttribute('role', 'tablist');
 
         // Add semantics to remove user focusability for each tab.
-        Array.prototype.forEach.call(tabs, (tab, i) => {
+        Array.prototype.forEach.call(tabs, tab => {
           tab.setAttribute('role', 'tab');
           tab.setAttribute('id', tab.id);
           tab.setAttribute('tabindex', '-1');
