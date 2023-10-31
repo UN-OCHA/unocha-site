@@ -71,14 +71,13 @@
  */
 #}
 
-
 {% embed '@common_design_subtheme/content/node--card.html.twig' %}
 
   {% block card_image %}
     {% set rendered_image = content.field_story_image|render %}
     {% if rendered_image|striptags('<img>')|trim is not empty %}
       <div class="uno-card__image">
-        <a href="{{ url }}">{{ rendered_image }}</a>
+        {{ rendered_image }}
       </div>
     {% endif %}
   {% endblock %}
@@ -92,7 +91,7 @@
       {% endif %}
     {% endif %}
     <h3 class="uno-card__title cd-card__title">
-      <a href="{{ url }}">{{ label }}</a>
+      <a href="{{ url }}" target="_blank">{{ label }}</a>
     </h3>
   {% endblock %}
 

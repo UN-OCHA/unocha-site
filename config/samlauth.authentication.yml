@@ -28,10 +28,10 @@ idp_cert_encryption: ''
 unique_id_attribute: oid
 map_users: false
 map_users_name: false
-map_users_mail: false
+map_users_mail: true
 map_users_roles:
-  administrator: '0'
-  editor: '0'
+  administrator: administrator
+  editor: editor
 create_users: true
 sync_name: true
 sync_mail: true
@@ -56,9 +56,10 @@ security_lowercase_url_encoding: false
 security_logout_reuse_sigs: false
 security_allow_repeat_attribute_name: false
 debug_display_error_details: false
-debug_log_in: false
-debug_log_saml_in: false
-debug_log_saml_out: false
+debug_log_in: true
+debug_log_saml_in: true
+debug_log_saml_out: true
 debug_phpsaml: false
 use_proxy_headers: false
 use_base_url: true
+bypass_relay_state_check: false

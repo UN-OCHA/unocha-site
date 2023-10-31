@@ -24,6 +24,7 @@ dependencies:
   module:
     - content_moderation
     - content_translation
+    - entity_browser
     - filter
     - media
     - menu_link_content
@@ -48,6 +49,7 @@ permissions:
   - 'access content overview'
   - 'access content samples'
   - 'access media overview'
+  - 'access stories entity browser pages'
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'add new links to events menu'
@@ -57,7 +59,6 @@ permissions:
   - 'add new links to take-action menu'
   - 'add new links to what-we-do menu'
   - 'add new links to where-we-work menu'
-  - 'administer content samples'
   - 'administer menu'
   - 'administer nodes'
   - 'administer redirects'

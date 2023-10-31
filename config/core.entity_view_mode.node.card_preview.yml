@@ -1,0 +1,10 @@
+uuid: daa27860-b8c2-487a-ac0a-708551835f5f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.card_preview
+label: 'Card preview'
+targetEntityType: node
+cache: true

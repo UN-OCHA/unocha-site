@@ -1,0 +1,29 @@
+uuid: 14eb5c1a-b7cf-4957-b0d6-23604fa39774
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_node
+    - node.type.story
+    - paragraphs.paragraphs_type.stories
+id: paragraph.stories.field_node
+field_name: field_node
+entity_type: paragraph
+bundle: stories
+label: 'Featured stories'
+description: 'Manually select the stories to feature at the top of the story list. They will be displayed in order and are subject to the selected <em>limit</em>.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      story: story
+    sort:
+      field: status
+      direction: DESC
+    auto_create: false
+    auto_create_bundle: response
+field_type: entity_reference
