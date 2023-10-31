@@ -30,8 +30,8 @@ map_users: false
 map_users_name: false
 map_users_mail: true
 map_users_roles:
-  administrator: 'administrator'
-  editor: 'editor'
+  administrator: administrator
+  editor: editor
 create_users: true
 sync_name: true
 sync_mail: true
