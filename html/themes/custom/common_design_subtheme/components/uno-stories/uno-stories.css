@@ -24,7 +24,7 @@
   }
 }
 
-/* When there are 4 items, the first item should span full-width */
+/* When featured view mode is selected the first item should span full-width */
 .uno-stories__content .node--type-story.node--view-mode-featured {
   flex: 1 0 100%;
 }
@@ -60,19 +60,15 @@
     flex-direction: row;
     flex-wrap: nowrap;
   }
-
   .uno-stories__content .node--type-story.node--view-mode-featured .cd-card__title a {
     font-size: var(--cd-font-size--2xbase);
   }
-
   .uno-stories__content .node--type-story.node--view-mode-featured .uno-card__image {
     flex: 0 1 50%;
   }
-
   .uno-stories__content .node--type-story.node--view-mode-featured .uno-card__image img {
     display: block;
   }
-
   .uno-stories__content .node--type-story.node--view-mode-featured .cd-card__container {
     flex: 0 1 50%;
     padding-top: 1rem;
@@ -85,7 +81,6 @@
   .uno-stories__content .node--type-story.node--view-mode-featured .uno-card__image {
     flex: 0 1 748px;
   }
-
   .uno-stories__content .node--type-story.node--view-mode-featured .cd-card__container {
     display: flex;
     flex: 0 1 392px;
@@ -98,7 +93,6 @@
   .uno-stories__content .node--type-story.node--view-mode-featured {
     border: 3px solid var(--brand-grey);
   }
-
   .uno-stories__content .node--type-story.node--view-mode-featured .cd-card__title a {
     font-size: var(--cd-font-size--2xmedium);
   }
