@@ -22,8 +22,8 @@ settings:
     target_bundles:
       story: story
     sort:
-      field: title
-      direction: ASC
+      field: status
+      direction: DESC
     auto_create: false
     auto_create_bundle: response
 field_type: entity_reference
