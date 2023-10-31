@@ -1,0 +1,26 @@
+From 236f7a71c2786ed7e4dd829f36153f69ef95a68a Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Juhani=20V=C3=A4=C3=A4t=C3=A4j=C3=A4?=
+ <juhani@koodijarivi.fi>
+Date: Fri, 24 Mar 2023 13:42:08 +0200
+Subject: [PATCH 1/5] Fix typo with $widget_ids
+
+---
+ src/WidgetSelectorBase.php | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/WidgetSelectorBase.php b/src/WidgetSelectorBase.php
+index b71687d..b5d44ad 100644
+--- a/src/WidgetSelectorBase.php
++++ b/src/WidgetSelectorBase.php
+@@ -25,7 +25,7 @@ abstract class WidgetSelectorBase extends PluginBase implements WidgetSelectorIn
+    *
+    * @var array
+    */
+-  protected $widgets_ids;
++  protected $widget_ids;
+ 
+   /**
+    * ID of the default widget.
+-- 
+GitLab
+

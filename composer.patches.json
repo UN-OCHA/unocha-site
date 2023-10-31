@@ -10,6 +10,9 @@
     "drupal/datetime_range_timezone": {
       "Views integration": "PATCHES/datetime_range_timezone-views-integration.patch"
     },
+    "drupal/entity_browser": {
+      "https://www.drupal.org/project/drupal/issues/3350169": "PATCHES/entity_browser-php82-3350169.patch"
+    },
     "drupal/imageapi_optimize_webp": {
       "Fix derivatives for webp source images": "PATCHES/imageapi_optimize_webp-webp-source-image.patch",
       "Support imagemagick toolkit": "PATCHES/imageapi_optimize_webp-imagemagick-toolkit.patch"
