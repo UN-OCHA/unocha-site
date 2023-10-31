@@ -57,7 +57,6 @@ permissions:
   - 'add new links to take-action menu'
   - 'add new links to what-we-do menu'
   - 'add new links to where-we-work menu'
-  - 'administer content samples'
   - 'administer menu'
   - 'administer nodes'
   - 'administer redirects'
