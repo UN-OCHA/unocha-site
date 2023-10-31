@@ -30,12 +30,13 @@ content:
     region: content
     settings:
       entity_browser: stories
-      field_widget_display: label
+      field_widget_display: rendered_entity
       field_widget_edit: false
       field_widget_remove: true
       field_widget_replace: false
       open: true
-      field_widget_display_settings: {  }
+      field_widget_display_settings:
+        view_mode: card_preview
       selection_mode: selection_prepend
     third_party_settings: {  }
   field_title:
