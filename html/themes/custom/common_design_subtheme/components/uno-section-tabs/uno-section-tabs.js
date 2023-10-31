@@ -35,7 +35,7 @@
         tablist.setAttribute('role', 'tablist');
 
         // Add semantics to remove user focusability for each tab.
-        Array.prototype.forEach.call(tabs, tab => {
+        Array.prototype.forEach.call(tabs, (tab, i) => {
           tab.setAttribute('role', 'tab');
           tab.setAttribute('id', tab.id);
           tab.setAttribute('tabindex', '-1');
