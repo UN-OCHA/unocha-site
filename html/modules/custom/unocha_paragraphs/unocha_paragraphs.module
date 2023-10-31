@@ -150,17 +150,24 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
 
     // Add a class to featured stories.
     if ($cards_with_featured) {
+      $first = NULL;
       foreach (Element::children($build) as $key) {
         $item = $build[$key];
-        if (is_array($item) && isset($item['#node']) && in_array($item['#node'], $featured)) {
-          $build[$key]['#attributes']['class'][] = 'featured';
+        if (is_array($item) && isset($item['#node'])) {
+          if (in_array($item['#node'], $featured)) {
+            $build[$key]['#attributes']['class'][] = 'featured';
+          }
 
-          // Update the view mode, theme and cache key.
-          $build[$key]['#view_mode'] = 'featured';
-          $build[$key]['#theme'] = 'node__story__card__featured';
-          $build[$key]['#cache']['keys'] = array_map(function ($cache_key) {
-            return $cache_key === 'card' ? 'featured' : $cache_key;
-          }, $build[$key]['#cache']['keys'] ?? []);
+          // Only change the view mode of the first story.
+          if (!isset($first)) {
+            // Update the view mode, theme and cache key.
+            $build[$key]['#view_mode'] = 'featured';
+            $build[$key]['#theme'] = 'node__story__card__featured';
+            $build[$key]['#cache']['keys'] = array_map(function ($cache_key) {
+              return $cache_key === 'card' ? 'featured' : $cache_key;
+            }, $build[$key]['#cache']['keys'] ?? []);
+            $first = $key;
+          }
         }
       }
     }
