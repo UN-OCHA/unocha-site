@@ -25,6 +25,10 @@ function unocha_donors_theme() {
         'title' => NULL,
         // Title attributes.
         'title_attributes' => NULL,
+        // Description.
+        'description' => NULL,
+        // Description attributes.
+        'description_attributes' => NULL,
         // The year of the data.
         'year' => NULL,
         // List of donors/sectors with name and optional pledged/paid amounts.
@@ -37,6 +41,8 @@ function unocha_donors_theme() {
         'format' => NULL,
         // Number format precision.
         'precision' => NULL,
+        // KeyFigure or KeyFigurePresence item.
+        'item' => NULL,
       ],
     ],
   ];

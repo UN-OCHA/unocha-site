@@ -266,3 +266,17 @@ ul.uno-donors__list--with-figures .uno-donors__amount {
 .uno-donors--oct-top-donors .uno-donors__donor {
   padding: 0;
 }
+
+.node--view-mode-full .paragraph .field--name-field-text,
+p.uno-donors__description {
+  margin: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  /* When content.field_text has content, remove the padding for consistent
+    vertical rhythm.
+  */
+  .field--name-field-text + .field--name-field-country-donors .uno-donors {
+    padding-top: 0;
+  }
+}

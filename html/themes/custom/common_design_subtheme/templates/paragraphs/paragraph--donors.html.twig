@@ -46,14 +46,29 @@
     not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
+{% set donors = content.field_country_donors.0 ?? content.field_presence_donors.0 %}
+{% if donors %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content.donors }}
-      {{ content|without('donors', 'field_url', 'field_figures_footnote') }}
+      {#
+        We render the title and description to be able to replace the `@year`
+        with the year variable because they may be renderable arrays. We then
+        wrap the result in a '#markup' to avoid double escaping when printed.
+      #}
+      {% set year = donors['#year'] ?: date('Y') %}
+      {% set title = (content.field_title.0 ?: donors['#title'])|render|replace({'@year': year}) %}
+      {% set description = (content.field_text.0 ?: donors['#description'])|render|replace({'@year': year}) %}
+      {{
+        donors|merge({
+          '#title': title ? {'#markup': title},
+          '#description': description ? {'#markup': description}
+        })
+      }}
 
-      {% set donor_type = content.field_country_donors.0['#type'] ?? content.field_presence_donors.0['#type'] %}
-      {% if donor_type == 'oct_unearmarked_donors' %}
+      {{ content|without('field_title', 'field_text', 'field_country_donors', 'field_presence_donors', 'field_url', 'field_figures_footnote') }}
+
+      {% if donors['#type'] == 'oct_unearmarked_donors' %}
         <div class="uno-donors__footnote">
           {{ content.field_figures_footnote }}
           <p>
@@ -86,3 +101,4 @@
     {% endblock %}
   </div>
 {% endblock paragraph %}
+{% endif %}

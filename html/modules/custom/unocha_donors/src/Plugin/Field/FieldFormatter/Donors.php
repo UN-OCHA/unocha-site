@@ -86,12 +86,14 @@ class Donors extends KeyFigureBase {
           '#theme' => 'unocha_donors_list__' . $type . '__' . $view_mode,
           '#id' => Html::getUniqueId($type . '-' . $items->getEntity()->id() . '-' . $delta),
           '#type' => $type,
-          '#title' => $item->getFigureLabel() ?: $this->t('Top donors'),
+          // The title is handled in the template.
+          '#title' => '',
           '#year' => $data['year'] ?? NULL,
           '#list' => $donors,
           '#format' => $format,
           '#precision' => $precision,
           '#currency_symbol' => $currency_symbol,
+          '#item' => $item,
           '#cache' => [
             'max-age' => $this->ochaKeyFiguresApiClient->getMaxAge(),
             'tags' => $this->ochaKeyFiguresApiClient->getCacheTags([
