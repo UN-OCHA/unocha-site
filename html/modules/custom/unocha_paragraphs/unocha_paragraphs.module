@@ -155,6 +155,9 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
       if (is_array($item) && isset($item['#node'])) {
         if (in_array($item['#node'], $featured)) {
           $build[$key]['#attributes']['class'][] = 'featured';
+          // Use a different cache key to ensure the added class is taken into
+          // account.
+          $build[$key]['#cache']['keys'][] = 'featured';
         }
 
         // Only change the view mode of the first story.
