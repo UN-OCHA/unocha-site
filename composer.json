@@ -71,7 +71,7 @@
         "drush/drush": "^11.3",
         "oomphinc/composer-installers-extender": "^2.0",
         "orakili/composer-drupal-info-file-patch-helper": "^1",
-        "unocha/common_design": "^9.1",
+        "unocha/common_design": "^9.2",
         "unocha/ocha_key_figures": "^2.0",
         "unocha/ocha_search": "^1.0",
         "webflo/drupal-finder": "^1.2.2"
