@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - linkit
+    - unocha_utility
 name: CKEditor
 format: ckeditor
 weight: 0
@@ -43,3 +44,9 @@ filters:
     weight: 0
     settings:
       title: true
+  unocha_external_link_filter:
+    id: unocha_external_link_filter
+    provider: unocha_utility
+    status: true
+    weight: 0
+    settings: {  }
