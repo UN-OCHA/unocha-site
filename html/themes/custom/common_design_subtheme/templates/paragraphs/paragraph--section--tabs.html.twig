@@ -53,6 +53,7 @@
     {% block content %}
 
     {{ content.field_title }}
+    {{ content.field_text }}
       <ul class="uno-section-tabs__list">
       {% for section in content.regions.content %}
         {% set paragraph = section['#paragraph'] %}
