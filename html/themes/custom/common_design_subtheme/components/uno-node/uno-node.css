@@ -50,6 +50,26 @@
   }
 }
 
+.node--view-mode-full .paragraph.paragraph--type--section .field--name-field-text {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .node--view-mode-full .paragraph.paragraph--type--section .field--name-field-text {
+    margin-bottom: 1rem;
+  }
+}
+
+.node--view-mode-full .paragraph.paragraph--type--section .paragraph--type--section .field--name-field-text {
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .node--view-mode-full .paragraph.paragraph--type--section .paragraph--type--section .field--name-field-text {
+    margin-bottom: 0;
+  }
+}
+
 .node--view-mode-full .layout .paragraph .field--name-field-text {
   margin-bottom: 0;
 }
