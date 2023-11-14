@@ -16,6 +16,7 @@ global-styling:
     - common_design_subtheme/cd
     - common_design_subtheme/rw-icons
     - common_design_subtheme/uno-card-list
+    - common_design_subtheme/uno-external-links
     - common_design_subtheme/uno-node
 
 ###
@@ -127,6 +128,13 @@ uno-event-date:
   css:
     theme:
       components/uno-event-date/uno-event-date.css: {}
+
+uno-external-links:
+  css:
+    theme:
+      components/uno-external-links/uno-external-links.css: {}
+  dependencies:
+    - common_design_subtheme/rw-icons
 
 uno-figures:
   css:
