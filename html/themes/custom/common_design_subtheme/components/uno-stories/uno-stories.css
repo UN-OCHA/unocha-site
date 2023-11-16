@@ -49,6 +49,10 @@
     padding-top: 2rem;
   }
 
+  .uno-stories__content .node--type-story.node--view-mode-featured .cd-card__title {
+    flex: 1 0 100%;
+  }
+
   .uno-stories__content .node--type-story.node--view-mode-featured .cd-card__title a {
     font-size: var(--cd-font-size--medium);
   }
