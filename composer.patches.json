@@ -1,14 +1,13 @@
 {
   "patches": {
-    "drupal/core": {
-      "https://www.drupal.org/project/drupal/issues/3376927": "PATCHES/core-css-js-aggregation-3376927.patch",
-      "https://www.drupal.org/project/drupal/issues/3351600": "PATCHES/core-ckeditor5-dialog-fix-3351600.patch"
-    },
     "drupal/csp": {
       "Simplify log format": "PATCHES/csp-log-format.patch"
     },
     "drupal/datetime_range_timezone": {
       "Views integration": "PATCHES/datetime_range_timezone-views-integration.patch"
+    },
+    "drupal/entity_browser": {
+      "https://www.drupal.org/project/drupal/issues/3350169": "PATCHES/entity_browser-php82-3350169.patch"
     },
     "drupal/imageapi_optimize_webp": {
       "Fix derivatives for webp source images": "PATCHES/imageapi_optimize_webp-webp-source-image.patch",
@@ -16,9 +15,6 @@
     },
     "drupal/maintenance200": {
       "Drupal 10 compatibility": "PATCHES/maintenance200-drupal-10-compatibility.patch"
-    },
-    "drupal/pathauto": {
-      "PHP 8.2 compatibility": "PATCHES/pathauto-php-82-compatibility.patch"
     },
     "drupal/stage_file_proxy": {
       "Stage file proxy attempts to fetch aggregated JS/CSS": "PATCHES/stage_file_proxy_3372105.patch"

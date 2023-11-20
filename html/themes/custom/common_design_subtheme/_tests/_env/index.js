@@ -4,7 +4,7 @@
 //
 const environments = {
   'local': {
-    baseUrl: 'https://commondesign.test',
+    baseUrl: 'https://unocha-local.test',
     testTimeout: 10000,
   },
   'travis': {
@@ -12,7 +12,7 @@ const environments = {
     testTimeout: 120000,
   },
   'production': {
-    baseUrl: 'https://web.brand.unocha.org',
+    baseUrl: 'https://www.unocha.org',
     testTimeout: 10000,
   },
 };

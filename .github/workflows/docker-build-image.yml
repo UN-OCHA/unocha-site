@@ -28,4 +28,4 @@ jobs:
         ecr_github_token: ${{ secrets.ECR_GITHUB_TOKEN }}
         ecr_jenkins_token: ${{ secrets.JENKINS_ECR_TOKEN }}
         slack_bot_token: ${{ secrets.SLACK_BOT_TOKEN }}
-        slack_channel_name: ${{ env.SLACK_CHANNEL }}
+        slack_channel_name: ${{ vars.SLACK_CHANNEL }}

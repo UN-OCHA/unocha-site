@@ -173,7 +173,24 @@ ul.uno-donors__list--with-figures .uno-donors__amount {
 }
 
 /* Javascript enabled */
-.js .uno-donors button {
+/* Overrides the default behavior when the donor list os collapsed so that it
+ * is always displayed and only the number of displayed donors changes. */
+.js .uno-donors--collapsible .uno-donors__list.cd-disclosure--is-collapsed {
+  display: block;
+}
+/* Display only the first 10 donors. */
+.js .uno-donors--collapsible .uno-donors__list.cd-disclosure--is-collapsed .uno-donor {
+  display: none;
+}
+.js .uno-donors--collapsible .uno-donors__list.cd-disclosure--is-collapsed .uno-donor:nth-child(-n+10) {
+  display: block;
+}
+/* Show all the paragraphs when toggled. */
+.js .uno-donors--collapsible .uno-donors__list:not(.cd-disclosure--is-collapsed) .uno-donor {
+  display: block;
+}
+/* Style the toggler. */
+.js .uno-donors--collapsible .cd-disclosure-toggler {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -193,39 +210,30 @@ ul.uno-donors__list--with-figures .uno-donors__amount {
   fill: var(--brand-primary--dark);
   -webkit-appearance: none;
 }
-.js .uno-donors--collapsible button svg {
-  width: 0.75rem;
-  height: 0.75rem;
-  margin-inline-start: 1rem;
-  margin-inline-end: 0.25rem;
-  transition: fill 0.3s ease-in;
-  fill: currentColor;
-}
-.js .uno-donors--collapsible button:hover,
-.js .uno-donors--collapsible button:active,
-.js .uno-donors--collapsible button:focus {
+.js .uno-donors--collapsible .cd-disclosure-toggler:hover,
+.js .uno-donors--collapsible .cd-disclosure-toggler:active,
+.js .uno-donors--collapsible .cd-disclosure-toggler:focus {
   color: white;
   border-color: var(--brand-primary--dark);
   background-color: var(--brand-primary);
 }
-/* Overrides the default behavior when data-cd-hidden is set as the description
- * is always displayed, only the number of paragraphs changes. */
-.js .uno-donors--collapsible .uno-donors__list[data-cd-hidden] {
-  display: block;
+.js .uno-donors--collapsible .cd-disclosure-toggler::after {
+  display: inline-block;
+  overflow: hidden;
+  width: 12px;
+  height: 12px;
+  margin: 0 4px 0 16px;
+  content: "";
+  vertical-align: middle;
+  background: var(--rw-icons--toggle--down--12--blue);
 }
-.js .uno-donors--collapsible .uno-donors__list .uno-donor {
-  display: none;
+.js .uno-donors--collapsible .cd-disclosure-toggler[aria-expanded="true"]::after {
+  background: var(--rw-icons--toggle--up--12--blue);
 }
-/* Display only the first 3 paragraphs. */
-.js .uno-donors--collapsible .uno-donors__list .uno-donor {
-  display: none;
-}
-.js .uno-donors--collapsible .uno-donors__list .uno-donor:nth-child(-n+10) {
-  display: block;
-}
-/* Show all the paragraphs when toggled. */
-.js .uno-donors--collapsible .uno-donors__list[data-cd-hidden="false"] .uno-donor {
-  display: block;
+.js .uno-donors--collapsible .cd-disclosure-toggler:hover::after,
+.js .uno-donors--collapsible .cd-disclosure-toggler:active::after,
+.js .uno-donors--collapsible .cd-disclosure-toggler:focus::after {
+  background: var(--rw-icons--toggle--up--12--white);
 }
 
 .uno-donors__amount__suffix {

@@ -40,6 +40,19 @@
         ]
       }
     },
+    "toggle": {
+      "source": "img/icons/common",
+      "include": [
+        "up",
+        "down"
+      ],
+      "sizes": {
+        "12": [
+          "blue",
+          "white"
+        ]
+      }
+    },
     "content": {
       "source": "img/icons/common",
       "include": [
