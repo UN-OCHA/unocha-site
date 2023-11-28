@@ -1,0 +1,20 @@
+uuid: 1a1565ec-6fc6-4563-913e-88b15e759658
+langcode: en
+status: false
+dependencies:
+  module:
+    - choices
+id: core_requirements_choices
+label: 'Module choices'
+description: 'Requirements of the choices module'
+category: Requirements
+plugin_id: core_requirements
+result_class: null
+value_label: null
+value_type: no_value
+caching_time: 3600
+settings:
+  module: choices
+  exclude_keys: {  }
+thresholds:
+  type: none

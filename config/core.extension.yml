@@ -60,9 +60,11 @@ module:
   metatag: 0
   metatag_open_graph: 0
   metatag_twitter_cards: 0
+  monitoring: 0
   mysql: 0
   node: 0
   ocha_key_figures: 0
+  ocha_monitoring: 0
   ocha_search: 0
   oembed_providers: 0
   options: 0
