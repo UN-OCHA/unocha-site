@@ -1,0 +1,17 @@
+uuid: 73fed079-3165-4401-8104-b447f37ca03b
+langcode: en
+status: true
+dependencies:
+  module:
+    - unocha_users
+id: user_manager
+label: 'User manager'
+weight: 4
+is_admin: null
+permissions:
+  - 'access user profiles'
+  - 'administer users'
+  - 'assign editor role'
+  - 'assign user_manager role'
+  - 'block other user account'
+  - 'manage other user acount roles'

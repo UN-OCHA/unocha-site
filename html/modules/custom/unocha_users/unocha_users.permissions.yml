@@ -1,0 +1,18 @@
+block other user account:
+  title: 'Block other user account'
+  description: 'Allow users to block other user accounts.'
+
+cancel other user account:
+  title: 'Cancel other user account'
+  description: 'Allow users to cancel other user accounts.'
+
+edit other user account details:
+  title: 'Edit other user account details'
+  description: 'Allow users to edit fields of other user accounts.'
+
+manage other user acount roles:
+  title: 'Manage other user acount roles'
+  description: 'Allow users to manage roles of other user accounts.'
+
+permission_callbacks:
+  - Drupal\unocha_users\UserPermissions::permissions
