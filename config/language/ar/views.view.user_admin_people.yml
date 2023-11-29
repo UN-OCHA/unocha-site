@@ -53,9 +53,6 @@ display:
         roles_target_id:
           expose:
             label: الدور
-        permission:
-          expose:
-            label: الصلاحية
       use_more_text: المزيد
   page_1:
     display_title: الصفحة

@@ -6,8 +6,6 @@ display:
     display_options:
       title: Пользователи
       fields:
-        user_bulk_form:
-          label: 'Массовое обновление'
         name:
           label: 'Имя пользователя'
         status:
@@ -67,9 +65,6 @@ display:
         roles_target_id:
           expose:
             label: Роль
-        permission:
-          expose:
-            label: 'Право доступа'
       use_more_text: ещё
   page_1:
     display_title: Страница

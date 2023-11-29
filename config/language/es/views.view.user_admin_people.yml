@@ -6,8 +6,6 @@ display:
     display_options:
       title: Usuarios
       fields:
-        user_bulk_form:
-          label: 'Actualización masiva'
         name:
           label: 'Nombre de usuario'
         status:
@@ -67,9 +65,6 @@ display:
         roles_target_id:
           expose:
             label: Rol
-        permission:
-          expose:
-            label: Permiso
       use_more_text: más
   page_1:
     display_title: Página
