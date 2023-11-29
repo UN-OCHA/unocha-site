@@ -1,0 +1,7 @@
+type: module
+name: UNOCHA users
+description: 'Handles assigning user roles.'
+package: unocha
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:user

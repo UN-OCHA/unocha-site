@@ -34,6 +34,7 @@ module:
   filter: 0
   geofield: 0
   google_tag: 0
+  honeypot: 0
   image: 0
   imageapi_optimize: 0
   imageapi_optimize_binaries: 0
@@ -93,6 +94,7 @@ module:
   unocha_paragraphs: 0
   unocha_reliefweb: 0
   unocha_sitemap: 0
+  unocha_users: 0
   unocha_utility: 0
   update: 0
   user: 0

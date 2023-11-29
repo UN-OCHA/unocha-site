@@ -6,8 +6,6 @@ display:
     display_options:
       title: Personnes
       fields:
-        user_bulk_form:
-          label: 'Mise à jour en masse'
         name:
           label: "Nom d'utilisateur"
         status:
@@ -67,9 +65,6 @@ display:
         roles_target_id:
           expose:
             label: Rôle
-        permission:
-          expose:
-            label: Droit
       use_more_text: plus
   page_1:
     display_title: Page
