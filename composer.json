@@ -46,7 +46,7 @@
         "drupal/imagemagick": "^3.4",
         "drupal/layout_paragraphs": "^2.0",
         "drupal/linkit": "^6.0@RC",
-        "drupal/maintenance200": "^1.1",
+        "drupal/maintenance200": "^2",
         "drupal/memcache": "^2.5",
         "drupal/menu_breadcrumb": "^2.0@alpha",
         "drupal/metatag": "^2.0",

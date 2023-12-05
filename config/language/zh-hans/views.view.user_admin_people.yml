@@ -6,8 +6,6 @@ display:
     display_options:
       title: 人员
       fields:
-        user_bulk_form:
-          label: 批量更新
         name:
           label: 用户名
         status:
@@ -63,9 +61,6 @@ display:
         roles_target_id:
           expose:
             label: 角色
-        permission:
-          expose:
-            label: 权限
       use_more_text: 更多
   page_1:
     display_title: 页面
