@@ -1,0 +1,20 @@
+uuid: 3d4a5d80-f68f-4031-a21c-52dcf97b9455
+langcode: en
+status: false
+dependencies:
+  module:
+    - entity_browser
+id: core_requirements_entity_browser
+label: 'Module entity_browser'
+description: 'Requirements of the entity_browser module'
+category: Requirements
+plugin_id: core_requirements
+result_class: null
+value_label: null
+value_type: no_value
+caching_time: 3600
+settings:
+  module: entity_browser
+  exclude_keys: {  }
+thresholds:
+  type: none
