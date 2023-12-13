@@ -5,15 +5,25 @@
  * This rule exists so that the values in brand.css resolve relative to this
  * sub-theme instead of the base-theme.
  */
-.cd-site-logo {
-  background:
-    linear-gradient(transparent, transparent),
-    url("../../../img/logos/ocha-logo-vertical.svg") center no-repeat;
-    background-size: auto 52px;
+
+.cd-site-header__inner .region-header-logo {
+  flex: 0 0 var(--brand-logo-mobile-width);
 }
 
+.cd-site-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: var(--brand-logo-mobile-width);
+  background: none;
+}
 @media screen and (min-width: 768px) {
   .cd-site-logo {
-    background: none;
+    width: var(--brand-logo-desktop-width);
   }
+}
+
+.cd-site-logo img {
+  display: block;
 }
