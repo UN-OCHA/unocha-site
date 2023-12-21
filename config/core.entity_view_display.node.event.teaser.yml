@@ -13,9 +13,9 @@ dependencies:
     - field.field.node.event.field_event_type
     - node.type.event
   module:
-    - datetime_range_timezone
     - link
     - text
+    - un_date
     - user
 id: node.event.teaser
 targetEntityType: node
@@ -23,14 +23,14 @@ bundle: event
 mode: teaser
 content:
   field_event_date:
-    type: daterange_timezone
-    label: hidden
+    type: un_date_daterange_timezone
+    label: above
     settings:
-      separator: '-'
-      format_type: unocha
       display_timezone: true
+      month_format: full
+      template: default
     third_party_settings: {  }
-    weight: 1
+    weight: 4
     region: content
   field_event_image:
     type: entity_reference_entity_view
