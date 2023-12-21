@@ -46,7 +46,7 @@ content:
     region: content
   field_event_date:
     type: un_date_daterange_timezone
-    label: above
+    label: hidden
     settings:
       display_timezone: true
       month_format: full
