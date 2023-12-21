@@ -14682,20 +14682,21 @@
         },
         {
             "name": "unocha/un_date",
-            "version": "2.0.11",
+            "version": "2.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/un_date.git",
-                "reference": "3dade890ef85346ca6bd862225f5ee11fe5169d7"
+                "reference": "668bfec2cf67cde574ee8f767fa11aaa2be8a8a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/un_date/zipball/3dade890ef85346ca6bd862225f5ee11fe5169d7",
-                "reference": "3dade890ef85346ca6bd862225f5ee11fe5169d7",
+                "url": "https://api.github.com/repos/UN-OCHA/un_date/zipball/668bfec2cf67cde574ee8f767fa11aaa2be8a8a0",
+                "reference": "668bfec2cf67cde574ee8f767fa11aaa2be8a8a0",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "^1.2"
+                "composer/installers": "^1.2",
+                "php": ">=8.0"
             },
             "type": "drupal-module",
             "notification-url": "https://packagist.org/downloads/",
@@ -14705,9 +14706,9 @@
             "description": "UN date and time twig filters for Drupal 8",
             "support": {
                 "issues": "https://github.com/UN-OCHA/un_date/issues",
-                "source": "https://github.com/UN-OCHA/un_date/tree/2.0.11"
+                "source": "https://github.com/UN-OCHA/un_date/tree/2.0.12"
             },
-            "time": "2023-12-20T09:27:23+00:00"
+            "time": "2023-12-21T09:24:11+00:00"
         },
         {
             "name": "webflo/drupal-finder",
