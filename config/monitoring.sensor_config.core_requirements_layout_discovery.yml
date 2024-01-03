@@ -1,0 +1,20 @@
+uuid: f3a6f0a1-a014-4f40-9423-23411dbee63c
+langcode: en
+status: false
+dependencies:
+  module:
+    - layout_discovery
+id: core_requirements_layout_discovery
+label: 'Module layout_discovery'
+description: 'Requirements of the layout_discovery module'
+category: Requirements
+plugin_id: core_requirements
+result_class: null
+value_label: null
+value_type: no_value
+caching_time: 3600
+settings:
+  module: layout_discovery
+  exclude_keys: {  }
+thresholds:
+  type: none

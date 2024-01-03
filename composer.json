@@ -46,7 +46,7 @@
         "drupal/imagemagick": "^3.4",
         "drupal/layout_paragraphs": "^2.0",
         "drupal/linkit": "^6.0@RC",
-        "drupal/maintenance200": "^1.1",
+        "drupal/maintenance200": "^2",
         "drupal/memcache": "^2.5",
         "drupal/menu_breadcrumb": "^2.0@alpha",
         "drupal/metatag": "^2.0",
@@ -69,11 +69,12 @@
         "drupal/verf": "^2.0",
         "drupal/viewsreference": "^2.0@beta",
         "drupal/xmlsitemap": "^1.4",
-        "drush/drush": "^11.3",
+        "drush/drush": "^12",
         "oomphinc/composer-installers-extender": "^2.0",
         "orakili/composer-drupal-info-file-patch-helper": "^1",
         "unocha/common_design": "^9.2",
         "unocha/ocha_key_figures": "^2.0",
+        "unocha/ocha_monitoring": "^1.0",
         "unocha/ocha_search": "^1.0",
         "webflo/drupal-finder": "^1.2.2"
     },
@@ -112,7 +113,8 @@
             "drupal/core-project-message": true,
             "oomphinc/composer-installers-extender": true,
             "orakili/composer-drupal-info-file-patch-helper": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "php-http/discovery": true
         }
     },
     "extra": {
