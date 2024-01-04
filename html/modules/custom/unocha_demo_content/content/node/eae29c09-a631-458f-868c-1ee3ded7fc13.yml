@@ -1,0 +1,1043 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: eae29c09-a631-458f-868c-1ee3ded7fc13
+  bundle: basic
+  default_langcode: en
+  depends:
+    40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9: user
+    407820ec-cd73-47f8-b918-c38d281effb1: media
+    7a45f120-6f64-48c3-b50d-fb7081771fb0: media
+    9f44689f-d5f1-4963-9d9c-f8a45fe3d6b3: media
+    d4a15268-2e8f-49ac-b8e2-99e09564bc85: media
+    75c90c25-a12a-4798-bc5c-577e33050679: media
+    e298d41e-e96d-4580-bda3-904f052c40b2: media
+    ce3ea11e-9fd5-474b-acd3-6dc94daaf5e2: media
+    9c3cb559-2d97-417d-a28b-82319a365dbc: media
+    5936081e-06c2-4fef-bf92-7c158ddba2f7: media
+    c615dc92-4e30-4c6e-bc0c-ca24b3d3f088: node
+    0c64cb59-00de-4833-a4d4-1284d375eee9: node
+    038ecc1b-ddb3-4597-acab-7b20d9437307: node
+    0c395176-4a3c-4f17-a392-f0a85aa2abfc: node
+    2e604d22-bbd6-4ac3-8571-5bc9abe2f87c: node
+    d99b5bcc-d6df-4f2b-9fad-489992c84354: node
+default:
+  revision_uid:
+    -
+      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+  title:
+    -
+      value: 'Demo - layouts'
+  created:
+    -
+      value: 1691667311
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Demo - layouts | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'This is a demo page displaying the various layout paragraphs to build custom pages.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/demo/layouts'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'This is a demo page displaying the various layout paragraphs to build custom pages.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'This is a demo page displaying the various layout paragraphs to build custom pages.'
+  path:
+    -
+      alias: /demo/layouts
+      langcode: en
+      pathauto: 0
+  samples_status:
+    -
+      value: true
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<p>This is a <strong>demo page</strong> displaying the various layout paragraphs to build custom pages.</p>'
+      format: ckeditor
+      summary: ''
+  field_children_menu:
+    -
+      value: false
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: cb19dff2-d79b-4329-963d-3af0f9481fdf
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667357
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_twocol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>And some description text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Two column layout'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 47202033-a49d-432e-9037-812c539536c1
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667419
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: cb19dff2-d79b-4329-963d-3af0f9481fdf
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>Text paragraph. Integer magna ipsum, aliquet sed lorem ac, maximus efficitur ligula. Sed sit amet lacus et turpis imperdiet tristique. Quisque eu turpis ac ligula hendrerit ultricies pharetra pulvinar enim. Proin dictum vehicula arcu et porttitor. In tempus sit amet lectus at fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula. Integer magna ipsum, aliquet sed lorem ac, maximus efficitur ligula. Sed sit amet lacus et turpis imperdiet tristique. Quisque eu turpis ac ligula hendrerit ultricies pharetra pulvinar enim. Proin dictum vehicula arcu et porttitor. In tempus sit amet lectus at fringilla.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 7a96eb05-97b8-47c9-8e66-f720883f94e5
+          bundle: video
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667440
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: cb19dff2-d79b-4329-963d-3af0f9481fdf
+                  region: second
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>And some descriptive text. &nbsp;Integer magna ipsum, aliquet sed lorem ac, maximus efficitur ligula. Sed sit amet lacus et turpis imperdiet tristique.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Video paragraph'
+          field_video:
+            -
+              entity: 407820ec-cd73-47f8-b918-c38d281effb1
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ef89a8f1-cecd-405e-a93e-c7361e87fa05
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667357
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_threecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>And some description text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Three column layout'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: c50069d9-58f7-42d8-b572-afd508a972c5
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667419
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: ef89a8f1-cecd-405e-a93e-c7361e87fa05
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>Text paragraph. Integer magna ipsum, aliquet sed lorem ac, maximus efficitur ligula. Sed sit amet lacus et turpis imperdiet tristique. Quisque eu turpis ac ligula hendrerit ultricies pharetra pulvinar enim. Proin dictum vehicula arcu et porttitor. In tempus sit amet lectus at fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula. Integer magna ipsum, aliquet sed lorem ac, maximus efficitur ligula. Sed sit amet lacus et turpis imperdiet tristique. Quisque eu turpis ac ligula hendrerit ultricies pharetra pulvinar enim. Proin dictum vehicula arcu et porttitor. In tempus sit amet lectus at fringilla.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 6c23927b-1645-4a90-a658-7cf4350f6d60
+          bundle: video
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667440
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: ef89a8f1-cecd-405e-a93e-c7361e87fa05
+                  region: second
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>And some descriptive text. &nbsp;Integer magna ipsum, aliquet sed lorem ac, maximus efficitur ligula. Sed sit amet lacus et turpis imperdiet tristique.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Video paragraph'
+          field_video:
+            -
+              entity: 407820ec-cd73-47f8-b918-c38d281effb1
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 96468469-71af-4c32-a344-cb8259488623
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667482
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: ef89a8f1-cecd-405e-a93e-c7361e87fa05
+                  region: third
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>With a list</p><ul><li>Integer magna ipsum</li><li>aliquet sed lorem ac</li><li>maximus efficitur ligula</li></ul><p>Sed sit amet lacus et turpis imperdiet tristique. Quisque eu turpis ac ligula hendrerit ultricies pharetra pulvinar enim. Proin dictum vehicula arcu et porttitor. In tempus sit amet lectus at fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Text paragraph'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: f1a82702-1924-46f7-9b09-a3787f15979c
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667357
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_fourcol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>Of Image paragraphs, a second row, and some description text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Four column layout'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: f5191772-82da-4aad-9253-6578e8297104
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667590
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: f1a82702-1924-46f7-9b09-a3787f15979c
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 7a45f120-6f64-48c3-b50d-fb7081771fb0
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 2f85eb61-457e-4a7b-991c-cf16eaed61d6
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667606
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: f1a82702-1924-46f7-9b09-a3787f15979c
+                  region: second
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 9f44689f-d5f1-4963-9d9c-f8a45fe3d6b3
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b2c83432-1332-4631-bc52-ae695ced574b
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667624
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: f1a82702-1924-46f7-9b09-a3787f15979c
+                  region: third
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: d4a15268-2e8f-49ac-b8e2-99e09564bc85
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: d9e6e03c-1a31-4f87-89bc-72db0a973738
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667639
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: f1a82702-1924-46f7-9b09-a3787f15979c
+                  region: fourth
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 75c90c25-a12a-4798-bc5c-577e33050679
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: a0dc88c1-7850-4606-b19b-f900f8450239
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667661
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: f1a82702-1924-46f7-9b09-a3787f15979c
+                  region: fifth
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: e298d41e-e96d-4580-bda3-904f052c40b2
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 8679d91a-dfaa-4642-9502-a8a1207c6fa1
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667681
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: f1a82702-1924-46f7-9b09-a3787f15979c
+                  region: sixth
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: ce3ea11e-9fd5-474b-acd3-6dc94daaf5e2
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 10156324-f152-4c22-9caa-b1f742b6f008
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667698
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: f1a82702-1924-46f7-9b09-a3787f15979c
+                  region: seventh
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 9c3cb559-2d97-417d-a28b-82319a365dbc
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 5d4e383a-69ed-43ca-a524-71e8db634840
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667722
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: f1a82702-1924-46f7-9b09-a3787f15979c
+                  region: eighth
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 5936081e-06c2-4fef-bf92-7c158ddba2f7
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 0706fe77-8215-4e89-a3df-1fd891d464ce
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667811
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_fivecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>With Basic node Cards and some description text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Five column layout'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 085709ce-d58e-4703-9540-f7bdbceb9153
+          bundle: node
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667841
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 0706fe77-8215-4e89-a3df-1fd891d464ce
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_node:
+            -
+              entity: c615dc92-4e30-4c6e-bc0c-ca24b3d3f088
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: f1620aa1-abdd-485b-accf-6401e834944a
+          bundle: node
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667886
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 0706fe77-8215-4e89-a3df-1fd891d464ce
+                  region: second
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_node:
+            -
+              entity: 0c64cb59-00de-4833-a4d4-1284d375eee9
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: af406eac-ef55-4983-85b3-3eb7ce4eea55
+          bundle: node
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667870
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 0706fe77-8215-4e89-a3df-1fd891d464ce
+                  region: third
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_node:
+            -
+              entity: 038ecc1b-ddb3-4597-acab-7b20d9437307
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: cb0c6591-e402-4331-ae7b-eb9c02dda645
+          bundle: node
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667861
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 0706fe77-8215-4e89-a3df-1fd891d464ce
+                  region: fourth
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_node:
+            -
+              entity: 0c395176-4a3c-4f17-a392-f0a85aa2abfc
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: e5db0d62-7794-472a-be6d-a7ac49fa45b0
+          bundle: node
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667852
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 0706fe77-8215-4e89-a3df-1fd891d464ce
+                  region: fifth
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_node:
+            -
+              entity: 2e604d22-bbd6-4ac3-8571-5bc9abe2f87c
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ba5b1363-a4d3-4918-9481-cccc0981015e
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667914
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_twocol_sidebar
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>With Reliefweb river paragraphs and some description text. This layout is used for the Resources on Response pages. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Two column layout with sidebar'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 98b22407-34d3-40f5-8c61-9ec6f7123c6b
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667946
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: ba5b1363-a4d3-4918-9481-cccc0981015e
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%21%28F10%29_%28PC165%29_%28C165%29&search=_exists_%3Aocha_product'
+              title: ''
+              limit: 4
+          field_title:
+            -
+              value: 'ReliefWeb - River'
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: f87d2aab-f217-4331-a86e-3fef33141e41
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691667988
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: ba5b1363-a4d3-4918-9481-cccc0981015e
+                  region: second
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28PC165%29_%28S1503%29_%28F10%29'
+              title: ''
+              limit: 2
+          paragraph_view_mode:
+            -
+              value: teasers
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 21ccda6d-7edd-4d12-ba7b-9227dae3d9a3
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691668007
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_twocol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>With a Node paragraph with Cards view mode in the wider column and a Reliefweb Document paragraph in the narrow column set to Default view mode. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Two column layout 66% 33%'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: c1ede6d3-6a2a-4bed-bda9-cd44a35b3316
+          bundle: node
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691668055
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 21ccda6d-7edd-4d12-ba7b-9227dae3d9a3
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_node:
+            -
+              entity: d99b5bcc-d6df-4f2b-9fad-489992c84354
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b5f1f926-faf1-40ad-b6d1-c939b5a23f1c
+          bundle: reliefweb_document
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691668078
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 21ccda6d-7edd-4d12-ba7b-9227dae3d9a3
+                  region: second
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_document:
+            -
+              url: 'https://reliefweb.int/report/myanmar/myanmar-humanitarian-response-plan-2023-january-2023'
+          paragraph_view_mode:
+            -
+              value: default

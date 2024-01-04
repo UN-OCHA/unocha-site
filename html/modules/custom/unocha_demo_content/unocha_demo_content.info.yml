@@ -1,0 +1,28 @@
+name: 'UNOCHA demo content'
+description: Manages demo content.
+type: module
+core_version_requirement: ^9 || ^10
+package: 'UNOCHA'
+dependencies:
+  - default_content:default_content
+default_content:
+  node:
+    - a5b7ca3c-0971-461b-88e3-b707ed2876a3
+    - 4585130a-2761-4e6d-8417-61815d493ea7
+    - f4f6154c-02b5-4a94-8a3f-f300d9455c23
+    - 08c68493-5b78-4c0a-a64a-99504634f80e
+    - eef67247-3ed2-4bf6-9237-66282ab70e4d
+    - 712a1465-4697-490b-9763-622030a1e1e8
+    - eae29c09-a631-458f-868c-1ee3ded7fc13
+  menu_link_content:
+    - 4700a71f-8912-4c76-b0c7-80848cfda2e3
+    - 55e69586-7b0d-4001-b2dd-518ec2260d32
+    - 53ec1698-bdfa-4a23-b0ab-372fed4b9d93
+    - 50c7890f-0af4-40ea-8ba0-a0b84c65dce9
+    - 36dc937a-8c92-4504-b76c-5e622577c656
+    - 3bf5f24c-7d40-4891-9f5c-06718b75a315
+    - e84f85ad-8213-495d-8678-18dfd509609f
+    - a0f21f23-688b-408c-b93f-0c42f8953811
+    - 971fd0f4-f708-413c-a533-04324b1d88fe
+    - 7d090faf-2366-4543-a662-856da281b3a2
+

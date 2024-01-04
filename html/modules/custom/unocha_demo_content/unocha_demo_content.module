@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Installs demo content.
+ */
+
+/**
+ * Implements hook_modules_installed().
+ */
+function unocha_demo_content_modules_installed($modules) {
+  if (!in_array('unocha_demo_content', $modules)) {
+    return;
+  }
+
+  $home_uuid = 'a5b7ca3c-0971-461b-88e3-b707ed2876a3';
+
+  /** @var \Drupal\node\Entity\Node $node */
+  $nodes = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties([
+    'uuid' => $home_uuid,
+  ]);
+  $node = reset($nodes);
+
+  if ($node) {
+    $config = \Drupal::service('config.factory')->getEditable('system.site');
+    $config->set('page.front', '/node/' . $node->id());
+    $config->save();
+
+    \Drupal::logger('unocha_demo_content')->info('Homepage set to /node/' . $node->id());
+  }
+  else {
+    \Drupal::logger('unocha_demo_content')->error('Unable to set homepage');
+  }
+}
