@@ -1,0 +1,621 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 4aad45f9-f669-426d-b0a6-a53db101a48f
+  bundle: region
+  default_langcode: en
+  depends:
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+    e1c52291-4108-4b6d-9a3a-ede05546c6ac: media
+default:
+  revision_uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  title:
+    -
+      value: 'Asia and the Pacific'
+  created:
+    -
+      value: 1686841665
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Asia and the Pacific | OCHA'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/asia-and-pacific'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-06/i-czCgWrm-X4%202.21.32%20PM.jpg?itok=rybmMEW3'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: "Refugees in camp for displaced Rohingya in Cox's Bazaar, Bangladesh."
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: "Refugees in camp for displaced Rohingya in Cox's Bazaar, Bangladesh."
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-06/i-czCgWrm-X4%202.21.32%20PM.jpg?itok=lQDiP6cS'
+  path:
+    -
+      alias: /asia-and-pacific
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 7f34079e-4356-4ce9-a169-f9bd17504f0a
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687470969
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          paragraph_view_mode:
+            -
+              value: tabs
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: e7c5dff1-6756-4666-84ae-ebce1669b133
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687470806
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 7f34079e-4356-4ce9-a169-f9bd17504f0a
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: Overview
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 4687ffe5-5fd4-473f-a073-9707046de6da
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687470895
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: e7c5dff1-6756-4666-84ae-ebce1669b133
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>Asia and the Pacific is the world’s most disaster-prone region. The increasing impacts of climate change and natural hazards continue to be the main drivers of humanitarian needs, exacerbated by the increasing number of complex and protracted conflicts, and economic, political and social crises. Protracted humanitarian situations in countries such as Afghanistan and Myanmar are affecting millions of people who need humanitarian assistance and protection. OCHA’s Regional Office for Asia and the Pacific (ROAP) and country offices work to support and strengthen humanitarian coordination and response preparedness in the region.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Regional Office for Asia and the Pacific'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 6f7cbe67-ec46-419a-88c3-f804e67b329a
+          bundle: response_map
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687471048
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: c9cfd528-51bd-419e-98ee-247975689074
+          bundle: responses
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687471128
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_responses:
+            -
+              target_id: responses
+              display_id: regional_responses
+              data: 'a:5:{s:8:"argument";N;s:5:"limit";N;s:6:"offset";N;s:5:"pager";N;s:5:"title";i:0;}'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 4640c4fd-f651-4d7b-8aac-8979a4104110
+          bundle: stories
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687471425
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_limit:
+            -
+              value: 4
+          field_title:
+            -
+              value: 'Latest News and Stories'
+          paragraph_view_mode:
+            -
+              value: cards_with_featured
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ac07464c-0bfa-4f4d-9814-81286d1ae703
+          bundle: call_to_action
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1694551735
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_destination:
+            -
+              uri: 'https://asiadisasterguide.unocha.org/'
+              title: "Read OCHA's Guide to Disaster Response in Asia and the Pacific"
+              options: {  }
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: baf1e640-a212-46a6-b303-bd2c3e9790fc
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687471491
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_twocol_sidebar
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 45286c3b-6eeb-4b53-9ac6-c134dbd39196
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687471547
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: baf1e640-a212-46a6-b303-bd2c3e9790fc
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%21%28F10%29_%28C165.C13.C182.C90.C74.C120.C128.C130.C134%29&search=_exists_%3Aocha_product'
+              title: ''
+              limit: 4
+          field_title:
+            -
+              value: Resources
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: f4fbf6c1-a67b-43fe-8379-baedb35f5bf1
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687471818
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: baf1e640-a212-46a6-b303-bd2c3e9790fc
+                  region: second
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%28F10%29_%28C165.C13.C182.C90.C74.C120.C128.C130.C134%29&search=_exists_%3Aocha_product'
+              title: ''
+              limit: 2
+          paragraph_view_mode:
+            -
+              value: teasers
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 85b296a1-9548-46bb-a4e1-2c339909a9bc
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687473345
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_presence_figures:
+            -
+              label: 'Total requirements'
+              value: '7118089.00'
+              unit: USD
+              provider: oct
+              id: total-requirements
+              ochapresence: roap
+              year: '2'
+            -
+              label: 'Opening balance'
+              value: '206971.00'
+              unit: USD
+              provider: oct
+              id: opening-balance
+              ochapresence: roap
+              year: '2'
+            -
+              label: 'Earmarked funding'
+              value: '1455238.00'
+              unit: USD
+              provider: oct
+              id: earmarked-funding
+              ochapresence: roap
+              year: '2'
+            -
+              label: Total
+              value: '1455238.00'
+              unit: USD
+              provider: oct
+              id: total
+              ochapresence: roap
+              year: '2'
+          field_title:
+            -
+              value: 'Funding for OCHA Asia and the Pacific'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ba583d69-e398-422a-92ec-76a3f9c977ce
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687473393
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_presence_donors:
+            -
+              label: 'Earmarked donors'
+              value: 'Australia, Japan, Sweden, Canada'
+              unit: ''
+              provider: oct
+              id: earmarked-donors
+              ochapresence: roap
+              year: '2'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 43c944d2-f7e8-4371-a258-d500643c4dbc
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687473422
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_presence_donors:
+            -
+              label: 'Unearmarked donors'
+              value: 'Australia,  Belgium,  Canada,  Denmark,  Estonia,  Finland,  France,  Germany,  Iceland, Ireland,  Japan,  Luxembourg,  Monaco,  Netherlands, New Zealand,  Norway,  Russian Federation,  South Africa, Sweden, Switzerland, United Kingdom'
+              unit: ''
+              provider: oct
+              id: unearmarked-donors
+              ochapresence: roap
+              year: '2'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 9148c6d6-d63b-4ecf-a313-e297d0912e21
+          bundle: subscribe
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687473527
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: "<p>Receive all of the latest news, humanitarian tools and other information products from OCHA's Asia Pacific offices and operations.</p>"
+              format: ckeditor
+          field_title:
+            -
+              value: 'Subscribe to the OCHA Asia Pacific newsletter'
+          field_url:
+            -
+              uri: 'https://unocha.us4.list-manage.com/subscribe?u=b438b7d9f4bff43c0ebb7a4a0&id=78b8282f4f'
+              title: Subscribe
+              options: {  }
+  field_region_image:
+    -
+      entity: e1c52291-4108-4b6d-9a3a-ede05546c6ac
+  field_region_link:
+    -
+      uri: 'https://crisisrelief.un.org/crises'
+      title: 'Support our work'
+      options: {  }

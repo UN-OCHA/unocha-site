@@ -1,0 +1,201 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: c615dc92-4e30-4c6e-bc0c-ca24b3d3f088
+  bundle: basic
+  default_langcode: en
+  depends:
+    8fa1a556-9f76-4ea2-bc75-b2d183a04af6: user
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+    847cda3d-b600-44c8-ad12-5746b0462eb2: media
+default:
+  revision_uid:
+    -
+      entity: 8fa1a556-9f76-4ea2-bc75-b2d183a04af6
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  title:
+    -
+      value: 'We advocate'
+  created:
+    -
+      value: 1687304581
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'We advocate | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'Through our public and private advocacy, we raise awareness of humanitarian crises and the needs of affected people. We advocate for the protection of civilians and respect for international humanitarian law.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/we-advocate'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'Through our public and private advocacy, we raise awareness of humanitarian crises and the needs of affected people. We advocate for the protection of civilians and respect for international humanitarian law.'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-07/UN7988686_6-6-23_ED_18582_Standard.jpg?itok=rsEdpbc6'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'Martin Griffiths speaks at the UN Security Council'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'Through our public and private advocacy, we raise awareness of humanitarian crises and the needs of affected people. We advocate for the protection of civilians and respect for international humanitarian law.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'Martin Griffiths speaks at the UN Security Council'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-07/UN7988686_6-6-23_ED_18582_Standard.jpg?itok=_BrjqLlh'
+  path:
+    -
+      alias: /we-advocate
+      langcode: en
+      pathauto: 1
+  samples_status:
+    -
+      value: false
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<p>Through our public and private advocacy, we raise awareness of humanitarian crises and the needs of affected people. We advocate for the protection of civilians and respect for international humanitarian law.&nbsp;</p><p>By doing so, we amplify the voices of crisis-affected people and provide greater access to humanitarian assistance for people who need it.</p><p>When briefing the Security Council, we use our unique role to bring attention to humanitarian crises and the necessity to uphold international humanitarian law, secure humanitarian access and promote the protection of civilians.</p><p>Our ultimate goal is to save lives and reduce the impact of conflicts and natural disasters. All of our advocacy work, whether we’re mobilizing relief money after a massive earthquake, ensuring vulnerable communities are protected, or raising awareness of forgotten crises, is aimed at keeping the world’s attention on humanitarian crises, raising funds and ensuring that resources alleviate the suffering of affected people.&nbsp;</p><p>For us, advocacy means communicating the right message to the right people at the right time. Whether we’re talking to crisis-affected communities, Governments, humanitarian agencies, community-based organizations, the media, donors, the private sector or parties to conflict, we work tirelessly to build coalitions and initiate commitments to save lives and protect those in harm’s way.</p><p>We know that advocacy is as important in the Security Council as it is among local community leaders, and we have a diverse network of advocacy experts who work at every level of our organizational structure. Whether engaging with the media, promoting digital campaigns or engaging in quiet diplomacy with armed groups, we always promote the principles of humanity, neutrality, independence and impartiality, and respect for international law.</p>'
+      format: ckeditor
+      summary: 'Through our public and private advocacy, we raise awareness of humanitarian crises and the needs of affected people. We advocate for the protection of civilians and respect for international humanitarian law. '
+  field_basic_image:
+    -
+      entity: 847cda3d-b600-44c8-ad12-5746b0462eb2
+  field_children_menu:
+    -
+      value: false
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 263a8140-2825-4ec3-b317-f80e29434ca2
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698776443
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>We set the humanitarian policy agenda and formulate recommendations for the consideration of principal UN organs such as the Security Council, the General Assembly (GA), and the Economic and Social Council (ECOSOC).<br>&nbsp;<br>In addition, we provide policy support to regional organizations, such as the African Union and the European Union, as well as guidance on specific Member State initiatives relating to humanitarian assistance.</p><p>Every year, UN Member States negotiate a number of humanitarian resolutions – on issues such as the coordination of emergency humanitarian assistance – which add to the international normative framework for humanitarian assistance and coordination. Representing the UN Secretariat, we support these negotiations, by providing technical and substantive expertise to Member States delegations on humanitarian issues.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Advocating with governments'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 2927e32b-0166-4e50-bd13-15bcf78e2569
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698776443
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>OCHA also acts as the substantive Secretariat for the organization of the annual&nbsp;ECOSOC Humanitarian Affairs Segment, a forum where Member States and humanitarian actors discuss current and future challenges related to humanitarian assistance.&nbsp;These ECOSOC High Level panels and side events are attended by representatives from Governments, the UN, IASC partners, NGOs and academia.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'ECOSOC Humanitarian Affairs Segment'

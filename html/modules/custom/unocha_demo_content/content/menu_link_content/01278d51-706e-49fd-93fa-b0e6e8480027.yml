@@ -1,0 +1,78 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 01278d51-706e-49fd-93fa-b0e6e8480027
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    36dc937a-8c92-4504-b76c-5e622577c656: menu_link_content
+    f75fb808-da0f-46d1-845b-86e045cb8be4: node
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'News and stories'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      target_uuid: f75fb808-da0f-46d1-845b-86e045cb8be4
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: 1
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:36dc937a-8c92-4504-b76c-5e622577c656'
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| OCHA'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/homepage'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  content_translation_uid:
+    -
+      target_id: 1
+  content_translation_status:
+    -
+      value: true
+  content_translation_created:
+    -
+      value: 1687262244

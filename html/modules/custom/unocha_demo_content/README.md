@@ -16,6 +16,9 @@ drush sqlq "select * from menu_link_content"
 ```
 Or individually:
 ```
+# Homepage
+drush sqlq 'SELECT uuid FROM node WHERE nid = 42'
+
 # Demo nodes
 drush sqlq 'SELECT uuid FROM node WHERE nid = 524'
 drush sqlq 'SELECT uuid FROM node WHERE nid = 525'
@@ -23,6 +26,15 @@ drush sqlq 'SELECT uuid FROM node WHERE nid = 526'
 drush sqlq 'SELECT uuid FROM node WHERE nid = 527'
 drush sqlq 'SELECT uuid FROM node WHERE nid = 528'
 drush sqlq 'SELECT uuid FROM node WHERE nid = 529'
+
+# Main menu nodes
+drush sqlq 'SELECT uuid FROM node WHERE nid = 71'
+drush sqlq 'SELECT uuid FROM node WHERE nid = 1'
+drush sqlq 'SELECT uuid FROM node WHERE nid = 52'
+drush sqlq 'SELECT uuid FROM node WHERE nid = 56'
+drush sqlq 'SELECT uuid FROM node WHERE nid = 60'
+drush sqlq 'SELECT uuid FROM node WHERE nid = 43'
+
 # Main menu top level
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 2'
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 40'
@@ -30,6 +42,15 @@ drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 41'
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 42'
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 43'
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 51'
+
+# Main menu second level
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 78'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 1'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 59'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 63'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 67'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 47'
+
 # Top menu
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 57'
 # Footer menu
