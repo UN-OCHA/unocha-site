@@ -1,0 +1,62 @@
+[
+  {
+    "path": "/",
+    "timings": [
+      {
+        "metric": "largest-contentful-paint",
+        "budget": 4000
+      },
+      {
+        "metric": "max-potential-fid",
+        "budget": 300
+      },
+      {
+        "metric": "interactive",
+        "budget": 5000
+      },
+      {
+        "metric": "cumulative-layout-shift",
+        "budget": 0.25
+      }
+    ],
+    "resourceSizes": [
+      {
+        "resourceType": "document",
+        "budget": 60
+      },
+      {
+        "resourceType": "script",
+        "budget": 150
+      },
+      {
+        "resourceType": "stylesheet",
+        "budget": 30
+      },
+      {
+        "resourceType": "total",
+        "budget": 700
+      }
+    ]
+  },
+  {
+    "path": "/demo",
+    "timings": [
+      {
+        "metric": "largest-contentful-paint",
+        "budget": 5000
+      },
+      {
+        "metric": "max-potential-fid",
+        "budget": 400
+      },
+      {
+        "metric": "interactive",
+        "budget": 6000
+      },
+      {
+        "metric": "cumulative-layout-shift",
+        "budget": 0.35
+      }
+    ]
+  }
+]
