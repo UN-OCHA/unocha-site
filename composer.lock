@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1dbba2db90f70d07e9a5d3b2c23d44d8",
+    "content-hash": "ce6f8580ae5f5f6194447e1e9d2e58b9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -15587,16 +15587,16 @@
         },
         {
             "name": "unocha/un_date",
-            "version": "2.0.13",
+            "version": "2.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/un_date.git",
-                "reference": "b4e8e5e0fd317ca416b298bead4dcac953e1f8ea"
+                "reference": "0b4f847cd656f91d09b650fef7166d6d451bb377"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/un_date/zipball/b4e8e5e0fd317ca416b298bead4dcac953e1f8ea",
-                "reference": "b4e8e5e0fd317ca416b298bead4dcac953e1f8ea",
+                "url": "https://api.github.com/repos/UN-OCHA/un_date/zipball/0b4f847cd656f91d09b650fef7166d6d451bb377",
+                "reference": "0b4f847cd656f91d09b650fef7166d6d451bb377",
                 "shasum": ""
             },
             "require": {
@@ -15611,9 +15611,9 @@
             "description": "UN date and time twig filters for Drupal 8",
             "support": {
                 "issues": "https://github.com/UN-OCHA/un_date/issues",
-                "source": "https://github.com/UN-OCHA/un_date/tree/2.0.13"
+                "source": "https://github.com/UN-OCHA/un_date/tree/2.0.14"
             },
-            "time": "2024-01-09T13:48:13+00:00"
+            "time": "2024-01-10T13:04:16+00:00"
         },
         {
             "name": "webflo/drupal-finder",
@@ -17139,5 +17139,5 @@
         "php": ">=8.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
