@@ -51,7 +51,7 @@ drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 51'
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 78'
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 1'
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 9'
-drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 59'
+drush sqlq 'SELECT suuid FROM menu_link_content WHERE id = 59'
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 63'
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 67'
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 47'
@@ -72,6 +72,10 @@ drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 292'
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 290'
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 289'
 ```
+Also Media dependencies for nodes listed above, and their `file` dependencies.
+And Taxonomy term `taxonomy_term` for Story type.
+`drush sqlq "select * from taxonomy_term_data"`
+
  See https://www.drupal.org/docs/contributed-modules/default-content-for-d8/defining-default-content
 
 
