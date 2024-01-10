@@ -30,7 +30,7 @@ content:
       month_format: full
       template: default
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_event_image:
     type: entity_reference_entity_view
@@ -58,7 +58,7 @@ content:
     label: inline
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
   body: true
