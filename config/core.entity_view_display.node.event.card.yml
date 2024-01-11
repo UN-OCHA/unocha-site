@@ -13,10 +13,10 @@ dependencies:
     - field.field.node.event.field_event_type
     - node.type.event
   module:
-    - datetime_range_timezone
     - layout_builder
     - link
     - text
+    - un_date
     - user
 third_party_settings:
   layout_builder:
@@ -28,12 +28,12 @@ bundle: event
 mode: card
 content:
   field_event_date:
-    type: daterange_timezone
+    type: un_date_daterange_timezone
     label: hidden
     settings:
-      separator: '-'
-      format_type: unocha
       display_timezone: true
+      month_format: full
+      template: default
     third_party_settings: {  }
     weight: 1
     region: content
@@ -48,7 +48,7 @@ content:
     region: content
   field_event_link:
     type: link
-    label: hidden
+    label: inline
     settings:
       trim_length: 80
       url_only: false
@@ -59,9 +59,10 @@ content:
     weight: 3
     region: content
   field_event_location:
-    type: text_default
+    type: text_trimmed
     label: inline
-    settings: {  }
+    settings:
+      trim_length: 600
     third_party_settings: {  }
     weight: 2
     region: content
