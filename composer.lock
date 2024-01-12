@@ -15496,16 +15496,16 @@
         },
         {
             "name": "unocha/ocha_key_figures",
-            "version": "2.1.8",
+            "version": "2.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/ocha_key_figures.git",
-                "reference": "300a8a55ce875cf59aafdc9eeb58324be7dfdfc2"
+                "reference": "ab3d78f0c86f655b156ebde57f8cae37533ea4d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/ocha_key_figures/zipball/300a8a55ce875cf59aafdc9eeb58324be7dfdfc2",
-                "reference": "300a8a55ce875cf59aafdc9eeb58324be7dfdfc2",
+                "url": "https://api.github.com/repos/UN-OCHA/ocha_key_figures/zipball/ab3d78f0c86f655b156ebde57f8cae37533ea4d0",
+                "reference": "ab3d78f0c86f655b156ebde57f8cae37533ea4d0",
                 "shasum": ""
             },
             "require": {
@@ -15519,9 +15519,9 @@
             "description": "UNOCHA Key Figures",
             "support": {
                 "issues": "https://github.com/UN-OCHA/ocha_key_figures/issues",
-                "source": "https://github.com/UN-OCHA/ocha_key_figures/tree/2.1.8"
+                "source": "https://github.com/UN-OCHA/ocha_key_figures/tree/2.1.9"
             },
-            "time": "2023-08-31T09:38:22+00:00"
+            "time": "2024-01-12T10:52:33+00:00"
         },
         {
             "name": "unocha/ocha_monitoring",
@@ -17139,5 +17139,5 @@
         "php": ">=8.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
