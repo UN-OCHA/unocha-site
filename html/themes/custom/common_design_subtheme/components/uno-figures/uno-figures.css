@@ -39,9 +39,19 @@ dt.uno-figure__label-wrapper {
   color: var(--brand-primary);
   font-size: 1.625rem;
   font-weight: bold;
+  display: flex;
+  flex-wrap: wrap;
 }
 dd.uno-figure__value {
   margin: 0;
+}
+
+dd.uno-figure__value > .uno-figure__year {
+  clear: both;
+  font-size: 1rem;
+  font-weight: 400;
+  flex: 1 0 100%;
+  color: var(--brand-default-text-color);
 }
 
 @media screen and (min-width: 480px) {
