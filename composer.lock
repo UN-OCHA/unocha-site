@@ -2204,7 +2204,7 @@
                 "shasum": "6a66e40a4249351a89afba529910e1e5e2f667aa"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -3610,7 +3610,7 @@
                 "shasum": "d084315e54c2e561b8b64eef86081c2634d054cd"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -3739,7 +3739,7 @@
                 "shasum": "6139e7d5d5d5dd28bf51b15118c8c84d6ff91614"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -3791,7 +3791,7 @@
                 "shasum": "cc7cd2f029137e99a99deb90aee83b8bbf01c0d4"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10",
+                "drupal/core": "^10",
                 "drupal/imageapi_optimize": "*"
             },
             "type": "drupal-module",
@@ -4153,7 +4153,7 @@
                 "shasum": "fc8ea60619b6b4682bade340e13fb4565d3a7e0c"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -15589,16 +15589,16 @@
         },
         {
             "name": "unocha/un_date",
-            "version": "2.0.14",
+            "version": "2.0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/un_date.git",
-                "reference": "0b4f847cd656f91d09b650fef7166d6d451bb377"
+                "reference": "162a5a212256565db8bcf1d2ad9722b9be501dfa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/un_date/zipball/0b4f847cd656f91d09b650fef7166d6d451bb377",
-                "reference": "0b4f847cd656f91d09b650fef7166d6d451bb377",
+                "url": "https://api.github.com/repos/UN-OCHA/un_date/zipball/162a5a212256565db8bcf1d2ad9722b9be501dfa",
+                "reference": "162a5a212256565db8bcf1d2ad9722b9be501dfa",
                 "shasum": ""
             },
             "require": {
@@ -15613,9 +15613,9 @@
             "description": "UN date and time twig filters for Drupal 8",
             "support": {
                 "issues": "https://github.com/UN-OCHA/un_date/issues",
-                "source": "https://github.com/UN-OCHA/un_date/tree/2.0.14"
+                "source": "https://github.com/UN-OCHA/un_date/tree/2.0.15"
             },
-            "time": "2024-01-10T13:04:16+00:00"
+            "time": "2024-01-15T10:31:24+00:00"
         },
         {
             "name": "webflo/drupal-finder",
@@ -17145,5 +17145,5 @@
         "php": ">=8.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
