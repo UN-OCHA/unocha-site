@@ -30,7 +30,10 @@
       <small{{ unit_attribute.addClass('uno-figure__unit') }}> ({{ unit }})</small>
     {%- endif -%}
   </dt>
-  <dd{{ value_attributes.addClass('uno-figure__value') }}>{{ value == 0 ? 0 : value }}</dd>
+  <dd{{ value_attributes.addClass('uno-figure__value') }}>
+    {{ value == 0 ? 0 : value }}
+    <span class="uno-figure__year">{{ year }}</span>
+  </dd>
 </div>
 {% endif %}
 
