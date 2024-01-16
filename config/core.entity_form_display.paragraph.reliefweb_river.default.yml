@@ -48,6 +48,7 @@ content:
         default: default
         cards: cards
         default_paginated: default_paginated
+        resources: resources
         teasers: teasers
       default_view_mode: default
       form_mode_bind: true
