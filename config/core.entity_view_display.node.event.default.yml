@@ -31,13 +31,13 @@ content:
     region: content
   field_event_date:
     type: daterange_timezone
-    label: hidden
+    label: above
     settings:
       separator: '-'
       format_type: medium
       display_timezone: true
     third_party_settings: {  }
-    weight: 1
+    weight: 5
     region: content
   field_event_image:
     type: entity_reference_entity_view

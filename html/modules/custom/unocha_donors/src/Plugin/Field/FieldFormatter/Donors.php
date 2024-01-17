@@ -33,9 +33,11 @@ class Donors extends KeyFigureBase {
     $elements = [];
     foreach ($items as $delta => $item) {
       if ($field_type === 'key_figure') {
-        $data = $this->ochaKeyFiguresApiClient->getFigure(
+        $data = $this->ochaKeyFiguresApiClient->getFigureByFigureId(
           $item->getFigureProvider(),
-          $item->getFigureId()
+          $item->getFigureYear(),
+          $item->getFigureCountry(),
+          $item->getFigureId(),
         );
       }
       else {

@@ -55,42 +55,16 @@
   ]
 %}
 
-{# Macro to format a date range and display the time separately. #}
-{% import _self as date %}
-{% macro format(item, attributes) %}
-  {% set timezone = item.timezone %}
-  {# Convert the dates to ISO 8601 so we can easily compare the year, month etc. #}
-  {% set start = item.value|date('c', timezone) %}
-  {% set end = item.end_value|date('c', timezone) %}
-  {% set same_day = start == end %}
-
-  <dl{{ attributes.addClass('field__item', 'uno-event-date') }}>
-    <div class="uno-event-date__wrapper uno-event-date__wrapper--date uno-event-date__wrapper--date--start">
-      <dt class="uno-event-date__label">{{ same_day ? 'Date:'|t : 'Start date:'|t }}</dt>
-      <dd class="uno-event-date__date"><time class="uno-event-date__date__value" datetime="{{ start }}">{{ start|date('U')|format_date('unocha', timezone=timezone) }}</time></dd>
-    </div>
-    {% if not same_day %}
-    <div class="uno-event-date__wrapper uno-event-date__wrapper--date uno-event-date__wrapper--date--end">
-      <dt class="uno-event-date__label">{{ 'End date:'|t }}</dt>
-      <dd class="uno-event-date__date"><time class="uno-event-date__date__value" datetime="{{ end }}">{{ end|date('U')|format_date('unocha', timezone=timezone) }}</time></dd>
-    </div>
-    {% endif %}
-  </dl>
-{% endmacro %}
-
-{# Note: we loop through the `element['#items']` not the `items` variable to
-   have access to the raw field values to compute the proper dates according
-   to the selected timezone. #}
 {% if label_hidden %}
   {% if multiple %}
     <div{{ attributes.addClass(classes, 'field__items') }}>
-      {% for item in element['#items'] %}
-        {{ date.format(item, item.attributes) }}
+      {% for item in items %}
+        {{ item.content }}
       {% endfor %}
     </div>
   {% else %}
-    {% for item in element['#items'] %}
-      {{ date.format(item, attributes.addClass(classes, 'field__item')) }}
+    {% for item in items %}
+      {{ item.content }}
     {% endfor %}
   {% endif %}
 {% else %}
@@ -99,8 +73,8 @@
     {% if multiple %}
       <div class="field__items">
     {% endif %}
-    {% for item in element['#items'] %}
-      {{ date.format(item, item.attributes) }}
+    {% for item in items %}
+      {{ item.content }}
     {% endfor %}
     {% if multiple %}
       </div>
