@@ -96,7 +96,6 @@ drush sqlq 'SELECT uuid FROM node WHERE nid = 548'
 drush sqlq 'SELECT uuid FROM node WHERE nid = 536'
 drush sqlq 'SELECT uuid FROM node WHERE nid = 611'
 
-
 # Main menu top level
 # WWW
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 2'
