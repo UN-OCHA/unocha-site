@@ -1,0 +1,136 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 06931734-8374-4806-8d92-95a7c5ddb987
+  bundle: story
+  default_langcode: en
+  depends:
+    40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9: user
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+    f14b7469-61a1-4991-abf5-7797a4cb78b3: taxonomy_term
+    ff34642c-7718-4808-b175-a3fa849587dc: node
+    dfe5f610-35e6-4a76-ad15-24a64422532f: node
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    e0a9a933-7026-410b-995f-f662bad1eca6: taxonomy_term
+default:
+  revision_uid:
+    -
+      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  title:
+    -
+      value: 'As humanitarian needs skyrocket in Sudan and the region, UN-backed event raises over US$1.5B'
+  created:
+    -
+      value: 1687210756
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'As humanitarian needs skyrocket in Sudan and the region, UN-backed event raises over US$1.5B | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'As the conflict in Sudan fuels a humanitarian catastrophe in the country and a refugee crisis beyond its borders, donors at a United Nations-backed event tod'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/news/humanitarian-needs-skyrocket-sudan-and-region-un-backed-event-raises-over-us15b'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'As the conflict in Sudan fuels a humanitarian catastrophe in the country and a refugee crisis beyond its borders, donors at a United Nations-backed event tod'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-07/Child_cropped.jpg?itok=qkxpNVYD'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'A child cooking on a makeshift stove'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'As the conflict in Sudan fuels a humanitarian catastrophe in the country and a refugee crisis beyond its borders, donors at a United Nations-backed event tod'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'A child cooking on a makeshift stove'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-07/Child_cropped.jpg?itok=AsjFLg8D'
+  path:
+    -
+      alias: /news/humanitarian-needs-skyrocket-sudan-and-region-un-backed-event-raises-over-us15b
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<p>As the conflict in Sudan fuels a humanitarian catastrophe in the country and a refugee crisis beyond its borders, donors at a United Nations-backed event today <a href="/node/193" data-entity-type="node" data-entity-uuid="8d41b5b3-4567-4e63-ac5a-6be6db732532" data-entity-substitution="canonical">announced over US$1.5 billion</a> to fund life-saving relief efforts in Sudan and the region and called on parties in Sudan to immediately end the fighting.</p><p>Today’s ministerial-level pledging event in Geneva was organized by the United Nations and the Arab Republic of Egypt, the Federal Republic of Germany, the State of Qatar, the Kingdom of Saudi Arabia, the African Union and the European Union.</p><p>Inside Sudan, roughly half of the population – 24.7 million people, more than half of them children – need humanitarian aid and protection. Nearly 1.7 million people have been uprooted within Sudan, while about half a million refugees, asylum-seekers and refugee returnees have sought safety in neighbouring countries amid the violence, which includes worrying reports of ethnic killings in West Darfur.</p><p>Aid operations are ramping up across Sudan, but they remain hampered by looting, violence and bureaucratic impediments. In the face of the insecurity, humanitarians are staying and delivering.</p><p>The organizers of today’s event stressed the need for all parties in Sudan to adhere to the “Declaration of Commitment to protect civilians and facilitate and respect humanitarian action in Sudan,” signed in Jeddah on 11 May, including to prioritize discussions to achieve a durable ceasefire and permanent cessation of hostilities, ensure safe and unimpeded humanitarian access, and abide by their obligations under international humanitarian law (IHL).</p><p>The organizers also reaffirmed their commitment to scale up principled and needs-based humanitarian assistance to address the most critical needs of people in Sudan and those forced to flee to neighbouring countries.</p><p>To ensure the swift and effective delivery of aid, participants to the conference emphasized the importance of removing bureaucratic impediments in Sudan – including visa and movement restrictions – without delay. The parties in Sudan should also ensure the movement of humanitarian supplies and personnel from other parts of Sudan and from neighbouring countries to all parts of Sudan – including Darfur, where nearly 9 million people need assistance – and allow people to move freely to seek safety.</p><p>The funds announced today will support the provision of principled and needs-based humanitarian assistance to the people of Sudan and the countries hosting those fleeing the fighting. More than 80 Governments and other donors, international humanitarian organizations and aid officials took part in today’s event, which also underscored the need for long-term support to build the resilience of Sudanese communities and hosting communities in neighbouring countries.</p><p>The UN Under-Secretary-General for Humanitarian Affairs and Emergency Relief Coordinator, Martin Griffiths, said: “Each day the crisis in Sudan continues, the humanitarian situation grows ever more desperate. Despite the raging violence, humanitarian workers – including our heroic local partners operating on the front lines – are pressing ahead with their efforts to deliver aid to people in need. The funding announced today – including an additional $22 million from the Central Emergency Response Fund, bringing total funding through CERF and the Sudan Humanitarian Fund to $102 million – will be a lifeline for millions of people living in the world’s most dangerous and difficult conditions.”</p><p>The UN High Commissioner for Refugees, Filippo Grandi, said: “Since mid-April, we have seen senseless, brutal fighting and attacks in Sudan, forcing millions to flee for their lives to wherever they can find safety. The commitment shown today by donors to those affected comes just in time, as our resources for the situation are dwindling. The pledges will save lives and help alleviate some hardship. Ultimately, of course, only a durable peace will allow the Sudanese to restart their lives.”</p><p>H.E. Sheikh Mohammed bin Abdulrahman bin Jassim Al-Thani, Prime Minister and Minister for Foreign Affairs of Qatar, said: “The State of Qatar fully supports the integrity, sovereignty and stability of Sudan, evident in its good offices that ended the Darfur crisis by signing the Doha Agreement in July 2011 after years of devastating war. Since the beginning of the ongoing fighting in Sudan, the State of Qatar has provided 301 tons of food and medical assistance to the brotherly Sudanese people and has also evacuated 1,784 Qatari residency holders. We reiterate that our support for Sudan continues, and we look forward to ending the current crisis through dialogue and peaceful means. We also hope that this Conference will establish practical solidarity with the Sudanese people in facing the challenges ahead.”</p><p>H.H. Prince Faisal bin Farhan Al Saud, Minister of Foreign Affairs of the Kingdom of Saudi Arabia, said: "The Kingdom of Saudi Arabia is committed to standing with the Sudanese people, and continuing its quest to find a political solution to the crisis. In addition, the Government and people of the Kingdom have spared no effort in supporting the Sudanese people since the beginning of the crisis, announcing the provision of humanitarian assistance worth $100 million through the King Salman Humanitarian Aid and Relief Center, the operation of an air bridge of 13 aircraft, as well as a sea bridge carrying food, health, shelter and other assistance on board, besides launching a national donation campaign. The Kingdom also initiated the implementation of the first maritime evacuations of citizens and nationals of other countries in Sudan, which contributed to the evacuation of 8,455 people from 110 countries."</p><p>H.E. Mr. Sameh Shoukry, Foreign Minister of Egypt, said: “The stability and security of Sudan is essential and is integral to Egypt’s national stability and security and that of the whole region. We express our solidarity with the People of Sudan and will spare no effort to support and empower them to achieve a dignified life that they deserve in a safe and stable country. A sustainable cease fire has to be achieved to end the bloodshed and to preserve the State of Sudan and its institutions. Since the beginning of hostilities, Egypt has hosted 250,000 Sudanese which represents 60 per cent of all those fleeing the conflict in Sudan. This number will continue to rise as long as hostilities persist, increasing the pressure on host communities. We urge the international community to provide urgent humanitarian assistance and the necessary financial support to host communities in neighbouring countries to promote their resilience and ensure peaceful coexistence and social cohesion.”</p><p>H.E. Ms. Katja Keul, Minister of State at the Federal Foreign Office of Germany, said: “The hostilities must end immediately. Humanitarian access must be ensured. Humanitarian workers must be able to provide lifesaving assistance without fearing for their own lives. Assistance to vulnerable communities within Sudan and to neighbouring countries must be scaled up. In this spirit, Germany pledges 200 million euros of humanitarian assistance to Sudan and the region till 2024, 100 million of which are new commitments. We need to join forces to save lives. We encourage others to contribute what they can in response to the humanitarian crisis in Sudan and the region. Germany will continue to stand by the people of Sudan in their aspirations for freedom, peace and justice, and for a democratic Sudan.”</p><p>H.E. Prof. Julio Rakotonirina, Director of Health and Humanitarian Affairs at the African Union Commission, said: "The humanitarian impact of the ongoing conflict in Sudan, with growing numbers of people displaced by the fighting, is very worrying. Sudan''s neighbours have shown tremendous generosity in providing refuge to those who have fled, particularly in the face of limited resources and with some countries already hosting large refugee populations. We welcome all partners'' much-needed contributions during today''s conference and in the days to come."</p><p>H.E. Mr. Janez Lenarčič, European Commissioner for Humanitarian Aid and Crisis Management, stressed: “The humanitarian consequences of the conflict in Sudan are enormous, both on the country itself and on its neighbours. The EU has been working resolutely to alleviate the suffering of the most vulnerable, and we welcome this High-Level Pledging Event. Yet, humanitarian assistance can only be effective if safe, unimpeded and uninterrupted access to the entire territory and population is guaranteed and effective. I reiterate my call to all parties to the conflict to allow immediate access for humanitarian operations and to respect IHL.”</p><p>It is essential that donors continue to contribute to the revised Humanitarian Response Plan* and the Refugee Response Plan,** which together require more than $3 billion this year to provide life-saving multisectoral assistance and protection services to more than 18 million people inside Sudan, and to more than 1 million refugees, returnees, third-country nationals and host communities in the Central African Republic, Chad, Egypt, Ethiopia and South Sudan.</p><p>Given the ongoing fighting, growing humanitarian needs and the rising cost of operations, funds announced at today’s conference should be made available without delay.</p>'
+      format: ckeditor
+      summary: ''
+  field_country:
+    -
+      entity: f14b7469-61a1-4991-abf5-7797a4cb78b3
+  field_regions:
+    -
+      entity: ff34642c-7718-4808-b175-a3fa849587dc
+  field_responses:
+    -
+      entity: dfe5f610-35e6-4a76-ad15-24a64422532f
+  field_story_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_story_type:
+    -
+      entity: e0a9a933-7026-410b-995f-f662bad1eca6

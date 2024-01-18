@@ -1,0 +1,175 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 7984c293-034b-4d07-a0d0-2f3116577040
+  bundle: story
+  default_langcode: en
+  depends:
+    921f814b-f86f-47d4-b5b0-e2da08d3980e: user
+    1f38f7ac-f69d-45b4-908d-38e8721d9a20: taxonomy_term
+    af5384d9-3f44-4a09-9628-9a53ea4baae3: taxonomy_term
+    33f1e372-00da-415d-8a1b-d7f5c1ad77e7: taxonomy_term
+    193075ce-fbd5-4504-8992-137054626127: taxonomy_term
+    f14b7469-61a1-4991-abf5-7797a4cb78b3: taxonomy_term
+    97e50ef3-9e8e-41e7-aed7-06a5cf383e5d: node
+    0c036e0c-d618-4894-9579-5fe14f344d6f: node
+    ff34642c-7718-4808-b175-a3fa849587dc: node
+    0c5ef5ad-e9b4-4e39-9258-adcdf1b69c0d: node
+    23555742-a467-46a2-8acc-a42d1f9d83bd: node
+    d9d618d1-bca7-4d4b-9ca0-320df9d96222: node
+    dfe5f610-35e6-4a76-ad15-24a64422532f: node
+    145af052-ef88-47d8-9f09-afaf2c97e643: node
+    0c624491-b019-4e1a-a51c-2d6df0dbd647: node
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    e0a9a933-7026-410b-995f-f662bad1eca6: taxonomy_term
+default:
+  revision_uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  title:
+    -
+      value: "Today's top news: Sudan, Niger, Ukraine, Tropical Storm Franklin"
+  created:
+    -
+      value: 1692805823
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: "Today's top news: Sudan, Niger, Ukraine, Tropical Storm Franklin | OCHA"
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: Sudan
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/news/todays-top-news-sudan-niger-ukraine-tropical-storm-franklin'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: Sudan
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-08/SS_RENK_08-2023_15.jpg?itok=d1z2T_sd'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'Women and children wait in a line'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: Sudan
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'Women and children wait in a line'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-08/SS_RENK_08-2023_15.jpg?itok=gR7xOv1F'
+  path:
+    -
+      alias: /news/todays-top-news-sudan-niger-ukraine-tropical-storm-franklin
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<h2><br>Sudan</h2><p>Civilian displacement is continuing at an alarming scale, as the conflict spreads to new areas. The number of people who have fled the fighting has now topped 4.5 million.</p><p>The International Organization for Migration says more than 3.6 million people are internally displaced – almost 169,000 of them in the last week alone.</p><p>Meanwhile, the UN Refugee Agency reports that nearly 950,000 refugees, asylum seekers and returnees have sought safety outside Sudan – mostly in Chad, Egypt and South Sudan.</p><p>As hostilities in Sudan continue, hunger is also on the rise. The World Food Programme (WFP) says it has now reached 1.8 million people with food assistance since the conflict erupted in the country in mid-April. But that’s less than 10 per cent of the 20.3 million people who are facing acute hunger. The agency is aiming to reach some 6.7 million people by the end of the year – however, access challenges and insecurity are hampering these aid efforts.</p><h2>Niger</h2><p><br>We and our partners continue to deliver assistance across the country.</p><p>In Tahoua, in the country’s south-west, humanitarians have provided medical care, reproductive health services and nutrition to over 1000 people through mobile clinics.</p><p>And last week, WFP started food distribution to more than 9,000 refugees from Mali in Tchintabaraden, also in the south-west.</p><p>However, our humanitarian colleagues warn about the consequences of the ongoing crisis on the humanitarian situation.</p><p>Significant amounts of urgent medical supplies, nutritious food, equipment, and food stocks are stranded in neighbouring countries, and airspace closure affects movements in and out of Niger.</p><p>Humanitarian exemptions from border and air closure sanctions are urgently required to allow humanitarian stocks to be replenished.</p><p>Meanwhile, floods in Niger have affected 88,000 people across the country. Maradi Region has been the most affected.</p><p>We are ramping up the response and distributing sanitation kits and shelters items while assessments in newly affected areas continue.</p><p>Heavy rains have been forecast for the coming weeks. This is expected to increase water levels in rivers, including in the capital, Niamey.</p><h2><br>Ukraine</h2><p>The Humanitarian Coordinator Denise Brown has condemned a new wave of attacks on nearly half of Ukraine’s regions over the past 24 hours.</p><p>According to local authorities, grain storage facilities, vital for Ukrainian farmers and global food security, have been hit in the Danube area.</p><p>In the Sumy region, a school was damaged, and teachers were killed and injured according to national authorities.</p><p>In the Kherson region, civilians endured hours of relentless strikes that damaged a hospital and forced aid organizations to suspend vital assistance and take shelter during the day yesterday.</p><h2><br>Tropical Storm Franklin</h2><p>Tropical Storm Franklin made landfall along the southern coast of the Dominican Republic this morning, bringing torrential rains to the country and neighbouring Haiti.</p><p>We are working with national and regional partners, including the Caribbean Emergency Disaster Management Agency, to prepare for potential impact of the storm which is expected to bring maximum sustained winds of 139 km/h in the next five days.</p><p>The Haitian Civil Protection agency has disseminated precautionary messages to the population, and we are mapping available stocks and resources with our partners.</p><p>Humanitarian organizations have also pre-positioned shelter materials in several areas in the country, including in Anse à Pitre in the Southeast which is expected to be the most affected areas.</p><p><br>Our colleagues on the ground warn that insecurity in regions affected by gang violence might create access challenges.</p><p>In Dominican Republic, Civil Protection has 25 out of 32 provinces - home to about 6.5 million people, or 61 per cent of the population - under red alert. Partners have pre-positioned stocks and are working to identify the most vulnerable families.</p><p>&nbsp;</p>'
+      format: ckeditor
+      summary: ''
+  field_country:
+    -
+      entity: 1f38f7ac-f69d-45b4-908d-38e8721d9a20
+    -
+      entity: af5384d9-3f44-4a09-9628-9a53ea4baae3
+    -
+      entity: 33f1e372-00da-415d-8a1b-d7f5c1ad77e7
+    -
+      entity: 193075ce-fbd5-4504-8992-137054626127
+    -
+      entity: f14b7469-61a1-4991-abf5-7797a4cb78b3
+  field_regions:
+    -
+      entity: 97e50ef3-9e8e-41e7-aed7-06a5cf383e5d
+    -
+      entity: 0c036e0c-d618-4894-9579-5fe14f344d6f
+    -
+      entity: ff34642c-7718-4808-b175-a3fa849587dc
+    -
+      entity: 0c5ef5ad-e9b4-4e39-9258-adcdf1b69c0d
+  field_responses:
+    -
+      entity: 23555742-a467-46a2-8acc-a42d1f9d83bd
+    -
+      entity: d9d618d1-bca7-4d4b-9ca0-320df9d96222
+    -
+      entity: dfe5f610-35e6-4a76-ad15-24a64422532f
+    -
+      entity: 145af052-ef88-47d8-9f09-afaf2c97e643
+    -
+      entity: 0c624491-b019-4e1a-a51c-2d6df0dbd647
+  field_story_image:
+    -
+      entity:044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_story_type:
+    -
+      entity: e0a9a933-7026-410b-995f-f662bad1eca6
+  field_theme:
+    -
+      entity: 4633bdef-2cb1-42bb-bf2f-ca8a2bff5eef
+    -
+      entity: c0ca0105-13d7-4b40-ba91-d4c2dc15f022
+    -
+      entity: 649b89d5-ea4a-4324-b50f-1041ffae7be5

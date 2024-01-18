@@ -6,14 +6,11 @@ _meta:
   default_langcode: en
   depends:
     921f814b-f86f-47d4-b5b0-e2da08d3980e: user
-    d5f81126-7648-4cf8-a766-ec652a0a583f: taxonomy_term
+    33f1e372-00da-415d-8a1b-d7f5c1ad77e7: taxonomy_term
     6dfc9cf6-da4f-41d7-ac3d-ef0dd36fc067: node
     e716b6d4-717e-499e-bd0e-1214afc9ce5b: node
     044fc54b-448d-4c80-88b4-160d1b03ac46: media
     e0a9a933-7026-410b-995f-f662bad1eca6: taxonomy_term
-    4633bdef-2cb1-42bb-bf2f-ca8a2bff5eef: taxonomy_term
-    c0ca0105-13d7-4b40-ba91-d4c2dc15f022: taxonomy_term
-    649b89d5-ea4a-4324-b50f-1041ffae7be5: taxonomy_term
 default:
   revision_uid:
     -
@@ -123,7 +120,7 @@ default:
       summary: ''
   field_country:
     -
-      entity: d5f81126-7648-4cf8-a766-ec652a0a583f
+      entity: 33f1e372-00da-415d-8a1b-d7f5c1ad77e7
   field_regions:
     -
       entity: 6dfc9cf6-da4f-41d7-ac3d-ef0dd36fc067

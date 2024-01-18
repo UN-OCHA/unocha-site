@@ -1,0 +1,184 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 1208abdd-75ea-4b4c-8cee-bc054a638360
+  bundle: story
+  default_langcode: en
+  depends:
+    921f814b-f86f-47d4-b5b0-e2da08d3980e: user
+    1f38f7ac-f69d-45b4-908d-38e8721d9a20: taxonomy_term
+    af5384d9-3f44-4a09-9628-9a53ea4baae3: taxonomy_term
+    33f1e372-00da-415d-8a1b-d7f5c1ad77e7: taxonomy_term
+    193075ce-fbd5-4504-8992-137054626127: taxonomy_term
+    f14b7469-61a1-4991-abf5-7797a4cb78b3: taxonomy_term
+    97e50ef3-9e8e-41e7-aed7-06a5cf383e5d: node
+    0c036e0c-d618-4894-9579-5fe14f344d6f: node
+    6dfc9cf6-da4f-41d7-ac3d-ef0dd36fc067: node
+    ff34642c-7718-4808-b175-a3fa849587dc: node
+    0c5ef5ad-e9b4-4e39-9258-adcdf1b69c0d: node
+    23555742-a467-46a2-8acc-a42d1f9d83bd: node
+    e716b6d4-717e-499e-bd0e-1214afc9ce5b: node
+    4cb3fe7b-169d-49cb-bdc1-0948b9bdfb3e: node
+    09ac3007-89fb-42e7-8cbf-01d42153a0dc: node
+    97f0931e-e14d-4a98-bcc7-0803cc77838d: node
+    0c624491-b019-4e1a-a51c-2d6df0dbd647: node
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    e0a9a933-7026-410b-995f-f662bad1eca6: taxonomy_term
+default:
+  revision_uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  title:
+    -
+      value: "Today's top news:  Occupied Palestinian Territory, Ukraine, Democratic Republic of the Congo, Haiti, Ethiopia, Deputy relief chief wraps up mission"
+  created:
+    -
+      value: 1700241722
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: "Today's top news: Occupied Palestinian Territory, Ukraine, Democratic Republic of the Congo, Haiti, Ethiopia, Deputy relief chief wraps up mission | OCHA"
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'Occupied Palestinian Territory'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/news/todays-top-news-occupied-palestinian-territory-ukraine-democratic-republic-congo-haiti'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'Occupied Palestinian Territory'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-11/_B3A0834.jpg?itok=orgBjtba'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'Crowds of people including a person on a wheel chair make their way down a road.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'Occupied Palestinian Territory'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'Crowds of people including a person on a wheel chair make their way down a road.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-11/_B3A0834.jpg?itok=FlckamDa'
+  path:
+    -
+      alias: /news/todays-top-news-occupied-palestinian-territory-ukraine-democratic-republic-congo-haiti
+      langcode: en
+      pathauto: 1
+  samples_status:
+    -
+      value: false
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<h2>Occupied Palestinian Territory</h2><p>Martin Griffiths, the Emergency Relief Coordinator, briefed the Member States this morning on the situation in Gaza and said that it is without doubt a humanitarian crisis that, by any measure, is intolerable and cannot continue. In many respects, he said, international humanitarian law appears to have been turned on its head.</p><p>He said that more than 41,000 housing units have been destroyed or severely damaged there – amounting to around 45 per cent of the housing stock in Gaza – while more than 1.5 million Gazans are estimated to be internally displaced.</p><p>Mr. Griffiths outlined once more the ten-point plan he presented yesterday to deal with the situation in Gaza, including a continuous flow of aid, more crossing points, the delivery of fuel, more relief distribution hubs, safe and unimpeded access, the movement of civilians to safer areas, more shelters, better funding and a humanitarian ceasefire.</p><h2>Ukraine</h2><p>Intense attacks on frontline areas continue. There have been reports of deaths and extensive damage to homes and infrastructure, including energy and medical facilities.</p><p>On 15 November, a strike in the Donetsk Region, in the east of the country, reportedly destroyed and damaged a multistorey building and nearby houses in the town of Selydove, with residents trapped under the rubble. After a two-day rescue operation, four residents were reported killed, and six others, including a child, injured.</p><p>On the same day, in the southeast, an attack in Zaporizizhzhia Region, in the village of Zarichne, killed and injured nine residents and rescuers who were responding as a second strike hit. The blast left more than 400 residents exposed to harsh weather conditions as the temperature dropped.</p><p>National non-governmental organizations are mobilized and delivered emergency shelter materials in both locations.</p><p>We also have an update on convoys: today, an inter-agency convoy delivered vital aid to frontline areas in the Donetsk Region. Nearly 30 tons of aid – including thermal blankets, sleeping bags, solar lamps, medical kits and family hygiene kits – will help people get through the coming cold period amid continuing disruptions of electricity supplies in the region.</p><p>So far this year, more than 70 inter-agency convoys to frontline areas of Donetsk, Kherson and Zaporizhzhia regions have delivered aid to nearly 230,000 people.</p><h2>Democratic Republic of the Congo</h2><p>There has been an upsurge in attacks against civilians in Ituri province, in the east of the country.</p><p>Between 31 October and 9 November, at least 46 civilians, according to humanitarian partners, were reportedly killed by armed groups in the Irumu and Mambasa territories. 28,000 people fled into surrounding bush and safe areas in the two territories.</p><p>Since the beginning of the year, a surge of violence has killed over 770 civilians across the province and forced over 500,000 to flee their homes.</p><p>We, along with partners, are providing vital aid including, shelter support, food and water but our colleagues say we need additional resources to respond to new displacements.</p><p>OCHA calls provincial authorities to reinforce the security of civilians, especially in the Boga and Lolwa areas, where people have been returning to their towns since July. The persistence of insecurity might discourage returns and lead to massive population movements and growing humanitarian needs.</p><h2>Ethiopia</h2><p>More than 760,000 people in the country have been affected by heavy rains, floods and landslides.</p><p>More than 40 deaths have been reported – and many areas remain difficult or impossible to access due to damaged roads and bridges.</p><p>We and our partners are supporting the Government-led humanitarian response in the regions of Somali, Oromia, Afar and in the southwest. But resources and capacities are limited, and a scale-up is urgently needed to meet surging needs.</p><p>Humanitarian partners have so far distributed both food and non-food items to more than 8,000 families affected by the floods.</p><h2>Haiti</h2><p>We are deeply concerned about clashes which erupted on Monday between armed groups in the neighbourhood of Cite Soleil and its surroundings, in the capital Port-au-Prince. The violence comes on the heels of the death of a gang leader.</p><p>There were reportedly many casualties, including deaths and injuries, as well as incidents of sexual violence, the burning of houses and other serious human rights violations.</p><p>A hospital was the scene of a gunfight, disrupting medical services and violating humanitarian principles. Dozens of women, children and newborns have had to be evacuated. Health facilities must always be safe and protected, and civilians must never be targeted. &nbsp;</p><p>Yesterday, the acting Humanitarian Coordinator, Bruno Maes, met with families, children and medical staff of this hospital who have evacuated to a safer neighborhood. The hospital has since closed. &nbsp;</p><p>Under the leadership of the Humanitarian Coordinator, OCHA is working with UN agencies and our partners to provide assistance and protect lives.</p><h2>Deputy Relief chief wraps up mission</h2><p>Assistant Secretary-General for Humanitarian Affairs Joyce Msuya has wrapped up a three-week mission to southern and eastern Africa, as the climate crisis drives humanitarian needs there ever higher.</p><p>Ms. Msuya stressed the UN’s commitment to standing with the people and Governments of the region as they confront climate shocks – saying that at COP 28 later this month, the rest of the world must make clear that they won’t face these challenges alone.</p><p>The Assistant Secretary-General met with affected communities – as well as officials and representatives of NGOs, civil society, regional organizations, the private sector, and international financial institutions – during her mission to Mozambique, Tanzania, Kenya and Botswana.<br>&nbsp;</p>'
+      format: ckeditor
+      summary: ''
+  field_country:
+    -
+      entity: 1f38f7ac-f69d-45b4-908d-38e8721d9a20
+    -
+      entity: af5384d9-3f44-4a09-9628-9a53ea4baae3
+    -
+      entity: 33f1e372-00da-415d-8a1b-d7f5c1ad77e7
+    -
+      entity: 193075ce-fbd5-4504-8992-137054626127
+    -
+      entity: f14b7469-61a1-4991-abf5-7797a4cb78b3
+  field_regions:
+    -
+      entity: 97e50ef3-9e8e-41e7-aed7-06a5cf383e5d
+    -
+      entity: 0c036e0c-d618-4894-9579-5fe14f344d6f
+    -
+      entity: 6dfc9cf6-da4f-41d7-ac3d-ef0dd36fc067
+    -
+      entity: ff34642c-7718-4808-b175-a3fa849587dc
+    -
+      entity: 0c5ef5ad-e9b4-4e39-9258-adcdf1b69c0d
+  field_responses:
+    -
+      entity: 23555742-a467-46a2-8acc-a42d1f9d83bd
+    -
+      entity: e716b6d4-717e-499e-bd0e-1214afc9ce5b
+    -
+      entity: 4cb3fe7b-169d-49cb-bdc1-0948b9bdfb3e
+    -
+      entity: 09ac3007-89fb-42e7-8cbf-01d42153a0dc
+    -
+      entity: 97f0931e-e14d-4a98-bcc7-0803cc77838d
+    -
+      entity: 0c624491-b019-4e1a-a51c-2d6df0dbd647
+  field_story_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_story_type:
+    -
+      entity: e0a9a933-7026-410b-995f-f662bad1eca6
+  field_theme:
+    -
+      entity: 4633bdef-2cb1-42bb-bf2f-ca8a2bff5eef
+    -
+      entity: c0ca0105-13d7-4b40-ba91-d4c2dc15f022
+    -
+      entity: 649b89d5-ea4a-4324-b50f-1041ffae7be5

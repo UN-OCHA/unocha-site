@@ -1,0 +1,144 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 25f02544-b8e0-4a97-94aa-21e25616593c
+  bundle: story
+  default_langcode: en
+  depends:
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+    33f1e372-00da-415d-8a1b-d7f5c1ad77e7: taxonomy_term
+    1f38f7ac-f69d-45b4-908d-38e8721d9a20: taxonomy_term
+    ff34642c-7718-4808-b175-a3fa849587dc: node
+    0c5ef5ad-e9b4-4e39-9258-adcdf1b69c0d: node
+    ac0e7546-dae9-4c7e-8292-5300611d2f20: node
+    d8e08c08-2090-44ed-8199-396048b10e8e: node
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    e0a9a933-7026-410b-995f-f662bad1eca6: taxonomy_term
+default:
+  revision_uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  title:
+    -
+      value: "Today's top news: Mali, Ethiopia"
+  created:
+    -
+      value: 1675296928
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: "Today's top news: Mali, Ethiopia | OCHA"
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: Mali
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/news/todays-top-news-mali-ethiopia'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: Mali
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-07/IMG_0393_0.jpg?itok=XeIy9Veq'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'School children at a site for internally displaced people in Mopti, Mali. May 2022'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: Mali
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'School children at a site for internally displaced people in Mopti, Mali. May 2022'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-07/IMG_0393_0.jpg?itok=cBgLw2hl'
+  path:
+    -
+      alias: /news/todays-top-news-mali-ethiopia
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<h2>Mali</h2><p>The Humanitarian Response Plan for 2023 was just launched this week. It calls for US$751 million to help 5.7 million of the most vulnerable people. Mali faces a multidimensional crisis fueled by insecurity, conflict, climate change and lack of access to basic social services.</p><p>The number of people in need increased from 7.5 million in January 2022 to 8.8 million last month, an increase of 17 per cent.</p><p>As of December, 412,000 people, mainly children and women, have been displaced due to increasing insecurity in the regions of Bandiagara, Mopti, Gao, Timbuktu, Ségou and Menaka.</p><p>At the launch, the Humanitarian Coordinator in Mali, Alain Noudéhou, noted the importance of capitalizing on the achievements of the humanitarian response and development initiatives in Mali, and helping build a sustainable peace to support a rapid and lasting recovery.</p><h2>Ethiopia<br>&nbsp;<br>Humanitarian access in the north continues to improve and we have expanded our operations in Afar, Amhara, and Tigray regions, but some pockets remain hard to reach.</h2><p>Since the Cessation of Hostilities agreement in mid-November, more than 127,000 tons of food supplies have been brought into Tigray, reaching more than 3.8 million people.</p><p>Meanwhile, fighting in parts of southern Amhara and neighbouring areas of Oromia region have led to significant displacement in Amhara’s North Shewa, South Wello and West Gojam zones. Humanitarian partners are mobilizing food, shelter and other relief to people in need.</p><p>In the southern and eastern parts of Ethiopia, the historic drought that has gripped the wider Horn of Africa continues. We and our partners aim to reach 17 million people with food, water, health and agriculture support, among other assistance.</p><p>The cholera outbreak in parts of Oromia and Somali regions has seen over 1,000 cases reported to date. Close to one million people are considered at high risk. An oral cholera vaccination campaign has been launched, and 33 per cent of the target has been reached so far.</p><p>Given the scale of the needs, additional funding is critical. Financial requirements for this year are being finalized and expected to remain high. Last year, the Ethiopia humanitarian appeal received less than half the $3.3 billion required.</p>'
+      format: ckeditor
+      summary: ''
+  field_country:
+    -
+      entity: 33f1e372-00da-415d-8a1b-d7f5c1ad77e7
+    -
+      entity: 1f38f7ac-f69d-45b4-908d-38e8721d9a20
+  field_regions:
+    -
+      entity: ff34642c-7718-4808-b175-a3fa849587dc
+    -
+      entity: 0c5ef5ad-e9b4-4e39-9258-adcdf1b69c0d
+  field_responses:
+    -
+      entity: ac0e7546-dae9-4c7e-8292-5300611d2f20
+    -
+      entity: d8e08c08-2090-44ed-8199-396048b10e8e
+  field_story_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_story_type:
+    -
+      entity: e0a9a933-7026-410b-995f-f662bad1eca6
