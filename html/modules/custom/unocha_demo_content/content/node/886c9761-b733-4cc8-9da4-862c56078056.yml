@@ -7,6 +7,7 @@ _meta:
   depends:
     e37cab06-76f4-4d7c-883b-bb09319d7941: user
     ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+    407820ec-cd73-47f8-b918-c38d281effb1: media
     044fc54b-448d-4c80-88b4-160d1b03ac46: media
 default:
   revision_uid:
@@ -338,7 +339,7 @@ default:
               value: false
           field_video:
             -
-              entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+              entity: 407820ec-cd73-47f8-b918-c38d281effb1
     -
       entity:
         _meta:
