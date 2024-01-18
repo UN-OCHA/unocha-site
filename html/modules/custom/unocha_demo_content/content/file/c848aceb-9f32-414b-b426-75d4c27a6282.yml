@@ -1,0 +1,29 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: c848aceb-9f32-414b-b426-75d4c27a6282
+  default_langcode: en
+  depends:
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+default:
+  uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  filename:
+    -
+      value: untitled-00455.jpg
+  uri:
+    -
+      value: 'public://2023-07/untitled-00455.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 4356122
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1688587754
