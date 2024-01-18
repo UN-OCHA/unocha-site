@@ -118,6 +118,9 @@
             "orakili/composer-drupal-info-file-patch-helper": true,
             "phpstan/extension-installer": true,
             "php-http/discovery": true
+        },
+        "audit": {
+            "abandoned": "report"
         }
     },
     "extra": {
