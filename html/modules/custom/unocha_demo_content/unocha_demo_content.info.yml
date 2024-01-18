@@ -86,14 +86,29 @@ default_content:
     - 59f26153-ac55-4383-9a9e-2abb1a7e749b
     - 769a88a7-00d8-48ce-b4b0-5efc462d3237
     - 4512ca95-8140-469c-bd9f-f8f553256b8c
+
   media:
     - 044fc54b-448d-4c80-88b4-160d1b03ac46
     - 7f41ee99-8ce4-40b3-895c-015c28a3353e
     - 9aaa5688-2f58-42c3-b4b7-736feea2acff
-  taxonomy_term:
-    - 0564386c-fcb5-4883-8f32-ac7b7579e508
-    - e0a9a933-7026-410b-995f-f662bad1eca6
+    - 407820ec-cd73-47f8-b918-c38d281effb1
+
   file:
     - c848aceb-9f32-414b-b426-75d4c27a6282
     - 9749ed9e-0cba-488c-aa23-fc654fe677e8
     - 80119ebe-37b6-4a4c-bd85-c0eb4e5031ef
+
+  taxonomy_term:
+    - 0564386c-fcb5-4883-8f32-ac7b7579e508
+    - e0a9a933-7026-410b-995f-f662bad1eca6
+
+    - 1f38f7ac-f69d-45b4-908d-38e8721d9a20
+    - 33f1e372-00da-415d-8a1b-d7f5c1ad77e7
+    - 193075ce-fbd5-4504-8992-137054626127
+    - af5384d9-3f44-4a09-9628-9a53ea4baae3
+    - f14b7469-61a1-4991-abf5-7797a4cb78b3
+
+    - 3f8e17ec-39f5-4af2-9add-1e0bb44ab27f
+    - 20788096-1be7-4fd0-8a4c-875975d1c3cd
+    - 84264ebe-db74-444d-837b-249c751de57d
+    - 3fc479cf-4e48-46ea-8f1e-2393f6836ad3

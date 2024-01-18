@@ -97,7 +97,6 @@ drush sqlq 'SELECT uuid FROM node WHERE nid = 536'
 drush sqlq 'SELECT uuid FROM node WHERE nid = 611'
 
 
-
 # Main menu top level
 # WWW
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 2'
@@ -164,9 +163,31 @@ drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 292'
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 290'
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 289'
 ```
-Also Media dependencies for nodes listed above, and their `file` dependencies.
-And Taxonomy term `taxonomy_term` for Story type.
+Also Media dependencies for nodes listed above, and their `file` dependencies can be replaces with a generic media entity `044fc54b-448d-4c80-88b4-160d1b03ac46`.
+
+And the video `407820ec-cd73-47f8-b918-c38d281effb1`
+drush sqlq 'SELECT uuid FROM media WHERE id = 52'
+
+Taxonomy term `taxonomy_term` for Story types.
 `drush sqlq "select * from taxonomy_term_data"`
+
+# Countries
+# Myanmar
+drush sqlq 'SELECT uuid FROM taxonomy_term_data WHERE tid = 154'
+# Colombia
+drush sqlq 'SELECT uuid FROM taxonomy_term_data WHERE tid = 53'
+# Lebanon
+drush sqlq 'SELECT uuid FROM taxonomy_term_data WHERE tid = 126'
+# Burundi
+drush sqlq 'SELECT uuid FROM taxonomy_term_data WHERE tid = 36'
+# Burkina Faso
+drush sqlq 'SELECT uuid FROM taxonomy_term_data WHERE tid = 35'
+
+# Office Type
+drush sqlq 'SELECT uuid FROM taxonomy_term_data WHERE tid = 260'
+drush sqlq 'SELECT uuid FROM taxonomy_term_data WHERE tid = 261'
+drush sqlq 'SELECT uuid FROM taxonomy_term_data WHERE tid = 262'
+drush sqlq 'SELECT uuid FROM taxonomy_term_data WHERE tid = 263'
 
  See https://www.drupal.org/docs/contributed-modules/default-content-for-d8/defining-default-content
 
