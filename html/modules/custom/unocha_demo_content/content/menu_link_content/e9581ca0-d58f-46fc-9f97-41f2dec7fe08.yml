@@ -1,12 +1,12 @@
 _meta:
   version: '1.0'
   entity_type: menu_link_content
-  uuid: 40586889-e9ff-4fd5-b261-74e4c810fbcf
+  uuid: e9581ca0-d58f-46fc-9f97-41f2dec7fe08
   bundle: menu_link_content
   default_langcode: en
   depends:
-    ddc4807d-b2fa-4b16-983e-cc3481d53884: menu_link_content
-    d99b5bcc-d6df-4f2b-9fad-489992c84354: node
+    0c9d063e-bcaa-4aee-8cd8-99657be0d439: menu_link_content
+    d028c4e4-2680-4325-a587-0b7f39a72894: node
     ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
 default:
   enabled:
@@ -14,13 +14,13 @@ default:
       value: true
   title:
     -
-      value: Myanmar
+      value: Colombia
   menu_name:
     -
       value: main
   link:
     -
-      target_uuid: d99b5bcc-d6df-4f2b-9fad-489992c84354
+      target_uuid: d028c4e4-2680-4325-a587-0b7f39a72894
       title: ''
       options: {  }
   external:
@@ -31,13 +31,13 @@ default:
       value: false
   weight:
     -
-      value: 6
+      value: 0
   expanded:
     -
       value: false
   parent:
     -
-      value: 'menu_link_content:ddc4807d-b2fa-4b16-983e-cc3481d53884'
+      value: 'menu_link_content:0c9d063e-bcaa-4aee-8cd8-99657be0d439'
   revision_translation_affected:
     -
       value: true
@@ -76,4 +76,4 @@ default:
       value: true
   content_translation_created:
     -
-      value: 1687207691
+      value: 1687225171

@@ -1,12 +1,12 @@
 _meta:
   version: '1.0'
   entity_type: menu_link_content
-  uuid: 40586889-e9ff-4fd5-b261-74e4c810fbcf
+  uuid: c272e165-d58a-4439-8827-1e189472ba67
   bundle: menu_link_content
   default_langcode: en
   depends:
-    ddc4807d-b2fa-4b16-983e-cc3481d53884: menu_link_content
-    d99b5bcc-d6df-4f2b-9fad-489992c84354: node
+    7e4cd756-bee8-471b-b8fe-7f85e6671c45: menu_link_content
+    7069599a-4d94-45ac-ab74-49ead251ab78: node
     ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
 default:
   enabled:
@@ -14,13 +14,13 @@ default:
       value: true
   title:
     -
-      value: Myanmar
+      value: Burundi
   menu_name:
     -
       value: main
   link:
     -
-      target_uuid: d99b5bcc-d6df-4f2b-9fad-489992c84354
+      target_uuid: 7069599a-4d94-45ac-ab74-49ead251ab78
       title: ''
       options: {  }
   external:
@@ -31,13 +31,13 @@ default:
       value: false
   weight:
     -
-      value: 6
+      value: 0
   expanded:
     -
       value: false
   parent:
     -
-      value: 'menu_link_content:ddc4807d-b2fa-4b16-983e-cc3481d53884'
+      value: 'menu_link_content:7e4cd756-bee8-471b-b8fe-7f85e6671c45'
   revision_translation_affected:
     -
       value: true
@@ -76,4 +76,4 @@ default:
       value: true
   content_translation_created:
     -
-      value: 1687207691
+      value: 1687216088

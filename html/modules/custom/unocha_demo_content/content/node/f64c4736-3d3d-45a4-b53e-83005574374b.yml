@@ -7,7 +7,7 @@ _meta:
   depends:
     8fa1a556-9f76-4ea2-bc75-b2d183a04af6: user
     ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
-    35aed387-0b6d-4a52-994c-85597b7b172f: media
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
     7f41ee99-8ce4-40b3-895c-015c28a3353e: media
     9aaa5688-2f58-42c3-b4b7-736feea2acff: media
 default:
@@ -102,7 +102,7 @@ default:
       value: false
   field_basic_image:
     -
-      entity: 35aed387-0b6d-4a52-994c-85597b7b172f
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
   field_children_menu:
     -
       value: false

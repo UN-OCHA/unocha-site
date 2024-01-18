@@ -7,9 +7,7 @@ _meta:
   depends:
     e37cab06-76f4-4d7c-883b-bb09319d7941: user
     ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
-    63300e1a-81a0-4da7-931a-d77fd473f4e9: media
-    407820ec-cd73-47f8-b918-c38d281effb1: media
-    d5b14317-cf55-4205-90c3-19ddf6b74211: media
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
 default:
   revision_uid:
     -
@@ -122,7 +120,7 @@ default:
       summary: ''
   field_basic_image:
     -
-      entity: 63300e1a-81a0-4da7-931a-d77fd473f4e9
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
   field_children_menu:
     -
       value: false
@@ -340,7 +338,7 @@ default:
               value: false
           field_video:
             -
-              entity: 407820ec-cd73-47f8-b918-c38d281effb1
+              entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
     -
       entity:
         _meta:
@@ -630,7 +628,7 @@ default:
               value: false
           field_image:
             -
-              entity: d5b14317-cf55-4205-90c3-19ddf6b74211
+              entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
           field_text:
             -
               value: '<h2>Our 2022 Annual Report</h2><p>2022 was yet another relentlessly arduous year for many people across the world. Read our 2022 Annual Report to find out how the year unfolded and the impact we had in coordinating many thousands of humanitarian actors in the world’s most acute crises. <a href="https://annualreport.unocha.org/"><strong>Read the full report.</strong></a></p>'

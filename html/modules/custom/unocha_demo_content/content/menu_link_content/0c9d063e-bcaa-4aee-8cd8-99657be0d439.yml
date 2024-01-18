@@ -1,12 +1,12 @@
 _meta:
   version: '1.0'
   entity_type: menu_link_content
-  uuid: 40586889-e9ff-4fd5-b261-74e4c810fbcf
+  uuid: 0c9d063e-bcaa-4aee-8cd8-99657be0d439
   bundle: menu_link_content
   default_langcode: en
   depends:
-    ddc4807d-b2fa-4b16-983e-cc3481d53884: menu_link_content
-    d99b5bcc-d6df-4f2b-9fad-489992c84354: node
+    4700a71f-8912-4c76-b0c7-80848cfda2e3: menu_link_content
+    0c036e0c-d618-4894-9579-5fe14f344d6f: node
     ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
 default:
   enabled:
@@ -14,13 +14,13 @@ default:
       value: true
   title:
     -
-      value: Myanmar
+      value: 'Latin America and the Caribbean'
   menu_name:
     -
       value: main
   link:
     -
-      target_uuid: d99b5bcc-d6df-4f2b-9fad-489992c84354
+      target_uuid: 0c036e0c-d618-4894-9579-5fe14f344d6f
       title: ''
       options: {  }
   external:
@@ -31,13 +31,13 @@ default:
       value: false
   weight:
     -
-      value: 6
+      value: 0
   expanded:
     -
-      value: false
+      value: true
   parent:
     -
-      value: 'menu_link_content:ddc4807d-b2fa-4b16-983e-cc3481d53884'
+      value: 'menu_link_content:4700a71f-8912-4c76-b0c7-80848cfda2e3'
   revision_translation_affected:
     -
       value: true
@@ -76,4 +76,4 @@ default:
       value: true
   content_translation_created:
     -
-      value: 1687207691
+      value: 1687122011

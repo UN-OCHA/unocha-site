@@ -1,0 +1,163 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 78dcef58-1b7c-4c2d-8b7a-a9b3623e3f42
+  bundle: story
+  default_langcode: en
+  depends:
+    921f814b-f86f-47d4-b5b0-e2da08d3980e: user
+    d5f81126-7648-4cf8-a766-ec652a0a583f: taxonomy_term
+    46a02441-0d0d-466b-bdf4-ab2caea712bc: taxonomy_term
+    3d60deba-bd82-473f-9bb5-44ec2dff6829: taxonomy_term
+    6dfc9cf6-da4f-41d7-ac3d-ef0dd36fc067: node
+    97e50ef3-9e8e-41e7-aed7-06a5cf383e5d: node
+    e716b6d4-717e-499e-bd0e-1214afc9ce5b: node
+    4b9c860b-c169-448e-83b0-9277f4e5bae7: node
+    23555742-a467-46a2-8acc-a42d1f9d83bd: node
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    e0a9a933-7026-410b-995f-f662bad1eca6: taxonomy_term
+    c0ca0105-13d7-4b40-ba91-d4c2dc15f022: taxonomy_term
+    649b89d5-ea4a-4324-b50f-1041ffae7be5: taxonomy_term
+    4633bdef-2cb1-42bb-bf2f-ca8a2bff5eef: taxonomy_term
+default:
+  revision_uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  title:
+    -
+      value: "Today's top news:   Occupied Palestinian Territory, Ukraine, Yemen"
+  created:
+    -
+      value: 1704734227
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: "Today's top news: Occupied Palestinian Territory, Ukraine, Yemen | OCHA"
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: "\_ Sigrid Kaag"
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/news/todays-top-news-occupied-palestinian-territory-ukraine-yemen'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: "\_ Sigrid Kaag"
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2024-01/diapers%20UNRWa.jpg?itok=EyB2MQYP'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'A woman hands diapers to a woman carrying a baby in her arms.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: "\_ Sigrid Kaag"
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'A woman hands diapers to a woman carrying a baby in her arms.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2024-01/diapers%20UNRWa.jpg?itok=o4VUHuVX'
+  path:
+    -
+      alias: /news/todays-top-news-occupied-palestinian-territory-ukraine-yemen
+      langcode: en
+      pathauto: 1
+  samples_status:
+    -
+      value: false
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<p>&nbsp;</p><p><strong>Sigrid Kaag</strong></p><p>Ms. Sigrid Kaag started her assignment today as Senior Humanitarian and Reconstruction Coordinator for Gaza pursuant to Security Council Resolution 2720 (2023).</p><p>In her new capacity she will facilitate, coordinate, monitor, and verify humanitarian relief consignments to Gaza.&nbsp;</p><p>Ms. Kaag has also received the mandate to establish a United Nations mechanism to accelerate humanitarian relief consignments to Gaza through States which are not party to the conflict.</p><p>She will be in New York and Washington D.C. this week for meetings before traveling to the region.</p><h2><strong>Occupied Palestinian Territory</strong></h2><p>The intensifying offensive in the Deir al Balah, in central Gaza, and Khan Younis, in the south, is driving up civilian casualties and having devastating consequences for tens of thousands of people, many of whom had fled to Deir al Balah for safety from Gaza city and the north.</p><p>As a result of increased attacks – including one that directly hit a United Nations Relief and Works Agency for Palestine Refugees in the Near East (UNRWA) warehouse on Thursday, killing a UN staff member – humanitarian operations in Deir al Balah have been severely curtailed. Warehouses, distribution centres, health centres and shelters fall within areas that have been newly issued with evacuation orders. Several bakeries that were supported by the UN and our partners have been forced to shut down operations in Deir al Balah as a result of the fighting.</p><p>As casualties rise, the ability to treat people is in jeopardy, with three hospitals in Deir al Balah and Khan Younis at risk of closure due to the issuance of evacuation orders in nearby areas and fighting approaching the hospitals.</p><p>Yesterday, staff from the World Health Organization (WHO) and OCHA visited the Al Aqsa Hospital, the only functioning hospital in Deir al Balah. According to the hospital director, because of increasing hostilities and ongoing evacuation orders, most of the local health workers and about 600 patients have been forced to leave the facility to unknown locations.</p><p>The WHO Director-General, Dr. Tedros, <a href="https://twitter.com/DrTedros/status/1744098839110320633">wrote</a> that his staff witnessed “sickening scenes of people of all ages being treated on blood-streaked floors and in chaotic corridors.” The hospital reported immense needs, notably health workers, medical supplies, beds, and the need to be protected from strikes and hostilities. Dr. Tedros said that Al Aqsa is the most important hospital remaining in Deir al Balah and must remain functional, and protected, to deliver its lifesaving services.</p><p>By the end of 2023, according to UNRWA, 1.9 million people, or nearly 85 per cent of the total population of Gaza, were estimated to be internally displaced, including many who have been displaced multiple times, as families are forced to move repeatedly in search of safety. Nearly 1.4 million internally displaced people are sheltering in 155 UNRWA facilities, which are far exceeding their intended capacity.</p><p>UNICEF announced over the weekend that a survey conducted on 26 December found that about 90 per cent of Gazan children under two years of age are consuming two or fewer food groups. Most children are reportedly only eating grains or milk.</p><h2>Ukraine</h2><p>Attacks and hostilities continued over the weekend and this morning, causing deaths and destruction of civilian infrastructure across the country.</p><p>These attacks are taking place as storms and cold winter are resulting in temperatures dropping below 15 degrees Celsius. According to the Ukrainian Ministry of Energy, more than 460 towns and villages have no electricity.</p><p>In a <a href="https://reliefweb.int/report/ukraine/there-no-excuse-taking-childrens-lives-humanitarian-coordinator-ukraine-denise-brown-condemns-strikes-killed-nearly-dozen-civilians-donetsk-region-enruuk">statement</a>, Denise Brown, the Humanitarian Coordinator in Ukraine, condemned the deadly strikes on Saturday in the Pokrovsk District of the Donetsk Region, which killed 11 civilians, including 5 children, according data recorded by the UN Human Rights Office. Some 200 buildings were also reportedly destroyed in the attacks, according to local authorities.</p><p>Other attacks over the weekend and this morning in other parts of the Donetsk, Dnipro and Kherson Regions have also killed and injured dozens of civilians, including children, and damaged homes and schools, according to humanitarian partners on the ground.&nbsp;</p><p>In the Kherson Region, another humanitarian warehouse was destroyed on Saturday. In December alone, OCHA had recorded 5 similar incidents. Also in Kherson, our humanitarian partners report that homes for displaced people were hit over the weekend.&nbsp;</p><p>We and our humanitarian partners continue to provide emergency support during this new intensification of hostilities, complementing the efforts of the state services. Immediately after Saturday’s attack in the Donetsk Region, humanitarian workers provided hot meals, psychological assistance and construction materials to fix damaged houses. Along with our partners, we also distributed warm blankets, mattresses, bed linen, water containers and kitchen utensils to families whose homes were damaged.</p><h2>Yemen</h2><p>&nbsp;The acting Resident and Humanitarian Coordinator in the country, Peter Hawkins, has <a href="https://x.com/OCHAYemen/status/1743982597464613336?s=20">called</a> for a thorough and expeditious investigation into the killing of an aid worker on Friday.&nbsp;</p><p>In a statement, Mr. Hawkins described the killing of Dr. Akeed Qaed, a national staff member with the ADRA NGO, as an “unacceptable tragedy.”&nbsp;</p><p>Dr. Qaed was shot by unknown gunmen after Friday’s Sermons in front of his home in the southwestern district of Ad Dale.&nbsp;</p>'
+      format: ckeditor
+      summary: ''
+  field_country:
+    -
+      entity: d5f81126-7648-4cf8-a766-ec652a0a583f
+    -
+      entity: 46a02441-0d0d-466b-bdf4-ab2caea712bc
+    -
+      entity: 3d60deba-bd82-473f-9bb5-44ec2dff6829
+  field_regions:
+    -
+      entity: 6dfc9cf6-da4f-41d7-ac3d-ef0dd36fc067
+    -
+      entity: 97e50ef3-9e8e-41e7-aed7-06a5cf383e5d
+  field_responses:
+    -
+      entity: e716b6d4-717e-499e-bd0e-1214afc9ce5b
+    -
+      entity: 4b9c860b-c169-448e-83b0-9277f4e5bae7
+    -
+      entity: 23555742-a467-46a2-8acc-a42d1f9d83bd
+  field_story_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_story_type:
+    -
+      entity: e0a9a933-7026-410b-995f-f662bad1eca6
+  field_theme:
+    -
+      entity: c0ca0105-13d7-4b40-ba91-d4c2dc15f022
+    -
+      entity: 649b89d5-ea4a-4324-b50f-1041ffae7be5
+    -
+      entity: 4633bdef-2cb1-42bb-bf2f-ca8a2bff5eef

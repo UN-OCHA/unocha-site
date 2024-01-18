@@ -1,16 +1,17 @@
 _meta:
   version: '1.0'
   entity_type: node
-  uuid: 4aad45f9-f669-426d-b0a6-a53db101a48f
+  uuid: 0c036e0c-d618-4894-9579-5fe14f344d6f
   bundle: region
   default_langcode: en
   depends:
+    40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9: user
     ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
     044fc54b-448d-4c80-88b4-160d1b03ac46: media
 default:
   revision_uid:
     -
-      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
   status:
     -
       value: true
@@ -19,10 +20,10 @@ default:
       entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
   title:
     -
-      value: 'Asia and the Pacific'
+      value: 'Latin America and the Caribbean'
   created:
     -
-      value: 1686841665
+      value: 1687121890
   promote:
     -
       value: false
@@ -37,17 +38,17 @@ default:
       tag: meta
       attributes:
         name: title
-        content: 'Asia and the Pacific | OCHA'
+        content: 'Latin America and the Caribbean | OCHA'
     -
       tag: link
       attributes:
         rel: canonical
-        href: 'https://unocha-local.test/asia-and-pacific'
+        href: 'https://unocha-local.test/latin-america-and-caribbean'
     -
       tag: meta
       attributes:
         property: 'og:image'
-        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-06/i-czCgWrm-X4%202.21.32%20PM.jpg?itok=rybmMEW3'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-06/130_Guatemala2022_Tremeau_1R6A0091.jpg?itok=ZCSc1lzj'
     -
       tag: meta
       attributes:
@@ -62,7 +63,7 @@ default:
       tag: meta
       attributes:
         property: 'og:image:alt'
-        content: "Refugees in camp for displaced Rohingya in Cox's Bazaar, Bangladesh."
+        content: 'Picture of the rolling and firested hills of Camotán in Guatemala'
     -
       tag: meta
       attributes:
@@ -77,17 +78,20 @@ default:
       tag: meta
       attributes:
         name: 'twitter:image:alt'
-        content: "Refugees in camp for displaced Rohingya in Cox's Bazaar, Bangladesh."
+        content: 'Picture of the rolling and firested hills of Camotán in Guatemala'
     -
       tag: meta
       attributes:
         name: 'twitter:image'
-        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-06/i-czCgWrm-X4%202.21.32%20PM.jpg?itok=lQDiP6cS'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-06/130_Guatemala2022_Tremeau_1R6A0091.jpg?itok=W5ERZcH_'
   path:
     -
-      alias: /asia-and-pacific
+      alias: /latin-america-and-caribbean
       langcode: en
       pathauto: 1
+  samples_status:
+    -
+      value: false
   content_translation_source:
     -
       value: und
@@ -100,7 +104,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 7f34079e-4356-4ce9-a169-f9bd17504f0a
+          uuid: 586933f7-2972-4832-966a-1272c71aac9b
           bundle: section
           default_langcode: en
         default:
@@ -109,7 +113,7 @@ default:
               value: true
           created:
             -
-              value: 1687470969
+              value: 1687651976
           behavior_settings:
             -
               value:
@@ -133,7 +137,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: e7c5dff1-6756-4666-84ae-ebce1669b133
+          uuid: 44ff5983-137e-496e-bc01-54880c88327b
           bundle: section
           default_langcode: en
         default:
@@ -142,7 +146,7 @@ default:
               value: true
           created:
             -
-              value: 1687470806
+              value: 1687651984
           behavior_settings:
             -
               value:
@@ -150,7 +154,7 @@ default:
                   layout: layout_onecol
                   config:
                     label: ''
-                  parent_uuid: 7f34079e-4356-4ce9-a169-f9bd17504f0a
+                  parent_uuid: 586933f7-2972-4832-966a-1272c71aac9b
                   region: content
           content_translation_source:
             -
@@ -169,7 +173,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 4687ffe5-5fd4-473f-a073-9707046de6da
+          uuid: 187486b1-d0b9-4dcd-bd11-6381dccbc587
           bundle: text
           default_langcode: en
         default:
@@ -178,12 +182,12 @@ default:
               value: true
           created:
             -
-              value: 1687470895
+              value: 1687652052
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  parent_uuid: e7c5dff1-6756-4666-84ae-ebce1669b133
+                  parent_uuid: 44ff5983-137e-496e-bc01-54880c88327b
                   region: content
           content_translation_source:
             -
@@ -193,17 +197,14 @@ default:
               value: false
           field_text:
             -
-              value: '<p>Asia and the Pacific is the world’s most disaster-prone region. The increasing impacts of climate change and natural hazards continue to be the main drivers of humanitarian needs, exacerbated by the increasing number of complex and protracted conflicts, and economic, political and social crises. Protracted humanitarian situations in countries such as Afghanistan and Myanmar are affecting millions of people who need humanitarian assistance and protection. OCHA’s Regional Office for Asia and the Pacific (ROAP) and country offices work to support and strengthen humanitarian coordination and response preparedness in the region.</p>'
+              value: '<h2 dir="ltr">Regional Office for Latin America and the Caribbean</h2><p>&nbsp;</p><p dir="ltr">Latin America and the Caribbean is the world’s second most disaster-prone region. The persistent threat and cyclical impact of natural hazards run parallel to structural poverty and inequality, endemic violence, struggling economies and limited Government response capacities.</p><p dir="ltr">OCHA has had a presence in the region since 2003, and the Regional Office for Latin America and the Caribbean (ROLAC) has been based in Panama City, Republic of Panama, since 2005.</p><p dir="ltr">ROLAC works with country offices in the region to support and strengthen humanitarian coordination and response preparedness. It also coordinates the Regional Group on Risks, Emergencies and Disasters for Latin America and the Caribbean, a regional inter-institutional platform that supports emergency preparedness and response.</p>'
               format: ckeditor
-          field_title:
-            -
-              value: 'Regional Office for Asia and the Pacific'
     -
       entity:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 6f7cbe67-ec46-419a-88c3-f804e67b329a
+          uuid: c7308ec9-f869-480d-a23d-5aaf6b682522
           bundle: response_map
           default_langcode: en
         default:
@@ -212,7 +213,7 @@ default:
               value: true
           created:
             -
-              value: 1687471048
+              value: 1687652076
           behavior_settings:
             -
               value:
@@ -230,7 +231,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: c9cfd528-51bd-419e-98ee-247975689074
+          uuid: fb339ddc-8d64-4140-bc91-9b3a3909300a
           bundle: responses
           default_langcode: en
         default:
@@ -239,7 +240,7 @@ default:
               value: true
           created:
             -
-              value: 1687471128
+              value: 1687652099
           behavior_settings:
             -
               value:
@@ -262,7 +263,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 4640c4fd-f651-4d7b-8aac-8979a4104110
+          uuid: d3cf9cfa-c409-47de-9958-5a96c6e5bc28
           bundle: stories
           default_langcode: en
         default:
@@ -271,7 +272,7 @@ default:
               value: true
           created:
             -
-              value: 1687471425
+              value: 1688512547
           behavior_settings:
             -
               value:
@@ -301,42 +302,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: ac07464c-0bfa-4f4d-9814-81286d1ae703
-          bundle: call_to_action
-          default_langcode: en
-        default:
-          status:
-            -
-              value: true
-          created:
-            -
-              value: 1694551735
-          behavior_settings:
-            -
-              value:
-                layout_paragraphs:
-                  parent_uuid: null
-                  region: null
-          revision_translation_affected:
-            -
-              value: true
-          content_translation_source:
-            -
-              value: und
-          content_translation_outdated:
-            -
-              value: false
-          field_destination:
-            -
-              uri: 'https://asiadisasterguide.unocha.org/'
-              title: "Read OCHA's Guide to Disaster Response in Asia and the Pacific"
-              options: {  }
-    -
-      entity:
-        _meta:
-          version: '1.0'
-          entity_type: paragraph
-          uuid: baf1e640-a212-46a6-b303-bd2c3e9790fc
+          uuid: cef838fa-665e-420a-be2e-cce8f50f6a6c
           bundle: layout
           default_langcode: en
         default:
@@ -345,7 +311,7 @@ default:
               value: true
           created:
             -
-              value: 1687471491
+              value: 1687652143
           behavior_settings:
             -
               value:
@@ -366,7 +332,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 45286c3b-6eeb-4b53-9ac6-c134dbd39196
+          uuid: ef5eb6f8-3614-4a9c-a701-e1fe59629231
           bundle: reliefweb_river
           default_langcode: en
         default:
@@ -375,12 +341,12 @@ default:
               value: true
           created:
             -
-              value: 1687471547
+              value: 1687652335
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  parent_uuid: baf1e640-a212-46a6-b303-bd2c3e9790fc
+                  parent_uuid: cef838fa-665e-420a-be2e-cce8f50f6a6c
                   region: first
           content_translation_source:
             -
@@ -390,7 +356,7 @@ default:
               value: false
           field_reliefweb_river:
             -
-              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%21%28F10%29_%28C165.C13.C182.C90.C74.C120.C128.C130.C134%29&search=_exists_%3Aocha_product'
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%21%28F10%29_%28C250.C64.C83.C109.C113.C116.C32.C39.C81.C156.C187%29&search=_exists_%3Aocha_product'
               title: ''
               limit: 4
           field_title:
@@ -404,7 +370,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: f4fbf6c1-a67b-43fe-8379-baedb35f5bf1
+          uuid: abf0cc97-bf52-4ae3-ae85-538abdd101cc
           bundle: reliefweb_river
           default_langcode: en
         default:
@@ -413,12 +379,12 @@ default:
               value: true
           created:
             -
-              value: 1687471818
+              value: 1687652387
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  parent_uuid: baf1e640-a212-46a6-b303-bd2c3e9790fc
+                  parent_uuid: cef838fa-665e-420a-be2e-cce8f50f6a6c
                   region: second
           content_translation_source:
             -
@@ -428,7 +394,7 @@ default:
               value: false
           field_reliefweb_river:
             -
-              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%28F10%29_%28C165.C13.C182.C90.C74.C120.C128.C130.C134%29&search=_exists_%3Aocha_product'
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%28F10%29_%28C250.C64.C83.C109.C113.C116.C32.C39.C81.C156.C187%29&search=_exists_%3Aocha_product'
               title: ''
               limit: 2
           paragraph_view_mode:
@@ -439,7 +405,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 85b296a1-9548-46bb-a4e1-2c339909a9bc
+          uuid: af9ae3dc-adfd-45cf-a4e5-78221c7e2e4f
           bundle: figures
           default_langcode: en
         default:
@@ -448,7 +414,7 @@ default:
               value: true
           created:
             -
-              value: 1687473345
+              value: 1687652530
           behavior_settings:
             -
               value:
@@ -464,39 +430,39 @@ default:
           field_presence_figures:
             -
               label: 'Total requirements'
-              value: '7118089.00'
+              value: '5007079.00'
               unit: USD
               provider: oct
               id: total-requirements
-              ochapresence: roap
+              ochapresence: rolac
               year: '2'
             -
               label: 'Opening balance'
-              value: '206971.00'
+              value: '325.00'
               unit: USD
               provider: oct
               id: opening-balance
-              ochapresence: roap
+              ochapresence: rolac
               year: '2'
             -
               label: 'Earmarked funding'
-              value: '1455238.00'
+              value: '1196063.00'
               unit: USD
               provider: oct
               id: earmarked-funding
-              ochapresence: roap
+              ochapresence: rolac
               year: '2'
             -
               label: Total
-              value: '1455238.00'
+              value: '1196063.00'
               unit: USD
               provider: oct
               id: total
-              ochapresence: roap
+              ochapresence: rolac
               year: '2'
           field_title:
             -
-              value: 'Funding for OCHA Asia and the Pacific'
+              value: 'Funding for OCHA  Latin America and the Caribbean'
           paragraph_view_mode:
             -
               value: figures_compact_short
@@ -505,7 +471,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: ba583d69-e398-422a-92ec-76a3f9c977ce
+          uuid: ecde2e70-c2b9-4de1-ad35-d9ded1e92c74
           bundle: donors
           default_langcode: en
         default:
@@ -514,7 +480,7 @@ default:
               value: true
           created:
             -
-              value: 1687473393
+              value: 1687652625
           behavior_settings:
             -
               value:
@@ -530,18 +496,18 @@ default:
           field_presence_donors:
             -
               label: 'Earmarked donors'
-              value: 'Australia, Japan, Sweden, Canada'
+              value: 'European Commission, Sweden, Canada'
               unit: ''
               provider: oct
               id: earmarked-donors
-              ochapresence: roap
+              ochapresence: rolac
               year: '2'
     -
       entity:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 43c944d2-f7e8-4371-a258-d500643c4dbc
+          uuid: 1b911e51-c9e6-4f5d-9316-11b36f74201f
           bundle: donors
           default_langcode: en
         default:
@@ -550,7 +516,7 @@ default:
               value: true
           created:
             -
-              value: 1687473422
+              value: 1687652656
           behavior_settings:
             -
               value:
@@ -570,14 +536,14 @@ default:
               unit: ''
               provider: oct
               id: unearmarked-donors
-              ochapresence: roap
+              ochapresence: rolac
               year: '2'
     -
       entity:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 9148c6d6-d63b-4ecf-a313-e297d0912e21
+          uuid: 59a8d357-61d9-4259-96f0-257926c000da
           bundle: subscribe
           default_langcode: en
         default:
@@ -586,7 +552,7 @@ default:
               value: true
           created:
             -
-              value: 1687473527
+              value: 1687652732
           behavior_settings:
             -
               value:
@@ -601,14 +567,14 @@ default:
               value: false
           field_text:
             -
-              value: "<p>Receive all of the latest news, humanitarian tools and other information products from OCHA's Asia Pacific offices and operations.</p>"
+              value: "<p>Receive all of the latest news, humanitarian tools and other information products from OCHA's Latin America and the Caribbean offices and operations.</p>"
               format: ckeditor
           field_title:
             -
-              value: 'Subscribe to the OCHA Asia Pacific newsletter'
+              value: 'Subscribe to the OCHA Latin America and the Caribbean newsletter'
           field_url:
             -
-              uri: 'https://unocha.us4.list-manage.com/subscribe?u=b438b7d9f4bff43c0ebb7a4a0&id=78b8282f4f'
+              uri: 'https://us5.list-manage.com/subscribe?u=6c6cca85ab&id=274155eb87'
               title: Subscribe
               options: {  }
   field_region_image:

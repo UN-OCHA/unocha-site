@@ -1,15 +1,15 @@
 _meta:
   version: '1.0'
   entity_type: node
-  uuid: d99b5bcc-d6df-4f2b-9fad-489992c84354
+  uuid: d028c4e4-2680-4325-a587-0b7f39a72894
   bundle: response
   default_langcode: en
   depends:
     8fa1a556-9f76-4ea2-bc75-b2d183a04af6: user
     ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
-    1f38f7ac-f69d-45b4-908d-38e8721d9a20: taxonomy_term
+    33f1e372-00da-415d-8a1b-d7f5c1ad77e7: taxonomy_term
     3f8e17ec-39f5-4af2-9add-1e0bb44ab27f: taxonomy_term
-    4aad45f9-f669-426d-b0a6-a53db101a48f: node
+    0c036e0c-d618-4894-9579-5fe14f344d6f: node
     044fc54b-448d-4c80-88b4-160d1b03ac46: media
 default:
   revision_uid:
@@ -23,10 +23,10 @@ default:
       entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
   title:
     -
-      value: Myanmar
+      value: Colombia
   created:
     -
-      value: 1687207574
+      value: 1687224839
   promote:
     -
       value: false
@@ -41,27 +41,27 @@ default:
       tag: meta
       attributes:
         name: title
-        content: 'Myanmar | OCHA'
+        content: 'Colombia | OCHA'
     -
       tag: meta
       attributes:
         name: description
-        content: 'Two years since the military takeover, the humanitarian outlook for Myanmar remains bleak. Conflict is raging, public services are in disarray and inflation is having a devastating effect on people’s financial situations.'
+        content: 'Colombia has made progress in development and peacebuilding over the past decade, but internal armed conflict and violence, extreme weather-related events and COVID-19 have left 7.7 million people in need.'
     -
       tag: link
       attributes:
         rel: canonical
-        href: 'https://unocha-local.test/myanmar'
+        href: 'https://unocha-local.test/colombia'
     -
       tag: meta
       attributes:
         property: 'og:description'
-        content: 'Two years since the military takeover, the humanitarian outlook for Myanmar remains bleak. Conflict is raging, public services are in disarray and inflation is having a devastating effect on people’s financial situations.'
+        content: 'Colombia has made progress in development and peacebuilding over the past decade, but internal armed conflict and violence, extreme weather-related events and COVID-19 have left 7.7 million people in need.'
     -
       tag: meta
       attributes:
         property: 'og:image'
-        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-09/Myanmar_Modola_2022_21.jpg?itok=5UXkTiv3'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2024-01/2023-05-17%20CO%20-%20ASG%20Mission%20%2804%20Union%20Wounaan%20Field%20Visit%29%200139_0.jpg?itok=4TyptfXy'
     -
       tag: meta
       attributes:
@@ -76,7 +76,7 @@ default:
       tag: meta
       attributes:
         property: 'og:image:alt'
-        content: 'A woman with a young boy tied to her back walks on an unpaved narrow path. A young boy and a man carrying water and bags walk behind her.'
+        content: 'ASG Mission Union Wounaan Field Visit'
     -
       tag: meta
       attributes:
@@ -91,20 +91,20 @@ default:
       tag: meta
       attributes:
         name: 'twitter:description'
-        content: 'Two years since the military takeover, the humanitarian outlook for Myanmar remains bleak. Conflict is raging, public services are in disarray and inflation is having a devastating effect on people’s financial situations.'
+        content: 'Colombia has made progress in development and peacebuilding over the past decade, but internal armed conflict and violence, extreme weather-related events and COVID-19 have left 7.7 million people in need.'
     -
       tag: meta
       attributes:
         name: 'twitter:image:alt'
-        content: 'A woman with a young boy tied to her back walks on an unpaved narrow path. A young boy and a man carrying water and bags walk behind her.'
+        content: 'ASG Mission Union Wounaan Field Visit'
     -
       tag: meta
       attributes:
         name: 'twitter:image'
-        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-09/Myanmar_Modola_2022_21.jpg?itok=d_0mn1Gg'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2024-01/2023-05-17%20CO%20-%20ASG%20Mission%20%2804%20Union%20Wounaan%20Field%20Visit%29%200139_0.jpg?itok=wmQpjrEy'
   path:
     -
-      alias: /myanmar
+      alias: /colombia
       langcode: en
       pathauto: 1
   samples_status:
@@ -120,20 +120,20 @@ default:
     -
       value: ''
       format: ckeditor
-      summary: 'Two years since the military takeover, the humanitarian outlook for Myanmar remains bleak. Conflict is raging, public services are in disarray and inflation is having a devastating effect on people’s financial situations.'
+      summary: 'Colombia has made progress in development and peacebuilding over the past decade, but internal armed conflict and violence, extreme weather-related events and COVID-19 have left 7.7 million people in need.'
   field_active_response:
     -
       value: false
   field_country:
     -
-      entity: 1f38f7ac-f69d-45b4-908d-38e8721d9a20
+      entity: 33f1e372-00da-415d-8a1b-d7f5c1ad77e7
   field_custom_content:
     -
       entity:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 03b42de5-b55c-4b8b-9811-3776f85a886e
+          uuid: 15668478-af7f-444e-977a-68f9950d6dd1
           bundle: section
           default_langcode: en
         default:
@@ -142,7 +142,7 @@ default:
               value: true
           created:
             -
-              value: 1687546493
+              value: 1687549865
           behavior_settings:
             -
               value:
@@ -166,7 +166,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 137a6901-eec7-47eb-b6e8-4b36120f8182
+          uuid: 28b52fd7-ee00-4747-b925-514f5a91cf33
           bundle: section
           default_langcode: en
         default:
@@ -175,7 +175,7 @@ default:
               value: true
           created:
             -
-              value: 1687546504
+              value: 1687549870
           behavior_settings:
             -
               value:
@@ -183,7 +183,7 @@ default:
                   layout: layout_onecol
                   config:
                     label: ''
-                  parent_uuid: 03b42de5-b55c-4b8b-9811-3776f85a886e
+                  parent_uuid: 15668478-af7f-444e-977a-68f9950d6dd1
                   region: content
           content_translation_source:
             -
@@ -202,7 +202,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 3cfe2395-97ae-41ad-bd66-903214ecab50
+          uuid: e7731ea7-cf84-45a5-84ba-affed7b61cec
           bundle: text
           default_langcode: en
         default:
@@ -211,12 +211,12 @@ default:
               value: true
           created:
             -
-              value: 1687546551
+              value: 1687549918
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  parent_uuid: 137a6901-eec7-47eb-b6e8-4b36120f8182
+                  parent_uuid: 28b52fd7-ee00-4747-b925-514f5a91cf33
                   region: content
           content_translation_source:
             -
@@ -226,14 +226,14 @@ default:
               value: false
           field_text:
             -
-              value: '<p dir="ltr">Two years since the military takeover, the humanitarian outlook for Myanmar remains bleak. Conflict is raging, public services are in disarray and inflation is having a devastating effect on people’s financial situations.</p><p dir="ltr">Almost half of the country’s population is estimated to live in poverty. Humanitarian needs have worsened, and the number of internally displaced people has risen to 1.6 million out of a total population of 56 million, as of September 2023. Despite the country’s dire humanitarian situation, the de facto authorities are limiting the movement of essential goods and humanitarian access throughout many parts of the country, particularly in the north-west.&nbsp;</p>'
+              value: '<p dir="ltr">Colombia has made progress in development and peacebuilding over the past decade, but internal armed conflict and violence, extreme weather-related events and COVID-19 have left 7.7 million people in need. The expansion of hostilities by non-State armed groups (NSAGs) along the country’s Pacific Coast and border areas have affected the poorest and most vulnerable communities, such as Indigenous and Afro-Colombian peoples in the rural areas. The influx of refugees and migrants has increased the burden on host communities.</p><p dir="ltr">Humanitarian entities are complementing State efforts to respond to people’s needs, particularly in hard-to-reach areas. A new Government with a bold agenda to promote "Total Peace" and social equity has taken office and is supported by the Humanitarian Country Team (HCT). Efforts are being made towards inclusive dialogues and a renewed approach of collaboration with multilateral organizations.</p>'
               format: ckeditor
     -
       entity:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: fae36d8a-a230-48e3-90cf-320a41c57e87
+          uuid: 43f8032c-e872-4e50-bfbe-f76d90845fc9
           bundle: section
           default_langcode: en
         default:
@@ -242,7 +242,7 @@ default:
               value: true
           created:
             -
-              value: 1687546571
+              value: 1687549925
           behavior_settings:
             -
               value:
@@ -250,7 +250,7 @@ default:
                   layout: layout_onecol
                   config:
                     label: ''
-                  parent_uuid: 03b42de5-b55c-4b8b-9811-3776f85a886e
+                  parent_uuid: 15668478-af7f-444e-977a-68f9950d6dd1
                   region: content
           content_translation_source:
             -
@@ -269,7 +269,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 08e74b43-0ed6-4a42-9259-f6118bf86460
+          uuid: 09d3d39a-08e4-48a9-89c1-9e6ee697f29a
           bundle: text
           default_langcode: en
         default:
@@ -278,12 +278,12 @@ default:
               value: true
           created:
             -
-              value: 1687546599
+              value: 1687550203
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  parent_uuid: fae36d8a-a230-48e3-90cf-320a41c57e87
+                  parent_uuid: 43f8032c-e872-4e50-bfbe-f76d90845fc9
                   region: content
           content_translation_source:
             -
@@ -293,14 +293,14 @@ default:
               value: false
           field_text:
             -
-              value: '<p>Conflict is expected to persist or worsen in 2023, especially in the north-west and south-east, leading to an increased risk of displacement. The economy remains fragile, with inflation affecting livelihoods and food security.&nbsp;</p>'
+              value: '<p dir="ltr">The Government introduced new policies to address the impacts of conflict, disasters and socioeconomic hardship, with a focus on short-term humanitarian response and long-term solutions to address structural causes. Humanitarian actors will continue providing aid to affected communities. However, NSAGs’ control and pressure on civilians is expected to persist, impacting their protection and access to basic goods, services and livelihoods.&nbsp;</p><p dir="ltr">La Niña and heavy rains are expected to create new emergencies and exacerbate existing ones, while mixed migration and the slow return of refugees will put further strain on affected communities. Challenges to humanitarian access will also persist.</p>'
               format: ckeditor
     -
       entity:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 071279fc-c47e-4c5a-be2b-9d7ee61ad45a
+          uuid: aa6d7c85-fd19-4f4d-b38c-03551bc863b9
           bundle: section
           default_langcode: en
         default:
@@ -309,7 +309,7 @@ default:
               value: true
           created:
             -
-              value: 1687546607
+              value: 1687550210
           behavior_settings:
             -
               value:
@@ -317,7 +317,7 @@ default:
                   layout: layout_onecol
                   config:
                     label: ''
-                  parent_uuid: 03b42de5-b55c-4b8b-9811-3776f85a886e
+                  parent_uuid: 15668478-af7f-444e-977a-68f9950d6dd1
                   region: content
           content_translation_source:
             -
@@ -336,7 +336,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 4c5b3edb-59bb-40d2-9ad5-ef7af0d542b7
+          uuid: 555ac258-70b9-4576-8f88-25ad23503a03
           bundle: text
           default_langcode: en
         default:
@@ -345,12 +345,12 @@ default:
               value: true
           created:
             -
-              value: 1687546626
+              value: 1687550231
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  parent_uuid: 071279fc-c47e-4c5a-be2b-9d7ee61ad45a
+                  parent_uuid: aa6d7c85-fd19-4f4d-b38c-03551bc863b9
                   region: content
           content_translation_source:
             -
@@ -360,14 +360,14 @@ default:
               value: false
           field_text:
             -
-              value: '<p>The 2023 Myanmar Humanitarian Response Plan, which needs US$764 million, aims to reduce suffering, morbidity and mortality for 4.5 million people through improved access to food, health services and other essential support.</p>'
+              value: '<p>In 2023, the humanitarian community will continue to address people’s needs in areas affected by conflict and extreme weather-related events, with a particular focus on vulnerable groups, including children, women and ethnic minorities. The HCT’s strategy will focus on rapid response to people caught in emergencies for life-saving purposes and their protection, and contribute to their recovery, durable solutions and community capacity-building.</p>'
               format: ckeditor
     -
       entity:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: d3a35619-3888-48e2-b975-cecab0e692f9
+          uuid: ea4f8071-d1a0-48e7-ab2f-a4f3138bb78f
           bundle: section
           default_langcode: en
         default:
@@ -376,7 +376,7 @@ default:
               value: true
           created:
             -
-              value: 1687546645
+              value: 1687550258
           behavior_settings:
             -
               value:
@@ -386,9 +386,6 @@ default:
                     label: ''
                   parent_uuid: null
                   region: null
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -397,11 +394,11 @@ default:
               value: false
           field_text:
             -
-              value: '<h5>For a full overview of the humanitarian response, visit <a href="https://humanitarianaction.info/plan/1160">humanitarianaction.info</a></h5>'
+              value: '<h5>For a full overview of the humanitarian response, visit <a href="https://humanitarianaction.info/plan/1181">humanitarianaction.info</a></h5>'
               format: ckeditor
           field_title:
             -
-              value: 'Overview of the humanitarian response in Myanmar'
+              value: 'Overview of the Humanitarian Response in Colombia'
           paragraph_view_mode:
             -
               value: tabs
@@ -410,7 +407,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 06364785-b9c0-409c-b799-afa6915c52e6
+          uuid: cc316390-7d0b-4c43-b3e7-cb495d48f982
           bundle: section
           default_langcode: en
         default:
@@ -419,7 +416,7 @@ default:
               value: true
           created:
             -
-              value: 1687546674
+              value: 1687550297
           behavior_settings:
             -
               value:
@@ -427,7 +424,7 @@ default:
                   layout: layout_onecol
                   config:
                     label: ''
-                  parent_uuid: d3a35619-3888-48e2-b975-cecab0e692f9
+                  parent_uuid: ea4f8071-d1a0-48e7-ab2f-a4f3138bb78f
                   region: content
           content_translation_source:
             -
@@ -446,7 +443,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 331d6356-3eaa-4a59-b1ff-61e676ee53d2
+          uuid: 939718eb-bc9a-4037-a128-5b2e26112a23
           bundle: figures
           default_langcode: en
         default:
@@ -455,12 +452,12 @@ default:
               value: true
           created:
             -
-              value: 1687546770
+              value: 1687551382
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  parent_uuid: 06364785-b9c0-409c-b799-afa6915c52e6
+                  parent_uuid: cc316390-7d0b-4c43-b3e7-cb495d48f982
                   region: content
           content_translation_source:
             -
@@ -471,31 +468,31 @@ default:
           field_figures:
             -
               label: Population
-              value: '55982248.00'
+              value: '52156254.00'
               unit: ''
               provider: fts
-              id: fts_mmr_2023_1132_population
-              country: mmr
+              id: fts_col_2023_1142_population
+              country: col
               year: '2'
             -
               label: 'People in Need'
-              value: '17600000.00'
+              value: '7700000.00'
               unit: ''
               provider: rw_crisis
-              id: rw_crisis_mmr_2023_people-in-need
-              country: mmr
+              id: rw_crisis_col_2023_people-in-need
+              country: col
               year: '2'
             -
-              label: 'IDPs displaced since Feb 2021'
-              value: '1523700.00'
+              label: 'Venezuelan Refugees and Migrants in Colombia'
+              value: '2480000.00'
               unit: ''
               provider: rw_crisis
-              id: rw_crisis_mmr_2023_idps-displaced-since-feb-2021
-              country: mmr
+              id: rw_crisis_col_2023_venezuelan-refugees-and-migrants-in-colombia
+              country: col
               year: '2'
           field_reliefweb_document:
             -
-              url: 'https://reliefweb.int/report/myanmar/myanmar-humanitarian-needs-overview-2023-january-2023'
+              url: 'https://reliefweb.int/report/colombia/colombia-panorama-de-las-necesidades-humanitarias-2023-marzo-2023'
           paragraph_view_mode:
             -
               value: figures_compact_short
@@ -504,7 +501,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 8ce5e6c1-3464-49e7-b90c-26929d3761cf
+          uuid: 0d46e746-6aac-4fa1-8c64-6d060aa2d4c4
           bundle: section
           default_langcode: en
         default:
@@ -513,7 +510,7 @@ default:
               value: true
           created:
             -
-              value: 1687546803
+              value: 1687550479
           behavior_settings:
             -
               value:
@@ -521,7 +518,7 @@ default:
                   layout: layout_onecol
                   config:
                     label: ''
-                  parent_uuid: d3a35619-3888-48e2-b975-cecab0e692f9
+                  parent_uuid: ea4f8071-d1a0-48e7-ab2f-a4f3138bb78f
                   region: content
           content_translation_source:
             -
@@ -540,7 +537,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: f49cb9e5-a406-49ad-997e-10ed46ca0fa0
+          uuid: 4e07e9ff-7a8a-4e69-ae1c-bfe033781875
           bundle: figures
           default_langcode: en
         default:
@@ -549,12 +546,12 @@ default:
               value: true
           created:
             -
-              value: 1687546888
+              value: 1687550581
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  parent_uuid: 8ce5e6c1-3464-49e7-b90c-26929d3761cf
+                  parent_uuid: 0d46e746-6aac-4fa1-8c64-6d060aa2d4c4
                   region: content
           content_translation_source:
             -
@@ -565,31 +562,31 @@ default:
           field_figures:
             -
               label: 'People in Need'
-              value: '17600000.00'
+              value: '7700000.00'
               unit: ''
               provider: rw_crisis
-              id: rw_crisis_mmr_2023_people-in-need
-              country: mmr
+              id: rw_crisis_col_2023_people-in-need
+              country: col
               year: '2'
             -
               label: 'People Targeted for Assistance'
-              value: '4500000.00'
+              value: '1600000.00'
               unit: ''
               provider: rw_crisis
-              id: rw_crisis_mmr_2023_people-targeted-for-assistance
-              country: mmr
+              id: rw_crisis_col_2023_people-targeted-for-assistance
+              country: col
               year: '2'
             -
               label: 'Total requirements'
-              value: '886738899.00'
+              value: '283317893.00'
               unit: USD
               provider: fts
-              id: fts_mmr_2023_1132_total-requirements
-              country: mmr
+              id: fts_col_2023_1142_total-requirements
+              country: col
               year: '2'
           field_reliefweb_document:
             -
-              url: 'https://reliefweb.int/report/myanmar/myanmar-humanitarian-response-plan-2023-january-2023'
+              url: 'https://reliefweb.int/report/colombia/colombia-plan-de-respuesta-humanitaria-2023-marzo-2023'
           paragraph_view_mode:
             -
               value: figures_compact_short
@@ -598,7 +595,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 6ae1e991-8d1a-47a3-aaf1-6e292d110687
+          uuid: e217f6c6-5a14-4889-ab59-59be5a47c66a
           bundle: section
           default_langcode: en
         default:
@@ -607,7 +604,7 @@ default:
               value: true
           created:
             -
-              value: 1687547976
+              value: 1687550599
           behavior_settings:
             -
               value:
@@ -615,7 +612,7 @@ default:
                   layout: layout_onecol
                   config:
                     label: ''
-                  parent_uuid: d3a35619-3888-48e2-b975-cecab0e692f9
+                  parent_uuid: ea4f8071-d1a0-48e7-ab2f-a4f3138bb78f
                   region: content
           content_translation_source:
             -
@@ -634,7 +631,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 50a4302f-866a-4258-b5bc-4b997ad27617
+          uuid: 06aa0ac4-313c-4b46-9e7c-9ea40afee4d0
           bundle: figures
           default_langcode: en
         default:
@@ -643,12 +640,12 @@ default:
               value: true
           created:
             -
-              value: 1687548058
+              value: 1687550685
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  parent_uuid: 6ae1e991-8d1a-47a3-aaf1-6e292d110687
+                  parent_uuid: e217f6c6-5a14-4889-ab59-59be5a47c66a
                   region: content
           content_translation_source:
             -
@@ -659,35 +656,35 @@ default:
           field_figures:
             -
               label: 'Total requirements'
-              value: '886738899.00'
+              value: '283317893.00'
               unit: USD
               provider: fts
-              id: fts_mmr_2023_1132_total-requirements
-              country: mmr
+              id: fts_col_2023_1142_total-requirements
+              country: col
               year: '2'
             -
               label: 'Funding total'
-              value: '143963938.00'
+              value: '56567140.00'
               unit: USD
               provider: fts
-              id: fts_mmr_2023_1132_funding-total
-              country: mmr
+              id: fts_col_2023_1142_funding-total
+              country: col
               year: '2'
             -
               label: 'Funding gap'
-              value: '742774961.00'
+              value: '226750753.00'
               unit: USD
               provider: fts
-              id: fts_mmr_2023_1132_funding-gap
-              country: mmr
+              id: fts_col_2023_1142_funding-gap
+              country: col
               year: '2'
             -
               label: 'Funding coverage'
-              value: '16.24'
+              value: '19.97'
               unit: ''
               provider: fts
-              id: fts_mmr_2023_1132_funding-coverage
-              country: mmr
+              id: fts_col_2023_1142_funding-coverage
+              country: col
               year: '2'
           paragraph_view_mode:
             -
@@ -697,7 +694,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: e2fae475-4eef-453d-bba7-0033fc793fe5
+          uuid: 50d7d9fa-8958-42c3-9911-53f68ae7ec88
           bundle: donors
           default_langcode: en
         default:
@@ -706,7 +703,7 @@ default:
               value: true
           created:
             -
-              value: 1687547024
+              value: 1687550705
           behavior_settings:
             -
               value:
@@ -722,18 +719,18 @@ default:
           field_country_donors:
             -
               label: 'Top donors'
-              value: 'Japan, United States of America, Australia, Sweden, European Commission, Central Emergency Response Fund, Germany, Canada, World Bank, France'
+              value: 'United States of America, European Commission, Central Emergency Response Fund, Sweden, Germany, Switzerland, Norway, Canada, United Nations Development Programme, Private (individuals & organizations)'
               unit: ''
               provider: fts
-              id: fts_mmr_2023_1132_top-donors
-              country: mmr
+              id: fts_col_2023_1142_top-donors
+              country: col
               year: '2'
     -
       entity:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 849f09c2-dda6-4807-9ac1-418c70a75540
+          uuid: c21923f2-4f63-4148-8a25-42f3ca408eda
           bundle: donors
           default_langcode: en
         default:
@@ -742,7 +739,7 @@ default:
               value: true
           created:
             -
-              value: 1687547039
+              value: 1687550748
           behavior_settings:
             -
               value:
@@ -758,15 +755,15 @@ default:
           field_country_donors:
             -
               label: 'Top sectors'
-              value: 'Not specified, Food Security, Protection, Shelter / NFI / CCCM, Coordination and Support Services, Nutrition, Education, Health, WASH'
+              value: 'Protección, Seguridad Alimentaria y Nutrición, Salud, Recuperación Temprana, Educación, Coordinación, Not specified, Agua, Saneamiento e Higiene, Albergue y Artículos no Alimentarios'
               unit: ''
               provider: fts
-              id: fts_mmr_2023_1132_top-sectors
-              country: mmr
+              id: fts_col_2023_1142_top-sectors
+              country: col
               year: '2'
           field_url:
             -
-              uri: 'https://fts.unocha.org/appeals/1132/summary'
+              uri: 'https://fts.unocha.org/appeals/1142/summary'
               title: 'Find out more about the response and its funding at OCHA’s Financial Tracking Service'
               options: {  }
     -
@@ -774,7 +771,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 3fdb0e66-4112-4969-9b3d-01a096f30305
+          uuid: 9d24c3f2-c46d-4403-9a9b-2a317b4eea44
           bundle: stories
           default_langcode: en
         default:
@@ -783,7 +780,7 @@ default:
               value: true
           created:
             -
-              value: 1687547104
+              value: 1687550761
           behavior_settings:
             -
               value:
@@ -810,197 +807,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 08053f4f-175c-4d9d-98d4-38ab748f70aa
-          bundle: section
-          default_langcode: en
-        default:
-          status:
-            -
-              value: true
-          created:
-            -
-              value: 1687547114
-          behavior_settings:
-            -
-              value:
-                layout_paragraphs:
-                  layout: layout_onecol
-                  config:
-                    label: ''
-                  parent_uuid: null
-                  region: null
-          content_translation_source:
-            -
-              value: und
-          content_translation_outdated:
-            -
-              value: false
-          field_title:
-            -
-              value: 'The Myanmar Humanitarian Fund'
-          paragraph_view_mode:
-            -
-              value: tabs
-    -
-      entity:
-        _meta:
-          version: '1.0'
-          entity_type: paragraph
-          uuid: 85e12915-6c8b-4f1c-822e-b9bbcdc6ddcc
-          bundle: section
-          default_langcode: en
-        default:
-          status:
-            -
-              value: true
-          created:
-            -
-              value: 1687547127
-          behavior_settings:
-            -
-              value:
-                layout_paragraphs:
-                  layout: layout_onecol
-                  config:
-                    label: ''
-                  parent_uuid: 08053f4f-175c-4d9d-98d4-38ab748f70aa
-                  region: content
-          content_translation_source:
-            -
-              value: und
-          content_translation_outdated:
-            -
-              value: false
-          field_title:
-            -
-              value: '2023 funding status'
-          paragraph_view_mode:
-            -
-              value: container
-    -
-      entity:
-        _meta:
-          version: '1.0'
-          entity_type: paragraph
-          uuid: fb876136-46e1-48ad-be10-82f2ebdb137a
-          bundle: figures
-          default_langcode: en
-        default:
-          status:
-            -
-              value: true
-          created:
-            -
-              value: 1687547222
-          behavior_settings:
-            -
-              value:
-                layout_paragraphs:
-                  parent_uuid: 85e12915-6c8b-4f1c-822e-b9bbcdc6ddcc
-                  region: content
-          content_translation_source:
-            -
-              value: und
-          content_translation_outdated:
-            -
-              value: false
-          field_figures:
-            -
-              label: 'Pledged amount'
-              value: '27588770.35'
-              unit: USD
-              provider: cbpf
-              id: cbpf_mmr_2023_pledged-amount
-              country: mmr
-              year: '2'
-            -
-              label: 'Paid amount'
-              value: '25184213.91'
-              unit: USD
-              provider: cbpf
-              id: cbpf_mmr_2023_paid-amount
-              country: mmr
-              year: '2'
-          paragraph_view_mode:
-            -
-              value: figures_compact_short
-    -
-      entity:
-        _meta:
-          version: '1.0'
-          entity_type: paragraph
-          uuid: 49f002dd-1380-496e-851e-2a51a37b3870
-          bundle: resources
-          default_langcode: en
-        default:
-          status:
-            -
-              value: true
-          created:
-            -
-              value: 1687547242
-          behavior_settings:
-            -
-              value:
-                layout_paragraphs:
-                  parent_uuid: 08053f4f-175c-4d9d-98d4-38ab748f70aa
-                  region: content
-          content_translation_source:
-            -
-              value: und
-          content_translation_outdated:
-            -
-              value: false
-          field_title:
-            -
-              value: Resources
-    -
-      entity:
-        _meta:
-          version: '1.0'
-          entity_type: paragraph
-          uuid: e5c45ba6-35e8-477c-b130-df8bd569968d
-          bundle: donors
-          default_langcode: en
-        default:
-          status:
-            -
-              value: true
-          created:
-            -
-              value: 1687547296
-          behavior_settings:
-            -
-              value:
-                layout_paragraphs:
-                  parent_uuid: null
-                  region: null
-          content_translation_source:
-            -
-              value: und
-          content_translation_outdated:
-            -
-              value: false
-          field_country_donors:
-            -
-              label: 'Top donors'
-              value: 'Australia, Germany, Canada, Norway, Sweden, Switzerland, Ireland, Luxembourg, Korea, Republic of, New Zealand'
-              unit: ''
-              provider: cbpf
-              id: cbpf_mmr_2023_top-donors
-              country: mmr
-              year: '2'
-          field_url:
-            -
-              uri: 'https://cbpf.data.unocha.org/'
-              title: 'Find out more about this country-based pooled fund at the CBPF Data Hub'
-              options: {  }
-    -
-      entity:
-        _meta:
-          version: '1.0'
-          entity_type: paragraph
-          uuid: 00dbc087-cc12-491e-bde0-4a8def9ac436
+          uuid: bf1b40a9-9b50-4dbd-8cb4-379ff56fb851
           bundle: layout
           default_langcode: en
         default:
@@ -1009,7 +816,7 @@ default:
               value: true
           created:
             -
-              value: 1687547318
+              value: 1687551432
           behavior_settings:
             -
               value:
@@ -1030,7 +837,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: b684f31b-b159-499c-b44e-96ba259c5cd2
+          uuid: 68502584-9d07-493b-8666-1ceffc2dfe3d
           bundle: reliefweb_river
           default_langcode: en
         default:
@@ -1039,12 +846,12 @@ default:
               value: true
           created:
             -
-              value: 1687547423
+              value: 1687551462
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  parent_uuid: 00dbc087-cc12-491e-bde0-4a8def9ac436
+                  parent_uuid: bf1b40a9-9b50-4dbd-8cb4-379ff56fb851
                   region: first
           content_translation_source:
             -
@@ -1054,7 +861,7 @@ default:
               value: false
           field_reliefweb_river:
             -
-              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%21%28F10%29_%28PC165%29_%28C165%29&search=_exists_%3Aocha_product'
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%21%28F10%29_%28PC64%29_%28C64%29&search=_exists_%3Aocha_product'
               title: ''
               limit: 4
           field_title:
@@ -1068,7 +875,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: a09acc26-9cc2-4f13-bd8f-36d677dd9a77
+          uuid: 0467a4d4-ce69-4d6b-8074-dd5295421c12
           bundle: reliefweb_river
           default_langcode: en
         default:
@@ -1077,12 +884,12 @@ default:
               value: true
           created:
             -
-              value: 1687547545
+              value: 1687551495
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  parent_uuid: 00dbc087-cc12-491e-bde0-4a8def9ac436
+                  parent_uuid: bf1b40a9-9b50-4dbd-8cb4-379ff56fb851
                   region: second
           content_translation_source:
             -
@@ -1092,7 +899,7 @@ default:
               value: false
           field_reliefweb_river:
             -
-              url: 'https://reliefweb.int/updates?advanced-search=%28PC165%29_%28S1503%29_%28F10%29'
+              url: 'https://reliefweb.int/updates?advanced-search=%28PC64%29_%28S1503%29_%28F10%29'
               title: ''
               limit: 2
           paragraph_view_mode:
@@ -1103,7 +910,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: e07bfe0a-1375-41e8-a6d0-2a43961ae015
+          uuid: 9a57a8bf-98dc-49bd-bf4c-8a68a553d03b
           bundle: figures
           default_langcode: en
         default:
@@ -1112,7 +919,7 @@ default:
               value: true
           created:
             -
-              value: 1687547648
+              value: 1687551575
           behavior_settings:
             -
               value:
@@ -1128,39 +935,39 @@ default:
           field_figures:
             -
               label: 'Total requirements'
-              value: '5856012.00'
+              value: '2178992.00'
               unit: USD
               provider: oct
-              id: oct_mmr_2023_2536_total-requirements
-              country: mmr
+              id: oct_col_2023_2360_total-requirements
+              country: col
               year: '2'
             -
               label: 'Opening balance'
-              value: '45538.00'
+              value: '718724.00'
               unit: USD
               provider: oct
-              id: oct_mmr_2023_2536_opening-balance
-              country: mmr
+              id: oct_col_2023_2360_opening-balance
+              country: col
               year: '2'
             -
               label: 'Earmarked funding'
-              value: '1199354.00'
+              value: '752093.00'
               unit: USD
               provider: oct
-              id: oct_mmr_2023_2536_earmarked-funding
-              country: mmr
+              id: oct_col_2023_2360_earmarked-funding
+              country: col
               year: '2'
             -
               label: Total
-              value: '1199354.00'
+              value: '752093.00'
               unit: USD
               provider: oct
-              id: oct_mmr_2023_2536_total
-              country: mmr
+              id: oct_col_2023_2360_total
+              country: col
               year: '2'
           field_title:
             -
-              value: 'Funding for OCHA Myanmar'
+              value: 'Funding for OCHA Colombia'
           paragraph_view_mode:
             -
               value: figures_compact_short
@@ -1169,7 +976,7 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 354dc250-c235-4fe7-ad3f-d4598fd810eb
+          uuid: 5ede80de-621f-48f4-babc-3c89f950f878
           bundle: donors
           default_langcode: en
         default:
@@ -1178,7 +985,7 @@ default:
               value: true
           created:
             -
-              value: 1687547676
+              value: 1687551600
           behavior_settings:
             -
               value:
@@ -1194,18 +1001,18 @@ default:
           field_country_donors:
             -
               label: 'Earmarked donors'
-              value: 'Germany, European Commission, Sweden, Canada'
+              value: 'European Commission, Switzerland, Canada'
               unit: ''
               provider: oct
-              id: oct_mmr_2023_2536_earmarked-donors
-              country: mmr
+              id: oct_col_2023_2360_earmarked-donors
+              country: col
               year: '2'
     -
       entity:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 47018e1c-57fa-4741-8dfa-03f708a696de
+          uuid: 4606fd54-7b95-4d6a-9cc4-938f8a2e4077
           bundle: donors
           default_langcode: en
         default:
@@ -1214,7 +1021,7 @@ default:
               value: true
           created:
             -
-              value: 1687547691
+              value: 1687551615
           behavior_settings:
             -
               value:
@@ -1233,15 +1040,15 @@ default:
               value: 'Australia,  Belgium,  Canada,  Denmark,  Estonia,  Finland,  France,  Germany,  Iceland, Ireland,  Japan,  Luxembourg,  Monaco,  Netherlands, New Zealand,  Norway,  Russian Federation,  South Africa, Sweden, Switzerland, United Kingdom'
               unit: ''
               provider: oct
-              id: oct_mmr_2023_2536_unearmarked-donors
-              country: mmr
+              id: oct_col_2023_2360_unearmarked-donors
+              country: col
               year: '2'
     -
       entity:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: 3dc51734-804f-4f51-b8ad-4ecea11ee36b
+          uuid: 7e02381d-39b5-4c38-8b6a-b0775bf34f87
           bundle: subscribe
           default_langcode: en
         default:
@@ -1250,7 +1057,7 @@ default:
               value: true
           created:
             -
-              value: 1687547772
+              value: 1687551655
           behavior_settings:
             -
               value:
@@ -1265,14 +1072,14 @@ default:
               value: false
           field_text:
             -
-              value: "<p>Receive all of the latest news, humanitarian tools and other information products from OCHA's Myanmar operations:&nbsp;</p>"
+              value: "<p>Receive all of the latest news, humanitarian tools and other information products from OCHA's Colombia operations:&nbsp;</p>"
               format: ckeditor
           field_title:
             -
-              value: 'Subscribe to the OCHA Myanmar newsletter'
+              value: 'Subscribe to the OCHA Colombia newsletter'
           field_url:
             -
-              uri: 'https://un.us2.list-manage.com/subscribe?u=c83599b7504df05d97d107661&id=417247bda5'
+              uri: 'https://colombiassh.us5.list-manage.com/subscribe?u=92689d79b307b64689768dd6a&id=13485e1a1e'
               title: Subscribe
               options: {  }
   field_has_response:
@@ -1283,12 +1090,12 @@ default:
       entity: 3f8e17ec-39f5-4af2-9add-1e0bb44ab27f
   field_region:
     -
-      entity: 4aad45f9-f669-426d-b0a6-a53db101a48f
+      entity: 0c036e0c-d618-4894-9579-5fe14f344d6f
   field_response_image:
     -
       entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
   field_response_link:
     -
-      uri: 'https://crisisrelief.un.org/myanmar-crisis'
+      uri: 'https://crisisrelief.un.org/crises'
       title: 'Support our work'
       options: {  }

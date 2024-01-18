@@ -6,7 +6,7 @@ _meta:
   default_langcode: en
   depends:
     921f814b-f86f-47d4-b5b0-e2da08d3980e: user
-    b27fe9c8-5eee-45b3-8aca-8894f67b9cb9: media
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
 default:
   revision_uid:
     -
@@ -99,7 +99,7 @@ default:
       value: false
   field_basic_image:
     -
-      entity: b27fe9c8-5eee-45b3-8aca-8894f67b9cb9
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
   field_children_menu:
     -
       value: true

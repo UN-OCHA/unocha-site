@@ -7,7 +7,7 @@ _meta:
   depends:
     40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9: user
     8b5bf571-5e5a-4847-9c55-0537b85f4126: node
-    407820ec-cd73-47f8-b918-c38d281effb1: media
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
 default:
   revision_uid:
     -
@@ -158,7 +158,7 @@ default:
               value: 'Video paragraph'
           field_video:
             -
-              entity: 407820ec-cd73-47f8-b918-c38d281effb1
+              entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
     -
       entity:
         _meta:

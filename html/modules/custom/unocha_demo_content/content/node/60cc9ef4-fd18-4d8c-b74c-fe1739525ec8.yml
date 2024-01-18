@@ -1,0 +1,524 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 60cc9ef4-fd18-4d8c-b74c-fe1739525ec8
+  bundle: story
+  default_langcode: en
+  depends:
+    921f814b-f86f-47d4-b5b0-e2da08d3980e: user
+    c9a3fcf9-9921-4076-9aae-4d3f406d5562: taxonomy_term
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    0c036e0c-d618-4894-9579-5fe14f344d6f: node
+    2a81f660-2bd0-442c-a971-fd08c7d487aa: node
+    0564386c-fcb5-4883-8f32-ac7b7579e508: taxonomy_term
+    abac34cd-7825-4ca9-a48e-e7c1b4804eb1: taxonomy_term
+    f5d4df01-eeb1-42f9-93b2-9e6d2ed97a27: taxonomy_term
+    649b89d5-ea4a-4324-b50f-1041ffae7be5: taxonomy_term
+default:
+  revision_uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  title:
+    -
+      value: 'Honduras: Delivering hope before help'
+  created:
+    -
+      value: 1704478348
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Honduras: Delivering hope before help | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'By Marc Belanger'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/news/honduras-delivering-hope-help'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'By Marc Belanger'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2024-01/sixta.jpg?itok=mWHfFmeu'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'A woman stands in a field with maize plants.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'By Marc Belanger'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'A woman stands in a field with maize plants.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2024-01/sixta.jpg?itok=6JwySTmf'
+  path:
+    -
+      alias: /news/honduras-delivering-hope-help
+      langcode: en
+      pathauto: 1
+  samples_status:
+    -
+      value: false
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<p><em>By Marc Belanger</em></p><p><em>“We have a hard time when it’s dry. We suffer… we can’t do much else but endure,” </em>said Sixta, a 63-year-old homemaker from San Antonio de Flores, in southern Honduras’ Choluteca Department.</p><p>For many families in this rural municipality, which lies several kilometres of dirt roads away from the main roads, their land is everything. Its bounty is often their only source of food and income.</p><p>Rainfall plays an outsized role in the sunbaked community’s fortunes. Whether it rains too little, too late or too much, the results are the same – failed harvests.</p><p>“<em>Since August, it’s been dry… so dry,” </em>Sixta shared solemnly.</p>'
+      format: ckeditor
+      summary: ''
+  field_country:
+    -
+      entity: c9a3fcf9-9921-4076-9aae-4d3f406d5562
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: cbfdd1a2-e734-4bf9-8c6e-ca53cf84bde9
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1704479550
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: fae5f5e3-75b1-471d-8e24-f194c7734f56
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1704479609
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>We visited the municipality in October 2023, close to the end of the rainy season that began in May. Seasonal rains were expected to help the year’s second harvest (postrera) to yield enough food in November to last until May – providing there was no drought.</p><p>But people in San Antonio de Flores knew a drought was possible when the national civil protection authority issued a municipal drought risk designation in June – a status shared with another 139 of Honduras’ 298 municipalities.</p><p>Unfortunately, September’s rains were nearly half their normal levels for south-central Honduras. Sixta’s son Jorge tends to the family’s field. He explained: “The first season didn’t yield anything; the rainy season started badly. The second season has seen a little more rain, crops look a little more promising. We really need this to work. If we don’t have maize, we have nothing.”</p><p>With the first harvest (primera) faring poorly, the postrera’s success was on everyone’s mind, especially with forecasts that El Niño, linked to decreased rainfall and drier conditions in Central America, will last well into 2024.</p><p>But the fate of the crops was a coin toss, and no one knew how the coin would land.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ca75c615-eb4f-4c58-8569-4ea823fe29f6
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1704478619
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 0a2a1e2c-218e-45ff-b451-9b765e83ae8c
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1704478772
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>Omar, a quiet 42-year-old farmer, feared for another lost season.</p><blockquote><p><em>“It’s the same struggle. Sometimes there’s good rainy seasons, sometimes there’s bad seasons – that’s when we lose the most.”</em></p></blockquote><p>His neighbour Santos, 63, was concerned about the community’s vulnerability to dry conditions. <em>“This is a dry place; families here have meager resources. Drought hits us so hard. We’ve hardly harvested anything, there was no water,” </em>said the veteran farmer.</p><p>Gregorio, one of the few farmers who also works with livestock, shared a similar outlook.</p><blockquote><p><em>"There were maybe six downpours all season. We’re worried that this harvest won’t be enough. We’re going to have to tighten our belts to make sure we have our food during these months.”&nbsp;</em></p></blockquote><p>These concerns came as 2.3 million Hondurans (one in every five people) are living on the edge of hunger.&nbsp;This is slightly lower than in 2022, but food insecurity remains a serious concern heading into 2024 – a period with a high likelihood of El Niño-induced drought.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 5ac72280-e1f4-454c-970a-2fc365749c0d
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1704478982
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 63dafa8d-4e34-4052-98a3-6429033736dc
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1704479072
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>When harvests underperform, many people look for work opportunities to buy food. However, work is often scarce in a country where, according to the World Bank, 59 per cent of the population is poor.</p><p>Melba occasionally works as a seamstress but earning about $1.22 per clothing item is hardly enough, especially as she’s a single mother of two.</p><blockquote><p><em>“It’s not much. Sometimes we’d be able to eat. Sometimes we wouldn’t.”</em></p></blockquote><p>Melba receives seeds and technical support from the Food and Agriculture Organization (FAO) and cash and voucher assistance from the World Food Programme (WFP), provided with support from the Honduran Red Cross and the German Red Cross as part of an El Niño anticipatory action programme. Thanks to this support, she grows coriander, cucumber and other herbs that are better suited for dry conditions in a small orchard and has purchased school supplies for her daughters.</p><blockquote><p><em>“We didn’t know what managing money was like before. This help has been a godsend.”</em></p></blockquote>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 6a7ca121-f049-4a2f-9914-015017afa11f
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1704479741
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 7af67a78-063e-451b-a13c-a6d04e4f532f
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1704479876
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>Sixta, Jorge, Omar, Santos and Gregorio also receive similar assistance.</p><p><em>Sixta explained: “I didn’t know how to plant vegetables. Now I know how to prepare the land to plant all this. My children would work in the fields for a long time, I would only eat whenever they brought me something. Now? I just cut something from my yard and eat whenever I like.</em>”</p><p>Omar and Santos are equally grateful. “<em>Thanks to this assistance, we’re able to get by and do something with our land,</em>” said Omar.</p><p>Santos added that this help<em> “came at the right time when we needed it the most, just as families began to work their fields for the </em>postrera<em>. Some weren’t going to have enough to get through the day. We’re grateful for all this help.”</em></p><p>Gregorio is especially proud of having built a 65-barrel water storage tank with cost-effective methods, thanks to the programme. The tank ensures his livestock and home will have water during dry spells, and it allowed Gregorio to share knowledge with the neighbours who helped him build it.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: d898d068-a044-4210-b751-2f3686e68b7f
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1704480331
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 704d80d2-495c-4716-be9e-befc28fdd8f6
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1704480447
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<blockquote><p><em>“They were thrilled when they saw it come together. Some are going to build their own, so these sorts of projects will keep growing.”</em></p></blockquote><p>It’s now December.</p><p>San Antonio de Flores’ hopes of continued rainfall in October were met, but with a cruel twist.</p><p>Excess rains at the end of October reportedly caused significant losses to <em>postrera</em> harvests. Pending full assessments this month ( January 2024), food security partners fear that the families in San Antonio de Flores they have yet to assist may have lost more than half of their maize harvest.</p><p>Meanwhile, families receiving anticipatory action assistance have potentially lost no more than an estimated 20 per cent of their harvest.</p><p>The Humanitarian Country Team in Honduras continues working with vulnerable communities in several municipalities like San Antonio de Flores to mitigate climate-related threats to their food security and livelihoods.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ff51ac70-5a7c-4b03-a71d-bb7c88f27e3e
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1704481951
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: c9367d1f-54c5-45f5-91c4-86070d653e40
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1704482094
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p><strong>However, the Honduras Humanitarian Response Plan (HRP) for 2023 is the world’s least-funded HRP, receiving $42.6 million against the $280 million required – a funding gap of nearly 85 per cent. With the HRP 2024 on the horizon, scaled-up financing is urgently needed to help more families across Honduras withstand El Niño’s effects in the coming year.</strong></p>'
+              format: ckeditor
+  field_regions:
+    -
+      entity: 0c036e0c-d618-4894-9579-5fe14f344d6f
+  field_responses:
+    -
+      entity: 2a81f660-2bd0-442c-a971-fd08c7d487aa
+  field_story_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_story_type:
+    -
+      entity: 0564386c-fcb5-4883-8f32-ac7b7579e508
+  field_theme:
+    -
+      entity: abac34cd-7825-4ca9-a48e-e7c1b4804eb1
+    -
+      entity: f5d4df01-eeb1-42f9-93b2-9e6d2ed97a27
+    -
+      entity: 649b89d5-ea4a-4324-b50f-1041ffae7be5

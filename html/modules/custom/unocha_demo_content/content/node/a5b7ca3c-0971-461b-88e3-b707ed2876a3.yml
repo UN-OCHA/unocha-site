@@ -5,32 +5,10 @@ _meta:
   bundle: basic
   default_langcode: en
   depends:
-    921f814b-f86f-47d4-b5b0-e2da08d3980e: user
     40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9: user
-    3fe32c7f-b1e6-45c8-8b25-42315fb51015: media
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    cae06b6d-d742-4f04-af28-84eda95393c3: node
     78dcef58-1b7c-4c2d-8b7a-a9b3623e3f42: node
-    5cc86a0f-6f58-4edd-af58-2c2c65ac98ca: node
-    c8c32a27-0f76-455f-be91-fb295366a356: node
-    60cc9ef4-fd18-4d8c-b74c-fe1739525ec8: node
-    62b9b0f1-7a2d-4769-a7c4-dc39fa9bfd9a: node
-    3d7d58ea-a888-4e88-93a6-86ba02bf8a19: node
-    c9dc55c1-7706-4dba-abd3-a4e3225d0a6e: node
-    7d08279f-d7d3-43b4-abd4-5474bff0753e: node
-    98418397-fdcf-4a39-beb8-af4b80610491: node
-    2c9cc5c1-56c2-43c9-8adf-b7542eba1811: node
-    d2ebbf21-7a56-4894-a9d6-95c4f72151ce: node
-    d9e2f7ee-59c1-4362-a26f-b8d06dde6d88: node
-    d81b4110-3ca8-4acc-b78e-1b0d1c46ace3: node
-    c1992f28-d6f6-4132-9fe7-4048cf8696c0: node
-    9a50bca1-b427-4fcd-88c5-3f49b67cd11c: node
-    7493d19c-6eea-4ac7-bb87-127e76c36d41: node
-    b7e7cb00-0e61-47b2-9a38-b0e3a0c1137f: node
-    8ad9708f-c8ef-4004-a299-b7986c906564: node
-    274f803f-d206-4341-894d-72473194af0d: node
-    1111ec6c-3943-4483-b705-8c81887c50ca: node
-    0925f7dd-a5ed-4945-a1cb-60914c0aa43c: node
-    5ec862cf-880e-4041-9ebb-c40619290834: node
-    1a94438f-e258-47c6-a893-1dd0727266dc: node
     0c64cb59-00de-4833-a4d4-1284d375eee9: node
     c615dc92-4e30-4c6e-bc0c-ca24b3d3f088: node
     2e604d22-bbd6-4ac3-8571-5bc9abe2f87c: node
@@ -39,7 +17,7 @@ _meta:
 default:
   revision_uid:
     -
-      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+      target_id: 1
   status:
     -
       value: true
@@ -148,7 +126,7 @@ default:
       summary: ''
   field_basic_image:
     -
-      entity: 3fe32c7f-b1e6-45c8-8b25-42315fb51015
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
   field_children_menu:
     -
       value: false
@@ -204,9 +182,6 @@ default:
                 layout_paragraphs:
                   parent_uuid: b4f95f32-909e-450c-9259-f21dc6b01c42
                   region: first
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -401,6 +376,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -412,51 +390,9 @@ default:
               value: 4
           field_node:
             -
+              entity: cae06b6d-d742-4f04-af28-84eda95393c3
+            -
               entity: 78dcef58-1b7c-4c2d-8b7a-a9b3623e3f42
-            -
-              entity: 5cc86a0f-6f58-4edd-af58-2c2c65ac98ca
-            -
-              entity: c8c32a27-0f76-455f-be91-fb295366a356
-            -
-              entity: 60cc9ef4-fd18-4d8c-b74c-fe1739525ec8
-            -
-              entity: 62b9b0f1-7a2d-4769-a7c4-dc39fa9bfd9a
-            -
-              entity: 3d7d58ea-a888-4e88-93a6-86ba02bf8a19
-            -
-              entity: c9dc55c1-7706-4dba-abd3-a4e3225d0a6e
-            -
-              entity: 7d08279f-d7d3-43b4-abd4-5474bff0753e
-            -
-              entity: 98418397-fdcf-4a39-beb8-af4b80610491
-            -
-              entity: 2c9cc5c1-56c2-43c9-8adf-b7542eba1811
-            -
-              entity: d2ebbf21-7a56-4894-a9d6-95c4f72151ce
-            -
-              entity: d9e2f7ee-59c1-4362-a26f-b8d06dde6d88
-            -
-              entity: d81b4110-3ca8-4acc-b78e-1b0d1c46ace3
-            -
-              entity: c1992f28-d6f6-4132-9fe7-4048cf8696c0
-            -
-              entity: 9a50bca1-b427-4fcd-88c5-3f49b67cd11c
-            -
-              entity: 7493d19c-6eea-4ac7-bb87-127e76c36d41
-            -
-              entity: b7e7cb00-0e61-47b2-9a38-b0e3a0c1137f
-            -
-              entity: 8ad9708f-c8ef-4004-a299-b7986c906564
-            -
-              entity: 274f803f-d206-4341-894d-72473194af0d
-            -
-              entity: 1111ec6c-3943-4483-b705-8c81887c50ca
-            -
-              entity: 0925f7dd-a5ed-4945-a1cb-60914c0aa43c
-            -
-              entity: 5ec862cf-880e-4041-9ebb-c40619290834
-            -
-              entity: 1a94438f-e258-47c6-a893-1dd0727266dc
           field_title:
             -
               value: 'Latest news and stories'
