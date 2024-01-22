@@ -177,7 +177,7 @@ jobs:
         with:
           run: |
             docker-compose -f tests/docker-compose.yml exec -T drupal drush -y en unocha_demo_content
-            curl -v http://127.0.0.1:8080/demo
+            curl -v http://127.0.0.1:8080
         env:
           fail-fast: true
 
@@ -213,7 +213,9 @@ jobs:
         with:
           urls: |
             http://127.0.0.1:8080/
-            http://127.0.0.1:8080/demo
+            http://127.0.0.1:8080/asia-and-pacific
+            http://127.0.0.1:8080/latest/news-and-stories
+            http://127.0.0.1:8080/news/empowering-afghan-women-glimpse-life-psychosocial-counsellor
           runs: 3
           budgetPath: .github/workflows/lighthouse-budget.json # test performance budgets
           configPath: .github/workflows/lighthouserc.js
