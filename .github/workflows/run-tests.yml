@@ -177,7 +177,6 @@ jobs:
         with:
           run: |
             docker-compose -f tests/docker-compose.yml exec -T drupal drush -y en unocha_demo_content
-            curl -v http://127.0.0.1:8080
         env:
           fail-fast: true
 
