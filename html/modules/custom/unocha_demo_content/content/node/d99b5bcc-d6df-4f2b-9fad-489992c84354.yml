@@ -5,8 +5,6 @@ _meta:
   bundle: response
   default_langcode: en
   depends:
-    8fa1a556-9f76-4ea2-bc75-b2d183a04af6: user
-    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
     1f38f7ac-f69d-45b4-908d-38e8721d9a20: taxonomy_term
     3f8e17ec-39f5-4af2-9add-1e0bb44ab27f: taxonomy_term
     4aad45f9-f669-426d-b0a6-a53db101a48f: node
@@ -14,13 +12,13 @@ _meta:
 default:
   revision_uid:
     -
-      entity: 8fa1a556-9f76-4ea2-bc75-b2d183a04af6
+      target_id: 1
   status:
     -
       value: true
   uid:
     -
-      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+      target_id: 1
   title:
     -
       value: Myanmar
@@ -61,7 +59,7 @@ default:
       tag: meta
       attributes:
         property: 'og:image'
-        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-09/Myanmar_Modola_2022_21.jpg?itok=5UXkTiv3'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-07/untitled-00455_6.jpg?itok=4Zl7pk8S'
     -
       tag: meta
       attributes:
@@ -76,7 +74,7 @@ default:
       tag: meta
       attributes:
         property: 'og:image:alt'
-        content: 'A woman with a young boy tied to her back walks on an unpaved narrow path. A young boy and a man carrying water and bags walk behind her.'
+        content: 'The UN Under-Secretary-General, Martin Griffith surrounded by cameras'
     -
       tag: meta
       attributes:
@@ -96,12 +94,12 @@ default:
       tag: meta
       attributes:
         name: 'twitter:image:alt'
-        content: 'A woman with a young boy tied to her back walks on an unpaved narrow path. A young boy and a man carrying water and bags walk behind her.'
+        content: 'The UN Under-Secretary-General, Martin Griffith surrounded by cameras'
     -
       tag: meta
       attributes:
         name: 'twitter:image'
-        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-09/Myanmar_Modola_2022_21.jpg?itok=d_0mn1Gg'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-07/untitled-00455_6.jpg?itok=ReAB07eI'
   path:
     -
       alias: /myanmar
@@ -386,9 +384,6 @@ default:
                     label: ''
                   parent_uuid: null
                   region: null
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -474,23 +469,23 @@ default:
               value: '55982248.00'
               unit: ''
               provider: fts
-              id: fts_mmr_2023_1132_population
+              id: population
               country: mmr
               year: '2'
             -
               label: 'People in Need'
-              value: '17600000.00'
+              value: '18600000.00'
               unit: ''
               provider: rw_crisis
-              id: rw_crisis_mmr_2023_people-in-need
+              id: people-in-need
               country: mmr
               year: '2'
             -
               label: 'IDPs displaced since Feb 2021'
-              value: '1523700.00'
+              value: '2287200.00'
               unit: ''
               provider: rw_crisis
-              id: rw_crisis_mmr_2023_idps-displaced-since-feb-2021
+              id: idps-displaced-since-feb-2021
               country: mmr
               year: '2'
           field_reliefweb_document:
@@ -565,18 +560,18 @@ default:
           field_figures:
             -
               label: 'People in Need'
-              value: '17600000.00'
+              value: '18600000.00'
               unit: ''
               provider: rw_crisis
-              id: rw_crisis_mmr_2023_people-in-need
+              id: people-in-need
               country: mmr
               year: '2'
             -
               label: 'People Targeted for Assistance'
-              value: '4500000.00'
+              value: '5300000.00'
               unit: ''
               provider: rw_crisis
-              id: rw_crisis_mmr_2023_people-targeted-for-assistance
+              id: people-targeted-for-assistance
               country: mmr
               year: '2'
             -
@@ -584,7 +579,7 @@ default:
               value: '886738899.00'
               unit: USD
               provider: fts
-              id: fts_mmr_2023_1132_total-requirements
+              id: total-requirements
               country: mmr
               year: '2'
           field_reliefweb_document:
@@ -662,31 +657,31 @@ default:
               value: '886738899.00'
               unit: USD
               provider: fts
-              id: fts_mmr_2023_1132_total-requirements
+              id: total-requirements
               country: mmr
               year: '2'
             -
               label: 'Funding total'
-              value: '143963938.00'
+              value: '309926579.00'
               unit: USD
               provider: fts
-              id: fts_mmr_2023_1132_funding-total
+              id: funding-total
               country: mmr
               year: '2'
             -
               label: 'Funding gap'
-              value: '742774961.00'
+              value: '576812320.00'
               unit: USD
               provider: fts
-              id: fts_mmr_2023_1132_funding-gap
+              id: funding-gap
               country: mmr
               year: '2'
             -
               label: 'Funding coverage'
-              value: '16.24'
+              value: '34.95'
               unit: ''
               provider: fts
-              id: fts_mmr_2023_1132_funding-coverage
+              id: funding-coverage
               country: mmr
               year: '2'
           paragraph_view_mode:
@@ -713,6 +708,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -722,12 +720,12 @@ default:
           field_country_donors:
             -
               label: 'Top donors'
-              value: 'Japan, United States of America, Australia, Sweden, European Commission, Central Emergency Response Fund, Germany, Canada, World Bank, France'
+              value: 'United States of America, Australia, Japan, United Kingdom, European Commission, Central Emergency Response Fund, Sweden, Germany, Norway, Canada'
               unit: ''
               provider: fts
-              id: fts_mmr_2023_1132_top-donors
+              id: top-donors
               country: mmr
-              year: '2'
+              year: '2023'
     -
       entity:
         _meta:
@@ -749,6 +747,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -758,12 +759,12 @@ default:
           field_country_donors:
             -
               label: 'Top sectors'
-              value: 'Not specified, Food Security, Protection, Shelter / NFI / CCCM, Coordination and Support Services, Nutrition, Education, Health, WASH'
+              value: 'Food Security, Protection, Shelter / NFI / CCCM, Health, Not specified, WASH, Education, Nutrition, Coordination and Support Services'
               unit: ''
               provider: fts
-              id: fts_mmr_2023_1132_top-sectors
+              id: top-sectors
               country: mmr
-              year: '2'
+              year: '2023'
           field_url:
             -
               uri: 'https://fts.unocha.org/appeals/1132/summary'
@@ -907,18 +908,18 @@ default:
           field_figures:
             -
               label: 'Pledged amount'
-              value: '27588770.35'
+              value: '32597199.21'
               unit: USD
               provider: cbpf
-              id: cbpf_mmr_2023_pledged-amount
+              id: pledged-amount
               country: mmr
               year: '2'
             -
               label: 'Paid amount'
-              value: '25184213.91'
+              value: '32719229.34'
               unit: USD
               provider: cbpf
-              id: cbpf_mmr_2023_paid-amount
+              id: paid-amount
               country: mmr
               year: '2'
           paragraph_view_mode:
@@ -1128,10 +1129,10 @@ default:
           field_figures:
             -
               label: 'Total requirements'
-              value: '5856012.00'
+              value: '6164578.00'
               unit: USD
               provider: oct
-              id: oct_mmr_2023_2536_total-requirements
+              id: total-requirements
               country: mmr
               year: '2'
             -
@@ -1139,23 +1140,23 @@ default:
               value: '45538.00'
               unit: USD
               provider: oct
-              id: oct_mmr_2023_2536_opening-balance
+              id: opening-balance
               country: mmr
               year: '2'
             -
               label: 'Earmarked funding'
-              value: '1199354.00'
+              value: '2719354.00'
               unit: USD
               provider: oct
-              id: oct_mmr_2023_2536_earmarked-funding
+              id: earmarked-funding
               country: mmr
               year: '2'
             -
               label: Total
-              value: '1199354.00'
+              value: '2719354.00'
               unit: USD
               provider: oct
-              id: oct_mmr_2023_2536_total
+              id: total
               country: mmr
               year: '2'
           field_title:
@@ -1194,10 +1195,10 @@ default:
           field_country_donors:
             -
               label: 'Earmarked donors'
-              value: 'Germany, European Commission, Sweden, Canada'
+              value: 'Germany, Philippines, European Commission, Sweden, Canada, United States'
               unit: ''
               provider: oct
-              id: oct_mmr_2023_2536_earmarked-donors
+              id: earmarked-donors
               country: mmr
               year: '2'
     -
@@ -1230,10 +1231,10 @@ default:
           field_country_donors:
             -
               label: 'Unearmarked donors'
-              value: 'Australia,  Belgium,  Canada,  Denmark,  Estonia,  Finland,  France,  Germany,  Iceland, Ireland,  Japan,  Luxembourg,  Monaco,  Netherlands, New Zealand,  Norway,  Russian Federation,  South Africa, Sweden, Switzerland, United Kingdom'
+              value: 'Australia,  Austria,  Belgium,  Canada,  China,  Cyprus,  Denmark,  Estonia,  Finland,  France,  Germany,  Iceland, Ireland,  Japan,  Korea, Republic of,  Luxembourg,  Monaco,  Netherlands, New Zealand,  Norway,  Russian Federation,  Singapore,  South Afr'
               unit: ''
               provider: oct
-              id: oct_mmr_2023_2536_unearmarked-donors
+              id: unearmarked-donors
               country: mmr
               year: '2'
     -
