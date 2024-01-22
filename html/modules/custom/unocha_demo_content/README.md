@@ -212,9 +212,9 @@ drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 79'
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 80'
 
 ```
-For the Mega Footer menu items, replace the associated node with `c615dc92-4e30-4c6e-bc0c-ca24b3d3f088`.
+For the Mega Footer menu items, replace the associated node with `c615dc92-4e30-4c6e-bc0c-ca24b3d3f088` as we don't need to create each node to get the menu structure.
 
-Also Media dependencies for nodes listed above, and their `file` dependencies can be replaces with a generic media entity `044fc54b-448d-4c80-88b4-160d1b03ac46`.
+Media dependencies for the nodes listed above, and their `file` dependencies, should be replaces with a generic media entity `044fc54b-448d-4c80-88b4-160d1b03ac46`.
 
 And the video `407820ec-cd73-47f8-b918-c38d281effb1`
 drush sqlq 'SELECT uuid FROM media WHERE id = 52'
