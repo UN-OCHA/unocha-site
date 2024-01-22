@@ -6,7 +6,11 @@ _meta:
   default_langcode: en
   depends:
     921f814b-f86f-47d4-b5b0-e2da08d3980e: user
+    f14b7469-61a1-4991-abf5-7797a4cb78b3: taxonomy_term
     044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    ff34642c-7718-4808-b175-a3fa849587dc: node
+    dfe5f610-35e6-4a76-ad15-24a64422532f: node
+    0564386c-fcb5-4883-8f32-ac7b7579e508: taxonomy_term
 default:
   revision_uid:
     -
@@ -117,6 +121,9 @@ default:
       value: '<p><em>by Lorenna Dib Oliveira&nbsp;</em></p><p>“I have been working as a psychosocial counsellor since spring 2020,” Shabana* tells us. “My role revolves around providing counselling to women and girls who are depressed, or who have experienced or been exposed to abuse and violence.”&nbsp;</p><p>These types of psychosocial support services are especially important in the Afghan context, where girls face many challenges and protection risks due to the lingering effects of four decades of conflict, a fragile economy and an increasingly repressive rights environment. The main risks facing women and girls in Afghanistan include early marriage, child labour, intimate-partner violence, and sexual exploitation and abuse.</p><p>Even before the Taliban de facto authorities (DfA) took control of Afghanistan in August 2021, it was already one of the world’s most difficult countries in which to be a woman, both personally and professionally. But since the takeover, the hurdles facing women – especially those living in rural areas – have only grown.&nbsp;</p><p>The DfA imposed a series of increasingly restrictive directives that limit women’s and girls’ ability to participate in almost all aspects of public life, including humanitarian action, and in turn diminish their access to assistance and services.&nbsp;</p><p>Shabana’s organization has been her professional home for the past three and a half years. During that time, she has been dedicated to assisting the most vulnerable women and girls, including those recently forced to return from Pakistan.</p><p>Since mid-September, Afghanistan has had to absorb an unprecedented number of Afghans returning from Pakistan, with some 327,400 Afghans crossing the Torkham and Spin Boldak border points into the country. This sudden influx represents a more than fourfold increase in the number of undocumented Afghans who returned from Pakistan between January and August 2023, and it is putting tremendous pressure on already strained resources and capacity.</p><p>E<a href="https://reliefweb.int/report/pakistan/gender-update-1-forced-returns-pakistan">ighty per cent of people forced to make the journey are women and children, primarily girls and young females aged 6 to 17, as well as female-headed households.</a> The risks facing returning women and girls are diverse and serious, ranging from the absence of proper identification documents, to a lack of lighting in the informal settlements in which they now find themselves, to not knowing the terrain in the areas they are returning to and whether they are contaminated with explosive hazards.</p>'
       format: ckeditor
       summary: ''
+  field_country:
+  -
+    entity: f14b7469-61a1-4991-abf5-7797a4cb78b3
   field_custom_content:
     -
       entity:
@@ -261,3 +268,12 @@ default:
   field_story_image:
     -
       entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_story_type:
+    -
+      entity: 0564386c-fcb5-4883-8f32-ac7b7579e508
+  field_regions:
+    -
+      entity: ff34642c-7718-4808-b175-a3fa849587dc
+  field_responses:
+    -
+      entity: dfe5f610-35e6-4a76-ad15-24a64422532f
