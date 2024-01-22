@@ -161,7 +161,59 @@ drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 293'
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 292'
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 290'
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 289'
+
+# Mega Footer menu items
+# WWD
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 161'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 162'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 163'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 165'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 164'
+
+# WWW
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 171'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 176'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 172'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 173'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 174'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 175'
+
+# Latest
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 189'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 191'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 192'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 188'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 295'
+
+# Our priorities
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 177'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 178'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 179'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 180'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 286'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 297'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 187'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 181'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 182'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 183'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 184'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 185'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 186'
+
+# Events
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 167'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 169'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 168'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 166'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 170'
+
+# Take action
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 79'
+drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 80'
+
 ```
+For the Mega Footer menu items, replace the associated node with `c615dc92-4e30-4c6e-bc0c-ca24b3d3f088`.
+
 Also Media dependencies for nodes listed above, and their `file` dependencies can be replaces with a generic media entity `044fc54b-448d-4c80-88b4-160d1b03ac46`.
 
 And the video `407820ec-cd73-47f8-b918-c38d281effb1`

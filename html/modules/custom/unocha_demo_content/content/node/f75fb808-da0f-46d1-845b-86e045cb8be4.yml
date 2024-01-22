@@ -134,5 +134,5 @@ default:
           field_news_and_stories_list:
             -
               target_id: stories
-              display_id: block_3
-              data: 'a:5:{s:8:"argument";N;s:5:"limit";N;s:6:"offset";N;s:5:"pager";N;s:5:"title";N;}'
+              display_id: block_2
+              data: 'a:5:{s:5:"title";N;s:5:"pager";N;s:6:"offset";N;s:8:"argument";N;s:5:"limit";N;}'
