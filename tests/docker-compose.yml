@@ -49,8 +49,8 @@ services:
       - "../phpcs.xml:/srv/www/phpcs.xml:ro"
       - "../phpunit.xml:/srv/www/phpunit.xml:ro"
       # Mount local custom code.
-      #- "../html/modules/custom:/srv/www/html/modules/custom:ro"
-      #- "../html/themes/custom:/srv/www/html/themes/custom:ro"
+      - "../html/modules/custom:/srv/www/html/modules/custom:ro"
+      - "../html/themes/custom:/srv/www/html/themes/custom:ro"
     environment:
       - TERM=xterm
       - ENVIRONMENT=dev
@@ -69,3 +69,6 @@ services:
       - DTT_BASE_URL=http://127.0.0.1
     networks:
       - default
+    ports:
+      - 127.0.0.1:8080:80
+
