@@ -39,7 +39,7 @@
     ]
   },
   {
-    "path": "/demo",
+    "path": "/asia-and-pacific",
     "timings": [
       {
         "metric": "largest-contentful-paint",
@@ -56,6 +56,12 @@
       {
         "metric": "cumulative-layout-shift",
         "budget": 0.35
+      },
+    ],
+    "resourceSizes": [
+      {
+        "resourceType": "stylesheet",
+        "budget": 40
       }
     ]
   }
