@@ -7,7 +7,7 @@ const environments = {
     baseUrl: 'https://unocha-local.test',
     testTimeout: 10000,
   },
-  'travis': {
+  'ci': {
     baseUrl: 'http://127.0.0.1:8080',
     testTimeout: 120000,
   },
