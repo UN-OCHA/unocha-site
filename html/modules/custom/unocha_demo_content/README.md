@@ -1,10 +1,12 @@
 # UNOCHA Demo Content
 
-Includes demo content pages, and set the homepage.
+Includes demo content pages, menu items, terms and other supporting entities,
+and sets the homepage using the UUID.
 
-To re-create or add default content the easiest is to add the uuid inside `unocha_demo_content.info.yml` and run `drush dcem unocha_demo_content`
+To re-create or add default content, add the UUID inside `unocha_demo_content.info.yml`
+and run `drush dcem unocha_demo_content`
 
-To get the uuid you can use:
+To get the UUID you can use:
 
 ```bash
 drush sqlq "select * from node"
@@ -14,11 +16,23 @@ drush sqlq "select * from taxonomy_term_data"
 drush sqlq "select * from block_content"
 drush sqlq "select * from menu_link_content"
 ```
-Or when the site has too much content and we only want a sample, we can select
+
+Or if the site has too much content and we only want a sample, we can select
 entities individually. The line breaks in the `unocha_demo_content.info.yml`
-file represent the groupings below. This was the best way I could think of to
+file represent the groupings below. *This was the best way I could think of to
 keep track of what entities I selected for demo content.
-```
+
+The process below is only needed if/when changes to the demo content are made,
+and if the demo content is exported again in its entirity. To prevent an entire
+re-export, export only the entities that have been changed and update their yml
+files individually.
+`drush dce [ENITITY] [ID] --folder=modules/custom/unocha_demo_content/content`
+
+Example: `drush dce node 42 --folder=modules/custom/unocha_demo_content/content`
+
+See https://www.drupal.org/docs/contributed-modules/default-content-for-d8/defining-default-content
+
+```bash
 # Homepage
 drush sqlq 'SELECT uuid FROM node WHERE nid = 42'
 
@@ -210,17 +224,28 @@ drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 170'
 # Take action
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 79'
 drush sqlq 'SELECT uuid FROM menu_link_content WHERE id = 80'
-
 ```
-For the Mega Footer menu items, replace the associated node with `c615dc92-4e30-4c6e-bc0c-ca24b3d3f088` as we don't need to create each node to get the menu structure.
 
-Media dependencies for the nodes listed above, and their `file` dependencies, should be replaces with a generic media entity `044fc54b-448d-4c80-88b4-160d1b03ac46`.
+## Additional Steps
+For the Mega Footer menu items, replace the associated nodes with `c615dc92-4e30-4c6e-bc0c-ca24b3d3f088`
+as we don't need to create each node to get the menu structure.
 
-And the video `407820ec-cd73-47f8-b918-c38d281effb1`
-drush sqlq 'SELECT uuid FROM media WHERE id = 52'
+Media dependencies for the nodes listed above, and their `file` dependencies,
+should be replaced with a generic media entity `044fc54b-448d-4c80-88b4-160d1b03ac46`.
 
-Taxonomy term `taxonomy_term` for Story types.
-`drush sqlq "select * from taxonomy_term_data"`
+And any video can be replaced with `407820ec-cd73-47f8-b918-c38d281effb1`
+`drush sqlq 'SELECT uuid FROM media WHERE id = 52'`
+
+Instead of importing all taxonomy terms, we only use the bare minimum to support
+the content model. All Story nodes listed above should have the term entities
+replaced with the UUIDs for the Countries below.
+
+```bash
+# Taxonomy terms for Story types
+# News
+drush sqlq 'SELECT uuid FROM taxonomy_term_data WHERE tid = 251'
+# Story
+drush sqlq 'SELECT uuid FROM taxonomy_term_data WHERE tid = 250'
 
 # Countries
 # Myanmar
@@ -239,9 +264,16 @@ drush sqlq 'SELECT uuid FROM taxonomy_term_data WHERE tid = 260'
 drush sqlq 'SELECT uuid FROM taxonomy_term_data WHERE tid = 261'
 drush sqlq 'SELECT uuid FROM taxonomy_term_data WHERE tid = 262'
 drush sqlq 'SELECT uuid FROM taxonomy_term_data WHERE tid = 263'
-
- See https://www.drupal.org/docs/contributed-modules/default-content-for-d8/defining-default-content
-
-
 ```
+
+## Set Homepage
 To set the homepage, add the UUID to `unocha_demo_content/unocha_demo_content.module`
+
+## Install the Demo content
+This can be used in CI workflows like [run-tests.yml](https://github.com/UN-OCHA/unocha-site/blob/develop/.github/workflows/run-tests.yml) where adding the Github label `e2e` or `performance` runs Jest
+or Lighthouse tests, respectively, after importing the demo content.
+Or locally for a quick install for testing PRs, and in some cases resetting
+shared testing or demo environments to a controlled starting point.
+
+1. Install site from config `drush si --existing-config -y`
+2. Enable custom module `drush en unocha_demo_content -y`
