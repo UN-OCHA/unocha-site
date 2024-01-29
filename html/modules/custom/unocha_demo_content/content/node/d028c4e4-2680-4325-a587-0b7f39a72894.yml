@@ -1,0 +1,1101 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: d028c4e4-2680-4325-a587-0b7f39a72894
+  bundle: response
+  default_langcode: en
+  depends:
+    8fa1a556-9f76-4ea2-bc75-b2d183a04af6: user
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+    33f1e372-00da-415d-8a1b-d7f5c1ad77e7: taxonomy_term
+    3f8e17ec-39f5-4af2-9add-1e0bb44ab27f: taxonomy_term
+    0c036e0c-d618-4894-9579-5fe14f344d6f: node
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+default:
+  revision_uid:
+    -
+      entity: 8fa1a556-9f76-4ea2-bc75-b2d183a04af6
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  title:
+    -
+      value: Colombia
+  created:
+    -
+      value: 1687224839
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Colombia | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'Colombia has made progress in development and peacebuilding over the past decade, but internal armed conflict and violence, extreme weather-related events and COVID-19 have left 7.7 million people in need.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/colombia'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'Colombia has made progress in development and peacebuilding over the past decade, but internal armed conflict and violence, extreme weather-related events and COVID-19 have left 7.7 million people in need.'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2024-01/2023-05-17%20CO%20-%20ASG%20Mission%20%2804%20Union%20Wounaan%20Field%20Visit%29%200139_0.jpg?itok=4TyptfXy'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'ASG Mission Union Wounaan Field Visit'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'Colombia has made progress in development and peacebuilding over the past decade, but internal armed conflict and violence, extreme weather-related events and COVID-19 have left 7.7 million people in need.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'ASG Mission Union Wounaan Field Visit'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2024-01/2023-05-17%20CO%20-%20ASG%20Mission%20%2804%20Union%20Wounaan%20Field%20Visit%29%200139_0.jpg?itok=wmQpjrEy'
+  path:
+    -
+      alias: /colombia
+      langcode: en
+      pathauto: 1
+  samples_status:
+    -
+      value: false
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: ''
+      format: ckeditor
+      summary: 'Colombia has made progress in development and peacebuilding over the past decade, but internal armed conflict and violence, extreme weather-related events and COVID-19 have left 7.7 million people in need.'
+  field_active_response:
+    -
+      value: false
+  field_country:
+    -
+      entity: 33f1e372-00da-415d-8a1b-d7f5c1ad77e7
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 15668478-af7f-444e-977a-68f9950d6dd1
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687549865
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          paragraph_view_mode:
+            -
+              value: tabs
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 28b52fd7-ee00-4747-b925-514f5a91cf33
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687549870
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 15668478-af7f-444e-977a-68f9950d6dd1
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: Overview
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: e7731ea7-cf84-45a5-84ba-affed7b61cec
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687549918
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 28b52fd7-ee00-4747-b925-514f5a91cf33
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p dir="ltr">Colombia has made progress in development and peacebuilding over the past decade, but internal armed conflict and violence, extreme weather-related events and COVID-19 have left 7.7 million people in need. The expansion of hostilities by non-State armed groups (NSAGs) along the country’s Pacific Coast and border areas have affected the poorest and most vulnerable communities, such as Indigenous and Afro-Colombian peoples in the rural areas. The influx of refugees and migrants has increased the burden on host communities.</p><p dir="ltr">Humanitarian entities are complementing State efforts to respond to people’s needs, particularly in hard-to-reach areas. A new Government with a bold agenda to promote "Total Peace" and social equity has taken office and is supported by the Humanitarian Country Team (HCT). Efforts are being made towards inclusive dialogues and a renewed approach of collaboration with multilateral organizations.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 43f8032c-e872-4e50-bfbe-f76d90845fc9
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687549925
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 15668478-af7f-444e-977a-68f9950d6dd1
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Projected situation'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 09d3d39a-08e4-48a9-89c1-9e6ee697f29a
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687550203
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 43f8032c-e872-4e50-bfbe-f76d90845fc9
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p dir="ltr">The Government introduced new policies to address the impacts of conflict, disasters and socioeconomic hardship, with a focus on short-term humanitarian response and long-term solutions to address structural causes. Humanitarian actors will continue providing aid to affected communities. However, NSAGs’ control and pressure on civilians is expected to persist, impacting their protection and access to basic goods, services and livelihoods.&nbsp;</p><p dir="ltr">La Niña and heavy rains are expected to create new emergencies and exacerbate existing ones, while mixed migration and the slow return of refugees will put further strain on affected communities. Challenges to humanitarian access will also persist.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: aa6d7c85-fd19-4f4d-b38c-03551bc863b9
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687550210
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 15668478-af7f-444e-977a-68f9950d6dd1
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Response priorities'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 555ac258-70b9-4576-8f88-25ad23503a03
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687550231
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: aa6d7c85-fd19-4f4d-b38c-03551bc863b9
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>In 2023, the humanitarian community will continue to address people’s needs in areas affected by conflict and extreme weather-related events, with a particular focus on vulnerable groups, including children, women and ethnic minorities. The HCT’s strategy will focus on rapid response to people caught in emergencies for life-saving purposes and their protection, and contribute to their recovery, durable solutions and community capacity-building.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ea4f8071-d1a0-48e7-ab2f-a4f3138bb78f
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687550258
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<h5>For a full overview of the humanitarian response, visit <a href="https://humanitarianaction.info/plan/1181">humanitarianaction.info</a></h5>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Overview of the Humanitarian Response in Colombia'
+          paragraph_view_mode:
+            -
+              value: tabs
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: cc316390-7d0b-4c43-b3e7-cb495d48f982
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687550297
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: ea4f8071-d1a0-48e7-ab2f-a4f3138bb78f
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Humanitarian Needs Overview'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 939718eb-bc9a-4037-a128-5b2e26112a23
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687551382
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: cc316390-7d0b-4c43-b3e7-cb495d48f982
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: Population
+              value: '52156254.00'
+              unit: ''
+              provider: fts
+              id: fts_col_2023_1142_population
+              country: col
+              year: '2'
+            -
+              label: 'People in Need'
+              value: '7700000.00'
+              unit: ''
+              provider: rw_crisis
+              id: rw_crisis_col_2023_people-in-need
+              country: col
+              year: '2'
+            -
+              label: 'Venezuelan Refugees and Migrants in Colombia'
+              value: '2480000.00'
+              unit: ''
+              provider: rw_crisis
+              id: rw_crisis_col_2023_venezuelan-refugees-and-migrants-in-colombia
+              country: col
+              year: '2'
+          field_reliefweb_document:
+            -
+              url: 'https://reliefweb.int/report/colombia/colombia-panorama-de-las-necesidades-humanitarias-2023-marzo-2023'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 0d46e746-6aac-4fa1-8c64-6d060aa2d4c4
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687550479
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: ea4f8071-d1a0-48e7-ab2f-a4f3138bb78f
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Humanitarian Response Plan'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 4e07e9ff-7a8a-4e69-ae1c-bfe033781875
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687550581
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 0d46e746-6aac-4fa1-8c64-6d060aa2d4c4
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: 'People in Need'
+              value: '7700000.00'
+              unit: ''
+              provider: rw_crisis
+              id: rw_crisis_col_2023_people-in-need
+              country: col
+              year: '2'
+            -
+              label: 'People Targeted for Assistance'
+              value: '1600000.00'
+              unit: ''
+              provider: rw_crisis
+              id: rw_crisis_col_2023_people-targeted-for-assistance
+              country: col
+              year: '2'
+            -
+              label: 'Total requirements'
+              value: '283317893.00'
+              unit: USD
+              provider: fts
+              id: fts_col_2023_1142_total-requirements
+              country: col
+              year: '2'
+          field_reliefweb_document:
+            -
+              url: 'https://reliefweb.int/report/colombia/colombia-plan-de-respuesta-humanitaria-2023-marzo-2023'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: e217f6c6-5a14-4889-ab59-59be5a47c66a
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687550599
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: ea4f8071-d1a0-48e7-ab2f-a4f3138bb78f
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Funding update'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 06aa0ac4-313c-4b46-9e7c-9ea40afee4d0
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687550685
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: e217f6c6-5a14-4889-ab59-59be5a47c66a
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: 'Total requirements'
+              value: '283317893.00'
+              unit: USD
+              provider: fts
+              id: fts_col_2023_1142_total-requirements
+              country: col
+              year: '2'
+            -
+              label: 'Funding total'
+              value: '56567140.00'
+              unit: USD
+              provider: fts
+              id: fts_col_2023_1142_funding-total
+              country: col
+              year: '2'
+            -
+              label: 'Funding gap'
+              value: '226750753.00'
+              unit: USD
+              provider: fts
+              id: fts_col_2023_1142_funding-gap
+              country: col
+              year: '2'
+            -
+              label: 'Funding coverage'
+              value: '19.97'
+              unit: ''
+              provider: fts
+              id: fts_col_2023_1142_funding-coverage
+              country: col
+              year: '2'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 50d7d9fa-8958-42c3-9911-53f68ae7ec88
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687550705
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_country_donors:
+            -
+              label: 'Top donors'
+              value: 'United States of America, European Commission, Central Emergency Response Fund, Sweden, Germany, Switzerland, Norway, Canada, United Nations Development Programme, Private (individuals & organizations)'
+              unit: ''
+              provider: fts
+              id: fts_col_2023_1142_top-donors
+              country: col
+              year: '2'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: c21923f2-4f63-4148-8a25-42f3ca408eda
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687550748
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_country_donors:
+            -
+              label: 'Top sectors'
+              value: 'Protección, Seguridad Alimentaria y Nutrición, Salud, Recuperación Temprana, Educación, Coordinación, Not specified, Agua, Saneamiento e Higiene, Albergue y Artículos no Alimentarios'
+              unit: ''
+              provider: fts
+              id: fts_col_2023_1142_top-sectors
+              country: col
+              year: '2'
+          field_url:
+            -
+              uri: 'https://fts.unocha.org/appeals/1142/summary'
+              title: 'Find out more about the response and its funding at OCHA’s Financial Tracking Service'
+              options: {  }
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 9d24c3f2-c46d-4403-9a9b-2a317b4eea44
+          bundle: stories
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687550761
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_limit:
+            -
+              value: 3
+          field_title:
+            -
+              value: 'Latest News and Stories'
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: bf1b40a9-9b50-4dbd-8cb4-379ff56fb851
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687551432
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_twocol_sidebar
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 68502584-9d07-493b-8666-1ceffc2dfe3d
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687551462
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: bf1b40a9-9b50-4dbd-8cb4-379ff56fb851
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%21%28F10%29_%28PC64%29_%28C64%29&search=_exists_%3Aocha_product'
+              title: ''
+              limit: 4
+          field_title:
+            -
+              value: Resources
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 0467a4d4-ce69-4d6b-8074-dd5295421c12
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687551495
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: bf1b40a9-9b50-4dbd-8cb4-379ff56fb851
+                  region: second
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28PC64%29_%28S1503%29_%28F10%29'
+              title: ''
+              limit: 2
+          paragraph_view_mode:
+            -
+              value: teasers
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 9a57a8bf-98dc-49bd-bf4c-8a68a553d03b
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687551575
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: 'Total requirements'
+              value: '2178992.00'
+              unit: USD
+              provider: oct
+              id: oct_col_2023_2360_total-requirements
+              country: col
+              year: '2'
+            -
+              label: 'Opening balance'
+              value: '718724.00'
+              unit: USD
+              provider: oct
+              id: oct_col_2023_2360_opening-balance
+              country: col
+              year: '2'
+            -
+              label: 'Earmarked funding'
+              value: '752093.00'
+              unit: USD
+              provider: oct
+              id: oct_col_2023_2360_earmarked-funding
+              country: col
+              year: '2'
+            -
+              label: Total
+              value: '752093.00'
+              unit: USD
+              provider: oct
+              id: oct_col_2023_2360_total
+              country: col
+              year: '2'
+          field_title:
+            -
+              value: 'Funding for OCHA Colombia'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 5ede80de-621f-48f4-babc-3c89f950f878
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687551600
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_country_donors:
+            -
+              label: 'Earmarked donors'
+              value: 'European Commission, Switzerland, Canada'
+              unit: ''
+              provider: oct
+              id: oct_col_2023_2360_earmarked-donors
+              country: col
+              year: '2'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 4606fd54-7b95-4d6a-9cc4-938f8a2e4077
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687551615
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_country_donors:
+            -
+              label: 'Unearmarked donors'
+              value: 'Australia,  Belgium,  Canada,  Denmark,  Estonia,  Finland,  France,  Germany,  Iceland, Ireland,  Japan,  Luxembourg,  Monaco,  Netherlands, New Zealand,  Norway,  Russian Federation,  South Africa, Sweden, Switzerland, United Kingdom'
+              unit: ''
+              provider: oct
+              id: oct_col_2023_2360_unearmarked-donors
+              country: col
+              year: '2'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 7e02381d-39b5-4c38-8b6a-b0775bf34f87
+          bundle: subscribe
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687551655
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: "<p>Receive all of the latest news, humanitarian tools and other information products from OCHA's Colombia operations:&nbsp;</p>"
+              format: ckeditor
+          field_title:
+            -
+              value: 'Subscribe to the OCHA Colombia newsletter'
+          field_url:
+            -
+              uri: 'https://colombiassh.us5.list-manage.com/subscribe?u=92689d79b307b64689768dd6a&id=13485e1a1e'
+              title: Subscribe
+              options: {  }
+  field_has_response:
+    -
+      value: true
+  field_office_type:
+    -
+      entity: 3f8e17ec-39f5-4af2-9add-1e0bb44ab27f
+  field_region:
+    -
+      entity: 0c036e0c-d618-4894-9579-5fe14f344d6f
+  field_response_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_response_link:
+    -
+      uri: 'https://crisisrelief.un.org/crises'
+      title: 'Support our work'
+      options: {  }

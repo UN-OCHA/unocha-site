@@ -35,6 +35,7 @@
         "drupal/core-recommended": "^10",
         "drupal/csp": "^1.17",
         "drupal/datetime_range_timezone": "^1.0@alpha",
+        "drupal/default_content": "^2.0@alpha",
         "drupal/double_field": "^4.1",
         "drupal/entity_browser": "^2.9",
         "drupal/entity_usage": "^2.0@beta",

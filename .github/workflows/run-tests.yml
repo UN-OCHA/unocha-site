@@ -1,6 +1,8 @@
 name: Run tests
 
-on: [pull_request]
+on:
+  pull_request:
+    types: [labeled, opened, synchronize]
 
 jobs:
   tests:
@@ -116,6 +118,7 @@ jobs:
         with:
           run: |
             docker compose -f tests/docker-compose.yml exec -w /srv/www -T drupal /usr/bin/composer run sub-theme
+
       - name: PHPCS
         id: phpcs
         uses: cafuego/command-output@main
@@ -166,10 +169,66 @@ jobs:
           threshold_metric: "lines"
           comment_footer: false
 
+      - name: Install demo content
+        # Install Demo content if the PR has the label "e2e" or "performance"
+        if: contains(github.event.pull_request.labels.*.name, 'e2e') || contains(github.event.pull_request.labels.*.name, 'performance')
+        id: content
+        uses: cafuego/command-output@main
+        with:
+          run: |
+            docker-compose -f tests/docker-compose.yml exec -T drupal drush -y en unocha_demo_content
+            curl -v http://127.0.0.1:8080
+        env:
+          fail-fast: true
+
+      - name: Set up node
+        # Run Jest e2e tests if the PR has the label "e2e"
+        if: contains(github.event.pull_request.labels.*.name, 'e2e')
+        uses: actions/setup-node@v4
+        with:
+          node-version: '^18.16.1'
+
+      - name: Install node dependencies
+        # Run Jest e2e tests if the PR has the label "e2e"
+        if: contains(github.event.pull_request.labels.*.name, 'e2e')
+        run: |
+          docker compose -f tests/docker-compose.yml exec -w /srv/www drupal sh
+          cd html/themes/custom/common_design_subtheme
+          npm install
+
+      - name: Run e2e tests
+        # Run Jest e2e tests if the PR has the label "e2e"
+        if: contains(github.event.pull_request.labels.*.name, 'e2e')
+        run: |
+          docker compose -f tests/docker-compose.yml exec -w /srv/www drupal sh
+          cd html/themes/custom/common_design_subtheme
+          npm run ci -- -t '^(?!.*Subtheme).*$'
+        env:
+          fail-fast: true
+
+      - name: Audit URLs using Lighthouse
+        # Run Lighthouse if the PR has the label "performance"
+        if: contains(github.event.pull_request.labels.*.name, 'performance')
+        uses: treosh/lighthouse-ci-action@10.1.0
+        with:
+          urls: |
+            http://127.0.0.1:8080/
+            http://127.0.0.1:8080/asia-and-pacific
+            http://127.0.0.1:8080/latest/news-and-stories
+            http://127.0.0.1:8080/news/empowering-afghan-women-glimpse-life-psychosocial-counsellor
+          runs: 3
+          budgetPath: .github/workflows/lighthouse-budget.json # test performance budgets
+          configPath: .github/workflows/lighthouserc.js
+          uploadArtifacts: true # save results as an action artifacts
+          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
+
       - name: DB Logs
         id: dblog
         if: failure()
         uses: cafuego/command-output@main
+        with:
+          run: |
+            docker compose -f tests/docker-compose.yml exec -T drupal drush watchdog:show
 
       - name: Find Comment
         uses: peter-evans/find-comment@v2

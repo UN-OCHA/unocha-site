@@ -1,0 +1,145 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 40efba24-5163-442f-93fa-fc82aa964866
+  bundle: story
+  default_langcode: en
+  depends:
+    921f814b-f86f-47d4-b5b0-e2da08d3980e: user
+    33f1e372-00da-415d-8a1b-d7f5c1ad77e7: taxonomy_term
+    6dfc9cf6-da4f-41d7-ac3d-ef0dd36fc067: node
+    e716b6d4-717e-499e-bd0e-1214afc9ce5b: node
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    e0a9a933-7026-410b-995f-f662bad1eca6: taxonomy_term
+default:
+  revision_uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  title:
+    -
+      value: "Today's top news:  Occupied Palestinian Territory"
+  created:
+    -
+      value: 1697818015
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: "Today's top news: Occupied Palestinian Territory | OCHA"
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'Occupied Palestinian Territory'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/news/todays-top-news-occupied-palestinian-territory-0'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'Occupied Palestinian Territory'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-10/UNICEF.jpg?itok=m7hcLOdq'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'Plumes of smoke can be seen in the horizon'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'Occupied Palestinian Territory'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'Plumes of smoke can be seen in the horizon'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-10/UNICEF.jpg?itok=Uj5N32Qm'
+  path:
+    -
+      alias: /news/todays-top-news-occupied-palestinian-territory-0
+      langcode: en
+      pathauto: 1
+  samples_status:
+    -
+      value: false
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<h2>Occupied Palestinian Territory</h2><p>Airstrikes continue in Gaza with hundreds of people, including children, being trapped beneath the rubble, according to partners.</p><p>Rescue teams, primarily from the Palestinian Civil Defense, are struggling to carry out their mission amid continuous airstrikes, severe shortages of fuel to run vehicles and equipment, and with limited or no connection to mobile networks.</p><p>Hospitals are on the brink and overcrowded with patients, many awaiting treatment. We are concerned that 9,000 cancer patients lack adequate care because of conditions in Gaza’s only chemotherapy hospital.</p><p>Gaza has now been under full electricity blackout for 10 days.</p><p>Since 7 October, at least 30 per cent of all housing units in the Gaza Strip have been either destroyed, rendered uninhabitable, or damaged, , according to the Ministry of Housing in Gaza.</p><p>In the West Bank, 14 Palestinians have been killed in the past 24 hours. This brings the death toll of Palestinians killed by Israeli forces and settlers since 7 October to 79 people, including 20 children.</p>'
+      format: ckeditor
+      summary: ''
+  field_country:
+    -
+      entity: 33f1e372-00da-415d-8a1b-d7f5c1ad77e7
+  field_regions:
+    -
+      entity: 6dfc9cf6-da4f-41d7-ac3d-ef0dd36fc067
+  field_responses:
+    -
+      entity: e716b6d4-717e-499e-bd0e-1214afc9ce5b
+  field_story_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_story_type:
+    -
+      entity: e0a9a933-7026-410b-995f-f662bad1eca6
+  field_theme:
+    -
+      entity: 649b89d5-ea4a-4324-b50f-1041ffae7be5
+    -
+      entity: c0ca0105-13d7-4b40-ba91-d4c2dc15f022
+    -
+      entity: 4633bdef-2cb1-42bb-bf2f-ca8a2bff5eef

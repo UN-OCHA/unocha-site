@@ -1,0 +1,79 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 4f73d98b-c71a-4b44-b98e-3e11942f6cb9
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    df20a760-0bb0-4ba1-a0dc-30af1301b436: menu_link_content
+    a1d1af93-901e-4a92-947b-31fa1c07906b: node
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: Lebanon
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      target_uuid: a1d1af93-901e-4a92-947b-31fa1c07906b
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: 2
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:df20a760-0bb0-4ba1-a0dc-30af1301b436'
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| OCHA'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/homepage'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  content_translation_uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  content_translation_status:
+    -
+      value: true
+  content_translation_created:
+    -
+      value: 1687214098

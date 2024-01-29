@@ -1,0 +1,684 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: b1eaa1b0-c2e1-4f95-b625-c2af3916da9f
+  bundle: basic
+  default_langcode: en
+  depends:
+    40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9: user
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    f75fb808-da0f-46d1-845b-86e045cb8be4: node
+    993c71ea-cb10-4145-98f2-976062ad6568: node
+    04b0517f-262d-4e05-a62d-f1960fb77e9b: node
+    211b8162-dd73-4798-a544-82fa0bc9ed64: node
+default:
+  revision_uid:
+    -
+      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Media centre'
+  created:
+    -
+      value: 1687266681
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Media centre | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'OCHA has a network of public information officers based at our New York and Geneva Headquarters and across our regional and country offices to ensure there i'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/media-centre'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'OCHA has a network of public information officers based at our New York and Geneva Headquarters and across our regional and country offices to ensure there i'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-07/untitled-00455.jpg?itok=OPCixg0t'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'The UN Under-Secretary-General, Martin Griffith surrounded by cameras'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'OCHA has a network of public information officers based at our New York and Geneva Headquarters and across our regional and country offices to ensure there i'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'The UN Under-Secretary-General, Martin Griffith surrounded by cameras'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-07/untitled-00455.jpg?itok=F_ofr4aj'
+  path:
+    -
+      alias: /media-centre
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<p>OCHA has a network of public information officers based at our New York and Geneva Headquarters and across our regional and country offices to ensure there is a global understanding of the realities faced by people experiencing humanitarian crises. Our work helps the media and others access the facts and make sense of complex situations.</p>'
+      format: ckeditor
+      summary: ''
+  field_basic_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_children_menu:
+    -
+      value: false
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b3f52efd-d8ca-43e7-9af2-13220c648727
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687884809
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_fourcol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 4d374f32-88b2-4d0f-a6b0-07bb01c2e9a2
+          bundle: node
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687884655
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: b3f52efd-d8ca-43e7-9af2-13220c648727
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_node:
+            -
+              entity: f75fb808-da0f-46d1-845b-86e045cb8be4
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 4bbcd784-2a9d-4489-8564-8ae03f9ac33d
+          bundle: node
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687884854
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: b3f52efd-d8ca-43e7-9af2-13220c648727
+                  region: second
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_node:
+            -
+              entity: 993c71ea-cb10-4145-98f2-976062ad6568
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: f461481d-decb-44d1-aa33-7ac8d2c50c1f
+          bundle: node
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687884866
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: b3f52efd-d8ca-43e7-9af2-13220c648727
+                  region: third
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_node:
+            -
+              entity: 04b0517f-262d-4e05-a62d-f1960fb77e9b
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 820fce37-18d6-4ee5-ac15-4d7405148be5
+          bundle: node
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687884764
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: b3f52efd-d8ca-43e7-9af2-13220c648727
+                  region: fourth
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_node:
+            -
+              entity: 211b8162-dd73-4798-a544-82fa0bc9ed64
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 35a0750b-574f-42be-b9dc-947a4d08fa8b
+          bundle: media_centre
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687266695
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_media_centre_list:
+            -
+              target_id: media_centre
+              display_id: media_centre
+              data: 'a:5:{s:8:"argument";N;s:5:"title";N;s:5:"limit";N;s:5:"pager";N;s:6:"offset";N;}'
+          field_title:
+            -
+              value: Multimedia
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 36e3a93a-c035-4580-9733-a5266427d55e
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1689854380
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>Visit <a href="https://unocha.canto.com">OCHA''s visual database</a> for more photos.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: bdb130d1-b659-490c-a0bb-c75ffac2801a
+          bundle: response_map
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687965840
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 59b44574-9340-4aa7-ae22-689ea44d1497
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687884105
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  move_items:
+                    third: second
+                  layout: layout_twocol_sidebar
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b4e35b2f-4c0f-48c1-a551-6fcb5749f0cb
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687961740
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 59b44574-9340-4aa7-ae22-689ea44d1497
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%28F8%29'
+              title: ''
+              limit: 1
+          field_title:
+            -
+              value: 'Latest Press Release'
+          paragraph_view_mode:
+            -
+              value: default
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 4786d1b2-aa35-41ac-9ce8-83ac42adbbe6
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1688572139
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 59b44574-9340-4aa7-ae22-689ea44d1497
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>&nbsp;</p><p><a class="read-more" href="/node/47" data-entity-type="node" data-entity-uuid="993c71ea-cb10-4145-98f2-976062ad6568" data-entity-substitution="canonical">View all Press Releases</a></p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: e508b71d-8dac-4d22-92bb-d1cc9058252f
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687884245
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 59b44574-9340-4aa7-ae22-689ea44d1497
+                  region: second
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p><a href="https://unocha.canto.com/">OCHA''s visual database</a></p><p><a href="https://unocha.canto.com/v/MO8NVK16MR/album/HB9K9?display=curatedView&amp;viewIndex=0&amp;from=thumbnail">Leadership photos for download</a></p>'
+              format: ckeditor
+          field_title:
+            -
+              value: Resources
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 37136774-156c-4205-bd39-d9b43db5db67
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687884284
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_fourcol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>For press enquiries and interview requests, please contact the media relation team at OCHA’s Headquarters in New York and Geneva</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Media contacts'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 973a4446-bd67-438c-b888-36ee621b38e6
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687884316
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 37136774-156c-4205-bd39-d9b43db5db67
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p><strong>Eri Kaneko</strong></p><p>Spokesperson<br>New York<br>Email: <a href="mailto:kaneko@un.org">kaneko@un.org</a></p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 589bb7a1-d8c0-40b5-a45c-d2bb220c77fe
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687884329
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 37136774-156c-4205-bd39-d9b43db5db67
+                  region: second
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p><strong>Jens Laerke</strong></p><p>Deputy Spokesperson<br>Geneva<br>Email: <a href="mailto:laerke@un.org">laerke@un.org</a></p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: c3c7d4d5-ccaf-46e8-b4d5-a6f1588086e1
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687884339
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 37136774-156c-4205-bd39-d9b43db5db67
+                  region: third
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p><strong>Vanessa Huguenin</strong></p><p>Public Information Officer<br>Geneva<br>Email: <a href="mailto:huguenin@un.org">huguenin@un.org</a></p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 58e680bc-a49c-465a-b9d0-4c96efdc906d
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687884356
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 37136774-156c-4205-bd39-d9b43db5db67
+                  region: fourth
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p><strong>Amanda Price</strong></p><p>Public Information Officer&nbsp;<br>New York&nbsp;<br>Email: <a href="mailto:amanda.price@un.org">amanda.price@un.org</a></p>'
+              format: ckeditor

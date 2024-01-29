@@ -1,0 +1,1254 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: a1d1af93-901e-4a92-947b-31fa1c07906b
+  bundle: response
+  default_langcode: en
+  depends:
+    40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9: user
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+    193075ce-fbd5-4504-8992-137054626127: taxonomy_term
+    3f8e17ec-39f5-4af2-9add-1e0bb44ab27f: taxonomy_term
+    6dfc9cf6-da4f-41d7-ac3d-ef0dd36fc067: node
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+default:
+  revision_uid:
+    -
+      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  title:
+    -
+      value: Lebanon
+  created:
+    -
+      value: 1687213995
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Lebanon | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'Lebanon is facing an unprecedented economic and financial crisis affecting all residents, including Lebanese, Syrian and Palestinian refugees and migrants.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/lebanon'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'Lebanon is facing an unprecedented economic and financial crisis affecting all residents, including Lebanese, Syrian and Palestinian refugees and migrants.'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-06/refugee%20%282%29.jpg?itok=-4YiiLrM'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'Painting of a refugee on a wall in Beirut'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'Lebanon is facing an unprecedented economic and financial crisis affecting all residents, including Lebanese, Syrian and Palestinian refugees and migrants.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'Painting of a refugee on a wall in Beirut'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-06/refugee%20%282%29.jpg?itok=8HLd7GEG'
+  path:
+    -
+      alias: /lebanon
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: ''
+      format: ckeditor
+      summary: 'Lebanon is facing an unprecedented economic and financial crisis affecting all residents, including Lebanese, Syrian and Palestinian refugees and migrants.'
+  field_active_response:
+    -
+      value: false
+  field_country:
+    -
+      entity: 193075ce-fbd5-4504-8992-137054626127
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 7293a41a-dcda-4cb1-9a01-816a3acac4e2
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687558344
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          paragraph_view_mode:
+            -
+              value: tabs
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: a2dce409-289d-488f-96f4-0b458da38127
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687558353
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 7293a41a-dcda-4cb1-9a01-816a3acac4e2
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: Overview
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: bdaf78bc-5cc8-43e6-ad6d-803d0242a283
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687558374
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: a2dce409-289d-488f-96f4-0b458da38127
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>Lebanon is facing an unprecedented economic and financial crisis affecting all residents, including Lebanese, Syrian and Palestinian refugees and migrants. The economic meltdown, combined with weak governance, has led to increased tensions and security incidents. The prices of basic commodities have increased due to inflation and currency depreciation, and more than half of the country’s population of 5.8 million now depends on humanitarian assistance for food and basic needs. More than 1.2 million people need support to access safe water and sanitation.&nbsp;</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: a417261f-cc18-4d34-b762-3d77f69a331a
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687558382
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 7293a41a-dcda-4cb1-9a01-816a3acac4e2
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Projected situation'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b4f02c98-34e7-4471-b0e5-7f0610d23163
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687558400
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: a417261f-cc18-4d34-b762-3d77f69a331a
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>The humanitarian situation is expected to worsen in 2023 due to increased political uncertainty and a worsening economic outlook. Bureaucratic impediments and the politicization of aid will continue to pose challenges to the response. As a result, the humanitarian situation is not expected to improve until after 2025.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: aa0dabb6-b46f-46d2-9f76-787626c6c84c
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687558405
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 7293a41a-dcda-4cb1-9a01-816a3acac4e2
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Response priorities'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 80a2fc9f-8a4c-4999-aa6b-79963f9c5cca
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687558420
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: aa0dabb6-b46f-46d2-9f76-787626c6c84c
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>Lebanon’s Emergency Response Plan aims to provide humanitarian aid to 1.3 million people in Lebanon, including Lebanese, migrant and Palestinian refugees, in 2023. Marginalized groups and hard-to-reach communities will be prioritized, and cash assistance will be provided to the most eligible recipients.&nbsp;</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ca5b7ed2-7d8a-4910-8624-19762c6a6c37
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687558437
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Overview of the humanitarian response in Lebanon'
+          paragraph_view_mode:
+            -
+              value: tabs
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 535ec995-7cab-41b7-958d-f643f19a997f
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687558458
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: ca5b7ed2-7d8a-4910-8624-19762c6a6c37
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Humanitarian Needs Overview'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 2a89a30b-e3de-4315-b235-2fe8ea49d1ea
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687558524
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 535ec995-7cab-41b7-958d-f643f19a997f
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: Population
+              value: '5920156.00'
+              unit: ''
+              provider: fts
+              id: fts_lbn_2023_1134_population
+              country: lbn
+              year: '2'
+            -
+              label: 'People in Need'
+              value: '3800000.00'
+              unit: ''
+              provider: rw_crisis
+              id: rw_crisis_lbn_2023_people-in-need
+              country: lbn
+              year: '2'
+            -
+              label: 'Displaced Syrians in Lebanon'
+              value: '1500000.00'
+              unit: ''
+              provider: rw_crisis
+              id: rw_crisis_lbn_2023_displaced-syrians-in-lebanon
+              country: lbn
+              year: '2'
+          field_reliefweb_document:
+            -
+              url: 'https://reliefweb.int/report/lebanon/escalating-needs-lebanon-2023-overview'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: c713ad85-6418-4f94-85cf-f053ee68bd45
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687558621
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: ca5b7ed2-7d8a-4910-8624-19762c6a6c37
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Humanitarian Response Plan'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: e5ae5762-27c8-4387-846d-29f4e09d91e3
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687558682
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: c713ad85-6418-4f94-85cf-f053ee68bd45
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: 'People in Need'
+              value: '3800000.00'
+              unit: ''
+              provider: rw_crisis
+              id: rw_crisis_lbn_2023_people-in-need
+              country: lbn
+              year: '2'
+            -
+              label: 'People Targeted for Assistance'
+              value: '3200000.00'
+              unit: ''
+              provider: rw_crisis
+              id: rw_crisis_lbn_2023_people-targeted-for-assistance
+              country: lbn
+              year: '2'
+            -
+              label: 'Total requirements'
+              value: '200203540.00'
+              unit: USD
+              provider: fts
+              id: fts_lbn_2023_1134_total-requirements
+              country: lbn
+              year: '2'
+          field_reliefweb_document:
+            -
+              url: 'https://reliefweb.int/report/lebanon/lebanon-emergency-response-plan-2023'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b34cb66e-118f-41fb-96ce-dc374c5f11bb
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687558689
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: ca5b7ed2-7d8a-4910-8624-19762c6a6c37
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Funding update'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 6927d5f1-6bbe-4f08-bdca-d0445f38e2f3
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687558792
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: b34cb66e-118f-41fb-96ce-dc374c5f11bb
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: 'Total requirements'
+              value: '200203540.00'
+              unit: USD
+              provider: fts
+              id: fts_lbn_2023_1134_total-requirements
+              country: lbn
+              year: '2'
+            -
+              label: 'Funding total'
+              value: '51423616.00'
+              unit: USD
+              provider: fts
+              id: fts_lbn_2023_1134_funding-total
+              country: lbn
+              year: '2'
+            -
+              label: 'Funding gap'
+              value: '148779924.00'
+              unit: USD
+              provider: fts
+              id: fts_lbn_2023_1134_funding-gap
+              country: lbn
+              year: '2'
+            -
+              label: 'Funding coverage'
+              value: '25.69'
+              unit: ''
+              provider: fts
+              id: fts_lbn_2023_1134_funding-coverage
+              country: lbn
+              year: '2'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 95e99e8b-15d6-40f8-8b73-37cca3aa08cf
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687558818
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_country_donors:
+            -
+              label: 'Top donors'
+              value: 'Norway, Central Emergency Response Fund, France, Canada, Belgium, Sweden, Ireland, UNICEF National Committee/Denmark, Switzerland, European Commission'
+              unit: ''
+              provider: fts
+              id: fts_lbn_2023_1134_top-donors
+              country: lbn
+              year: '2'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 78559765-031b-407e-97db-6f074b176bb6
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687558872
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_country_donors:
+            -
+              label: 'Top sectors'
+              value: 'Not specified, Protection, Health, Nutrition, WASH, Education, Migrants, Coordination and Common Services'
+              unit: ''
+              provider: fts
+              id: fts_lbn_2023_1134_top-sectors
+              country: lbn
+              year: '2'
+          field_url:
+            -
+              uri: 'https://fts.unocha.org/appeals/1134/summary'
+              title: 'Find out more about the response and its funding at OCHA’s Financial Tracking Service'
+              options: {  }
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 442961f4-1baf-41c4-b815-41f4093b7a86
+          bundle: stories
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1688584893
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_limit:
+            -
+              value: 3
+          field_title:
+            -
+              value: 'Latest News and Stories'
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ac4a2326-6bb3-495b-8b3e-613b9e1577ef
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687558892
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'The Lebanon Humanitarian Fund'
+          paragraph_view_mode:
+            -
+              value: tabs
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 7ae53ead-d5d3-4ca6-a979-378af393199f
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687558907
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: ac4a2326-6bb3-495b-8b3e-613b9e1577ef
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: '2023 funding status'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: f67cf845-a08b-4f68-a797-55b82d17f11d
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687558981
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 7ae53ead-d5d3-4ca6-a979-378af393199f
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: 'Pledged amount'
+              value: '15617837.85'
+              unit: USD
+              provider: cbpf
+              id: cbpf_lbn_2023_pledged-amount
+              country: lbn
+              year: '2'
+            -
+              label: 'Paid amount'
+              value: '15828009.06'
+              unit: USD
+              provider: cbpf
+              id: cbpf_lbn_2023_paid-amount
+              country: lbn
+              year: '2'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 610c08e8-6582-40a0-b1f2-3e853957eddc
+          bundle: resources
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687558998
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: ac4a2326-6bb3-495b-8b3e-613b9e1577ef
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: Resources
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: fdedca60-b03e-4da8-a3fd-ef11dc77856c
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687559080
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_country_donors:
+            -
+              label: 'Top donors'
+              value: 'Belgium, Ireland, Sweden, France, Canada, Switzerland, Norway, Iceland'
+              unit: ''
+              provider: cbpf
+              id: cbpf_lbn_2023_top-donors
+              country: lbn
+              year: '2'
+          field_url:
+            -
+              uri: 'https://cbpf.data.unocha.org'
+              title: 'Find out more about this country-based pooled fund at the CBPF Data Hub'
+              options: {  }
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: cc2166b4-346f-450f-8b76-f85ecf28aa75
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687559087
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_twocol_sidebar
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 3c165b9e-d7cd-4847-8ba3-da8cd1f957ad
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687559112
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: cc2166b4-346f-450f-8b76-f85ecf28aa75
+                  region: first
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%21%28F10%29_%28PC137%29_%28C137%29&search=_exists_%3Aocha_product'
+              title: ''
+              limit: 4
+          field_title:
+            -
+              value: Resources
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: a382b27f-4661-48de-9d53-12d8a7cd885c
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687559132
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: cc2166b4-346f-450f-8b76-f85ecf28aa75
+                  region: second
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28PC137%29_%28S1503%29_%28F10%29'
+              title: ''
+              limit: 2
+          paragraph_view_mode:
+            -
+              value: teasers
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: a1bed255-31f6-4694-98f6-c8b01df32e4b
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687559241
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: 'Total requirements'
+              value: '3143310.00'
+              unit: USD
+              provider: oct
+              id: oct_lbn_2023_2654_total-requirements
+              country: lbn
+              year: '2'
+            -
+              label: 'Opening balance'
+              value: '348.00'
+              unit: USD
+              provider: oct
+              id: oct_lbn_2023_2654_opening-balance
+              country: lbn
+              year: '2'
+            -
+              label: 'Earmarked funding'
+              value: '892145.00'
+              unit: USD
+              provider: oct
+              id: oct_lbn_2023_2654_earmarked-funding
+              country: lbn
+              year: '2'
+            -
+              label: Total
+              value: '892145.00'
+              unit: USD
+              provider: oct
+              id: oct_lbn_2023_2654_total
+              country: lbn
+              year: '2'
+          field_title:
+            -
+              value: 'Funding for OCHA Lebanon'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: e4bb3cc5-99d4-4c58-bcd7-48063818e047
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687559259
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_country_donors:
+            -
+              label: 'Earmarked donors'
+              value: 'Germany, Japan, European Commission, Sweden, Canada'
+              unit: ''
+              provider: oct
+              id: oct_lbn_2023_2654_earmarked-donors
+              country: lbn
+              year: '2'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 29436e68-630f-4459-a631-15aa68c30ab4
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687559274
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_country_donors:
+            -
+              label: 'Unearmarked donors'
+              value: 'Australia,  Belgium,  Canada,  Denmark,  Estonia,  Finland,  France,  Germany,  Iceland, Ireland,  Japan,  Luxembourg,  Monaco,  Netherlands, New Zealand,  Norway,  Russian Federation,  South Africa, Sweden, Switzerland, United Kingdom'
+              unit: ''
+              provider: oct
+              id: oct_lbn_2023_2654_unearmarked-donors
+              country: lbn
+              year: '2'
+  field_has_response:
+    -
+      value: true
+  field_office_type:
+    -
+      entity: 3f8e17ec-39f5-4af2-9add-1e0bb44ab27f
+  field_region:
+    -
+      entity: 6dfc9cf6-da4f-41d7-ac3d-ef0dd36fc067
+  field_response_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_response_link:
+    -
+      uri: 'https://crisisrelief.un.org/lebanon-crisis'
+      title: 'Support our work'
+      options: {  }

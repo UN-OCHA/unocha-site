@@ -1,0 +1,29 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 80119ebe-37b6-4a4c-bd85-c0eb4e5031ef
+  default_langcode: en
+  depends:
+    8fa1a556-9f76-4ea2-bc75-b2d183a04af6: user
+default:
+  uid:
+    -
+      entity: 8fa1a556-9f76-4ea2-bc75-b2d183a04af6
+  filename:
+    -
+      value: GHO-2023-Abridged-EN_final-1.jpg
+  uri:
+    -
+      value: 'public://2023-10/GHO-2023-Abridged-EN_final-1.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 63187
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1698760301

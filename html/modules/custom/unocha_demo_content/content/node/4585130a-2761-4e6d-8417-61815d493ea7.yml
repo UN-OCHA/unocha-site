@@ -1,0 +1,126 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 4585130a-2761-4e6d-8417-61815d493ea7
+  bundle: basic
+  default_langcode: en
+  depends:
+    40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9: user
+default:
+  revision_uid:
+    -
+      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+  title:
+    -
+      value: Demo
+  created:
+    -
+      value: 1691664337
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Demo | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'This is a collection of demo pages to demonstrate page building techniques using paragraphs, and for frontend testing.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/demo'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'This is a collection of demo pages to demonstrate page building techniques using paragraphs, and for frontend testing.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'This is a collection of demo pages to demonstrate page building techniques using paragraphs, and for frontend testing.'
+  path:
+    -
+      alias: /demo
+      langcode: en
+      pathauto: 1
+  samples_status:
+    -
+      value: true
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<p>This is a collection of <strong>demo pages</strong> to demonstrate page building techniques using paragraphs, and for frontend testing.</p>'
+      format: ckeditor
+      summary: ''
+  field_children_menu:
+    -
+      value: true
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 2f1f2c18-6c4b-4caa-b67c-2f73652dbe85
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691664377
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor leo risus, in consequat ipsum viverra eget.&nbsp;</p><p class="headline">This is a Headline style</p><p>Vivamus non auctor nisi, et commodo diam. Sed aliquet lectus nec nulla pretium lacinia. Vestibulum maximus urna in aliquet eleifend. Nunc eu mi euismod, viverra lacus non, mollis augue.</p><p class="title">This is a Title style</p><p>Praesent dignissim sollicitudin elit id efficitur. In ultricies est ex, in imperdiet lacus faucibus ut. Suspendisse fermentum iaculis facilisis.&nbsp;</p><p>Cras dapibus convallis urna, et placerat elit sagittis eget. And a <a class="read-more" href="#">read more on an anchor</a></p><h2>This is heading 2</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor leo risus, in consequat ipsum viverra eget. Vivamus non auctor nisi, et commodo diam. Sed aliquet lectus nec nulla pretium lacinia. Vestibulum maximus urna in aliquet eleifend. Nunc eu mi euismod, viverra lacus non, mollis augue. Praesent dignissim sollicitudin elit id efficitur. In ultricies est ex, in imperdiet lacus faucibus ut. Suspendisse fermentum iaculis facilisis. Cras dapibus convallis urna, et placerat elit sagittis eget.</p><h3>This is heading 3</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor leo risus, in consequat ipsum viverra eget. Vivamus non auctor nisi, et commodo diam. Sed aliquet lectus nec nulla pretium lacinia. Vestibulum maximus urna in aliquet eleifend. Nunc eu mi euismod, viverra lacus non, mollis augue. Praesent dignissim sollicitudin elit id efficitur. In ultricies est ex, in imperdiet lacus faucibus ut. Suspendisse fermentum iaculis facilisis. Cras dapibus convallis urna, et placerat elit sagittis eget.</p><h4>This is heading 4</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor leo risus, in consequat ipsum viverra eget. Vivamus non auctor nisi, et commodo diam. Sed aliquet lectus nec nulla pretium lacinia. Vestibulum maximus urna in aliquet eleifend. Nunc eu mi euismod, viverra lacus non, mollis augue. Praesent dignissim sollicitudin elit id efficitur. In ultricies est ex, in imperdiet lacus faucibus ut. Suspendisse fermentum iaculis facilisis. Cras dapibus convallis urna, et placerat elit sagittis eget.</p><h5>This is heading 5</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor leo risus, in consequat ipsum viverra eget. Vivamus non auctor nisi, et commodo diam. Sed aliquet lectus nec nulla pretium lacinia. Vestibulum maximus urna in aliquet eleifend. Nunc eu mi euismod, viverra lacus non, mollis augue. Praesent dignissim sollicitudin elit id efficitur. In ultricies est ex, in imperdiet lacus faucibus ut. Suspendisse fermentum iaculis facilisis. Cras dapibus convallis urna, et placerat elit sagittis eget.</p><h6>This is heading 6</h6><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor leo risus, in consequat ipsum viverra eget. Vivamus non auctor nisi, et commodo diam. Sed aliquet lectus nec nulla pretium lacinia. Vestibulum maximus urna in aliquet eleifend. Nunc eu mi euismod, viverra lacus non, mollis augue. Praesent dignissim sollicitudin elit id efficitur. In ultricies est ex, in imperdiet lacus faucibus ut. Suspendisse fermentum iaculis facilisis. Cras dapibus convallis urna, et placerat elit sagittis eget.</p><blockquote><p>This is a block quote. Maecenas vulputate purus eu rutrum faucibus. Duis vehicula leo felis, at ullamcorper dolor gravida sed. Donec eget posuere arcu, quis ultricies turpis. Nunc eget risus tortor. Quisque a urna odio. Maecenas sagittis, ex nec pellentesque molestie, enim turpis sagittis lorem, vel tempus lacus purus nec purus. Fusce ut erat id ipsum egestas porttitor.</p></blockquote><p>Morbi lobortis tellus lacinia est accumsan maximus et eget felis. Etiam sollicitudin sapien quis varius finibus. Suspendisse feugiat auctor sapien, suscipit accumsan ex pharetra vitae. Nulla porttitor imperdiet dictum. Aliquam purus magna, consequat ut efficitur et, tempor sit amet leo. Donec scelerisque tellus eu lectus placerat, vitae congue dui laoreet. Fusce eget velit rutrum, dapibus ipsum eu, auctor massa. Aenean tempus risus nec nisl scelerisque gravida. Phasellus neque nisl, bibendum ac velit ac, suscipit aliquam quam. Donec ut est eget nisl fermentum tincidunt et ac arcu. Nulla tempus orci vitae justo sodales, sit amet imperdiet sem vestibulum.</p><ul><li>Example point one</li><li>Example point two</li><li>Example point three</li></ul><p>Morbi lobortis tellus lacinia est accumsan maximus et eget felis. Etiam sollicitudin sapien quis varius finibus. Suspendisse feugiat auctor sapien, suscipit accumsan ex pharetra vitae. Nulla porttitor imperdiet dictum. Aliquam purus magna, consequat ut efficitur et, tempor sit amet leo. Donec scelerisque tellus eu lectus placerat, vitae congue dui laoreet. Fusce eget velit rutrum, dapibus ipsum eu, auctor massa. Aenean tempus risus nec nisl scelerisque gravida. Phasellus neque nisl, bibendum ac velit ac, suscipit aliquam quam. Donec ut est eget nisl fermentum tincidunt et ac arcu. Nulla tempus orci vitae justo sodales, sit amet imperdiet sem vestibulum.</p><ol><li>Example point one</li><li>Example point two</li><li>Example point three</li></ol>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Text paragraph type with WYSIWYG Typography styles'

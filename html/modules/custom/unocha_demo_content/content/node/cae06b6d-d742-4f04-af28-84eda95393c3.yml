@@ -1,0 +1,279 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: cae06b6d-d742-4f04-af28-84eda95393c3
+  bundle: story
+  default_langcode: en
+  depends:
+    921f814b-f86f-47d4-b5b0-e2da08d3980e: user
+    f14b7469-61a1-4991-abf5-7797a4cb78b3: taxonomy_term
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    ff34642c-7718-4808-b175-a3fa849587dc: node
+    dfe5f610-35e6-4a76-ad15-24a64422532f: node
+    0564386c-fcb5-4883-8f32-ac7b7579e508: taxonomy_term
+default:
+  revision_uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  title:
+    -
+      value: 'Empowering Afghan women: A glimpse into the life of a psychosocial counsellor'
+  created:
+    -
+      value: 1700994898
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Empowering Afghan women: A glimpse into the life of a psychosocial counsellor | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: "by Lorenna Dib Oliveira\_"
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/news/empowering-afghan-women-glimpse-life-psychosocial-counsellor'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: "by Lorenna Dib Oliveira\_"
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-11/photo%202%20afg.jpg?itok=ucuqEOBO'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'A woman in a white medical coat examines a seated woman.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: "by Lorenna Dib Oliveira\_"
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'A woman in a white medical coat examines a seated woman.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-11/photo%202%20afg.jpg?itok=EmReg1pE'
+  path:
+    -
+      alias: /news/empowering-afghan-women-glimpse-life-psychosocial-counsellor
+      langcode: en
+      pathauto: 1
+  samples_status:
+    -
+      value: false
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<p><em>by Lorenna Dib Oliveira&nbsp;</em></p><p>“I have been working as a psychosocial counsellor since spring 2020,” Shabana* tells us. “My role revolves around providing counselling to women and girls who are depressed, or who have experienced or been exposed to abuse and violence.”&nbsp;</p><p>These types of psychosocial support services are especially important in the Afghan context, where girls face many challenges and protection risks due to the lingering effects of four decades of conflict, a fragile economy and an increasingly repressive rights environment. The main risks facing women and girls in Afghanistan include early marriage, child labour, intimate-partner violence, and sexual exploitation and abuse.</p><p>Even before the Taliban de facto authorities (DfA) took control of Afghanistan in August 2021, it was already one of the world’s most difficult countries in which to be a woman, both personally and professionally. But since the takeover, the hurdles facing women – especially those living in rural areas – have only grown.&nbsp;</p><p>The DfA imposed a series of increasingly restrictive directives that limit women’s and girls’ ability to participate in almost all aspects of public life, including humanitarian action, and in turn diminish their access to assistance and services.&nbsp;</p><p>Shabana’s organization has been her professional home for the past three and a half years. During that time, she has been dedicated to assisting the most vulnerable women and girls, including those recently forced to return from Pakistan.</p><p>Since mid-September, Afghanistan has had to absorb an unprecedented number of Afghans returning from Pakistan, with some 327,400 Afghans crossing the Torkham and Spin Boldak border points into the country. This sudden influx represents a more than fourfold increase in the number of undocumented Afghans who returned from Pakistan between January and August 2023, and it is putting tremendous pressure on already strained resources and capacity.</p><p>E<a href="https://reliefweb.int/report/pakistan/gender-update-1-forced-returns-pakistan">ighty per cent of people forced to make the journey are women and children, primarily girls and young females aged 6 to 17, as well as female-headed households.</a> The risks facing returning women and girls are diverse and serious, ranging from the absence of proper identification documents, to a lack of lighting in the informal settlements in which they now find themselves, to not knowing the terrain in the areas they are returning to and whether they are contaminated with explosive hazards.</p>'
+      format: ckeditor
+      summary: ''
+  field_country:
+  -
+    entity: f14b7469-61a1-4991-abf5-7797a4cb78b3
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 0115a192-dfe7-4106-a08c-174bd184537b
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1700997787
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: aa050706-c526-43aa-92cb-4c800b736390
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1700997847
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: "<p>“I believe women working in this field are superheroes,” Shabana says.&nbsp;</p><p>While recounting distressing cases of women facing domestic violence as second wives, she emphasized the pivotal role of counsellors as the sole source of support and encouragement for these women.&nbsp;</p><p>However, Shabana has observed a concerning trend: a surge in the number of females grappling with deteriorating mental health since 2021, especially those exhibiting signs of depression and hopelessness. She attributes this disturbing trend to the heightened restrictions imposed on women. Drawing from her personal experience, Shabana revealed how these prohibitions have thwarted her aspirations for further education, exemplifying the broader impact on women's lives under DfA rule.</p>"
+              format: ckeditor
+          field_title:
+            -
+              value: Superheroes
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: a1c10c6d-4189-4e01-ba52-b0fce241dabe
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1700997972
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: dbcce60d-33fa-4dc3-bff8-546c3dd61889
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1700998045
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>Shabana shared: “One of the aspects that deeply saddens me is the absence of Government support in addressing gender-based violence-related issues. Previously, we could refer women to designated safe houses, where they could find refuge, but regrettably that support is no longer available. Our role is now limited to providing guidance on navigating domestic violence situations. So, it is essential to create an environment where they feel heard and supported."&nbsp;</p><p>This shift represents a significant challenge in the organization’s ability to offer comprehensive assistance to women in need.</p><p>Nevertheless, Shabana still feels a sense of pride in her work assisting the most vulnerable members of Afghan society: “It is an opportunity to make a difference in the lives of those who truly need assistance."<br>Shabana''s dedication and passion for her work exemplify the resilience and determination of Afghan women in the face of overwhelming adversity.</p><p>*Name has been changed.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: "It's all about serving Afghan women"
+  field_story_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_story_type:
+    -
+      entity: 0564386c-fcb5-4883-8f32-ac7b7579e508
+  field_regions:
+    -
+      entity: ff34642c-7718-4808-b175-a3fa849587dc
+  field_responses:
+    -
+      entity: dfe5f610-35e6-4a76-ad15-24a64422532f

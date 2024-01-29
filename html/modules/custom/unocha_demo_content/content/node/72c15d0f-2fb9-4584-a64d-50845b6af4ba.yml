@@ -1,0 +1,147 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 72c15d0f-2fb9-4584-a64d-50845b6af4ba
+  bundle: story
+  default_langcode: en
+  depends:
+    921f814b-f86f-47d4-b5b0-e2da08d3980e: user
+    93075ce-fbd5-4504-8992-137054626127: taxonomy_term
+    ff34642c-7718-4808-b175-a3fa849587dc: node
+    d9d618d1-bca7-4d4b-9ca0-320df9d96222: node
+    dfe5f610-35e6-4a76-ad15-24a64422532f: node
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    e0a9a933-7026-410b-995f-f662bad1eca6: taxonomy_term
+default:
+  revision_uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  title:
+    -
+      value: 'After 4 months of war, humanitarian leaders urge action to end the tragedy in Sudan'
+  created:
+    -
+      value: 1692113258
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'After 4 months of war, humanitarian leaders urge action to end the tragedy in Sudan | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: "\_"
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/news/after-4-months-war-humanitarian-leaders-urge-action-end-tragedy-sudan'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: "\_"
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-08/SS_RENK_08-2023_53_0.jpg?itok=TRzXVyGf'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'A truck laden with people seen moving on a waterlogged mud road. Crowds of people surround the truck.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: "\_"
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'A truck laden with people seen moving on a waterlogged mud road. Crowds of people surround the truck.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-08/SS_RENK_08-2023_53_0.jpg?itok=NWu0khdj'
+  path:
+    -
+      alias: /news/after-4-months-war-humanitarian-leaders-urge-action-end-tragedy-sudan
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: "<p>&nbsp;</p><p><em><strong>Statement by Principals of the Inter-Agency Standing Committee: After 4 Months of War, Humanitarian Leaders Urge Action to End the Tragedy in Sudan</strong></em></p><p>New York/Geneva/Rome – For four gruesome months, the people of Sudan have been engulfed in a war that is destroying their lives and their homeland and violating their basic human rights.</p><p>People have witnessed their loved ones gunned down.</p><p>Women and girls have been sexually assaulted.</p><p>Families have seen their possessions looted and their homes burnt to the ground.</p><p>People are dying because they cannot access health care services and medicine.</p><p>And now, because of the war, Sudan’s children are wasting away for lack of food and nutrition.</p><p>Each day the fighting continues, the Sudanese are being robbed of the peace they cherish, the lives they are entitled to, and the future they deserve.</p><p>Enough.</p><p>After four months of terror, global leaders of humanitarian organizations working in Sudan have three messages to share:</p><p><em><strong>To the people of Sudan</strong></em><strong>:</strong> The international humanitarian community remains committed to supporting you, especially through the work of your local responders who have been at the forefront to provide food, seeds, water, shelter, health, nutrition, education, medical care and protection to those in need since Day One. We will continue to push for access to all people and in all areas of Sudan to bring humanitarian supplies and essential services.</p><p><em><strong>To parties to the conflict</strong></em><strong>:</strong> End the fighting. Protect civilians. Grant us safe and unfettered access. Remove bureaucratic impediments. Attacking civilians, looting humanitarian supplies, targeting aid workers, civilian assets and infrastructure, including health centers and hospitals, and blocking humanitarian assistance – all of which have been reported in Sudan – are prohibited under International Humanitarian Law and International Human Rights Law. These acts may amount to war crimes and crimes against humanity.</p><p><em><strong>To the international community</strong></em>: There is no excuse for waiting. More than 6 million people in Sudan are one step away from famine. More than 14 million children need humanitarian aid. More than 4 million people have fled the fighting and remain internally displaced across the country and as refugees throughout the wider region. Time is running out for farmers to plant the crops that will feed them and their neighbours. Medical supplies are scarce. The situation is spiralling out of control. Our humanitarian appeals can help some 19 million people in Sudan and neighbouring countries. However, the two appeals are less than 27 per cent funded. Please change that.</p><p>It is time for a reset. We call for an immediate cessation of hostilities. The people of Sudan need peace and equitable access to humanitarian relief. And the international community must step up today, engage at all levels, and act to put Sudan back on track and end the war.&nbsp;</p><p><em><strong>Signatories:</strong></em></p><p><strong>Mr. Martin Griffiths</strong>, Emergency Relief Coordinator and Under-Secretary-General for Humanitarian Affairs (OCHA)</p><p><strong>Dr. QU Dongyu</strong>, Director-General, Food and Agriculture Organization of the United Nations (FAO)</p><p><strong>Ms. Sofia Sprechmann Sineiro</strong>, Secretary General, CARE International</p><p><strong>Ms. Shahin Ashraf</strong>, Chair a.i. International Council of Voluntary Agencies (ICVA) Board, (Islamic Relief)</p><p><strong>Ms. Mirela Shuteriqi,</strong> Executive Director a.i., International Council of Voluntary Agencies (ICVA)</p><p><strong>Ms. Anne Goddard</strong>, Chief Executive Officer and President a.i., InterAction</p><p><strong>Mr. António Vitorino</strong>, Director General, International Organization for Migration (IOM)</p><p><strong>Ms. Tjada D’Oyen McKenna</strong>, Chief Executive Officer, Mercy Corps</p><p><strong>Mr. Volker Türk</strong>, United Nations High Commissioner for Human Rights (OHCHR)</p><p><strong>Ms. Janti Soeripto</strong>, President and Chief Executive Officer, Save the Children US</p><p><strong>Ms. Paula Gaviria Betancur,</strong> United Nations Special Rapporteur on the Human Rights of Internally Displaced Persons (SR on HR of IDPs)</p><p><strong>Mr. Achim Steiner</strong>, Administrator, United Nations Development Programme (UNDP)</p><p><strong>Dr. Natalia Kanem</strong>, Executive Director, United Nations Population Fund (UNFPA)</p><p><strong>Mr. Filippo Grandi</strong>, United Nations High Commissioner for Refugees (UNHCR)</p><p><strong>Ms. Maimunah Mohd Sharif</strong>, Executive Director, United Nations Human Settlement Programme (UN-Habitat)</p><p><strong>Ms. Catherine Russell</strong>, Executive Director, United Nations Children's Fund (UNICEF)</p><p><strong>Ms. Sima Bahous</strong>, Under-Secretary-General and Executive Director, UN Women</p><p><strong>Ms. Cindy McCain</strong>, Executive Director, World Food Programme (WFP)</p><p><strong>Dr. Tedros Adhanom Ghebreyesus</strong>, Director-General, World Health Organization (WHO)&nbsp;</p><p><strong>Mr. Stephen Lockley</strong>, President and Chief Executive Officer a.i., World Vision International</p><p>&nbsp;</p><p><em>Media contact:</em></p><p><strong>&nbsp;Jens Laerke,</strong> laerke@un.org, +41 79 472 9750</p>"
+      format: ckeditor
+      summary: ''
+  field_country:
+    -
+      entity: 93075ce-fbd5-4504-8992-137054626127
+  field_regions:
+    -
+      entity: ff34642c-7718-4808-b175-a3fa849587dc
+  field_responses:
+    -
+      entity: d9d618d1-bca7-4d4b-9ca0-320df9d96222
+    -
+      entity: dfe5f610-35e6-4a76-ad15-24a64422532f
+  field_story_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_story_type:
+    -
+      entity: e0a9a933-7026-410b-995f-f662bad1eca6
+  field_theme:
+    -
+      entity: 067f3808-3891-4172-9195-53f7042c218f
+    -
+      entity: 4633bdef-2cb1-42bb-bf2f-ca8a2bff5eef
+    -
+      entity: c0ca0105-13d7-4b40-ba91-d4c2dc15f022
+    -
+      entity: 649b89d5-ea4a-4324-b50f-1041ffae7be5

@@ -1,0 +1,598 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 0c64cb59-00de-4833-a4d4-1284d375eee9
+  bundle: basic
+  default_langcode: en
+  depends:
+    4236d2bb-b7b9-4a2b-b4c4-d0d5f169ccf7: user
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+default:
+  revision_uid:
+    -
+      entity: 4236d2bb-b7b9-4a2b-b4c4-d0d5f169ccf7
+  revision_log:
+    -
+      value: 'Changing the markup for UNDAC section to add an ID. This allows the  heading to be used as a destination for the UNDAC redirect.'
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  title:
+    -
+      value: 'We coordinate'
+  created:
+    -
+      value: 1687304547
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'We coordinate | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'During an emergency, at the request of the affected country’s Government, we coordinate the flurry of response efforts to ensure they reach the people most in need.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/we-coordinate'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'During an emergency, at the request of the affected country’s Government, we coordinate the flurry of response efforts to ensure they reach the people most in need.'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-07/L1006320%20Barbaros%20Kayan.jpg?itok=jPF8J5wv'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'Humanitarian coordinate ina tent in Turkiye'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'During an emergency, at the request of the affected country’s Government, we coordinate the flurry of response efforts to ensure they reach the people most in need.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'Humanitarian coordinate ina tent in Turkiye'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-07/L1006320%20Barbaros%20Kayan.jpg?itok=uZesgDB2'
+  path:
+    -
+      alias: /we-coordinate
+      langcode: en
+      pathauto: 1
+  samples_status:
+    -
+      value: false
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: ''
+      format: ckeditor
+      summary: 'During an emergency, at the request of the affected country’s Government, we coordinate the flurry of response efforts to ensure they reach the people most in need.'
+  field_basic_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_children_menu:
+    -
+      value: false
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: cdaea059-0d34-422c-a98b-134f8aec6202
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698769305
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 805a3f51-99e3-43fe-8c89-a1f495cf8fd4
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698769322
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: cdaea059-0d34-422c-a98b-134f8aec6202
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>During an emergency, at the request of the affected country’s Government, we coordinate the flurry of response efforts to ensure they reach the people most in need.</p><p>Our coordination not only reduces duplication of those response efforts, but also ensures the aid delivered is predictable and prioritized according to needs.&nbsp;</p><p>We produce analyses of crisis situations that take into account needs specific to women, men, children, older people and people with disabilities. This helps us provide a comprehensive picture of overall needs. By doing so, we help the humanitarian community achieve a common understanding of the humanitarian context and develop a collective plan for the response.&nbsp;</p><p>We lead the international community''s efforts to develop a robust humanitarian architecture, with a focus on national leadership and more predictable funding tools.&nbsp;</p><p>We promote interaction between civilian and military entities in humanitarian responses, bridge gaps in environmental emergency management, and map global emergency relief stockpiles on behalf of the humanitarian community.</p><p>We promote efforts to prepare vulnerable communities, especially in disaster-prone countries, so they are less exposed to the impact of a sudden-onset emergency.&nbsp; We work with national Governments, regional bodies and other agencies to test and implement measures that help save lives in an emergency, and we provide tools such as contingency planning, hazard mapping and early warning reports.&nbsp;&nbsp;</p><p dir="ltr">We are the secretariat for critical inter-agency coordination mechanisms, such as the&nbsp;<a href="https://interagencystandingcommittee.org/">Inter-Agency Standing Committee</a>, and for rapid-response tools, such as the United Nations Disaster Assessment and Coordination system (see below), and the&nbsp;<a href="https://www.insarag.org/">International Search and Rescue Advisory Group</a>.&nbsp;</p><p dir="ltr">&nbsp;</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 73303bd0-5450-4608-b12e-8343098d05fb
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698769391
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p dir="ltr">The effective coordination of humanitarian action requires effective leadership on the ground. We provide this in the form of either Humanitarian Coordinators (HCs) or United Nations Resident Coordinators (RCs).&nbsp;</p><p dir="ltr">The primary responsibility for coordinating humanitarian assistance rests with national authorities, but when international assistance is required, the HC or the UN RC is responsible for leading and coordinating the efforts of humanitarian organizations (both UN and non-UN). They also have a role to ensure that humanitarian action is principled, timely, effective, efficient and contributes to longer-term recovery.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Humanitarian leadership'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 61e6dda2-ffac-47c1-a2c8-2bcfa1892b00
+          bundle: text_and_image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687371452
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p dir="ltr">The humanitarian cluster system is a coordination mechanism used by the UN and other humanitarian organizations to respond to crises. It is designed to organize humanitarian actors into core sectors, such as water, health and food security. The aim is to improve the efficiency and effectiveness of the response, avoid duplication, and ensure that affected people’s needs are met in a timely and appropriate manner.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Cluster system'
+          paragraph_view_mode:
+            -
+              value: default
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 2fe0dabc-6328-4301-a4a8-473a47181b46
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698773474
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_twocol_66_33
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: eb9f4a2a-4e2a-4146-8a2f-a9ec9b8b7947
+          bundle: text_and_image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687371452
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 2fe0dabc-6328-4301-a4a8-473a47181b46
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+          paragraph_view_mode:
+            -
+              value: default
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 21e33298-71fb-4757-a626-536a471089f8
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698774487
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p dir="ltr">During a sudden-onset emergency the capacity to respond can be severely stretched. Surge capacity allows for the swift deployment of coordination experts and other specialized humanitarian personnel to crises, always driven by field-based requirements.&nbsp;</p><p dir="ltr">We mobilize surge personnel from our regional offices and from surge mechanisms, including the Associates Surge Pool and the Stand-by Partnership Programme.</p><p dir="ltr">The Associates Surge Pool is managed by our Human Resources Section. The Stand-by Partnership Programme, through which external organizations provide humanitarian experts for temporary support to field offices, is managed by OCHA’s Response Support Branch/Emergency Response Section in Geneva.&nbsp;</p><p dir="ltr">Our Inter-Agency Support Branch houses&nbsp;<a href="https://interagencystandingcommittee.org/procap-and-gencap-supporting-protection-and-gender-equality-humanitarian-response?_gl=1*l5lvds*_ga*MzcxMDI3NDU3LjE2NzI3MDY3MTM.*_ga_E60ZNX2F68*MTY3Mjc3NzY3Ni40LjEuMTY3Mjc3OTgzMS41OS4wLjA.">the inter-agency Protection Standby Capacity Project (ProCap) and Gender Standby Capacity Project (GenCap)</a>. These projects are managed by OCHA in a long-standing partnership with the Norwegian Refugee Council.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Surge Capacity'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 0ed18f46-644e-4860-83cc-15748d24f6de
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698774506
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<h2 id="undac">The United Nations Disaster Assessment and Coordination&nbsp;</h2><p dir="ltr">The United Nations Disaster Assessment and Coordination (UNDAC) system is managed by OCHA. OCHA mobilizes UNDAC teams mostly in the event of a natural disaster, when a disaster-affected country requests international assistance and requires additional international coordination resources. OCHA also mobilizes UNDAC teams in complex emergencies – when there is a sudden-onset emergency or a change in the intensity of a complex emergency that may need additional coordination resources.</p><p dir="ltr">UNDAC hosts a roster of professionals who can be deployed at short notice (12-48 hours) to any location worldwide. UNDAC team members are trained to assess the needs of affected communities and to coordinate the delivery of humanitarian assistance, including food, shelter, medical care and other essential supplies. They also work with local authorities and other stakeholders to ensure the response is appropriate and effective.</p><p>Read the&nbsp;<a href="https://reliefweb.int/report/world/undac-united-nations-disaster-assessment-and-coordination-system-2022">This is UNDAC</a> brochure.</p><p>Read the UNDAC Field Handbook (7th Edition, 2018) in&nbsp;<a href="https://reliefweb.int/report/world/un-disaster-assessment-and-coordination-undac-field-handbook-7th-edition-2018">English</a>,&nbsp;and&nbsp;<a href="https://reliefweb.int/report/world/un-disaster-assessment-and-coordination-undac-field-handbook-7th-edition-2018?_gl=1*1w3mih7*_ga*MzcxMDI3NDU3LjE2NzI3MDY3MTM.*_ga_E60ZNX2F68*MTY3Mjg2NDk3MC44LjEuMTY3Mjg2NTAyOC4yLjAuMA..">Russian</a>.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: e3817871-614a-4b41-bb79-e5045df9c4b5
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698774557
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p dir="ltr">On-Site Operations Coordination Centres (OSOCC), an OCHA tool, provides a platform for the coordination of international response activities immediately following a sudden-onset emergency or a rapid change in a complex emergency.</p><p dir="ltr">OSOCC serves both as a guide — with its built-in steps for crisis response — and a physical location for on-site emergency response. Its coordination facilities and expertise can be used by other organizations and Governments when responding to emergencies.&nbsp;</p><p dir="ltr">Following a sudden-onset emergency, an OSOCC is established as soon as possible by the first arriving international urban search-and-rescue team, or by OCHA-deployed UNDAC teams. Virtual OSOCC — a real-time online coordination tool for disaster response professionals — is managed by OCHA’s Activation and Coordination Support Unit.</p><p dir="ltr">In the past decade, OSOCCs have been used during floods, hurricanes, tsunamis, and complex emergencies.</p><p dir="ltr"><strong>An OSOCC has three primary objectives:</strong></p><ul><li dir="ltr">To be a link between international responders and the affected country’s Government.</li><li dir="ltr">To provide a system to coordinate and facilitate international relief efforts at a disaster site, especially following an earthquake, where the coordination of many international urban search-and-rescue teams is critical to ensure optimal rescue efforts.</li><li dir="ltr">To provide a platform for cooperation, coordination and information management among international humanitarian agencies.</li></ul><p>For more information, visit <a href="https://vosocc.unocha.org/?_gl=1*hs76b4*_ga*MzcxMDI3NDU3LjE2NzI3MDY3MTM.*_ga_E60ZNX2F68*MTY3Mjc3NzY3Ni40LjEuMTY3Mjc4MTE0OC41OS4wLjA.">the OSOCC site</a> and&nbsp;<a href="https://reliefweb.int/report/world/site-operations-coordination-centre-osocc-guidelines-2018-enar">OSOCC Guidelines in Arabic, English and Spanish.</a></p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'On-Site Operations Coordination Centres '
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: f295f122-8326-47f9-95c7-7a09ab8eb453
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687371307
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p dir="ltr">OCHA has a number of specialized cells that are responsible for conducting assessments and analyses in the wake of a humanitarian crisis. These cells help to gather and analyse information about the impact of the disaster or conflict and the needs of affected communities. This information informs the development of response plans and strategies. These cells aim to ensure the humanitarian response is coordinated, effective and timely, and that it meets the needs of the people impacted.&nbsp;</p><p>For more information about the Assessment and Analysis Cells, read the UNDAC Field Handbook (7th Edition, 2018) in&nbsp;<a href="https://reliefweb.int/report/world/un-disaster-assessment-and-coordination-undac-field-handbook-7th-edition-2018">English</a>,&nbsp;<a href="https://reliefweb.int/report/world/equipo-de-las-naciones-unidas-para-la-evaluaci-n-y-coordinaci-n-en-casos-de-desastres-0?_gl=1*zglau3*_ga*MzcxMDI3NDU3LjE2NzI3MDY3MTM.*_ga_E60ZNX2F68*MTY3Mjg2NDk3MC44LjEuMTY3Mjg2NTAxNC4xNi4wLjA.">Spanish</a> and&nbsp;<a href="https://reliefweb.int/report/world/un-disaster-assessment-and-coordination-undac-field-handbook-7th-edition-2018?_gl=1*1w3mih7*_ga*MzcxMDI3NDU3LjE2NzI3MDY3MTM.*_ga_E60ZNX2F68*MTY3Mjg2NDk3MC44LjEuMTY3Mjg2NTAyOC4yLjAuMA..">Russian</a>.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Assessment and Analysis Cells'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 060997ec-8a02-48c1-9513-29358b0c4dfa
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698773399
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_twocol_66_33
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 028059ab-be5a-426c-a981-2ac1d87b69e7
+          bundle: text_and_image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1690327206
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 060997ec-8a02-48c1-9513-29358b0c4dfa
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>The humanitarian programme cycle (HPC) is a coordinated series of actions undertaken to help prepare for, manage and deliver humanitarian response. It consists of five elements coordinated in a seamless manner, with one step logically building on the previous and leading to the next.</p><p>Successful implementation of the humanitarian programme cycle is dependent on effective emergency preparedness, effective coordination with national/local authorities and humanitarian actors, and information management.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Humanitarian Programme Cycle: How we manage humanitarian response'
+          paragraph_view_mode:
+            -
+              value: default
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 25b8f63a-ee02-4ba8-9a17-c6108bfbda6f
+          bundle: text_and_image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1690327206
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 060997ec-8a02-48c1-9513-29358b0c4dfa
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+          paragraph_view_mode:
+            -
+              value: default
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 036d6d88-3f3b-4635-9f75-8a57b0bb6303
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1690328376
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>Needs assessment and analysis is the first step on the humanitarian programme cycle. &nbsp;It involves evaluating the urgent requirements of a crisis-stricken community. It identifies gaps in resources and services to prioritize aid allocation informing effective, efficient and responsive action plans for disaster relief.</p><p>Coordinated needs assessments, involving both humanitarian and development actors, can optimize crisis response and foster trust in humanitarian efforts. This collaboration prevents duplication, fills gaps and provides a comprehensive crisis view. Joint assessments, where data is collectively gathered, processed, and analyzed, are a crucial part of this approach.</p><p>A series of tools and guidance to support and strengthen coordinated assessments in humanitarian contexts are available, such as:</p><ul><li><a href="https://www.humanitarianresponse.info/en/programme-cycle/space/document/operational-guidance-coordinated-assessments-humanitarian-crises-0"><strong>IASC Operational Guidance for Coordinated Assessments</strong></a></li><li><a href="https://interagencystandingcommittee.org/system/files/mira_manual_2015.pdf"><strong>IASC Multi-Cluster/Sector Initial Rapid Assessment (MIRA) guidance</strong></a></li><li><a href="https://interagencystandingcommittee.org/humanitarian-programme-cycle-steering-group/humanitarian-needs-overview-and-humanitarian-response-plan-templates-2022"><strong>Humanitarian Needs Overview (HNO) template</strong></a></li><li><a href="https://www.humanitarianresponse.info/en/applications/ir"><strong>Humanitarian Indicator Registry</strong></a></li><li><a href="https://kmp.hpc.tools/km/humanitarian-dashboard"><strong>The Humanitarian Dashboard</strong></a></li><li><a href="https://www.kobotoolbox.org/"><strong>Kobo Toolbox</strong></a></li><li><a href="https://thedeep.io/"><strong>Data Entry and Exploratory Platform (DEEP)</strong></a></li><li><a href="https://www.jiaf.info/"><strong>Joint Intersectoral Analysis Framework</strong></a><br>The new version Joint and Intersectoral Analytical Framework (JIAF 2.0) sets the standards for the estimation and analysis of humanitarian needs and protection risks. Being the result of a true partnership, JIAF 2.0 is robust, transparent, impartial, replicable, comparable, and people-centered, as it considers the coexistence and intersection of different needs and how their combined effects lead to humanitarian outcomes.<br>The application of JIAF 2.0 is embedded within the Humanitarian Programme Cycle (HPC) and underpins key information in the Humanitarian Needs Overview (HNO). JIAF 2.0 was launched in July 2023 and is being implemented in most of the HPC countries.</li></ul><p>Our Needs and Response Analysis Section (NARAS) provides guidance and coordinative support to assist humanitarian actors in a reaching common understanding of the humanitarian situation and needs, and to guide the next steps of strategic planning, monitoring and resource-mobilization. NARAS also leads internal efforts to build OCHA and partners’ capacity to coordinate multi-sectoral assessments and analysis. This includes clarifying the OCHA policy on coordinated assessments, and enhancing staff capacity to coordinate assessment and analysis. Our key training tool is listed below:&nbsp;</p><p><a href="https://sites.google.com/dialoguing.org/oplg/courses/atahs"><strong>Advanced Training on Analysis in Humanitarian Settings (ATHAS) Course</strong></a></p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Needs assessment and analysis '

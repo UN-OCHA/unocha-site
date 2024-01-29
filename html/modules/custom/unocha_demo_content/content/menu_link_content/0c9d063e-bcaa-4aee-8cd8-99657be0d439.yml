@@ -1,0 +1,79 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 0c9d063e-bcaa-4aee-8cd8-99657be0d439
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    4700a71f-8912-4c76-b0c7-80848cfda2e3: menu_link_content
+    0c036e0c-d618-4894-9579-5fe14f344d6f: node
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Latin America and the Caribbean'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      target_uuid: 0c036e0c-d618-4894-9579-5fe14f344d6f
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: 0
+  expanded:
+    -
+      value: true
+  parent:
+    -
+      value: 'menu_link_content:4700a71f-8912-4c76-b0c7-80848cfda2e3'
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| OCHA'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/homepage'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  content_translation_uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  content_translation_status:
+    -
+      value: true
+  content_translation_created:
+    -
+      value: 1687122011

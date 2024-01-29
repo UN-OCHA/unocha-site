@@ -1,0 +1,79 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 4eb54038-0909-4659-9d64-4adbbe80b078
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    53ec1698-bdfa-4a23-b0ab-372fed4b9d93: menu_link_content
+    886c9761-b733-4cc8-9da4-862c56078056: node
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'This is OCHA'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      target_uuid: 886c9761-b733-4cc8-9da4-862c56078056
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: 1
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:53ec1698-bdfa-4a23-b0ab-372fed4b9d93'
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| OCHA'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/homepage'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  content_translation_uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  content_translation_status:
+    -
+      value: true
+  content_translation_created:
+    -
+      value: 1687304774

@@ -1,0 +1,135 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 0f1f0fa3-59be-4db0-a0eb-175b10902198
+  bundle: story
+  default_langcode: en
+  depends:
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+    1f38f7ac-f69d-45b4-908d-38e8721d9a20: taxonomy_term
+    97e50ef3-9e8e-41e7-aed7-06a5cf383e5d: node
+    23555742-a467-46a2-8acc-a42d1f9d83bd: node
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    e0a9a933-7026-410b-995f-f662bad1eca6: taxonomy_term
+default:
+  revision_uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  title:
+    -
+      value: 'UN relief chief underlines importance of Black Sea Initiative for global food security'
+  created:
+    -
+      value: 1689962652
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'UN relief chief underlines importance of Black Sea Initiative for global food security | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'Under-Secretary-General for Humanitarian Affairs and Emergency Relief Coordinator, Mr.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/news/un-relief-chief-underlines-importance-black-sea-initiative-global-food-security'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'Under-Secretary-General for Humanitarian Affairs and Emergency Relief Coordinator, Mr.'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-07/_LK14619%20Levent%20Kulu_0.jpg?itok=BS1bVpKS'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'Shipment of grain from Ukraine'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'Under-Secretary-General for Humanitarian Affairs and Emergency Relief Coordinator, Mr.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'Shipment of grain from Ukraine'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-07/_LK14619%20Levent%20Kulu_0.jpg?itok=6dSUM9dN'
+  path:
+    -
+      alias: /news/un-relief-chief-underlines-importance-black-sea-initiative-global-food-security
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: "<p><strong>Under-Secretary-General for Humanitarian Affairs and Emergency Relief Coordinator, Mr. Martin Griffiths’ briefing to the Security Council on Ukraine</strong></p><p>Thank you very much, Madam President.</p><p>As we have discussed in this Chamber before and on many occasions, the war in Ukraine has had a significant impact on the world, as [Under-Secretary-General for Political Affairs] Rosemary [DiCarlo] has just been outlining, far beyond the country’s borders: A world already reeling from an accumulation of shocks, of which we are all well aware.</p><p>The scale of global humanitarian needs under these circumstances is vastly outpacing the resources we have available.</p><p>Just as a reminder, in my function as an Emergency Relief Coordinator, I am responsible for the relationship and the representation of the humanitarian community to the 362 million people now in 69 countries who need humanitarian aid, a number that has never been reached anywhere near before, and an unprecedented $55 billion is required to meet the priorities within their needs. Many humanitarian plans, as we have discussed, including this week, remain severely underfunded.</p><p>So for millions of people around the world, already the margins are fine, and their capacity to withstand further shocks is limited.</p><p>Thus, Madam President, almost exactly a year ago, almost exactly a year ago to the day, we celebrated the signing of the Black Sea Initiative and the Memorandum of Understanding on Russian food and fertilizer exports.</p><p>These agreements were a decisive international response to spiraling food prices that were undermining food security around the world.</p><p>Their signing also represented something more. It was a demonstration that we could achieve together – with good will and good faith – innovative, daring solutions that put humanity above politics, even in the most extreme of circumstances, and in this case, an agreement between those two warring parties.</p><p>And in the space of 12 months of that day in Istanbul, the Black Sea Initiative has enabled the safe export of close to 33 million metric tons from Ukrainian Black Sea ports to 45 countries, aboard more than 1,000 outbound vessels. I think that’s an achievement which, even on that day in Istanbul, we could not have imagined. And it has been so because of the cooperation between the signatories to that agreement, to that historic agreement in war.</p><p>It has allowed the World Food Programme to transport more than 725,000 metric tons of wheat in support of food assistance operations in Afghanistan, Djibouti, Ethiopia, Kenya, Somalia, Sudan and Yemen, the countries now impacted by recent decisions.</p><p>And, as the Secretary-General highlighted earlier this week, the Memorandum of Understanding has also delivered concrete results over the past year, supporting increased volumes of Russian agricultural products to reach global markets.</p><p>Together, the Istanbul agreements from the 22nd of July contributed to sustained and essential reductions in global food prices, which by last month before this were more than 23 per cent below the record highs reached in March of last year.</p><p>And therefore, of course, Madam President, Monday’s confirmation that the Russian Federation was withdrawing from the Black Sea Initiative was immensely disappointing to all of us – and all of us way beyond this Chamber.</p><p>And the developments in the four days since, as Rosemary has said, have been alarming. Russian strikes against port facilities, also referred to by Rosemary, in Odesa and other Ukrainian ports are reported to have injured civilians and damaged infrastructure essential to the export of food and which were, before Monday, protected installations in those ports because they were aligned to the export of food and relevant products.</p><p>Ukrainian farmers, as we can imagine, look on at this nightly assault with great anxiety as they harvest now the crops, nurtured in the shadow of war, and protected and with a future because of the Black Sea Initiative – in spite of risks from landmines – Rosemary has spoken to that – unexploded ordnance, the damage to the dam and the flooding that was consequent upon it, damage to storage facilities, as in this week, and infrastructure – food that they are now harvesting that may no longer be able to reach the global markets that so desperately need them.</p><p>Global grain prices, as I think we all know, have spiked this week, threatening to undo the hard-won progress achieved over the past year. And this potentially threatens hunger and worse for millions of people.</p><p>Wheat and corn futures, and I’m quoting from the World Food Programme, have risen by almost 9 per cent and 8 per cent respectively, on Wednesday. Wednesday saw the largest single-day increase in wheat prices since the full-scale invasion commenced, and this is not surprising. This was predicted, and it happened.</p><p>Much of the world relies on the affordability of these staples, which is under threat yet again. Higher prices, of course, will be most acutely felt by families in developing countries already at risk, who tend to spend a much higher share of their household income on food, and we have discussed that in the context of many places of humanitarian need.</p><p>Escalatory rhetoric also threatens to further undermine the safe transportation of food through the Black Sea more broadly.</p><p>And with no access to ports or world markets, farmers may have no choice but to stop farming. In addition to the global effects, this would have an immediate impact on domestic food prices and on the economic stability of Ukraine. This, in turn, would affect food security inside Ukraine and in the region.</p><p>So the humanitarian catastrophe that continues to unfold in Ukraine – and that we have discussed before and will again – continues to reverberate around the world, and it must end.</p><p>Civilians and civilian infrastructure, as so often stated, must be respected. As the Secretary-General stated yesterday, the destruction of civilian infrastructure in Ukrainian ports, and we both referred to this, may also constitute a violation of international humanitarian law.</p><p>The bottom line is very simple: Food and fertilizer exports from Ukraine and the Russian Federation remain still today, despite recent days, of crucial importance to global food security.</p><p>The United Nations will therefore continue its engagement with all involved to ensure that Russian and Ukrainian food and fertilizer can continue to reach global markets.</p><p>Unified international support – and I hope from this Council also – is essential if these efforts of advocacy and diplomacy are to be successful.</p><p>And I want, of course, to reiterate our appreciation of the extraordinary efforts of the Government of Türkiye in support of and hosting and overseeing so much of the Black Sea Initiative.</p><p>Madam President.</p><p>A final, perhaps personal, impression: We have all been so deep in the weeds in this project for so long, and therefore this week has been a week of sadness and disappointment.</p><p>But for many of those 362 million people, it's not a matter of sadness or disappointment: It's a matter of threat to their future and the future of their children and their families. They're not sad, they're angry. They're worried, they're concerned. Some will go hungry, some will starve, many may die as a result of these decisions.</p><p>And we implore this Council and the world beyond it to help to make every effort to restore the spirit – what the Secretary-General at the time referred to as the beacon of hope – that those two agreements represented for all of us in a world of such difficulty and tragedy.</p><p>Thank you very much.</p><p><br>&nbsp;</p>"
+      format: ckeditor
+      summary: ''
+  field_country:
+    -
+      entity: 1f38f7ac-f69d-45b4-908d-38e8721d9a20
+  field_regions:
+    -
+      entity: 97e50ef3-9e8e-41e7-aed7-06a5cf383e5d
+  field_responses:
+    -
+      entity: 23555742-a467-46a2-8acc-a42d1f9d83bd
+  field_story_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_story_type:
+    -
+      entity: e0a9a933-7026-410b-995f-f662bad1eca6

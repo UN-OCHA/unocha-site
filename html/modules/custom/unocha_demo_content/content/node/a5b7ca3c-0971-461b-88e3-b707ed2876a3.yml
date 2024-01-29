@@ -1,0 +1,626 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: a5b7ca3c-0971-461b-88e3-b707ed2876a3
+  bundle: basic
+  default_langcode: en
+  depends:
+    40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9: user
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    cae06b6d-d742-4f04-af28-84eda95393c3: node
+    78dcef58-1b7c-4c2d-8b7a-a9b3623e3f42: node
+    0c64cb59-00de-4833-a4d4-1284d375eee9: node
+    c615dc92-4e30-4c6e-bc0c-ca24b3d3f088: node
+    2e604d22-bbd6-4ac3-8571-5bc9abe2f87c: node
+    0c395176-4a3c-4f17-a392-f0a85aa2abfc: node
+    038ecc1b-ddb3-4597-acab-7b20d9437307: node
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+  title:
+    -
+      value: Homepage
+  created:
+    -
+      value: 1687260653
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Homepage | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'Homepage placeholder'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/homepage'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'Homepage placeholder'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2024-01/UNI448738%20%281%29.jpg?itok=e59tBYq9'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'A little girl clutches a doll and looks up at the sky'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'Homepage placeholder'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'A little girl clutches a doll and looks up at the sky'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2024-01/UNI448738%20%281%29.jpg?itok=w4zT6VJ7'
+  path:
+    -
+      alias: /homepage
+      langcode: en
+      pathauto: 1
+  samples_status:
+    -
+      value: false
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<p>Homepage placeholder</p>'
+      format: ckeditor
+      summary: ''
+  field_basic_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_children_menu:
+    -
+      value: false
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b4f95f32-909e-450c-9259-f21dc6b01c42
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1690351665
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_twocol_66_33
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 194fb698-1229-416d-9957-b37c113b3533
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687964084
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: b4f95f32-909e-450c-9259-f21dc6b01c42
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p class="headline">Nearly 300 million people globally need humanitarian assistance and protection</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 63b1cdd1-db58-4abf-9f8d-e093667247ef
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687964084
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: b4f95f32-909e-450c-9259-f21dc6b01c42
+                  region: second
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>At the United Nations Office for the Coordination of Humanitarian Affairs (OCHA), we bring the world together to tackle humanitarian emergencies and save the lives of people caught in crises.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 72cb87f2-0c43-47dd-87df-de90722537ec
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687964041
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_threecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: d9f2874f-abf0-4cd3-817d-b987364f3d34
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687973019
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 72cb87f2-0c43-47dd-87df-de90722537ec
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>We mobilize aid, share information, support humanitarian efforts, and advocate for crisis-affected communities.</p><p><a class="read-more" href="/node/51" data-entity-type="node" data-entity-uuid="0c64cb59-00de-4833-a4d4-1284d375eee9" data-entity-substitution="canonical">Read more</a></p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'What we do'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: eb526ef4-e6a0-404a-ba91-7064592ef476
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687964279
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 72cb87f2-0c43-47dd-87df-de90722537ec
+                  region: second
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>Our presence in crisis-affected regions, combined with our expert team, allows us to rapidly respond and provide support to those in need.</p><p><a class="read-more" href="/node/71" data-entity-type="node" data-entity-uuid="f64c4736-3d3d-45a4-b53e-83005574374b" data-entity-substitution="canonical">Read more</a></p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Where we work'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: bba98de8-5575-4477-8d20-cc6a9fea87b4
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687973067
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 72cb87f2-0c43-47dd-87df-de90722537ec
+                  region: third
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>Nearly every humanitarian response is critically underfunded. Every cent counts, and saves lives. Contribute today!</p><p><a class="read-more" href="https://crisisrelief.un.org/">Read more</a></p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'How you can help'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: fb94188e-a947-45f4-b286-5fb60f2bdb2c
+          bundle: stories
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687964523
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_limit:
+            -
+              value: 4
+          field_node:
+            -
+              entity: cae06b6d-d742-4f04-af28-84eda95393c3
+            -
+              entity: 78dcef58-1b7c-4c2d-8b7a-a9b3623e3f42
+          field_title:
+            -
+              value: 'Latest news and stories'
+          paragraph_view_mode:
+            -
+              value: cards_with_featured
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: a60f20c0-b8c8-4d55-9008-49fbcf44759d
+          bundle: response_map
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687357161
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: c50f29d1-72cb-4a9e-b788-03880147348d
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687964609
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_threecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'How we respond'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: f02eea34-8f29-4938-b93f-da3cae0aba75
+          bundle: node
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687964672
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: c50f29d1-72cb-4a9e-b788-03880147348d
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_node:
+            -
+              entity: 0c64cb59-00de-4833-a4d4-1284d375eee9
+          paragraph_view_mode:
+            -
+              value: teasers
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ef781520-a2f5-478e-88b4-409413489e3c
+          bundle: node
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687973099
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: c50f29d1-72cb-4a9e-b788-03880147348d
+                  region: second
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_node:
+            -
+              entity: c615dc92-4e30-4c6e-bc0c-ca24b3d3f088
+          paragraph_view_mode:
+            -
+              value: teasers
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ba8feea6-77ff-4ed1-a83f-808b456969d3
+          bundle: node
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687973135
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: c50f29d1-72cb-4a9e-b788-03880147348d
+                  region: third
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_node:
+            -
+              entity: 2e604d22-bbd6-4ac3-8571-5bc9abe2f87c
+          paragraph_view_mode:
+            -
+              value: teasers
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b333b815-c866-4792-b097-377470b27bc0
+          bundle: node
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687964698
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: c50f29d1-72cb-4a9e-b788-03880147348d
+                  region: fourth
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_node:
+            -
+              entity: 0c395176-4a3c-4f17-a392-f0a85aa2abfc
+          paragraph_view_mode:
+            -
+              value: teasers
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b4b42c79-bfb1-4f0b-be72-c579f9a9f59d
+          bundle: node
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687973116
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: c50f29d1-72cb-4a9e-b788-03880147348d
+                  region: fifth
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_node:
+            -
+              entity: 038ecc1b-ddb3-4597-acab-7b20d9437307
+          paragraph_view_mode:
+            -
+              value: teasers

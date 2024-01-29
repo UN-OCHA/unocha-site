@@ -1,0 +1,413 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: f64c4736-3d3d-45a4-b53e-83005574374b
+  bundle: basic
+  default_langcode: en
+  depends:
+    8fa1a556-9f76-4ea2-bc75-b2d183a04af6: user
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    7f41ee99-8ce4-40b3-895c-015c28a3353e: media
+    9aaa5688-2f58-42c3-b4b7-736feea2acff: media
+default:
+  revision_uid:
+    -
+      entity: 8fa1a556-9f76-4ea2-bc75-b2d183a04af6
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  title:
+    -
+      value: Headquarters
+  created:
+    -
+      value: 1687305286
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Headquarters | OCHA'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/headquarters'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-06/Blimp%20_%20Balloon%20UN%20HQ-X3.jpg?itok=ms8nKk_q'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'A blimp flies in front of the United Nations headquarters in New York'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'A blimp flies in front of the United Nations headquarters in New York'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-06/Blimp%20_%20Balloon%20UN%20HQ-X3.jpg?itok=DMB1BWPV'
+  path:
+    -
+      alias: /headquarters
+      langcode: en
+      pathauto: 1
+  samples_status:
+    -
+      value: false
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_basic_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_children_menu:
+    -
+      value: false
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: f0e9b2a1-415c-48b0-9295-dc94cfcd8061
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698760109
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          paragraph_view_mode:
+            -
+              value: tabs
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: a908ea73-363c-44ed-87d1-f42e93348695
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698760132
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: f0e9b2a1-415c-48b0-9295-dc94cfcd8061
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>We have offices across the world in order to coordinate humanitarian responses and drive funding to those people and organizations that need it.&nbsp;</p><p>We have two headquarter locations – <strong>Geneva</strong> and <strong>New York</strong> – which act as our centres of global operations. We have two global hubs, in The Hague and in Istanbul, into which some of our core services were decentralized in 2020.</p><p>We have five regional offices which help to coordinate country-level activities. Our country offices, in 29 locations, are the engines that drive efforts around coordination, humanitarian financing, country-level advocacy and information management. Humanitarian Adviser Teams (HATs) are small OCHA presences based at the country level but which are functionally part of the regional office. They support regional and country-level humanitarian coordinators. Our liaison offices are strategically located to work with governments to assist with the flow of funding and other resources for humanitarian efforts.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: Overview
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 0ed9b278-dcb8-459b-85dd-fd91cf83f239
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698760132
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: f0e9b2a1-415c-48b0-9295-dc94cfcd8061
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>Our New York headquarters serves as the main liaison between OCHA and the UN system, including the UN Secretariat, the UN Security Council and specialized agencies, as well as Member States and other stakeholders. It plays a key role in public and private advocacy and resource mobilization efforts, and in ensuring that the perspectives and needs of the people we serve are reflected in the work of the UN and its partners.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'New York'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 43a4ba73-8328-431e-8f91-1228040b89b8
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698760132
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: f0e9b2a1-415c-48b0-9295-dc94cfcd8061
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: "<p>Our headquarters in Geneva, Switzerland, manages the coordination of humanitarian response at the global level. It provides support to OCHA's field offices across all functions and to Humanitarian Coordinators around the world. It also serves as the secretariat for the Inter-Agency Standing Committee (IASC), which OCHA chairs. The IASC is a critical inter-agency coordination mechanism that brings together different UN agencies and international NGOs. The Geneva headquarters is the main point of contact for humanitarian partners and stakeholders, including Governments, NGOs, and the International Red Cross and Red Crescent Movement.</p>"
+              format: ckeditor
+          field_title:
+            -
+              value: Geneva
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: d718afdb-1100-4508-af48-d2167e485dbf
+          bundle: text_and_image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698768627
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 7f41ee99-8ce4-40b3-895c-015c28a3353e
+          field_title:
+            -
+              value: 'OCHA 2023 PRESENCE'
+          paragraph_view_mode:
+            -
+              value: default
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: f1170683-e6dd-4090-ab65-45aaca74e51b
+          bundle: responses
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691656187
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_responses:
+            -
+              target_id: responses
+              display_id: liaison_offices
+              data: 'a:5:{s:8:"argument";N;s:5:"limit";N;s:6:"offset";N;s:5:"pager";N;s:5:"title";i:0;}'
+          field_text:
+            -
+              value: '<p>OCHA operates seven liaison offices located in regions of strategic importance to the organization and to its efforts to secure funding for humanitarian operations. These are as follows:</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Liaison offices'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ee5c9bbc-3047-44a0-af3a-33fe9223b1e3
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698760354
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_twocol_66_33
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 40b29884-da34-4219-8271-882b8b094bc4
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698760389
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: ee5c9bbc-3047-44a0-af3a-33fe9223b1e3
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<h3>Global Humanitarian Overview</h3><p>The Global Humanitarian Overview outlines the funding requirements and response plans to address the world''s most pressing humanitarian crises. It provides a strategic overview of the needs, prioritized sectors, and financial requirements to support and assist affected populations, while promoting coordination and collaboration among humanitarian actors.&nbsp;</p><p><a href="https://reliefweb.int/report/world/global-humanitarian-overview-2023-enaresfr">Read the 2023 Global Humanitarian Overview</a>.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 0c78b55d-890c-48ac-aaf6-eb7b23212e99
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698760400
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: ee5c9bbc-3047-44a0-af3a-33fe9223b1e3
+                  region: second
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 9aaa5688-2f58-42c3-b4b7-736feea2acff

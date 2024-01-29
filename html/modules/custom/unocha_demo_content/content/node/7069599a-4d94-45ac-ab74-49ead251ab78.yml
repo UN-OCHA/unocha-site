@@ -1,0 +1,965 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 7069599a-4d94-45ac-ab74-49ead251ab78
+  bundle: response
+  default_langcode: en
+  depends:
+    40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9: user
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+    af5384d9-3f44-4a09-9628-9a53ea4baae3: taxonomy_term
+    3f8e17ec-39f5-4af2-9add-1e0bb44ab27f: taxonomy_term
+    ff34642c-7718-4808-b175-a3fa849587dc: node
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+default:
+  revision_uid:
+    -
+      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  title:
+    -
+      value: Burundi
+  created:
+    -
+      value: 1687216010
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Burundi | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'The humanitarian situation in Burundi improved slightly last year, with a 21 per cent decrease in the number of people in need — from 2.3 million in 2021 to 1.8 million in 2022.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/burundi'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'The humanitarian situation in Burundi improved slightly last year, with a 21 per cent decrease in the number of people in need — from 2.3 million in 2021 to 1.8 million in 2022.'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-06/20221103-A7R02420.jpg?itok=P9-yIeWE'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'A woman looks into the camera'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'The humanitarian situation in Burundi improved slightly last year, with a 21 per cent decrease in the number of people in need — from 2.3 million in 2021 to 1.8 million in 2022.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'A woman looks into the camera'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-06/20221103-A7R02420.jpg?itok=RncAoPuK'
+  path:
+    -
+      alias: /burundi
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: ''
+      format: ckeditor
+      summary: 'The humanitarian situation in Burundi improved slightly last year, with a 21 per cent decrease in the number of people in need — from 2.3 million in 2021 to 1.8 million in 2022.'
+  field_active_response:
+    -
+      value: false
+  field_country:
+    -
+      entity: af5384d9-3f44-4a09-9628-9a53ea4baae3
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: f977a0f0-9a78-4b39-9c4c-50eae7d28cd9
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645199
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          paragraph_view_mode:
+            -
+              value: tabs
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b4299eac-adcd-486a-896a-948c5a1097ed
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645206
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: f977a0f0-9a78-4b39-9c4c-50eae7d28cd9
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: Overview
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 4777b4e1-2e47-4920-89a8-9c3ecd165abf
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645219
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: b4299eac-adcd-486a-896a-948c5a1097ed
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>The humanitarian situation in Burundi improved slightly last year, with a 21 per cent decrease in the number of people in need — from 2.3 million in 2021 to 1.8 million in 2022. However, people remain vulnerable due to natural hazards, inflation and the socioeconomic consequences of the COVID-19 pandemic. There is a significant number of internally displaced persons (IDPs) and returnees who lack access to basic services and limited assistance, which increases their vulnerability to exploitation and gender-based violence. The lack of durable solutions is also making it harder to prevent future displacement.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 57e61b85-e302-4b87-9398-fb4e8513c344
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645225
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: f977a0f0-9a78-4b39-9c4c-50eae7d28cd9
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Projected situation'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: e1184fef-87d6-4cae-a164-6f3afdacd167
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645243
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 57e61b85-e302-4b87-9398-fb4e8513c344
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p dir="ltr">People in Burundi will need our support in 2023, particularly in terms of food and nutrition due to recurring extreme weather events, epidemics, the pandemic’s socioeconomic impacts, rising prices and shortages of basic commodities.&nbsp;</p><p dir="ltr">Extreme weather events will force more people to become displaced within the country, and returnees, refugees and asylum-seekers will continue to arrive from insecure areas of the Democratic Republic of the Congo.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 9f14d043-efee-45c0-a3df-bca2784126e0
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645337
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: f977a0f0-9a78-4b39-9c4c-50eae7d28cd9
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Response priorities'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 4ebecb6d-251a-4d99-9d79-d30cc6cbf226
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645349
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 9f14d043-efee-45c0-a3df-bca2784126e0
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p dir="ltr">In 2023, our response will focus on meeting the needs of 1.1 million vulnerable people with food and other essential items, such as shelter, access to basic social services, and protection through in-kind and cash assistance. We will prioritize those who are food insecure, returnees and people affected by extreme weather events, including IDPs and people affected by or at risk of epidemics. The priority areas will be in Burundi’s northern, eastern and western provinces.&nbsp;</p><p dir="ltr">To increase affected people’s resilience to climate shocks, humanitarian assistance will be closely linked to national programmes supported by local and international development partners.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 3a3442d6-7d2d-4714-8a31-90cd8585a28f
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645364
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Overview of the humanitarian response in Burundi'
+          paragraph_view_mode:
+            -
+              value: tabs
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: df543c4b-1c37-497c-af7f-5b0e2a05f44f
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645380
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 3a3442d6-7d2d-4714-8a31-90cd8585a28f
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Humanitarian Needs Overview'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 461c52e2-5bfb-4bd5-9fda-54642221a79f
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645464
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: df543c4b-1c37-497c-af7f-5b0e2a05f44f
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: Population
+              value: '13462727.00'
+              unit: ''
+              provider: fts
+              id: fts_bdi_2023_1148_population
+              country: bdi
+              year: '2'
+            -
+              label: 'People in Need'
+              value: '1500000.00'
+              unit: ''
+              provider: rw_crisis
+              id: rw_crisis_bdi_2023_people-in-need
+              country: bdi
+              year: '2'
+            -
+              label: IDPs
+              value: '73586.00'
+              unit: ''
+              provider: rw_crisis
+              id: rw_crisis_bdi_2023_idps
+              country: bdi
+              year: '2'
+          field_reliefweb_document:
+            -
+              url: 'https://reliefweb.int/report/burundi/burundi-aper-u-des-besoins-humanitaires-2022-f-vrier-2022'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 5ad6d72b-e337-4b51-9b89-60d0b27cd313
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645512
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 3a3442d6-7d2d-4714-8a31-90cd8585a28f
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Humanitarian Response Plan'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 8919f901-5fed-470f-9952-f409f156bd75
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645567
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 5ad6d72b-e337-4b51-9b89-60d0b27cd313
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: 'People in Need'
+              value: '1500000.00'
+              unit: ''
+              provider: rw_crisis
+              id: rw_crisis_bdi_2023_people-in-need
+              country: bdi
+              year: '2'
+            -
+              label: 'People Targeted for Assistance'
+              value: '1100000.00'
+              unit: ''
+              provider: rw_crisis
+              id: rw_crisis_bdi_2023_people-targeted-for-assistance
+              country: bdi
+              year: '2'
+            -
+              label: 'Total requirements'
+              value: '194245176.00'
+              unit: USD
+              provider: fts
+              id: fts_bdi_2023_1148_total-requirements
+              country: bdi
+              year: '2'
+          field_reliefweb_document:
+            -
+              url: 'https://reliefweb.int/report/burundi/burundi-besoins-et-plan-de-reponse-humanitaire-2023-mars-2023'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 1a0ee2e1-444c-4c94-b94e-f2f38a0560c5
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645616
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_country_donors:
+            -
+              label: 'Top donors'
+              value: 'United States of America, Japan, Germany, Central Emergency Response Fund, European Commission, Burundi, France, Private (individuals & organizations), Korea, Republic of, Denmark'
+              unit: ''
+              provider: fts
+              id: fts_bdi_2023_1148_top-donors
+              country: bdi
+              year: '2'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: bd7f7eab-cbb0-43aa-9d66-de1c3c3fb843
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645647
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_country_donors:
+            -
+              label: 'Top sectors'
+              value: 'Sécurité alimentaire, Réponse aux Réfugiés, Nutrition, Réponse aux Rapatriés, Santé, Protection, Abris / Articles Non-Alimentaires, Education, Coordination, Eau, Hygiène et Assainissement'
+              unit: ''
+              provider: fts
+              id: fts_bdi_2023_1148_top-sectors
+              country: bdi
+              year: '2'
+          field_url:
+            -
+              uri: 'https://fts.unocha.org/appeals/1148/summary'
+              title: 'Find out more about the response and its funding at OCHA’s Financial Tracking Service'
+              options: {  }
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: d503a8d3-7ba8-445e-a80e-9ab2e2594a0c
+          bundle: stories
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645657
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_limit:
+            -
+              value: 3
+          field_title:
+            -
+              value: 'Latest News and Stories'
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 6999ac8a-04e8-44e1-902e-710ef07ed2db
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645677
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_twocol_sidebar
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 6471094e-e431-415c-a3b9-54900ca4cdf9
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645706
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 6999ac8a-04e8-44e1-902e-710ef07ed2db
+                  region: first
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%21%28F10%29_%28PC47%29_%28C47%29&search=_exists_%3Aocha_product'
+              title: ''
+              limit: 4
+          field_title:
+            -
+              value: Resources
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: a29b0cf6-9b1f-43bb-a3d1-165bcde71b09
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645723
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 6999ac8a-04e8-44e1-902e-710ef07ed2db
+                  region: second
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28PC47%29_%28S1503%29_%28F10%29'
+              title: ''
+              limit: 2
+          paragraph_view_mode:
+            -
+              value: teasers
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 75e02f41-5c57-48c1-89a9-31a26888b832
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645811
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: 'Total requirements'
+              value: '1166568.00'
+              unit: USD
+              provider: oct
+              id: oct_bdi_2023_2279_total-requirements
+              country: bdi
+              year: '2'
+            -
+              label: 'Opening balance'
+              value: '26332.00'
+              unit: USD
+              provider: oct
+              id: oct_bdi_2023_2279_opening-balance
+              country: bdi
+              year: '2'
+            -
+              label: 'Earmarked funding'
+              value: '1066124.00'
+              unit: USD
+              provider: oct
+              id: oct_bdi_2023_2279_earmarked-funding
+              country: bdi
+              year: '2'
+            -
+              label: Total
+              value: '1066124.00'
+              unit: USD
+              provider: oct
+              id: oct_bdi_2023_2279_total
+              country: bdi
+              year: '2'
+          field_title:
+            -
+              value: 'Funding for OCHA Burundi'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: c77ed09d-cef8-4148-a3b5-1ffe72ba75a1
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645829
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_country_donors:
+            -
+              label: 'Earmarked donors'
+              value: 'Germany, European Commission, Sweden'
+              unit: ''
+              provider: oct
+              id: oct_bdi_2023_2279_earmarked-donors
+              country: bdi
+              year: '2'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: a1b9f84c-86b4-44b9-ab86-c6208b867391
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687645845
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_country_donors:
+            -
+              label: 'Unearmarked donors'
+              value: 'Australia,  Belgium,  Canada,  Denmark,  Estonia,  Finland,  France,  Germany,  Iceland, Ireland,  Japan,  Luxembourg,  Monaco,  Netherlands, New Zealand,  Norway,  Russian Federation,  South Africa, Sweden, Switzerland, United Kingdom'
+              unit: ''
+              provider: oct
+              id: oct_bdi_2023_2279_unearmarked-donors
+              country: bdi
+              year: '2'
+  field_has_response:
+    -
+      value: true
+  field_office_type:
+    -
+      entity: 3f8e17ec-39f5-4af2-9add-1e0bb44ab27f
+  field_region:
+    -
+      entity: ff34642c-7718-4808-b175-a3fa849587dc
+  field_response_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_response_link:
+    -
+      uri: 'https://crisisrelief.un.org/crises'
+      title: 'Support our work'
+      options: {  }

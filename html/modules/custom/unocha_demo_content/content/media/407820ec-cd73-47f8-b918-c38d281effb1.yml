@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 407820ec-cd73-47f8-b918-c38d281effb1
+  bundle: video
+  default_langcode: en
+  depends:
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  name:
+    -
+      value: 'This Is OCHA'
+  created:
+    -
+      value: 1687380014
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| OCHA'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/homepage'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_media_oembed_video:
+    -
+      value: 'https://youtu.be/6n_veh46IiM'

@@ -1,0 +1,351 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: eef67247-3ed2-4bf6-9237-66282ab70e4d
+  bundle: basic
+  default_langcode: en
+  depends:
+    40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9: user
+default:
+  revision_uid:
+    -
+      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+  title:
+    -
+      value: 'Demo - content lists'
+  created:
+    -
+      value: 1691665287
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Demo - content lists | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'This is a demo page displaying paragraph types of content lists.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/demo/content-lists'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'This is a demo page displaying paragraph types of content lists.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'This is a demo page displaying paragraph types of content lists.'
+  path:
+    -
+      alias: /demo/content-lists
+      langcode: en
+      pathauto: 0
+  samples_status:
+    -
+      value: true
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<p>This is a <strong>demo page</strong> displaying paragraph types of content lists.</p>'
+      format: ckeditor
+      summary: ''
+  field_children_menu:
+    -
+      value: false
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 12206c75-bd12-4be0-abe1-3133170e3b31
+          bundle: events
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665342
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_events:
+            -
+              target_id: events
+              display_id: upcoming_events
+              data: 'a:5:{s:8:"argument";N;s:5:"limit";s:0:"";s:6:"offset";N;s:5:"pager";s:4:"none";s:5:"title";N;}'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b762160d-f1ea-4335-8c48-4d8f6eced0b5
+          bundle: events
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665342
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_events:
+            -
+              target_id: events
+              display_id: past_events
+              data: 'a:5:{s:8:"argument";N;s:5:"limit";s:1:"3";s:6:"offset";N;s:5:"pager";s:4:"full";s:5:"title";N;}'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 7ba2b180-648a-40db-bc8a-2be617a347dc
+          bundle: media_centre
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665401
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_media_centre_list:
+            -
+              target_id: media_centre
+              display_id: media_centre
+              data: 'a:5:{s:8:"argument";N;s:5:"limit";N;s:6:"offset";N;s:5:"pager";N;s:5:"title";N;}'
+          field_title:
+            -
+              value: 'Media centre'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b5c9cda2-ef4c-4c80-8134-767da73da06a
+          bundle: regions
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665421
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_regions:
+            -
+              target_id: regions
+              display_id: regions
+              data: 'a:5:{s:8:"argument";N;s:5:"limit";N;s:6:"offset";N;s:5:"pager";N;s:5:"title";i:1;}'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 266dd6db-dc11-4d78-95a7-31884e37e49e
+          bundle: responses
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665463
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_responses:
+            -
+              target_id: responses
+              display_id: liaison_offices
+              data: 'a:5:{s:8:"argument";N;s:5:"limit";N;s:6:"offset";N;s:5:"pager";N;s:5:"title";i:1;}'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: e25e3ce8-5dbb-4fb1-ac82-c9ab4bc87359
+          bundle: responses
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665497
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_responses:
+            -
+              target_id: responses
+              display_id: priority_responses
+              data: 'a:5:{s:8:"argument";N;s:5:"limit";N;s:6:"offset";N;s:5:"pager";N;s:5:"title";i:1;}'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 5c0824a8-f23d-46b0-a4fb-c7421d2b5900
+          bundle: news_and_stories
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665552
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_news_and_stories_list:
+            -
+              target_id: stories
+              display_id: block_3
+              data: 'a:5:{s:8:"argument";N;s:5:"limit";N;s:6:"offset";N;s:5:"pager";N;s:5:"title";N;}'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 8b84f637-1b0c-4a3f-9f08-2235e3fb3bef
+          bundle: responses
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665595
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_responses:
+            -
+              target_id: responses
+              display_id: responses
+              data: 'a:5:{s:8:"argument";N;s:5:"limit";N;s:6:"offset";N;s:5:"pager";N;s:5:"title";i:1;}'

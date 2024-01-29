@@ -1,0 +1,1255 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: a7607ee6-5545-401c-888f-718df996d34b
+  bundle: response
+  default_langcode: en
+  depends:
+    8fa1a556-9f76-4ea2-bc75-b2d183a04af6: user
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+    f14b7469-61a1-4991-abf5-7797a4cb78b3: taxonomy_term
+    3f8e17ec-39f5-4af2-9add-1e0bb44ab27f: taxonomy_term
+    0c5ef5ad-e9b4-4e39-9258-adcdf1b69c0d: node
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+default:
+  revision_uid:
+    -
+      entity: 8fa1a556-9f76-4ea2-bc75-b2d183a04af6
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  title:
+    -
+      value: 'Burkina Faso'
+  created:
+    -
+      value: 1687215872
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Burkina Faso | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'Burkina Faso continues to face the worst humanitarian crisis in its history, with one in four Burkinabè now in need of humanitarian assistance.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/burkina-faso'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'Burkina Faso continues to face the worst humanitarian crisis in its history, with one in four Burkinabè now in need of humanitarian assistance.'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-06/Burkina_Kaya_MCattani%2051.jpg?itok=XcnSbo0P'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'A woman smiling in her fields'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'Burkina Faso continues to face the worst humanitarian crisis in its history, with one in four Burkinabè now in need of humanitarian assistance.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'A woman smiling in her fields'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-06/Burkina_Kaya_MCattani%2051.jpg?itok=MWj2rogr'
+  path:
+    -
+      alias: /burkina-faso
+      langcode: en
+      pathauto: 1
+  samples_status:
+    -
+      value: false
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: ''
+      format: ckeditor
+      summary: 'Burkina Faso continues to face the worst humanitarian crisis in its history, with one in four Burkinabè now in need of humanitarian assistance. '
+  field_active_response:
+    -
+      value: false
+  field_country:
+    -
+      entity: f14b7469-61a1-4991-abf5-7797a4cb78b3
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 7f5973fa-f082-4308-9536-cd5c0469f07b
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687641718
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          paragraph_view_mode:
+            -
+              value: tabs
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 943d0c84-a8d2-4ad0-a6a2-be47014b0b03
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687641726
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 7f5973fa-f082-4308-9536-cd5c0469f07b
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: Overview
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 73fbf374-3436-4a7e-b628-d463fe87d679
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687641747
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 943d0c84-a8d2-4ad0-a6a2-be47014b0b03
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p dir="ltr">Burkina Faso continues to face the worst humanitarian crisis in its history, with one in four Burkinabè now in need of humanitarian assistance. The impact of the country’s multidimensional crisis and political instability on the most vulnerable people has deepened over the past 12 months, including for some 840,000 people living in areas cut off from the rest of the country by non-State armed groups. Their access to basic commodities and services, fields, grazing areas and assistance is now increasingly limited.&nbsp;</p><p dir="ltr">Some of these cut-off areas have crossed the emergency thresholds for food and nutritional insecurity. More than 1.76 million people have been internally displaced, many of whom depend heavily on humanitarian assistance.&nbsp;</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 1cc7d93c-cbe8-40f2-bd1f-71919374fa80
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687641756
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 7f5973fa-f082-4308-9536-cd5c0469f07b
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Projected situation'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 7efafe50-0fa6-4dd6-a108-1569b2e9f99f
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687641776
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 1cc7d93c-cbe8-40f2-bd1f-71919374fa80
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p dir="ltr">In 2023, we will maintain our focus on directing humanitarian assistance to the most vulnerable people in the hardest-to-reach areas.&nbsp;</p><p dir="ltr">A total of 4.65 million people need humanitarian assistance — a 37 per cent increase from 2022.&nbsp;</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 8fbe3676-e2d8-4f7e-ad3d-c2e9fed27c85
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687641880
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 7f5973fa-f082-4308-9536-cd5c0469f07b
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Response priorities'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: e463629f-d2c8-4e48-9440-4c1f64d234b6
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687641894
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 8fbe3676-e2d8-4f7e-ad3d-c2e9fed27c85
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p dir="ltr">The Humanitarian Response Plan prioritizes 3.1 million people experiencing the most acute and urgent needs and calls for US$877 million for prioritized assistance based on needs and vulnerabilities. However, while emergency support has helped to mitigate the impact of the crisis, there is a growing concern of rising morbidity and mortality rates among people and livestock in the most insecure areas.</p><p dir="ltr">The situation in Burkina Faso remains highly volatile, and while humanitarian assistance had limited positive impacts on people in 2022, they were partial and temporary. To protect the progress achieved through emergency assistance, the humanitarian and development communities must prioritize joint efforts to support people in more accessible areas.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 623b6df2-7657-481e-aaf2-bdb65b5b40a5
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687641907
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p><strong>For a full overview of the humanitarian response, visit </strong><a href="https://humanitarianaction.info/plan/1179"><strong>humanitarianaction.info</strong></a></p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Overview of the humanitarian response in Burkina Faso'
+          paragraph_view_mode:
+            -
+              value: tabs
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 3b5c6ef3-f98d-49ac-ad58-4bf1aaaaef4d
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687641941
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 623b6df2-7657-481e-aaf2-bdb65b5b40a5
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Humanitarian Needs Overview'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 4d9a99b5-3693-4ad9-b417-f22253c945ce
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687642016
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 3b5c6ef3-f98d-49ac-ad58-4bf1aaaaef4d
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: Population
+              value: '22100000.00'
+              unit: ''
+              provider: fts
+              id: fts_bfa_2023_1112_population
+              country: bfa
+              year: '2'
+            -
+              label: 'People in Need'
+              value: '3650000.00'
+              unit: ''
+              provider: rw_crisis
+              id: rw_crisis_bfa_2023_people-in-need
+              country: bfa
+              year: '2'
+            -
+              label: IDPs
+              value: '1999127.00'
+              unit: ''
+              provider: rw_crisis
+              id: rw_crisis_bfa_2023_idps
+              country: bfa
+              year: '2'
+          field_reliefweb_document:
+            -
+              url: 'https://reliefweb.int/report/burkina-faso/burkina-faso-apercu-des-besoins-humanitaires-2023-mars-2023'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ca79dbea-2b41-4bb6-be86-75f8a84830db
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687642081
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 623b6df2-7657-481e-aaf2-bdb65b5b40a5
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Humanitarian Response Plan'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 99e3a7ba-70d9-4a15-a787-199514b2c64f
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687642149
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: ca79dbea-2b41-4bb6-be86-75f8a84830db
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: 'People in Need'
+              value: '3650000.00'
+              unit: ''
+              provider: rw_crisis
+              id: rw_crisis_bfa_2023_people-in-need
+              country: bfa
+              year: '2'
+            -
+              label: 'People Targeted for Assistance'
+              value: '3100000.00'
+              unit: ''
+              provider: rw_crisis
+              id: rw_crisis_bfa_2023_people-targeted-for-assistance
+              country: bfa
+              year: '2'
+            -
+              label: 'Total requirements'
+              value: '876731475.00'
+              unit: USD
+              provider: fts
+              id: fts_bfa_2023_1112_total-requirements
+              country: bfa
+              year: '2'
+          field_reliefweb_document:
+            -
+              url: 'https://reliefweb.int/report/burkina-faso/burkina-faso-plan-de-reponse-humanitaire-2023-mars-2023'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 54761ff0-8bb2-4b06-9977-125d5accdeac
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687642209
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 623b6df2-7657-481e-aaf2-bdb65b5b40a5
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Funding update'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 27bdfbee-d166-4c9e-96df-b0c54b59be4d
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687642285
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 54761ff0-8bb2-4b06-9977-125d5accdeac
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: 'Total requirements'
+              value: '876731475.00'
+              unit: USD
+              provider: fts
+              id: fts_bfa_2023_1112_total-requirements
+              country: bfa
+              year: '2'
+            -
+              label: 'Funding total'
+              value: '197645609.00'
+              unit: USD
+              provider: fts
+              id: fts_bfa_2023_1112_funding-total
+              country: bfa
+              year: '2'
+            -
+              label: 'Funding gap'
+              value: '679085866.00'
+              unit: USD
+              provider: fts
+              id: fts_bfa_2023_1112_funding-gap
+              country: bfa
+              year: '2'
+            -
+              label: 'Funding coverage'
+              value: '22.54'
+              unit: '%'
+              provider: fts
+              id: fts_bfa_2023_1112_funding-coverage
+              country: bfa
+              year: '2'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: dc815609-7966-42e4-af1c-0dfadf2db610
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687642306
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_country_donors:
+            -
+              label: 'Top donors'
+              value: 'United States of America, European Commission, Germany, Central Emergency Response Fund, France, Japan, Netherlands, Sweden, Norway, Belgium'
+              unit: ''
+              provider: fts
+              id: fts_bfa_2023_1112_top-donors
+              country: bfa
+              year: '2'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: df046f2e-842e-467e-8731-02cce761d8e8
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687642342
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_country_donors:
+            -
+              label: 'Top sectors'
+              value: 'Sécurité alimentaire, Not specified, Protection, Nutrition, Santé, Logistique, Réponse aux Réfugiés, Eau, Hygiène et Assainissement, Abris/AME, Education'
+              unit: ''
+              provider: fts
+              id: fts_bfa_2023_1112_top-sectors
+              country: bfa
+              year: '2'
+          field_url:
+            -
+              uri: 'https://fts.unocha.org/appeals/1112/summary'
+              title: 'Find out more about the response and its funding at OCHA’s Financial Tracking Service'
+              options: {  }
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: afc7cecf-0cca-4eea-85ac-d3c9f0d3d3ee
+          bundle: stories
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687642353
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_limit:
+            -
+              value: 3
+          field_title:
+            -
+              value: 'Latest News and Stories'
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 5a82ffe4-da11-45e2-a47b-b149ed29f909
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687642364
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'The Regional Humanitarian Fund for West and Central Africa (Burkina Faso)'
+          paragraph_view_mode:
+            -
+              value: tabs
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 1587949c-9478-457c-8b09-780d163b79c7
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687642382
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 5a82ffe4-da11-45e2-a47b-b149ed29f909
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: '2023 funding status'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 60fe0303-d587-4c22-9dfa-d85bec651e80
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687642429
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 1587949c-9478-457c-8b09-780d163b79c7
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: 'Pledged amount'
+              value: '17475326.20'
+              unit: USD
+              provider: cbpf
+              id: cbpf_bfa_2023_pledged-amount
+              country: bfa
+              year: '2'
+            -
+              label: 'Paid amount'
+              value: '17332715.31'
+              unit: USD
+              provider: cbpf
+              id: cbpf_bfa_2023_paid-amount
+              country: bfa
+              year: '2'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: a2468fe2-abff-4ef8-8719-0564597253c5
+          bundle: resources
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687642440
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 5a82ffe4-da11-45e2-a47b-b149ed29f909
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: Resources
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: a6975929-54aa-487f-9679-7cf245451b5d
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687642461
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_country_donors:
+            -
+              label: 'Top donors'
+              value: 'Netherlands, Belgium, Germany, Canada, Norway, France, Luxembourg'
+              unit: ''
+              provider: cbpf
+              id: cbpf_bfa_2023_top-donors
+              country: bfa
+              year: '2'
+          field_url:
+            -
+              uri: 'https://cbpf.data.unocha.org'
+              title: 'Find out more about this country-based pooled fund at the CBPF Data Hub'
+              options: {  }
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 586a572c-91bc-444e-8ec9-a51c5ea76274
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687642474
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_twocol_sidebar
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 5b00e141-7240-42ab-9f8d-e87587e03fd9
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687642481
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 586a572c-91bc-444e-8ec9-a51c5ea76274
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%21%28F10%29_%28PC46%29_%28C46%29&search=_exists_%3Aocha_product'
+              title: ''
+              limit: 4
+          field_title:
+            -
+              value: Resources
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 4dded70a-9bef-4e81-b64d-2da3571f94df
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687642510
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 586a572c-91bc-444e-8ec9-a51c5ea76274
+                  region: second
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28PC46%29_%28S1503%29_%28F10%29'
+              title: ''
+              limit: 2
+          paragraph_view_mode:
+            -
+              value: teasers
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 4fff26e1-7aad-4794-b043-bd66d177be66
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687642595
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: 'Total requirements'
+              value: '5074147.00'
+              unit: USD
+              provider: oct
+              id: oct_bfa_2023_2182_total-requirements
+              country: bfa
+              year: '2'
+            -
+              label: 'Opening balance'
+              value: '30945.00'
+              unit: USD
+              provider: oct
+              id: oct_bfa_2023_2182_opening-balance
+              country: bfa
+              year: '2'
+            -
+              label: 'Earmarked funding'
+              value: '1693184.00'
+              unit: USD
+              provider: oct
+              id: oct_bfa_2023_2182_earmarked-funding
+              country: bfa
+              year: '2'
+            -
+              label: Total
+              value: '1693184.00'
+              unit: USD
+              provider: oct
+              id: oct_bfa_2023_2182_total
+              country: bfa
+              year: '2'
+          field_title:
+            -
+              value: 'Funding for OCHA Burkina Faso'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 3f8392a4-38ce-4e34-8434-2a0d95c71927
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687642612
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_country_donors:
+            -
+              label: 'Earmarked donors'
+              value: 'Germany, European Commission, Sweden, Canada'
+              unit: ''
+              provider: oct
+              id: oct_bfa_2023_2182_earmarked-donors
+              country: bfa
+              year: '2'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 6409e9dd-b248-401d-a472-1d0459529fc2
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687642623
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_country_donors:
+            -
+              label: 'Unearmarked donors'
+              value: 'Australia,  Belgium,  Canada,  Denmark,  Estonia,  Finland,  France,  Germany,  Iceland, Ireland,  Japan,  Luxembourg,  Monaco,  Netherlands, New Zealand,  Norway,  Russian Federation,  South Africa, Sweden, Switzerland, United Kingdom'
+              unit: ''
+              provider: oct
+              id: oct_bfa_2023_2182_unearmarked-donors
+              country: bfa
+              year: '2'
+  field_has_response:
+    -
+      value: true
+  field_office_type:
+    -
+      entity: 3f8e17ec-39f5-4af2-9add-1e0bb44ab27f
+  field_region:
+    -
+      entity: 0c5ef5ad-e9b4-4e39-9258-adcdf1b69c0d
+  field_response_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_response_link:
+    -
+      uri: 'https://crisisrelief.un.org/crises'
+      title: 'Support our work'
+      options: {  }

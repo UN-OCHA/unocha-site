@@ -49,13 +49,13 @@ services:
       - "../phpcs.xml:/srv/www/phpcs.xml:ro"
       - "../phpunit.xml:/srv/www/phpunit.xml:ro"
       # Mount local custom code.
-      #- "../html/modules/custom:/srv/www/html/modules/custom:ro"
-      #- "../html/themes/custom:/srv/www/html/themes/custom:ro"
+      - "../html/modules/custom:/srv/www/html/modules/custom:ro"
+      - "../html/themes/custom:/srv/www/html/themes/custom:ro"
     environment:
       - TERM=xterm
       - ENVIRONMENT=dev
-      - NGINX_SERVERNAME=unocha-test-site,localhost,127.0.0.1
-      - NGINX_OVERRIDE_PROTOCOL=HTTP,unocha-test-site,localhost,127.0.0.1
+      - NGINX_SERVERNAME=unocha-test-site,localhost,127.0.0.1,127.0.0.1:8080
+      - NGINX_OVERRIDE_PROTOCOL=HTTP,unocha-test-site,localhost,127.0.0.1,127.0.0.1:8080
       - DRUSH_OPTIONS_URI=http://unocha-test-site
       - DRUPAL_DB_DATABASE=unocha
       - DRUPAL_DB_USERNAME=unocha
@@ -69,3 +69,6 @@ services:
       - DTT_BASE_URL=http://127.0.0.1
     networks:
       - default
+    ports:
+      - 127.0.0.1:8080:80
+

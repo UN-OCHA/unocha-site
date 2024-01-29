@@ -1,0 +1,79 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 7e4cd756-bee8-471b-b8fe-7f85e6671c45
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    4700a71f-8912-4c76-b0c7-80848cfda2e3: menu_link_content
+    ff34642c-7718-4808-b175-a3fa849587dc: node
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Southern and Eastern Africa'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      target_uuid: ff34642c-7718-4808-b175-a3fa849587dc
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: 0
+  expanded:
+    -
+      value: true
+  parent:
+    -
+      value: 'menu_link_content:4700a71f-8912-4c76-b0c7-80848cfda2e3'
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| OCHA'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/homepage'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  content_translation_uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  content_translation_status:
+    -
+      value: true
+  content_translation_created:
+    -
+      value: 1687206651

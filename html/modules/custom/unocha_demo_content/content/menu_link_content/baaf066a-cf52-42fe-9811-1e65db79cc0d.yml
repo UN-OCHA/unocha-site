@@ -1,0 +1,74 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: baaf066a-cf52-42fe-9811-1e65db79cc0d
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    c615dc92-4e30-4c6e-bc0c-ca24b3d3f088: node
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: Campaigns
+  menu_name:
+    -
+      value: take-action
+  link:
+    -
+      target_uuid: c615dc92-4e30-4c6e-bc0c-ca24b3d3f088
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: -49
+  expanded:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| OCHA'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/homepage'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  content_translation_uid:
+    -
+      target_id: 1
+  content_translation_status:
+    -
+      value: true
+  content_translation_created:
+    -
+      value: 1687345054
