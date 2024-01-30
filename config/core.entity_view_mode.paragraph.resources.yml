@@ -1,0 +1,11 @@
+uuid: 887c3bbb-090a-47e2-b71d-38b1cd452d9c
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.resources
+label: 'Resources, cards in three column'
+description: ''
+targetEntityType: paragraph
+cache: true

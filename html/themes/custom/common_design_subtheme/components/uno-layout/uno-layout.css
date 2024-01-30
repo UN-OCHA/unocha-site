@@ -152,3 +152,11 @@
   padding: 2rem;
   background-color: var(--brand-grey);
 }
+
+/* Top margin ensures the sidebar content starts below the Layout's title */
+@media screen and (min-width: 1024px) {
+  .layout--twocol-sidebar .cd-layout__sidebar--wide {
+    flex-basis: 33%;
+    margin-top: 4.25rem; /* The height of the main column's title */
+  }
+}

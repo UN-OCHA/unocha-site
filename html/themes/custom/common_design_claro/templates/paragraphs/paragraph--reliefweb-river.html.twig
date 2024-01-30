@@ -1,1 +1,4 @@
-{% include '@common_design_subtheme/paragraphs/paragraph--reliefweb-river.html.twig' %}
+{% include '@common_design_subtheme/paragraphs/paragraph--reliefweb-river.html.twig' with {
+    'attributes': attributes.addClass('paragraph--view-mode--' ~ paragraph.paragraph_view_mode.value)
+  }
+%}
