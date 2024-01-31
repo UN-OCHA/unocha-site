@@ -1,0 +1,144 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 5a277e21-c3de-4495-ad8e-e2ad5701ede8
+  bundle: story
+  default_langcode: en
+  depends:
+    921f814b-f86f-47d4-b5b0-e2da08d3980e: user
+    1f38f7ac-f69d-45b4-908d-38e8721d9a20: taxonomy_term
+    6dfc9cf6-da4f-41d7-ac3d-ef0dd36fc067: node
+    7271742a-a494-41f5-bae9-aec8611181f8: node
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    e0a9a933-7026-410b-995f-f662bad1eca6: taxonomy_term
+default:
+  revision_uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  title:
+    -
+      value: 'Libya Humanitarian Coordinator: “Tragedy serves as an opportunity to bring the country together”'
+  created:
+    -
+      value: 1695137374
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Libya Humanitarian Coordinator: “Tragedy serves as an opportunity to bring the country together” | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: "\_ Opening Remarks at the Noon Briefing by Georgette Gagnon, Resident and Humanitarian Coordinator for Libya"
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/news/libya-humanitarian-coordinator-tragedy-serves-opportunity-bring-country-together'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: "\_ Opening Remarks at the Noon Briefing by Georgette Gagnon, Resident and Humanitarian Coordinator for Libya"
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-09/Libya%20HC_1.jpg?itok=iEfVacSc'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'A group of people stand near a vehicle amid ruins.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: "\_ Opening Remarks at the Noon Briefing by Georgette Gagnon, Resident and Humanitarian Coordinator for Libya"
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'A group of people stand near a vehicle amid ruins.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-09/Libya%20HC_1.jpg?itok=NIqOqmbH'
+  path:
+    -
+      alias: /news/libya-humanitarian-coordinator-tragedy-serves-opportunity-bring-country-together
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<p>&nbsp;</p><p><strong>Opening Remarks at the Noon Briefing by Georgette Gagnon, Resident and Humanitarian Coordinator for Libya</strong></p><p>I was in eastern Libya this past weekend and visited Derna on Saturday, along with Special Representative of the Secretary-General Abdoulaye Bathily and representatives of UN agencies in Libya.</p><p>I had been to Derna before – my last visit was three months ago. What I saw yesterday defies comprehension. Parts of the city were barely recognizable, and these areas are practically empty. People have either left or are dead.</p><p>Last week’s disaster is the latest tragedy to befall Derna, a city which suffered years of insecurity.</p><p>The search and rescue operation is still ongoing. The chances of finding people still alive are very slim, but the recovery of dead bodies continues.</p><p>Given the nature and scope of this tragedy, we’re very concerned about the health impact and the potential spread of waterborne diseases, as water sources and sewer networks have been severely damaged.</p><p>We’re also concerned that flood waters shifted landmines and unexploded remnants of war, leaving displaced people at risk of injury and death.</p><p>One aspect that cannot be overstated is the psychological toll of this disaster, especially on children, and psychosocial support that is a priority for our response.</p><p>Our local partners have been on the ground within hours, as were local communities and groups. We worked closely with the Libyan Red Crescent and LibAid to distribute initial supplies, including drinking water.</p><p>We also deployed emergency experts to help coordinate with the local authorities and with other aid agencies.</p><p>The response is coming together, and we’re trying to navigate the challenges of damaged infrastructure.</p><p>Teams from nine UN agencies have been on the ground delivering aid and support to people affected.</p><p>In the past few days, UNICEF teams have delivered emergency medical kits to primary care services to support 15,000 people for three months.</p><p>The UN Refugee Agency is distributing blankets, plastic tarpaulin and kitchen equipment to 6,200 displaced families in Derna and Benghazi.</p><p>The World Food Programme has distributed food rations to over 5,000 households.</p><p>The World Health Organization shipped 28 tons of medical supplies and donated ambulances and medical kits.  </p><p>The International Organization for Migration &nbsp;has supported 460 families with non-food items and a further 4,000 families in Benghazi with medicine.</p><p>Last but not least, I met with members of the Derna community in Tripoli today, and their message was consistent with what I heard in Derna yesterday:</p><p>They have asked for Derna not to be forgotten. They look to the United Nations to support them and provide them with assistance.</p><p>They also expressed the wish – that this tragedy serves as an opportunity to bring the country together and unite all Libyans.</p><p>This is a message, which I’m sure, everyone can – and should – get behind.</p>'
+      format: ckeditor
+      summary: ''
+  field_country:
+    -
+      entity: 1f38f7ac-f69d-45b4-908d-38e8721d9a20
+  field_regions:
+    -
+      entity: 6dfc9cf6-da4f-41d7-ac3d-ef0dd36fc067
+  field_responses:
+    -
+      entity: 7271742a-a494-41f5-bae9-aec8611181f8
+  field_story_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_story_type:
+    -
+      entity: e0a9a933-7026-410b-995f-f662bad1eca6
+  field_theme:
+    -
+      entity: 067f3808-3891-4172-9195-53f7042c218f
+    -
+      entity: f5d4df01-eeb1-42f9-93b2-9e6d2ed97a27
+    -
+      entity: c0ca0105-13d7-4b40-ba91-d4c2dc15f022
+    -
+      entity: 649b89d5-ea4a-4324-b50f-1041ffae7be5

@@ -1,0 +1,67 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  bundle: image
+  default_langcode: en
+  depends:
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+    c848aceb-9f32-414b-b426-75d4c27a6282: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  name:
+    -
+      value: untitled-00455.jpg
+  created:
+    -
+      value: 1688587754
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| OCHA'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/homepage'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_image_caption:
+    -
+      value: 'The UN Under-Secretary-General, Martin Griffith takes questions from the press in Kahramanmaraş, Turkey, after the devastating earthquake in February 2023.'
+  field_media_image:
+    -
+      entity: c848aceb-9f32-414b-b426-75d4c27a6282
+      alt: 'The UN Under-Secretary-General, Martin Griffith surrounded by cameras'
+      title: ''
+      width: 3798
+      height: 2537

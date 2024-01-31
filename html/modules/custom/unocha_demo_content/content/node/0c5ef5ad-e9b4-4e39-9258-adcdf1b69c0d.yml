@@ -1,0 +1,590 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 0c5ef5ad-e9b4-4e39-9258-adcdf1b69c0d
+  bundle: region
+  default_langcode: en
+  depends:
+    40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9: user
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+default:
+  revision_uid:
+    -
+      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  title:
+    -
+      value: 'West and Central Africa'
+  created:
+    -
+      value: 1687206730
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'West and Central Africa | OCHA'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/west-and-central-africa'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-06/MALI_UNOCHA_2020_MCA_0%2085.jpg?itok=QDYYX6WU'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'Displaced women are seen preparing dinner'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'Displaced women are seen preparing dinner'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-06/MALI_UNOCHA_2020_MCA_0%2085.jpg?itok=MgW43UXo'
+  path:
+    -
+      alias: /west-and-central-africa
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 614c8e8a-c2fc-4ed0-bdbc-3ed25ba4b796
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687653844
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          paragraph_view_mode:
+            -
+              value: tabs
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 35f9c7cc-641a-479d-b02b-9be178f882b2
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687653850
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 614c8e8a-c2fc-4ed0-bdbc-3ed25ba4b796
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: Overview
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: c0c08462-ccfe-4f45-b18a-9450ac62e3ad
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687653876
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 35f9c7cc-641a-479d-b02b-9be178f882b2
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p dir="ltr">The West and Central Africa region is the epicentre of a fast-growing crisis with unprecedented levels of armed violence and insecurity. Millions of people are being driven to the fringes of survival due to the confluence of conflict, deep poverty, demographic pressures, urbanization, weak governance, chronically high food insecurity and malnutrition, and the impact of climate change.</p><p dir="ltr">OCHA focuses on strengthening humanitarian coordination and response preparedness through its country offices and its Regional Office for West and Central Africa (ROWCA), which has been based in Dakar, Senegal, since November 2003.&nbsp;</p><p dir="ltr">To mitigate the impact of natural disasters and other emergencies, ROWCA works closely with UN Resident Coordinators, Humanitarian Country Teams, national and regional organizations, and Member States.</p><p dir="ltr">To develop and foster regional coordination networks, ROWCA engages with Governments, external partners and regional organizations, such as the Economic Community of West African States and the Economic Community of Central African States.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: d8e217fb-ac82-4a8b-a52b-eec2a3c54369
+          bundle: response_map
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687653884
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: fd14086d-71be-4dbc-b326-68f7aaff13ad
+          bundle: responses
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687653894
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_responses:
+            -
+              target_id: responses
+              display_id: regional_responses
+              data: 'a:5:{s:8:"argument";N;s:5:"limit";N;s:6:"offset";N;s:5:"pager";N;s:5:"title";i:0;}'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 438aaa40-f09f-4add-9eef-0160728063d3
+          bundle: stories
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687653903
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_limit:
+            -
+              value: 3
+          field_title:
+            -
+              value: 'Latest News and Stories'
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: f75ee498-5131-4fbb-9142-8876d279fe99
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687653943
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_twocol_sidebar
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: d7571b56-3c73-48e6-9124-14927caff9bb
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687654065
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: f75ee498-5131-4fbb-9142-8876d279fe99
+                  region: first
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%21%28F10%29_%28C46.C149.C174.C175.C47.C49.C54.C55.C75%29&search=_exists_%3Aocha_product'
+              title: ''
+              limit: 4
+          field_title:
+            -
+              value: Resources
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 2074133e-4628-4696-8d53-15dfb34e48ed
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687654094
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: f75ee498-5131-4fbb-9142-8876d279fe99
+                  region: second
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%28F10%29_%28C46.C149.C174.C175.C47.C49.C54.C55.C75%29&search=_exists_%3Aocha_product'
+              title: ''
+              limit: 2
+          paragraph_view_mode:
+            -
+              value: teasers
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 8d873176-27e5-405d-a339-81a2f8c33819
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687654148
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_presence_figures:
+            -
+              label: 'Total requirements'
+              value: '5191741.00'
+              unit: USD
+              provider: oct
+              id: total-requirements
+              ochapresence: rowca
+              year: '2'
+            -
+              label: 'Opening balance'
+              value: '0.00'
+              unit: USD
+              provider: oct
+              id: opening-balance
+              ochapresence: rowca
+              year: '2'
+            -
+              label: 'Earmarked funding'
+              value: '1000155.00'
+              unit: USD
+              provider: oct
+              id: earmarked-funding
+              ochapresence: rowca
+              year: '2'
+            -
+              label: Total
+              value: '1000155.00'
+              unit: USD
+              provider: oct
+              id: total
+              ochapresence: rowca
+              year: '2'
+          field_title:
+            -
+              value: 'Funding for OCHA West and Central Africa'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ba7ed404-f63b-4447-90d0-175e1d8fd2cc
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687654294
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_presence_donors:
+            -
+              label: 'Earmarked donors'
+              value: 'Germany, Sweden, Canada'
+              unit: ''
+              provider: oct
+              id: earmarked-donors
+              ochapresence: rowca
+              year: '2'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 6b161db3-4d07-40a8-9237-80dc23e1f819
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687654334
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_presence_donors:
+            -
+              label: 'Unearmarked donors'
+              value: 'Australia,  Belgium,  Canada,  Denmark,  Estonia,  Finland,  France,  Germany,  Iceland, Ireland,  Japan,  Luxembourg,  Monaco,  Netherlands, New Zealand,  Norway,  Russian Federation,  South Africa, Sweden, Switzerland, United Kingdom'
+              unit: ''
+              provider: oct
+              id: unearmarked-donors
+              ochapresence: rowca
+              year: '2'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 1a38a751-c989-4ca3-bead-21f24e1bbfbc
+          bundle: subscribe
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687654388
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: "<p>Receive all of the latest news, humanitarian tools and other information products from OCHA's West and Central Africa offices and operations.</p>"
+              format: ckeditor
+          field_title:
+            -
+              value: 'Subscribe to the OCHA West and Central Africa newsletter'
+          field_url:
+            -
+              uri: 'https://us4.list-manage.com/subscribe?u=547a787708d32a96a42c77746&id=fdf82b31e5'
+              title: Subscribe
+              options: {  }
+  field_region_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_region_link:
+    -
+      uri: 'https://crisisrelief.un.org/crises'
+      title: 'Support our work'
+      options: {  }

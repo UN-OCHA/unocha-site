@@ -1,0 +1,327 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: c8c32a27-0f76-455f-be91-fb295366a356
+  bundle: story
+  default_langcode: en
+  depends:
+    921f814b-f86f-47d4-b5b0-e2da08d3980e: user
+    f14b7469-61a1-4991-abf5-7797a4cb78b3: taxonomy_term
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    ff34642c-7718-4808-b175-a3fa849587dc: node
+    dfe5f610-35e6-4a76-ad15-24a64422532f: node
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    0564386c-fcb5-4883-8f32-ac7b7579e508: taxonomy_term
+default:
+  revision_uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  title:
+    -
+      value: 'Sudan: People and humanitarians under pressure as conflict spreads'
+  created:
+    -
+      value: 1704474108
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Sudan: People and humanitarians under pressure as conflict spreads | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: "\_ By Shakir Elhassan, Communication and Influencing Manager, Care International Sudan\_"
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/news/sudan-people-and-humanitarians-under-pressure-conflict-spreads'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: "\_ By Shakir Elhassan, Communication and Influencing Manager, Care International Sudan\_"
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2024-01/main%20photo%20care%20story.jpg?itok=vH2x0Z0f'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'A masked woman in a white jacker is seated behind a desk. A child sits across facing her, while a woman stands nearby.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: "\_ By Shakir Elhassan, Communication and Influencing Manager, Care International Sudan\_"
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'A masked woman in a white jacker is seated behind a desk. A child sits across facing her, while a woman stands nearby.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2024-01/main%20photo%20care%20story.jpg?itok=q-VlD2X-'
+  path:
+    -
+      alias: /news/sudan-people-and-humanitarians-under-pressure-conflict-spreads
+      langcode: en
+      pathauto: 1
+  samples_status:
+    -
+      value: false
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<p>&nbsp;</p><p><em>By Shakir Elhassan, Communication and Influencing Manager, Care International Sudan&nbsp;</em></p><p>Tens of thousands of people have fled Wad Medani and other parts of Aj Jazirah State after clashes between the Sudanese Armed Forces (SAF) and the Rapid Support Forces (RSF) began in the area on 15 December 2023. Aj Jazirah State and its capital, Wad Medani, were already hosting half a million displaced people that had fled the national capital, Khartoum, after the conflict started between the SAF and RSF in April 2023. Thousands of displaced people from Wad Medani and Aj Jazirah are now sheltering in schools and other public buildings in Kassala.</p><h2><strong>Support for the displaced</strong></h2><p>“Three of my five kids became very sick after a long and hard journey when we fled the fighting in Aj Jazirah and arrived here in this school in Kassala. They were coughing badly and had a high fever. I had no money to take my sick kids to the doctor and I did not know what to do,” said Nahid, a 35-year-old mother of five children. The family was initially displaced to Aj Jazirah from Khartoum when the conflict erupted there on 15 April.&nbsp;</p><p>Another displaced woman sheltering with Nahid at the school advised her to take the children to a nearby clinic supported by CARE International.</p><p>“At the clinic in the Halanaga neighbourhood, a medical doctor examined my kids and told me to do some tests. My children were given some medication after that and I am grateful all that was for free,” explained Nahid.&nbsp;</p><p>Ebtisam Ahmed, Head of Programmes at CARE International in Kassala, said that the number of people recently displaced from Aj Jazirah and other states into Kassala is in thousands and is likely to grow as more people, mainly women and children, arrive every day.&nbsp;</p>'
+      format: ckeditor
+      summary: ''
+  field_country:
+    -
+      entity: f14b7469-61a1-4991-abf5-7797a4cb78b3
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 9f6b65f2-0330-4f83-a45f-9dd0bca522f4
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1704474396
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 92bd9be8-cff3-4fac-a972-8b90370164bb
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1704474444
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<h2><strong>Additional burden</strong></h2><p>The clashes in &nbsp;Aj Jazirah State marks a notable shift in both conflict and displacement dynamics across the country, according to the <a href="https://dtm.iom.int/reports/dtm-sudan-monthly-displacement-overview-04?close=true">International Organization for Migration (IOM) Displacement Tracking Matrix (DTM) Sudan Monthly Displacement Overview (04).</a>&nbsp;</p><p>Any further southern and eastern expansion of the conflict will likely lead to secondary displacements as people seek refuge in safer states, according to IOM DTM.&nbsp;</p><p>IOM DTM field teams estimate that more than half a million &nbsp;individuals have been displaced due to the recent escalation of fighting across Aj Jazirah State. While more 200,000 internally displaced persons (IDPs) have reportedly sought shelter in safer locations within Aj Jazirah, more than 300,000 IDPs have fled Aj Jazirah and have arrived in Sennar, White Nile, Gedaref, Kassala, Red Sea, River Nile, and Northern states.&nbsp;</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 98714f75-b129-4281-ad2b-24fbfc679ae5
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1704474732
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ea8498b2-4629-48de-af2b-a42d12b41247
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1704475222
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<h2><strong>Pooled funds’ support</strong></h2><p>Thanks to the Sudan Humanitarian Fund (SHF), CARE International in Sudan is able to provide lifesaving health services – including nutrition, immunization, and family planning – to displaced people and host communities through four health facilities, two each in Kassala and New Halfa localities.&nbsp; &nbsp;</p><p>“The new wave of displacement from Gezira state into Kassala has put an additional burden on the already overstretched health services in the state, and the number of patients we serve at the CARE Sudan-supported health clinics has doubled. The humanitarian needs are unprecedented, and we urgently need more resources to expand our service and reach more people,” Ahmed explained.&nbsp;</p><p>Since October 2023, CARE Sudan has provided essential medicines, lab equipment and other medical support to the four health facilities. It has also maintained the cold chain to support the supply of vaccines to all immunization centers in 11 localities in Kassala state.&nbsp;</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 61f17901-e533-440e-b3bb-37406ddd5c0a
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1704477023
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ae66f14e-373b-481c-8178-9e67241acddd
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1704477103
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>At one of the two clinics in Kassala that CARE supports, Osman, a 65-year-old displaced man from Aj Jazirah noted that that the facility is clean and was pleased with the health services he had been offered. “I have been diabetic for years and (while travelling) along the unpaved road from Aj Jazirah to Kassala I was not feeling well. I was not able to visit the doctor as I had no money. When I arrived in Kassala, my brother took me to this clinic in Halanaga neighbourhood and I did some tests and was given medication for free,” he said.</p><p>Due to the ongoing armed conflict in parts of the country, some of Kassala’s health workers had not been paid for over eight months. CARE Sudan provided monthly cash payments to 82 health staff, including medical doctors, nurses, midwives, vaccinators, lab technicians, and pharmacists in four health facilities to prevent any break and impact on the quality of health and nutrition services being provided. &nbsp;</p><p>“Since the beginning of the conflict back in April, we are facing unprecedented challenges in securing the lifesaving medical supplies to operate the clinics,” said Abdelgader Abdelwahab, Health and Nutrition Manager for CARE Sudan in Kassala.&nbsp;</p>'
+              format: ckeditor
+  field_regions:
+    -
+      entity: ff34642c-7718-4808-b175-a3fa849587dc
+  field_responses:
+    -
+      entity: dfe5f610-35e6-4a76-ad15-24a64422532f
+  field_story_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_story_type:
+    -
+      entity: 0564386c-fcb5-4883-8f32-ac7b7579e508
+  field_theme:
+    -
+      entity: 4633bdef-2cb1-42bb-bf2f-ca8a2bff5eef
+    -
+      entity: c0ca0105-13d7-4b40-ba91-d4c2dc15f022
+    -
+      entity: 649b89d5-ea4a-4324-b50f-1041ffae7be5

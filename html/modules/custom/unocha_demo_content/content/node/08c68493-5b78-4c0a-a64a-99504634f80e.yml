@@ -1,0 +1,495 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 08c68493-5b78-4c0a-a64a-99504634f80e
+  bundle: basic
+  default_langcode: en
+  depends:
+    40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9: user
+default:
+  revision_uid:
+    -
+      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+  title:
+    -
+      value: 'Demo - Reliefweb rivers'
+  created:
+    -
+      value: 1691664892
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Demo - Reliefweb rivers | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'This is a demo page displaying paragraph types of Reliefweb rivers.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/demo/reliefweb-rivers'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'This is a demo page displaying paragraph types of Reliefweb rivers.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'This is a demo page displaying paragraph types of Reliefweb rivers.'
+  path:
+    -
+      alias: /demo/reliefweb-rivers
+      langcode: en
+      pathauto: 0
+  samples_status:
+    -
+      value: true
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<p>This is a <strong>demo page</strong> displaying paragraph types of Reliefweb rivers.</p>'
+      format: ckeditor
+      summary: ''
+  field_children_menu:
+    -
+      value: false
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 6e171bb8-523c-4799-96ad-26fa0d199cd0
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665002
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503_F8%29&search=title%3A%22Joyce+Msuya%22'
+              title: ''
+              limit: 4
+          field_text:
+            -
+              value: '<p>And some descriptive text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Reliefweb - River with Teasers view mode'
+          paragraph_view_mode:
+            -
+              value: teasers
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 7462058c-3f53-4106-92ed-4b46e8582d40
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665002
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503_F8%29&search=title%3A%22Joyce+Msuya%22'
+              title: ''
+              limit: 4
+          field_text:
+            -
+              value: '<p>And some descriptive text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Reliefweb - River with Cards view mode'
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: dd94d7ab-1a5d-49c3-b9cd-21a74c16b9ac
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665002
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503_F8%29&search=title%3A%22Joyce+Msuya%22'
+              title: ''
+              limit: 4
+          field_text:
+            -
+              value: '<p>And some descriptive text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Reliefweb - River with Default view mode'
+          paragraph_view_mode:
+            -
+              value: default
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b4564692-bcca-4b53-9fa6-4d979d5652a3
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665002
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503_F8%29&search=title%3A%22Joyce+Msuya%22'
+              title: ''
+              limit: 4
+          field_text:
+            -
+              value: '<p>And some descriptive text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Reliefweb - River with Default (paginated) view mode'
+          paragraph_view_mode:
+            -
+              value: default_paginated
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 12f9c1a5-f0cd-47fa-8985-5715d07b66c9
+          bundle: reliefweb_river_curated
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665099
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_limit:
+            -
+              value: 5
+          field_reliefweb_documents:
+            -
+              url: 'https://reliefweb.int/report/world/extreme-heat-preparing-heatwaves-future-october-2022'
+            -
+              url: 'https://reliefweb.int/report/world/ocha-annual-report-2021'
+            -
+              url: 'https://reliefweb.int/report/world/stay-and-deliver-good-practice-humanitarians-complex-security-environments-enar'
+          field_text:
+            -
+              value: '<p>And some descriptive text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula. Integer magna ipsum, aliquet sed lorem ac, maximus efficitur ligula.</p>'
+              format: text_editor_simple
+          field_title:
+            -
+              value: 'ReliefWeb - River - Curated paragraph with Default view mode'
+          paragraph_view_mode:
+            -
+              value: default
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 6d92f956-cabc-4619-9c2d-b74a18490257
+          bundle: reliefweb_river_curated
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665099
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_limit:
+            -
+              value: 5
+          field_reliefweb_documents:
+            -
+              url: 'https://reliefweb.int/report/world/extreme-heat-preparing-heatwaves-future-october-2022'
+            -
+              url: 'https://reliefweb.int/report/world/ocha-annual-report-2021'
+            -
+              url: 'https://reliefweb.int/report/world/stay-and-deliver-good-practice-humanitarians-complex-security-environments-enar'
+          field_text:
+            -
+              value: '<p>And some descriptive text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula. Integer magna ipsum, aliquet sed lorem ac, maximus efficitur ligula.</p>'
+              format: text_editor_simple
+          field_title:
+            -
+              value: 'ReliefWeb - River - Curated paragraph with Cards view mode'
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 41f02c56-e031-4886-9972-98d5fb4d81a3
+          bundle: reliefweb_river_curated
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665099
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_limit:
+            -
+              value: 5
+          field_reliefweb_documents:
+            -
+              url: 'https://reliefweb.int/report/world/extreme-heat-preparing-heatwaves-future-october-2022'
+            -
+              url: 'https://reliefweb.int/report/world/ocha-annual-report-2021'
+            -
+              url: 'https://reliefweb.int/report/world/stay-and-deliver-good-practice-humanitarians-complex-security-environments-enar'
+          field_text:
+            -
+              value: '<p>And some descriptive text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula. Integer magna ipsum, aliquet sed lorem ac, maximus efficitur ligula.</p>'
+              format: text_editor_simple
+          field_title:
+            -
+              value: 'ReliefWeb - River - Curated paragraph with Teasers view mode'
+          paragraph_view_mode:
+            -
+              value: teasers
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: c3e9bf34-9f5d-47e6-b1f2-d3a817ebfb64
+          bundle: reliefweb_river_curated
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665099
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_limit:
+            -
+              value: 5
+          field_reliefweb_documents:
+            -
+              url: 'https://reliefweb.int/report/world/extreme-heat-preparing-heatwaves-future-october-2022'
+            -
+              url: 'https://reliefweb.int/report/world/ocha-annual-report-2021'
+            -
+              url: 'https://reliefweb.int/report/world/stay-and-deliver-good-practice-humanitarians-complex-security-environments-enar'
+          field_text:
+            -
+              value: '<p>And some descriptive text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula. Integer magna ipsum, aliquet sed lorem ac, maximus efficitur ligula.</p>'
+              format: text_editor_simple
+          field_title:
+            -
+              value: 'ReliefWeb - River - Curated paragraph with Default view mode'
+          paragraph_view_mode:
+            -
+              value: default
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 0a5ebdb2-fd7b-4ef7-bcc5-24224e4b488a
+          bundle: reliefweb_river_curated
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665099
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_limit:
+            -
+              value: 5
+          field_reliefweb_documents:
+            -
+              url: 'https://reliefweb.int/report/world/extreme-heat-preparing-heatwaves-future-october-2022'
+            -
+              url: 'https://reliefweb.int/report/world/ocha-annual-report-2021'
+            -
+              url: 'https://reliefweb.int/report/world/stay-and-deliver-good-practice-humanitarians-complex-security-environments-enar'
+          field_text:
+            -
+              value: '<p>And some descriptive text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula. Integer magna ipsum, aliquet sed lorem ac, maximus efficitur ligula.</p>'
+              format: text_editor_simple
+          field_title:
+            -
+              value: 'ReliefWeb - River - Curated paragraph with Default (paginated) view mode'
+          paragraph_view_mode:
+            -
+              value: default_paginated

@@ -17,14 +17,21 @@
   margin-bottom: 2.5rem;
 }
 
+.paragraph--view-mode--resources {
+  padding: 2rem;
+  background-color: var(--brand-grey);
+}
+
 /* Card view mode */
 @media screen and (min-width: 768px) {
+  .paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-river__articles,
   .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river__articles {
     display: flex;
     flex-flow: row wrap;
     gap: 0 var(--rw-card-list-gap-size);
   }
 
+  .paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-river__articles article,
   .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river__articles article {
     /* stylelint-disable-next-line max-line-length */
     flex: 0 1 calc((100% / var(--rw-card-list-num-cols)) - var(--rw-card-list-gap-size) + var(--rw-card-list-gap-size) / var(--rw-card-list-num-cols));
@@ -35,12 +42,17 @@
   .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river__articles {
     --rw-card-list-num-cols: 2;
   }
+  .paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-river__articles {
+    --rw-card-list-num-cols: 3;
+  }
 }
 
-/* cd-flow reset for 2nd item on rw-river items because
+/* cd-flow reset for 2nd and 3rd items on rw-river items because
   we are displaying as cards now
 */
 @media screen and (min-width: 768px) {
+  .paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-river__articles.cd-flow article:nth-child(2),
+  .paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-river__articles.cd-flow article:nth-child(3),
   .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river__articles.cd-flow article:nth-child(2) {
     margin-top: 0;
   }
@@ -49,11 +61,14 @@
 /* rw-article reset for last item on rw-river items because
   we are displaying as cards now
 */
+
+.paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-river__articles article:last-child,
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river__articles article:last-child {
   padding-bottom: 24px;
   border-bottom: 1px solid var(--cd-reliefweb-brand-grey--light);
 }
 
+.paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-river-article .rw-river-article__content img,
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river-article .rw-river-article__content img {
   float: none;
   max-height: unset;
@@ -61,12 +76,15 @@
   border: 1px solid var(--cd-reliefweb-brand-grey--light);
 }
 
+.paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-river__articles article .rw-river-article__content
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river__articles article .rw-river-article__content {
   order: 1;
 }
+.paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-river__articles article .rw-river-article__header,
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river__articles article .rw-river-article__header {
   order: 2;
 }
+.paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-river__articles article .rw-river-article__footer,
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river__articles article .rw-river-article__footer {
   order: 3;
 }
@@ -109,16 +127,21 @@
   display: none;
 }
 
+.paragraph--type--reliefweb-river.paragraph--view-mode--resources .uno-tag,
 .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .uno-tag,
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .uno-tag {
   display: block;
   margin-bottom: 1rem;
 }
+.paragraph--type--reliefweb-river.paragraph--view-mode--resources .cd-read-more,
 .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .cd-read-more,
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .cd-read-more {
   display: inline-block;
 }
-
+.paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-river-article__header p.rw-entity-country-slug,
+.paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-river-article__content p,
+.paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-entity-meta dt,
+.paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-entity-meta dd,
 .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .rw-river-article__header p.rw-entity-country-slug,
 .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .rw-river-article__content p,
 .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .rw-entity-meta dt,
@@ -130,11 +153,13 @@
   display: none;
 }
 
+.paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-entity-meta .rw-entity-meta__tag-value--published,
 .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .rw-entity-meta .rw-entity-meta__tag-value--published,
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-entity-meta .rw-entity-meta__tag-value--published {
   display: inline-block;
 }
-
+.paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-entity-meta .rw-entity-meta__tag-value--published,
+.paragraph--type--reliefweb-river.paragraph--view-mode--resources .cd-read-more,
 .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .rw-entity-meta .rw-entity-meta__tag-value--published,
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-entity-meta .rw-entity-meta__tag-value--published,
 .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .cd-read-more,
@@ -143,21 +168,22 @@
 }
 
 /* Hide list bullet */
+.paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-entity-meta--core dd::after,
 .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .rw-entity-meta--core dd::after,
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-entity-meta--core dd::after {
   content: none;
 }
-
+.paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-river-article .uno-tag,
 .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .rw-river-article .uno-tag,
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river-article .uno-tag {
   color: var(--brand-highlight);
 }
-
+.layout--twocol-sidebar .paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-river-article .uno-tag,
 .layout--twocol-sidebar .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .rw-river-article .uno-tag,
 .layout--twocol-sidebar .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river-article .uno-tag {
   color: var(--brand-highlight-contrast);
 }
-
+.paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-river-article .rw-river-article__footer,
 .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .rw-river-article .rw-river-article__footer,
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river-article .rw-river-article__footer {
   display: flex;
@@ -165,6 +191,7 @@
   align-items: center;
   justify-content: flex-end;
 }
+.paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-river-article .rw-river-article__footer dl,
 .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .rw-river-article .rw-river-article__footer dl,
 .paragraph--type--reliefweb-river.paragraph--view-mode--cards .rw-river-article .rw-river-article__footer dl {
   flex: 1 auto;
@@ -184,22 +211,15 @@
   margin-bottom: 1rem;
 }
 
-@media screen and (min-width: 1024px) {
-  .layout--twocol-sidebar .cd-layout__sidebar--wide {
-    flex-basis: 33%;
-    margin-top: 4.25rem; /* The height of the main column's title */
-  }
-}
-
 /* Hide images on RW river items in the main and sidebar column. This is
   specifically for Resources on Response and Region pages and might negatively
   affect other contexts where this layout is used in the future.
 */
+.paragraph--type--reliefweb-river.paragraph--view-mode--resources .rw-river__articles .rw-river-article--with-preview .rw-river-article__content img,
 .layout--twocol-sidebar .cd-layout__content .rw-river-article--with-preview .rw-river-article__content img,
 .cd-layout__sidebar--wide .rw-river-article--with-preview .rw-river-article__content img {
   display: none;
 }
-
 .layout--twocol-sidebar .paragraph--type--reliefweb-river.paragraph--view-mode--teasers .rw-river-article .rw-river-article__header {
   flex-basis: 100%;
 }

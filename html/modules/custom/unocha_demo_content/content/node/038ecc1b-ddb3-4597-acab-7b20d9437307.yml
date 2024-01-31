@@ -1,0 +1,122 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 038ecc1b-ddb3-4597-acab-7b20d9437307
+  bundle: basic
+  default_langcode: en
+  depends:
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+default:
+  revision_uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  title:
+    -
+      value: 'We inform'
+  created:
+    -
+      value: 1687304657
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'We inform | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'Accurate information and data are critical in informing a rapid, effective and principled humanitarian response. They are also vital for coordinating the response.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/we-inform'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'Accurate information and data are critical in informing a rapid, effective and principled humanitarian response. They are also vital for coordinating the response.'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-07/DSC08919WHD%20THUMB.jpg?itok=FPruPER7'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'Information Management team at work'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'Accurate information and data are critical in informing a rapid, effective and principled humanitarian response. They are also vital for coordinating the response.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'Information Management team at work'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-07/DSC08919WHD%20THUMB.jpg?itok=dcGgnN4C'
+  path:
+    -
+      alias: /we-inform
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<p>Accurate information and data are critical in informing a rapid, effective and principled humanitarian response. They are also vital for coordinating the response.&nbsp;</p><p>We play a unique role as the central hub for information management services to the entire humanitarian community, including other UN agencies, and international and local non-governmental organizations (NGOs). We gather, analyse and share data and information on the entirety of a humanitarian response. This data underpins our work on coordination, decision-making and advocacy.</p><p>The management of information during a humanitarian emergency is a crucial part of any response. Reliable data on the locations of affected people, what they urgently need and who is best placed to assist them is essential to ensuring an effective and timely response.</p><p>Our information products, tailored to specific audiences, include maps, graphics, situation reports, humanitarian bulletins and websites. We are also the stewards of humanitarian tools and services that help inform decision-making across the response. These include <a href="https://reliefweb.int/">ReliefWeb</a>, which provides 24-hour coverage of disasters, conflicts and crises for the humanitarian community, and <a href="https://response.reliefweb.int/">ReliefWeb Response</a>, an operational platform and resource repository for humanitarians. In addition, OCHA’s <a href="https://centre.humdata.org/">Centre for Humanitarian Data</a> manages the <a href="https://data.humdata.org/">Humanitarian Data Exchange</a> (HDX), a platform that shares real-time humanitarian data.</p>'
+      format: ckeditor
+      summary: 'Accurate information and data are critical in informing a rapid, effective and principled humanitarian response. They are also vital for coordinating the response. '
+  field_basic_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_children_menu:
+    -
+      value: false

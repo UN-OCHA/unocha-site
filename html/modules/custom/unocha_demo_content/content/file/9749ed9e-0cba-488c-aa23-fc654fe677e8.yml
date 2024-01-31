@@ -1,0 +1,29 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 9749ed9e-0cba-488c-aa23-fc654fe677e8
+  default_langcode: en
+  depends:
+    8fa1a556-9f76-4ea2-bc75-b2d183a04af6: user
+default:
+  uid:
+    -
+      entity: 8fa1a556-9f76-4ea2-bc75-b2d183a04af6
+  filename:
+    -
+      value: 2022_OCHA_annual_report_20230525_presence_map.jpg
+  uri:
+    -
+      value: 'public://2023-10/2022_OCHA_annual_report_20230525_presence_map_1.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 229748
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1698768837

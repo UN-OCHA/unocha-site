@@ -1,0 +1,475 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 2e604d22-bbd6-4ac3-8571-5bc9abe2f87c
+  bundle: basic
+  default_langcode: en
+  depends:
+    8fa1a556-9f76-4ea2-bc75-b2d183a04af6: user
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+default:
+  revision_uid:
+    -
+      entity: 8fa1a556-9f76-4ea2-bc75-b2d183a04af6
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  title:
+    -
+      value: 'We develop policy'
+  created:
+    -
+      value: 1687304601
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'We develop policy | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'We constantly update existing policies and develop new ones, as we strive to improve the way we deliver assistance to people in need.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/we-develop-policy'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'We constantly update existing policies and develop new ones, as we strive to improve the way we deliver assistance to people in need.'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-07/i-TwDjpNW-X4.jpg?itok=BidEbWHY'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'Meeting of dignitaries at the ECOSOC Humanitarian Affairs Segment'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'We constantly update existing policies and develop new ones, as we strive to improve the way we deliver assistance to people in need.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'Meeting of dignitaries at the ECOSOC Humanitarian Affairs Segment'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-07/i-TwDjpNW-X4.jpg?itok=rJJQuv-i'
+  path:
+    -
+      alias: /we-develop-policy
+      langcode: en
+      pathauto: 0
+  samples_status:
+    -
+      value: false
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: ''
+      format: ckeditor
+      summary: 'We constantly update existing policies and develop new ones, as we strive to improve the way we deliver assistance to people in need.'
+  field_basic_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_children_menu:
+    -
+      value: false
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: a721ec89-79d4-44d2-994a-37d5ba45b035
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698760907
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          paragraph_view_mode:
+            -
+              value: tabs
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: bb0682d3-34eb-40f7-9920-03e743138264
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698760928
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: a721ec89-79d4-44d2-994a-37d5ba45b035
+                  region: content
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>We constantly work to shape and inform policy as we strive to improve the delivery of assistance and the protection of people caught in crises. Our policy work focuses on improving the effectiveness of humanitarian work, global norms to protect people affected by conflict and disaster, and the capacities of governments, organizations and aid workers.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: Overview
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b24aaceb-0530-497f-8444-4deeb9b42d3b
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698761809
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_twocol_66_33
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b5ae355c-6df6-4f98-b163-d8d6db7ba289
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698761988
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_threecol
+                  config:
+                    label: ''
+                  parent_uuid: b24aaceb-0530-497f-8444-4deeb9b42d3b
+                  region: first
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'We:'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 216115be-c2aa-4f53-b1df-a4053ac5d74d
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698761366
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: b5ae355c-6df6-4f98-b163-d8d6db7ba289
+                  region: first
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>Carry out research and advocacy to promote and shape new policy to improve the protection of people caught in crises and strengthen humanitarian work.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 8c81677b-b4bc-4e96-a878-9391dff3763a
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698761379
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: b5ae355c-6df6-4f98-b163-d8d6db7ba289
+                  region: second
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>Identify emerging trends, unify policies among humanitarian organizations, and offer clear policy guidance to strengthen effective responses and protect affected people.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: c4af7335-02e5-4db7-b27d-bbe0774bdbbf
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698761388
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: b5ae355c-6df6-4f98-b163-d8d6db7ba289
+                  region: third
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>Identify lessons learned and best practices by evaluating humanitarian action to make it more effective and accountable to the people we serve.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 40a566ae-e718-4125-a051-2c0f8482b148
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698762530
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_twocol_66_33
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: bd0f0fb3-653f-43f1-839e-164329772164
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698761841
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 40a566ae-e718-4125-a051-2c0f8482b148
+                  region: first
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>Our policy work is based on evidence gathered at every stage of a response.&nbsp;Our policy work helps raise awareness of key humanitarian issues among Member States and other key stakeholders and advances humanitarian norms across the UN system and through intergovernmental processes. These include briefings to the General Assembly and the Security Council, and the Humanitarian Affairs Segment of the annual Economic and Social Council (ECOSOC).</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Key policy areas                             '
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b5220733-e9f7-4e8c-baf9-025bab4c2566
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698761115
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 40a566ae-e718-4125-a051-2c0f8482b148
+                  region: first
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<h5>We have specific expertise in the following policy areas:</h5><p><a href="/node/60" data-entity-type="node" data-entity-uuid="b34ab21b-a2e1-4ca6-a898-b252396272b8" data-entity-substitution="canonical">Accountability to affected people</a></p><p><a href="/node/61" data-entity-type="node" data-entity-uuid="e91a0482-dbba-4f81-b119-6f8a56a2ee81" data-entity-substitution="canonical">Anticipatory action</a></p><p><a href="/node/62" data-entity-type="node" data-entity-uuid="24b6b1a0-61af-4c5d-a55c-618130fbd576" data-entity-substitution="canonical">Civil-military coordination</a></p><p><a href="/node/63" data-entity-type="node" data-entity-uuid="3f6e9e38-4fb8-48d1-b1c9-d80769f6f426" data-entity-substitution="canonical">Climate change</a></p><p><a href="/node/473" data-entity-type="node" data-entity-uuid="2455f503-ca47-4d43-bdbc-85a92215f5b1" data-entity-substitution="canonical">Engagement with the private sector</a></p><p><a href="/node/519" data-entity-type="node" data-entity-uuid="5f8538c1-52cc-4ef0-8f41-43c155220f18" data-entity-substitution="canonical">Explosive weapons in populated areas</a></p><p><a href="/node/64" data-entity-type="node" data-entity-uuid="0ec19688-eb2b-47fe-90e0-6577cc0b92cc" data-entity-substitution="canonical">Gender equality and the empowerment of women</a></p><p><a href="/node/66" data-entity-type="node" data-entity-uuid="029e278e-30a3-4c6f-85b3-4b3497a5d8b4" data-entity-substitution="canonical">Humanitarian access</a></p><p><a href="/node/67" data-entity-type="node" data-entity-uuid="2c8c9364-e41b-4401-9f02-fe7777e25170" data-entity-substitution="canonical">Internal displacement</a></p><p><a href="/node/68" data-entity-type="node" data-entity-uuid="7bfd0a5b-8f4a-49b0-bb71-f7a044cd3ec0" data-entity-substitution="canonical">Localization</a></p><p><a href="/node/69" data-entity-type="node" data-entity-uuid="a915f844-7664-4390-ad07-5ed3e415c4da" data-entity-substitution="canonical">Protection from sexual exploitation and abuse</a></p><p><a href="/node/70" data-entity-type="node" data-entity-uuid="61386df9-6d90-472b-ba4f-3d9e281253c0" data-entity-substitution="canonical">Protection of civilians</a><br>&nbsp;</p>'
+              format: ckeditor

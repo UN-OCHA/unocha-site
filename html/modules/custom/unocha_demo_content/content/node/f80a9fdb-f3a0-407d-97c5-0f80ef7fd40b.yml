@@ -1,0 +1,142 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: f80a9fdb-f3a0-407d-97c5-0f80ef7fd40b
+  bundle: story
+  default_langcode: en
+  depends:
+    921f814b-f86f-47d4-b5b0-e2da08d3980e: user
+    af5384d9-3f44-4a09-9628-9a53ea4baae3: taxonomy_term
+    97e50ef3-9e8e-41e7-aed7-06a5cf383e5d: node
+    23555742-a467-46a2-8acc-a42d1f9d83bd: node
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    e0a9a933-7026-410b-995f-f662bad1eca6: taxonomy_term
+default:
+  revision_uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  title:
+    -
+      value: "Today's top news: Ukraine"
+  created:
+    -
+      value: 1692634622
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: "Today's top news: Ukraine | OCHA"
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: Ukraine
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/news/todays-top-news-ukraine-9'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: Ukraine
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-08/J78A3981.jpg?itok=MtrI8mNW'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'A woman is talking on a microphone against a backdrop of an exhibition of photos marked with World Humanitarian Day'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: Ukraine
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'A woman is talking on a microphone against a backdrop of an exhibition of photos marked with World Humanitarian Day'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-08/J78A3981.jpg?itok=7Wt5eRHM'
+  path:
+    -
+      alias: /news/todays-top-news-ukraine-9
+      langcode: en
+      pathauto: 1
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<h2>Ukraine</h2><p>The Humanitarian Coordinator in Ukraine, Denise Brown, has condemned a deadly attack that hit the main square of Chernihiv, a large city in the north of Ukraine, on 19 August.</p><p>The United Nations Human Rights Monitoring Mission has verified the deaths of seven civilians, including a six-year-old girl, as a result of this attack.&nbsp;</p><p>Humanitarian organizations mobilized immediately to provide psychosocial support, delivered emergency repair materials and started registration for cash assistance.&nbsp; &nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>'
+      format: ckeditor
+      summary: ''
+  field_country:
+    -
+      entity: af5384d9-3f44-4a09-9628-9a53ea4baae3
+  field_regions:
+    -
+      entity: 97e50ef3-9e8e-41e7-aed7-06a5cf383e5d
+  field_responses:
+    -
+      entity: 23555742-a467-46a2-8acc-a42d1f9d83bd
+  field_story_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_story_type:
+    -
+      entity: e0a9a933-7026-410b-995f-f662bad1eca6
+  field_theme:
+    -
+      entity: 4633bdef-2cb1-42bb-bf2f-ca8a2bff5eef
+    -
+      entity: c0ca0105-13d7-4b40-ba91-d4c2dc15f022
+    -
+      entity: 649b89d5-ea4a-4324-b50f-1041ffae7be5

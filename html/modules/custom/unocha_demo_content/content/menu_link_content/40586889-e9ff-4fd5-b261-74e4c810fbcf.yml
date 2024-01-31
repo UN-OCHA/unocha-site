@@ -1,0 +1,79 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 40586889-e9ff-4fd5-b261-74e4c810fbcf
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    ddc4807d-b2fa-4b16-983e-cc3481d53884: menu_link_content
+    d99b5bcc-d6df-4f2b-9fad-489992c84354: node
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: Myanmar
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      target_uuid: d99b5bcc-d6df-4f2b-9fad-489992c84354
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: 6
+  expanded:
+    -
+      value: false
+  parent:
+    -
+      value: 'menu_link_content:ddc4807d-b2fa-4b16-983e-cc3481d53884'
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: '| OCHA'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/homepage'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  content_translation_uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  content_translation_status:
+    -
+      value: true
+  content_translation_created:
+    -
+      value: 1687207691

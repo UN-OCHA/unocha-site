@@ -1,0 +1,594 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: ff34642c-7718-4808-b175-a3fa849587dc
+  bundle: region
+  default_langcode: en
+  depends:
+    a0de0f50-5cbb-4630-b088-d590bbd50f96: user
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+    270a69b9-234d-4241-8b53-e234ba1b98ab: node
+    0151977b-0fd4-4439-925d-433b31d5123f: node
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+default:
+  revision_uid:
+    -
+      entity: a0de0f50-5cbb-4630-b088-d590bbd50f96
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  title:
+    -
+      value: 'Southern and Eastern Africa'
+  created:
+    -
+      value: 1687206493
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Southern and Eastern Africa | OCHA'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/southern-and-eastern-africa'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-06/ED12.jpg?itok=blAKf8g6'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'A woman and child in Eli Dar, Afar region, Ethiopia.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'A woman and child in Eli Dar, Afar region, Ethiopia.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-06/ED12.jpg?itok=_-9_4wPc'
+  path:
+    -
+      alias: /southern-and-eastern-africa
+      langcode: en
+      pathauto: 1
+  samples_status:
+    -
+      value: false
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 93750d14-d5ba-4256-b2d8-50555b9ef2e6
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687653281
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          paragraph_view_mode:
+            -
+              value: tabs
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: d368638d-be55-4dbd-acd7-b08d08788887
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687653287
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 93750d14-d5ba-4256-b2d8-50555b9ef2e6
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: Overview
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: d698c7e2-3656-4db6-9cbe-14bd58db894a
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687653316
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: d368638d-be55-4dbd-acd7-b08d08788887
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p dir="ltr">Humanitarian needs continue to rise in Southern and East Africa as the region experiences the devastating effects of climate change, economic challenges and conflicts. Millions of people face acute drought-related food insecurity, leading to large-scale displacement and protection concerns.</p><p dir="ltr">OCHA’s Regional Office for Southern and Eastern Africa (ROSEA), based in Nairobi, Kenya, works with country offices in the region to support and strengthen humanitarian coordination and response preparedness.</p><p dir="ltr">ROSEA provides a platform for the analysis of cross-border issues of humanitarian concern, such as facilitating multi-country preparedness and planning consultations. It also works to strengthen collaboration on emergency preparedness and response with regional bodies, such as the Intergovernmental Authority on Development in Eastern Africa, and the Southern Africa Development Community in Southern Africa.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: dbb2f1bf-0618-44aa-8dba-172b67242d3b
+          bundle: response_map
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687653336
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 487f8891-c2cb-4e79-a80c-afe3c9abe531
+          bundle: responses
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687653351
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_responses:
+            -
+              target_id: responses
+              display_id: regional_responses
+              data: 'a:5:{s:8:"argument";N;s:5:"limit";N;s:6:"offset";N;s:5:"pager";N;s:5:"title";i:0;}'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: cbad33d0-1cd2-4827-958f-84c6da3511f5
+          bundle: stories
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687653363
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_limit:
+            -
+              value: 4
+          field_node:
+            -
+              entity: 270a69b9-234d-4241-8b53-e234ba1b98ab
+            -
+              entity: 0151977b-0fd4-4439-925d-433b31d5123f
+          field_title:
+            -
+              value: 'Latest News and Stories'
+          paragraph_view_mode:
+            -
+              value: cards_with_featured
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 7e17e828-a152-4164-88c9-3327a5080986
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687653378
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_twocol_sidebar
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 44b0b53c-3fbd-4e57-a5b0-0a8cc824eddc
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687653501
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 7e17e828-a152-4164-88c9-3327a5080986
+                  region: first
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28PC19.PC41.PC47.PC65.PC77.PC85.PC223.PC87.PC131.PC138.PC144.PC146.PC154.PC164.PC166.PC198.PC210.PC216.PC217.PC8657.PC220.PC244.PC240.PC256.PC257%29_%28S1503%29_%21%28F10%29'
+              title: ''
+              limit: 4
+          field_title:
+            -
+              value: Resources
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: cec1b325-73dc-4b66-a889-bc75b80edd21
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687653530
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 7e17e828-a152-4164-88c9-3327a5080986
+                  region: second
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28PC19.PC41.PC47.PC65.PC77.PC85.PC223.PC87.PC131.PC138.PC144.PC146.PC154.PC164.PC166.PC198.PC210.PC216.PC217.PC8657.PC220.PC244.PC240.PC256.PC257%29_%28S1503%29_%28F10%29'
+              title: ''
+              limit: 2
+          paragraph_view_mode:
+            -
+              value: teasers
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: cc88bc35-67c9-42b3-87ba-840e15a1aa2c
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687653628
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_presence_figures:
+            -
+              label: 'Total requirements'
+              value: '6357525.00'
+              unit: USD
+              provider: oct
+              id: total-requirements
+              ochapresence: rosea
+              year: '2'
+            -
+              label: 'Opening balance'
+              value: '847.00'
+              unit: USD
+              provider: oct
+              id: opening-balance
+              ochapresence: rosea
+              year: '2'
+            -
+              label: 'Earmarked funding'
+              value: '1042419.00'
+              unit: USD
+              provider: oct
+              id: earmarked-funding
+              ochapresence: rosea
+              year: '2'
+            -
+              label: Total
+              value: '1042419.00'
+              unit: USD
+              provider: oct
+              id: total
+              ochapresence: rosea
+              year: '2'
+          field_title:
+            -
+              value: 'Funding for OCHA Southern and Eastern Africa'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 74923551-f011-497e-a63b-447a0d85df74
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687653698
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_presence_donors:
+            -
+              label: 'Earmarked donors'
+              value: 'Germany, Sweden, Canada'
+              unit: ''
+              provider: oct
+              id: earmarked-donors
+              ochapresence: rosea
+              year: '2'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: fae6303a-9b8d-45fa-80ec-a15ba62c44c3
+          bundle: donors
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687653733
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_presence_donors:
+            -
+              label: 'Unearmarked donors'
+              value: 'Australia,  Belgium,  Canada,  Denmark,  Estonia,  Finland,  France,  Germany,  Iceland, Ireland,  Japan,  Luxembourg,  Monaco,  Netherlands, New Zealand,  Norway,  Russian Federation,  South Africa, Sweden, Switzerland, United Kingdom'
+              unit: ''
+              provider: oct
+              id: unearmarked-donors
+              ochapresence: rosea
+              year: '2'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: a239e2bf-0fcb-4487-9e37-941f11cbc5e8
+          bundle: subscribe
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1687653792
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: "<p>Receive all of the latest news, humanitarian tools and other information products from OCHA's Southern and Eastern Africa offices and operations.</p>"
+              format: ckeditor
+          field_title:
+            -
+              value: 'Subscribe to the OCHA Southern and Eastern Africa newsletter'
+          field_url:
+            -
+              uri: 'https://humanitarianresponse.us6.list-manage.com/subscribe?u=f7931fe33ce8729d1b6e34781&id=319edf26b8'
+              title: Subscribe
+              options: {  }
+  field_region_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_region_link:
+    -
+      uri: 'https://crisisrelief.un.org/crises'
+      title: 'Support our work'
+      options: {  }

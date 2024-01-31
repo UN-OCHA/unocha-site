@@ -1,0 +1,331 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 2c9cc5c1-56c2-43c9-8adf-b7542eba1811
+  bundle: story
+  default_langcode: en
+  depends:
+    921f814b-f86f-47d4-b5b0-e2da08d3980e: user
+    1f38f7ac-f69d-45b4-908d-38e8721d9a20: taxonomy_term
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    9f706119-9d98-4734-aa73-a5afdff06f33: node
+    e0a9a933-7026-410b-995f-f662bad1eca6: taxonomy_term
+default:
+  revision_uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  title:
+    -
+      value: 'North-east Nigeria: Sowing the seeds of hope amid despair '
+  created:
+    -
+      value: 1703620288
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'North-east Nigeria: Sowing the seeds of hope amid despair | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: '"We are still unable to reclaim our lands. It is not yet safe to do so," laments Alhaji Goni Modu, a conflict-displaced farmer in north-east Nigeria.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/news/north-east-nigeria-sowing-seeds-hope-amid-despair'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: '"We are still unable to reclaim our lands. It is not yet safe to do so," laments Alhaji Goni Modu, a conflict-displaced farmer in north-east Nigeria.'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-12/seed%20story%201.jpg?itok=KbKJl59W'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'Men sit on the ground underneath the shade of trees.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: '"We are still unable to reclaim our lands. It is not yet safe to do so," laments Alhaji Goni Modu, a conflict-displaced farmer in north-east Nigeria.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'Men sit on the ground underneath the shade of trees.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-12/seed%20story%201.jpg?itok=vRR0Hx2I'
+  path:
+    -
+      alias: /news/north-east-nigeria-sowing-seeds-hope-amid-despair
+      langcode: en
+      pathauto: 1
+  samples_status:
+    -
+      value: false
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<p>"We are still unable to reclaim our lands. It is not yet safe to do so," laments Alhaji Goni Modu, a conflict-displaced farmer in north-east Nigeria.</p><p>"Yet I believe that soon we will sow not only the seeds of crops but of a more prosperous, vibrant future,” he adds, standing in an expansive field just a stone''s throw from the Government Senior Secondary School (GSSS) camp for internally displaced persons (IDPs), where he now lives with his family, in Bama, Borno State.</p><blockquote><p><em>Modu was uprooted from his ancestral home, Diwa Ngaurawa, just 3 km from Bama, in 2017 due to escalating conflicts. He lost his livestock, farm and sources of income.</em></p></blockquote><p>Today, his former field is desolate due to prolonged conflict and insecurity in Nigeria’s north-east region.</p><p>The ordeal of displacement inflicted deep emotional scars and financial stress on Modu. But on top of all that, insurgents from a non-State armed group (NSAG) abducted his elder brother and two daughters.</p><blockquote><p><em>“Whether they are still alive or not, no one knows. I lost everything. My whole field and livestock,” he says.</em></p></blockquote><p>Despite all this, Modu holds on to hope, dreaming of the day he will till his land again.</p>'
+      format: ckeditor
+      summary: ''
+  field_country:
+    -
+      entity: 1f38f7ac-f69d-45b4-908d-38e8721d9a20
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 700f69eb-a32d-4916-a849-a90167b6d33c
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1703620884
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: c87c9077-2c4c-4194-8e4e-be6900b1d980
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1703620947
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<h2>Unyielding hope</h2><p>Before the conflict escalated in 2014, Modu’s field yielded about 500 bags (50 kg) of grains per year. This field was his lifeline, earning him approximately 2.5 million naira annually (about US$15,000 in 2014). The decimation of his livelihood is a stark and painful reminder of the cost of insecurity.</p><p>In the GSSS IDP camp in Bama, Modu and his family now depend mainly on humanitarian assistance provided by aid organizations. He also nurtures the land gifted to him by his friend, using seeds he has received from the UN Refugee Agency and the American University of Nigeria since 2021 to produce food. Last year, he harvested 30 bags of grains, including beans, sorghum and maize, to supplement the aid he receives in the Bama camp. He also helped other families living in the camp.</p><blockquote><p><em>However, a shortfall in funding for livelihood assistance threatens projects that support farmers like Modu.</em></p></blockquote><p>Since June 2023, Modu and many other displaced farmers no longer receive appropriate seeds, fertilizers and agricultural training. Assistance now reaches only 325,000 farmers out of a staggering 3.4 million, which hinders their ability to resume farming in Borno, Adamawa and Yobe (BAY) States.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: c2186dbf-7c9d-49fd-8317-627bd88f4ed5
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1703621741
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: c4c29bcf-9646-45c4-982f-ff2ca2f8be21
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 88e4c151-2a61-42aa-a9c5-fd6b6f72f4a0
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1703621871
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<h2>Forced to work for armed groups</h2><p>Zakariah Manya cuts a quiet figure among the new arrivals at a reception centre in the GSSS IDP camp in Bama. Previously, he grew sorghum, beans and a vibrant array of vegetables. He once sold more than 100 bags of grains annually, yielding earnings of up to 2 million naira (over $12,000).</p><blockquote><p><em>"My surplus harvest was my personal zakat [donation to charity]," Zakariah says. "Every harvest, I distributed the excess among my community, stored some and gave a helping hand to those in need."</em></p></blockquote><p>But an attack on his village, Waziri, upended Zakariah''s life. He and his family became captives on their own land, toiling under the hostile watch of NSAG operatives.</p><blockquote><p><em>"We were forced to work on our farm and harvest our crops for the insurgents. They gave us little food to survive,” he says. “Two months ago, we were able to flee. We sought refuge at the IDP camp."</em></p></blockquote><p>Even against such stark adversity, Zakariah''s spirit remains undeterred. His hope is fixed firmly on reclaiming his land, rebuilding his life and restoring his dignity – a hope shared by countless others in the region.</p><blockquote><p><em>“We may have lost our fields and homes, but we haven''t lost our resolve to rebuild and flourish again,” he says.</em></p></blockquote><p>Persistent conflict and insecurity have severed people from their primary livelihoods, notably agricultural activities. When people venture outside the protective trenches surrounding population centres in many parts of Borno for their livelihoods, they risk being killed, maimed, kidnapped or subjected to sexual and gender-based violence. This has led to severe food insecurity across north-east Nigeria. In their quest to survive, women are often pushed towards negative coping mechanisms, such as sex work. Young boys, in their desperation, become easy targets for recruitment by non-State militant groups.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ab2e491b-9c59-4291-9dea-fade2c363170
+          bundle: image
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1703622170
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_image:
+            -
+              entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ce6e59dd-288d-406e-99c8-ae89a29e0974
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1703622578
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: "<h2>Food distribution is not enough</h2><p>Empowering vulnerable people to cultivate their food and engage in other livelihood activities is crucial to addressing the perennial food security crisis in the BAY States.</p><p>Trend analysis for Nigeria's north-eastern States indicates consistently high or rising food insecurity levels since 2018. More than 4 million people have needed urgent assistance annually since June 2020.</p><p>Hunger peaks during the lean season — the time of year when food from the previous harvest has been mostly consumed, but the next harvest is still some way off.</p><p>In 2024, some 4.4 million people (up from 4.3 million in 2023) are projected to face severe hunger in the BAY States during the lean season (June–August), according to the October 2023 Cadre Harmonisé food security analysis.</p><blockquote><p><em>Additional and sustained funding for agricultural livelihoods can help lift people out of dire humanitarian need and build resilience.</em></p></blockquote><p>Overall, this year’s humanitarian response in the BAY States has been challenged by severe funding and access limitations. Of the $1.3 billion requested to assist 6 million people, just over 38 per cent ($505 million) was received by the end of November. This significant funding shortfall, compounded by persistent security challenges and movement restrictions, has hampered aid delivery, leaving many acute needs unmet.</p><blockquote><p><em><strong>Despite these challenges, 130 partners reached 3.4 million people, out of 6 million targeted for assistance, through humanitarian interventions.</strong></em></p></blockquote>"
+              format: ckeditor
+  field_regions:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_responses:
+    -
+      entity: 9f706119-9d98-4734-aa73-a5afdff06f33
+  field_story_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_story_type:
+    -
+      entity: e0a9a933-7026-410b-995f-f662bad1eca6
+

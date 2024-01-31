@@ -1,0 +1,712 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 0c395176-4a3c-4f17-a392-f0a85aa2abfc
+  bundle: basic
+  default_langcode: en
+  depends:
+    8fa1a556-9f76-4ea2-bc75-b2d183a04af6: user
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+default:
+  revision_uid:
+    -
+      entity: 8fa1a556-9f76-4ea2-bc75-b2d183a04af6
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  title:
+    -
+      value: 'We fund'
+  created:
+    -
+      value: 1687304627
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'We fund | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'We work with humanitarian partners around the world to identify the most critical humanitarian needs, plan responses and determine the budgets needed to address them.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/we-fund'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'We work with humanitarian partners around the world to identify the most critical humanitarian needs, plan responses and determine the budgets needed to address them.'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-07/AFG_Nov2019_UNOCHA-03492.jpg?itok=s4mYuVJI'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'Children at a water pump in Kandahar, Afghanistan'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'We work with humanitarian partners around the world to identify the most critical humanitarian needs, plan responses and determine the budgets needed to address them.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'Children at a water pump in Kandahar, Afghanistan'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-07/AFG_Nov2019_UNOCHA-03492.jpg?itok=bnzXKQQr'
+  path:
+    -
+      alias: /we-fund
+      langcode: en
+      pathauto: 1
+  samples_status:
+    -
+      value: false
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<p>We work with humanitarian partners around the world to identify the most critical humanitarian needs, plan responses and determine the budgets needed to address them.</p>'
+      format: ckeditor
+      summary: 'We work with humanitarian partners around the world to identify the most critical humanitarian needs, plan responses and determine the budgets needed to address them.'
+  field_basic_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_children_menu:
+    -
+      value: false
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: e4ded661-69e0-432c-a93d-ba89db8cea4f
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698775733
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 0a9424af-1643-471b-aa17-22a038cc083b
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698775733
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 4332b9ba-a2c7-459d-aa85-a5087186a1fc
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698775790
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_fourcol
+                  config:
+                    label: ''
+                  parent_uuid: 0a9424af-1643-471b-aa17-22a038cc083b
+                  region: content
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: d84f9388-b295-48a4-b4a0-71c4cda85d31
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698775806
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 4332b9ba-a2c7-459d-aa85-a5087186a1fc
+                  region: fifth
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<h6>Global Humanitarian Overview</h6><p>At the country level, we work with partners to build common strategies and implementation plans for joint funding appeals. This ensures collective resource mobilization and financing based on a common needs evaluation, making aid more effective, efficient and predictable. At a global level, this work culminates in the annual&nbsp;<a href="https://humanitarianaction.info/">Global Humanitarian Overview</a>.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 25e64637-b2df-4036-8744-760fd2581729
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698775806
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 4332b9ba-a2c7-459d-aa85-a5087186a1fc
+                  region: sixth
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<h6>Financial Tracking Service&nbsp;</h6><p>Our financial-tracking tools and services – including the&nbsp;<a href="http://fts.unocha.org/">Financial Tracking Service</a>&nbsp;(FTS) – help manage humanitarian funding. FTS provides information to support our advocacy, policymaking and humanitarian financing work. It also helps improve&nbsp;strategic and operational decision-making by enabling effective field coordination.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 6a8ea76e-8ea6-436c-9bc0-85cde525abf7
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698775806
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 4332b9ba-a2c7-459d-aa85-a5087186a1fc
+                  region: seventh
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<h6>Strategic Humanitarian Financing</h6><p>We also ensure more responsive, predictable and strategic humanitarian financing through OCHA’s leadership of the <a href="https://cerf.un.org/">Central Emergency Response Fund </a>(CERF) and <a href="/node/75" data-entity-type="node" data-entity-uuid="5189b880-725d-481f-9f82-c4f6e42dd7c6" data-entity-substitution="canonical">Country-Based Pooled Funds </a>(CBPFs).&nbsp;</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 9b74c253-8c35-40c3-991d-09052fbe9d13
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698775744
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 0a9424af-1643-471b-aa17-22a038cc083b
+                  region: content
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 4e69e981-6488-4f51-9224-b35c5ed2e5d9
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698775781
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: f9ceabef-b1d7-4e7d-836c-07b24271cb93
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698776317
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 4e69e981-6488-4f51-9224-b35c5ed2e5d9
+                  region: content
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>We help drive humanitarian action by encouraging new, more effective funding and financing mechanisms that respond to and reflect the changing nature of humanitarian crises.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b4ee6345-b402-44a3-b916-a2220a830bd2
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698775484
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_twocol_66_33
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 2c7108cc-96dc-47c7-b96d-b395b73bcd4a
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698775497
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: b4ee6345-b402-44a3-b916-a2220a830bd2
+                  region: first
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>OCHA-managed pooled funds are effective ways to support humanitarian action. They allow Governments and private donors to pool their contributions into common, unearmarked funds to deliver life-saving assistance to people who need it most. There are two types of pooled funds: CERF, which can fund an emergency anywhere in the world, and the CBPFs, which are country specific.</p><p>These funds represent a relatively small portion of global humanitarian funding, but they are critical to the delivery of life-saving assistance. They strengthen the collective humanitarian response, empower leadership and improve coordination</p><p>CERF and CBPF allocations are designed to complement other humanitarian funding sources, such as bilateral funding. They can be used independently, but they also work in synergy with other funding streams. You can read more about the value and impact the humanitarian pooled funds at the <a href="https://pooledfunds.impact.unocha.org/">Pooled Funds Story Hub</a>.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Humanitarian Pooled Funds'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 7a026471-ac9b-4715-848e-3c67921103bc
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698775484
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_twocol_66_33
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 92624cc4-31f8-4913-a551-4e9b4ea47ba9
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698775497
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 7a026471-ac9b-4715-848e-3c67921103bc
+                  region: first
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>CERF enables humanitarian organizations to kick-start urgent aid operations worldwide within just hours of a sudden-onset emergency, and to reach crisis-affected people who are not receiving the attention and funding they need.</p><p>It can also scale up and expand assistance when a situation deteriorates suddenly, and it sustains critical assistance in crises that fail to attract sufficient resources<strong>.</strong></p><p>CERF receives contributions year-round from donors – mainly Governments but also foundations, companies, charities and individuals – into a single global fund.&nbsp;</p><p>CERF allocations are available to UN agencies, funds and programmes, and they are informed by joint needs assessments, expert advice from aid workers and priorities set out in country-level plans. CERF has a US$1 billion annual funding target and is fully unearmarked to ensure funds meet the most urgent, life-saving needs.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Central Emergency Response Fund'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 46e33684-1f00-48ee-89d4-417b7cfa2fac
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698775497
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 7a026471-ac9b-4715-848e-3c67921103bc
+                  region: first
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p><strong>Visit the&nbsp;</strong><a href="https://cerf.un.org/"><strong>CERF website</strong></a><strong>.</strong></p><p><strong>Visit the </strong><a href="https://cerf.data.unocha.org/?_gl=1*7vrumr*_ga*ODQ3NDMzMzUzLjE2NjcyNTk1NjY.*_ga_E60ZNX2F68*MTY3NzYxMzY1Ni4zNC4xLjE2Nzc2MTQwOTYuMzQuMC4w"><strong>CERF Data Hub</strong></a></p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 62d6ab3a-af15-46c9-884c-cca0de43ef15
+          bundle: layout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698775484
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_twocol_66_33
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b483e346-1b68-4cba-9296-ec61fb949114
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698775497
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 62d6ab3a-af15-46c9-884c-cca0de43ef15
+                  region: first
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>CBPFs are established when an emergency occurs or when an existing crisis deteriorates. They are managed by OCHA under the leadership of the Humanitarian Coordinators (HCs) or UN Resident Coordinators (RCs) and in close consultation with the humanitarian community.&nbsp;</p><p>Contributions are collected into single, unearmarked funds. These funds support high-priority projects being undertaken by those best placed to respond (including international and national NGOs and UN agencies) through an inclusive and transparent process that supports priorities set out in Humanitarian Response Plans. This ensures funding is available and prioritized locally by those closest to people in need.&nbsp;</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Country-Based Pooled Funds'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 4103a5a8-4eeb-42d5-a54d-580ba9685ae1
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1698775497
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 62d6ab3a-af15-46c9-884c-cca0de43ef15
+                  region: first
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p><strong>Read more about </strong><a href="/node/75" data-entity-type="node" data-entity-uuid="5189b880-725d-481f-9f82-c4f6e42dd7c6" data-entity-substitution="canonical"><strong>Country-Based Pooled Funds</strong></a><strong>.</strong></p><p><strong>Visit the </strong><a href="https://pfdata.unocha.org/"><strong>Pooled Funds Data Hub</strong></a><strong>.</strong></p>'
+              format: ckeditor

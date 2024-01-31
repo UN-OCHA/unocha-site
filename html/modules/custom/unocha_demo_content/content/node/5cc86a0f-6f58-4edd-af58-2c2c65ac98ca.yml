@@ -1,0 +1,142 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 5cc86a0f-6f58-4edd-af58-2c2c65ac98ca
+  bundle: story
+  default_langcode: en
+  depends:
+    921f814b-f86f-47d4-b5b0-e2da08d3980e: user
+    33f1e372-00da-415d-8a1b-d7f5c1ad77e7: taxonomy_term
+    6dfc9cf6-da4f-41d7-ac3d-ef0dd36fc067: node
+    e716b6d4-717e-499e-bd0e-1214afc9ce5b: node
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+    e0a9a933-7026-410b-995f-f662bad1eca6: taxonomy_term
+default:
+  revision_uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 921f814b-f86f-47d4-b5b0-e2da08d3980e
+  title:
+    -
+      value: 'UN relief chief: The war in Gaza must end'
+  created:
+    -
+      value: 1704475974
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'UN relief chief: The war in Gaza must end | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'Statement by Martin Griffiths, Under-Secretary-General for Humanitarian Affairs and Emergency Relief Coordinator'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/news/un-relief-chief-war-gaza-must-end'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: 'Statement by Martin Griffiths, Under-Secretary-General for Humanitarian Affairs and Emergency Relief Coordinator'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2024-01/UNRWA%20USG%20photo.jpg?itok=zqW-Aoey'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'Children and mean and women sit with chairs and bags on the top of an open vehicle.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: 'Statement by Martin Griffiths, Under-Secretary-General for Humanitarian Affairs and Emergency Relief Coordinator'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'Children and mean and women sit with chairs and bags on the top of an open vehicle.'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2024-01/UNRWA%20USG%20photo.jpg?itok=KQ6mvCA_'
+  path:
+    -
+      alias: /news/un-relief-chief-war-gaza-must-end
+      langcode: en
+      pathauto: 1
+  samples_status:
+    -
+      value: false
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<p><strong>Statement by Martin Griffiths, Under-Secretary-General for Humanitarian Affairs and Emergency Relief Coordinator</strong></p><p>&nbsp;Three months since the horrific 7 October attacks, Gaza has become a place of death and despair.</p><p>Tens of thousands of people, mostly women and children, have been killed or injured. Families are sleeping in the open as temperatures plummet. Areas where civilians were told to relocate for their safety have come under bombardment. Medical facilities are under relentless attack. &nbsp;The few hospitals that are partially functional are overwhelmed with trauma cases, critically short of all supplies, and inundated by desperate people seeking safety.</p><p>A public health disaster is unfolding. &nbsp;Infectious diseases are spreading in overcrowded shelters as sewers spill over. Some 180 Palestinian women are giving birth daily amidst this chaos. &nbsp;People are facing the highest levels of food insecurity ever recorded. Famine is around the corner.</p><p>For children in particular, the past 12 weeks have been traumatic: No food. No water. No school. Nothing but the terrifying sounds of war, day in and day out. &nbsp;</p><p>Gaza has simply become uninhabitable. Its people are witnessing daily threats to their very existence – while the world watches on.</p><p>The humanitarian community has been left with the impossible mission of supporting more than 2 million people, even as its own staff are being killed and displaced, as communication blackouts continue, as roads are damaged and convoys are shot at, and as commercial supplies vital to survival are almost non-existent.</p><p>Meanwhile, rocket attacks on Israel continue, more than 120 people are still held hostage in Gaza, tensions in the West Bank are boiling, and the specter of further regional spillover of the war is looming dangerously close. &nbsp;</p><p>Hope has never been more elusive.</p><p>Gaza has shown us the worst of humanity, as well as moments of great heroism.</p><p>We have seen how violence cannot resolve differences, but only inflame passions and build new generations of danger and insecurity.</p><p>We continue to demand an immediate end to the war, not just for the people of Gaza and its threatened neighbors, but for the generations to come who will never forget these 90 days of hell and of assaults on the most basic precepts of humanity. &nbsp;</p><p>It is time for the parties to meet all their obligations under international law, including to protect civilians and meet their essential needs, and to release all hostages immediately.</p><p>It is time for the international community to use all its influence to make this happen.</p><p>This war should never have started. But it’s long past time for it to end.<br>&nbsp;</p>'
+      format: ckeditor
+      summary: ''
+  field_country:
+    -
+      entity: 33f1e372-00da-415d-8a1b-d7f5c1ad77e7
+  field_regions:
+    -
+      entity: 6dfc9cf6-da4f-41d7-ac3d-ef0dd36fc067
+  field_responses:
+    -
+      entity: e716b6d4-717e-499e-bd0e-1214afc9ce5b
+  field_story_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_story_type:
+    -
+      entity: e0a9a933-7026-410b-995f-f662bad1eca6
+  field_theme:
+    -
+      entity: 4633bdef-2cb1-42bb-bf2f-ca8a2bff5eef
+    -
+      entity: c0ca0105-13d7-4b40-ba91-d4c2dc15f022
+    -
+      entity: 649b89d5-ea4a-4324-b50f-1041ffae7be5

@@ -1,0 +1,126 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: b34ab21b-a2e1-4ca6-a898-b252396272b8
+  bundle: basic
+  default_langcode: en
+  depends:
+    8fa1a556-9f76-4ea2-bc75-b2d183a04af6: user
+    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+default:
+  revision_uid:
+    -
+      entity: 8fa1a556-9f76-4ea2-bc75-b2d183a04af6
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+  title:
+    -
+      value: 'Accountability to affected people'
+  created:
+    -
+      value: 1687304929
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Accountability to affected people | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: "For a humanitarian system to be accountable and effective, decision-making power must be in the hands of the people affected by crises.\_"
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/accountability-affected-people'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: "For a humanitarian system to be accountable and effective, decision-making power must be in the hands of the people affected by crises.\_"
+    -
+      tag: meta
+      attributes:
+        property: 'og:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-07/i-q9WpHDr-X4.png?itok=cr1qbvxa'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:width'
+        content: '1200'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:height'
+        content: '630'
+    -
+      tag: meta
+      attributes:
+        property: 'og:image:alt'
+        content: 'An OCHA staff member talks to people affected by crisis'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: "For a humanitarian system to be accountable and effective, decision-making power must be in the hands of the people affected by crises.\_"
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image:alt'
+        content: 'An OCHA staff member talks to people affected by crisis'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:image'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-07/i-q9WpHDr-X4.png?itok=2QUZVuSB'
+  path:
+    -
+      alias: /accountability-affected-people
+      langcode: en
+      pathauto: 1
+  samples_status:
+    -
+      value: false
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<p>For a humanitarian system to be accountable and effective, decision-making power must be in the hands of the people affected by crises.&nbsp;</p><p>This requires humanitarians to recognize women, girls, men and boys of all ages and in all their diversity as the first responders and active agents in their own relief and recovery.</p><p>Through our commitment to provide accountability to affected people (AAP), we aim to ensure that humanitarian action protects and preserves the rights and dignity of crisis-affected people, remains relevant and effective, leaves no one behind and upholds humanitarian principles.</p><p>AAP is also a way to measure the collective performance of humanitarian leaders: how we respond to feedback and adapt programmes, and how affected people experience and perceive humanitarian work are the most relevant measures of our performance.&nbsp;</p><p>Better engagement with communities also helps us build trust and acceptance, which makes our work more impactful.</p><p>Read more about AAP <a href="https://reliefweb.int/report/world/ocha-message-accountability-affected-people">here.</a></p><p>Through engagement with the <a href="https://interagencystandingcommittee.org/accountability-affected-people">Inter-Agency Standing Committee Task Force 2 on Accountability to Affected People</a>, OCHA continues to increase efforts to strengthen AAP across the humanitarian system.&nbsp;</p><h5>&nbsp;</h5><h5><strong>Resources</strong></h5><p><a href="https://interagencystandingcommittee.org/iasc-revised-aap-commitments-2017-including-guidance-note-and-resource-list?_gl=1*17r1qvl*_ga*MzcxMDI3NDU3LjE2NzI3MDY3MTM.*_ga_E60ZNX2F68*MTY3Mjk2MzQ1MS4xMS4xLjE2NzI5NjUwMTUuMzYuMC4w">IASC Revised Commitments on Accountability to Affected Populations and Protection from Sexual Exploitation and Abuse</a>.</p><p><a href="https://reliefweb.int/report/world/putting-people-first-accountability-action-snapshot-q2-2023-01-august-2023">Putting people first: Accountability in action snapshot (Q2 2023), 01 August 2023</a></p>'
+      format: ckeditor
+      summary: ''
+  field_basic_image:
+    -
+      entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+  field_children_menu:
+    -
+      value: false

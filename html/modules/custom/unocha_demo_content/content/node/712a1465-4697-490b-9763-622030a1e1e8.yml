@@ -1,0 +1,1156 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 712a1465-4697-490b-9763-622030a1e1e8
+  bundle: basic
+  default_langcode: en
+  depends:
+    40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9: user
+    8b5bf571-5e5a-4847-9c55-0537b85f4126: node
+    044fc54b-448d-4c80-88b4-160d1b03ac46: media
+default:
+  revision_uid:
+    -
+      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+  status:
+    -
+      value: true
+  uid:
+    -
+      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+  title:
+    -
+      value: 'Demo - page components'
+  created:
+    -
+      value: 1691665763
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Demo - page components | OCHA'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: "This is a demo page with various paragraph types to create custom pages.\_"
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'https://unocha-local.test/demo/page-components'
+    -
+      tag: meta
+      attributes:
+        property: 'og:description'
+        content: "This is a demo page with various paragraph types to create custom pages.\_"
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:card'
+        content: summary_large_image
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:site'
+        content: '@UNOCHA'
+    -
+      tag: meta
+      attributes:
+        name: 'twitter:description'
+        content: "This is a demo page with various paragraph types to create custom pages.\_"
+  path:
+    -
+      alias: /demo/page-components
+      langcode: en
+      pathauto: 0
+  samples_status:
+    -
+      value: true
+  content_translation_source:
+    -
+      value: und
+  content_translation_outdated:
+    -
+      value: false
+  body:
+    -
+      value: '<p>This is a <strong>demo page</strong> with various paragraph types to create custom pages.&nbsp;</p><p>The first item is a Campaign paragraph. It references an existing node.</p>'
+      format: ckeditor
+      summary: ''
+  field_children_menu:
+    -
+      value: false
+  field_custom_content:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: c0207014-26b2-432f-8cdb-c34498dfdc74
+          bundle: campaign
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665840
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_campaign:
+            -
+              entity: 8b5bf571-5e5a-4847-9c55-0537b85f4126
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 7de769fd-3b03-4783-aad1-0825d3f00091
+          bundle: video
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665864
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>And some descriptive text. Vivamus non auctor nisi, et commodo diam. Sed aliquet lectus nec nulla pretium lacinia. Vestibulum maximus urna in aliquet eleifend. Nunc eu mi euismod, viverra lacus non, mollis augue.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Video paragraph'
+          field_video:
+            -
+              entity: 044fc54b-448d-4c80-88b4-160d1b03ac46
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 93b803d7-e036-4c12-be4b-dd4d53b6eae8
+          bundle: reliefweb_document
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665915
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_document:
+            -
+              url: 'https://reliefweb.int/report/myanmar/myanmar-humanitarian-needs-overview-2023-january-2023'
+          field_text:
+            -
+              value: '<p>And some descriptive text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula. Integer magna ipsum, aliquet sed lorem ac, maximus efficitur ligula.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Reliefweb document paragraph with Default view mode'
+          paragraph_view_mode:
+            -
+              value: default
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 7323f9e7-bdc5-40ab-b0b5-df8fab28bebf
+          bundle: response_map
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665936
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 0bce3e0a-71c6-48b5-a036-dd722590d7f9
+          bundle: reliefweb_document
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665915
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_document:
+            -
+              url: 'https://reliefweb.int/report/myanmar/myanmar-humanitarian-needs-overview-2023-january-2023'
+          field_text:
+            -
+              value: '<p>And some descriptive text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula. Integer magna ipsum, aliquet sed lorem ac, maximus efficitur ligula.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Reliefweb document paragraph with Cards view mode'
+          paragraph_view_mode:
+            -
+              value: cards
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 0bf396e4-9210-4615-a56a-ab48d39528ff
+          bundle: call_to_action
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691666068
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_destination:
+            -
+              uri: 'internal:#'
+              title: 'And a button'
+              options: {  }
+          field_text:
+            -
+              value: '<p>With some descriptive text. If this appears last on the page, the background colour is removed to prevent conflict with the footer. Vivamus non auctor nisi, et commodo diam. Sed aliquet lectus nec nulla pretium lacinia. Vestibulum maximus urna in aliquet eleifend. Nunc eu mi euismod, viverra lacus non, mollis augue.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Call to action paragraph'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: fef0d567-25f9-40d0-ac58-3c821983d1ad
+          bundle: reliefweb_document
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691665915
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_document:
+            -
+              url: 'https://reliefweb.int/report/myanmar/myanmar-humanitarian-needs-overview-2023-january-2023'
+          field_text:
+            -
+              value: '<p>And some descriptive text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula. Integer magna ipsum, aliquet sed lorem ac, maximus efficitur ligula.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Reliefweb document paragraph with Teasers view mode'
+          paragraph_view_mode:
+            -
+              value: teasers
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: e1450b96-9605-445b-9742-912402195285
+          bundle: stories
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691666110
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_limit:
+            -
+              value: 4
+          field_title:
+            -
+              value: 'Latest news and stories'
+          paragraph_view_mode:
+            -
+              value: cards_with_featured
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 68e1ca31-1995-43b5-ac93-c032b73081ec
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691666211
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: 'Total requirements'
+              value: '3227372908.00'
+              unit: USD
+              provider: fts
+              id: fts_afg_2023_1117_total-requirements
+              country: afg
+              year: '2'
+            -
+              label: 'Funding total'
+              value: '801734926.00'
+              unit: USD
+              provider: fts
+              id: fts_afg_2023_1117_funding-total
+              country: afg
+              year: '2'
+            -
+              label: 'Funding gap'
+              value: '2425637982.00'
+              unit: USD
+              provider: fts
+              id: fts_afg_2023_1117_funding-gap
+              country: afg
+              year: '2'
+            -
+              label: 'Funding coverage'
+              value: '24.84'
+              unit: ''
+              provider: fts
+              id: fts_afg_2023_1117_funding-coverage
+              country: afg
+              year: '2'
+          field_figures_footnote:
+            -
+              value: 'And a custom footnote. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula. Integer magna ipsum, aliquet sed lorem ac, maximus efficitur ligula.'
+          field_reliefweb_document:
+            -
+              url: 'https://reliefweb.int/report/afghanistan/afghanistan-humanitarian-needs-overview-2023-january-2023'
+          field_text:
+            -
+              value: '<p>And some descriptive text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac pretium nulla. Nam pulvinar purus quis tortor consectetur vehicula. Integer magna ipsum, aliquet sed lorem ac, maximus efficitur ligula.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Figures paragraph with Compact Short view mode'
+          paragraph_view_mode:
+            -
+              value: figures_compact_short
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: bed9b996-4cf6-4fb6-8a39-c3d6bd10454c
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691666211
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: 'Total requirements'
+              value: '3227372908.00'
+              unit: USD
+              provider: fts
+              id: fts_afg_2023_1117_total-requirements
+              country: afg
+              year: '2'
+            -
+              label: 'Funding total'
+              value: '801734926.00'
+              unit: USD
+              provider: fts
+              id: fts_afg_2023_1117_funding-total
+              country: afg
+              year: '2'
+            -
+              label: 'Funding gap'
+              value: '2425637982.00'
+              unit: USD
+              provider: fts
+              id: fts_afg_2023_1117_funding-gap
+              country: afg
+              year: '2'
+            -
+              label: 'Funding coverage'
+              value: '24.84'
+              unit: ''
+              provider: fts
+              id: fts_afg_2023_1117_funding-coverage
+              country: afg
+              year: '2'
+          field_reliefweb_document:
+            -
+              url: 'https://reliefweb.int/report/afghanistan/afghanistan-humanitarian-needs-overview-2023-january-2023'
+          field_title:
+            -
+              value: 'Figures paragraph with Compact Long view mode'
+          paragraph_view_mode:
+            -
+              value: figures_compact_long
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 7d43712f-9f05-4ee8-982f-f692b7eda609
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691666211
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: 'Total requirements'
+              value: '3227372908.00'
+              unit: USD
+              provider: fts
+              id: fts_afg_2023_1117_total-requirements
+              country: afg
+              year: '2'
+            -
+              label: 'Funding total'
+              value: '801734926.00'
+              unit: USD
+              provider: fts
+              id: fts_afg_2023_1117_funding-total
+              country: afg
+              year: '2'
+            -
+              label: 'Funding gap'
+              value: '2425637982.00'
+              unit: USD
+              provider: fts
+              id: fts_afg_2023_1117_funding-gap
+              country: afg
+              year: '2'
+            -
+              label: 'Funding coverage'
+              value: '24.84'
+              unit: ''
+              provider: fts
+              id: fts_afg_2023_1117_funding-coverage
+              country: afg
+              year: '2'
+          field_reliefweb_document:
+            -
+              url: 'https://reliefweb.int/report/afghanistan/afghanistan-humanitarian-needs-overview-2023-january-2023'
+          field_title:
+            -
+              value: 'Figures paragraph with Default view mode'
+          paragraph_view_mode:
+            -
+              value: default
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: e0ccf167-e484-4aad-b916-f586854ec487
+          bundle: figures
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691666211
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_figures:
+            -
+              label: 'Total requirements'
+              value: '3227372908.00'
+              unit: USD
+              provider: fts
+              id: fts_afg_2023_1117_total-requirements
+              country: afg
+              year: '2'
+            -
+              label: 'Funding total'
+              value: '801734926.00'
+              unit: USD
+              provider: fts
+              id: fts_afg_2023_1117_funding-total
+              country: afg
+              year: '2'
+            -
+              label: 'Funding gap'
+              value: '2425637982.00'
+              unit: USD
+              provider: fts
+              id: fts_afg_2023_1117_funding-gap
+              country: afg
+              year: '2'
+            -
+              label: 'Funding coverage'
+              value: '24.84'
+              unit: ''
+              provider: fts
+              id: fts_afg_2023_1117_funding-coverage
+              country: afg
+              year: '2'
+          field_reliefweb_document:
+            -
+              url: 'https://reliefweb.int/report/afghanistan/afghanistan-humanitarian-needs-overview-2023-january-2023'
+          field_title:
+            -
+              value: 'Figures paragraph with Figure view mode'
+          paragraph_view_mode:
+            -
+              value: figures
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 525da253-fdb9-4229-97a4-58c66eb876d3
+          bundle: subscribe
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1691666376
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>And some descriptive text. Vivamus non auctor nisi, et commodo diam. Sed aliquet lectus nec nulla pretium lacinia. Vestibulum maximus urna in aliquet eleifend. Nunc eu mi euismod, viverra lacus non, mollis augue.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Subscribe paragraph'
+          field_url:
+            -
+              uri: 'https://humanitarianresponse.us4.list-manage.com/subscribe?u=fe0746c970b6af5b85b9a5ef4&id=415599abc4'
+              title: Subscribe
+              options: {  }
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 13361d5a-867b-4fdc-a89b-cbf91e25161e
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1693222100
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Section paragraph using Default view mode'
+          paragraph_view_mode:
+            -
+              value: default
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 9877d9f0-a020-495b-9eae-545bed0dc26d
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1693222115
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 13361d5a-867b-4fdc-a89b-cbf91e25161e
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>This is a text paragraph inside a Section layout. Any paragraph type can go here.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Example title'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 4a5fe672-da41-4ddd-9316-d11189598b52
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1693222100
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Section paragraph using Tabs view mode'
+          paragraph_view_mode:
+            -
+              value: tabs
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 5ece40c6-16b7-43da-b739-d1c57e7efcf5
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1693222115
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 4a5fe672-da41-4ddd-9316-d11189598b52
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>This is the first tab. This is a text paragraph inside a Section layout. Any paragraph type can go here.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Example title 1'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: cb0975cc-66ef-4047-a5e8-7bb11d66660c
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1693222115
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 4a5fe672-da41-4ddd-9316-d11189598b52
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>This is the second tab. This is a text paragraph inside a Section layout. Any paragraph type can go here.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Example title 2'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: d28918e9-15e6-413c-aad8-3d019951a582
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1693222115
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 4a5fe672-da41-4ddd-9316-d11189598b52
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>This is the third tab. This is a text paragraph inside a Section layout. Any paragraph type can go here.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Example title 3'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 137ea3a3-55ad-407d-88c6-56182c74eaf8
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1693222100
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Section paragraph using Container view mode'
+          paragraph_view_mode:
+            -
+              value: tabs
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: f4c9142b-9e6d-4fd4-9c8d-ecdcf924e8cc
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1693222630
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 137ea3a3-55ad-407d-88c6-56182c74eaf8
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Tab title 1'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 726987c7-3738-4fea-8b98-dfe1207db34a
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1693222115
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: f4c9142b-9e6d-4fd4-9c8d-ecdcf924e8cc
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>This is the first tab. Notice it does not have a paragraph title. This is a text paragraph inside a Section layout. Any paragraph type can go here.</p>'
+              format: ckeditor
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 4548bf4e-be07-45aa-97bd-f6e48a23c8a8
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1693222630
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 137ea3a3-55ad-407d-88c6-56182c74eaf8
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Tab title 2'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 3a7b735e-2c5a-4e07-82c1-3e11d2b1afe8
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1693222115
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: 4548bf4e-be07-45aa-97bd-f6e48a23c8a8
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: "<p>This is the second tab. Notice its Tab item title is different to this paragraph's title.</p>"
+              format: ckeditor
+          field_title:
+            -
+              value: 'Example title 2'
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: a0242da2-9066-4092-8ef5-5ae12b83cb98
+          bundle: section
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1693222630
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  layout: layout_onecol
+                  config:
+                    label: ''
+                  parent_uuid: 137ea3a3-55ad-407d-88c6-56182c74eaf8
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_title:
+            -
+              value: 'Tab title 3'
+          paragraph_view_mode:
+            -
+              value: container
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 2db88760-40d0-4a90-92e0-6717a7e5dbfe
+          bundle: text
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1693222115
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: a0242da2-9066-4092-8ef5-5ae12b83cb98
+                  region: content
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_text:
+            -
+              value: '<p>This is the third tab. This is a text paragraph inside a Section layout. Any paragraph type can go here.</p>'
+              format: ckeditor
+          field_title:
+            -
+              value: 'Example title 3'
