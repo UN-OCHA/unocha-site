@@ -5,8 +5,6 @@ _meta:
   bundle: response
   default_langcode: en
   depends:
-    40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9: user
-    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
     193075ce-fbd5-4504-8992-137054626127: taxonomy_term
     3f8e17ec-39f5-4af2-9add-1e0bb44ab27f: taxonomy_term
     6dfc9cf6-da4f-41d7-ac3d-ef0dd36fc067: node
@@ -14,13 +12,13 @@ _meta:
 default:
   revision_uid:
     -
-      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+      target_id: 1
   status:
     -
       value: true
   uid:
     -
-      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+      target_id: 1
   title:
     -
       value: Lebanon
@@ -61,7 +59,7 @@ default:
       tag: meta
       attributes:
         property: 'og:image'
-        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-06/refugee%20%282%29.jpg?itok=-4YiiLrM'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-07/untitled-00455.jpg?itok=ewB2HGnx'
     -
       tag: meta
       attributes:
@@ -76,7 +74,7 @@ default:
       tag: meta
       attributes:
         property: 'og:image:alt'
-        content: 'Painting of a refugee on a wall in Beirut'
+        content: 'The UN Under-Secretary-General, Martin Griffith surrounded by cameras'
     -
       tag: meta
       attributes:
@@ -96,17 +94,20 @@ default:
       tag: meta
       attributes:
         name: 'twitter:image:alt'
-        content: 'Painting of a refugee on a wall in Beirut'
+        content: 'The UN Under-Secretary-General, Martin Griffith surrounded by cameras'
     -
       tag: meta
       attributes:
         name: 'twitter:image'
-        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-06/refugee%20%282%29.jpg?itok=8HLd7GEG'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-07/untitled-00455.jpg?itok=xAh8VCJ1'
   path:
     -
       alias: /lebanon
       langcode: en
       pathauto: 1
+  samples_status:
+    -
+      value: false
   content_translation_source:
     -
       value: und
@@ -461,10 +462,10 @@ default:
           field_figures:
             -
               label: Population
-              value: '5920156.00'
+              value: '5709936.00'
               unit: ''
               provider: fts
-              id: fts_lbn_2023_1134_population
+              id: population
               country: lbn
               year: '2'
             -
@@ -472,7 +473,7 @@ default:
               value: '3800000.00'
               unit: ''
               provider: rw_crisis
-              id: rw_crisis_lbn_2023_people-in-need
+              id: people-in-need
               country: lbn
               year: '2'
             -
@@ -480,7 +481,7 @@ default:
               value: '1500000.00'
               unit: ''
               provider: rw_crisis
-              id: rw_crisis_lbn_2023_displaced-syrians-in-lebanon
+              id: displaced-syrians-in-lebanon
               country: lbn
               year: '2'
           field_reliefweb_document:
@@ -558,7 +559,7 @@ default:
               value: '3800000.00'
               unit: ''
               provider: rw_crisis
-              id: rw_crisis_lbn_2023_people-in-need
+              id: people-in-need
               country: lbn
               year: '2'
             -
@@ -566,7 +567,7 @@ default:
               value: '3200000.00'
               unit: ''
               provider: rw_crisis
-              id: rw_crisis_lbn_2023_people-targeted-for-assistance
+              id: people-targeted-for-assistance
               country: lbn
               year: '2'
             -
@@ -574,7 +575,7 @@ default:
               value: '200203540.00'
               unit: USD
               provider: fts
-              id: fts_lbn_2023_1134_total-requirements
+              id: total-requirements
               country: lbn
               year: '2'
           field_reliefweb_document:
@@ -640,6 +641,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: b34cb66e-118f-41fb-96ce-dc374c5f11bb
                   region: content
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -652,31 +656,31 @@ default:
               value: '200203540.00'
               unit: USD
               provider: fts
-              id: fts_lbn_2023_1134_total-requirements
+              id: total-requirements
               country: lbn
               year: '2'
             -
               label: 'Funding total'
-              value: '51423616.00'
+              value: '78133289.00'
               unit: USD
               provider: fts
-              id: fts_lbn_2023_1134_funding-total
+              id: funding-total
               country: lbn
               year: '2'
             -
               label: 'Funding gap'
-              value: '148779924.00'
+              value: '122070251.00'
               unit: USD
               provider: fts
-              id: fts_lbn_2023_1134_funding-gap
+              id: funding-gap
               country: lbn
               year: '2'
             -
               label: 'Funding coverage'
-              value: '25.69'
+              value: '39.03'
               unit: ''
               provider: fts
-              id: fts_lbn_2023_1134_funding-coverage
+              id: funding-coverage
               country: lbn
               year: '2'
           paragraph_view_mode:
@@ -712,10 +716,10 @@ default:
           field_country_donors:
             -
               label: 'Top donors'
-              value: 'Norway, Central Emergency Response Fund, France, Canada, Belgium, Sweden, Ireland, UNICEF National Committee/Denmark, Switzerland, European Commission'
+              value: 'France, Central Emergency Response Fund, Germany, Switzerland, United States of America, United Kingdom, Belgium, Norway, Sweden, European Commission'
               unit: ''
               provider: fts
-              id: fts_lbn_2023_1134_top-donors
+              id: top-donors
               country: lbn
               year: '2'
     -
@@ -748,10 +752,10 @@ default:
           field_country_donors:
             -
               label: 'Top sectors'
-              value: 'Not specified, Protection, Health, Nutrition, WASH, Education, Migrants, Coordination and Common Services'
+              value: 'Not specified, Health, Protection, WASH, Education, Nutrition, Migrants, Coordination and Common Services'
               unit: ''
               provider: fts
-              id: fts_lbn_2023_1134_top-sectors
+              id: top-sectors
               country: lbn
               year: '2'
           field_url:
@@ -780,9 +784,6 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -900,18 +901,18 @@ default:
           field_figures:
             -
               label: 'Pledged amount'
-              value: '15617837.85'
+              value: '32339183.09'
               unit: USD
               provider: cbpf
-              id: cbpf_lbn_2023_pledged-amount
+              id: pledged-amount
               country: lbn
               year: '2'
             -
               label: 'Paid amount'
-              value: '15828009.06'
+              value: '32568787.87'
               unit: USD
               provider: cbpf
-              id: cbpf_lbn_2023_paid-amount
+              id: paid-amount
               country: lbn
               year: '2'
           paragraph_view_mode:
@@ -977,10 +978,10 @@ default:
           field_country_donors:
             -
               label: 'Top donors'
-              value: 'Belgium, Ireland, Sweden, France, Canada, Switzerland, Norway, Iceland'
+              value: 'Germany, Switzerland, United Kingdom, Belgium, Denmark, Ireland, Sweden, France, Canada, Norway'
               unit: ''
               provider: cbpf
-              id: cbpf_lbn_2023_top-donors
+              id: top-donors
               country: lbn
               year: '2'
           field_url:
@@ -993,8 +994,8 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: cc2166b4-346f-450f-8b76-f85ecf28aa75
-          bundle: layout
+          uuid: 59c5c2f4-bd80-4c13-84e5-821f1e5f1581
+          bundle: reliefweb_river
           default_langcode: en
         default:
           status:
@@ -1002,87 +1003,13 @@ default:
               value: true
           created:
             -
-              value: 1687559087
+              value: 1706781746
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  layout: layout_twocol_sidebar
-                  config:
-                    label: ''
                   parent_uuid: null
                   region: null
-          revision_translation_affected:
-            -
-              value: true
-          content_translation_source:
-            -
-              value: und
-          content_translation_outdated:
-            -
-              value: false
-    -
-      entity:
-        _meta:
-          version: '1.0'
-          entity_type: paragraph
-          uuid: 3c165b9e-d7cd-4847-8ba3-da8cd1f957ad
-          bundle: reliefweb_river
-          default_langcode: en
-        default:
-          status:
-            -
-              value: true
-          created:
-            -
-              value: 1687559112
-          behavior_settings:
-            -
-              value:
-                layout_paragraphs:
-                  parent_uuid: cc2166b4-346f-450f-8b76-f85ecf28aa75
-                  region: first
-          revision_translation_affected:
-            -
-              value: true
-          content_translation_source:
-            -
-              value: und
-          content_translation_outdated:
-            -
-              value: false
-          field_reliefweb_river:
-            -
-              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%21%28F10%29_%28PC137%29_%28C137%29&search=_exists_%3Aocha_product'
-              title: ''
-              limit: 4
-          field_title:
-            -
-              value: Resources
-          paragraph_view_mode:
-            -
-              value: cards
-    -
-      entity:
-        _meta:
-          version: '1.0'
-          entity_type: paragraph
-          uuid: a382b27f-4661-48de-9d53-12d8a7cd885c
-          bundle: reliefweb_river
-          default_langcode: en
-        default:
-          status:
-            -
-              value: true
-          created:
-            -
-              value: 1687559132
-          behavior_settings:
-            -
-              value:
-                layout_paragraphs:
-                  parent_uuid: cc2166b4-346f-450f-8b76-f85ecf28aa75
-                  region: second
           content_translation_source:
             -
               value: und
@@ -1093,10 +1020,51 @@ default:
             -
               url: 'https://reliefweb.int/updates?advanced-search=%28PC137%29_%28S1503%29_%28F10%29'
               title: ''
-              limit: 2
+              limit: 3
+          field_title:
+            -
+              value: 'Situation Reports'
           paragraph_view_mode:
             -
-              value: teasers
+              value: resources
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 2198145a-e29f-44bd-b0cb-eb174434a412
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1706781731
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%21%28F10%29_%28PC137%29_%28C137%29&search=_exists_%3Aocha_product'
+              title: ''
+              limit: 6
+          field_title:
+            -
+              value: Resources
+          paragraph_view_mode:
+            -
+              value: resources
     -
       entity:
         _meta:
@@ -1127,10 +1095,10 @@ default:
           field_figures:
             -
               label: 'Total requirements'
-              value: '3143310.00'
+              value: '2710187.00'
               unit: USD
               provider: oct
-              id: oct_lbn_2023_2654_total-requirements
+              id: total-requirements
               country: lbn
               year: '2'
             -
@@ -1138,23 +1106,23 @@ default:
               value: '348.00'
               unit: USD
               provider: oct
-              id: oct_lbn_2023_2654_opening-balance
+              id: opening-balance
               country: lbn
               year: '2'
             -
               label: 'Earmarked funding'
-              value: '892145.00'
+              value: '1392145.00'
               unit: USD
               provider: oct
-              id: oct_lbn_2023_2654_earmarked-funding
+              id: earmarked-funding
               country: lbn
               year: '2'
             -
               label: Total
-              value: '892145.00'
+              value: '1392145.00'
               unit: USD
               provider: oct
-              id: oct_lbn_2023_2654_total
+              id: total
               country: lbn
               year: '2'
           field_title:
@@ -1184,6 +1152,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -1193,10 +1164,10 @@ default:
           field_country_donors:
             -
               label: 'Earmarked donors'
-              value: 'Germany, Japan, European Commission, Sweden, Canada'
+              value: 'Germany, Japan, European Commission, Sweden, Canada, United States'
               unit: ''
               provider: oct
-              id: oct_lbn_2023_2654_earmarked-donors
+              id: earmarked-donors
               country: lbn
               year: '2'
     -
@@ -1220,6 +1191,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -1229,10 +1203,10 @@ default:
           field_country_donors:
             -
               label: 'Unearmarked donors'
-              value: 'Australia,  Belgium,  Canada,  Denmark,  Estonia,  Finland,  France,  Germany,  Iceland, Ireland,  Japan,  Luxembourg,  Monaco,  Netherlands, New Zealand,  Norway,  Russian Federation,  South Africa, Sweden, Switzerland, United Kingdom'
+              value: 'Australia,  Austria,  Belgium,  Canada,  China,  Cyprus,  Denmark,  Estonia,  Finland,  France,  Germany,  Iceland, Ireland,  Japan,  Korea, Republic of,  Luxembourg,  Monaco,  Netherlands, New Zealand,  Norway,  Qatar,  Russian Federation,  Singapore,  S'
               unit: ''
               provider: oct
-              id: oct_lbn_2023_2654_unearmarked-donors
+              id: unearmarked-donors
               country: lbn
               year: '2'
   field_has_response:

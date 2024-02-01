@@ -5,8 +5,6 @@ _meta:
   bundle: response
   default_langcode: en
   depends:
-    8fa1a556-9f76-4ea2-bc75-b2d183a04af6: user
-    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
     33f1e372-00da-415d-8a1b-d7f5c1ad77e7: taxonomy_term
     3f8e17ec-39f5-4af2-9add-1e0bb44ab27f: taxonomy_term
     0c036e0c-d618-4894-9579-5fe14f344d6f: node
@@ -14,13 +12,13 @@ _meta:
 default:
   revision_uid:
     -
-      entity: 8fa1a556-9f76-4ea2-bc75-b2d183a04af6
+      target_id: 1
   status:
     -
       value: true
   uid:
     -
-      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+      target_id: 1
   title:
     -
       value: Colombia
@@ -61,7 +59,7 @@ default:
       tag: meta
       attributes:
         property: 'og:image'
-        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2024-01/2023-05-17%20CO%20-%20ASG%20Mission%20%2804%20Union%20Wounaan%20Field%20Visit%29%200139_0.jpg?itok=4TyptfXy'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-07/untitled-00455.jpg?itok=ewB2HGnx'
     -
       tag: meta
       attributes:
@@ -76,7 +74,7 @@ default:
       tag: meta
       attributes:
         property: 'og:image:alt'
-        content: 'ASG Mission Union Wounaan Field Visit'
+        content: 'The UN Under-Secretary-General, Martin Griffith surrounded by cameras'
     -
       tag: meta
       attributes:
@@ -96,12 +94,12 @@ default:
       tag: meta
       attributes:
         name: 'twitter:image:alt'
-        content: 'ASG Mission Union Wounaan Field Visit'
+        content: 'The UN Under-Secretary-General, Martin Griffith surrounded by cameras'
     -
       tag: meta
       attributes:
         name: 'twitter:image'
-        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2024-01/2023-05-17%20CO%20-%20ASG%20Mission%20%2804%20Union%20Wounaan%20Field%20Visit%29%200139_0.jpg?itok=wmQpjrEy'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-07/untitled-00455.jpg?itok=xAh8VCJ1'
   path:
     -
       alias: /colombia
@@ -459,6 +457,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: cc316390-7d0b-4c43-b3e7-cb495d48f982
                   region: content
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -471,23 +472,23 @@ default:
               value: '52156254.00'
               unit: ''
               provider: fts
-              id: fts_col_2023_1142_population
+              id: population
               country: col
               year: '2'
             -
               label: 'People in Need'
-              value: '7700000.00'
+              value: '8300000.00'
               unit: ''
               provider: rw_crisis
-              id: rw_crisis_col_2023_people-in-need
+              id: people-in-need
               country: col
               year: '2'
             -
               label: 'Venezuelan Refugees and Migrants in Colombia'
-              value: '2480000.00'
+              value: '2875743.00'
               unit: ''
               provider: rw_crisis
-              id: rw_crisis_col_2023_venezuelan-refugees-and-migrants-in-colombia
+              id: venezuelan-refugees-and-migrants-in-colombia
               country: col
               year: '2'
           field_reliefweb_document:
@@ -553,6 +554,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: 0d46e746-6aac-4fa1-8c64-6d060aa2d4c4
                   region: content
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -562,10 +566,10 @@ default:
           field_figures:
             -
               label: 'People in Need'
-              value: '7700000.00'
+              value: '8300000.00'
               unit: ''
               provider: rw_crisis
-              id: rw_crisis_col_2023_people-in-need
+              id: people-in-need
               country: col
               year: '2'
             -
@@ -573,7 +577,7 @@ default:
               value: '1600000.00'
               unit: ''
               provider: rw_crisis
-              id: rw_crisis_col_2023_people-targeted-for-assistance
+              id: people-targeted-for-assistance
               country: col
               year: '2'
             -
@@ -581,7 +585,7 @@ default:
               value: '283317893.00'
               unit: USD
               provider: fts
-              id: fts_col_2023_1142_total-requirements
+              id: total-requirements
               country: col
               year: '2'
           field_reliefweb_document:
@@ -647,6 +651,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: e217f6c6-5a14-4889-ab59-59be5a47c66a
                   region: content
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -659,31 +666,31 @@ default:
               value: '283317893.00'
               unit: USD
               provider: fts
-              id: fts_col_2023_1142_total-requirements
+              id: total-requirements
               country: col
               year: '2'
             -
               label: 'Funding total'
-              value: '56567140.00'
+              value: '130422562.00'
               unit: USD
               provider: fts
-              id: fts_col_2023_1142_funding-total
+              id: funding-total
               country: col
               year: '2'
             -
               label: 'Funding gap'
-              value: '226750753.00'
+              value: '152895331.00'
               unit: USD
               provider: fts
-              id: fts_col_2023_1142_funding-gap
+              id: funding-gap
               country: col
               year: '2'
             -
               label: 'Funding coverage'
-              value: '19.97'
+              value: '46.03'
               unit: ''
               provider: fts
-              id: fts_col_2023_1142_funding-coverage
+              id: funding-coverage
               country: col
               year: '2'
           paragraph_view_mode:
@@ -710,6 +717,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -719,10 +729,10 @@ default:
           field_country_donors:
             -
               label: 'Top donors'
-              value: 'United States of America, European Commission, Central Emergency Response Fund, Sweden, Germany, Switzerland, Norway, Canada, United Nations Development Programme, Private (individuals & organizations)'
+              value: 'United States of America, European Commission, Germany, Central Emergency Response Fund, Sweden, Switzerland, Norway, Canada, Danish Refugee Council, Spain'
               unit: ''
               provider: fts
-              id: fts_col_2023_1142_top-donors
+              id: top-donors
               country: col
               year: '2'
     -
@@ -746,6 +756,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -755,10 +768,10 @@ default:
           field_country_donors:
             -
               label: 'Top sectors'
-              value: 'Protección, Seguridad Alimentaria y Nutrición, Salud, Recuperación Temprana, Educación, Coordinación, Not specified, Agua, Saneamiento e Higiene, Albergue y Artículos no Alimentarios'
+              value: 'Protección, Seguridad Alimentaria y Nutrición, Recuperación Temprana, Salud, Coordinación, Educación, Agua, Saneamiento e Higiene, Albergue y Artículos no Alimentarios'
               unit: ''
               provider: fts
-              id: fts_col_2023_1142_top-sectors
+              id: top-sectors
               country: col
               year: '2'
           field_url:
@@ -807,8 +820,8 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: bf1b40a9-9b50-4dbd-8cb4-379ff56fb851
-          bundle: layout
+          uuid: d6a82ad5-a8c1-4c02-aef8-16f065741af1
+          bundle: reliefweb_river
           default_langcode: en
         default:
           status:
@@ -816,81 +829,13 @@ default:
               value: true
           created:
             -
-              value: 1687551432
+              value: 1706781585
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  layout: layout_twocol_sidebar
-                  config:
-                    label: ''
                   parent_uuid: null
                   region: null
-          content_translation_source:
-            -
-              value: und
-          content_translation_outdated:
-            -
-              value: false
-    -
-      entity:
-        _meta:
-          version: '1.0'
-          entity_type: paragraph
-          uuid: 68502584-9d07-493b-8666-1ceffc2dfe3d
-          bundle: reliefweb_river
-          default_langcode: en
-        default:
-          status:
-            -
-              value: true
-          created:
-            -
-              value: 1687551462
-          behavior_settings:
-            -
-              value:
-                layout_paragraphs:
-                  parent_uuid: bf1b40a9-9b50-4dbd-8cb4-379ff56fb851
-                  region: first
-          content_translation_source:
-            -
-              value: und
-          content_translation_outdated:
-            -
-              value: false
-          field_reliefweb_river:
-            -
-              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%21%28F10%29_%28PC64%29_%28C64%29&search=_exists_%3Aocha_product'
-              title: ''
-              limit: 4
-          field_title:
-            -
-              value: Resources
-          paragraph_view_mode:
-            -
-              value: cards
-    -
-      entity:
-        _meta:
-          version: '1.0'
-          entity_type: paragraph
-          uuid: 0467a4d4-ce69-4d6b-8074-dd5295421c12
-          bundle: reliefweb_river
-          default_langcode: en
-        default:
-          status:
-            -
-              value: true
-          created:
-            -
-              value: 1687551495
-          behavior_settings:
-            -
-              value:
-                layout_paragraphs:
-                  parent_uuid: bf1b40a9-9b50-4dbd-8cb4-379ff56fb851
-                  region: second
           content_translation_source:
             -
               value: und
@@ -901,10 +846,51 @@ default:
             -
               url: 'https://reliefweb.int/updates?advanced-search=%28PC64%29_%28S1503%29_%28F10%29'
               title: ''
-              limit: 2
+              limit: 3
+          field_title:
+            -
+              value: 'Situation Reports'
           paragraph_view_mode:
             -
-              value: teasers
+              value: resources
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: ad8b2631-4b25-4e13-9e48-16ed58c4759a
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1706781571
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%21%28F10%29_%28PC64%29_%28C64%29&search=_exists_%3Aocha_product'
+              title: ''
+              limit: 6
+          field_title:
+            -
+              value: Resources
+          paragraph_view_mode:
+            -
+              value: resources
     -
       entity:
         _meta:
@@ -926,6 +912,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -935,10 +924,10 @@ default:
           field_figures:
             -
               label: 'Total requirements'
-              value: '2178992.00'
+              value: '2445854.00'
               unit: USD
               provider: oct
-              id: oct_col_2023_2360_total-requirements
+              id: total-requirements
               country: col
               year: '2'
             -
@@ -946,23 +935,23 @@ default:
               value: '718724.00'
               unit: USD
               provider: oct
-              id: oct_col_2023_2360_opening-balance
+              id: opening-balance
               country: col
               year: '2'
             -
               label: 'Earmarked funding'
-              value: '752093.00'
+              value: '1786224.00'
               unit: USD
               provider: oct
-              id: oct_col_2023_2360_earmarked-funding
+              id: earmarked-funding
               country: col
               year: '2'
             -
               label: Total
-              value: '752093.00'
+              value: '1786224.00'
               unit: USD
               provider: oct
-              id: oct_col_2023_2360_total
+              id: total
               country: col
               year: '2'
           field_title:
@@ -992,6 +981,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -1001,10 +993,10 @@ default:
           field_country_donors:
             -
               label: 'Earmarked donors'
-              value: 'European Commission, Switzerland, Canada'
+              value: 'European Commission, Switzerland, Spain, Canada, United States'
               unit: ''
               provider: oct
-              id: oct_col_2023_2360_earmarked-donors
+              id: earmarked-donors
               country: col
               year: '2'
     -
@@ -1028,6 +1020,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -1037,10 +1032,10 @@ default:
           field_country_donors:
             -
               label: 'Unearmarked donors'
-              value: 'Australia,  Belgium,  Canada,  Denmark,  Estonia,  Finland,  France,  Germany,  Iceland, Ireland,  Japan,  Luxembourg,  Monaco,  Netherlands, New Zealand,  Norway,  Russian Federation,  South Africa, Sweden, Switzerland, United Kingdom'
+              value: 'Australia,  Austria,  Belgium,  Canada,  China,  Cyprus,  Denmark,  Estonia,  Finland,  France,  Germany,  Iceland, Ireland,  Japan,  Korea, Republic of,  Luxembourg,  Monaco,  Netherlands, New Zealand,  Norway,  Qatar,  Russian Federation,  Singapore,  S'
               unit: ''
               provider: oct
-              id: oct_col_2023_2360_unearmarked-donors
+              id: unearmarked-donors
               country: col
               year: '2'
     -

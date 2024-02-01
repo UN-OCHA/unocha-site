@@ -5,8 +5,6 @@ _meta:
   bundle: response
   default_langcode: en
   depends:
-    40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9: user
-    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
     af5384d9-3f44-4a09-9628-9a53ea4baae3: taxonomy_term
     3f8e17ec-39f5-4af2-9add-1e0bb44ab27f: taxonomy_term
     ff34642c-7718-4808-b175-a3fa849587dc: node
@@ -14,13 +12,13 @@ _meta:
 default:
   revision_uid:
     -
-      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+      target_id: 1
   status:
     -
       value: true
   uid:
     -
-      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+      target_id: 1
   title:
     -
       value: Burundi
@@ -61,7 +59,7 @@ default:
       tag: meta
       attributes:
         property: 'og:image'
-        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-06/20221103-A7R02420.jpg?itok=P9-yIeWE'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-07/untitled-00455.jpg?itok=ewB2HGnx'
     -
       tag: meta
       attributes:
@@ -76,7 +74,7 @@ default:
       tag: meta
       attributes:
         property: 'og:image:alt'
-        content: 'A woman looks into the camera'
+        content: 'The UN Under-Secretary-General, Martin Griffith surrounded by cameras'
     -
       tag: meta
       attributes:
@@ -96,17 +94,20 @@ default:
       tag: meta
       attributes:
         name: 'twitter:image:alt'
-        content: 'A woman looks into the camera'
+        content: 'The UN Under-Secretary-General, Martin Griffith surrounded by cameras'
     -
       tag: meta
       attributes:
         name: 'twitter:image'
-        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-06/20221103-A7R02420.jpg?itok=RncAoPuK'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-07/untitled-00455.jpg?itok=xAh8VCJ1'
   path:
     -
       alias: /burundi
       langcode: en
       pathauto: 1
+  samples_status:
+    -
+      value: false
   content_translation_source:
     -
       value: und
@@ -464,23 +465,23 @@ default:
               value: '13462727.00'
               unit: ''
               provider: fts
-              id: fts_bdi_2023_1148_population
+              id: population
               country: bdi
               year: '2'
             -
               label: 'People in Need'
-              value: '1500000.00'
+              value: '2700000.00'
               unit: ''
               provider: rw_crisis
-              id: rw_crisis_bdi_2023_people-in-need
+              id: people-in-need
               country: bdi
               year: '2'
             -
               label: IDPs
-              value: '73586.00'
+              value: '73931.00'
               unit: ''
               provider: rw_crisis
-              id: rw_crisis_bdi_2023_idps
+              id: idps
               country: bdi
               year: '2'
           field_reliefweb_document:
@@ -555,26 +556,26 @@ default:
           field_figures:
             -
               label: 'People in Need'
-              value: '1500000.00'
+              value: '2700000.00'
               unit: ''
               provider: rw_crisis
-              id: rw_crisis_bdi_2023_people-in-need
+              id: people-in-need
               country: bdi
               year: '2'
             -
               label: 'People Targeted for Assistance'
-              value: '1100000.00'
+              value: '1600000.00'
               unit: ''
               provider: rw_crisis
-              id: rw_crisis_bdi_2023_people-targeted-for-assistance
+              id: people-targeted-for-assistance
               country: bdi
               year: '2'
             -
               label: 'Total requirements'
-              value: '194245176.00'
+              value: '237180119.00'
               unit: USD
               provider: fts
-              id: fts_bdi_2023_1148_total-requirements
+              id: total-requirements
               country: bdi
               year: '2'
           field_reliefweb_document:
@@ -613,10 +614,10 @@ default:
           field_country_donors:
             -
               label: 'Top donors'
-              value: 'United States of America, Japan, Germany, Central Emergency Response Fund, European Commission, Burundi, France, Private (individuals & organizations), Korea, Republic of, Denmark'
+              value: 'United States of America, Japan, European Commission, Germany, Central Emergency Response Fund, France, Burundi, Private (individuals & organizations), Korea, Republic of, Canada'
               unit: ''
               provider: fts
-              id: fts_bdi_2023_1148_top-donors
+              id: top-donors
               country: bdi
               year: '2'
     -
@@ -649,10 +650,10 @@ default:
           field_country_donors:
             -
               label: 'Top sectors'
-              value: 'Sécurité alimentaire, Réponse aux Réfugiés, Nutrition, Réponse aux Rapatriés, Santé, Protection, Abris / Articles Non-Alimentaires, Education, Coordination, Eau, Hygiène et Assainissement'
+              value: 'Réponse aux Réfugiés, Sécurité alimentaire, Nutrition, Réponse aux Rapatriés, Abris / Articles Non-Alimentaires, Protection, Education, Santé, Coordination, Eau, Hygiène et Assainissement'
               unit: ''
               provider: fts
-              id: fts_bdi_2023_1148_top-sectors
+              id: top-sectors
               country: bdi
               year: '2'
           field_url:
@@ -681,9 +682,6 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -723,9 +721,6 @@ default:
                     label: ''
                   parent_uuid: null
                   region: null
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -753,9 +748,6 @@ default:
                 layout_paragraphs:
                   parent_uuid: 6999ac8a-04e8-44e1-902e-710ef07ed2db
                   region: first
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -829,6 +821,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -841,7 +836,7 @@ default:
               value: '1166568.00'
               unit: USD
               provider: oct
-              id: oct_bdi_2023_2279_total-requirements
+              id: total-requirements
               country: bdi
               year: '2'
             -
@@ -849,23 +844,23 @@ default:
               value: '26332.00'
               unit: USD
               provider: oct
-              id: oct_bdi_2023_2279_opening-balance
+              id: opening-balance
               country: bdi
               year: '2'
             -
               label: 'Earmarked funding'
-              value: '1066124.00'
+              value: '1008442.00'
               unit: USD
               provider: oct
-              id: oct_bdi_2023_2279_earmarked-funding
+              id: earmarked-funding
               country: bdi
               year: '2'
             -
               label: Total
-              value: '1066124.00'
+              value: '1008442.00'
               unit: USD
               provider: oct
-              id: oct_bdi_2023_2279_total
+              id: total
               country: bdi
               year: '2'
           field_title:
@@ -907,7 +902,7 @@ default:
               value: 'Germany, European Commission, Sweden'
               unit: ''
               provider: oct
-              id: oct_bdi_2023_2279_earmarked-donors
+              id: earmarked-donors
               country: bdi
               year: '2'
     -
@@ -940,10 +935,10 @@ default:
           field_country_donors:
             -
               label: 'Unearmarked donors'
-              value: 'Australia,  Belgium,  Canada,  Denmark,  Estonia,  Finland,  France,  Germany,  Iceland, Ireland,  Japan,  Luxembourg,  Monaco,  Netherlands, New Zealand,  Norway,  Russian Federation,  South Africa, Sweden, Switzerland, United Kingdom'
+              value: 'Australia,  Austria,  Belgium,  Canada,  China,  Cyprus,  Denmark,  Estonia,  Finland,  France,  Germany,  Iceland, Ireland,  Japan,  Korea, Republic of,  Luxembourg,  Monaco,  Netherlands, New Zealand,  Norway,  Qatar,  Russian Federation,  Singapore,  S'
               unit: ''
               provider: oct
-              id: oct_bdi_2023_2279_unearmarked-donors
+              id: unearmarked-donors
               country: bdi
               year: '2'
   field_has_response:

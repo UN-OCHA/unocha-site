@@ -46,7 +46,7 @@ default:
       tag: meta
       attributes:
         property: 'og:image'
-        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-07/untitled-00455_6.jpg?itok=4Zl7pk8S'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-07/untitled-00455.jpg?itok=ewB2HGnx'
     -
       tag: meta
       attributes:
@@ -81,7 +81,7 @@ default:
       tag: meta
       attributes:
         name: 'twitter:image'
-        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-07/untitled-00455_6.jpg?itok=ReAB07eI'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-07/untitled-00455.jpg?itok=xAh8VCJ1'
   path:
     -
       alias: /asia-and-pacific
@@ -121,9 +121,6 @@ default:
                     label: ''
                   parent_uuid: null
                   region: null
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -157,9 +154,6 @@ default:
                     label: ''
                   parent_uuid: 7f34079e-4356-4ce9-a169-f9bd17504f0a
                   region: content
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -193,9 +187,6 @@ default:
                 layout_paragraphs:
                   parent_uuid: e7c5dff1-6756-4666-84ae-ebce1669b133
                   region: content
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -230,9 +221,6 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -260,9 +248,6 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -295,9 +280,6 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -334,9 +316,6 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -353,8 +332,8 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: baf1e640-a212-46a6-b303-bd2c3e9790fc
-          bundle: layout
+          uuid: 4decc087-207f-4aff-a319-39ce5801fcdf
+          bundle: reliefweb_river
           default_langcode: en
         default:
           status:
@@ -362,87 +341,13 @@ default:
               value: true
           created:
             -
-              value: 1687471491
+              value: 1706781350
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  layout: layout_twocol_sidebar
-                  config:
-                    label: ''
                   parent_uuid: null
                   region: null
-          revision_translation_affected:
-            -
-              value: true
-          content_translation_source:
-            -
-              value: und
-          content_translation_outdated:
-            -
-              value: false
-    -
-      entity:
-        _meta:
-          version: '1.0'
-          entity_type: paragraph
-          uuid: 45286c3b-6eeb-4b53-9ac6-c134dbd39196
-          bundle: reliefweb_river
-          default_langcode: en
-        default:
-          status:
-            -
-              value: true
-          created:
-            -
-              value: 1687471547
-          behavior_settings:
-            -
-              value:
-                layout_paragraphs:
-                  parent_uuid: baf1e640-a212-46a6-b303-bd2c3e9790fc
-                  region: first
-          revision_translation_affected:
-            -
-              value: true
-          content_translation_source:
-            -
-              value: und
-          content_translation_outdated:
-            -
-              value: false
-          field_reliefweb_river:
-            -
-              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%21%28F10%29_%28C165.C13.C182.C90.C74.C120.C128.C130.C134%29&search=_exists_%3Aocha_product'
-              title: ''
-              limit: 4
-          field_title:
-            -
-              value: Resources
-          paragraph_view_mode:
-            -
-              value: cards
-    -
-      entity:
-        _meta:
-          version: '1.0'
-          entity_type: paragraph
-          uuid: f4fbf6c1-a67b-43fe-8379-baedb35f5bf1
-          bundle: reliefweb_river
-          default_langcode: en
-        default:
-          status:
-            -
-              value: true
-          created:
-            -
-              value: 1687471818
-          behavior_settings:
-            -
-              value:
-                layout_paragraphs:
-                  parent_uuid: baf1e640-a212-46a6-b303-bd2c3e9790fc
-                  region: second
           revision_translation_affected:
             -
               value: true
@@ -456,10 +361,54 @@ default:
             -
               url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%28F10%29_%28C165.C13.C182.C90.C74.C120.C128.C130.C134%29&search=_exists_%3Aocha_product'
               title: ''
-              limit: 2
+              limit: 3
+          field_title:
+            -
+              value: 'Situation Reports'
           paragraph_view_mode:
             -
-              value: teasers
+              value: resources
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 3df47373-653f-47fb-b0f5-8ee69f54f6d2
+          bundle: reliefweb_river
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1706781331
+          behavior_settings:
+            -
+              value:
+                layout_paragraphs:
+                  parent_uuid: null
+                  region: null
+          revision_translation_affected:
+            -
+              value: true
+          content_translation_source:
+            -
+              value: und
+          content_translation_outdated:
+            -
+              value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%21%28F10%29_%28C165.C13.C182.C90.C74.C120.C128.C130.C134%29&search=_exists_%3Aocha_product'
+              title: ''
+              limit: 6
+          field_title:
+            -
+              value: Resources
+          paragraph_view_mode:
+            -
+              value: resources
     -
       entity:
         _meta:
@@ -481,9 +430,6 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -550,9 +496,6 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -589,9 +532,6 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -628,9 +568,6 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und

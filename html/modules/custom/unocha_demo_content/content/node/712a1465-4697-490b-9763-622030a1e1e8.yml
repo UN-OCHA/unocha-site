@@ -5,19 +5,17 @@ _meta:
   bundle: basic
   default_langcode: en
   depends:
-    40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9: user
-    8b5bf571-5e5a-4847-9c55-0537b85f4126: node
     044fc54b-448d-4c80-88b4-160d1b03ac46: media
 default:
   revision_uid:
     -
-      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+      target_id: 1
   status:
     -
       value: true
   uid:
     -
-      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+      target_id: 1
   title:
     -
       value: 'Demo - page components'
@@ -113,15 +111,15 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
           content_translation_outdated:
             -
               value: false
-          field_campaign:
-            -
-              entity: 8b5bf571-5e5a-4847-9c55-0537b85f4126
     -
       entity:
         _meta:
@@ -143,6 +141,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -180,6 +181,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -220,6 +224,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -247,6 +254,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -287,6 +297,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -326,6 +339,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -366,6 +382,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -402,6 +421,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -478,6 +500,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -547,6 +572,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -616,6 +644,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -685,6 +716,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -727,6 +761,9 @@ default:
                     label: ''
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -760,6 +797,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: 13361d5a-867b-4fdc-a89b-cbf91e25161e
                   region: content
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -797,6 +837,9 @@ default:
                     label: ''
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -830,6 +873,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: 4a5fe672-da41-4ddd-9316-d11189598b52
                   region: content
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -864,6 +910,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: 4a5fe672-da41-4ddd-9316-d11189598b52
                   region: content
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -898,6 +947,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: 4a5fe672-da41-4ddd-9316-d11189598b52
                   region: content
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -935,6 +987,9 @@ default:
                     label: ''
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -971,6 +1026,9 @@ default:
                     label: ''
                   parent_uuid: 137ea3a3-55ad-407d-88c6-56182c74eaf8
                   region: content
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -1004,6 +1062,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: f4c9142b-9e6d-4fd4-9c8d-ecdcf924e8cc
                   region: content
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -1038,6 +1099,9 @@ default:
                     label: ''
                   parent_uuid: 137ea3a3-55ad-407d-88c6-56182c74eaf8
                   region: content
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -1071,6 +1135,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: 4548bf4e-be07-45aa-97bd-f6e48a23c8a8
                   region: content
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -1108,6 +1175,9 @@ default:
                     label: ''
                   parent_uuid: 137ea3a3-55ad-407d-88c6-56182c74eaf8
                   region: content
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -1141,6 +1211,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: a0242da2-9066-4092-8ef5-5ae12b83cb98
                   region: content
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
