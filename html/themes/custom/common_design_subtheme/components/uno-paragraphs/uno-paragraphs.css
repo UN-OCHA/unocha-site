@@ -161,6 +161,17 @@
   }
 }
 
+/* Donors followed by a river */
+.paragraph--type--donors + .paragraph--type--reliefweb-river {
+  margin-top: 4rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .paragraph--type--donors + .paragraph--type--reliefweb-river {
+    margin-top: 6rem;
+  }
+}
+
 /* Full-width paragraphs */
 .paragraph--type--responses.cd-bleed,
 .paragraph--type--response-map.cd-bleed {
