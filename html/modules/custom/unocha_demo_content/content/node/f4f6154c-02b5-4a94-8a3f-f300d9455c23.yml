@@ -5,26 +5,20 @@ _meta:
   bundle: basic
   default_langcode: en
   depends:
-    40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9: user
     044fc54b-448d-4c80-88b4-160d1b03ac46: media
-    8b5bf571-5e5a-4847-9c55-0537b85f4126: node
-    3ec92c0e-5bbd-4149-b70b-285c9483bc41: node
     d99b5bcc-d6df-4f2b-9fad-489992c84354: node
     c615dc92-4e30-4c6e-bc0c-ca24b3d3f088: node
     4aad45f9-f669-426d-b0a6-a53db101a48f: node
-    1363610f-1166-4b93-b538-65ad95d517dc: node
-    ee171df1-36bc-451e-8fa1-2f0679c2d098: node
-    6c8c982d-66f3-4a31-b15a-e6e7ac847239: node
 default:
   revision_uid:
     -
-      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+      target_id: 1
   status:
     -
       value: true
   uid:
     -
-      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+      target_id: 1
   title:
     -
       value: 'Demo - text and images'
@@ -120,6 +114,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -160,6 +157,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -200,6 +200,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -240,6 +243,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -248,21 +254,11 @@ default:
               value: false
           field_node:
             -
-              entity: 8b5bf571-5e5a-4847-9c55-0537b85f4126
-            -
-              entity: 3ec92c0e-5bbd-4149-b70b-285c9483bc41
-            -
               entity: d99b5bcc-d6df-4f2b-9fad-489992c84354
             -
               entity: c615dc92-4e30-4c6e-bc0c-ca24b3d3f088
             -
               entity: 4aad45f9-f669-426d-b0a6-a53db101a48f
-            -
-              entity: 1363610f-1166-4b93-b538-65ad95d517dc
-            -
-              entity: ee171df1-36bc-451e-8fa1-2f0679c2d098
-            -
-              entity: 6c8c982d-66f3-4a31-b15a-e6e7ac847239
           field_text:
             -
               value: '<p>And some descriptive text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor leo risus, in consequat ipsum viverra eget. Vivamus non auctor nisi, et commodo diam. Sed aliquet lectus nec nulla pretium lacinia. Vestibulum maximus urna in aliquet eleifend. Nunc eu mi euismod, viverra lacus non, mollis augue.</p><p>Story, Response, Basic, Region, Event, Media Collection</p>'
@@ -294,6 +290,9 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
+          revision_translation_affected:
+            -
+              value: true
           content_translation_source:
             -
               value: und
@@ -302,21 +301,11 @@ default:
               value: false
           field_node:
             -
-              entity: 8b5bf571-5e5a-4847-9c55-0537b85f4126
-            -
-              entity: 3ec92c0e-5bbd-4149-b70b-285c9483bc41
-            -
               entity: d99b5bcc-d6df-4f2b-9fad-489992c84354
             -
               entity: c615dc92-4e30-4c6e-bc0c-ca24b3d3f088
             -
               entity: 4aad45f9-f669-426d-b0a6-a53db101a48f
-            -
-              entity: 1363610f-1166-4b93-b538-65ad95d517dc
-            -
-              entity: ee171df1-36bc-451e-8fa1-2f0679c2d098
-            -
-              entity: 6c8c982d-66f3-4a31-b15a-e6e7ac847239
           field_text:
             -
               value: '<p>And some descriptive text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor leo risus, in consequat ipsum viverra eget. Vivamus non auctor nisi, et commodo diam. Sed aliquet lectus nec nulla pretium lacinia. Vestibulum maximus urna in aliquet eleifend. Nunc eu mi euismod, viverra lacus non, mollis augue.</p><p>Story, Response, Basic, Region, Event, Media Collection</p>'
