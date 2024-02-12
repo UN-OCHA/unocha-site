@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd8bdc6dae16bedbdcbe99019c023932",
+    "content-hash": "ba2affa32ecd7cb1c60d16d68fe59858",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2353,7 +2353,7 @@
                 "shasum": "6a66e40a4249351a89afba529910e1e5e2f667aa"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -3957,7 +3957,7 @@
                 "shasum": "d084315e54c2e561b8b64eef86081c2634d054cd"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -4086,7 +4086,7 @@
                 "shasum": "6139e7d5d5d5dd28bf51b15118c8c84d6ff91614"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -4138,7 +4138,7 @@
                 "shasum": "cc7cd2f029137e99a99deb90aee83b8bbf01c0d4"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10",
+                "drupal/core": "^10",
                 "drupal/imageapi_optimize": "*"
             },
             "type": "drupal-module",
@@ -4564,7 +4564,7 @@
                 "shasum": "fc8ea60619b6b4682bade340e13fb4565d3a7e0c"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -15936,16 +15936,16 @@
         },
         {
             "name": "unocha/common_design",
-            "version": "v9.3.1",
+            "version": "v9.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/common_design.git",
-                "reference": "eb280c1e3293f3a84ee443a10099f83446081cd2"
+                "reference": "8a59010887b7d07960eb8dc61bcaabfcbfd02597"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/common_design/zipball/eb280c1e3293f3a84ee443a10099f83446081cd2",
-                "reference": "eb280c1e3293f3a84ee443a10099f83446081cd2",
+                "url": "https://api.github.com/repos/UN-OCHA/common_design/zipball/8a59010887b7d07960eb8dc61bcaabfcbfd02597",
+                "reference": "8a59010887b7d07960eb8dc61bcaabfcbfd02597",
                 "shasum": ""
             },
             "require": {
@@ -15960,9 +15960,9 @@
             "description": "OCHA Common Design base theme for Drupal 9+",
             "support": {
                 "issues": "https://github.com/UN-OCHA/common_design/issues",
-                "source": "https://github.com/UN-OCHA/common_design/tree/v9.3.1"
+                "source": "https://github.com/UN-OCHA/common_design/tree/v9.3.2"
             },
-            "time": "2024-01-17T09:30:38+00:00"
+            "time": "2024-02-12T09:04:26+00:00"
         },
         {
             "name": "unocha/ocha_key_figures",
