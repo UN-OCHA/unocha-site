@@ -5,19 +5,17 @@ _meta:
   bundle: region
   default_langcode: en
   depends:
-    40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9: user
-    ba515579-eaa7-4fad-9cc3-123fc1b2adff: user
     044fc54b-448d-4c80-88b4-160d1b03ac46: media
 default:
   revision_uid:
     -
-      entity: 40f7fcf0-5ddf-4105-b89f-5dcda10a9ef9
+      target_id: 1
   status:
     -
       value: true
   uid:
     -
-      entity: ba515579-eaa7-4fad-9cc3-123fc1b2adff
+      target_id: 1
   title:
     -
       value: 'West and Central Africa'
@@ -48,7 +46,7 @@ default:
       tag: meta
       attributes:
         property: 'og:image'
-        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-06/MALI_UNOCHA_2020_MCA_0%2085.jpg?itok=QDYYX6WU'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_facebook_og/public/2023-07/untitled-00455.jpg?itok=ewB2HGnx'
     -
       tag: meta
       attributes:
@@ -63,7 +61,7 @@ default:
       tag: meta
       attributes:
         property: 'og:image:alt'
-        content: 'Displaced women are seen preparing dinner'
+        content: 'The UN Under-Secretary-General, Martin Griffith surrounded by cameras'
     -
       tag: meta
       attributes:
@@ -78,17 +76,20 @@ default:
       tag: meta
       attributes:
         name: 'twitter:image:alt'
-        content: 'Displaced women are seen preparing dinner'
+        content: 'The UN Under-Secretary-General, Martin Griffith surrounded by cameras'
     -
       tag: meta
       attributes:
         name: 'twitter:image'
-        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-06/MALI_UNOCHA_2020_MCA_0%2085.jpg?itok=MgW43UXo'
+        content: 'https://unocha-local.test/sites/default/files/styles/social_twitter_card/public/2023-07/untitled-00455.jpg?itok=xAh8VCJ1'
   path:
     -
       alias: /west-and-central-africa
       langcode: en
       pathauto: 1
+  samples_status:
+    -
+      value: false
   content_translation_source:
     -
       value: und
@@ -276,9 +277,6 @@ default:
                 layout_paragraphs:
                   parent_uuid: null
                   region: null
-          revision_translation_affected:
-            -
-              value: true
           content_translation_source:
             -
               value: und
@@ -299,8 +297,8 @@ default:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: f75ee498-5131-4fbb-9142-8876d279fe99
-          bundle: layout
+          uuid: e66f72f1-5ad5-45fc-ab09-77172fe6ca15
+          bundle: reliefweb_river
           default_langcode: en
         default:
           status:
@@ -308,14 +306,11 @@ default:
               value: true
           created:
             -
-              value: 1687653943
+              value: 1706782015
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  layout: layout_twocol_sidebar
-                  config:
-                    label: ''
                   parent_uuid: null
                   region: null
           revision_translation_affected:
@@ -327,12 +322,23 @@ default:
           content_translation_outdated:
             -
               value: false
+          field_reliefweb_river:
+            -
+              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%28F10%29_%28C46.C149.C174.C175.C47.C49.C54.C55.C75%29&search=_exists_%3Aocha_product'
+              title: ''
+              limit: 3
+          field_title:
+            -
+              value: 'Situation Reports'
+          paragraph_view_mode:
+            -
+              value: resources
     -
       entity:
         _meta:
           version: '1.0'
           entity_type: paragraph
-          uuid: d7571b56-3c73-48e6-9124-14927caff9bb
+          uuid: 2c0b57ec-a6f3-4366-9acb-57f080e2577d
           bundle: reliefweb_river
           default_langcode: en
         default:
@@ -341,13 +347,13 @@ default:
               value: true
           created:
             -
-              value: 1687654065
+              value: 1706781996
           behavior_settings:
             -
               value:
                 layout_paragraphs:
-                  parent_uuid: f75ee498-5131-4fbb-9142-8876d279fe99
-                  region: first
+                  parent_uuid: null
+                  region: null
           revision_translation_affected:
             -
               value: true
@@ -361,48 +367,13 @@ default:
             -
               url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%21%28F10%29_%28C46.C149.C174.C175.C47.C49.C54.C55.C75%29&search=_exists_%3Aocha_product'
               title: ''
-              limit: 4
+              limit: 6
           field_title:
             -
               value: Resources
           paragraph_view_mode:
             -
-              value: cards
-    -
-      entity:
-        _meta:
-          version: '1.0'
-          entity_type: paragraph
-          uuid: 2074133e-4628-4696-8d53-15dfb34e48ed
-          bundle: reliefweb_river
-          default_langcode: en
-        default:
-          status:
-            -
-              value: true
-          created:
-            -
-              value: 1687654094
-          behavior_settings:
-            -
-              value:
-                layout_paragraphs:
-                  parent_uuid: f75ee498-5131-4fbb-9142-8876d279fe99
-                  region: second
-          content_translation_source:
-            -
-              value: und
-          content_translation_outdated:
-            -
-              value: false
-          field_reliefweb_river:
-            -
-              url: 'https://reliefweb.int/updates?advanced-search=%28S1503%29_%28F10%29_%28C46.C149.C174.C175.C47.C49.C54.C55.C75%29&search=_exists_%3Aocha_product'
-              title: ''
-              limit: 2
-          paragraph_view_mode:
-            -
-              value: teasers
+              value: resources
     -
       entity:
         _meta:

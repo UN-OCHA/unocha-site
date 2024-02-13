@@ -6,6 +6,8 @@
    *
    * In the future the Component library will adhere to these vars as well.
    */
+  --un-blue: #418fde;
+
   /* OCHA blue is one colour ramp darker than brand blue */
   --cd-ocha-blue: #1f69b3;
   --brand-primary: #1f69b3;
