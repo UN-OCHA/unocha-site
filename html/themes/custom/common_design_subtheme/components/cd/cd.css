@@ -239,13 +239,6 @@ a.cd-footer-social__link svg {
   fill: var(--cd-default-text-color);
 }
 
-/* @media screen and (min-width: 1024px) {
-  .cd-footer__section--menu,
-  .cd-footer__section--social {
-    padding-bottom: 0;
-  }
-} */
-
 .cd-ocha-services h2,
 .cd-ocha-services__heading {
   color:  var(--cd-default-text-color);
@@ -256,7 +249,7 @@ a.cd-footer-social__link svg {
 }
 
 .cd-ocha-services::before {
-  background: var(--cd-default-text-color);
+  background: var(--brand-grey--border);
 }
 
 .cd-footer__section--copyright {
