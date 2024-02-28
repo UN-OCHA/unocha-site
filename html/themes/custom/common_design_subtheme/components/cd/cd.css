@@ -281,3 +281,11 @@ a.cd-footer-social__link svg {
 .cd-user-menu a:focus {
   color: white;
 }
+
+/* Adjust spacing for OCHA Services since the sub headings are removed */
+@media (max-width: 767px) {
+  /* On mobile, all columns should look like one list. */
+  .cd-ocha-services__section {
+    margin-bottom: 0;
+  }
+}
