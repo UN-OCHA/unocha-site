@@ -6,8 +6,9 @@ describe('SearchDropdown', () => {
   });
 
   it('should expand when clicked', async() => {
-    const toggle = await page.$('.cd-search__btn');
-    await toggle.click();
+    let toggle = '.cd-search__btn';
+    await page.waitForSelector(toggle, {timeout: 3000});
+    await page.click(toggle);
     const hidden = await page.$eval('.cd-search__form', el => el.dataset.cdHidden);
     await expect(hidden).toMatch('false');
   });
