@@ -5,48 +5,45 @@ describe('OCHAServices', () => {
     await page.goto(env.baseUrl);
   });
 
-  it('should contain up to four links in the Related Platforms section', async() => {
-    const relatedPlatformsLimit = 4;
-    await page.waitForSelector('.cd-ocha-services__section:first-child');
-    const relatedPlatformsLength = await page.$$eval('.cd-ocha-services__section:first-child', nodeList => nodeList.length);
-    await expect(relatedPlatformsLength).toBeLessThanOrEqual(relatedPlatformsLimit);
-  });
-
   it('should NOT contain links with default text in the Related Platforms section', async() => {
-    const relatedPlatformsText = await page.$eval('.cd-ocha-services__section:first-child :is(.cd-ocha-services__link, .cd-ocha-dropdown__link) a', (el) => el.innerHTML);
+    const relatedPlatformsText = await page.$eval('.cd-ocha-services__section :is(.cd-ocha-services__link) a', (el) => el.innerHTML);
     await expect(relatedPlatformsText).not.toMatch('Customizable');
   });
 
-  it('should contain eight links in the Other OCHA Services section', async() => {
-    const otherOchaServicesLimit = 8;
-    await page.waitForSelector('.cd-ocha-services__section:not(:first-child)');
-    const otherOchaServicesLength = await page.$$eval('.cd-ocha-services__section:not(:first-child)', nodeList => nodeList.length);
+  it('should contain 10 links in the OCHA Services section', async() => {
+    const otherOchaServicesLimit = 10;
+    await page.waitForSelector('.cd-ocha-services__section');
+    const otherOchaServicesLength = await page.$$eval('.cd-ocha-services__section', nodeList => nodeList.length);
     await expect(otherOchaServicesLength).toBeLessThanOrEqual(otherOchaServicesLimit);
   });
 
-  it('should contain specific links in the Other OCHA Services section', async() => {
+  it('should contain specific links in the OCHA Services section', async() => {
     const otherOchaServicesCorporate = [
+      'Central Emergency Response Fund',
       'Financial Tracking Service',
+      'Global Disaster Alert & Coordination System',
       'Humanitarian Data Exchange',
-      'Humanitarian ID',
-      'ReliefWeb Response',
+      'Humanitarian Action',
+      'International Search and Rescue Advisory',
       'Inter-Agency Standing Committee',
-      'OCHA website',
+      'Pooled Funds Data Hub',
       'ReliefWeb',
-      'Virtual OSOCC'
+      'ReliefWeb Response',
     ];
     const otherOchaServicesCorporateHref = [
+      'https://cerf.un.org/',
       'https://fts.unocha.org/',
+      'https://gdacs.org/',
       'https://data.humdata.org/',
-      'https://auth.humanitarian.id/',
-      'https://response.reliefweb.int/',
+      'https://humanitarianaction.info/',
+      'https://www.insarag.org/',
       'https://interagencystandingcommittee.org/',
-      'https://unocha.org/',
+      'https://pfdata.unocha.org/',
       'https://reliefweb.int/',
-      'https://vosocc.unocha.org/'
+      'https://response.reliefweb.int/',
     ];
-    const otherOchaServices = await page.$$eval('.cd-ocha-services__section:not(:first-child) .cd-ocha-services__link a', text => { return text.map(text => text.textContent).slice(0, 8) });
-    const otherOchaServicesHref = await page.$$eval('.cd-ocha-services__section:not(:first-child) .cd-ocha-services__link a', anchors => { return anchors.map(anchor => anchor.href).slice(0, 8) });
+    const otherOchaServices = await page.$$eval('.cd-ocha-services__section .cd-ocha-services__link a', text => { return text.map(text => text.textContent).slice(0, 10) });
+    const otherOchaServicesHref = await page.$$eval('.cd-ocha-services__section .cd-ocha-services__link a', anchors => { return anchors.map(anchor => anchor.href).slice(0, 10) });
     await expect(otherOchaServices).toEqual(otherOchaServicesCorporate);
     await expect(otherOchaServicesHref).toEqual(otherOchaServicesCorporateHref);
   });
