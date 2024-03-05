@@ -2,7 +2,7 @@ import env from './_env'
 
 describe('MainMenuDropdown', () => {
   beforeAll(async() => {
-    await page.goto(env.baseUrl, { waitUntil: 'load' });
+    await page.goto(env.baseUrl);
     await page.setViewport({ width: 1280, height: 800 });
   });
 
