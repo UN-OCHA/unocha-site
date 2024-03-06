@@ -380,7 +380,10 @@ function unocha_paragraphs_get_nodes_from_menu_links(array $menu_links) {
       !empty($menu_link->getRouteParameters()['node'])
     ) {
       $node_id = $menu_link->getRouteParameters()['node'];
-      $node_ids[$node_id] = $menu_link->getWeight();
+      // Store weighted titles so that the order of the nodes is the same as
+      // the order in the menu UI: weight > title.
+      // @see Drupal\Core\Menu\DefaultMenuLinkTreeManipulators::generateIndexAndSort()
+      $node_ids[$node_id] = (50000 + $menu_link->getWeight()) . ' ' . $menu_link->getTitle() . ' ' . $menu_link->getPluginId();
     }
   }
   if (!empty($node_ids)) {
@@ -392,6 +395,7 @@ function unocha_paragraphs_get_nodes_from_menu_links(array $menu_links) {
     uasort($nodes, function ($a, $b) use ($node_ids) {
       return $node_ids[$a->id()] <=> $node_ids[$b->id()];
     });
+
     return $nodes;
   }
 
