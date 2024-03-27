@@ -3,9 +3,6 @@
     "drupal/amazon_ses": {
       "Cron fails on amazon_ses when not configured": "PATCHES/amazon_ses-3417090-cron-queue-14.patch"
     },
-    "drupal/aws": {
-      "Issue #3377311: Allow role based authentication ": "PATCHES/aws_3377311_role-bad-auth.patch"
-    },
     "drupal/csp": {
       "Simplify log format": "PATCHES/csp-log-format.patch"
     },

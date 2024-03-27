@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c71ec61d97f6abcff0f8a874dbde4409",
+    "content-hash": "879f6d34ec948844fc475624128149eb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2353,7 +2353,7 @@
                 "shasum": "6a66e40a4249351a89afba529910e1e5e2f667aa"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -2504,17 +2504,11 @@
         },
         {
             "name": "drupal/aws",
-            "version": "2.0.3",
+            "version": "dev-2.0.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/aws.git",
-                "reference": "2.0.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/aws-2.0.3.zip",
-                "reference": "2.0.3",
-                "shasum": "683b5ed0698bb6c64db8a34b42fff2571807becc"
+                "reference": "5c8371feefd3ea641cca486925e3db9e628b07ba"
             },
             "require": {
                 "aws/aws-sdk-php": "^3.54",
@@ -2522,12 +2516,15 @@
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-2.0.x": "2.0.x-dev"
+                },
                 "drupal": {
-                    "version": "2.0.3",
-                    "datestamp": "1671308573",
+                    "version": "2.0.3+4-dev",
+                    "datestamp": "1690752016",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -3957,7 +3954,7 @@
                 "shasum": "e46c24b62c3c3c6b5d7232f3b679b46b1fe0c7a9"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -4086,7 +4083,7 @@
                 "shasum": "6139e7d5d5d5dd28bf51b15118c8c84d6ff91614"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -4138,7 +4135,7 @@
                 "shasum": "cc7cd2f029137e99a99deb90aee83b8bbf01c0d4"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10",
+                "drupal/core": "^10",
                 "drupal/imageapi_optimize": "*"
             },
             "type": "drupal-module",
@@ -4564,7 +4561,7 @@
                 "shasum": "fc8ea60619b6b4682bade340e13fb4565d3a7e0c"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -17586,6 +17583,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/aws": 20,
         "drupal/components": 10,
         "drupal/config_split": 5,
         "drupal/datetime_range_timezone": 15,
