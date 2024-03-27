@@ -1,5 +1,8 @@
 {
   "patches": {
+    "drupal/amazon_ses": {
+      "Cron fails on amazon_ses when not configured": "PATCHES/amazon_ses-3417090-cron-queue-14.patch"
+    },
     "drupal/csp": {
       "Simplify log format": "PATCHES/csp-log-format.patch"
     },
