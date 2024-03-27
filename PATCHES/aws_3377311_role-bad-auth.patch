@@ -1,0 +1,323 @@
+diff --git a/config/schema/aws_profile.schema.yml b/config/schema/aws_profile.schema.yml
+index c94ef53066f9fbe7ac0edee00f9128b964620433..4e02801c11c2113d3a850600a72f13211f533bc4 100644
+--- a/config/schema/aws_profile.schema.yml
++++ b/config/schema/aws_profile.schema.yml
+@@ -11,6 +11,9 @@ aws.profile.*:
+     default:
+       type: integer
+       label: 'Default'
++    aws_role_arn:
++      type: string
++      label: 'Role ARN'
+     aws_access_key_id:
+       type: string
+       label: 'Access Key ID'
+diff --git a/src/Entity/Form/ProfileForm.php b/src/Entity/Form/ProfileForm.php
+index 61815540f11ba8edee87299bfa043c1d574cbc5f..8ea4c4946ad2cc5cb7c8a374721dbbbd0c59cb51 100644
+--- a/src/Entity/Form/ProfileForm.php
++++ b/src/Entity/Form/ProfileForm.php
+@@ -112,6 +112,13 @@ class ProfileForm extends EntityForm {
+       '#after_build' => ['::processDefault'],
+     ];
+ 
++    $form['aws_role_arn'] = [
++      '#type' => 'textfield',
++      '#title' => $this->t('Role ARN'),
++      '#description' => $this->t('AWS role arn.'),
++      '#default_value' => $this->entity->getRoleArn(),
++    ];
++
+     $form['aws_access_key_id'] = [
+       '#type' => 'textfield',
+       '#title' => $this->t('Access Key'),
+diff --git a/src/Entity/Profile.php b/src/Entity/Profile.php
+index efaffcb246ff01d048f07877f3917b27947e677d..cb1003bddcab890718a9d5ea2af92de6fa55b558 100644
+--- a/src/Entity/Profile.php
++++ b/src/Entity/Profile.php
+@@ -5,6 +5,7 @@ declare(strict_types=1);
+ namespace Drupal\aws\Entity;
+ 
+ use Aws\Credentials\CredentialProvider;
++use Aws\Sts\StsClient;
+ use Drupal\Core\Config\Entity\ConfigEntityBase;
+ use Drupal\encrypt\EncryptServiceInterface;
+ 
+@@ -44,6 +45,7 @@ use Drupal\encrypt\EncryptServiceInterface;
+  *     "id",
+  *     "name",
+  *     "default",
++ *     "aws_role_arn",
+  *     "aws_access_key_id",
+  *     "aws_secret_access_key",
+  *     "region",
+@@ -81,6 +83,13 @@ class Profile extends ConfigEntityBase implements ProfileInterface {
+    */
+   protected $default;
+ 
++  /**
++   * The role arn of the profile.
++   *
++   * @var string
++   */
++  protected $aws_role_arn;
++
+   /**
+    * The access key of the profile.
+    *
+@@ -146,6 +155,21 @@ class Profile extends ConfigEntityBase implements ProfileInterface {
+     return $this;
+   }
+ 
++  /**
++   * {@inheritdoc}
++   */
++  public function getRoleArn() {
++    return $this->aws_role_arn;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function setRoleArn(string $aws_role_arn) {
++    $this->aws_role_arn = $aws_role_arn;
++    return $this;
++  }
++
+   /**
+    * {@inheritdoc}
+    */
+@@ -165,33 +189,17 @@ class Profile extends ConfigEntityBase implements ProfileInterface {
+    * {@inheritdoc}
+    */
+   public function getSecretAccessKey() {
+-    if (!$this->encryption || !$this->encryption_profile || $this->encryption_profile == '_none') {
+-      $key = $this->aws_secret_access_key;
+-    }
+-    else {
+-      $storage = $this->entityTypeManager()->getStorage('encryption_profile');
+-      /** @var \Drupal\encrypt\EncryptionProfileInterface  $encryption_profile */
+-      $encryption_profile = $storage->load($this->encryption_profile);
+-      $key = $this->encryption->decrypt($this->aws_secret_access_key, $encryption_profile);
++    if (empty($this->aws_secret_access_key)) {
++      return '';
+     }
+-
+-    return $key;
++    return $this->decryptSecret($this->aws_secret_access_key);
+   }
+ 
+   /**
+    * {@inheritdoc}
+    */
+   public function setSecretAccessKey(string $aws_secret_access_key) {
+-    if (!$this->encryption || $this->encryption_profile == '_none') {
+-      $this->aws_secret_access_key = $aws_secret_access_key;
+-    }
+-    else {
+-      $storage = $this->entityTypeManager()->getStorage('encryption_profile');
+-      /** @var \Drupal\encrypt\EncryptionProfileInterface  $encryption_profile */
+-      $encryption_profile = $storage->load($this->encryption_profile);
+-      $this->aws_secret_access_key = $this->encryption->encrypt($aws_secret_access_key, $encryption_profile);
+-    }
+-
++    $this->aws_secret_access_key = $this->encryptSecret($aws_secret_access_key);
+     return $this;
+   }
+ 
+@@ -225,25 +233,116 @@ class Profile extends ConfigEntityBase implements ProfileInterface {
+     return $this;
+   }
+ 
++  /**
++   * {@inheritdoc}
++   */
++  public function encryptSecret(string $text) {
++    if (!$this->encryption || $this->encryption_profile == '_none') {
++      return $text;
++    }
++
++    $storage = $this->entityTypeManager()->getStorage('encryption_profile');
++    /** @var \Drupal\encrypt\EncryptionProfileInterface  $encryption_profile */
++    $encryption_profile = $storage->load($this->encryption_profile);
++    return $this->encryption->encrypt($text, $encryption_profile);
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function decryptSecret(string $text) {
++    if (empty($text) || !$this->encryption || $this->encryption_profile == '_none') {
++      return $text;
++    }
++
++    $storage = $this->entityTypeManager()->getStorage('encryption_profile');
++    /** @var \Drupal\encrypt\EncryptionProfileInterface  $encryption_profile */
++    $encryption_profile = $storage->load($this->encryption_profile);
++    return $this->encryption->decrypt($text, $encryption_profile);
++  }
++
+   /**
+    * {@inheritdoc}
+    */
+   public function getClientArgs(string $version = 'latest') {
+     $rtn = [];
+-    $accessKey = $this->getAccessKey();
+-    $secretKey = $this->getSecretAccessKey();
+-    if (!empty($accessKey) && !empty($secretKey)) {
+-      $rtn['credentials'] = [
+-        'key' => $accessKey,
+-        'secret' => $secretKey,
+-      ];
++
++    // If a role arn is set, obtain temporary credentials from AWS.
++    $roleArn = $this->getRoleArn();
++    if (!empty($roleArn)) {
++      $rtn['credentials'] = $this->getTemporaryCredentials($roleArn, $version);
+     }
+     else {
++      // Otherwise, use the stored credentials.
++      $accessKey = $this->getAccessKey();
++      $secretKey = $this->getSecretAccessKey();
++      if (!empty($accessKey) && !empty($secretKey)) {
++        $rtn['credentials'] = [
++          'key' => $accessKey,
++          'secret' => $secretKey,
++        ];
++      }
++    }
++
++    // Fall through to defaults if we have nothing.
++    if (empty($rtn['credentials'])) {
+       $rtn['credentials'] = CredentialProvider::defaultProvider();
+     }
++
+     $rtn['region'] = $this->getRegion();
+     $rtn['version'] = $version;
+     return $rtn;
+   }
+ 
++  /**
++   * {@inheritdoc}
++   */
++  public function getTemporaryCredentials(string $roleArn, string $version = 'latest') {
++
++    // Fetch credentials from the key_value_expiry store.
++    $kve_store = \Drupal::service('keyvalue.expirable')->get('aws_profile');
++    $credentials = $kve_store->get($this->id, null);
++
++    // If we got a value they are valid, so early return them.
++    if (!empty($credentials)) {
++      $credentials['secret'] = $this->decryptSecret($credentials['secret']);
++      return $credentials;
++    }
++
++    // No credentials, request some.
++    try {
++      $stsClient = new StsClient([
++        'region' => $this->getRegion(),
++        'version' => $version,
++      ]);
++      $stsResult = $stsClient->AssumeRole([
++        'RoleArn' => $roleArn,
++        'RoleSessionName' => 'aws-session-' . $this->id,
++        ]);
++    } catch (Exception $e) {
++      \Drupal::logger('aws')->error($e->getMessage());
++      return FALSE;
++    }
++    // Success. Write a log detailing what we did.
++    \Drupal::logger('aws')->notice('Obtained temporary credentials for role @roleArn', ['@roleArn' => $stsResult['AssumedRoleUser']['Arn']]);
++
++    $credentials = [
++      'key'    => $stsResult['Credentials']['AccessKeyId'],
++      'secret' => $stsResult['Credentials']['SecretAccessKey'],
++      'token'  => $stsResult['Credentials']['SessionToken'],
++    ];
++
++    // Calculate the expiry, minus a minute to avoid edge cases.
++    $expiry = $stsResult['Credentials']['Expiration']->getTimestamp() - time() - 60;
++
++    // Encrypt the secret before storing, if required.
++    $store_credentials = $credentials;
++    $store_credentials['secret'] = $this->encryptSecret($credentials['secret']);
++
++    // Store the temporary credentials.
++    $kve_store->setWithExpire($this->id, $store_credentials, $expiry);
++
++    // Return non-encrypted credentials for use.
++    return $credentials;
++  }
+ }
+diff --git a/src/Entity/ProfileInterface.php b/src/Entity/ProfileInterface.php
+index 3260a419837f89c05f0939e507027e46b3d7b947..a5856b48bf075374063c12aea71fba050204599e 100644
+--- a/src/Entity/ProfileInterface.php
++++ b/src/Entity/ProfileInterface.php
+@@ -24,6 +24,21 @@ interface ProfileInterface extends ConfigEntityInterface {
+    */
+   public function setDefault(bool $default);
+ 
++  /**
++   * Get the role arn of the profile.
++   *
++   * @return string
++   *   The role arn of the profile.
++   */
++  public function getRoleArn();
++
++  /**
++   * Set the role arn of the profile.
++   *
++   * @return $this
++   */
++  public function setRoleArn(string $aws_role_arn);
++
+   /**
+    * Get the access key of the profile.
+    *
+@@ -84,6 +99,28 @@ interface ProfileInterface extends ConfigEntityInterface {
+    */
+   public function setEncryptionProfile(string $encryption_profile);
+ 
++  /**
++   * Encrypt plaintext using $encryption_profile.
++   *
++   * @param string $text
++   *   Plain text that should be encrypted if $encryption_prpofile is set.
++   *
++   * @return string
++   *   The encrypted input text if a profile is set, unmodified otherwise.
++   */
++  public function encryptSecret(string $text);
++
++  /**
++   * Decrypt ciphertext using $encryption_profile.
++   *
++   * @param string $text
++   *   Ciphertext that should be decrypted if $encryption_profile is set.
++   *
++   * @return string
++   *   The decrypted input text if a profile is set, unmodifed otherwise.
++   */
++  public function decryptSecret(string $text);
++
+   /**
+    * Returns the arguments required to instantiate an AWS service client.
+    *
+@@ -95,4 +132,17 @@ interface ProfileInterface extends ConfigEntityInterface {
+    */
+   public function getClientArgs(string $version = 'latest');
+ 
++  /**
++   * Creates and returns temporary credentials.
++   *
++   * @param string $roleArn
++   *   The ARN for the role to assume.
++   * @param string $version
++   *   The API version to use. Defaults to "latest".
++   *
++   * @return array
++   *   The credentials array or FALSE on error.
++   */
++  public function getTemporaryCredentials(string$roleArn, string $version = 'latest');
++
+ }
