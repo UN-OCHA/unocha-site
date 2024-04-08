@@ -66,6 +66,7 @@ module:
   monitoring: 0
   mysql: 0
   node: 0
+  ocha_datawrapper: 0
   ocha_key_figures: 0
   ocha_monitoring: 0
   ocha_search: 0

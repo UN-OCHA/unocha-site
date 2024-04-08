@@ -29,6 +29,7 @@ dependencies:
     - media
     - menu_link_content
     - node
+    - ocha_datawrapper
     - ocha_key_figures
     - paragraphs
     - path
@@ -53,6 +54,7 @@ permissions:
   - 'access stories entity browser pages'
   - 'access taxonomy overview'
   - 'access toolbar'
+  - 'add datawrapper embed code'
   - 'add new links to events menu'
   - 'add new links to latest menu'
   - 'add new links to main menu'

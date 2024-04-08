@@ -1,0 +1,23 @@
+uuid: be201923-4a68-4065-80a7-4a04da8b7c5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_url
+    - paragraphs.paragraphs_type.ocha_datawrapper
+  module:
+    - link
+id: paragraph.ocha_datawrapper.field_url
+field_name: field_url
+entity_type: paragraph
+bundle: ocha_datawrapper
+label: Link
+description: 'Optional link to the source data (ex: https://www.datawrapper.de/).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 16
+field_type: link
