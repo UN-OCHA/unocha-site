@@ -1,0 +1,54 @@
+uuid: b8830033-81cd-4ed7-99bd-33b4529ad09b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ocha_datawrapper.field_embed_code
+    - field.field.paragraph.ocha_datawrapper.field_text
+    - field.field.paragraph.ocha_datawrapper.field_title
+    - field.field.paragraph.ocha_datawrapper.field_url
+    - paragraphs.paragraphs_type.ocha_datawrapper
+  module:
+    - link
+    - ocha_datawrapper
+    - text
+id: paragraph.ocha_datawrapper.default
+targetEntityType: paragraph
+bundle: ocha_datawrapper
+mode: default
+content:
+  field_embed_code:
+    type: ocha_datawrapper
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_text:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_url:
+    type: link_default
+    weight: 6
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

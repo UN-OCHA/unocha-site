@@ -1,0 +1,4 @@
+datawrapper-responsive-iframe:
+  header: true
+  js:
+    js/datawrapper-responsive-iframe.js: {}

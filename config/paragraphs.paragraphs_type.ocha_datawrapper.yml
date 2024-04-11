@@ -1,0 +1,10 @@
+uuid: df6a8715-d3ae-42d0-b625-df4077c172f8
+langcode: en
+status: true
+dependencies: {  }
+id: ocha_datawrapper
+label: Datawrapper
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
