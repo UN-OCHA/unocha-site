@@ -1,0 +1,19 @@
+uuid: 6c6a3b97-73e4-492f-8a29-1a1d9caba3cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.ocha_datawrapper
+id: paragraph.ocha_datawrapper.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: ocha_datawrapper
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

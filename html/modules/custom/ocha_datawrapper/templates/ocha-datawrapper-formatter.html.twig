@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a OCHA datawrapper formatter.
+ *
+ * Available variables:
+ * - attributes: Iframe attributes.
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('ocha_datawrapper/datawrapper-responsive-iframe') }}
+<div class="ocha-datawrapper">
+<iframe{{ attributes
+  .addClass('ocha-datawrapper-iframe')
+  .setAttribute('scrolling', 'no')
+  .setAttribute('frameborder', '0')
+  .setAttribute('style', 'width: 0; min-width: 100% !important; border: none;')
+}}></iframe>
+</div>
