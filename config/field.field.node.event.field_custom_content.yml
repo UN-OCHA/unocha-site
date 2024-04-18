@@ -20,20 +20,23 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles: {  }
+    target_bundles: null
     negate: 1
     target_bundles_drag_drop:
       call_to_action:
         weight: 19
         enabled: false
-      content_list:
-        weight: 21
+      campaign:
+        weight: 28
         enabled: false
-      datawrapper:
-        weight: 22
+      cbpf:
+        weight: 29
         enabled: false
-      embed:
-        weight: 8
+      donors:
+        weight: 30
+        enabled: false
+      events:
+        weight: 31
         enabled: false
       figures:
         weight: 24
@@ -44,8 +47,23 @@ settings:
       layout:
         weight: 11
         enabled: false
+      leader:
+        weight: 35
+        enabled: false
+      media_centre:
+        weight: 36
+        enabled: false
+      news_and_stories:
+        weight: 37
+        enabled: false
       node:
         weight: 27
+        enabled: false
+      ocha_datawrapper:
+        weight: 39
+        enabled: false
+      regions:
+        weight: 40
         enabled: false
       reliefweb_document:
         weight: 28
@@ -53,17 +71,26 @@ settings:
       reliefweb_river:
         weight: 29
         enabled: false
-      rss_feed:
-        weight: 30
+      reliefweb_river_curated:
+        weight: 43
         enabled: false
-      rw_key_figures:
-        weight: 31
+      resources:
+        weight: 44
         enabled: false
-      tab:
-        weight: 32
-        enabled: true
-      tabs:
-        weight: 33
+      response_map:
+        weight: 46
+        enabled: false
+      responses:
+        weight: 45
+        enabled: false
+      section:
+        weight: 47
+        enabled: false
+      stories:
+        weight: 48
+        enabled: false
+      subscribe:
+        weight: 49
         enabled: false
       text:
         weight: 12

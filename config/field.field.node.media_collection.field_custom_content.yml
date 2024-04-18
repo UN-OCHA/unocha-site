@@ -73,6 +73,9 @@ settings:
       node:
         weight: 32
         enabled: false
+      ocha_datawrapper:
+        weight: 39
+        enabled: false
       regions:
         weight: 33
         enabled: false
