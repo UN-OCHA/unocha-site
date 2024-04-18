@@ -29,14 +29,14 @@ settings:
       campaign:
         weight: 20
         enabled: false
-      content_list:
-        weight: 22
+      cbpf:
+        weight: 29
         enabled: false
-      datawrapper:
-        weight: 23
+      donors:
+        weight: 30
         enabled: false
-      embed:
-        weight: 24
+      events:
+        weight: 31
         enabled: false
       figures:
         weight: 25
@@ -47,8 +47,23 @@ settings:
       layout:
         weight: 27
         enabled: false
+      leader:
+        weight: 35
+        enabled: false
+      media_centre:
+        weight: 36
+        enabled: false
+      news_and_stories:
+        weight: 37
+        enabled: false
       node:
         weight: 28
+        enabled: false
+      ocha_datawrapper:
+        weight: 39
+        enabled: false
+      regions:
+        weight: 40
         enabled: false
       reliefweb_document:
         weight: 29
@@ -56,14 +71,26 @@ settings:
       reliefweb_river:
         weight: 30
         enabled: false
-      rss_feed:
-        weight: 31
+      reliefweb_river_curated:
+        weight: 43
         enabled: false
-      rw_key_figures:
-        weight: 32
+      resources:
+        weight: 44
+        enabled: false
+      response_map:
+        weight: 46
+        enabled: false
+      responses:
+        weight: 45
         enabled: false
       section:
         weight: 33
+        enabled: false
+      stories:
+        weight: 48
+        enabled: false
+      subscribe:
+        weight: 49
         enabled: false
       text:
         weight: 34
