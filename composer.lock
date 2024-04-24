@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8971b0c96e3de0914d066c2a3d41119f",
+    "content-hash": "3f9c5b83d11e6ee734cd52c9805667e4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2347,7 +2347,7 @@
                 "shasum": "6a66e40a4249351a89afba529910e1e5e2f667aa"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -3948,7 +3948,7 @@
                 "shasum": "e46c24b62c3c3c6b5d7232f3b679b46b1fe0c7a9"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -4077,7 +4077,7 @@
                 "shasum": "6139e7d5d5d5dd28bf51b15118c8c84d6ff91614"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -4129,7 +4129,7 @@
                 "shasum": "cc7cd2f029137e99a99deb90aee83b8bbf01c0d4"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10",
+                "drupal/core": "^10",
                 "drupal/imageapi_optimize": "*"
             },
             "type": "drupal-module",
@@ -4555,7 +4555,7 @@
                 "shasum": "fc8ea60619b6b4682bade340e13fb4565d3a7e0c"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -15954,6 +15954,33 @@
                 "source": "https://github.com/UN-OCHA/common_design/tree/v9.4.0"
             },
             "time": "2024-03-19T09:01:42+00:00"
+        },
+        {
+            "name": "unocha/gtm_barebones",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/UN-OCHA/gtm_barebones.git",
+                "reference": "80f58df7e9169d531bd840f0ecbcc72184d19bf6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/UN-OCHA/gtm_barebones/zipball/80f58df7e9169d531bd840f0ecbcc72184d19bf6",
+                "reference": "80f58df7e9169d531bd840f0ecbcc72184d19bf6",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/core": "^9.5 || ^10",
+                "php": ">=8.1"
+            },
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "OCHA fork of GTM Barebones.",
+            "support": {
+                "issues": "https://github.com/UN-OCHA/gtm_barebones/issues",
+                "source": "https://github.com/UN-OCHA/gtm_barebones/tree/1.1.2"
+            },
+            "time": "2024-04-12T06:49:31+00:00"
         },
         {
             "name": "unocha/ocha_key_figures",
