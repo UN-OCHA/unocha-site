@@ -33,7 +33,7 @@ class UnochaBreadcrumbBuilder implements BreadcrumbBuilderInterface {
    *   The language manager service.
    */
   public function __construct(
-    LanguageManagerInterface $language_manager
+    LanguageManagerInterface $language_manager,
   ) {
     $this->languageManager = $language_manager;
   }

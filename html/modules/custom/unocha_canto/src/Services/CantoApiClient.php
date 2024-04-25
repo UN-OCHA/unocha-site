@@ -86,7 +86,7 @@ class CantoApiClient {
     TimeInterface $time,
     ClientInterface $http_client,
     LoggerChannelFactoryInterface $logger_factory,
-    StateInterface $state
+    StateInterface $state,
   ) {
     $this->cache = $cache_backend;
     $this->config = $config_factory->get('unocha_canto.settings');
