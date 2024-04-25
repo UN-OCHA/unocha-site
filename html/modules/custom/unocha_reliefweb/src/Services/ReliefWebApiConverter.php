@@ -69,7 +69,7 @@ class ReliefWebApiConverter {
     ConfigFactoryInterface $config_factory,
     TimeInterface $time,
     ClientInterface $http_client,
-    LoggerChannelFactoryInterface $logger_factory
+    LoggerChannelFactoryInterface $logger_factory,
   ) {
     $this->cache = $cache_backend;
     $this->config = $config_factory->get('unocha_reliefweb.settings');

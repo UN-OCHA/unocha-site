@@ -50,7 +50,7 @@ class ReliefWebRiver extends FormatterBase {
     $view_mode,
     array $third_party_settings,
     ReliefWebDocuments $reliefweb_documents,
-    PagerManagerInterface $pager_manager
+    PagerManagerInterface $pager_manager,
   ) {
     parent::__construct(
       $plugin_id,

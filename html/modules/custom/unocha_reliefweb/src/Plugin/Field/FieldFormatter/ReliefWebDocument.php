@@ -40,7 +40,7 @@ class ReliefWebDocument extends FormatterBase {
     $label,
     $view_mode,
     array $third_party_settings,
-    ReliefWebDocuments $reliefweb_documents
+    ReliefWebDocuments $reliefweb_documents,
   ) {
     parent::__construct(
       $plugin_id,

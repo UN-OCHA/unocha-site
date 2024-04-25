@@ -55,7 +55,7 @@ class ReliefWebDocumentController extends ControllerBase {
    */
   public function __construct(
     ConfigFactoryInterface $config_factory,
-    ReliefWebDocuments $reliefweb_documents
+    ReliefWebDocuments $reliefweb_documents,
   ) {
     $this->config = $config_factory->get('unocha_reliefweb.settings');
     $this->reliefwebDocuments = $reliefweb_documents;
