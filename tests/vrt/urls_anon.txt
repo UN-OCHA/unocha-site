@@ -1,12 +1,10 @@
 https://www.unocha.org/
 https://www.unocha.org/ocha
-https://www.unocha.org/our-leadership
 https://www.unocha.org/media-centre
 https://www.unocha.org/latest/press-releases-statements
 https://www.unocha.org/latest/events
 https://www.unocha.org/asia-and-pacific
 https://www.unocha.org/afghanistan
-https://www.unocha.org/niger
 https://www.unocha.org/results?q=myanmar
 https://www.unocha.org/climate-change
 https://www.unocha.org/headquarters
