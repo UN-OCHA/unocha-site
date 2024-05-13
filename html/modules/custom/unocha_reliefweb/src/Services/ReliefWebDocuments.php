@@ -76,7 +76,7 @@ class ReliefWebDocuments {
     ReliefWebApiConverter $reliefweb_api_converter,
     LoggerChannelFactoryInterface $logger_factory,
     RequestStack $request_stack,
-    TranslationInterface $string_translation
+    TranslationInterface $string_translation,
   ) {
     $this->config = $config_factory->get('unocha_reliefweb.settings');
     $this->apiClient = $reliefweb_api_client;

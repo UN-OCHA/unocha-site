@@ -275,7 +275,7 @@ class CantoImageForm extends FileUploadForm {
     MediaTypeInterface $media_type,
     EntityStorageInterface $media_storage,
     $source_field_name,
-    $value
+    $value,
   ) {
     // Canto assets are already converted to Media in ::validateCantoAssets().
     if ($value instanceof MediaInterface) {
@@ -343,7 +343,7 @@ class CantoImageForm extends FileUploadForm {
     MediaTypeInterface $media_type,
     EntityStorageInterface $media_storage,
     array $asset,
-    FileInterface $file
+    FileInterface $file,
   ) {
     $source_field_name = $this->getSourceFieldName($media_type);
 

@@ -58,7 +58,7 @@ class MigrateCommands extends DrushCommands {
     EntityTypeManagerInterface $entity_type_manager,
     AliasManagerInterface $path_alias_manager,
     RedirectRepository $redirect_repository,
-    ReliefWebApiClient $reliefweb_api_client
+    ReliefWebApiClient $reliefweb_api_client,
   ) {
     $this->configFactory = $config_factory;
     $this->entityTypeManager = $entity_type_manager;
@@ -199,12 +199,14 @@ class MigrateCommands extends DrushCommands {
    *
    * @validate-module-enabled unocha_migrate
    */
-  public function createRedirects($options = [
-    'file' => NULL,
-    'source' => NULL,
-    'target' => NULL,
-    'language' => 'en',
-  ]) {
+  public function createRedirects(
+    $options = [
+      'file' => NULL,
+      'source' => NULL,
+      'target' => NULL,
+      'language' => 'en',
+    ],
+  ) {
     $file = $options['file'] ?? NULL;
     $source = $options['source'] ?? NULL;
     $target = $options['target'] ?? NULL;

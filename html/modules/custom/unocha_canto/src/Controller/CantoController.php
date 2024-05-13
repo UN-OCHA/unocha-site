@@ -34,7 +34,7 @@ class CantoController extends ControllerBase {
    */
   public function __construct(
     CantoApiClient $canto_api_client,
-    RequestStack $request_stack
+    RequestStack $request_stack,
   ) {
     $this->cantoApiClient = $canto_api_client;
     $this->requestStack = $request_stack;

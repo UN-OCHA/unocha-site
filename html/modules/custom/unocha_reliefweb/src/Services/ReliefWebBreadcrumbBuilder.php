@@ -88,7 +88,7 @@ class ReliefWebBreadcrumbBuilder implements BreadcrumbBuilderInterface {
     LanguageManagerInterface $language_manager,
     StateInterface $state,
     ChainBreadcrumbBuilderInterface $breadcrumb_manager,
-    AccessAwareRouterInterface $router
+    AccessAwareRouterInterface $router,
   ) {
     $this->requestStack = $request_stack;
     $this->controllerResolver = $controller_resolver;

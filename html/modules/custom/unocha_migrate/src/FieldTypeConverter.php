@@ -55,7 +55,7 @@ final class FieldTypeConverter implements ContainerInjectionInterface {
   private function __construct(
     Connection $database,
     EntityTypeManagerInterface $entity_type_manager,
-    KeyValueFactoryInterface $key_value_factory
+    KeyValueFactoryInterface $key_value_factory,
   ) {
     $this->schema = $database->schema();
     $this->entityTypeManager = $entity_type_manager;
