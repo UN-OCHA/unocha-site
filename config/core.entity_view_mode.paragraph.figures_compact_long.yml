@@ -6,5 +6,6 @@ dependencies:
     - paragraphs
 id: paragraph.figures_compact_long
 label: 'Figures - Compact Long'
+description: ''
 targetEntityType: paragraph
 cache: true

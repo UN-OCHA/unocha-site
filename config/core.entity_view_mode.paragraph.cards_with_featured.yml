@@ -6,5 +6,6 @@ dependencies:
     - paragraphs
 id: paragraph.cards_with_featured
 label: 'Cards, first card full-width'
+description: ''
 targetEntityType: paragraph
 cache: true
