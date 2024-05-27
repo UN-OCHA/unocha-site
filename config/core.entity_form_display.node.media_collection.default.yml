@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.media_collection.body
-    - field.field.node.media_collection.field_canto_collection
     - field.field.node.media_collection.field_custom_content
     - field.field.node.media_collection.field_media_image
     - field.field.node.media_collection.field_media_video
@@ -36,14 +35,6 @@ content:
     weight: 10
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_canto_collection:
-    type: link_default
-    weight: 2
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
     third_party_settings: {  }
   field_custom_content:
     type: layout_paragraphs
@@ -97,6 +88,13 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  samples_status:
+    type: boolean_checkbox
+    weight: 26
+    region: content
+    settings:
+      display_label: false
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
     weight: 15
@@ -118,6 +116,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete

@@ -324,12 +324,6 @@ form .paragraph--view-mode--preview.paragraph--type--media-centre .uno-media-cen
   margin-top: 3rem;
 }
 
-/* Increase the height of the Canto modal. */
-.canto-library {
-  height: auto;
-  min-height: 75vh;
-}
-
 /* Entity browser form for Latest news and stories. */
 form .entities-list {
   display: flex;

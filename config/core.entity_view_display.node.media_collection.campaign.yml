@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.campaign
     - field.field.node.media_collection.body
-    - field.field.node.media_collection.field_canto_collection
     - field.field.node.media_collection.field_custom_content
     - field.field.node.media_collection.field_media_image
     - field.field.node.media_collection.field_media_video
@@ -33,7 +32,6 @@ content:
     weight: 0
     region: content
 hidden:
-  field_canto_collection: true
   field_custom_content: true
   field_media_image: true
   field_media_video: true
