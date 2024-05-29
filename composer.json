@@ -63,6 +63,7 @@
         "drupal/redirect": "^1.8",
         "drupal/samlauth": "^3.8",
         "drupal/samples": "^1.0@beta",
+        "drupal/seckit": "^2.0",
         "drupal/simple_menu_permissions": "^2.0",
         "drupal/social_auth_hid": "^3.2",
         "drupal/stable": "^2.0",
