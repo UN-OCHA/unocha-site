@@ -12,6 +12,5 @@ source_configuration:
   source_field: field_media_oembed_video
   thumbnails_directory: 'public://oembed_thumbnails/[date:custom:Y-m]'
   providers:
-    - 'UN OCHA Canto'
     - YouTube
 field_map: {  }
