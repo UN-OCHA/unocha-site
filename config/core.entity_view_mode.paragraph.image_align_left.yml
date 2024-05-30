@@ -6,5 +6,6 @@ dependencies:
     - paragraphs
 id: paragraph.image_align_left
 label: 'Image align left'
+description: ''
 targetEntityType: paragraph
 cache: true
