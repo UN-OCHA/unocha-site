@@ -67,7 +67,6 @@ module:
   mysql: 0
   node: 0
   ocha_datawrapper: 0
-  ocha_key_figures: 0
   ocha_monitoring: 0
   ocha_search: 0
   oembed_providers: 0
@@ -93,7 +92,6 @@ module:
   un_date: 0
   unocha_breadcrumbs: 0
   unocha_contact: 0
-  unocha_donors: 0
   unocha_maps: 0
   unocha_menus: 0
   unocha_migrate: 0

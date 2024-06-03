@@ -17,11 +17,6 @@ $config['unocha_reliefweb.settings']['reliefweb_api_url'] = 'https://api.reliefw
 $config['unocha_reliefweb.settings']['reliefweb_website'] = 'https://reliefweb.int';
 $config['unocha_reliefweb.settings']['reliefweb_api_use_redirects'] = FALSE;
 
-// OCHA API.
-$config['ocha_key_figures.settings']['ocha_api_url'] = 'https://keyfigures.api.unocha.org/api/v1';
-$config['ocha_key_figures.settings']['ocha_api_key'] = 'REPLACE_WITH_OCHA_KEY_FIGURES_API_KEY';
-$config['ocha_key_figures.settings']['ocha_app_name'] = 'unocha.org';
-
 // Mapbox.
 $config['unocha_maps.settings']['mapbox_key'] = 'REPLACE_WITH_MAPBOX_KEY';
 

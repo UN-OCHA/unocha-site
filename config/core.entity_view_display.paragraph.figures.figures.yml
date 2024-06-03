@@ -4,9 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.figures
-    - field.field.paragraph.figures.field_figures
     - field.field.paragraph.figures.field_figures_footnote
-    - field.field.paragraph.figures.field_presence_figures
     - field.field.paragraph.figures.field_reliefweb_document
     - field.field.paragraph.figures.field_text
     - field.field.paragraph.figures.field_title
@@ -14,7 +12,6 @@ dependencies:
     - paragraphs.paragraphs_type.figures
   module:
     - layout_builder
-    - ocha_key_figures
     - text
     - unocha_reliefweb
 third_party_settings:
@@ -26,34 +23,12 @@ targetEntityType: paragraph
 bundle: figures
 mode: figures
 content:
-  field_figures:
-    type: key_figure
-    label: hidden
-    settings:
-      format: decimal
-      precision: 1
-      percentage: 'yes'
-      currency_symbol: 'yes'
-    third_party_settings: {  }
-    weight: 2
-    region: content
   field_figures_footnote:
     type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 5
-    region: content
-  field_presence_figures:
-    type: key_figure_presence
-    label: hidden
-    settings:
-      format: decimal
-      precision: 1
-      percentage: 'yes'
-      currency_symbol: 'yes'
-    third_party_settings: {  }
-    weight: 3
     region: content
   field_reliefweb_document:
     type: reliefweb_document

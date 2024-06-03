@@ -30,7 +30,6 @@ dependencies:
     - menu_link_content
     - node
     - ocha_datawrapper
-    - ocha_key_figures
     - paragraphs
     - path
     - redirect
@@ -62,7 +61,6 @@ permissions:
   - 'add new links to where-we-work menu'
   - 'administer menu'
   - 'administer nodes'
-  - 'administer ocha presences'
   - 'administer redirects'
   - 'administer reliefweb breadcrumbs'
   - 'administer taxonomy'
