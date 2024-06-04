@@ -1,0 +1,21 @@
+uuid: 2ca1a77b-9a46-445a-9cd6-b4975c325fd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatags
+    - node.type.response
+  module:
+    - metatag
+id: node.response.field_metatags
+field_name: field_metatags
+entity_type: node
+bundle: response
+label: Metatags
+description: 'Add or alter metatags for this item.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.story.body
     - field.field.node.story.field_country
     - field.field.node.story.field_custom_content
+    - field.field.node.story.field_metatags
     - field.field.node.story.field_regions
     - field.field.node.story.field_responses
     - field.field.node.story.field_story_image
@@ -16,6 +17,7 @@ dependencies:
     - choices
     - layout_paragraphs
     - media_library
+    - metatag
     - path
     - text
 id: node.story.default
@@ -55,6 +57,14 @@ content:
       nesting_depth: 2
       require_layouts: 0
       empty_message: 'Placeholder message to display when field is empty'
+    third_party_settings: {  }
+  field_metatags:
+    type: metatag_firehose
+    weight: 27
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_regions:
     type: choices_widget
@@ -109,6 +119,13 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  samples_status:
+    type: boolean_checkbox
+    weight: 26
+    region: content
+    settings:
+      display_label: false
     third_party_settings: {  }
   status:
     type: boolean_checkbox

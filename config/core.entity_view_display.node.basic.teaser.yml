@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.basic.field_basic_image
     - field.field.node.basic.field_children_menu
     - field.field.node.basic.field_custom_content
+    - field.field.node.basic.field_metatags
     - node.type.basic
   module:
     - text
@@ -37,5 +38,6 @@ content:
 hidden:
   field_children_menu: true
   field_custom_content: true
+  field_metatags: true
   langcode: true
   links: true
