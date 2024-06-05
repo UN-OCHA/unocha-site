@@ -6,7 +6,7 @@ use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
-use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Client;
 use GuzzleHttp\Promise\Utils;
 
 /**
@@ -38,7 +38,7 @@ class ReliefWebApiClient {
   /**
    * The HTTP client service.
    *
-   * @var \GuzzleHttp\ClientInterface
+   * @var \GuzzleHttp\Client
    */
   protected $httpClient;
 
@@ -65,7 +65,7 @@ class ReliefWebApiClient {
    *   The config factory service.
    * @param \Drupal\Component\Datetime\TimeInterface $time
    *   The time service.
-   * @param \GuzzleHttp\ClientInterface $http_client
+   * @param \GuzzleHttp\Client $http_client
    *   The HTTP client service.
    * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $logger_factory
    *   The logger factory service.
@@ -74,7 +74,7 @@ class ReliefWebApiClient {
     CacheBackendInterface $cache_backend,
     ConfigFactoryInterface $config_factory,
     TimeInterface $time,
-    ClientInterface $http_client,
+    Client $http_client,
     LoggerChannelFactoryInterface $logger_factory,
   ) {
     $this->cache = $cache_backend;
@@ -487,7 +487,7 @@ class ReliefWebApiClient {
    *   Replacement host and scheme.
    * @param string $pattern
    *   Pattern to replace.
-   * @param string $recursive
+   * @param bool $recursive
    *   TRUE to also check subfields.
    */
   public static function updateApiUrls(array &$data, $replacement = 'https://reliefweb.int/', $pattern = '#https?://[^/]+/#', $recursive = TRUE) {
