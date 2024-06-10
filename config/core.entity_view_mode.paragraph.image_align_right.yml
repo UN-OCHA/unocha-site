@@ -6,5 +6,6 @@ dependencies:
     - paragraphs
 id: paragraph.image_align_right
 label: 'Image align right'
+description: ''
 targetEntityType: paragraph
 cache: true

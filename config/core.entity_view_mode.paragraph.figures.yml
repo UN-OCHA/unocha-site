@@ -6,5 +6,6 @@ dependencies:
     - paragraphs
 id: paragraph.figures
 label: Figures
+description: ''
 targetEntityType: paragraph
 cache: true

@@ -6,5 +6,6 @@ dependencies:
     - paragraphs
 id: paragraph.large
 label: Large
+description: ''
 targetEntityType: paragraph
 cache: true
