@@ -9,18 +9,11 @@ name: CKEditor
 format: ckeditor
 weight: 0
 filters:
-  filter_url:
-    id: filter_url
+  filter_autop:
+    id: filter_autop
     provider: filter
     status: true
     weight: 0
-    settings:
-      filter_url_length: 72
-  filter_htmlcorrector:
-    id: filter_htmlcorrector
-    provider: filter
-    status: true
-    weight: 10
     settings: {  }
   filter_html:
     id: filter_html
@@ -31,12 +24,19 @@ filters:
       allowed_html: '<br> <p class="title headline"> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <a class="read-more" hreflang href data-entity-type data-entity-uuid data-entity-substitution> <cite> <dl> <dt> <dd> <blockquote cite> <ul type> <ol type start> <img data-entity-type data-entity-uuid> <strong> <em> <li>'
       filter_html_help: true
       filter_html_nofollow: false
-  filter_autop:
-    id: filter_autop
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
+  filter_url:
+    id: filter_url
     provider: filter
     status: true
     weight: 0
-    settings: {  }
+    settings:
+      filter_url_length: 72
   linkit:
     id: linkit
     provider: linkit

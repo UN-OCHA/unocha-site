@@ -1,16 +1,16 @@
-uuid: 6843f144-8b0a-4f21-9f19-5072daf4780c
+uuid: 294d56d0-a655-480f-a290-0a313787eb56
 langcode: en
 status: true
 dependencies:
   module:
-    - link
+    - metatag
     - node
-id: node.field_canto_collection
-field_name: field_canto_collection
+id: node.field_metatags
+field_name: field_metatags
 entity_type: node
-type: link
+type: metatag
 settings: {  }
-module: link
+module: metatag
 locked: false
 cardinality: 1
 translatable: true

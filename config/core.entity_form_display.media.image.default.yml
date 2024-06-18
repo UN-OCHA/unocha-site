@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.image.field_canto_asset_id
     - field.field.media.image.field_image_caption
     - field.field.media.image.field_image_copyright
     - field.field.media.image.field_media_image
@@ -22,14 +21,6 @@ content:
     weight: 4
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_canto_asset_id:
-    type: string_textfield
-    weight: 9
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   field_image_caption:
     type: string_textarea

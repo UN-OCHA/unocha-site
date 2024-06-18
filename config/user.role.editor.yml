@@ -39,7 +39,6 @@ dependencies:
     - system
     - taxonomy
     - toolbar
-    - unocha_canto
     - unocha_reliefweb
 id: editor
 label: Editor
@@ -47,7 +46,6 @@ weight: 3
 is_admin: null
 permissions:
   - 'access administration pages'
-  - 'access canto api'
   - 'access content overview'
   - 'access content samples'
   - 'access media overview'

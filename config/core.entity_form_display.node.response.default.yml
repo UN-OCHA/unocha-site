@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.response.field_country
     - field.field.node.response.field_custom_content
     - field.field.node.response.field_has_response
+    - field.field.node.response.field_metatags
     - field.field.node.response.field_office_type
     - field.field.node.response.field_region
     - field.field.node.response.field_response_image
@@ -18,6 +19,7 @@ dependencies:
     - layout_paragraphs
     - link
     - media_library
+    - metatag
     - path
     - text
 id: node.response.default
@@ -72,6 +74,14 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  field_metatags:
+    type: metatag_firehose
+    weight: 27
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
+    third_party_settings: {  }
   field_office_type:
     type: options_buttons
     weight: 9
@@ -119,6 +129,13 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  samples_status:
+    type: boolean_checkbox
+    weight: 26
+    region: content
+    settings:
+      display_label: false
     third_party_settings: {  }
   status:
     type: boolean_checkbox

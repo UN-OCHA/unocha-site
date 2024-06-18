@@ -354,7 +354,7 @@ default:
               value: false
           field_text:
             -
-              value: '<p>Visit <a href="https://unocha.canto.com">OCHA''s visual database</a> for more photos.</p>'
+              value: '<p>Visit OCHA''s visual database for more photos.</p>'
               format: ckeditor
     -
       entity:
@@ -482,7 +482,7 @@ default:
               value: false
           field_text:
             -
-              value: '<p>&nbsp;</p><p><a class="read-more" href="/node/47" data-entity-type="node" data-entity-uuid="993c71ea-cb10-4145-98f2-976062ad6568" data-entity-substitution="canonical">View all Press Releases</a></p>'
+              value: '<p>View all Press Releases</p>'
               format: ckeditor
     -
       entity:
@@ -516,7 +516,7 @@ default:
               value: false
           field_text:
             -
-              value: '<p><a href="https://unocha.canto.com/">OCHA''s visual database</a></p><p><a href="https://unocha.canto.com/v/MO8NVK16MR/album/HB9K9?display=curatedView&amp;viewIndex=0&amp;from=thumbnail">Leadership photos for download</a></p>'
+              value: '<p>Leadership photos for download</p>'
               format: ckeditor
           field_title:
             -

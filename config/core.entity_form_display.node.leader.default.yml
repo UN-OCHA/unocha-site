@@ -6,10 +6,12 @@ dependencies:
     - field.field.node.leader.body
     - field.field.node.leader.field_leader_portrait
     - field.field.node.leader.field_leader_title
+    - field.field.node.leader.field_metatags
     - image.style.thumbnail
     - node.type.leader
   module:
     - image
+    - metatag
     - path
     - text
 id: node.leader.default
@@ -43,6 +45,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_metatags:
+    type: metatag_firehose
+    weight: 27
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 5
@@ -55,6 +65,13 @@ content:
     weight: 4
     region: content
     settings: {  }
+    third_party_settings: {  }
+  samples_status:
+    type: boolean_checkbox
+    weight: 26
+    region: content
+    settings:
+      display_label: false
     third_party_settings: {  }
   title:
     type: string_textfield

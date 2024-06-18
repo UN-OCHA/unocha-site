@@ -6,5 +6,6 @@ dependencies:
     - paragraphs
 id: paragraph.container
 label: Container
+description: ''
 targetEntityType: paragraph
 cache: true

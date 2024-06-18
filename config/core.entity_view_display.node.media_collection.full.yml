@@ -5,10 +5,10 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.media_collection.body
-    - field.field.node.media_collection.field_canto_collection
     - field.field.node.media_collection.field_custom_content
     - field.field.node.media_collection.field_media_image
     - field.field.node.media_collection.field_media_video
+    - field.field.node.media_collection.field_metatags
     - field.field.node.media_collection.field_video_download
     - node.type.media_collection
   module:
@@ -32,18 +32,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 4
-    region: content
-  field_canto_collection:
-    type: link
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 3
     region: content
   field_custom_content:
     type: layout_paragraphs
@@ -85,5 +73,6 @@ content:
     weight: 1
     region: content
 hidden:
+  field_metatags: true
   langcode: true
   links: true

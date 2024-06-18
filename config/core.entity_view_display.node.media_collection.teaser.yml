@@ -5,10 +5,10 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.media_collection.body
-    - field.field.node.media_collection.field_canto_collection
     - field.field.node.media_collection.field_custom_content
     - field.field.node.media_collection.field_media_image
     - field.field.node.media_collection.field_media_video
+    - field.field.node.media_collection.field_metatags
     - field.field.node.media_collection.field_video_download
     - node.type.media_collection
   module:
@@ -46,8 +46,8 @@ content:
     weight: 1
     region: content
 hidden:
-  field_canto_collection: true
   field_custom_content: true
+  field_metatags: true
   field_video_download: true
   langcode: true
   links: true

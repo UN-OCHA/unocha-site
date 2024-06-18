@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.response.field_country
     - field.field.node.response.field_custom_content
     - field.field.node.response.field_has_response
+    - field.field.node.response.field_metatags
     - field.field.node.response.field_office_type
     - field.field.node.response.field_region
     - field.field.node.response.field_response_image
@@ -71,6 +72,7 @@ hidden:
   field_active_response: true
   field_country: true
   field_has_response: true
+  field_metatags: true
   field_office_type: true
   langcode: true
   links: true

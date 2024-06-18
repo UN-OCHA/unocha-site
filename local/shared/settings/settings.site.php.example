@@ -22,13 +22,6 @@ $config['ocha_key_figures.settings']['ocha_api_url'] = 'https://keyfigures.api.u
 $config['ocha_key_figures.settings']['ocha_api_key'] = 'REPLACE_WITH_OCHA_KEY_FIGURES_API_KEY';
 $config['ocha_key_figures.settings']['ocha_app_name'] = 'unocha.org';
 
-// Canto API.
-$config['unocha_canto.settings']['canto_api_app_id'] = 'REPLACE_WITH_CANTO_API_ID';
-$config['unocha_canto.settings']['canto_api_app_secret'] = 'REPLACE_WITH_CANTO_APP_SECRET';
-// Replace with the SITE_DOMAIN set in the `.env` file if it's different.
-// The `http` is on purpose to avoid certificate issues.
-$config['unocha_canto.settings']['canto_oembed_base_url'] = 'http://unocha-local.test';
-
 // Mapbox.
 $config['unocha_maps.settings']['mapbox_key'] = 'REPLACE_WITH_MAPBOX_KEY';
 

@@ -120,24 +120,15 @@
         </div>
         {% endif %}
 
-        {% if node.field_canto_collection.0.value or node.field_media_image.0.value %}
+        {% if node.field_media_image.0.value %}
           <div class="uno-photo-gallery--two-columns">
 
             {{ content.field_media_image }}
 
-            {% if node.field_canto_collection.0.value %}
-              <a href="{{ node.field_canto_collection.0.url }}" target="_blank" class="uno-button__collection cd-button cd-button--outline cd-button--bold cd-button--icon">
-                <span class="cd-button__text">{% trans %}View the entire collection{% endtrans %}</span>
-                <svg class="cd-icon cd-icon--external-link" aria-hidden="true" focusable="false" width="16" height="16">
-                  <use xlink:href="#cd-icon--external-link"></use>
-                </svg>
-              </a>
-            {% endif %}
-
           </div>
         {% endif %}
 
-        {{ content|without('field_media_image', 'field_media_video', 'field_video_download', 'field_canto_collection') }}
+        {{ content|without('field_media_image', 'field_media_video', 'field_video_download') }}
 
       </div>
 

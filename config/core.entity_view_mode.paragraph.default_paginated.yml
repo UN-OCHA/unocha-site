@@ -6,5 +6,6 @@ dependencies:
     - paragraphs
 id: paragraph.default_paginated
 label: 'Default (paginated)'
+description: ''
 targetEntityType: paragraph
 cache: true

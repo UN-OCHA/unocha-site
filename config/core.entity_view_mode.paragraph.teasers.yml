@@ -6,5 +6,6 @@ dependencies:
     - paragraphs
 id: paragraph.teasers
 label: Teasers
+description: ''
 targetEntityType: paragraph
 cache: true
