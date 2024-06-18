@@ -5,10 +5,12 @@ dependencies:
   config:
     - field.field.node.region.body
     - field.field.node.region.field_custom_content
+    - field.field.node.region.field_metatags
     - field.field.node.region.field_region_image
     - field.field.node.region.field_region_link
     - node.type.region
   module:
+    - metatag
     - text
     - user
 id: node.region.default
@@ -23,6 +25,13 @@ content:
       trim_length: 600
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_region_image:
     type: entity_reference_entity_view

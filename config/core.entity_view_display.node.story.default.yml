@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.story.body
     - field.field.node.story.field_country
     - field.field.node.story.field_custom_content
+    - field.field.node.story.field_metatags
     - field.field.node.story.field_regions
     - field.field.node.story.field_responses
     - field.field.node.story.field_story_image
@@ -13,6 +14,7 @@ dependencies:
     - field.field.node.story.field_theme
     - node.type.story
   module:
+    - metatag
     - text
     - user
 id: node.story.default
@@ -27,6 +29,13 @@ content:
       trim_length: 160
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_story_image:
     type: entity_reference_entity_view

@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.leader.body
     - field.field.node.leader.field_leader_portrait
     - field.field.node.leader.field_leader_title
+    - field.field.node.leader.field_metatags
     - node.type.leader
     - responsive_image.styles.portrait
   module:
@@ -38,5 +39,6 @@ content:
     region: content
 hidden:
   body: true
+  field_metatags: true
   langcode: true
   links: true

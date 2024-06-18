@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.event.field_event_link
     - field.field.node.event.field_event_location
     - field.field.node.event.field_event_type
+    - field.field.node.event.field_metatags
     - node.type.event
   module:
     - layout_builder
@@ -40,5 +41,6 @@ hidden:
   field_event_link: true
   field_event_location: true
   field_event_type: true
+  field_metatags: true
   langcode: true
   links: true

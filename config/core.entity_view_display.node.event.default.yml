@@ -10,10 +10,12 @@ dependencies:
     - field.field.node.event.field_event_link
     - field.field.node.event.field_event_location
     - field.field.node.event.field_event_type
+    - field.field.node.event.field_metatags
     - node.type.event
   module:
     - datetime_range_timezone
     - link
+    - metatag
     - text
     - user
 id: node.event.default
@@ -63,6 +65,13 @@ content:
   field_event_location:
     type: text_default
     label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: above
     settings: {  }
     third_party_settings: {  }
     weight: 2

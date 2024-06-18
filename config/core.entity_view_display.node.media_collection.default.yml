@@ -7,9 +7,11 @@ dependencies:
     - field.field.node.media_collection.field_custom_content
     - field.field.node.media_collection.field_media_image
     - field.field.node.media_collection.field_media_video
+    - field.field.node.media_collection.field_metatags
     - field.field.node.media_collection.field_video_download
     - node.type.media_collection
   module:
+    - metatag
     - text
     - user
 id: node.media_collection.default
@@ -24,6 +26,13 @@ content:
       trim_length: 600
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   field_custom_content: true

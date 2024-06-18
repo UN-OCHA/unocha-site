@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.media_collection.field_custom_content
     - field.field.node.media_collection.field_media_image
     - field.field.node.media_collection.field_media_video
+    - field.field.node.media_collection.field_metatags
     - field.field.node.media_collection.field_video_download
     - node.type.media_collection
   module:
@@ -46,6 +47,7 @@ content:
     region: content
 hidden:
   field_custom_content: true
+  field_metatags: true
   field_video_download: true
   langcode: true
   links: true

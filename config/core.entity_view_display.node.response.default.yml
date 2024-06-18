@@ -8,12 +8,14 @@ dependencies:
     - field.field.node.response.field_country
     - field.field.node.response.field_custom_content
     - field.field.node.response.field_has_response
+    - field.field.node.response.field_metatags
     - field.field.node.response.field_office_type
     - field.field.node.response.field_region
     - field.field.node.response.field_response_image
     - field.field.node.response.field_response_link
     - node.type.response
   module:
+    - metatag
     - text
     - user
 id: node.response.default
@@ -28,6 +30,13 @@ content:
       trim_length: 160
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_response_image:
     type: entity_reference_entity_view
