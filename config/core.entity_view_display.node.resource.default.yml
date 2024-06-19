@@ -5,9 +5,11 @@ dependencies:
   config:
     - field.field.node.resource.body
     - field.field.node.resource.field_custom_content
+    - field.field.node.resource.field_metatags
     - node.type.resource
   module:
     - entity_reference_revisions
+    - metatag
     - text
     - user
 id: node.resource.default
@@ -30,6 +32,13 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
   links:
     settings: {  }

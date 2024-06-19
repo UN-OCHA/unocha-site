@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.card
     - field.field.node.region.body
     - field.field.node.region.field_custom_content
+    - field.field.node.region.field_metatags
     - field.field.node.region.field_region_image
     - field.field.node.region.field_region_link
     - node.type.region
@@ -40,6 +41,7 @@ content:
     region: content
 hidden:
   field_custom_content: true
+  field_metatags: true
   field_region_link: true
   langcode: true
   links: true

@@ -6,9 +6,11 @@ dependencies:
     - field.field.node.leader.body
     - field.field.node.leader.field_leader_portrait
     - field.field.node.leader.field_leader_title
+    - field.field.node.leader.field_metatags
     - node.type.leader
     - responsive_image.styles.portrait
   module:
+    - metatag
     - responsive_image
     - text
     - user
@@ -42,6 +44,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   langcode: true

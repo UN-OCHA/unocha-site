@@ -1,0 +1,21 @@
+uuid: 74ebe20d-4814-4d90-bc23-35ee3200fbc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatags
+    - node.type.media_collection
+  module:
+    - metatag
+id: node.media_collection.field_metatags
+field_name: field_metatags
+entity_type: node
+bundle: media_collection
+label: Metatags
+description: 'Add or alter metatags for this item.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

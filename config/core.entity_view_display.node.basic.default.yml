@@ -7,9 +7,11 @@ dependencies:
     - field.field.node.basic.field_basic_image
     - field.field.node.basic.field_children_menu
     - field.field.node.basic.field_custom_content
+    - field.field.node.basic.field_metatags
     - node.type.basic
   module:
     - layout_builder
+    - metatag
     - text
     - user
 third_party_settings:
@@ -37,6 +39,13 @@ content:
       link: false
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_metatags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   field_children_menu: true
