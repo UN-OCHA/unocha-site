@@ -65,7 +65,7 @@ class MediaValetService {
   protected static $cacheTags = [];
 
   /**
-   * MediaValet API client
+   * MediaValet API client.
    *
    * @var \Drupal\ocha_mediavalet\Api\MediaValetClient
    */

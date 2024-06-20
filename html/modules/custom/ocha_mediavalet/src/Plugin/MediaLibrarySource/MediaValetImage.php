@@ -64,24 +64,7 @@ class MediaValetImage extends MediaLibrarySourceBase {
   }
 
   /**
-   * Constructs a new LoremPicsum object.
-   *
-   * @param array $configuration
-   *   A configuration array containing information about the plugin instance.
-   * @param string $plugin_id
-   *   The plugin_id for the plugin instance.
-   * @param mixed $plugin_definition
-   *   The plugin implementation definition.
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
-   *   The entity type manager.
-   * @param \Drupal\Core\Utility\Token $token
-   *   The token service.
-   * @param \Drupal\Core\File\FileSystemInterface $file_system
-   *   The file system service.
-   * @param \GuzzleHttp\Client $http_client
-   *   The HTTP client.
-   * @param \Drupal\file\FileRepositoryInterface|null $file_repository
-   *   The file repository service.
+   * {@inheritdoc}
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, Token $token, FileSystemInterface $file_system, Client $http_client, FileRepositoryInterface $file_repository, MediaValetService $mediavalet_service) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $entity_type_manager, $token, $file_system);
@@ -102,7 +85,12 @@ class MediaValetImage extends MediaLibrarySourceBase {
    * {@inheritdoc}
    */
   public function getResults() {
-    return $this->queryResults();
+    $page = $this->getValue('page');
+    $count = $this->configuration['items_per_page'];
+    $offset = $this->configuration['items_per_page'] * $page;
+
+    $items = $this->queryResults();
+    return array_slice($items, $offset, $count, TRUE);
   }
 
   /**
@@ -112,16 +100,6 @@ class MediaValetImage extends MediaLibrarySourceBase {
    *   The current set of result data.
    */
   protected function queryResults() {
-    $page = $this->getValue('page');
-    $options = [
-      'count' => $this->configuration['items_per_page'],
-      'offset' => $this->configuration['items_per_page'] * $page,
-    ];
-    $filter_options = $options + [
-      'query' => $this->getValue('query'),
-      'channel' => $this->getValue('channel'),
-    ];
-
     if (!$this->getSelectedCategory()) {
       return [];
     }
