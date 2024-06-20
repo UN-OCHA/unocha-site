@@ -1,0 +1,7 @@
+endpoint_login: 'https://login.mediavalet.com'
+endpoint_api: 'https://api.mediavalet.com'
+username: ''
+password: ''
+subscription_key: ''
+client_id: ''
+secret: ''

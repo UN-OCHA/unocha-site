@@ -215,13 +215,38 @@ class MediaValetClient {
 
     foreach ($data['payload']['assets'] as $item) {
       $items[$item['id']] = [
+        'id' => $item['id'],
         'title' => $item['title'],
+        'filename' => $item['file']['fileName'],
         'thumb' => $item['media']['thumb'],
         'download' => $item['media']['download'],
+        'is_image' => strtolower($item['media']['type']) == 'image',
       ];
     }
 
     return $items;
+  }
+
+  /**
+   * Get assets.
+   */
+  public function getAsset(string $asset_uuid) {
+    $item = [];
+    $data = $this->request('assets/' . $asset_uuid);
+
+    $item = [
+      'id' => $item['id'],
+      'title' => $data['payload']['title'],
+      'filename' => $data['payload']['file']['fileName'],
+      'thumb' => $data['payload']['media']['thumb'],
+      'medium' => $data['payload']['media']['medium'],
+      'large' => $data['payload']['media']['large'],
+      'original' => $data['payload']['media']['original'],
+      'download' => $data['payload']['media']['download'],
+      'is_image' => strtolower($data['payload']['media']['type']) == 'image',
+    ];
+
+    return $item;
   }
 
 }

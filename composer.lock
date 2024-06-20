@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f2af9523885580b0564f8d4520cad3ec",
+    "content-hash": "e316a87fe451736a8e3289060d5bb900",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2347,7 +2347,7 @@
                 "shasum": "6a66e40a4249351a89afba529910e1e5e2f667aa"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -4021,7 +4021,7 @@
                 "shasum": "6139e7d5d5d5dd28bf51b15118c8c84d6ff91614"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -4073,7 +4073,7 @@
                 "shasum": "cc7cd2f029137e99a99deb90aee83b8bbf01c0d4"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10",
+                "drupal/core": "^10",
                 "drupal/imageapi_optimize": "*"
             },
             "type": "drupal-module",
@@ -4519,7 +4519,7 @@
                 "shasum": "fc8ea60619b6b4682bade340e13fb4565d3a7e0c"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -4558,6 +4558,54 @@
             "homepage": "https://www.drupal.org/project/maintenance200",
             "support": {
                 "source": "https://git.drupalcode.org/project/maintenance200"
+            }
+        },
+        {
+            "name": "drupal/media_library_extend",
+            "version": "2.1.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/media_library_extend.git",
+                "reference": "2.1.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/media_library_extend-2.1.0-alpha1.zip",
+                "reference": "2.1.0-alpha1",
+                "shasum": "9e3b69a1ef149500a4a9b4133ff35450e0eaf190"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.1.0-alpha1",
+                    "datestamp": "1689937453",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "metalbote",
+                    "homepage": "https://www.drupal.org/user/2809357"
+                },
+                {
+                    "name": "Mirroar",
+                    "homepage": "https://www.drupal.org/user/1533592"
+                }
+            ],
+            "description": "Allow extending the media library with alternate sources.",
+            "homepage": "https://www.drupal.org/project/media_library_extend",
+            "support": {
+                "source": "https://git.drupalcode.org/project/media_library_extend"
             }
         },
         {
@@ -17602,6 +17650,7 @@
         "drupal/entity_usage": 10,
         "drupal/imageapi_optimize_binaries": 10,
         "drupal/linkit": 5,
+        "drupal/media_library_extend": 15,
         "drupal/menu_breadcrumb": 15,
         "drupal/openid_connect_windows_aad": 10,
         "drupal/samples": 10,
