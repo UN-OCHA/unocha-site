@@ -131,7 +131,7 @@ class MediaValetClient {
    * @return array|null
    *   The data from the API response or NULL in case of error.
    */
-  public function request($resource, array $payload = [], $method = 'GET', $timeout = 5, $cache_enabled = TRUE) {
+  public function request($resource, array $payload = [], $method = 'GET', $timeout = 10, $cache_enabled = TRUE) {
     $cid = $this->getCacheId($resource, $method, $payload);
     static $cache = [];
 

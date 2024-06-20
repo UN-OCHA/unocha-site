@@ -100,11 +100,17 @@ class MediaValetImage extends MediaLibrarySourceBase {
    *   The current set of result data.
    */
   protected function queryResults() {
-    if (!$this->getSelectedCategory()) {
+    if (!$this->getSelectedCategory() && !$this->getSearch()) {
       return [];
     }
 
-    $items = $this->mediavaletService->getCategoryAssets($this->getSelectedCategory());
+    $items = [];
+    if ($this->getSearch()) {
+      $items = $this->mediavaletService->search($this->getSearch());
+    }
+    else {
+      $items = $this->mediavaletService->getCategoryAssets($this->getSelectedCategory());
+    }
 
     foreach ($items as $item) {
       $results[] = [
@@ -132,25 +138,34 @@ class MediaValetImage extends MediaLibrarySourceBase {
     $form['query'] = [
       '#title' => $this->t('Search query'),
       '#type' => 'textfield',
+      '#description' => $this->t('Free text search, has precedent over selecting a category.'),
     ];
 
-    $form['channel'] = [
+    $form['category'] = [
       '#title' => $this->t('Select category'),
       '#type' => 'select',
       '#options' => $this->mediavaletService->getCategories(),
       '#description' => $this->t('Select a category from UNOCHA MediaValet'),
       '#default_value' => $this->getSelectedCategory(),
-      '#required' => TRUE,
+      '#empty_option' => $this->t('- Select a category -'),
+      '#empty_value' => '',
     ];
 
     return $form;
   }
 
   /**
-   * Gets the id of the currently selected channel.
+   * Gets the id of the currently selected category.
    */
   protected function getSelectedCategory() {
-    return $this->getValue('channel') ?? NULL;
+    return $this->getValue('category') ?? NULL;
+  }
+
+  /**
+   * Gets the search string.
+   */
+  protected function getSearch() {
+    return $this->getValue('query') ?? NULL;
   }
 
   /**

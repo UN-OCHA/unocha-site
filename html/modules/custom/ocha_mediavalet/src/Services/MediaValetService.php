@@ -138,4 +138,18 @@ class MediaValetService {
     return $this->mediavaletClient->getAsset($asset_uuid);
   }
 
+  /**
+   * Get keywords.
+   */
+  public function getKeywords() {
+    return $this->mediavaletClient->getKeywords();
+  }
+
+  /**
+   * Search.
+   */
+  public function search(string $text) {
+    return $this->mediavaletClient->search($text);
+  }
+
 }
