@@ -1,0 +1,5 @@
+type: module
+name: OCHA MediaValet
+description: 'Provides integration with MediaValet.'
+package: ocha
+core_version_requirement: ^9 || ^10
