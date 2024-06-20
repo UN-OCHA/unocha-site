@@ -249,4 +249,43 @@ class MediaValetClient {
     return $item;
   }
 
+  /**
+   * Get keywords.
+   */
+  public function getKeywords() {
+    $keywords = [];
+    $data = $this->request('keywords');
+
+    foreach ($data['payload'] as $item) {
+      if ($item['isApproved'] && $item['isSearchable']) {
+        $keywords[$item['id']] = $item['keywordName'];
+      }
+    }
+
+    return $keywords;
+  }
+
+  /**
+   * Search.
+   */
+  public function search($text) {
+    $items = [];
+    $data = $this->request('assets', [
+      'search' => $text,
+    ]);
+
+    foreach ($data['payload']['assets'] as $item) {
+      $items[$item['id']] = [
+        'id' => $item['id'],
+        'title' => $item['title'],
+        'filename' => $item['file']['fileName'],
+        'thumb' => $item['media']['thumb'],
+        'download' => $item['media']['download'],
+        'is_image' => strtolower($item['media']['type']) == 'image',
+      ];
+    }
+
+    return $items;
+  }
+
 }
