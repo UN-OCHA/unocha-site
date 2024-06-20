@@ -116,11 +116,40 @@ class MediaValetService {
   }
 
   /**
+   * Cache data.
+   */
+  protected function cacheIt($cid, $data) {
+    $cache_lifetime = 300;
+    $cache_expiration = $this->time->getRequestTime() + $cache_lifetime;
+    $this->cache->set($cid, $data, $cache_expiration);
+  }
+
+  /**
+   * Get cached data.
+   */
+  protected function getCache($cid) {
+    $cache = $this->cache->get($cid);
+    if (isset($cache->data)) {
+      return $cache->data;
+    }
+
+    return FALSE;
+  }
+
+  /**
    * Get categories.
    */
   public function getCategories() {
+    $cid = 'categories';
+    $cached = $this->getCache($cid);
+    if ($cached) {
+      return $cached;
+    }
+
     $categories = $this->mediavaletClient->getCategories();
     asort($categories);
+
+    $this->cacheIt($cid, $categories);
     return $categories;
   }
 
@@ -128,28 +157,60 @@ class MediaValetService {
    * Get category assets.
    */
   public function getCategoryAssets(string $category_uuid) {
-    return $this->mediavaletClient->getCategoryAssets($category_uuid);
+    $cid = 'categories:' . $category_uuid;
+    $cached = $this->getCache($cid);
+    if ($cached) {
+      return $cached;
+    }
+
+    $data = $this->mediavaletClient->getCategoryAssets($category_uuid);
+    $this->cacheIt($cid, $data);
+    return $data;
   }
 
   /**
    * Get assets.
    */
   public function getAsset(string $asset_uuid) {
-    return $this->mediavaletClient->getAsset($asset_uuid);
+    $cid = 'asset:' . $asset_uuid;
+    $cached = $this->getCache($cid);
+    if ($cached) {
+      return $cached;
+    }
+
+    $data = $this->mediavaletClient->getAsset($asset_uuid);
+    $this->cacheIt($cid, $data);
+    return $data;
   }
 
   /**
    * Get keywords.
    */
   public function getKeywords() {
-    return $this->mediavaletClient->getKeywords();
+    $cid = 'keywords';
+    $cached = $this->getCache($cid);
+    if ($cached) {
+      return $cached;
+    }
+
+    $data = $this->mediavaletClient->getKeywords();
+    $this->cacheIt($cid, $data);
+    return $data;
   }
 
   /**
    * Search.
    */
   public function search(string $text) {
-    return $this->mediavaletClient->search($text);
+    $cid = 'search:' . md5($text);
+    $cached = $this->getCache($cid);
+    if ($cached) {
+      return $cached;
+    }
+
+    $data = $this->mediavaletClient->search($text);
+    $this->cacheIt($cid, $data);
+    return $data;
   }
 
 }
