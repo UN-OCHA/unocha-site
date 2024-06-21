@@ -5,3 +5,4 @@ password: ''
 subscription_key: ''
 client_id: ''
 secret: ''
+debug: 0
