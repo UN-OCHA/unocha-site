@@ -8,6 +8,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Utility\Token;
 use Drupal\file\FileRepositoryInterface;
 use Drupal\media_library_extend\Plugin\MediaLibrarySource\MediaLibrarySourceBase;
+use Drupal\ocha_mediavalet\Api\MediaValetData;
 use Drupal\ocha_mediavalet\Services\MediaValetService;
 use GuzzleHttp\Client;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -77,40 +78,23 @@ class MediaValetImage extends MediaLibrarySourceBase {
    * {@inheritdoc}
    */
   public function getCount() {
-    $items = $this->queryResults();
-    return count($items);
+    $data = $this->queryResults();
+    $result_info = $data->getResultInfo();
+    return $result_info['total'];
   }
 
   /**
    * {@inheritdoc}
    */
   public function getResults() {
-    $page = $this->getValue('page');
-    $count = $this->configuration['items_per_page'];
-    $offset = $this->configuration['items_per_page'] * $page;
-
-    $items = $this->queryResults();
-    return array_slice($items, $offset, $count, TRUE);
-  }
-
-  /**
-   * Query the youtube for current results and cache them.
-   *
-   * @return array
-   *   The current set of result data.
-   */
-  protected function queryResults() {
-    if (!$this->getSelectedCategory() && !$this->getSearch()) {
-      return [];
+    static $results = [];
+    if (!empty($results)) {
+      return $results;
     }
 
-    $items = [];
-    if ($this->getSearch()) {
-      $items = $this->mediavaletService->search($this->getSearch());
-    }
-    else {
-      $items = $this->mediavaletService->getCategoryAssets($this->getSelectedCategory());
-    }
+    $data = $this->queryResults();
+    $items = $data->getData();
+    $results = [];
 
     foreach ($items as $item) {
       $results[] = [
@@ -132,6 +116,25 @@ class MediaValetImage extends MediaLibrarySourceBase {
   }
 
   /**
+   * Query media valet current results and cache them.
+   */
+  protected function queryResults() : MediaValetData {
+    if (!$this->getSelectedCategory() && !$this->getSearch()) {
+      return new MediaValetData([], []);
+    }
+
+    $this->mediavaletService
+      ->setCount($this->configuration['items_per_page'])
+      ->setOffset($this->getValue('page') * $this->configuration['items_per_page']);
+
+    if ($this->getSearch()) {
+      return $this->mediavaletService->search($this->getSearch(), $this->getSelectedCategory());
+    }
+
+    return $this->mediavaletService->getCategoryAssets($this->getSelectedCategory());
+  }
+
+  /**
    * {@inheritdoc}
    */
   public function buildForm(array &$form, FormStateInterface $form_state) {
@@ -144,7 +147,7 @@ class MediaValetImage extends MediaLibrarySourceBase {
     $form['category'] = [
       '#title' => $this->t('Select category'),
       '#type' => 'select',
-      '#options' => $this->mediavaletService->getCategories(),
+      '#options' => $this->getCategories(),
       '#description' => $this->t('Select a category from UNOCHA MediaValet'),
       '#default_value' => $this->getSelectedCategory(),
       '#empty_option' => $this->t('- Select a category -'),
@@ -152,6 +155,14 @@ class MediaValetImage extends MediaLibrarySourceBase {
     ];
 
     return $form;
+  }
+
+  /**
+   * Get categories.
+   */
+  protected function getCategories() {
+    $data = $this->mediavaletService->getCategories();
+    return $data->getData();
   }
 
   /**
@@ -172,7 +183,8 @@ class MediaValetImage extends MediaLibrarySourceBase {
    * {@inheritdoc}
    */
   public function getEntityId($selected_id) {
-    $asset = $this->mediavaletService->getAsset($selected_id);
+    $data = $this->mediavaletService->getAsset($selected_id);
+    $asset = $data->getData();
 
     // Create a media entity.
     $entity = $this->createEntityStub($asset['title']);

@@ -8,6 +8,7 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\State\StateInterface;
 use Drupal\ocha_mediavalet\Api\MediaValetClient;
+use Drupal\ocha_mediavalet\Api\MediaValetData;
 use GuzzleHttp\ClientInterface;
 
 /**
@@ -72,6 +73,16 @@ class MediaValetService {
   protected $mediavaletClient;
 
   /**
+   * Debug info.
+   */
+  protected array $debugInfo = [];
+
+  /**
+   * Debug timer.
+   */
+  protected float $debugTime = 0;
+
+  /**
    * Constructor.
    *
    * @param \Drupal\Core\Cache\CacheBackendInterface $cache_backend
@@ -119,6 +130,72 @@ class MediaValetService {
     if ($access_token_info) {
       $this->mediavaletClient->setAccessTokenInfo($access_token_info);
     }
+
+    $this->logIt('Instance created');
+  }
+
+  /**
+   * Get count.
+   */
+  public function getCount() : int {
+    return $this->mediavaletClient->getCount();
+  }
+
+  /**
+   * Set count.
+   */
+  public function setCount(int $count) : self {
+    $this->mediavaletClient->setCount($count);
+
+    return $this;
+  }
+
+  /**
+   * Get offset.
+   */
+  public function getOffset() : int {
+    return $this->mediavaletClient->getOffset();
+  }
+
+  /**
+   * Set offset.
+   */
+  public function setOffset(int $offset) : self {
+    $this->mediavaletClient->setOffset($offset);
+
+    return $this;
+  }
+
+  /**
+   * Get result info.
+   */
+  public function getResultInfo() : array {
+    return $this->mediavaletClient->getResultInfo();
+  }
+
+  /**
+   * Log it.
+   */
+  protected function logIt($text) {
+    if (!$this->config->get('debug')) {
+      return;
+    }
+
+    if ($this->debugTime == 0) {
+      $this->debugTime = microtime(TRUE);
+    }
+    $this->debugInfo[] = [
+      'time' => microtime(TRUE),
+      'offset' => round(1000 * (microtime(TRUE) - $this->debugTime), 2),
+      'message' => $text,
+    ];
+  }
+
+  /**
+   * Get debug log.
+   */
+  public function getDebugLog() {
+    return $this->debugInfo;
   }
 
   /**
@@ -126,6 +203,10 @@ class MediaValetService {
    */
   protected function updateCachedAccessTokenInfo() {
     $this->cacheIt('mediavalet', $this->mediavaletClient->getAccessTokenInfo());
+
+    if ($this->config->get('debug')) {
+      $this->logger->notice('<pre>' . print_r($this->debugInfo, TRUE) . '</pre>');
+    }
   }
 
   /**
@@ -152,16 +233,23 @@ class MediaValetService {
   /**
    * Get categories.
    */
-  public function getCategories() {
-    $cid = 'categories';
+  public function getCategories() : MediaValetData {
+    $this->logIt('getCategories called');
+
+    $cid = implode(':', [
+      'categories',
+      $this->getCount(),
+      $this->getOffset(),
+    ]);
+
     $cached = $this->getCache($cid);
     if ($cached) {
       return $cached;
     }
 
     $categories = $this->mediavaletClient->getCategories();
-    asort($categories);
 
+    $this->logIt('getCategories finished');
     $this->cacheIt($cid, $categories);
     $this->updateCachedAccessTokenInfo();
 
@@ -171,14 +259,24 @@ class MediaValetService {
   /**
    * Get category assets.
    */
-  public function getCategoryAssets(string $category_uuid) {
-    $cid = 'categories:' . $category_uuid;
+  public function getCategoryAssets(string $category_uuid) : MediaValetData {
+    $this->logIt('getCategoryAssets called');
+
+    $cid = implode(':', [
+      'categories',
+      $category_uuid,
+      $this->getCount(),
+      $this->getOffset(),
+    ]);
+
     $cached = $this->getCache($cid);
     if ($cached) {
       return $cached;
     }
 
     $data = $this->mediavaletClient->getCategoryAssets($category_uuid);
+
+    $this->logIt('getCategoryAssets finished');
     $this->cacheIt($cid, $data);
     $this->updateCachedAccessTokenInfo();
 
@@ -188,7 +286,8 @@ class MediaValetService {
   /**
    * Get assets.
    */
-  public function getAsset(string $asset_uuid) {
+  public function getAsset(string $asset_uuid) : MediaValetData {
+    $this->logIt('getAsset called');
     $cid = 'asset:' . $asset_uuid;
     $cached = $this->getCache($cid);
     if ($cached) {
@@ -196,6 +295,8 @@ class MediaValetService {
     }
 
     $data = $this->mediavaletClient->getAsset($asset_uuid);
+
+    $this->logIt('getAsset finished');
     $this->cacheIt($cid, $data);
     $this->updateCachedAccessTokenInfo();
 
@@ -205,14 +306,23 @@ class MediaValetService {
   /**
    * Get keywords.
    */
-  public function getKeywords() {
-    $cid = 'keywords';
+  public function getKeywords() : MediaValetData {
+    $this->logIt('getKeywords called');
+
+    $cid = implode(':', [
+      'keywords',
+      $this->getCount(),
+      $this->getOffset(),
+    ]);
+
     $cached = $this->getCache($cid);
     if ($cached) {
       return $cached;
     }
 
     $data = $this->mediavaletClient->getKeywords();
+
+    $this->logIt('getKeywords finished');
     $this->cacheIt($cid, $data);
     $this->updateCachedAccessTokenInfo();
 
@@ -222,14 +332,33 @@ class MediaValetService {
   /**
    * Search.
    */
-  public function search(string $text) {
-    $cid = 'search:' . md5($text);
+  public function search(string $text, string $category_uuid = '') : MediaValetData {
+    $this->logIt('search called with ' . $text . ' and ' . $category_uuid);
+
+    $cid = implode(':', [
+      'search',
+      md5($text),
+      $category_uuid,
+      $this->getCount(),
+      $this->getOffset(),
+    ]);
+
     $cached = $this->getCache($cid);
     if ($cached) {
       return $cached;
     }
 
-    $data = $this->mediavaletClient->search($text);
+    $options = [
+      'filters' => '(AssetType EQ Image)',
+    ];
+
+    if (!empty($category_uuid)) {
+      $options['containerFilter'] = "(CategoryIds/ANY(c: c EQ '" . $category_uuid . "'))";
+    }
+
+    $data = $this->mediavaletClient->search($text, $options);
+
+    $this->logIt('search finished');
     $this->cacheIt($cid, $data);
     $this->updateCachedAccessTokenInfo();
 

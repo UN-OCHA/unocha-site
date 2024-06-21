@@ -16,6 +16,29 @@ class MediaValetClient {
   protected array $accessTokenInfo = [];
 
   /**
+   * Count.
+   *
+   * @var int
+   */
+  protected $count = 20;
+
+  /**
+   * Offset.
+   *
+   * @var int
+   */
+  protected $offset = 0;
+
+  /**
+   * Result info.
+   */
+  protected array $resultInfo = [
+    'total' => 0,
+    'start' => 0,
+    'records' => 0,
+  ];
+
+  /**
    * Constructor.
    */
   public function __construct(
@@ -29,6 +52,56 @@ class MediaValetClient {
     protected string $clientId = '',
     protected string $clientSecret = '',
   ) {}
+
+  /**
+   * Get count.
+   */
+  public function getCount() : int {
+    return $this->count;
+  }
+
+  /**
+   * Set count.
+   */
+  public function setCount(int $count) : self {
+    $this->count = $count;
+
+    return $this;
+  }
+
+  /**
+   * Get offset.
+   */
+  public function getOffset() : int {
+    return $this->offset;
+  }
+
+  /**
+   * Set offset.
+   */
+  public function setOffset(int $offset) : self {
+    $this->offset = $offset;
+
+    return $this;
+  }
+
+  /**
+   * Get result info.
+   */
+  public function getResultInfo() : array {
+    return $this->resultInfo;
+  }
+
+  /**
+   * Set result info.
+   */
+  protected function setBuildInfo($data) : array {
+    return [
+      'total' => $data['recordCount']['totalRecordsFound'],
+      'start' => $data['recordCount']['startingRecord'],
+      'records' => $data['recordCount']['recordsReturned'],
+    ];
+  }
 
   /**
    * Get access token info.
@@ -149,7 +222,7 @@ class MediaValetClient {
    * @return array|null
    *   The data from the API response or NULL in case of error.
    */
-  public function request($resource, array $payload = [], $method = 'GET', $timeout = 10, $cache_enabled = TRUE) {
+  public function request($resource, array $payload = [], $method = 'GET', $timeout = 30, $cache_enabled = TRUE) {
     $cid = $this->getCacheId($resource, $method, $payload);
     static $cache = [];
 
@@ -159,6 +232,13 @@ class MediaValetClient {
 
     if (!$this->isAccessTokenValid()) {
       return FALSE;
+    }
+
+    if ($method == 'GET') {
+      $payload += [
+        'count' => $this->getCount(),
+        'offset' => $this->getOffset(),
+      ];
     }
 
     $endpoint = rtrim($this->endpointApi, '/') . '/' . ltrim($resource, '/');
@@ -213,7 +293,7 @@ class MediaValetClient {
   /**
    * Get categories.
    */
-  public function getCategories() {
+  public function getCategories() : MediaValetData {
     $categories = [];
     $data = $this->request('categories');
 
@@ -221,13 +301,18 @@ class MediaValetClient {
       $categories[$item['id']] = $item['tree']['name'];
     }
 
-    return $categories;
+    asort($categories);
+
+    return new MediaValetData(
+      $categories,
+      $this->setBuildInfo($data),
+    );
   }
 
   /**
    * Get category assets.
    */
-  public function getCategoryAssets(string $category_uuid) {
+  public function getCategoryAssets(string $category_uuid) : MediaValetData {
     $items = [];
     $data = $this->request('categories/' . $category_uuid . '/assets');
 
@@ -242,13 +327,16 @@ class MediaValetClient {
       ];
     }
 
-    return $items;
+    return new MediaValetData(
+      $items,
+      $this->setBuildInfo($data),
+    );
   }
 
   /**
    * Get assets.
    */
-  public function getAsset(string $asset_uuid) {
+  public function getAsset(string $asset_uuid) : MediaValetData {
     $item = [];
     $data = $this->request('assets/' . $asset_uuid);
 
@@ -264,13 +352,16 @@ class MediaValetClient {
       'is_image' => strtolower($data['payload']['media']['type']) == 'image',
     ];
 
-    return $item;
+    return new MediaValetData(
+      $item,
+      $this->setBuildInfo($data),
+    );
   }
 
   /**
    * Get keywords.
    */
-  public function getKeywords() {
+  public function getKeywords() : MediaValetData {
     $keywords = [];
     $data = $this->request('keywords');
 
@@ -280,17 +371,21 @@ class MediaValetClient {
       }
     }
 
-    return $keywords;
+    return new MediaValetData(
+      $keywords,
+      $this->setBuildInfo($data),
+    );
   }
 
   /**
    * Search.
    */
-  public function search($text) {
+  public function search($text, array $options = []) : MediaValetData {
     $items = [];
-    $data = $this->request('assets', [
-      'search' => $text,
-    ]);
+
+    $options['search'] = $text;
+
+    $data = $this->request('assets', $options);
 
     foreach ($data['payload']['assets'] as $item) {
       $items[$item['id']] = [
@@ -303,7 +398,10 @@ class MediaValetClient {
       ];
     }
 
-    return $items;
+    return new MediaValetData(
+      $items,
+      $this->setBuildInfo($data),
+    );
   }
 
 }
