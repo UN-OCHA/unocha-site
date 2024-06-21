@@ -141,7 +141,7 @@ class MediaValetImage extends MediaLibrarySourceBase {
     $form['query'] = [
       '#title' => $this->t('Search query'),
       '#type' => 'textfield',
-      '#description' => $this->t('Free text search, has precedent over selecting a category.'),
+      '#description' => $this->t('Free text search, searches names, keywords and categories.'),
     ];
 
     $form['category'] = [
