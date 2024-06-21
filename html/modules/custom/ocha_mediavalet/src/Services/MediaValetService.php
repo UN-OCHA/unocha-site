@@ -99,7 +99,7 @@ class MediaValetService {
     $this->config = $config_factory->get('ocha_mediavalet.settings');
     $this->time = $time;
     $this->httpClient = $http_client;
-    $this->logger = $logger_factory->get('unocha_canto');
+    $this->logger = $logger_factory->get('ocha_mediavalet');
     $this->state = $state;
 
     $this->mediavaletClient = new MediaValetClient(
@@ -113,6 +113,19 @@ class MediaValetService {
       $this->config->get('client_id'),
       $this->config->get('secret'),
     );
+
+    // Set access token info from cache.
+    $access_token_info = $this->getCache('mediavalet');
+    if ($access_token_info) {
+      $this->mediavaletClient->setAccessTokenInfo($access_token_info);
+    }
+  }
+
+  /**
+   * Update cached access token.
+   */
+  protected function updateCachedAccessTokenInfo() {
+    $this->cacheIt('mediavalet', $this->mediavaletClient->getAccessTokenInfo());
   }
 
   /**
@@ -150,6 +163,8 @@ class MediaValetService {
     asort($categories);
 
     $this->cacheIt($cid, $categories);
+    $this->updateCachedAccessTokenInfo();
+
     return $categories;
   }
 
@@ -165,6 +180,8 @@ class MediaValetService {
 
     $data = $this->mediavaletClient->getCategoryAssets($category_uuid);
     $this->cacheIt($cid, $data);
+    $this->updateCachedAccessTokenInfo();
+
     return $data;
   }
 
@@ -180,6 +197,8 @@ class MediaValetService {
 
     $data = $this->mediavaletClient->getAsset($asset_uuid);
     $this->cacheIt($cid, $data);
+    $this->updateCachedAccessTokenInfo();
+
     return $data;
   }
 
@@ -195,6 +214,8 @@ class MediaValetService {
 
     $data = $this->mediavaletClient->getKeywords();
     $this->cacheIt($cid, $data);
+    $this->updateCachedAccessTokenInfo();
+
     return $data;
   }
 
@@ -210,6 +231,8 @@ class MediaValetService {
 
     $data = $this->mediavaletClient->search($text);
     $this->cacheIt($cid, $data);
+    $this->updateCachedAccessTokenInfo();
+
     return $data;
   }
 

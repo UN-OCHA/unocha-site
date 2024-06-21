@@ -31,6 +31,22 @@ class MediaValetClient {
   ) {}
 
   /**
+   * Get access token info.
+   */
+  public function getAccessTokenInfo() {
+    return $this->accessTokenInfo;
+  }
+
+  /**
+   * Set access token info.
+   */
+  public function setAccessTokenInfo(array $access_token_info) {
+    $this->accessTokenInfo = $access_token_info;
+
+    return $this;
+  }
+
+  /**
    * Make sure access token is valid.
    */
   protected function isAccessTokenValid() : bool {
@@ -42,6 +58,7 @@ class MediaValetClient {
       return $this->refreshToken();
     }
 
+    // Authenticate.
     $endpoint = rtrim($this->endpointLogin, '/') . '/connect/token';
     $hash = base64_encode($this->clientId . ':' . $this->clientSecret);
     $response = $this->httpClient->request('POST', $endpoint, [
@@ -84,6 +101,7 @@ class MediaValetClient {
       return FALSE;
     }
 
+    // Refresh token.
     $endpoint = rtrim($this->endpointLogin, '/') . '/connect/token';
     $response = $this->httpClient->request('POST', $endpoint, [
       'headers' => [
@@ -235,7 +253,7 @@ class MediaValetClient {
     $data = $this->request('assets/' . $asset_uuid);
 
     $item = [
-      'id' => $item['id'],
+      'id' => $data['payload']['id'],
       'title' => $data['payload']['title'],
       'filename' => $data['payload']['file']['fileName'],
       'thumb' => $data['payload']['media']['thumb'],
