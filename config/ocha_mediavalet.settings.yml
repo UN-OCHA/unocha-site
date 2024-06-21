@@ -7,3 +7,5 @@ password: ''
 subscription_key: ''
 client_id: ''
 secret: ''
+debug: 0
+max_age: 900
