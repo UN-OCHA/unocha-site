@@ -80,7 +80,7 @@ class MediaValetImage extends MediaLibrarySourceBase {
   public function getCount() {
     $data = $this->queryResults();
     $result_info = $data->getResultInfo();
-    return $result_info['total'];
+    return $result_info['total'] ?? 0;
   }
 
   /**
@@ -146,7 +146,11 @@ class MediaValetImage extends MediaLibrarySourceBase {
 
     $form['category'] = [
       '#title' => $this->t('Select category'),
-      '#type' => 'select',
+      '#type' => 'select_a11y',
+      '#cardinality' => 1,
+      '#select_a11y' => [
+        'width' => 'element',
+      ],
       '#options' => $this->getCategories(),
       '#description' => $this->t('Select a category from UNOCHA MediaValet'),
       '#default_value' => $this->getSelectedCategory(),

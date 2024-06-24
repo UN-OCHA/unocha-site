@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e316a87fe451736a8e3289060d5bb900",
+    "content-hash": "b45d71ea8b6ac9ec398b3cec63b04f80",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5488,6 +5488,54 @@
             "homepage": "https://www.drupal.org/project/samples",
             "support": {
                 "source": "https://git.drupalcode.org/project/samples"
+            }
+        },
+        {
+            "name": "drupal/select_a11y",
+            "version": "dev-3.0.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/select_a11y.git",
+                "reference": "ea4fd8a1264b6de77ff043863e951f5835ba9403"
+            },
+            "require": {
+                "drupal/core": "^9.2 || ^10"
+            },
+            "require-dev": {
+                "drupal/facets": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.0.x": "3.0.x-dev"
+                },
+                "drupal": {
+                    "version": "3.0.x-dev",
+                    "datestamp": "1719221682",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "attiks",
+                    "homepage": "https://www.drupal.org/user/105002"
+                },
+                {
+                    "name": "lazysoundsystem",
+                    "homepage": "https://www.drupal.org/user/568228"
+                }
+            ],
+            "description": "Provides a multiple select widget.",
+            "homepage": "https://www.drupal.org/project/select_a11y",
+            "support": {
+                "source": "https://git.drupalcode.org/project/select_a11y"
             }
         },
         {
@@ -17654,6 +17702,7 @@
         "drupal/menu_breadcrumb": 15,
         "drupal/openid_connect_windows_aad": 10,
         "drupal/samples": 10,
+        "drupal/select_a11y": 20,
         "drupal/viewsreference": 10
     },
     "prefer-stable": true,

@@ -97,9 +97,9 @@ class MediaValetClient {
    */
   protected function setBuildInfo($data) : array {
     return [
-      'total' => $data['recordCount']['totalRecordsFound'],
-      'start' => $data['recordCount']['startingRecord'],
-      'records' => $data['recordCount']['recordsReturned'],
+      'total' => $data['recordCount']['totalRecordsFound'] ?? 0,
+      'start' => $data['recordCount']['startingRecord'] ?? 0,
+      'records' => $data['recordCount']['recordsReturned'] ?? 0,
     ];
   }
 
@@ -132,38 +132,48 @@ class MediaValetClient {
     }
 
     // Authenticate.
-    $endpoint = rtrim($this->endpointLogin, '/') . '/connect/token';
-    $hash = base64_encode($this->clientId . ':' . $this->clientSecret);
-    $response = $this->httpClient->request('POST', $endpoint, [
-      'headers' => [
-        'Content-Type' => 'application/x-www-form-urlencoded',
-        'Authorization' => 'Basic ' . $hash,
-      ],
-      'form_params' => [
-        'grant_type' => 'password',
-        'username' => $this->username,
-        'password' => $this->password,
-        'scope' => 'openid api offline_access',
-        'state' => 'state-296bc9a0',
-        'subscriptionKey' => $this->subscriptionKey,
-      ],
-    ]);
-
-    if ($response->getStatusCode() != 200) {
-      $this->loggerFactory->alert('Access token request failed', [
-        'code' => $response->getStatusCode(),
-        'message' => $response->getReasonPhrase() ?? '',
+    try {
+      $endpoint = rtrim($this->endpointLogin, '/') . '/connect/token';
+      $hash = base64_encode($this->clientId . ':' . $this->clientSecret);
+      $response = $this->httpClient->request('POST', $endpoint, [
+        'headers' => [
+          'Content-Type' => 'application/x-www-form-urlencoded',
+          'Authorization' => 'Basic ' . $hash,
+        ],
+        'form_params' => [
+          'grant_type' => 'password',
+          'username' => $this->username,
+          'password' => $this->password,
+          'scope' => 'openid api offline_access',
+          'state' => 'state-296bc9a0',
+          'subscriptionKey' => $this->subscriptionKey,
+        ],
       ]);
 
-      return FALSE;
+      if ($response->getStatusCode() != 200) {
+        $this->loggerFactory->alert('Access token request failed', [
+          'code' => $response->getStatusCode(),
+          'message' => $response->getReasonPhrase() ?? '',
+        ]);
+
+        return FALSE;
+      }
+
+      $access_token_info = json_decode($response->getBody()->getContents(), TRUE);
+      $access_token_info['expires'] = time() + $access_token_info['expires_in'];
+
+      $this->accessTokenInfo = $access_token_info;
+
+      return TRUE;
+    }
+    catch (\Throwable $th) {
+      $this->loggerFactory->alert('Access token request failed', [
+        'code' => $th->getCode(),
+        'message' => $th->getMessage() ?? '',
+      ]);
     }
 
-    $access_token_info = json_decode($response->getBody()->getContents(), TRUE);
-    $access_token_info['expires'] = time() + $access_token_info['expires_in'];
-
-    $this->accessTokenInfo = $access_token_info;
-
-    return TRUE;
+    return FALSE;
   }
 
   /**
