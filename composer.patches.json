@@ -3,6 +3,9 @@
     "drupal/amazon_ses": {
       "Cron fails on amazon_ses when not configured": "PATCHES/amazon_ses-3417090-cron-queue-14.patch"
     },
+    "drupal/core": {
+      "Avoid issue on site install - #3406929": "https://www.drupal.org/files/issues/2024-01-22/3414349-10.1.x-32.do-not-test.patch"
+    },
     "drupal/csp": {
       "Simplify log format": "PATCHES/csp-log-format.patch"
     },
