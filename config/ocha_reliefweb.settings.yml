@@ -1,0 +1,14 @@
+reliefweb_api_url: 'https://api.reliefweb.int/v1'
+reliefweb_api_appname: unocha.org
+reliefweb_api_cache_enabled: true
+reliefweb_api_cache_lifetime: 300
+reliefweb_api_cache_namespace: 'reliefweb:api'
+reliefweb_api_verify_ssl: true
+reliefweb_website: 'https://reliefweb.int'
+reliefweb_document_not_found_max_age: 600
+reliefweb_api_converter: 'https://reliefweb.int/search/converter/json'
+reliefweb_api_use_redirects: true
+reliefweb_api_post_api_schema_url: 'https://reliefweb.int/post-api-schemas/v2/'
+reliefweb_api_submission_base_url: /reliefweb-submissions
+reliefweb_api_submission_file_base_uri: 'public://reliefweb-submissions'
+template_class_prefix: ocha-reliefweb

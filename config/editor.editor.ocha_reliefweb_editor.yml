@@ -1,0 +1,48 @@
+uuid: 54aa8662-b21b-453e-bf36-a4ebb1816950
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.ocha_reliefweb_editor
+  module:
+    - ckeditor5
+  enforced:
+    module:
+      - ocha_reliefweb
+_core:
+  default_config_hash: LNqyUvhZHO3hH53pH5_u9RBNIji-dKO5mV4srjfjb0E
+format: ocha_reliefweb_editor
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - bold
+      - italic
+      - heading
+      - '|'
+      - link
+      - blockQuote
+      - '|'
+      - bulletedList
+      - numberedList
+      - indent
+      - outdent
+      - '|'
+      - undo
+      - redo
+      - removeFormat
+  plugins:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_list:
+      properties:
+        reversed: false
+        startIndex: false
+      multiBlock: true
+image_upload:
+  status: false

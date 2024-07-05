@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.ckeditor
+    - filter.format.ocha_reliefweb_editor
     - filter.format.text_editor_simple
     - media.type.image
     - media.type.video
@@ -15,6 +16,7 @@ dependencies:
     - node.type.resource
     - node.type.response
     - node.type.story
+    - ocha_reliefweb.reliefweb_resource_type.report
     - taxonomy.vocabulary.contacts
     - taxonomy.vocabulary.country
     - taxonomy.vocabulary.event_type
@@ -31,6 +33,7 @@ dependencies:
     - node
     - ocha_datawrapper
     - ocha_key_figures
+    - ocha_reliefweb
     - paragraphs
     - path
     - redirect
@@ -49,6 +52,8 @@ permissions:
   - 'access content overview'
   - 'access content samples'
   - 'access media overview'
+  - 'access reliefweb resource preview files'
+  - 'access reliefweb resource update webhook'
   - 'access stories entity browser pages'
   - 'access taxonomy overview'
   - 'access toolbar'
@@ -65,6 +70,7 @@ permissions:
   - 'administer ocha presences'
   - 'administer redirects'
   - 'administer reliefweb breadcrumbs'
+  - 'administer reliefweb resources'
   - 'administer taxonomy'
   - 'create basic content'
   - 'create content translations'
@@ -74,6 +80,7 @@ permissions:
   - 'create media'
   - 'create media_collection content'
   - 'create region content'
+  - 'create report content'
   - 'create resource content'
   - 'create response content'
   - 'create story content'
@@ -85,12 +92,15 @@ permissions:
   - 'create terms in theme'
   - 'create url aliases'
   - 'create video media'
+  - 'delete any report content'
+  - 'delete own report content'
   - 'edit any basic content'
   - 'edit any event content'
   - 'edit any image media'
   - 'edit any leader content'
   - 'edit any media_collection content'
   - 'edit any region content'
+  - 'edit any report content'
   - 'edit any resource content'
   - 'edit any response content'
   - 'edit any story content'
@@ -112,6 +122,7 @@ permissions:
   - 'edit own leader content'
   - 'edit own media_collection content'
   - 'edit own region content'
+  - 'edit own report content'
   - 'edit own resource content'
   - 'edit own response content'
   - 'edit own story content'
@@ -158,6 +169,7 @@ permissions:
   - 'update content translations'
   - 'update media'
   - 'use text format ckeditor'
+  - 'use text format ocha_reliefweb_editor'
   - 'use text format text_editor_simple'
   - 'view all media revisions'
   - 'view all revisions'

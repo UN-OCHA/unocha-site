@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f2af9523885580b0564f8d4520cad3ec",
+    "content-hash": "ba68dfb88cee96bdf18cfe0d0fc51992",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2323,7 +2323,7 @@
                 "shasum": "6a66e40a4249351a89afba529910e1e5e2f667aa"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -3998,7 +3998,7 @@
                 "shasum": "6139e7d5d5d5dd28bf51b15118c8c84d6ff91614"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -4050,7 +4050,7 @@
                 "shasum": "cc7cd2f029137e99a99deb90aee83b8bbf01c0d4"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10",
+                "drupal/core": "^10",
                 "drupal/imageapi_optimize": "*"
             },
             "type": "drupal-module",
@@ -4496,7 +4496,7 @@
                 "shasum": "fc8ea60619b6b4682bade340e13fb4565d3a7e0c"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -5417,6 +5417,54 @@
             "homepage": "https://www.drupal.org/project/samples",
             "support": {
                 "source": "https://git.drupalcode.org/project/samples"
+            }
+        },
+        {
+            "name": "drupal/select_a11y",
+            "version": "dev-3.0.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/select_a11y.git",
+                "reference": "ea4fd8a1264b6de77ff043863e951f5835ba9403"
+            },
+            "require": {
+                "drupal/core": "^9.2 || ^10"
+            },
+            "require-dev": {
+                "drupal/facets": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.0.x": "3.0.x-dev"
+                },
+                "drupal": {
+                    "version": "3.0.x-dev",
+                    "datestamp": "1719221682",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "attiks",
+                    "homepage": "https://www.drupal.org/user/105002"
+                },
+                {
+                    "name": "lazysoundsystem",
+                    "homepage": "https://www.drupal.org/user/568228"
+                }
+            ],
+            "description": "Provides a multiple select widget.",
+            "homepage": "https://www.drupal.org/project/select_a11y",
+            "support": {
+                "source": "https://git.drupalcode.org/project/select_a11y"
             }
         },
         {
@@ -8643,6 +8691,131 @@
                 "source": "https://github.com/open-telemetry/opentelemetry-php"
             },
             "time": "2024-04-09T23:31:35+00:00"
+        },
+        {
+            "name": "opis/string",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/opis/string.git",
+                "reference": "9ebf1a1f873f502f6859d11210b25a4bf5d141e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/opis/string/zipball/9ebf1a1f873f502f6859d11210b25a4bf5d141e7",
+                "reference": "9ebf1a1f873f502f6859d11210b25a4bf5d141e7",
+                "shasum": ""
+            },
+            "require": {
+                "ext-iconv": "*",
+                "ext-json": "*",
+                "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Opis\\String\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Marius Sarca",
+                    "email": "marius.sarca@gmail.com"
+                },
+                {
+                    "name": "Sorin Sarca",
+                    "email": "sarca_sorin@hotmail.com"
+                }
+            ],
+            "description": "Multibyte strings as objects",
+            "homepage": "https://opis.io/string",
+            "keywords": [
+                "multi-byte",
+                "opis",
+                "string",
+                "string manipulation",
+                "utf-8"
+            ],
+            "support": {
+                "issues": "https://github.com/opis/string/issues",
+                "source": "https://github.com/opis/string/tree/2.0.1"
+            },
+            "time": "2022-01-14T15:42:23+00:00"
+        },
+        {
+            "name": "opis/uri",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/opis/uri.git",
+                "reference": "0f3ca49ab1a5e4a6681c286e0b2cc081b93a7d5a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/opis/uri/zipball/0f3ca49ab1a5e4a6681c286e0b2cc081b93a7d5a",
+                "reference": "0f3ca49ab1a5e4a6681c286e0b2cc081b93a7d5a",
+                "shasum": ""
+            },
+            "require": {
+                "opis/string": "^2.0",
+                "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Opis\\Uri\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Marius Sarca",
+                    "email": "marius.sarca@gmail.com"
+                },
+                {
+                    "name": "Sorin Sarca",
+                    "email": "sarca_sorin@hotmail.com"
+                }
+            ],
+            "description": "Build, parse and validate URIs and URI-templates",
+            "homepage": "https://opis.io",
+            "keywords": [
+                "URI Template",
+                "parse url",
+                "punycode",
+                "uri",
+                "uri components",
+                "url",
+                "validate uri"
+            ],
+            "support": {
+                "issues": "https://github.com/opis/uri/issues",
+                "source": "https://github.com/opis/uri/tree/1.1.0"
+            },
+            "time": "2021-05-22T15:57:08+00:00"
         },
         {
             "name": "orakili/composer-drupal-info-file-patch-helper",
@@ -14787,6 +14960,85 @@
             "time": "2024-01-29T20:11:03+00:00"
         },
         {
+            "name": "symfony/polyfill-uuid",
+            "version": "v1.30.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-uuid.git",
+                "reference": "2ba1f33797470debcda07fe9dce20a0003df18e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-uuid/zipball/2ba1f33797470debcda07fe9dce20a0003df18e9",
+                "reference": "2ba1f33797470debcda07fe9dce20a0003df18e9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "provide": {
+                "ext-uuid": "*"
+            },
+            "suggest": {
+                "ext-uuid": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Uuid\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Grégoire Pineau",
+                    "email": "lyrixx@lyrixx.info"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for uuid functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "uuid"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-uuid/tree/v1.30.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-05-31T15:07:36+00:00"
+        },
+        {
             "name": "symfony/process",
             "version": "v6.4.8",
             "source": {
@@ -15357,6 +15609,80 @@
                 }
             ],
             "time": "2024-04-18T09:32:20+00:00"
+        },
+        {
+            "name": "symfony/uid",
+            "version": "v6.4.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/uid.git",
+                "reference": "35904eca37a84bb764c560cbfcac9f0ac2bcdbdf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/uid/zipball/35904eca37a84bb764c560cbfcac9f0ac2bcdbdf",
+                "reference": "35904eca37a84bb764c560cbfcac9f0ac2bcdbdf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "symfony/polyfill-uuid": "^1.15"
+            },
+            "require-dev": {
+                "symfony/console": "^5.4|^6.0|^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Uid\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Grégoire Pineau",
+                    "email": "lyrixx@lyrixx.info"
+                },
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides an object-oriented API to generate and represent UIDs",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "UID",
+                "ulid",
+                "uuid"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/uid/tree/v6.4.8"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-05-31T14:49:08+00:00"
         },
         {
             "name": "symfony/validator",
@@ -15934,6 +16260,70 @@
             "time": "2024-04-12T06:49:31+00:00"
         },
         {
+            "name": "unocha/json-schema",
+            "version": "v2.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/UN-OCHA/json-schema.git",
+                "reference": "beb68fe9cca61f6fd3115545ea2400fd7307b4a7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/UN-OCHA/json-schema/zipball/beb68fe9cca61f6fd3115545ea2400fd7307b4a7",
+                "reference": "beb68fe9cca61f6fd3115545ea2400fd7307b4a7",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "opis/string": "^2.0",
+                "opis/uri": "^1.0",
+                "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "ext-bcmath": "*",
+                "ext-intl": "*",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Opis\\JsonSchema\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Sorin Sarca",
+                    "email": "sarca_sorin@hotmail.com"
+                },
+                {
+                    "name": "Marius Sarca",
+                    "email": "marius.sarca@gmail.com"
+                }
+            ],
+            "description": "Json Schema Validator for PHP",
+            "homepage": "https://opis.io/json-schema",
+            "keywords": [
+                "json",
+                "json-schema",
+                "schema",
+                "validation",
+                "validator"
+            ],
+            "support": {
+                "source": "https://github.com/UN-OCHA/json-schema/tree/v2.3.2"
+            },
+            "time": "2024-07-04T09:29:47+00:00"
+        },
+        {
             "name": "unocha/ocha_key_figures",
             "version": "2.1.10",
             "source": {
@@ -15991,6 +16381,50 @@
                 "source": "https://github.com/UN-OCHA/ocha_monitoring/tree/1.0.17"
             },
             "time": "2024-06-03T11:11:14+00:00"
+        },
+        {
+            "name": "unocha/ocha_reliefweb",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/UN-OCHA/ocha_reliefweb.git",
+                "reference": "e2754cdad5bfc75c16bb5f27416cbceaec1b9e8a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/UN-OCHA/ocha_reliefweb/zipball/e2754cdad5bfc75c16bb5f27416cbceaec1b9e8a",
+                "reference": "e2754cdad5bfc75c16bb5f27416cbceaec1b9e8a",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/core": "^10",
+                "drupal/select_a11y": "^3.0.x-dev@dev",
+                "php": ">=8.2",
+                "symfony/uid": "^6.3",
+                "unocha/json-schema": "^2.3.2"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+                "drupal/coder": "^8.3",
+                "phpcompatibility/php-compatibility": "^9.3"
+            },
+            "default-branch": true,
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "UNOCHA"
+                }
+            ],
+            "description": "OCHA ReliefWeb integration module",
+            "support": {
+                "issues": "https://github.com/UN-OCHA/ocha_reliefweb/issues",
+                "source": "https://github.com/UN-OCHA/ocha_reliefweb/tree/develop"
+            },
+            "time": "2024-07-04T12:04:29+00:00"
         },
         {
             "name": "unocha/ocha_search",
@@ -17575,7 +18009,8 @@
         "drupal/menu_breadcrumb": 15,
         "drupal/openid_connect_windows_aad": 10,
         "drupal/samples": 10,
-        "drupal/viewsreference": 10
+        "drupal/viewsreference": 10,
+        "unocha/ocha_reliefweb": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
