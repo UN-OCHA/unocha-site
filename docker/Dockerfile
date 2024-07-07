@@ -44,7 +44,7 @@ LABEL info.humanitarianresponse.build.date=$BUILD_DATE \
 
 RUN mkdir -p /etc/nginx/custom && \
     # Permit nginx access to the MAPBX_SECRET env variable.
-    sed -i 's/env NGINX_OVERRIDE_PROTOCOL;/env NGINX_OVERRIDE_PROTOCOL;\n\n## Mapbox access token.\nenv MAPBOX_TOKEN;\n\n## ReliefWeb host.\nenv RELIEFWEB_HOST;/' /etc/nginx/nginx.conf
+    sed -i 's/env NGINX_OVERRIDE_PROTOCOL;/env NGINX_OVERRIDE_PROTOCOL;\n\n## Mapbox access token.\nenv MAPBOX_TOKEN;\n\n## ReliefWeb site.\nenv RELIEFWEB_SITE;/' /etc/nginx/nginx.conf
 
 COPY --from=builder /srv/www/assets /srv/www/assets
 COPY --from=builder /srv/www/config /srv/www/config
