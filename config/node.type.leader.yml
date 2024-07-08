@@ -12,7 +12,7 @@ third_party_settings:
 name: Leader
 type: leader
 description: 'Individual leadership page with Name, Title, Portrait photo, and bio.'
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: false
