@@ -5420,54 +5420,6 @@
             }
         },
         {
-            "name": "drupal/select_a11y",
-            "version": "dev-3.0.x",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/select_a11y.git",
-                "reference": "ea4fd8a1264b6de77ff043863e951f5835ba9403"
-            },
-            "require": {
-                "drupal/core": "^9.2 || ^10"
-            },
-            "require-dev": {
-                "drupal/facets": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-3.0.x": "3.0.x-dev"
-                },
-                "drupal": {
-                    "version": "3.0.x-dev",
-                    "datestamp": "1719221682",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "attiks",
-                    "homepage": "https://www.drupal.org/user/105002"
-                },
-                {
-                    "name": "lazysoundsystem",
-                    "homepage": "https://www.drupal.org/user/568228"
-                }
-            ],
-            "description": "Provides a multiple select widget.",
-            "homepage": "https://www.drupal.org/project/select_a11y",
-            "support": {
-                "source": "https://git.drupalcode.org/project/select_a11y"
-            }
-        },
-        {
             "name": "drupal/simple_menu_permissions",
             "version": "2.1.0",
             "source": {
@@ -11236,6 +11188,40 @@
             "time": "2024-05-24T10:39:05+00:00"
         },
         {
+            "name": "reliefweb/simple-autocomplete",
+            "version": "v1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/UN-OCHA/rwint-simple-autocomplete.git",
+                "reference": "5d7b6236b3c680946a501da0c1aff1803853046f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/UN-OCHA/rwint-simple-autocomplete/zipball/5d7b6236b3c680946a501da0c1aff1803853046f",
+                "reference": "5d7b6236b3c680946a501da0c1aff1803853046f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "drupal/coder": "8.3.*",
+                "phpunit/phpunit": "8.3.*"
+            },
+            "type": "drupal-library",
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Simple standalone autocomplete javascript library",
+            "keywords": [
+                "javascript",
+                "php",
+                "reliefweb"
+            ],
+            "support": {
+                "source": "https://github.com/UN-OCHA/rwint-simple-autocomplete/tree/v1.3.2"
+            },
+            "time": "2022-10-25T05:01:03+00:00"
+        },
+        {
             "name": "robrichards/xmlseclibs",
             "version": "3.1.1",
             "source": {
@@ -16388,18 +16374,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/ocha_reliefweb.git",
-                "reference": "e2754cdad5bfc75c16bb5f27416cbceaec1b9e8a"
+                "reference": "5fd33a63fa62e179fcdbf41603a8f8cfac25dc09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/ocha_reliefweb/zipball/e2754cdad5bfc75c16bb5f27416cbceaec1b9e8a",
-                "reference": "e2754cdad5bfc75c16bb5f27416cbceaec1b9e8a",
+                "url": "https://api.github.com/repos/UN-OCHA/ocha_reliefweb/zipball/5fd33a63fa62e179fcdbf41603a8f8cfac25dc09",
+                "reference": "5fd33a63fa62e179fcdbf41603a8f8cfac25dc09",
                 "shasum": ""
             },
             "require": {
                 "drupal/core": "^10",
-                "drupal/select_a11y": "^3.0.x-dev@dev",
                 "php": ">=8.2",
+                "reliefweb/simple-autocomplete": "^v1.3",
                 "symfony/uid": "^6.3",
                 "unocha/json-schema": "^2.3.2"
             },
@@ -16424,7 +16410,7 @@
                 "issues": "https://github.com/UN-OCHA/ocha_reliefweb/issues",
                 "source": "https://github.com/UN-OCHA/ocha_reliefweb/tree/develop"
             },
-            "time": "2024-07-04T12:04:29+00:00"
+            "time": "2024-07-08T02:54:44+00:00"
         },
         {
             "name": "unocha/ocha_search",
