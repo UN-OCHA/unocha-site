@@ -81,7 +81,6 @@ module:
   responsive_image: 0
   samlauth: 0
   samples: 0
-  select_a11y: 0
   serialization: 0
   simple_menu_permissions: 0
   social_api: 0
