@@ -5,6 +5,8 @@
  * Module file for the ReliefWeb integration.
  */
 
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * Implements hook_theme().
  */
@@ -186,4 +188,16 @@ function unocha_reliefweb_theme() {
   }
 
   return $themes;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function unocha_reliefweb_form_reliefweb_resource_report_add_form_alter(array &$form, FormStateInterface $form_state, string $form_id) {
+  // Set OCHA as the default source.
+  if (isset($form['content']['widget'][0]['value']['source'])) {
+    if (empty($form['content']['widget'][0]['value']['source']['#default_value'])) {
+      $form['content']['widget'][0]['value']['source']['#default_value'] = [1503];
+    }
+  }
 }
