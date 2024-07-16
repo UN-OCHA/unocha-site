@@ -21,9 +21,9 @@ content:
     label: hidden
     settings:
       white_label: true
+      ocha_only: true
       view_all_link: false
       paginated: false
-      ocha_only: true
     third_party_settings: {  }
     weight: 2
     region: content
