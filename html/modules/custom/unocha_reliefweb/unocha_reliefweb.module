@@ -200,4 +200,23 @@ function unocha_reliefweb_form_reliefweb_resource_report_add_form_alter(array &$
       $form['content']['widget'][0]['value']['source']['#default_value'] = [1503];
     }
   }
+
+  // Set Situation Report as the default content format.
+  if (isset($form['content']['widget'][0]['value']['format'])) {
+    if (empty($form['content']['widget'][0]['value']['format']['#default_value'])) {
+      $form['content']['widget'][0]['value']['format']['#default_value'] = 10;
+    }
+  }
+
+  // Set English as the default language.
+  if (isset($form['content']['widget'][0]['value']['language'])) {
+    if (empty($form['content']['widget'][0]['language']['source']['#default_value'])) {
+      $form['content']['widget'][0]['value']['language']['#default_value'] = [267];
+    }
+  }
+
+  // Hide the origin field.
+  if (isset($form['content']['widget'][0]['value']['origin'])) {
+    $form['content']['widget'][0]['value']['origin']['#access'] = FALSE;
+  }
 }
