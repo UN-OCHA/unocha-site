@@ -16376,12 +16376,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/ocha_reliefweb.git",
-                "reference": "655ca1eefb5c6dc32a3f576b51b224c3f7ed2926"
+                "reference": "89a8a4688cf3de6eaa42159b0c9321b335728ffe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/ocha_reliefweb/zipball/655ca1eefb5c6dc32a3f576b51b224c3f7ed2926",
-                "reference": "655ca1eefb5c6dc32a3f576b51b224c3f7ed2926",
+                "url": "https://api.github.com/repos/UN-OCHA/ocha_reliefweb/zipball/89a8a4688cf3de6eaa42159b0c9321b335728ffe",
+                "reference": "89a8a4688cf3de6eaa42159b0c9321b335728ffe",
                 "shasum": ""
             },
             "require": {
@@ -16412,7 +16412,7 @@
                 "issues": "https://github.com/UN-OCHA/ocha_reliefweb/issues",
                 "source": "https://github.com/UN-OCHA/ocha_reliefweb/tree/develop"
             },
-            "time": "2024-07-08T04:17:16+00:00"
+            "time": "2024-07-16T15:50:40+00:00"
         },
         {
             "name": "unocha/ocha_search",
