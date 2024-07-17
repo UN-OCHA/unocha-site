@@ -1,0 +1,86 @@
+uuid: b353cd81-b5e5-4b33-a072-b4ff9dba7a06
+langcode: en
+status: true
+dependencies:
+  module:
+    - editor
+    - ocha_reliefweb
+  enforced:
+    module:
+      - ocha_reliefweb
+_core:
+  default_config_hash: 8-JapH-_gQUVJFe16QpVF-aj_ivTwjhMstOOLzaZp6M
+name: 'Ocha ReliefWeb Editor'
+format: ocha_reliefweb_editor
+weight: -10
+filters:
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: false
+    weight: -44
+    settings: {  }
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: false
+    weight: -43
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: false
+    weight: -42
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: false
+    weight: -41
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -49
+    settings:
+      allowed_html: '<br> <p> <h2> <h3> <h4> <h5> <h6> <strong> <em> <blockquote> <a href> <ul> <ol> <li>'
+      filter_html_help: false
+      filter_html_nofollow: true
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -45
+    settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: false
+    weight: -36
+    settings: {  }
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: -47
+    settings: {  }
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: false
+    weight: -35
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: false
+    weight: -40
+    settings:
+      filter_url_length: 72
+  ocha_reliefweb_external_link_filter:
+    id: ocha_reliefweb_external_link_filter
+    provider: ocha_reliefweb
+    status: true
+    weight: -46
+    settings: {  }

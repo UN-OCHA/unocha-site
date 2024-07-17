@@ -1,0 +1,15 @@
+uuid: fdaaac6c-8399-4135-8423-3df6a61848b7
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - ocha_reliefweb
+settings:
+  disable_page_title: true
+  preview_warning:
+    value: '<p>This is a <strong>preview</strong>. The document is not yet published.</p><p>The URLs (document, files and images) are not publicly accessible so do not share them.</p>'
+    format: ocha_reliefweb_editor
+id: report
+label: Report
+description: 'ReliefWeb report'

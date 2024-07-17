@@ -79,6 +79,7 @@
         "unocha/gtm_barebones": "^1.0",
         "unocha/ocha_key_figures": "^2.0",
         "unocha/ocha_monitoring": "^1.0",
+        "unocha/ocha_reliefweb": "dev-develop",
         "unocha/ocha_search": "^1.0",
         "unocha/un_date": "^2.0",
         "webflo/drupal-finder": "^1.2.2"

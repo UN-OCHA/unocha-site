@@ -1,0 +1,37 @@
+uuid: 99b9e86e-53c2-47e5-9b91-0ab12a53d610
+langcode: en
+status: true
+dependencies:
+  config:
+    - ocha_reliefweb.reliefweb_resource_type.report
+  module:
+    - ocha_reliefweb
+  enforced:
+    config:
+      - ocha_reliefweb.reliefweb_resource_type.report
+    module:
+      - ocha_reliefweb
+_core:
+  default_config_hash: GXN0Olf4tl_nRrIEEVb-j-yQ1XkTi4i_cdQR30gky9s
+id: reliefweb_resource.report.default
+targetEntityType: reliefweb_resource
+bundle: report
+mode: default
+content:
+  content:
+    type: reliefweb_resource_content_report_formatter
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  status: true
