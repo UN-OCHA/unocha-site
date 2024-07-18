@@ -24,6 +24,6 @@ default_value_callback: ''
 settings:
   rivers:
     updates: updates
-    jobs: 0
-    training: 0
+    jobs: '0'
+    training: '0'
 field_type: reliefweb_river
