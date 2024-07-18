@@ -2323,7 +2323,7 @@
                 "shasum": "6a66e40a4249351a89afba529910e1e5e2f667aa"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -3998,7 +3998,7 @@
                 "shasum": "6139e7d5d5d5dd28bf51b15118c8c84d6ff91614"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -4050,7 +4050,7 @@
                 "shasum": "cc7cd2f029137e99a99deb90aee83b8bbf01c0d4"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10",
+                "drupal/core": "^10",
                 "drupal/imageapi_optimize": "*"
             },
             "type": "drupal-module",
@@ -4502,7 +4502,7 @@
                 "shasum": "fc8ea60619b6b4682bade340e13fb4565d3a7e0c"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -15971,16 +15971,16 @@
         },
         {
             "name": "unocha/ocha_monitoring",
-            "version": "1.0.17",
+            "version": "1.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/ocha_monitoring.git",
-                "reference": "4eb9e31800cdcbc26f670d165acc316972df2859"
+                "reference": "6c8d8a803da62c1f9581c1a8a90fc17501ba6394"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/ocha_monitoring/zipball/4eb9e31800cdcbc26f670d165acc316972df2859",
-                "reference": "4eb9e31800cdcbc26f670d165acc316972df2859",
+                "url": "https://api.github.com/repos/UN-OCHA/ocha_monitoring/zipball/6c8d8a803da62c1f9581c1a8a90fc17501ba6394",
+                "reference": "6c8d8a803da62c1f9581c1a8a90fc17501ba6394",
                 "shasum": ""
             },
             "require": {
@@ -15995,9 +15995,9 @@
             "description": "UNOCHA Monitoring",
             "support": {
                 "issues": "https://github.com/UN-OCHA/ocha_monitoring/issues",
-                "source": "https://github.com/UN-OCHA/ocha_monitoring/tree/1.0.17"
+                "source": "https://github.com/UN-OCHA/ocha_monitoring/tree/1.0.18"
             },
-            "time": "2024-06-03T11:11:14+00:00"
+            "time": "2024-07-18T14:02:43+00:00"
         },
         {
             "name": "unocha/ocha_search",
