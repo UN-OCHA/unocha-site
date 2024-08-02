@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a94cfe1a938594984ea58b11222f261b",
+    "content-hash": "25a7337eef6f5f96c8bff86ed0b8235a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -118,16 +118,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.316.10",
+            "version": "3.317.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "eeb8df6ff6caa428e8bcd631ad2a96430900a249"
+                "reference": "6d46c8e00c22f66349b8a509bd2c5ced72cceff2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/eeb8df6ff6caa428e8bcd631ad2a96430900a249",
-                "reference": "eeb8df6ff6caa428e8bcd631ad2a96430900a249",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6d46c8e00c22f66349b8a509bd2c5ced72cceff2",
+                "reference": "6d46c8e00c22f66349b8a509bd2c5ced72cceff2",
                 "shasum": ""
             },
             "require": {
@@ -207,9 +207,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.316.10"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.317.0"
             },
-            "time": "2024-07-30T18:10:20+00:00"
+            "time": "2024-08-01T18:12:34+00:00"
         },
         {
             "name": "behat/mink",
@@ -5243,22 +5243,25 @@
         },
         {
             "name": "drupal/pathauto",
-            "version": "1.12.0",
+            "version": "1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/pathauto.git",
-                "reference": "8.x-1.12"
+                "reference": "8.x-1.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/pathauto-8.x-1.12.zip",
-                "reference": "8.x-1.12",
-                "shasum": "b7b6432e315e38e59a7c6cc117134326c580de4c"
+                "url": "https://ftp.drupal.org/files/projects/pathauto-8.x-1.13.zip",
+                "reference": "8.x-1.13",
+                "shasum": "e64b5a82cf1b8ab48bce400b21ae6fc99c8078fd"
             },
             "require": {
-                "drupal/core": "^9.3 || ^10",
+                "drupal/core": "^9.4 || ^10 || ^11",
                 "drupal/ctools": "*",
                 "drupal/token": "*"
+            },
+            "require-dev": {
+                "drupal/forum": "*"
             },
             "suggest": {
                 "drupal/redirect": "When installed Pathauto will provide a new \"Update Action\" in case your URLs change. This is the recommended update action and is considered the best practice for SEO and usability."
@@ -5266,8 +5269,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.12",
-                    "datestamp": "1712319355",
+                    "version": "8.x-1.13",
+                    "datestamp": "1722507672",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5491,7 +5494,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/select_a11y.git",
-                "reference": "ea4fd8a1264b6de77ff043863e951f5835ba9403"
+                "reference": "69419440fa53734f17966d84da039440c24562a5"
             },
             "require": {
                 "drupal/core": "^9.2 || ^10"
@@ -5505,8 +5508,8 @@
                     "dev-3.0.x": "3.0.x-dev"
                 },
                 "drupal": {
-                    "version": "3.0.x-dev",
-                    "datestamp": "1719221682",
+                    "version": "3.0.0+1-dev",
+                    "datestamp": "1721912049",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -6250,17 +6253,17 @@
         },
         {
             "name": "drupal/viewsreference",
-            "version": "2.0.0-beta8",
+            "version": "2.0.0-beta9",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/viewsreference.git",
-                "reference": "8.x-2.0-beta8"
+                "reference": "8.x-2.0-beta9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/viewsreference-8.x-2.0-beta8.zip",
-                "reference": "8.x-2.0-beta8",
-                "shasum": "5a84a12d6350a1b6631634910faeaa13d1fb1b9c"
+                "url": "https://ftp.drupal.org/files/projects/viewsreference-8.x-2.0-beta9.zip",
+                "reference": "8.x-2.0-beta9",
+                "shasum": "3ccf5039a67a66a5530b12894b14c9391b01550f"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10 || ^11"
@@ -6268,11 +6271,14 @@
             "conflict": {
                 "drupal/viewsreferennce": "*"
             },
+            "require-dev": {
+                "drupal/views_ajax_history": "1.x-dev"
+            },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.0-beta8",
-                    "datestamp": "1717030540",
+                    "version": "8.x-2.0-beta9",
+                    "datestamp": "1722575139",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -9998,16 +10004,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.11.8",
+            "version": "1.11.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "6adbd118e6c0515dd2f36b06cde1d6da40f1b8ec"
+                "reference": "e370bcddadaede0c1716338b262346f40d296f82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/6adbd118e6c0515dd2f36b06cde1d6da40f1b8ec",
-                "reference": "6adbd118e6c0515dd2f36b06cde1d6da40f1b8ec",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/e370bcddadaede0c1716338b262346f40d296f82",
+                "reference": "e370bcddadaede0c1716338b262346f40d296f82",
                 "shasum": ""
             },
             "require": {
@@ -10052,7 +10058,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-07-24T07:01:22+00:00"
+            "time": "2024-08-01T16:25:18+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -17203,16 +17209,16 @@
         },
         {
             "name": "palantirnet/drupal-rector",
-            "version": "0.20.2",
+            "version": "0.20.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/palantirnet/drupal-rector.git",
-                "reference": "61ba1405da47d306dd594ebec024fd400616b816"
+                "reference": "50c742a34f89e4202056e433bbb476ca1fdf3797"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/drupal-rector/zipball/61ba1405da47d306dd594ebec024fd400616b816",
-                "reference": "61ba1405da47d306dd594ebec024fd400616b816",
+                "url": "https://api.github.com/repos/palantirnet/drupal-rector/zipball/50c742a34f89e4202056e433bbb476ca1fdf3797",
+                "reference": "50c742a34f89e4202056e433bbb476ca1fdf3797",
                 "shasum": ""
             },
             "require": {
@@ -17225,14 +17231,13 @@
             },
             "require-dev": {
                 "cweagans/composer-patches": "^1.7.2",
-                "friendsofphp/php-cs-fixer": "^3.0",
+                "friendsofphp/php-cs-fixer": "^3.58",
                 "php": "^8.2",
                 "phpstan/extension-installer": "^1.1",
                 "phpstan/phpstan": "^1.0",
                 "phpstan/phpstan-deprecation-rules": "^1.0",
                 "phpunit/phpunit": "^10.0",
-                "symfony/yaml": "^5 || ^6",
-                "symplify/rule-doc-generator": "dev-main",
+                "symfony/yaml": "^5 || ^6 || ^7",
                 "symplify/vendor-patches": "^11.0"
             },
             "type": "library",
@@ -17283,9 +17288,9 @@
                 "rector"
             ],
             "support": {
-                "source": "https://github.com/palantirnet/drupal-rector/tree/0.20.2"
+                "source": "https://github.com/palantirnet/drupal-rector/tree/0.20.3"
             },
-            "time": "2024-04-26T14:28:14+00:00"
+            "time": "2024-06-10T19:18:13+00:00"
         },
         {
             "name": "pdepend/pdepend",
@@ -17497,21 +17502,21 @@
         },
         {
             "name": "rector/rector",
-            "version": "1.0.4",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "6e04d0eb087aef707fa0c5686d33d6ff61f4a555"
+                "reference": "044e6364017882d1e346da8690eeabc154da5495"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/6e04d0eb087aef707fa0c5686d33d6ff61f4a555",
-                "reference": "6e04d0eb087aef707fa0c5686d33d6ff61f4a555",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/044e6364017882d1e346da8690eeabc154da5495",
+                "reference": "044e6364017882d1e346da8690eeabc154da5495",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2|^8.0",
-                "phpstan/phpstan": "^1.10.57"
+                "phpstan/phpstan": "^1.11"
             },
             "conflict": {
                 "rector/rector-doctrine": "*",
@@ -17544,7 +17549,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/1.0.4"
+                "source": "https://github.com/rectorphp/rector/tree/1.2.2"
             },
             "funding": [
                 {
@@ -17552,20 +17557,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-04-05T09:01:07+00:00"
+            "time": "2024-07-25T07:44:34+00:00"
         },
         {
             "name": "symfony/config",
-            "version": "v7.0.0",
+            "version": "v7.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "8789646600f4e7e451dde9e1dc81cfa429f3857a"
+                "reference": "f8a8fb0c2d0a188a00a2dd5af8a4eb070641ec60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/8789646600f4e7e451dde9e1dc81cfa429f3857a",
-                "reference": "8789646600f4e7e451dde9e1dc81cfa429f3857a",
+                "url": "https://api.github.com/repos/symfony/config/zipball/f8a8fb0c2d0a188a00a2dd5af8a4eb070641ec60",
+                "reference": "f8a8fb0c2d0a188a00a2dd5af8a4eb070641ec60",
                 "shasum": ""
             },
             "require": {
@@ -17611,7 +17616,7 @@
             "description": "Helps you find, load, combine, autofill and validate configuration values of any kind",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/config/tree/v7.0.0"
+                "source": "https://github.com/symfony/config/tree/v7.0.8"
             },
             "funding": [
                 {
@@ -17627,7 +17632,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-11-09T08:30:23+00:00"
+            "time": "2024-05-31T14:55:39+00:00"
         },
         {
             "name": "weitzman/drupal-test-traits",
