@@ -11,7 +11,7 @@ third_party_settings:
 name: 'Media Collection'
 type: media_collection
 description: 'Collections of images, video and supporting material.'
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: true
