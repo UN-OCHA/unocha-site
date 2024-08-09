@@ -167,6 +167,22 @@ class MediaValetService {
   }
 
   /**
+   * Get media type.
+   */
+  public function getMediaType() : string {
+    return $this->mediavaletClient->getMediaType();
+  }
+
+  /**
+   * Set media type.
+   */
+  public function setMediaType(string $media_type) : self {
+    $this->mediavaletClient->setMediaType($media_type);
+
+    return $this;
+  }
+
+  /**
    * Get result info.
    */
   public function getResultInfo() : array {
@@ -332,7 +348,7 @@ class MediaValetService {
   /**
    * Search.
    */
-  public function search(string $text, string $category_uuid = '') : MediaValetData {
+  public function search(string $text, string $category_uuid = '', string $media_type = 'Image') : MediaValetData {
     $this->logIt('search called with ' . $text . ' and ' . $category_uuid);
 
     $cid = implode(':', [
@@ -348,10 +364,7 @@ class MediaValetService {
       return $cached;
     }
 
-    $options = [
-      'filters' => '(AssetType EQ Image)',
-    ];
-
+    $options = [];
     if (!empty($category_uuid)) {
       $options['containerFilter'] = "(CategoryIds/ANY(c: c EQ '" . $category_uuid . "'))";
     }

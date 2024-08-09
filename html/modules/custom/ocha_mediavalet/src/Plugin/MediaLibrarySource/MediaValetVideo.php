@@ -15,17 +15,17 @@ use GuzzleHttp\Client;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides a media library pane to pull images from MediaValet.
+ * Provides a media library pane to pull videos from MediaValet.
  *
  * @MediaLibrarySource(
- *   id = "ocha_mediavalet_image",
+ *   id = "ocha_mediavalet_video",
  *   label = @Translation("MediaValet"),
  *   source_types = {
- *     "image"
+ *     "video"
  *   },
  * )
  */
-class MediaValetImage extends MediaLibrarySourceBase {
+class MediaValetVideo extends MediaLibrarySourceBase {
 
   /**
    * The http client.
@@ -125,12 +125,12 @@ class MediaValetImage extends MediaLibrarySourceBase {
     }
 
     $this->mediavaletService
-      ->setMediaType(MediaValetClient::MEDIATYPEIMAGE)
+      ->setMediaType(MediaValetClient::MEDIATYPEVIDEO)
       ->setCount($this->configuration['items_per_page'])
       ->setOffset($this->getValue('page') * $this->configuration['items_per_page']);
 
-    if ($this->getSearch()) {
-      return $this->mediavaletService->search($this->getSearch(), $this->getSelectedCategory(), 'Image');
+    if (TRUE || $this->getSearch()) {
+      return $this->mediavaletService->search($this->getSearch(), $this->getSelectedCategory(), 'Video');
     }
 
     return $this->mediavaletService->getCategoryAssets($this->getSelectedCategory());
@@ -168,7 +168,7 @@ class MediaValetImage extends MediaLibrarySourceBase {
    */
   protected function getCategories() {
     $data = $this->mediavaletService
-      ->setMediaType(MediaValetClient::MEDIATYPEIMAGE)
+      ->setMediaType(MediaValetClient::MEDIATYPEVIDEO)
       ->getCategories();
 
     return $data->getData();
@@ -197,16 +197,10 @@ class MediaValetImage extends MediaLibrarySourceBase {
 
     // Create a media entity.
     $entity = $this->createEntityStub($asset['title']);
-    $image = file_get_contents($asset['original']);
-    $filename = $asset['filename'];
-
-    // Save to filesystem.
-    $file = $this->fileRepository->writeData($image, $this->getUploadLocation() . '/' . $filename);
 
     // Attach file to media entity.
     $source_field = $this->getSourceField();
-    $entity->{$source_field}->target_id = $file->id();
-    $entity->{$source_field}->alt = $asset['title'];
+    $entity->{$source_field} = 'https://www.unocha.org/mediavalet/video/' . $selected_id;
     $entity->save();
 
     return $entity->id();

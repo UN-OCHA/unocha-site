@@ -6,14 +6,38 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\media\OEmbed\Provider;
 
 /**
  * Implements hook_form_alter().
  */
 function ocha_mediavalet_form_alter(array &$form, FormStateInterface $form_state, string $form_id) {
   // Preload libraries so switching panes does work.
-  if (strpos($form_id, 'node_media_collection_form') === 0) {
+  if (strpos($form_id, 'node_media_collection_form') === 0 || strpos($form_id, 'node_media_collection_edit_form') === 0) {
     $form['#attached']['library'][] = 'media_library_extend/ui';
     $form['#attached']['library'][] = 'select_a11y/select_a11y.widget';
+  }
+}
+
+/**
+ * Implements hook_media_source_info_alter().
+ */
+function ocha_mediavalet_media_source_info_alter(array &$sources) {
+  $sources['oembed:video']['providers'][] = 'MediaValet';
+}
+
+/**
+ * Implements hook_oembed_resource_url_alter().
+ */
+function ocha_mediavalet_oembed_resource_url_alter(array &$parsed_url, Provider $provider) {
+  // Rewrite the UNOCHA Canto provider endpoint to use the current host so that
+  // it can work on local or development sites.
+  if (strpos($parsed_url['path'], '/mediavalet/video') !== FALSE) {
+    $oembed_base_url = \Drupal::request()->getSchemeAndHttpHost();
+    $parsed_url['path'] = $oembed_base_url . '/mediavalet/video';
+  }
+  if (strpos($parsed_url['path'], '/mediavalet/oembed') !== FALSE) {
+    $oembed_base_url = \Drupal::request()->getSchemeAndHttpHost();
+    $parsed_url['path'] = $oembed_base_url . '/mediavalet/oembed';
   }
 }

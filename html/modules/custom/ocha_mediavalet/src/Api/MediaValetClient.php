@@ -10,6 +10,9 @@ use Psr\Log\LoggerInterface;
  */
 class MediaValetClient {
 
+  const MEDIATYPEIMAGE = 'Image';
+  const MEDIATYPEVIDEO = 'Video';
+
   /**
    * Access token information.
    */
@@ -28,6 +31,13 @@ class MediaValetClient {
    * @var int
    */
   protected $offset = 0;
+
+  /**
+   * Media type.
+   *
+   * @var string
+   */
+  protected string $mediaType = self::MEDIATYPEIMAGE;
 
   /**
    * Result info.
@@ -81,6 +91,22 @@ class MediaValetClient {
    */
   public function setOffset(int $offset) : self {
     $this->offset = $offset;
+
+    return $this;
+  }
+
+  /**
+   * Get media type.
+   */
+  public function getMediaType() : string {
+    return $this->mediaType;
+  }
+
+  /**
+   * Set MediaType.
+   */
+  public function setMediaType(string $media_type) : self {
+    $this->mediaType = $media_type;
 
     return $this;
   }
@@ -333,7 +359,9 @@ class MediaValetClient {
         'filename' => $item['file']['fileName'],
         'thumb' => $item['media']['thumb'],
         'download' => $item['media']['download'],
+        'stream' => $item['media']['streamingManifest'] ?? '',
         'is_image' => strtolower($item['media']['type']) == 'image',
+        'is_video' => strtolower($item['media']['type']) == 'video',
       ];
     }
 
@@ -359,7 +387,11 @@ class MediaValetClient {
       'large' => $data['payload']['media']['large'],
       'original' => $data['payload']['media']['original'],
       'download' => $data['payload']['media']['download'],
+      'stream' => $data['payload']['media']['streamingManifest'] ?? '',
       'is_image' => strtolower($data['payload']['media']['type']) == 'image',
+      'is_video' => strtolower($data['payload']['media']['type']) == 'video',
+      'height' => $data['payload']['file']['imageHeight'] ?? '',
+      'width' => $data['payload']['file']['imageWidth'] ?? '',
     ];
 
     return new MediaValetData(
@@ -394,6 +426,12 @@ class MediaValetClient {
     $items = [];
 
     $options['search'] = $text;
+    if (empty($options['filters'])) {
+      $options['filters'] = '(AssetType EQ ' . $this->getMediaType() . ')';
+    }
+    else {
+      $options['filters'] = ' AND (AssetType EQ ' . $this->getMediaType() . ')';
+    }
 
     $data = $this->request('assets', $options);
 
@@ -404,7 +442,9 @@ class MediaValetClient {
         'filename' => $item['file']['fileName'],
         'thumb' => $item['media']['thumb'],
         'download' => $item['media']['download'],
+        'stream' => $item['media']['streamingManifest'] ?? '',
         'is_image' => strtolower($item['media']['type']) == 'image',
+        'is_video' => strtolower($item['media']['type']) == 'video',
       ];
     }
 
