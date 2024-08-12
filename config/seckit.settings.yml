@@ -12,7 +12,7 @@ seckit_xss:
     object-src: "'none'"
     style-src: "'self' 'unsafe-inline' https://googletagmanager.com https://tagmanager.google.com fonts.googleapis.com https://www.google.com https://cdnjs.cloudflare.com"
     img-src: "'self' data: https://*"
-    media-src: "'none'"
+    media-src: "'self' https://mvsfservicefabricusva.blob.core.windows.net"
     frame-src: "'self' https://*.googletagmanager.com https://bid.g.doubleclick.net https://td.doubleclick.net"
     frame-ancestors: "'self'"
     child-src: "'self'"
