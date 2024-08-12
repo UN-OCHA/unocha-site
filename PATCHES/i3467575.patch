@@ -1,0 +1,18 @@
+diff --git a/src/Form/PaneSelectForm.php b/src/Form/PaneSelectForm.php
+index 49ebd0c..a84f0bc 100644
+--- a/src/Form/PaneSelectForm.php
++++ b/src/Form/PaneSelectForm.php
+@@ -80,6 +80,13 @@ class PaneSelectForm extends FormBase {
+    */
+   protected $pagerParameters;
+ 
++  /**
++   * The target bundle.
++   *
++   * @var string
++   */
++  protected $target_bundle;
++
+   /**
+    * Constructs a PaneSelectForm.
+    */
