@@ -52,14 +52,15 @@ function ocha_mediavalet_media_source_info_alter(array &$sources) {
  * Implements hook_oembed_resource_url_alter().
  */
 function ocha_mediavalet_oembed_resource_url_alter(array &$parsed_url, Provider $provider) {
-  // Rewrite the UNOCHA Canto provider endpoint to use the current host so that
+  // Rewrite the oembed endpoint to use the current host so that
   // it can work on local or development sites.
-  if (strpos($parsed_url['path'], '/mediavalet/video') !== FALSE) {
-    $oembed_base_url = \Drupal::request()->getSchemeAndHttpHost();
-    $parsed_url['path'] = $oembed_base_url . '/mediavalet/video';
-  }
   if (strpos($parsed_url['path'], '/mediavalet/oembed') !== FALSE) {
-    $oembed_base_url = \Drupal::request()->getSchemeAndHttpHost();
+    $oembed_base_url = \Drupal::config('ocha_mediavalet.settings')?->get('oembed_base_url');
+
+    if (empty($oembed_base_url)) {
+      $oembed_base_url = \Drupal::request()->getSchemeAndHttpHost();
+    }
+
     $parsed_url['path'] = $oembed_base_url . '/mediavalet/oembed';
   }
 }

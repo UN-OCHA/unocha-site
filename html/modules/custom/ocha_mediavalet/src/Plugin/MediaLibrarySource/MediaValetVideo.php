@@ -2,7 +2,9 @@
 
 namespace Drupal\ocha_mediavalet\Plugin\MediaLibrarySource;
 
+use Drupal\Component\Render\PlainTextOutput;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\File\FileExists;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Utility\Token;
@@ -26,6 +28,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * )
  */
 class MediaValetVideo extends MediaLibrarySourceBase {
+
+  /**
+   * The target bundle for this plugin.
+   *
+   * @var string
+   */
+  protected $targetBundle = 'video';
 
   /**
    * The http client.
@@ -198,12 +207,45 @@ class MediaValetVideo extends MediaLibrarySourceBase {
     // Create a media entity.
     $entity = $this->createEntityStub($asset['title']);
 
+    // Add thumbnail.
+    if ($entity->hasField('thumbnail')) {
+      $image = file_get_contents($asset['thumb']);
+      $filename = pathinfo($asset['filename'], PATHINFO_FILENAME) . '.png';
+
+      // Save to filesystem.
+      $file = $this->fileRepository->writeData($image, $this->getThumbnailLocation() . '/' . $filename, FileExists::Rename);
+      $entity->set('thumbnail', [
+        'target_id' => $file->id(),
+        'alt' => $asset['title'],
+      ]);
+    }
+
     // Attach file to media entity.
     $source_field = $this->getSourceField();
     $entity->{$source_field} = 'https://www.unocha.org/mediavalet/video/' . $selected_id;
     $entity->save();
 
     return $entity->id();
+  }
+
+  /**
+   * Gets uri of a directory to store file uploads in.
+   *
+   * @return string
+   *   The uri of a directory for receiving uploads.
+   */
+  protected function getThumbnailLocation() {
+    $destination = 'public://oembed_thumbnails/[date:custom:Y-m]';
+
+    // Replace tokens.
+    $destination = PlainTextOutput::renderFromHtml($this->token->replace($destination, []));
+
+    if (!$this->fileSystem->prepareDirectory($destination, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS)) {
+      // @todo Error handling.
+      return NULL;
+    }
+
+    return $destination;
   }
 
 }

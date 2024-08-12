@@ -28,6 +28,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class MediaValetImage extends MediaLibrarySourceBase {
 
   /**
+   * The target bundle for this plugin.
+   *
+   * @var string
+   */
+  protected $targetBundle = 'image';
+
+  /**
    * The http client.
    *
    * @var \GuzzleHttp\Client
