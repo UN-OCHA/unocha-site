@@ -1,0 +1,10 @@
+services:
+  cache.ocha_mediavalet_api:
+    class: Drupal\Core\Cache\CacheBackendInterface
+    tags:
+      - { name: cache.bin }
+    factory: cache_factory:get
+    arguments: [ocha_mediavalet_api]
+  ocha_mediavalet.service.client:
+    class: Drupal\ocha_mediavalet\Services\MediaValetService
+    arguments: ['@cache.ocha_mediavalet_api', '@config.factory', '@datetime.time', '@http_client', '@logger.factory', '@state']

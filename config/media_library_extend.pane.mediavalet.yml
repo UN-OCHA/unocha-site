@@ -1,0 +1,10 @@
+uuid: 01995b78-26c2-4485-bc1d-fbaf777c2f27
+langcode: en
+status: true
+dependencies: {  }
+id: mediavalet
+label: MediaValet
+bundle: image
+source_plugin: ocha_mediavalet_image
+source_plugin_configuration:
+  items_per_page: '20'

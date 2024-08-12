@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e1dd2f9bc12332a1db839876064a783",
+    "content-hash": "365ce6e5ef690ff3dc7d23fb430f3908",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -118,16 +118,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.319.0",
+            "version": "3.319.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "a5c408d4cd1945d5fc817f45e46383634b610497"
+                "reference": "78d9f8823a5796e9188a4ddcd9ef2374e47d8b7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a5c408d4cd1945d5fc817f45e46383634b610497",
-                "reference": "a5c408d4cd1945d5fc817f45e46383634b610497",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/78d9f8823a5796e9188a4ddcd9ef2374e47d8b7f",
+                "reference": "78d9f8823a5796e9188a4ddcd9ef2374e47d8b7f",
                 "shasum": ""
             },
             "require": {
@@ -210,9 +210,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.319.0"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.319.1"
             },
-            "time": "2024-08-07T18:05:51+00:00"
+            "time": "2024-08-08T18:05:03+00:00"
         },
         {
             "name": "behat/mink",
@@ -2334,7 +2334,7 @@
                 "shasum": "bba0c8ccb8758d3dc65df0d37d0f777ff2b700ee"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10 || ^11"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -2365,20 +2365,20 @@
         },
         {
             "name": "drupal/allowed_formats",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/allowed_formats.git",
-                "reference": "3.0.0"
+                "reference": "3.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/allowed_formats-3.0.0.zip",
-                "reference": "3.0.0",
-                "shasum": "1dad855db0e12fa3cdef8ca4e3bfc98f89090490"
+                "url": "https://ftp.drupal.org/files/projects/allowed_formats-3.0.1.zip",
+                "reference": "3.0.1",
+                "shasum": "9dfaed3ab8425ee94146914fdb492cefc6c6bb4d"
             },
             "require": {
-                "drupal/core": "^10.1"
+                "drupal/core": "^10.1 || ^11"
             },
             "conflict": {
                 "drupal/core": "<10.1.0"
@@ -2386,8 +2386,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.0",
-                    "datestamp": "1693983469",
+                    "version": "3.0.1",
+                    "datestamp": "1723158950",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3944,7 +3944,7 @@
                 "shasum": "c8f2895a81a7898ac909bdc693fcd25ffe6f62be"
             },
             "require": {
-                "drupal/core": "^9.5 || ^10 || ^11"
+                "drupal/core": "^10"
             },
             "require-dev": {
                 "drupal/commerce": "^2.0",
@@ -4085,7 +4085,7 @@
                 "shasum": "6139e7d5d5d5dd28bf51b15118c8c84d6ff91614"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -4137,7 +4137,7 @@
                 "shasum": "cc7cd2f029137e99a99deb90aee83b8bbf01c0d4"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10",
+                "drupal/core": "^10",
                 "drupal/imageapi_optimize": "*"
             },
             "type": "drupal-module",
@@ -4589,7 +4589,7 @@
                 "shasum": "fc8ea60619b6b4682bade340e13fb4565d3a7e0c"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -4628,6 +4628,54 @@
             "homepage": "https://www.drupal.org/project/maintenance200",
             "support": {
                 "source": "https://git.drupalcode.org/project/maintenance200"
+            }
+        },
+        {
+            "name": "drupal/media_library_extend",
+            "version": "2.1.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/media_library_extend.git",
+                "reference": "2.1.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/media_library_extend-2.1.0-alpha1.zip",
+                "reference": "2.1.0-alpha1",
+                "shasum": "9e3b69a1ef149500a4a9b4133ff35450e0eaf190"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.1.0-alpha1",
+                    "datestamp": "1689937453",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "metalbote",
+                    "homepage": "https://www.drupal.org/user/2809357"
+                },
+                {
+                    "name": "Mirroar",
+                    "homepage": "https://www.drupal.org/user/1533592"
+                }
+            ],
+            "description": "Allow extending the media library with alternate sources.",
+            "homepage": "https://www.drupal.org/project/media_library_extend",
+            "support": {
+                "source": "https://git.drupalcode.org/project/media_library_extend"
             }
         },
         {
@@ -5578,6 +5626,54 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/seckit",
                 "issues": "http://drupal.org/project/issues/seckit"
+            }
+        },
+        {
+            "name": "drupal/select_a11y",
+            "version": "dev-3.0.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/select_a11y.git",
+                "reference": "69419440fa53734f17966d84da039440c24562a5"
+            },
+            "require": {
+                "drupal/core": "^9.2 || ^10"
+            },
+            "require-dev": {
+                "drupal/facets": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.0.x": "3.0.x-dev"
+                },
+                "drupal": {
+                    "version": "3.0.0+1-dev",
+                    "datestamp": "1721912049",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "attiks",
+                    "homepage": "https://www.drupal.org/user/105002"
+                },
+                {
+                    "name": "lazysoundsystem",
+                    "homepage": "https://www.drupal.org/user/568228"
+                }
+            ],
+            "description": "Provides a multiple select widget.",
+            "homepage": "https://www.drupal.org/project/select_a11y",
+            "support": {
+                "source": "https://git.drupalcode.org/project/select_a11y"
             }
         },
         {
@@ -17253,16 +17349,16 @@
         },
         {
             "name": "palantirnet/drupal-rector",
-            "version": "0.20.2",
+            "version": "0.20.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/palantirnet/drupal-rector.git",
-                "reference": "61ba1405da47d306dd594ebec024fd400616b816"
+                "reference": "50c742a34f89e4202056e433bbb476ca1fdf3797"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/palantirnet/drupal-rector/zipball/61ba1405da47d306dd594ebec024fd400616b816",
-                "reference": "61ba1405da47d306dd594ebec024fd400616b816",
+                "url": "https://api.github.com/repos/palantirnet/drupal-rector/zipball/50c742a34f89e4202056e433bbb476ca1fdf3797",
+                "reference": "50c742a34f89e4202056e433bbb476ca1fdf3797",
                 "shasum": ""
             },
             "require": {
@@ -17275,14 +17371,13 @@
             },
             "require-dev": {
                 "cweagans/composer-patches": "^1.7.2",
-                "friendsofphp/php-cs-fixer": "^3.0",
+                "friendsofphp/php-cs-fixer": "^3.58",
                 "php": "^8.2",
                 "phpstan/extension-installer": "^1.1",
                 "phpstan/phpstan": "^1.0",
                 "phpstan/phpstan-deprecation-rules": "^1.0",
                 "phpunit/phpunit": "^10.0",
-                "symfony/yaml": "^5 || ^6",
-                "symplify/rule-doc-generator": "dev-main",
+                "symfony/yaml": "^5 || ^6 || ^7",
                 "symplify/vendor-patches": "^11.0"
             },
             "type": "library",
@@ -17333,9 +17428,9 @@
                 "rector"
             ],
             "support": {
-                "source": "https://github.com/palantirnet/drupal-rector/tree/0.20.2"
+                "source": "https://github.com/palantirnet/drupal-rector/tree/0.20.3"
             },
-            "time": "2024-04-26T14:28:14+00:00"
+            "time": "2024-06-10T19:18:13+00:00"
         },
         {
             "name": "pdepend/pdepend",
@@ -17547,21 +17642,21 @@
         },
         {
             "name": "rector/rector",
-            "version": "1.0.4",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "6e04d0eb087aef707fa0c5686d33d6ff61f4a555"
+                "reference": "044e6364017882d1e346da8690eeabc154da5495"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/6e04d0eb087aef707fa0c5686d33d6ff61f4a555",
-                "reference": "6e04d0eb087aef707fa0c5686d33d6ff61f4a555",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/044e6364017882d1e346da8690eeabc154da5495",
+                "reference": "044e6364017882d1e346da8690eeabc154da5495",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2|^8.0",
-                "phpstan/phpstan": "^1.10.57"
+                "phpstan/phpstan": "^1.11"
             },
             "conflict": {
                 "rector/rector-doctrine": "*",
@@ -17594,7 +17689,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/1.0.4"
+                "source": "https://github.com/rectorphp/rector/tree/1.2.2"
             },
             "funding": [
                 {
@@ -17602,20 +17697,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-04-05T09:01:07+00:00"
+            "time": "2024-07-25T07:44:34+00:00"
         },
         {
             "name": "symfony/config",
-            "version": "v7.0.0",
+            "version": "v7.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "8789646600f4e7e451dde9e1dc81cfa429f3857a"
+                "reference": "f8a8fb0c2d0a188a00a2dd5af8a4eb070641ec60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/8789646600f4e7e451dde9e1dc81cfa429f3857a",
-                "reference": "8789646600f4e7e451dde9e1dc81cfa429f3857a",
+                "url": "https://api.github.com/repos/symfony/config/zipball/f8a8fb0c2d0a188a00a2dd5af8a4eb070641ec60",
+                "reference": "f8a8fb0c2d0a188a00a2dd5af8a4eb070641ec60",
                 "shasum": ""
             },
             "require": {
@@ -17661,7 +17756,7 @@
             "description": "Helps you find, load, combine, autofill and validate configuration values of any kind",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/config/tree/v7.0.0"
+                "source": "https://github.com/symfony/config/tree/v7.0.8"
             },
             "funding": [
                 {
@@ -17677,7 +17772,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-11-09T08:30:23+00:00"
+            "time": "2024-05-31T14:55:39+00:00"
         },
         {
             "name": "weitzman/drupal-test-traits",
@@ -17742,9 +17837,11 @@
         "drupal/entity_usage": 10,
         "drupal/imageapi_optimize_binaries": 10,
         "drupal/linkit": 5,
+        "drupal/media_library_extend": 15,
         "drupal/menu_breadcrumb": 15,
         "drupal/openid_connect_windows_aad": 10,
         "drupal/samples": 10,
+        "drupal/select_a11y": 20,
         "drupal/viewsreference": 10
     },
     "prefer-stable": true,

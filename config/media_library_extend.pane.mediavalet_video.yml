@@ -1,0 +1,10 @@
+uuid: e49b5f74-9747-45f2-bae4-92af5f81109a
+langcode: en
+status: true
+dependencies: {  }
+id: mediavalet_video
+label: 'MediaValet video'
+bundle: video
+source_plugin: ocha_mediavalet_video
+source_plugin_configuration:
+  items_per_page: '20'

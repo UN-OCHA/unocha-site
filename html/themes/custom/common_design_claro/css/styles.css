@@ -339,3 +339,7 @@ form .entities-list .item-container.rendered-entity {
 form .entities-list .item-container.rendered-entity .button {
   margin: 2rem 0 0;
 }
+
+.select-a11y .btn-select-a11y {
+  height: 34px;
+}
