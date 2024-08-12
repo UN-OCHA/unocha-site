@@ -61,6 +61,7 @@ function ocha_mediavalet_oembed_resource_url_alter(array &$parsed_url, Provider 
       $oembed_base_url = \Drupal::request()->getSchemeAndHttpHost();
     }
 
+    $oembed_base_url = rtrim($oembed_base_url, '/');
     $parsed_url['path'] = $oembed_base_url . '/mediavalet/oembed';
   }
 }
