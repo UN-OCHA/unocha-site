@@ -93,8 +93,8 @@ class MediaValetController extends ControllerBase {
 
     $asset = $this->mediavaletService->getAsset($uuid);
     $data = $asset->getData();
+    $embed = $this->mediavaletService->getEmbedLink($uuid)->getData();
 
-    $video_url = $data['download'];
     $width = (int) $data['width'] ?? 800;
     $height = (int) $data['height'] ?? 800;
 
@@ -102,7 +102,7 @@ class MediaValetController extends ControllerBase {
       'type' => 'video',
       'version' => '1.0',
       'title' => $data['title'] ?? '',
-      'html' => '<video controls style="width:100%;"><source src="' . $video_url . '" type="video/mp4"></video>',
+      'html' => '<iframe style="width:100%;" src="' . $embed['cdnLink'] . '"></iframe>',
       'width' => $width,
       'height' => $height,
     ];

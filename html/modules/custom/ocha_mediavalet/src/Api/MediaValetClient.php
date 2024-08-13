@@ -259,6 +259,7 @@ class MediaValetClient {
    *   The data from the API response or NULL in case of error.
    */
   public function request($resource, array $payload = [], $method = 'GET', $timeout = 30, $cache_enabled = TRUE) {
+    $method = strtoupper($method);
     $cid = $this->getCacheId($resource, $method, $payload);
     static $cache = [];
 
@@ -270,15 +271,7 @@ class MediaValetClient {
       return FALSE;
     }
 
-    if ($method == 'GET') {
-      $payload += [
-        'count' => $this->getCount(),
-        'offset' => $this->getOffset(),
-      ];
-    }
-
-    $endpoint = rtrim($this->endpointApi, '/') . '/' . ltrim($resource, '/');
-    $response = $this->httpClient->request($method, $endpoint, [
+    $options = [
       'timeout' => $timeout,
       'connect_timeout' => $timeout,
       'headers' => [
@@ -287,8 +280,23 @@ class MediaValetClient {
         'Ocp-Apim-Subscription-Key' => $this->subscriptionKey,
         'Authorization' => 'Bearer ' . $this->accessTokenInfo['access_token'],
       ],
-      'query' => $payload,
-    ]);
+    ];
+
+    if ($method == 'GET') {
+      $payload += [
+        'count' => $this->getCount(),
+        'offset' => $this->getOffset(),
+      ];
+
+      $options['query'] = $payload;
+    }
+    elseif ($method == 'POST') {
+      $options['headers']['Content-Type'] = 'application/x-www-form-urlencoded';
+      $options['form_params'] = $payload;
+    }
+
+    $endpoint = rtrim($this->endpointApi, '/') . '/' . ltrim($resource, '/');
+    $response = $this->httpClient->request($method, $endpoint, $options);
 
     if ($response->getStatusCode() != 200) {
       $this->loggerFactory->alert('Refresh token request failed', [
@@ -372,30 +380,54 @@ class MediaValetClient {
   }
 
   /**
-   * Get assets.
+   * Get asset.
    */
   public function getAsset(string $asset_uuid) : MediaValetData {
     $item = [];
     $data = $this->request('assets/' . $asset_uuid);
 
-    $item = [
-      'id' => $data['payload']['id'],
-      'title' => $data['payload']['title'],
-      'filename' => $data['payload']['file']['fileName'],
-      'thumb' => $data['payload']['media']['thumb'],
-      'medium' => $data['payload']['media']['medium'],
-      'large' => $data['payload']['media']['large'],
-      'original' => $data['payload']['media']['original'],
-      'download' => $data['payload']['media']['download'],
-      'stream' => $data['payload']['media']['streamingManifest'] ?? '',
-      'is_image' => strtolower($data['payload']['media']['type']) == 'image',
-      'is_video' => strtolower($data['payload']['media']['type']) == 'video',
-      'height' => $data['payload']['file']['imageHeight'] ?? '',
-      'width' => $data['payload']['file']['imageWidth'] ?? '',
-    ];
+    $item = $this->buildAssetItem($data['payload']);
 
     return new MediaValetData(
       $item,
+      $this->setBuildInfo($data),
+    );
+  }
+
+  /**
+   * Get direct link.
+   */
+  public function getDirectLinks(string $asset_uuid) : MediaValetData {
+    $data = $this->request('directlinks/' . $asset_uuid);
+
+    return new MediaValetData(
+      $data['payload'],
+      $this->setBuildInfo($data),
+    );
+  }
+
+  /**
+   * Create direct link.
+   */
+  public function createDirectLink(string $asset_uuid) : MediaValetData {
+    $payload = [
+      'isEmbedCode' => TRUE,
+      'size' => [
+        'type' => 'Widescreen1080p',
+        'width' => NULL,
+        'height' > NULL,
+      ],
+      'format' => 'MP4',
+      'isDevModeEnabled' => FALSE,
+      'linkName' => 'Embed link',
+      'isUniqueLink' => TRUE,
+      'turnSubtitlesOn' => FALSE,
+      'chosenLanguages' => '',
+    ];
+    $data = $this->request('directlinks/' . $asset_uuid, $payload, 'POST');
+
+    return new MediaValetData(
+      $data,
       $this->setBuildInfo($data),
     );
   }
@@ -436,16 +468,7 @@ class MediaValetClient {
     $data = $this->request('assets', $options);
 
     foreach ($data['payload']['assets'] as $item) {
-      $items[$item['id']] = [
-        'id' => $item['id'],
-        'title' => $item['title'],
-        'filename' => $item['file']['fileName'],
-        'thumb' => $item['media']['thumb'],
-        'download' => $item['media']['download'],
-        'stream' => $item['media']['streamingManifest'] ?? '',
-        'is_image' => strtolower($item['media']['type']) == 'image',
-        'is_video' => strtolower($item['media']['type']) == 'video',
-      ];
+      $items[$item['id']] = $this->buildAssetItem($item);
     }
 
     return new MediaValetData(
@@ -454,4 +477,25 @@ class MediaValetClient {
     );
   }
 
+  /**
+   * Build asset item.
+   */
+  protected function buildAssetItem($item) {
+    return [
+      'id' => $item['id'],
+      'title' => $item['title'],
+      'filename' => $item['file']['fileName'],
+      'thumb' => $item['media']['thumb'],
+      'medium' => $item['media']['medium'],
+      'large' => $item['media']['large'],
+      'original' => $item['media']['original'],
+      'download' => $item['media']['download'],
+      'stream' => $item['media']['streamingManifest'] ?? '',
+      'is_image' => strtolower($item['media']['type']) == 'image',
+      'is_video' => strtolower($item['media']['type']) == 'video',
+      'height' => $item['file']['imageHeight'] ?? '',
+      'width' => $item['file']['imageWidth'] ?? '',
+      'categories' => $item['categories'] ?? [],
+    ];
+  }
 }

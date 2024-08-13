@@ -137,7 +137,7 @@ class MediaValetImage extends MediaLibrarySourceBase {
       ->setOffset($this->getValue('page') * $this->configuration['items_per_page']);
 
     if ($this->getSearch()) {
-      return $this->mediavaletService->search($this->getSearch(), $this->getSelectedCategory(), 'Image');
+      return $this->mediavaletService->search($this->getSearch(), $this->getSelectedCategory());
     }
 
     return $this->mediavaletService->getCategoryAssets($this->getSelectedCategory());
