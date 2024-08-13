@@ -11,7 +11,7 @@ third_party_settings:
 name: Story
 type: story
 description: 'Current news and stories from OCHA, categorized by type and dated.'
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: true

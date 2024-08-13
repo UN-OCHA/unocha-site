@@ -16,7 +16,6 @@ module:
   contact: 0
   content_moderation: 0
   contextual: 0
-  csp: 0
   ctools: 0
   datetime: 0
   datetime_range: 0
@@ -55,6 +54,7 @@ module:
   maintenance200: 0
   media: 0
   media_library: 0
+  media_library_extend: 0
   memcache: 0
   memcache_admin: 0
   menu_breadcrumb: 0
@@ -68,6 +68,7 @@ module:
   node: 0
   ocha_datawrapper: 0
   ocha_key_figures: 0
+  ocha_mediavalet: 0
   ocha_monitoring: 0
   ocha_search: 0
   oembed_providers: 0
@@ -80,6 +81,8 @@ module:
   responsive_image: 0
   samlauth: 0
   samples: 0
+  seckit: 0
+  select_a11y: 0
   serialization: 0
   simple_menu_permissions: 0
   social_api: 0

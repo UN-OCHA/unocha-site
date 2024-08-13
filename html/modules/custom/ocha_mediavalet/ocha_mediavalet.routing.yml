@@ -1,0 +1,16 @@
+ocha_mediavalet.oembed:
+  path: '/mediavalet/oembed'
+  defaults:
+    _controller: '\Drupal\ocha_mediavalet\Controller\MediaValetController::oembed'
+    _title: 'MediaValetController OEmbed definition.'
+  requirements:
+    _permission: 'access content'
+ocha_mediavalet.video:
+  path: '/mediavalet/video/{uuid}'
+  defaults:
+    _controller: '\Drupal\ocha_mediavalet\Controller\MediaValetController::video'
+    _title: 'MediaValetController video definition.'
+    uuid: ''
+  requirements:
+    _permission: 'access content'
+
