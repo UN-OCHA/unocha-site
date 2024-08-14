@@ -230,7 +230,7 @@ class MediaValetVideo extends MediaLibrarySourceBase {
 
     // Add thumbnail.
     if ($entity->hasField('thumbnail')) {
-      $image = file_get_contents($asset['thumb']);
+      $image = file_get_contents($asset['large']);
       $filename = pathinfo($asset['filename'], PATHINFO_FILENAME) . '.png';
 
       // Save to filesystem.

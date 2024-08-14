@@ -229,6 +229,10 @@ class MediaValetService {
    * Cache data.
    */
   protected function cacheIt($cid, $data) {
+    if (empty($data)) {
+      return;
+    }
+
     $cache_lifetime = $this->config->get('max_age');
     $cache_expiration = $this->time->getRequestTime() + $cache_lifetime;
     $this->cache->set($cid, $data, $cache_expiration);

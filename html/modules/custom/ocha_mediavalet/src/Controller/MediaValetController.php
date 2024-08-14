@@ -102,10 +102,17 @@ class MediaValetController extends ControllerBase {
       'type' => 'video',
       'version' => '1.0',
       'title' => $data['title'] ?? '',
-      'html' => '<iframe style="width:100%;" src="' . $embed['cdnLink'] . '"></iframe>',
       'width' => $width,
       'height' => $height,
     ];
+
+    if (isset($embed['cdnLink'])) {
+      $oembed['html'] = '<iframe style="width:100%;" src="' . $embed['cdnLink'] . '"></iframe>';
+    }
+    else {
+      $oembed['type'] = 'image';
+      $oembed['html'] = '<img src="' . $data['thumb'] . '" >';
+    }
 
     $oembed['thumbnail_url'] = $data['thumb'];
     $oembed['thumbnail_width'] = 800;

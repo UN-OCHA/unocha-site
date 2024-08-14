@@ -176,11 +176,11 @@ class MediaValetClient {
         ],
       ]);
 
-      if ($response->getStatusCode() != 200) {
-        $this->loggerFactory->alert('Access token request failed', [
-          'code' => $response->getStatusCode(),
-          'message' => $response->getReasonPhrase() ?? '',
-        ]);
+      if ($response->getStatusCode() != 200 && $response->getStatusCode() != 201) {
+        $this->loggerFactory->alert(strtr('Access token request failed: @message (@code)', [
+          '@code' => $response->getStatusCode(),
+          '@message' => $response->getReasonPhrase() ?? '',
+        ]));
 
         return FALSE;
       }
@@ -193,10 +193,10 @@ class MediaValetClient {
       return TRUE;
     }
     catch (\Throwable $th) {
-      $this->loggerFactory->alert('Access token request failed', [
-        'code' => $th->getCode(),
-        'message' => $th->getMessage() ?? '',
-      ]);
+      $this->loggerFactory->alert(strtr('Access token request failed: @message (@code)', [
+        '@code' => $th->getCode(),
+        '@message' => $th->getMessage() ?? '',
+      ]));
     }
 
     return FALSE;
@@ -224,11 +224,11 @@ class MediaValetClient {
       ],
     ]);
 
-    if ($response->getStatusCode() != 200) {
-      $this->loggerFactory->alert('Refresh token request failed', [
-        'code' => $response->getStatusCode(),
-        'message' => $response->getReasonPhrase() ?? '',
-      ]);
+    if ($response->getStatusCode() != 200 && $response->getStatusCode() != 201) {
+      $this->loggerFactory->alert(strtr('Refresh token request failed: @message (@code)', [
+        '@code' => $response->getStatusCode(),
+        '@message' => $response->getReasonPhrase() ?? '',
+      ]));
 
       return FALSE;
     }
@@ -291,19 +291,18 @@ class MediaValetClient {
       $options['query'] = $payload;
     }
     elseif ($method == 'POST') {
-      $options['headers']['Content-Type'] = 'application/x-www-form-urlencoded';
-      $options['form_params'] = $payload;
+      $options['headers']['Content-Type'] = 'application/json';
+      $options['json'] = $payload;
     }
 
     $endpoint = rtrim($this->endpointApi, '/') . '/' . ltrim($resource, '/');
     $response = $this->httpClient->request($method, $endpoint, $options);
 
-    if ($response->getStatusCode() != 200) {
-      $this->loggerFactory->alert('Refresh token request failed', [
-        'code' => $response->getStatusCode(),
-        'message' => $response->getReasonPhrase() ?? '',
-      ]);
-
+    if ($response->getStatusCode() != 200 && $response->getStatusCode() != 201) {
+      $this->loggerFactory->alert(strtr('Refresh token request failed: @message (@code)', [
+        '@code' => $response->getStatusCode(),
+        '@message' => $response->getReasonPhrase() ?? '',
+      ]));
       return FALSE;
     }
 
@@ -361,16 +360,7 @@ class MediaValetClient {
     $data = $this->request('categories/' . $category_uuid . '/assets');
 
     foreach ($data['payload']['assets'] as $item) {
-      $items[$item['id']] = [
-        'id' => $item['id'],
-        'title' => $item['title'],
-        'filename' => $item['file']['fileName'],
-        'thumb' => $item['media']['thumb'],
-        'download' => $item['media']['download'],
-        'stream' => $item['media']['streamingManifest'] ?? '',
-        'is_image' => strtolower($item['media']['type']) == 'image',
-        'is_video' => strtolower($item['media']['type']) == 'video',
-      ];
+      $items[$item['id']] = $this->buildAssetItem($item);
     }
 
     return new MediaValetData(
@@ -411,19 +401,20 @@ class MediaValetClient {
    */
   public function createDirectLink(string $asset_uuid) : MediaValetData {
     $payload = [
-      'isEmbedCode' => TRUE,
-      'size' => [
-        'type' => 'Widescreen1080p',
-        'width' => NULL,
-        'height' > NULL,
+      'RenditionSettings' => [
+        'Size' => [
+          'Type' => 'Original',
+        ],
+        'Format' => 'MP4',
       ],
-      'format' => 'MP4',
-      'isDevModeEnabled' => FALSE,
-      'linkName' => 'Embed link',
-      'isUniqueLink' => TRUE,
-      'turnSubtitlesOn' => FALSE,
-      'chosenLanguages' => '',
+      'LinkSettings' => [
+        'IsDevModeEnabled' => FALSE,
+        'LinkName' => 'Default',
+        'IsEmbedCode' => TRUE,
+        'IsUniqueLink' => FALSE,
+      ],
     ];
+
     $data = $this->request('directlinks/' . $asset_uuid, $payload, 'POST');
 
     return new MediaValetData(
@@ -480,7 +471,7 @@ class MediaValetClient {
   /**
    * Build asset item.
    */
-  protected function buildAssetItem($item) {
+  protected function buildAssetItem($item) : array {
     return [
       'id' => $item['id'],
       'title' => $item['title'],
@@ -496,6 +487,8 @@ class MediaValetClient {
       'height' => $item['file']['imageHeight'] ?? '',
       'width' => $item['file']['imageWidth'] ?? '',
       'categories' => $item['categories'] ?? [],
+      'format' => $item['file']['fileType'] ?? '',
     ];
   }
+
 }
