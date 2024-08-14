@@ -3,6 +3,7 @@
 namespace Drupal\ocha_mediavalet\Api;
 
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\ConnectException;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -47,6 +48,13 @@ class MediaValetClient {
     'start' => 0,
     'records' => 0,
   ];
+
+  /**
+   * Timeout for http requests.
+   *
+   * @var int
+   */
+  protected $timeout = 10;
 
   /**
    * Constructor.
@@ -116,6 +124,22 @@ class MediaValetClient {
    */
   public function getResultInfo() : array {
     return $this->resultInfo;
+  }
+
+  /**
+   * Get timeout.
+   */
+  public function getTimeout() : int {
+    return $this->timeout;
+  }
+
+  /**
+   * Set timeout.
+   */
+  public function setTimeout(int $timeout) : self {
+    $this->timeout = $timeout;
+
+    return $this;
   }
 
   /**
@@ -242,7 +266,7 @@ class MediaValetClient {
   }
 
   /**
-   * Perform a GET request.
+   * Perform a GET/POST request.
    *
    * @param string $resource
    *   API resource endpoint (ex: reports).
@@ -250,30 +274,26 @@ class MediaValetClient {
    *   API request payload (body for POST or parameters for GET).
    * @param string $method
    *   Request method.
-   * @param int $timeout
-   *   Request timeout.
-   * @param bool $cache_enabled
-   *   Whether to cache the queries or not.
    *
    * @return array|null
    *   The data from the API response or NULL in case of error.
    */
-  public function request($resource, array $payload = [], $method = 'GET', $timeout = 30, $cache_enabled = TRUE) {
+  public function request($resource, array $payload = [], $method = 'GET') {
     $method = strtoupper($method);
     $cid = $this->getCacheId($resource, $method, $payload);
     static $cache = [];
 
-    if ($cache_enabled && isset($cache[$cid])) {
+    if (isset($cache[$cid])) {
       return $cache[$cid];
     }
 
     if (!$this->isAccessTokenValid()) {
-      return FALSE;
+      return [];
     }
 
     $options = [
-      'timeout' => $timeout,
-      'connect_timeout' => $timeout,
+      'timeout' => $this->getTimeout(),
+      'connect_timeout' => 4,
       'headers' => [
         'x-mv-api-version' => '1.1',
         'Accept' => 'application/json',
@@ -296,23 +316,29 @@ class MediaValetClient {
     }
 
     $endpoint = rtrim($this->endpointApi, '/') . '/' . ltrim($resource, '/');
-    $response = $this->httpClient->request($method, $endpoint, $options);
 
-    if ($response->getStatusCode() != 200 && $response->getStatusCode() != 201) {
-      $this->loggerFactory->alert(strtr('Refresh token request failed: @message (@code)', [
-        '@code' => $response->getStatusCode(),
-        '@message' => $response->getReasonPhrase() ?? '',
-      ]));
-      return FALSE;
+    try {
+      $response = $this->httpClient->request($method, $endpoint, $options);
+
+      if ($response->getStatusCode() != 200 && $response->getStatusCode() != 201) {
+        $this->loggerFactory->alert(strtr('Refresh token request failed: @message (@code)', [
+          '@code' => $response->getStatusCode(),
+          '@message' => $response->getReasonPhrase() ?? '',
+        ]));
+        return [];
+      }
+
+      $data = json_decode($response->getBody()->getContents(), TRUE);
+
+      if (!empty($data)) {
+        $cache[$cid] = $data;
+      }
+
+      return $data;
     }
-
-    $data = json_decode($response->getBody()->getContents(), TRUE);
-
-    if ($cache_enabled) {
-      $cache[$cid] = $data;
+    catch (ConnectException $e) {
+      return [];
     }
-
-    return $data;
   }
 
   /**
@@ -416,6 +442,13 @@ class MediaValetClient {
     ];
 
     $data = $this->request('directlinks/' . $asset_uuid, $payload, 'POST');
+
+    if (isset($data['payload'])) {
+      return new MediaValetData(
+        $data['payload'],
+        $this->setBuildInfo($data),
+      );
+    }
 
     return new MediaValetData(
       $data,

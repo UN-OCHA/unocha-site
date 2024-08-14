@@ -110,8 +110,8 @@ class MediaValetController extends ControllerBase {
       $oembed['html'] = '<iframe style="width:100%;" src="' . $embed['cdnLink'] . '"></iframe>';
     }
     else {
-      $oembed['type'] = 'image';
-      $oembed['html'] = '<img src="' . $data['thumb'] . '" >';
+      $oembed['type'] = 'photo';
+      $oembed['url'] = $data['large'];
     }
 
     $oembed['thumbnail_url'] = $data['thumb'];

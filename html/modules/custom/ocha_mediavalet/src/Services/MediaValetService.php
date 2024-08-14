@@ -190,6 +190,22 @@ class MediaValetService {
   }
 
   /**
+   * Get timeout.
+   */
+  public function getTimeout() : int {
+    return $this->mediavaletClient->getTimeout();
+  }
+
+  /**
+   * Set timeout.
+   */
+  public function setTimeout(int $timeout) : self {
+    $this->mediavaletClient->setTimeout($timeout);
+
+    return $this;
+  }
+
+  /**
    * Log it.
    */
   protected function logIt($text) {

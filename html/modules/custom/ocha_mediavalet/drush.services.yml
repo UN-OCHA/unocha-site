@@ -1,0 +1,6 @@
+services:
+  ocha_mediavalet.commands:
+    class: \Drupal\ocha_mediavalet\Commands\OchaMediaValetCommands
+    arguments: ['@ocha_mediavalet.service.client', '@entity_type.manager']
+    tags:
+      - { name: drush.command }
