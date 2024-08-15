@@ -8,3 +8,4 @@ secret: ''
 debug: 0
 max_age: 900
 oembed_base_url:
+oembed_method: 'local'

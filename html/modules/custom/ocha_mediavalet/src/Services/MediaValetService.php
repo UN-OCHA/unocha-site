@@ -24,7 +24,7 @@ class MediaValetService {
   protected $cache;
 
   /**
-   * ReliefWeb API config.
+   * Config.
    *
    * @var \Drupal\Core\Config\ImmutableConfig
    */

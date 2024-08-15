@@ -93,7 +93,30 @@ class MediaValetController extends ControllerBase {
 
     $asset = $this->mediavaletService->getAsset($uuid);
     $data = $asset->getData();
-    $embed = $this->mediavaletService->getEmbedLink($uuid)->getData();
+
+    $html = '';
+    $oembed_method = $this->config('ocha_mediavalet.settings')->get('oembed_method') ?? 'local';
+
+    if ($oembed_method == 'local') {
+      $html = '<video preload="none"
+        poster="' . $data['large'] . '"
+        controls
+        style="width:100%;">
+        <source src="' . $data['download'] . '" type="video/mp4">
+        </video>';
+    }
+    else {
+      $embed = $this->mediavaletService->getEmbedLink($uuid)->getData();
+      if (isset($embed['cdnLink'])) {
+        $html = '<iframe
+          style="width:100%;" src="' . $embed['cdnLink'] . '"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen=""
+          title="' . htmlspecialchars($data['title']) . '"></iframe>';
+      }
+    }
 
     $width = (int) $data['width'] ?? 800;
     $height = (int) $data['height'] ?? 800;
@@ -106,14 +129,8 @@ class MediaValetController extends ControllerBase {
       'height' => $height,
     ];
 
-    if (isset($embed['cdnLink'])) {
-      $oembed['html'] = '<iframe
-        style="width:100%;" src="' . $embed['cdnLink'] . '"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen=""
-        title="' . htmlspecialchars($data['title']) . '"></iframe>';
+    if (!empty($html)) {
+      $oembed['html'] = $html;
     }
     else {
       $oembed['type'] = 'photo';
