@@ -24,7 +24,7 @@ class MediaValetService {
   protected $cache;
 
   /**
-   * ReliefWeb API config.
+   * Config.
    *
    * @var \Drupal\Core\Config\ImmutableConfig
    */
@@ -190,6 +190,22 @@ class MediaValetService {
   }
 
   /**
+   * Get timeout.
+   */
+  public function getTimeout() : int {
+    return $this->mediavaletClient->getTimeout();
+  }
+
+  /**
+   * Set timeout.
+   */
+  public function setTimeout(int $timeout) : self {
+    $this->mediavaletClient->setTimeout($timeout);
+
+    return $this;
+  }
+
+  /**
    * Log it.
    */
   protected function logIt($text) {
@@ -229,6 +245,10 @@ class MediaValetService {
    * Cache data.
    */
   protected function cacheIt($cid, $data) {
+    if (empty($data)) {
+      return;
+    }
+
     $cache_lifetime = $this->config->get('max_age');
     $cache_expiration = $this->time->getRequestTime() + $cache_lifetime;
     $this->cache->set($cid, $data, $cache_expiration);
@@ -320,6 +340,71 @@ class MediaValetService {
   }
 
   /**
+   * Get direct links.
+   */
+  public function getDirectLinks(string $asset_uuid) : MediaValetData {
+    $this->logIt('getDirectLinks called');
+    $cid = 'direct_link:' . $asset_uuid;
+    $cached = $this->getCache($cid);
+    if ($cached) {
+      return $cached;
+    }
+
+    $data = $this->mediavaletClient->getDirectLinks($asset_uuid);
+
+    $this->logIt('getDirectLinks finished');
+    $this->cacheIt($cid, $data);
+    $this->updateCachedAccessTokenInfo();
+
+    return $data;
+  }
+
+  /**
+   * Get embed link.
+   */
+  public function getEmbedLink(string $asset_uuid) : MediaValetData {
+    $this->logIt('getEmbedLink called');
+    $cid = 'embed_link:' . $asset_uuid;
+    $cached = $this->getCache($cid);
+    if ($cached) {
+      return $cached;
+    }
+
+    $data = [];
+    $direct_links = $this->getDirectLinks($asset_uuid)->getData();
+
+    foreach ($direct_links as $direct_link) {
+      if (!isset($direct_link['state']) || $direct_link['state'] != 'Active') {
+        continue;
+      }
+
+      if (!isset($direct_link['cdnLink'])) {
+        continue;
+      }
+
+      if (strpos($direct_link['cdnLink'], 'https://embed.mediavalet.com/') !== 0) {
+        continue;
+      }
+
+      $data = $direct_link;
+      break;
+    }
+
+    if (!empty($data)) {
+      $data = new MediaValetData($data, []);
+    }
+    else {
+      $data = $this->mediavaletClient->createDirectLink($asset_uuid);
+    }
+
+    $this->logIt('getEmbedLink finished');
+    $this->cacheIt($cid, $data);
+    $this->updateCachedAccessTokenInfo();
+
+    return $data;
+  }
+
+  /**
    * Get keywords.
    */
   public function getKeywords() : MediaValetData {
@@ -348,7 +433,7 @@ class MediaValetService {
   /**
    * Search.
    */
-  public function search(string $text, string $category_uuid = '', string $media_type = 'Image') : MediaValetData {
+  public function search(string $text, string $category_uuid = '') : MediaValetData {
     $this->logIt('search called with ' . $text . ' and ' . $category_uuid);
 
     $cid = implode(':', [
