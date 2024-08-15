@@ -16,7 +16,7 @@ seckit_xss:
     frame-src: "'self' https://*.googletagmanager.com https://bid.g.doubleclick.net https://td.doubleclick.net https://datawrapper.dwcdn.net https://www.youtube.com https://embed.mediavalet.com"
     frame-ancestors: "'self'"
     child-src: "'self' blob:"
-    font-src: "'self' data: fonts.gstatic.com"
+    font-src: "'self' data: fonts.gstatic.com https://use.fontawesome.com"
     connect-src: "'self' https://*"
     report-uri: /report-csp-violation
     upgrade-req: false
