@@ -107,7 +107,13 @@ class MediaValetController extends ControllerBase {
     ];
 
     if (isset($embed['cdnLink'])) {
-      $oembed['html'] = '<iframe style="width:100%;" src="' . $embed['cdnLink'] . '"></iframe>';
+      $oembed['html'] = '<iframe
+        style="width:100%;" src="' . $embed['cdnLink'] . '"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen=""
+        title="' . htmlspecialchars($data['title']) . '"></iframe>';
     }
     else {
       $oembed['type'] = 'photo';

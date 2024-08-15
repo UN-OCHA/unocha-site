@@ -138,11 +138,7 @@ class MediaValetVideo extends MediaLibrarySourceBase {
       ->setCount($this->configuration['items_per_page'])
       ->setOffset($this->getValue('page') * $this->configuration['items_per_page']);
 
-    if (TRUE || $this->getSearch()) {
-      return $this->mediavaletService->search($this->getSearch(), $this->getSelectedCategory());
-    }
-
-    return $this->mediavaletService->getCategoryAssets($this->getSelectedCategory());
+    return $this->mediavaletService->search($this->getSearch(), $this->getSelectedCategory());
   }
 
   /**

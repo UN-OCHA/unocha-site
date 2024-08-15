@@ -416,9 +416,16 @@ class MediaValetClient {
   public function getDirectLinks(string $asset_uuid) : MediaValetData {
     $data = $this->request('directlinks/' . $asset_uuid);
 
+    if (isset($data['payload'])) {
+      return new MediaValetData(
+        $data['payload'],
+        $this->setBuildInfo($data),
+      );
+    }
+
     return new MediaValetData(
-      $data['payload'],
-      $this->setBuildInfo($data),
+      [],
+      [],
     );
   }
 
