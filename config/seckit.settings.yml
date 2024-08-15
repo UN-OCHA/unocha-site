@@ -10,7 +10,7 @@ seckit_xss:
     default-src: "'self'"
     script-src: "'self' 'unsafe-inline' 'unsafe-eval' fonts.googleapis.com www.gstatic.com https://*.google.com https://*.googletagmanager.com *.google-analytics.com https://tagmanager.google.com https://cdn.popupsmart.com  https://cdnjs.cloudflare.com https://cbpfgms.github.io  https://www.googleadservices.com  https://googleads.g.doubleclick.net"
     object-src: "'none'"
-    style-src: "'self' 'unsafe-inline' https://googletagmanager.com https://tagmanager.google.com fonts.googleapis.com https://www.google.com https://cdnjs.cloudflare.com https://cbpfgms.github.io https://cdn.popupsmart.com"
+    style-src: "'self' 'unsafe-inline' https://googletagmanager.com https://tagmanager.google.com fonts.googleapis.com https://www.google.com https://cdnjs.cloudflare.com https://cbpfgms.github.io https://cdn.popupsmart.com https://use.fontawesome.com"
     img-src: "'self' data: https://*"
     media-src: "'self' data: https://mvsfservicefabricusva.blob.core.windows.net"
     frame-src: "'self' https://*.googletagmanager.com https://bid.g.doubleclick.net https://td.doubleclick.net https://datawrapper.dwcdn.net https://www.youtube.com https://embed.mediavalet.com"
