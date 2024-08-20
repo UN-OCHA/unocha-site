@@ -1,12 +1,12 @@
-version: "2.2"
+name: unocha-test
 
 networks:
   default:
 
 volumes:
-  unocha-test-site-database:
-  unocha-test-site-public:
-  unocha-test-site-private:
+  site-database:
+  site-public:
+  site-private:
 
 services:
   memcache:
@@ -29,7 +29,7 @@ services:
       - MYSQL_USER=unocha
       - MYSQL_PASS=unocha
     volumes:
-      - "unocha-test-site-database:/var/lib/mysql:rw"
+      - "site-database:/var/lib/mysql:rw"
     networks:
       - default
 
@@ -45,8 +45,8 @@ services:
       # Mount config.
       - "../config:/srv/www/config:rw"
       # Mount volumes for the private and public files.
-      - "unocha-test-site-public:/srv/www/html/sites/default/files:rw"
-      - "unocha-test-site-private:/srv/www/html/sites/default/private:rw"
+      - "site-public:/srv/www/html/sites/default/files:rw"
+      - "site-private:/srv/www/html/sites/default/private:rw"
       # Mount the folders needed for the tests.
       - "../phpcs.xml:/srv/www/phpcs.xml:ro"
       - "../phpunit.xml:/srv/www/phpunit.xml:ro"
