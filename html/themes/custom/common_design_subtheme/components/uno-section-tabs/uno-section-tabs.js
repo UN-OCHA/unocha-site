@@ -89,9 +89,12 @@
         });
 
         // Initially activate the first tab and reveal the first tab panel.
-        tabs[0].removeAttribute('tabindex');
-        tabs[0].setAttribute('aria-selected', 'true');
-        panels[0].hidden = false;
+        for (var tab of tabs) {
+          tab.removeAttribute('tabIndex');
+          tab.setAttribute('aria-selected', 'true');
+          panels[0].hidden = false;
+          break;
+        }
       };
 
       // Enhance tabbed sections.
