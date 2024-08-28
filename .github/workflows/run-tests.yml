@@ -230,6 +230,14 @@ jobs:
           run: |
             docker compose -f tests/docker-compose.yml exec -T drupal drush watchdog:show
 
+      - name: PHP Logs
+        id: phplog
+        if: failure()
+        uses: cafuego/command-output@main
+        with: 
+          run: |
+            docker compose -f tests/docker-compose.yml exec -T drupal grep -i fatal /var/log/php/error.log
+
       - name: Find Comment
         uses: peter-evans/find-comment@v3
         if: ${{ !env.ACT }}
@@ -259,8 +267,13 @@ jobs:
             <details><summary>Software Versions</summary>
             <code>${{ steps.versions.outputs.stdout }}</code>
             </details>
+
             <details><summary>Drupal Logs</summary>
             <code>${{ steps.dblog.outputs.stdout }}</code>
+            </details>
+
+            <details><summary>PHP Logs</summary>
+            <code>${{ steps.phplog.outputs.stdout }}</code>
             </details>
 
             *Pusher: @${{ github.actor }}, Action: `${{ github.event_name }}`, Workflow: `${{ github.workflow }}`*
