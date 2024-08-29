@@ -3,8 +3,8 @@
     "drupal/amazon_ses": {
       "Cron fails on amazon_ses when not configured": "PATCHES/amazon_ses-3417090-cron-queue-14.patch"
     },
-    "drupal/csp": {
-      "Simplify log format": "PATCHES/csp-log-format.patch"
+    "drupal/core": {
+      "Js optimize error https://www.drupal.org/project/drupal/issues/3416508": "PATCHES/core_js_optimizer.patch"
     },
     "drupal/datetime_range_timezone": {
       "Views integration": "PATCHES/datetime_range_timezone-views-integration.patch"
