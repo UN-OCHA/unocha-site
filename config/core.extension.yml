@@ -70,6 +70,7 @@ module:
   ocha_key_figures: 0
   ocha_mediavalet: 0
   ocha_monitoring: 0
+  ocha_powerbi: 0
   ocha_search: 0
   oembed_providers: 0
   options: 0

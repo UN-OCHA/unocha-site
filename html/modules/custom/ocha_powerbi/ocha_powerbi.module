@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Module file for the ocha_powerbi module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function ocha_powerbi_theme() {
+  return [
+    'ocha_powerbi_formatter' => [
+      'variables' => [
+        'embed_url' => NULL,
+        'width' => NULL,
+        'height' => NULL,
+      ],
+    ],
+  ];
+}
