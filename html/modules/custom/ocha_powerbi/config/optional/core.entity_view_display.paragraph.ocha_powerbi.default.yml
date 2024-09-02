@@ -1,0 +1,40 @@
+uuid: 46384436-922f-46dd-b545-58f8a1da2e7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ocha_powerbi.field_embed_link
+    - field.field.paragraph.ocha_powerbi.field_text
+    - field.field.paragraph.ocha_powerbi.field_title
+    - paragraphs.paragraphs_type.ocha_powerbi
+  module:
+    - ocha_powerbi
+    - text
+id: paragraph.ocha_powerbi.default
+targetEntityType: paragraph
+bundle: ocha_powerbi
+mode: default
+content:
+  field_embed_link:
+    type: ocha_powerbi
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
