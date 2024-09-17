@@ -8,25 +8,25 @@ seckit_xss:
       webkit: false
     report-only: false
     default-src: "'self'"
-    script-src: "'self' 'unsafe-inline' 'unsafe-eval' fonts.googleapis.com www.gstatic.com https://*.google.com https://*.googletagmanager.com *.google-analytics.com https://tagmanager.google.com https://cdn.popupsmart.com  https://cdnjs.cloudflare.com https://cbpfgms.github.io"
+    script-src: "'self' 'unsafe-inline' 'unsafe-eval' fonts.googleapis.com www.gstatic.com https://*.google.com https://*.googletagmanager.com *.google-analytics.com https://tagmanager.google.com https://cdn.popupsmart.com  https://cdnjs.cloudflare.com https://cbpfgms.github.io https://connect.facebook.net https://partner.googleadservices.com https://www.googleadservices.com  https://googleads.g.doubleclick.net"
     object-src: "'none'"
-    style-src: "'self' 'unsafe-inline' https://googletagmanager.com https://tagmanager.google.com fonts.googleapis.com https://www.google.com https://cdnjs.cloudflare.com"
+    style-src: "'self' 'unsafe-inline' https://googletagmanager.com https://tagmanager.google.com fonts.googleapis.com https://www.google.com https://cdnjs.cloudflare.com https://cbpfgms.github.io https://cdn.popupsmart.com https://use.fontawesome.com"
     img-src: "'self' data: https://*"
-    media-src: "'self' https://mvsfservicefabricusva.blob.core.windows.net"
-    frame-src: "'self' https://*.googletagmanager.com https://bid.g.doubleclick.net https://td.doubleclick.net"
+    media-src: "'self' data: https://mvsfservicefabricusva.blob.core.windows.net"
+    frame-src: "'self' https://*.googletagmanager.com https://bid.g.doubleclick.net https://td.doubleclick.net https://datawrapper.dwcdn.net https://www.youtube.com https://embed.mediavalet.com https://app.powerbi.com"
     frame-ancestors: "'self'"
-    child-src: "'self'"
-    font-src: "'self' data: fonts.gstatic.com"
+    child-src: "'self' blob:"
+    font-src: "'self' data: fonts.gstatic.com https://use.fontawesome.com"
     connect-src: "'self' https://*"
     report-uri: /report-csp-violation
     upgrade-req: false
     policy-uri: ''
   x_xss:
+    select: 0
     seckit_x_xss_option_disable: Disabled
     seckit_x_xss_option_0: '0'
     seckit_x_xss_option_1: 1;
     seckit_x_xss_option_1_block: '1; mode=block'
-    select: 0
 seckit_csrf:
   origin: true
   origin_whitelist: ''

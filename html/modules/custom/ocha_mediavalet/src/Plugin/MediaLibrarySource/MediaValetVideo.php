@@ -138,11 +138,7 @@ class MediaValetVideo extends MediaLibrarySourceBase {
       ->setCount($this->configuration['items_per_page'])
       ->setOffset($this->getValue('page') * $this->configuration['items_per_page']);
 
-    if (TRUE || $this->getSearch()) {
-      return $this->mediavaletService->search($this->getSearch(), $this->getSelectedCategory(), 'Video');
-    }
-
-    return $this->mediavaletService->getCategoryAssets($this->getSelectedCategory());
+    return $this->mediavaletService->search($this->getSearch(), $this->getSelectedCategory());
   }
 
   /**
@@ -176,11 +172,31 @@ class MediaValetVideo extends MediaLibrarySourceBase {
    * Get categories.
    */
   protected function getCategories() {
-    $data = $this->mediavaletService
+    // Get all categories.
+    $categories = $this->mediavaletService
       ->setMediaType(MediaValetClient::MEDIATYPEVIDEO)
-      ->getCategories();
+      ->getCategories()->getData();
 
-    return $data->getData();
+    // Get all videos.
+    $this->mediavaletService
+      ->setMediaType(MediaValetClient::MEDIATYPEVIDEO)
+      ->setCount(9999)
+      ->setOffset(0);
+    $videos = $this->mediavaletService->search('', '')->getData();
+
+    // Filter categories.
+    $data = [];
+    foreach ($videos as $video) {
+      foreach ($video['categories'] as $category_id) {
+        if (isset($categories[$category_id])) {
+          $data[$category_id] = $categories[$category_id];
+        }
+      }
+    }
+
+    asort($data);
+
+    return $data;
   }
 
   /**
@@ -202,6 +218,7 @@ class MediaValetVideo extends MediaLibrarySourceBase {
    */
   public function getEntityId($selected_id) {
     $data = $this->mediavaletService->getAsset($selected_id);
+
     $asset = $data->getData();
 
     // Create a media entity.
@@ -209,7 +226,7 @@ class MediaValetVideo extends MediaLibrarySourceBase {
 
     // Add thumbnail.
     if ($entity->hasField('thumbnail')) {
-      $image = file_get_contents($asset['thumb']);
+      $image = file_get_contents($asset['large']);
       $filename = pathinfo($asset['filename'], PATHINFO_FILENAME) . '.png';
 
       // Save to filesystem.

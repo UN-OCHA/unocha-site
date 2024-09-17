@@ -88,6 +88,7 @@
         "webflo/drupal-finder": "^1.2.2"
     },
     "require-dev": {
+        "davidrjonas/composer-lock-diff": "*",
         "drupal/coder": "^8.3",
         "drupal/config_filter": "^2.4",
         "drupal/config_inspector": "^2.1",
@@ -95,7 +96,7 @@
         "drupal/devel": "^5.0",
         "drupal/devel_php": "^1.3",
         "kint-php/kint": "^5.0",
-        "marcocesarato/php-conventional-changelog": "^1.16",
+        "marcocesarato/php-conventional-changelog": "*",
         "mglaman/drupal-check": "^1.4",
         "palantirnet/drupal-rector": "^0.20",
         "phpcompatibility/php-compatibility": "^9.3",
@@ -186,7 +187,7 @@
                 },
                 "[web-root]/robots.txt": {
                     "append": "assets/robots.txt.append"
-               }
+                }
             },
             "locations": {
                 "web-root": "html/"
@@ -207,7 +208,7 @@
             ],
             "post-create-project-cmd-message": [
                 "<bg=blue;fg=white>                                                         </>",
-                "<bg=blue;fg=white>  Congratulations, you\u2019ve installed the Drupal codebase  </>",
+                "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
                 "<bg=blue;fg=white>  from the drupal/recommended-project template!          </>",
                 "<bg=blue;fg=white>                                                         </>",
                 "",
@@ -262,5 +263,6 @@
         "pre-pool-create": [
             "scripts\\composer\\DrupalLenientRequirement::changeVersionConstraint"
         ]
-    }
+    },
+    "version": "2.1.0"
 }
