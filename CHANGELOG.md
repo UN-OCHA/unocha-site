@@ -4,6 +4,39 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [2.1.0](https://github.com/UN-OCHA/unocha-site/compare/v2.0.3...v2.1.0) (2024-09-17)
+
+### Features
+
+* Add drush command to create embed links ([e144c5](https://github.com/UN-OCHA/unocha-site/commit/e144c5bff9e094d02571410b81aa69d5a390ea8b))
+* Add feature flag for videos ([a95c2a](https://github.com/UN-OCHA/unocha-site/commit/a95c2a76deb7c1ff73c410c20ccad35bff49e70b))
+* Better video embed ([232863](https://github.com/UN-OCHA/unocha-site/commit/2328639b39c536fd76d06924a65360e6a1f17e37))
+* Categories with videos ([c8cab6](https://github.com/UN-OCHA/unocha-site/commit/c8cab69929cb75ff1a42536c6f74257e75c2af27))
+* Embed PowerBi [#UNO-853](https://https://humanitarian.atlassian.net/browse/UNO-853) ([4d0a3a](https://github.com/UN-OCHA/unocha-site/commit/4d0a3a92f0fc7c7ad3cf2e64963029d50fe49cdd))
+* Max width 100% ([4f8b70](https://github.com/UN-OCHA/unocha-site/commit/4f8b7021c7c8f94e7e88ac47f91c4591706d37f5))
+* OEmbed for videos ([a51d61](https://github.com/UN-OCHA/unocha-site/commit/a51d617d48a8695819565840510947a4168df6a5))
+
+### Bug Fixes
+
+* Embed PowerBi title [#UNO-853](https://https://humanitarian.atlassian.net/browse/UNO-853) ([d8877f](https://github.com/UN-OCHA/unocha-site/commit/d8877fb03099a17060a1bd09c3c3fbfd3fc10642))
+* Include core patch for aggregation error ([4f5732](https://github.com/UN-OCHA/unocha-site/commit/4f5732ec37f3f14fc11a869487076ec035bf4792))
+
+### Chores
+
+* Add more domains for csp ([320433](https://github.com/UN-OCHA/unocha-site/commit/320433503d7cf369a1d07c954205afa4742b2e69))
+* Add tools [#OPS-10867](https://https://humanitarian.atlassian.net/browse/OPS-10867), [#OPS-10867](https://https://humanitarian.atlassian.net/browse/OPS-10867), [#OPS-10867](https://https://humanitarian.atlassian.net/browse/OPS-10867) ([6743f7](https://github.com/UN-OCHA/unocha-site/commit/6743f742553d27aad19663a7de17a91c8383e490), [7c1a11](https://github.com/UN-OCHA/unocha-site/commit/7c1a11de65c8836cf7d234b3955c7a5b3337d6c5), [deb2ba](https://github.com/UN-OCHA/unocha-site/commit/deb2ba59faa4b36328848dc735101ba9415f4e32))
+* CSP [#UNO-849](https://https://humanitarian.atlassian.net/browse/UNO-849), [#UNO-849](https://https://humanitarian.atlassian.net/browse/UNO-849) ([d71f5b](https://github.com/UN-OCHA/unocha-site/commit/d71f5b9b0ff24c9d90cf246351afe128f2f21ee3), [5fc61d](https://github.com/UN-OCHA/unocha-site/commit/5fc61db3dd790dc2f5fea0d77f3a677641474314))
+* Fix js_optimizer error ([8791ad](https://github.com/UN-OCHA/unocha-site/commit/8791add5a179dd27a4fd2882b51bf64e4106633c))
+* Fix js error ([7ef3df](https://github.com/UN-OCHA/unocha-site/commit/7ef3dfc70313a5e6341d83216074e877a88df899))
+* Include php logs if tests fail ([710556](https://github.com/UN-OCHA/unocha-site/commit/7105563500d201b16eda22e427e021b81fd1f75f))
+* Pass on credentials to action ([927993](https://github.com/UN-OCHA/unocha-site/commit/9279934112d74394cf39c1e8fb364ab815d3bb62))
+* Remove patch which is blocking core update ([e2cc7b](https://github.com/UN-OCHA/unocha-site/commit/e2cc7b2284a2771e21ce7633b0ba82867ed1036d))
+* Update all outdated drupal/* unocha/* drush/* packages. ([c38ff8](https://github.com/UN-OCHA/unocha-site/commit/c38ff8f3b4a74608174e245b5e2994e1a83d7773), [8a15e2](https://github.com/UN-OCHA/unocha-site/commit/8a15e20cdb6a6e9b612589eb6e9c5e35b400ce1c), [c496dc](https://github.com/UN-OCHA/unocha-site/commit/c496dc91283a706c6e886f50b189be7566133a87), [ec44f4](https://github.com/UN-OCHA/unocha-site/commit/ec44f4f1c20814d0f14a10126211980242226c82), [f869ab](https://github.com/UN-OCHA/unocha-site/commit/f869ab269c7c3665b154f5076fa05cb2c059094e))
+
+##### Deps-dev
+
+* Bump axios ([eb9566](https://github.com/UN-OCHA/unocha-site/commit/eb9566babf21109f2faec7238c1b956f645759d1))
+
 ## [2.0.1](https://github.com/UN-OCHA/unocha-site/compare/v2.0.0...v2.0.1) (2024-06-18)
 
 
