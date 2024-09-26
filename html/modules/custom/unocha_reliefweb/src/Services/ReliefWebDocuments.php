@@ -159,7 +159,7 @@ class ReliefWebDocuments {
    *   An associative array with the river information and the document entity
    *   data usable in templates.
    */
-  public function getDocumentDataFromUrl($river_name, $url, array $filter = NULL, $white_label = TRUE) {
+  public function getDocumentDataFromUrl($river_name, $url, ?array $filter = NULL, $white_label = TRUE) {
     $river = $this->getRiver($river_name);
     if (empty($river)) {
       return [];
@@ -218,7 +218,7 @@ class ReliefWebDocuments {
    *   An associative array with the river information and the document entities
    *   data usable in templates.
    */
-  public function getRiverDataFromUrl($url, $limit = 5, $offset = 0, array $filter = NULL, $white_label = TRUE) {
+  public function getRiverDataFromUrl($url, $limit = 5, $offset = 0, ?array $filter = NULL, $white_label = TRUE) {
     $river = $this->getRiverFromUrl($url);
     if (empty($river)) {
       return [];
@@ -256,7 +256,7 @@ class ReliefWebDocuments {
    *   An associative array with the river information and the document entities
    *   data usable in templates.
    */
-  public function getRiverDataFromDocumentUrls($river_name, array $urls, $limit = 5, $offset = 0, array $filter = NULL, $white_label = TRUE) {
+  public function getRiverDataFromDocumentUrls($river_name, array $urls, $limit = 5, $offset = 0, ?array $filter = NULL, $white_label = TRUE) {
     if (empty($urls)) {
       return [];
     }
@@ -321,7 +321,7 @@ class ReliefWebDocuments {
    *   usable in templates and the total number of resources matching the
    *   payload.
    */
-  protected function getDocumentsFromPayload(array $river, array $payload, $limit, array $filter = NULL, $white_label = TRUE) {
+  protected function getDocumentsFromPayload(array $river, array $payload, $limit, ?array $filter = NULL, $white_label = TRUE) {
     // Set the maximum number of items to return.
     $payload['limit'] = $limit;
 
