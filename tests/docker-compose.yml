@@ -69,6 +69,10 @@ services:
       - XDEBUG_MODE=coverage
       - BROWSERTEST_OUTPUT_DIRECTORY=/srv/www/html/sites/default/files/browser_output
       - DTT_BASE_URL=http://127.0.0.1
+      - NGINX_LIMIT_BOTS=1024r/s
+      - NGINX_BURST_BOTS=1024
+      - NGINX_LIMIT_HUMANS=1024r/s
+      - NGINX_BURST_HUMANS=1024
     networks:
       - default
     ports:
