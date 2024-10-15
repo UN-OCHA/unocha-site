@@ -118,20 +118,21 @@
             "composer/installers": true,
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
+            "drupal-composer/preserve-paths": true,
             "drupal/console-extend-plugin": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
             "oomphinc/composer-installers-extender": true,
             "orakili/composer-drupal-info-file-patch-helper": true,
-            "phpstan/extension-installer": true,
             "php-http/discovery": true,
-            "drupal-composer/preserve-paths": true
+            "phpstan/extension-installer": true,
+            "tbachert/spi": true
         },
         "audit": {
             "abandoned": "report",
             "ignore": {
                 "GHSA-mg8j-w93w-xjgc": "OPS-10899 - we do not store the hash salt in a file"
-             }
+            }
         }
     },
     "extra": {
@@ -267,5 +268,5 @@
             "scripts\\composer\\DrupalLenientRequirement::changeVersionConstraint"
         ]
     },
-    "version": "2.1.0"
+    "version": "2.0.5"
 }
