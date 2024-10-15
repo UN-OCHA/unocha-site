@@ -4,6 +4,26 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [2.0.5](https://github.com/UN-OCHA/unocha-site/compare/v2.0.4...v2.0.5) (2024-10-15)
+
+### Bug Fixes
+
+
+##### Tests
+
+* Set a higher rate limit for bots, so the test bot does not get limited because of its UA string. ([2deec6](https://github.com/UN-OCHA/unocha-site/commit/2deec6d460aa871bee956f79e79743ce9905cb6f))
+
+### Chores
+
+* Csp config for UNTV ([a8480b](https://github.com/UN-OCHA/unocha-site/commit/a8480bff951ea5e152ce47ed0cf96d691a83d1cd))
+* Fix CS ([74d33a](https://github.com/UN-OCHA/unocha-site/commit/74d33aec0b3d875b4f61940f7549bfc23ee7a80c))
+* Ignore audit warning that doesn't affect us ([87f88f](https://github.com/UN-OCHA/unocha-site/commit/87f88fe2ab81f01640199e381e605ee03a91b2df))
+* Update all outdated drupal/* unocha/* drush/* packages. ([1a1c66](https://github.com/UN-OCHA/unocha-site/commit/1a1c665a44ef6b40b21fcf5ca8dabcb14624ce4e), [f90218](https://github.com/UN-OCHA/unocha-site/commit/f9021885999b80dbae2825f662d2daf64ae278f3), [c0e907](https://github.com/UN-OCHA/unocha-site/commit/c0e90701b063c8e4159a076161faebf5ac25e6a4), [f19c3d](https://github.com/UN-OCHA/unocha-site/commit/f19c3dd51f1abbaaa78f2cd6337aa109bb396686))
+
+##### Deps
+
+* Bump drupal/core-recommended from 10.3.5 to 10.3.6 ([8fce45](https://github.com/UN-OCHA/unocha-site/commit/8fce453c8ca1512f3551197edf46a9415a83018a))
+
 ## [2.1.0](https://github.com/UN-OCHA/unocha-site/compare/v2.0.3...v2.1.0) (2024-09-17)
 
 ### Features

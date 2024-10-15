@@ -58,6 +58,8 @@ services:
       - ENVIRONMENT=dev
       - NGINX_SERVERNAME=unocha-test-site,localhost,127.0.0.1,127.0.0.1:8080
       - NGINX_OVERRIDE_PROTOCOL=HTTP,unocha-test-site,localhost,127.0.0.1,127.0.0.1:8080
+      - NGINX_LIMIT_BOTS=64r/s
+      - NGINX_BURST_BOTS=256 nodelay
       - DRUSH_OPTIONS_URI=http://unocha-test-site
       - DRUPAL_DB_DATABASE=unocha
       - DRUPAL_DB_USERNAME=unocha
@@ -69,6 +71,10 @@ services:
       - XDEBUG_MODE=coverage
       - BROWSERTEST_OUTPUT_DIRECTORY=/srv/www/html/sites/default/files/browser_output
       - DTT_BASE_URL=http://127.0.0.1
+      - NGINX_LIMIT_BOTS=1024r/s
+      - NGINX_BURST_BOTS=1024
+      - NGINX_LIMIT_HUMANS=1024r/s
+      - NGINX_BURST_HUMANS=1024
     networks:
       - default
     ports:
