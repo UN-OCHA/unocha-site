@@ -1,4 +1,0 @@
-powerbi-responsive-iframe:
-  css:
-    component:
-      css/ocha-powerbi.css: {}

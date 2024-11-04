@@ -1,0 +1,21 @@
+uuid: ea406940-00fe-4106-ac88-818a208dc2cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_embed_url
+    - paragraphs.paragraphs_type.ocha_vimeo
+  module:
+    - ocha_visualisations
+id: paragraph.ocha_vimeo.field_embed_url
+field_name: field_embed_url
+entity_type: paragraph
+bundle: ocha_vimeo
+label: 'Embed URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: ocha_uri

@@ -1,0 +1,19 @@
+uuid: 5a77e3eb-73b8-48b5-8575-8ea17778f439
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.ocha_vimeo.field_embed_url
+    - field.field.paragraph.ocha_vimeo.field_text
+    - field.field.paragraph.ocha_vimeo.field_title
+    - paragraphs.paragraphs_type.ocha_vimeo
+id: paragraph.ocha_vimeo.preview
+targetEntityType: paragraph
+bundle: ocha_vimeo
+mode: preview
+content: {  }
+hidden:
+  field_embed_url: true
+  field_text: true
+  field_title: true

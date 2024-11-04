@@ -1,17 +1,17 @@
-uuid: 3d47c6ad-b095-4e92-986f-c2d87d809817
+uuid: c5afb1c1-cbef-46b2-a33b-6bc7f8cc44af
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_text
     - filter.format.ckeditor
-    - paragraphs.paragraphs_type.ocha_powerbi
+    - paragraphs.paragraphs_type.ocha_vimeo
   module:
     - text
-id: paragraph.ocha_powerbi.field_text
+id: paragraph.ocha_vimeo.field_text
 field_name: field_text
 entity_type: paragraph
-bundle: ocha_powerbi
+bundle: ocha_vimeo
 label: Text
 description: ''
 required: false
