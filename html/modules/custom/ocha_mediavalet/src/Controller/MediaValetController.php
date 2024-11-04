@@ -91,6 +91,9 @@ class MediaValetController extends ControllerBase {
       return $this->oembed();
     }
 
+    // Increase timeout to 10 seconds, see #UNO-860.
+    $this->mediavaletService->setTimeout(10000);
+
     $asset = $this->mediavaletService->getAsset($uuid);
     $data = $asset->getData();
 
