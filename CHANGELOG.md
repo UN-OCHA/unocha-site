@@ -4,6 +4,20 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [2.1.0](https://github.com/UN-OCHA/unocha-site/compare/v2.0.5...v2.1.0) (2024-11-05)
+
+### Features
+
+* Increase time-out for video proxy [#UNO-860](https://https://humanitarian.atlassian.net/browse/UNO-860) ([2d7b95](https://github.com/UN-OCHA/unocha-site/commit/2d7b95cf0bd68ef9f7c8af732ea9b3639dcb63d3))
+* Use ocha_visualisations [#UNO-854](https://https://humanitarian.atlassian.net/browse/UNO-854) ([1b776b](https://github.com/UN-OCHA/unocha-site/commit/1b776b443274a5839f44054a84adda64f34d2b3f))
+* Use package ([3b215d](https://github.com/UN-OCHA/unocha-site/commit/3b215d4596389d2dcf680a0bbb1bf156061e019a), [0462e4](https://github.com/UN-OCHA/unocha-site/commit/0462e424fdb840f45dd2c59bc941d0ef8764f054))
+
+### Chores
+
+* Add vimeo as csp exception ([0da671](https://github.com/UN-OCHA/unocha-site/commit/0da671da84be7270da849bba4f58895f537ea460))
+* Remove unused csp module ([b6ef59](https://github.com/UN-OCHA/unocha-site/commit/b6ef5955c85de16518b7d349528266188550c22e))
+* Update all outdated drupal/* unocha/* drush/* packages. ([bbd4e4](https://github.com/UN-OCHA/unocha-site/commit/bbd4e4b32d3a283d00b6e6f9d9d3afe673c0f7df), [cfac9a](https://github.com/UN-OCHA/unocha-site/commit/cfac9a3354af7a1fff62d9a2ca62bee4bcc35004), [55ab31](https://github.com/UN-OCHA/unocha-site/commit/55ab31f16e50bae64e68d041f1e2e8838609235d))
+
 ## [2.0.5](https://github.com/UN-OCHA/unocha-site/compare/v2.0.4...v2.0.5) (2024-10-15)
 
 ### Bug Fixes

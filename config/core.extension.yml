@@ -72,6 +72,8 @@ module:
   ocha_monitoring: 0
   ocha_powerbi: 0
   ocha_search: 0
+  ocha_vimeo: 0
+  ocha_visualisations: 0
   oembed_providers: 0
   options: 0
   page_cache: 0

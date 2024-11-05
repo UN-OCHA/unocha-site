@@ -1,0 +1,21 @@
+uuid: c08a4241-13a8-47b0-9eee-1360f6dd84a5
+langcode: en
+status: true
+dependencies:
+  module:
+    - ocha_visualisations
+    - paragraphs
+id: paragraph.field_embed_url
+field_name: field_embed_url
+entity_type: paragraph
+type: ocha_uri
+settings:
+  max_length: '2048'
+  case_sensitive: false
+module: ocha_visualisations
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

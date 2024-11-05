@@ -1,14 +1,14 @@
-uuid: bfdf8792-35a5-4876-adc3-3b220d333e09
+uuid: 862bc441-4a30-4319-91a3-744b9f749158
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_title
-    - paragraphs.paragraphs_type.ocha_powerbi
-id: paragraph.ocha_powerbi.field_title
+    - paragraphs.paragraphs_type.ocha_vimeo
+id: paragraph.ocha_vimeo.field_title
 field_name: field_title
 entity_type: paragraph
-bundle: ocha_powerbi
+bundle: ocha_vimeo
 label: Title
 description: ''
 required: false

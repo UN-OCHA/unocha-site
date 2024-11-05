@@ -17,7 +17,7 @@ bundle: ocha_powerbi
 mode: preview
 content:
   field_embed_link:
-    type: link_separate
+    type: link
     label: inline
     settings:
       trim_length: 80
