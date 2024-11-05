@@ -8,7 +8,7 @@ dependencies:
     - field.field.paragraph.ocha_powerbi.field_title
     - paragraphs.paragraphs_type.ocha_powerbi
   module:
-    - link
+    - ocha_visualisations
     - text
 id: paragraph.ocha_powerbi.default
 targetEntityType: paragraph
@@ -16,10 +16,13 @@ bundle: ocha_powerbi
 mode: default
 content:
   field_embed_link:
-    type: link_default
+    type: ocha_link_default
     weight: 2
     region: content
     settings:
+      size: '60'
+      placeholder: 'Link to PowerBi'
+      allowed_hosts: app.powerbi.com
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
