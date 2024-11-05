@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9b10cffab57f09c06c354ae96669b3da",
+    "content-hash": "287321d1bf3c1fcf9bf3eb9d9f57ef52",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -16619,16 +16619,16 @@
         },
         {
             "name": "unocha/ocha_visualisations",
-            "version": "v0.0.2",
+            "version": "v0.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/ocha_visualisations.git",
-                "reference": "06cc93bfbf2ca9f833a161d419cdcc641666b591"
+                "reference": "d86e38652859a0ce169ecfb1e0d7c7c135bf517b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/ocha_visualisations/zipball/06cc93bfbf2ca9f833a161d419cdcc641666b591",
-                "reference": "06cc93bfbf2ca9f833a161d419cdcc641666b591",
+                "url": "https://api.github.com/repos/UN-OCHA/ocha_visualisations/zipball/d86e38652859a0ce169ecfb1e0d7c7c135bf517b",
+                "reference": "d86e38652859a0ce169ecfb1e0d7c7c135bf517b",
                 "shasum": ""
             },
             "require": {
@@ -16642,9 +16642,9 @@
             "description": "UNOCHA visualisations",
             "support": {
                 "issues": "https://github.com/UN-OCHA/ocha_visualisations/issues",
-                "source": "https://github.com/UN-OCHA/ocha_visualisations/tree/v0.0.2"
+                "source": "https://github.com/UN-OCHA/ocha_visualisations/tree/v0.0.3"
             },
-            "time": "2024-11-04T14:45:52+00:00"
+            "time": "2024-11-05T10:04:56+00:00"
         },
         {
             "name": "unocha/un_date",
