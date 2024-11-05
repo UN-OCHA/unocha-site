@@ -1,26 +1,25 @@
-uuid: 46384436-922f-46dd-b545-58f8a1da2e7b
+uuid: dfbda66e-7ea3-41f0-92df-62858d7e90ee
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.ocha_powerbi.field_embed_link
-    - field.field.paragraph.ocha_powerbi.field_text
-    - field.field.paragraph.ocha_powerbi.field_title
-    - paragraphs.paragraphs_type.ocha_powerbi
+    - field.field.paragraph.ocha_vimeo.field_embed_url
+    - field.field.paragraph.ocha_vimeo.field_text
+    - field.field.paragraph.ocha_vimeo.field_title
+    - paragraphs.paragraphs_type.ocha_vimeo
   module:
-    - ocha_powerbi
     - text
-id: paragraph.ocha_powerbi.default
+id: paragraph.ocha_vimeo.default
 targetEntityType: paragraph
-bundle: ocha_powerbi
+bundle: ocha_vimeo
 mode: default
 content:
-  field_embed_link:
-    type: ocha_powerbi
+  field_embed_url:
+    type: ocha_vimeo
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 2
     region: content
   field_text:
     type: text_default

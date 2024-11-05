@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "39bd7270e09af7d0ecb648cb6ceacaf7",
+    "content-hash": "287321d1bf3c1fcf9bf3eb9d9f57ef52",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -16618,6 +16618,35 @@
             "time": "2024-10-09T08:49:09+00:00"
         },
         {
+            "name": "unocha/ocha_visualisations",
+            "version": "v0.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/UN-OCHA/ocha_visualisations.git",
+                "reference": "d86e38652859a0ce169ecfb1e0d7c7c135bf517b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/UN-OCHA/ocha_visualisations/zipball/d86e38652859a0ce169ecfb1e0d7c7c135bf517b",
+                "reference": "d86e38652859a0ce169ecfb1e0d7c7c135bf517b",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/intl": "^6.2"
+            },
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "UNOCHA visualisations",
+            "support": {
+                "issues": "https://github.com/UN-OCHA/ocha_visualisations/issues",
+                "source": "https://github.com/UN-OCHA/ocha_visualisations/tree/v0.0.3"
+            },
+            "time": "2024-11-05T10:04:56+00:00"
+        },
+        {
             "name": "unocha/un_date",
             "version": "2.0.16",
             "source": {
@@ -18293,6 +18322,6 @@
     "platform": {
         "php": ">=8.2"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "plugin-api-version": "2.6.0"
 }

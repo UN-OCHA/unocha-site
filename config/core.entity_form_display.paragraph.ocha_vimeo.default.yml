@@ -1,27 +1,28 @@
-uuid: 936d5a83-6cba-4304-824c-3f3acdf29b89
+uuid: d62f1c31-2ea4-4180-9de9-465ad8c2d861
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.ocha_powerbi.field_embed_link
-    - field.field.paragraph.ocha_powerbi.field_text
-    - field.field.paragraph.ocha_powerbi.field_title
-    - paragraphs.paragraphs_type.ocha_powerbi
+    - field.field.paragraph.ocha_vimeo.field_embed_url
+    - field.field.paragraph.ocha_vimeo.field_text
+    - field.field.paragraph.ocha_vimeo.field_title
+    - paragraphs.paragraphs_type.ocha_vimeo
   module:
-    - link
+    - ocha_visualisations
     - text
-id: paragraph.ocha_powerbi.default
+id: paragraph.ocha_vimeo.default
 targetEntityType: paragraph
-bundle: ocha_powerbi
+bundle: ocha_vimeo
 mode: default
 content:
-  field_embed_link:
-    type: link_default
+  field_embed_url:
+    type: ocha_uri
     weight: 2
     region: content
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
+      size: '60'
+      placeholder: 'Link of the Vimeo video'
+      allowed_hosts: vimeo.com
     third_party_settings: {  }
   field_text:
     type: text_textarea

@@ -63,8 +63,8 @@
         "drupal/redirect": "^1.8",
         "drupal/samlauth": "^3.8",
         "drupal/samples": "^1.0@beta",
-        "drupal/select_a11y": "3.0.x-dev@dev",
         "drupal/seckit": "^2.0",
+        "drupal/select_a11y": "3.0.x-dev@dev",
         "drupal/simple_menu_permissions": "^2.0",
         "drupal/social_auth_hid": "^3.2",
         "drupal/stable": "^2.0",
@@ -83,6 +83,7 @@
         "unocha/ocha_key_figures": "^2.0",
         "unocha/ocha_monitoring": "^1.0",
         "unocha/ocha_search": "^1.0",
+        "unocha/ocha_visualisations": "*",
         "unocha/un_date": "^2.0",
         "webflo/drupal-finder": "^1.2.2"
     },
