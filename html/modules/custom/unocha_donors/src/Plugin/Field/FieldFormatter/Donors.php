@@ -103,6 +103,40 @@ class Donors extends KeyFigureBase {
           ],
         ];
       }
+      else {
+        if ($view_mode == 'preview') {
+          $parameters = [];
+          if (!empty($item->getFigureProvider())) {
+            $parameters[] = 'Provider: ' . $item->getFigureProvider();
+          }
+          if (!empty($item->getFigureYear())) {
+            $parameters[] = 'Year: ' . $item->getFigureYear();
+          }
+          if ($field_type === 'key_figure') {
+            if (!empty($item->getFigureCountry())) {
+              $parameters[] = 'Country: ' . $item->getFigureCountry();
+            }
+          }
+          else {
+            if (!empty($item->getFigureOchaPresence())) {
+              $parameters[] = 'Presence: ' . $item->getFigureOchaPresence();
+            }
+          }
+          if (!empty($item->getFigureId())) {
+            $parameters[] = 'Id: ' . $item->getFigureId();
+          }
+
+          $elements[$delta] = [
+            'info' => [
+              '#markup' => $this->t('No data available'),
+            ],
+            'parameters' => [
+              '#theme' => 'item_list',
+              '#items' => $parameters,
+            ],
+          ];
+        }
+      }
     }
 
     return $elements;
