@@ -436,7 +436,9 @@ class MediaValetClient {
     $payload = [
       'RenditionSettings' => [
         'Size' => [
-          'Type' => 'Original',
+          'Type' => 'Widescreen1080p',
+          'width' => NULL,
+          'height' => NULL,
         ],
         'Format' => 'MP4',
       ],
