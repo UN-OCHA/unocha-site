@@ -437,8 +437,8 @@ class MediaValetClient {
       'RenditionSettings' => [
         'Size' => [
           'Type' => 'Widescreen1080p',
-          'width' => null,
-          'height' => null,
+          'width' => NULL,
+          'height' => NULL,
         ],
         'Format' => 'MP4',
       ],
