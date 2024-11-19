@@ -91,7 +91,8 @@ class MediaValetController extends ControllerBase {
       return $this->oembed();
     }
 
-    // Increase timeout to 10 seconds, see #UNO-860.
+    // Time-out of oembed is hard-coded to 5 seconds.
+    // @see \Drupal\media\OEmbed\ResourceFetcher:fetchResource().
     $this->mediavaletService->setTimeout(10000);
 
     $asset = $this->mediavaletService->getAsset($uuid);
@@ -114,9 +115,10 @@ class MediaValetController extends ControllerBase {
         $html = '<iframe
           style="width:100%;" src="' . $embed['cdnLink'] . '"
           frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen=""
+          loading="lazy"
           title="' . htmlspecialchars($data['title']) . '"></iframe>';
       }
     }

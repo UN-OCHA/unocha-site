@@ -436,7 +436,9 @@ class MediaValetClient {
     $payload = [
       'RenditionSettings' => [
         'Size' => [
-          'Type' => 'Original',
+          'Type' => 'Widescreen1080p',
+          'width' => NULL,
+          'height' => NULL,
         ],
         'Format' => 'MP4',
       ],
@@ -448,7 +450,22 @@ class MediaValetClient {
       ],
     ];
 
-    $data = $this->request('directlinks/' . $asset_uuid, $payload, 'POST');
+    $time = microtime(TRUE);
+    $data = [];
+    try {
+      $data = $this->request('directlinks/' . $asset_uuid, $payload, 'POST');
+      $this->loggerFactory->info(strtr('Direct link created for: @uuid. Took $time ms', [
+        '@uuid' => $asset_uuid,
+        '@time' => round(1000 * (microtime(TRUE) - $time), 2),
+      ]));
+    }
+    catch (\Exception $e) {
+      $this->loggerFactory->info(strtr('Direct link creation failed for: @uuid. Took $time ms. Error: @message', [
+        '@uuid' => $asset_uuid,
+        '@time' => round(1000 * (microtime(TRUE) - $time), 2),
+        '@message' => $e->getMessage(),
+      ]));
+    }
 
     if (isset($data['payload'])) {
       return new MediaValetData(
