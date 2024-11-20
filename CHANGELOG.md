@@ -4,6 +4,19 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [2.2.0](https://github.com/UN-OCHA/unocha-site/compare/v2.1.0...v2.2.0) (2024-11-18)
+
+### Features
+
+* Show message to editors [#UNO-832](https://https://humanitarian.atlassian.net/browse/UNO-832) ([e8452f](https://github.com/UN-OCHA/unocha-site/commit/e8452f1172c3bd4873b2981cf03c1cbcbd78e9ed))
+
+### Chores
+
+* Change time-out, add lazy loading [#UNO-860](https://https://humanitarian.atlassian.net/browse/UNO-860) ([c8cdab](https://github.com/UN-OCHA/unocha-site/commit/c8cdab83caee00251ef24d6908d36467f6682301))
+* Log calls to generate direct link [#UNO-860](https://https://humanitarian.atlassian.net/browse/UNO-860) ([7bde44](https://github.com/UN-OCHA/unocha-site/commit/7bde44082facf1068a30d70b26887379e0c60db8))
+* Update all outdated drupal/* unocha/* drush/* packages. ([b72cbd](https://github.com/UN-OCHA/unocha-site/commit/b72cbd8cde32963a9a170db4384dc2051370c9e7), [438800](https://github.com/UN-OCHA/unocha-site/commit/438800e0dc086f5460a6d1b4f1b6867d48197457), [5ad07e](https://github.com/UN-OCHA/unocha-site/commit/5ad07e6d87e7870229dab5992770b5b7aec7814b))
+* Update MediaValet payload [#UNO-860](https://https://humanitarian.atlassian.net/browse/UNO-860), [#UNO-860](https://https://humanitarian.atlassian.net/browse/UNO-860) ([42659b](https://github.com/UN-OCHA/unocha-site/commit/42659bf4d5a8a3ed79720e938eb26380cd57b50f), [2695e5](https://github.com/UN-OCHA/unocha-site/commit/2695e5893f8ef3ba1b1223dbd6e4956375125837))
+
 ## [2.1.0](https://github.com/UN-OCHA/unocha-site/compare/v2.0.5...v2.1.0) (2024-11-05)
 
 ### Features
