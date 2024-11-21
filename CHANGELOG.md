@@ -4,6 +4,12 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [2.1.2](https://github.com/UN-OCHA/unocha-site/compare/v2.1.1...v2.1.2) (2024-11-21)
+
+### Chores
+
+* Update all outdated drupal/* unocha/* drush/* packages. ([0009f1](https://github.com/UN-OCHA/unocha-site/commit/0009f1ca53ba8f99a4b2050247cf9c205931361e))
+
 ## [2.2.0](https://github.com/UN-OCHA/unocha-site/compare/v2.1.0...v2.2.0) (2024-11-18)
 
 ### Features
