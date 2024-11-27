@@ -6,6 +6,7 @@ dependencies:
     - entity_browser.browser.stories
     - field.field.paragraph.stories.field_limit
     - field.field.paragraph.stories.field_node
+    - field.field.paragraph.stories.field_themes
     - field.field.paragraph.stories.field_title
     - field.field.paragraph.stories.paragraph_view_mode
     - paragraphs.paragraphs_type.stories
@@ -26,7 +27,7 @@ content:
     third_party_settings: {  }
   field_node:
     type: entity_browser_entity_reference
-    weight: 3
+    weight: 4
     region: content
     settings:
       entity_browser: stories
@@ -38,6 +39,12 @@ content:
       field_widget_display_settings:
         view_mode: card_preview
       selection_mode: selection_prepend
+    third_party_settings: {  }
+  field_themes:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_title:
     type: string_textfield
@@ -58,16 +65,17 @@ content:
         default: '0'
       default_view_mode: cards
       form_mode_bind: false
+      apply_to_preview: false
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 5
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   translation:
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
