@@ -1,0 +1,110 @@
+uuid: b4a54f15-97f1-4c87-96b5-907936e47528
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_custom_content
+    - node.type.leader
+  module:
+    - entity_reference_revisions
+id: node.leader.field_custom_content
+field_name: field_custom_content
+entity_type: node
+bundle: leader
+label: 'Custom content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 1
+    target_bundles_drag_drop:
+      call_to_action:
+        weight: 19
+        enabled: false
+      campaign:
+        weight: 28
+        enabled: false
+      cbpf:
+        weight: 29
+        enabled: false
+      donors:
+        weight: 30
+        enabled: false
+      events:
+        weight: 31
+        enabled: false
+      figures:
+        weight: 24
+        enabled: false
+      image:
+        weight: 25
+        enabled: false
+      layout:
+        weight: 7
+        enabled: false
+      leader:
+        weight: 35
+        enabled: false
+      media_centre:
+        weight: 36
+        enabled: false
+      news_and_stories:
+        weight: 37
+        enabled: false
+      node:
+        weight: 27
+        enabled: false
+      ocha_datawrapper:
+        weight: 39
+        enabled: false
+      ocha_powerbi:
+        weight: 42
+        enabled: false
+      ocha_vimeo:
+        weight: 43
+        enabled: false
+      regions:
+        weight: 40
+        enabled: false
+      reliefweb_document:
+        weight: 28
+        enabled: false
+      reliefweb_river:
+        weight: 29
+        enabled: false
+      reliefweb_river_curated:
+        weight: 43
+        enabled: false
+      resources:
+        weight: 44
+        enabled: false
+      response_map:
+        weight: 46
+        enabled: false
+      responses:
+        weight: 45
+        enabled: false
+      section:
+        weight: 47
+        enabled: false
+      stories:
+        weight: 48
+        enabled: false
+      subscribe:
+        weight: 49
+        enabled: false
+      text:
+        weight: 8
+        enabled: false
+      text_and_image:
+        weight: 35
+        enabled: false
+      video:
+        weight: 36
+        enabled: false
+field_type: entity_reference_revisions
