@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.stories
     - filter.format.ckeditor
     - filter.format.text_editor_simple
     - media.type.image

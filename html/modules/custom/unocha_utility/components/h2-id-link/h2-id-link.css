@@ -1,0 +1,12 @@
+h2[data-ocha-h2-link] a[data-ocha-h2-link-tag] {
+  float: left;
+  margin-left: -24px;
+  padding-right: 5px;
+  text-decoration: none;
+  outline: none;
+  visibility: hidden;
+}
+
+h2[data-ocha-h2-link]:hover > a[data-ocha-h2-link-tag] {
+  visibility: visible;
+}
