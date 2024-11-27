@@ -10,3 +10,9 @@ h2[data-ocha-h2-link] a[data-ocha-h2-link-tag] {
 h2[data-ocha-h2-link]:hover > a[data-ocha-h2-link-tag] {
   visibility: visible;
 }
+
+@media (max-width: 1024px) {
+  h2[data-ocha-h2-link]:hover a[data-ocha-h2-link-tag] {
+    margin-left: 0;
+  }
+}
