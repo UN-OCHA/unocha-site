@@ -24,7 +24,7 @@
 @media screen and (min-width: 576px) {
   .uno-leader--full .cd-layout-main-content {
     display: grid;
-    grid-template-areas: "name image" "title image";
+    grid-template-areas: "title image" "body image" "content content";
     grid-template-rows: 1fr auto;
     grid-template-columns: 62% 33%;
     gap: 1rem 2rem;
@@ -32,7 +32,7 @@
   }
 
   .uno-leader--full .field--name-field-leader-title {
-    grid-area: name;
+    grid-area: title;
     margin-top: 0;
     padding-inline-end: 2rem;
     font-size: var(--cd-font-size--medium);
@@ -43,7 +43,12 @@
   }
 
   .uno-leader--full .field--name-body {
+    grid-area: body;
     padding-inline-end: 2rem;
+  }
+
+  .uno-leader--full .field--name-field-custom-content {
+    grid-area: content;
   }
 
   .uno-leader--teaser,
@@ -197,4 +202,11 @@
   .field--name-field-custom-content > .layout .paragraph--type--leader.paragraph--view-mode--small {
     margin-bottom: 0;
   }
+}
+
+.uno-leader--full .cd-layout-main-content > .field--name-body:has(+ .field--name-field-custom-content) {
+  margin-bottom: 0;
+}
+.uno-leader--full .cd-layout-main-content > .field--name-field-custom-content {
+  margin-bottom: 4rem;
 }
