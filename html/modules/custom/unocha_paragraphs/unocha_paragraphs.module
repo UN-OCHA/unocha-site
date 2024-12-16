@@ -298,7 +298,9 @@ function unocha_paragraphs_get_stories(array $conditions = [], $limit = 3, array
   if (!empty($conditions)) {
     $or_condition_group = $query->orConditionGroup();
     foreach ($conditions as $condition) {
-      $or_condition_group->condition(...$condition);
+      if (!empty($condition)) {
+        $or_condition_group->condition(...$condition);
+      }
     }
     $query->condition($or_condition_group);
   }
