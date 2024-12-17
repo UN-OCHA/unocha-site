@@ -1,0 +1,6 @@
+h2-id-link:
+  css:
+    theme:
+      components/h2-id-link/h2-id-link.css: {}
+  js:
+    components/h2-id-link/h2-id-link.js: {}

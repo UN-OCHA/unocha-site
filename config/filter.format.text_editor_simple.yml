@@ -1,7 +1,9 @@
 uuid: 6ac6625f-9f29-4bbf-9fa2-e8176a27c2a8
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - unocha_utility
 name: 'Text Editor - Simple'
 format: text_editor_simple
 weight: 0
@@ -13,3 +15,9 @@ filters:
     weight: 0
     settings:
       filter_url_length: 72
+  unocha_h2_id_filter:
+    id: unocha_h2_id_filter
+    provider: unocha_utility
+    status: true
+    weight: 0
+    settings: {  }

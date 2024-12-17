@@ -6,7 +6,9 @@ dependencies:
     - core.entity_view_mode.paragraph.teasers
     - field.field.paragraph.stories.field_limit
     - field.field.paragraph.stories.field_node
+    - field.field.paragraph.stories.field_themes
     - field.field.paragraph.stories.field_title
+    - field.field.paragraph.stories.paragraph_view_mode
     - paragraphs.paragraphs_type.stories
 id: paragraph.stories.teasers
 targetEntityType: paragraph
@@ -16,5 +18,6 @@ content: {  }
 hidden:
   field_limit: true
   field_node: true
+  field_themes: true
   field_title: true
   paragraph_view_mode: true

@@ -30,6 +30,18 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
   // Retrieve the featured stories.
   $featured = array_slice($paragraph->field_node?->referencedEntities() ?? [], 0, $limit, TRUE);
 
+  // Parameters for the "view all" link.
+  $view_all_query = [];
+
+  // Get selected themes.
+  $themes = $paragraph->field_themes?->referencedEntities() ?? [];
+  $themes_filter = [];
+  if (!empty($themes)) {
+    $theme_id = $themes[0]->id();
+    $themes_filter = ['field_theme', $theme_id, '='];
+    $view_all_query['themes'] = $theme_id;
+  }
+
   // Add the featured stories to the story list. They are ordered by delta so
   // reflect the order in the form.
   $stories = [];
@@ -38,9 +50,6 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
   }
   $limit = $limit - count($stories);
 
-  // Parameters for the "view all" link.
-  $view_all_query = [];
-
   // Filter the stories based on the parent entity.
   if ($limit > 0) {
     if (isset($parent) && $parent instanceof NodeInterface && !empty($parent->id())) {
@@ -48,6 +57,7 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
         // Get the stories tagged with the response.
         $stories += unocha_paragraphs_get_stories([
           ['field_responses', $parent->id(), '='],
+          $themes_filter,
         ], $limit, $stories);
 
         // Filter the News and Stories page by the response.
@@ -60,6 +70,7 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
           if (isset($region) && $region->bundle() === 'region') {
             $stories += unocha_paragraphs_get_stories([
               ['field_regions', $region->id(), '='],
+              $themes_filter,
             ], $limit - count($stories), $stories);
 
             // Also add the region as filter to have consistent results in the
@@ -72,6 +83,7 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
         // Get the stories tagged with the region.
         $stories += unocha_paragraphs_get_stories([
           ['field_regions', $parent->id(), '='],
+          $themes_filter,
         ], $limit, $stories);
 
         // Filter the News and Stories page by the region.
@@ -106,6 +118,7 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
         // Exclude the current story so we can show related ones only.
         $exclude = array_merge($stories, $parent->bundle() === 'story' ? [$parent] : []);
 
+        $conditions[] = $themes_filter;
         $stories += unocha_paragraphs_get_stories($conditions, $limit, $exclude);
       }
     }
@@ -114,7 +127,9 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
     // paragraph doesn't yet have a parent as it's not yet saved.
     // @todo add disclaimer in the preview in the form?
     else {
-      $stories += unocha_paragraphs_get_stories([], $limit, $stories);
+      $stories += unocha_paragraphs_get_stories([
+        $themes_filter,
+      ], $limit, $stories);
     }
   }
 
@@ -283,7 +298,9 @@ function unocha_paragraphs_get_stories(array $conditions = [], $limit = 3, array
   if (!empty($conditions)) {
     $or_condition_group = $query->orConditionGroup();
     foreach ($conditions as $condition) {
-      $or_condition_group->condition(...$condition);
+      if (!empty($condition)) {
+        $or_condition_group->condition(...$condition);
+      }
     }
     $query->condition($or_condition_group);
   }

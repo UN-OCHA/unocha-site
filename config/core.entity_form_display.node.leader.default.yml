@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.leader.body
+    - field.field.node.leader.field_custom_content
     - field.field.node.leader.field_leader_portrait
     - field.field.node.leader.field_leader_title
     - field.field.node.leader.field_metatags
@@ -11,6 +12,7 @@ dependencies:
     - node.type.leader
   module:
     - image
+    - layout_paragraphs
     - metatag
     - path
     - text
@@ -28,6 +30,18 @@ content:
       summary_rows: 3
       placeholder: ''
       show_summary: false
+    third_party_settings: {  }
+  field_custom_content:
+    type: layout_paragraphs
+    weight: 4
+    region: content
+    settings:
+      view_mode: default
+      preview_view_mode: preview
+      form_display_mode: default
+      nesting_depth: 2
+      require_layouts: 0
+      empty_message: 'Placeholder message to display when field is empty'
     third_party_settings: {  }
   field_leader_portrait:
     type: image_image

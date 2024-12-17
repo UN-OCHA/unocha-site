@@ -1,0 +1,59 @@
+h2[data-ocha-h2-link] a[data-ocha-h2-link-tag] {
+  float: left;
+  margin-left: -24px;
+  padding-right: 5px;
+  text-decoration: none;
+  outline: none;
+  visibility: hidden;
+}
+
+h2[data-ocha-h2-link]:hover > a[data-ocha-h2-link-tag] {
+  visibility: visible;
+}
+
+@media (max-width: 1024px) {
+  h2[data-ocha-h2-link]:hover a[data-ocha-h2-link-tag] {
+    margin-left: 0;
+  }
+}
+
+/**
+ * Web Share API
+ *
+ * Modifications for when the browser can natively share images or text.
+ */
+.data-ocha-h2-share-button--can-share {
+  position: relative;
+}
+
+.data-ocha-h2-share-button--can-share a[data-ocha-h2-link-tag] {
+  display: none;
+}
+
+.data-ocha-h2-share-button {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  padding: 0;
+  margin-inline-start: .5rem;
+}
+
+.data-ocha-h2-share-button img {
+  display: block;
+}
+
+/**
+ * While the figure is being rasterized for sharing, we make the following
+ * modifications.
+ */
+
+/* hide share button */
+.is--capturing .data-ocha-h2-share-button {
+  display: none;
+}
+
+/* remove underline from hyperlinked sources */
+.is--capturing .data-ocha-h2-share-button__source a {
+  text-decoration: none;
+}

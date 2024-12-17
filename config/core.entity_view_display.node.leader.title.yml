@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.title
     - field.field.node.leader.body
+    - field.field.node.leader.field_custom_content
     - field.field.node.leader.field_leader_portrait
     - field.field.node.leader.field_leader_title
     - field.field.node.leader.field_metatags
@@ -44,6 +45,7 @@ content:
     region: content
 hidden:
   body: true
+  field_custom_content: true
   field_metatags: true
   langcode: true
   links: true

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.leader.body
+    - field.field.node.leader.field_custom_content
     - field.field.node.leader.field_leader_portrait
     - field.field.node.leader.field_leader_title
     - field.field.node.leader.field_metatags
@@ -53,5 +54,6 @@ content:
     weight: 2
     region: content
 hidden:
+  field_custom_content: true
   langcode: true
   links: true
