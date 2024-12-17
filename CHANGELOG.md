@@ -4,6 +4,25 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [2.2.0](https://github.com/UN-OCHA/unocha-site/compare/v2.1.2...v2.2.0) (2024-12-17)
+
+### Features
+
+* Add custom content fields to leader content type ([1b2278](https://github.com/UN-OCHA/unocha-site/commit/1b2278d4d099cef186105a287e5c3afa19ea5e5f))
+* Add filter for theme [#UNO-867](https://https://humanitarian.atlassian.net/browse/UNO-867) ([ef5b36](https://github.com/UN-OCHA/unocha-site/commit/ef5b364fb3f9daea26b3454f12850ada789a7832))
+* Add links to H2 tags [#UNO-865](https://https://humanitarian.atlassian.net/browse/UNO-865) ([51ad90](https://github.com/UN-OCHA/unocha-site/commit/51ad90431bd6ff3d73dcbc2e7b9cdaa750902d59))
+* Add Web share to H2 tags [#UNO-865](https://https://humanitarian.atlassian.net/browse/UNO-865) ([ad6952](https://github.com/UN-OCHA/unocha-site/commit/ad69521528088e875f4a91c0f0761779223b90da))
+* Filter stories by theme [#UNO-866](https://https://humanitarian.atlassian.net/browse/UNO-866) ([915f16](https://github.com/UN-OCHA/unocha-site/commit/915f161f75725852abdbbd40357abb77a583d92f))
+
+### Bug Fixes
+
+* Avoid error ([19a9f9](https://github.com/UN-OCHA/unocha-site/commit/19a9f9d3fd5b8811433c9ca1730fc48cde838f6b))
+
+### Chores
+
+* Adjust style for mobile ([27b8e3](https://github.com/UN-OCHA/unocha-site/commit/27b8e3576c5955e909dfabb522b3340e1fc8a8ff))
+* Update all outdated drupal/* unocha/* drush/* packages. ([efcc6c](https://github.com/UN-OCHA/unocha-site/commit/efcc6caaaf4b971307699762bccbbac2b6c6691d), [54c0ce](https://github.com/UN-OCHA/unocha-site/commit/54c0ce034bda97ceb61c63af56abd5ad9bc8c790), [b7ce0f](https://github.com/UN-OCHA/unocha-site/commit/b7ce0f66154d4d98ba0c6cd8f90e04054f2cb1f6))
+
 ## [2.1.2](https://github.com/UN-OCHA/unocha-site/compare/v2.1.1...v2.1.2) (2024-11-21)
 
 ### Chores
