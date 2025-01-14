@@ -45,9 +45,9 @@
         "drupal/honeypot": "^2.1",
         "drupal/imageapi_optimize_binaries": "^1.0@beta",
         "drupal/imageapi_optimize_webp": "^2.0",
-        "drupal/imagemagick": "^3.4",
+        "drupal/imagemagick": "^4",
         "drupal/layout_paragraphs": "^2.0",
-        "drupal/linkit": "^6.0@RC",
+        "drupal/linkit": "^7",
         "drupal/mailsystem": "^4.4",
         "drupal/maintenance200": "^2",
         "drupal/media_library_extend": "^2.1@alpha",
@@ -268,5 +268,5 @@
             "scripts\\composer\\DrupalLenientRequirement::changeVersionConstraint"
         ]
     },
-    "version": "2.2.0"
+    "version": "2.2.2"
 }
