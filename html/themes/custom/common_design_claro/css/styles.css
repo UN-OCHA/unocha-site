@@ -343,3 +343,9 @@ form .entities-list .item-container.rendered-entity .button {
 .select-a11y .btn-select-a11y {
   height: 34px;
 }
+
+.paragraph--type--image .field--name-field-image {
+  display: grid;
+  grid-template-columns: minmax(150px, max-content) minmax(150px, max-content);
+  column-gap: 1rem;
+}
