@@ -4,6 +4,17 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [2.2.2](https://github.com/UN-OCHA/unocha-site/compare/v2.2.1...v2.2.2) (2025-01-14)
+
+### Chores
+
+* Bump version of mariadb for local development ([7af028](https://github.com/UN-OCHA/unocha-site/commit/7af0289b60c73d1a94f3262e24fdb1e135308251))
+* Update all outdated drupal/* unocha/* drush/* packages. ([5633fd](https://github.com/UN-OCHA/unocha-site/commit/5633fde7f27ca89162e066c8ddf6cdad0cabda93), [b68201](https://github.com/UN-OCHA/unocha-site/commit/b68201ad92ea520e83c27f6b23bc3e914428ee77), [7c2d93](https://github.com/UN-OCHA/unocha-site/commit/7c2d93756794a2b3f9aab3cd7c1ea0d15b9aefe1))
+
+##### Tests
+
+* Bump the test MariaDB to match what the dev sites will use soon. ([150100](https://github.com/UN-OCHA/unocha-site/commit/1501007234e7bd83716f3266f900e33d4baee868))
+
 ## [2.2.0](https://github.com/UN-OCHA/unocha-site/compare/v2.1.2...v2.2.0) (2024-12-17)
 
 ### Features
