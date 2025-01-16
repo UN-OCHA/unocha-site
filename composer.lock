@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "44b0973082a52f2a678c33050330f8f7",
+    "content-hash": "471c389dc1ce35c476722e68d02064d5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2392,7 +2392,7 @@
                 "shasum": "bba0c8ccb8758d3dc65df0d37d0f777ff2b700ee"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10 || ^11"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -3958,7 +3958,7 @@
                 "shasum": "01e190248c86c592d8d96ea79c918883c0385a76"
             },
             "require": {
-                "drupal/core": "^9.5 || ^10 || ^11"
+                "drupal/core": "^10"
             },
             "require-dev": {
                 "drupal/commerce": "^2.0",
@@ -4099,7 +4099,7 @@
                 "shasum": "6139e7d5d5d5dd28bf51b15118c8c84d6ff91614"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -4151,7 +4151,7 @@
                 "shasum": "c233131d3b646c1d610806c002a557d16f2c5cc7"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10 || ^11",
+                "drupal/core": "^10",
                 "drupal/imageapi_optimize": "^4"
             },
             "type": "drupal-module",
@@ -4603,7 +4603,7 @@
                 "shasum": "fc8ea60619b6b4682bade340e13fb4565d3a7e0c"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -6267,29 +6267,29 @@
         },
         {
             "name": "drupal/user_expire",
-            "version": "1.3.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/user_expire.git",
-                "reference": "8.x-1.3"
+                "reference": "2.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/user_expire-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "58f6225567a854a3d7f7b5eaa7c15bf37873cb49"
+                "url": "https://ftp.drupal.org/files/projects/user_expire-2.1.0.zip",
+                "reference": "2.1.0",
+                "shasum": "cdaf39f4813d75f65d7a4579631487a3b49604d8"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^10.3 || ^11 || ^12"
             },
             "require-dev": {
-                "drupal/rules": "^3.0@alpha"
+                "drupal/rules": "^4.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.3",
-                    "datestamp": "1725558574",
+                    "version": "2.1.0",
+                    "datestamp": "1736892990",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6312,16 +6312,24 @@
                     "role": "Co-maintainer"
                 },
                 {
-                    "name": "joegraduate",
-                    "homepage": "https://www.drupal.org/user/789384"
+                    "name": "Shelane French (shelane)",
+                    "homepage": "https://www.drupal.org/u/shelane",
+                    "role": "Co-maintainer"
                 },
                 {
-                    "name": "shelane",
-                    "homepage": "https://www.drupal.org/user/2674989"
+                    "name": "Joe Parsons (joegraduate)",
+                    "homepage": "https://www.drupal.org/u/joegraduate",
+                    "role": "Co-maintainer"
                 },
                 {
-                    "name": "trackleft2",
-                    "homepage": "https://www.drupal.org/user/2860655"
+                    "name": "Troy Dean (tadean)",
+                    "homepage": "https://www.drupal.org/u/tadean",
+                    "role": "Co-maintainer"
+                },
+                {
+                    "name": "Chris Green (trackleft2)",
+                    "homepage": "https://www.drupal.org/u/trackleft2",
+                    "role": "Co-maintainer"
                 }
             ],
             "description": "Allows an administrator to define a date on which to expire a user account.",
