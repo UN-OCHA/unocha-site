@@ -35,7 +35,7 @@
 
 @media screen and (min-width: 768px) {
   .node--view-mode-full .field--name-field-text {
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
   }
 }
 
@@ -81,7 +81,7 @@
 }
 
 .node--view-mode-full .cd-layout-main-content > .field--name-body {
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
 }
 .node--view-mode-full .node--view-mode-teaser .field--name-body {
   margin-bottom: 0;
