@@ -60,14 +60,14 @@
   .paragraph--type--donors,
   .paragraph--type--figures,
   .paragraph--type--media-centre {
-    margin-top: 6rem;
-    margin-bottom: 6rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 }
 
 .paragraph--type--subscribe {
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -84,7 +84,7 @@
 
 @media screen and (min-width: 768px) {
   .paragraph--type--reliefweb-document {
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
   }
 }
 
@@ -113,8 +113,8 @@
 
 @media screen and (min-width: 768px) {
   .paragraph--type--layout {
-    margin-top: 6rem;
-    margin-bottom: 6rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 }
 
@@ -157,7 +157,7 @@
 
 @media screen and (min-width: 1024px) {
   .paragraph--type--reliefweb-river + .paragraph--type--reliefweb-river {
-    margin-top: 6rem;
+    margin-top: 3rem;
   }
 }
 
@@ -168,7 +168,7 @@
 
 @media screen and (min-width: 1024px) {
   .paragraph--type--donors + .paragraph--type--reliefweb-river {
-    margin-top: 6rem;
+    margin-top: 3rem;
   }
 }
 

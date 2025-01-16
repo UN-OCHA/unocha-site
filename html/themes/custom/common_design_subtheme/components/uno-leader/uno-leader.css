@@ -180,7 +180,7 @@
 @media screen and (min-width: 768px) {
   .field--name-field-custom-content .paragraph--type--leader,
   .field--name-field-custom-content .paragraph--type--leader:last-child {
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
   }
 
   .paragraph--type--leader.paragraph--view-mode--small {

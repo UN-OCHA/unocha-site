@@ -74,7 +74,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 6rem;
+  width: 3rem;
   height: 3px;
   background-color: var(--brand-primary);
 }
