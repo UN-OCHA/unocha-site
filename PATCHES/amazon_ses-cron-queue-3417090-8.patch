@@ -14,7 +14,7 @@ index 0000000..b778644
 +/**
 + * Implements hook_queue_info_alter().
 + */
-+function amazon_ses_hook_queue_info_alter(&$queues) {
++function amazon_ses_queue_info_alter(&$queues) {
 +  $enabled = \Drupal::config('amazon_ses.settings')->get('queue');
 +
 +  if (!$enabled && isset($queues['amazon_ses_mail_queue']['cron'])) {
