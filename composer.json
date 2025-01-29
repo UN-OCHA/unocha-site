@@ -41,7 +41,6 @@
         "drupal/entity_usage": "^2.0@beta",
         "drupal/environment_indicator": "^4.0",
         "drupal/geofield": "^1.53",
-        "drupal/google_tag": "^2.0",
         "drupal/honeypot": "^2.1",
         "drupal/imageapi_optimize_binaries": "^1.0@beta",
         "drupal/imageapi_optimize_webp": "^2.0",
