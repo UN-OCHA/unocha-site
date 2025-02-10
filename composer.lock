@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd3cf84d574e5606c02e10da4fbff7dd",
+    "content-hash": "e2bbbbfbd29b1225742de5a604158048",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2392,7 +2392,7 @@
                 "shasum": "bba0c8ccb8758d3dc65df0d37d0f777ff2b700ee"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10 || ^11"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -4027,7 +4027,7 @@
                 "shasum": "6139e7d5d5d5dd28bf51b15118c8c84d6ff91614"
             },
             "require": {
-                "drupal/core": "^9 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -4079,7 +4079,7 @@
                 "shasum": "c233131d3b646c1d610806c002a557d16f2c5cc7"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10 || ^11",
+                "drupal/core": "^10",
                 "drupal/imageapi_optimize": "^4"
             },
             "type": "drupal-module",
@@ -4531,7 +4531,7 @@
                 "shasum": "fc8ea60619b6b4682bade340e13fb4565d3a7e0c"
             },
             "require": {
-                "drupal/core": "^9.1 || ^10"
+                "drupal/core": "^10"
             },
             "type": "drupal-module",
             "extra": {
@@ -16870,75 +16870,6 @@
                 }
             ],
             "time": "2024-11-01T21:49:07+00:00"
-        },
-        {
-            "name": "drupal/config_filter",
-            "version": "2.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/config_filter.git",
-                "reference": "8.x-2.7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/config_filter-8.x-2.7.zip",
-                "reference": "8.x-2.7",
-                "shasum": "7fe7161b93c7e24c6db135f1cf82d144bef66e50"
-            },
-            "require": {
-                "drupal/core": "^8.8 || ^9 || ^10 || ^11"
-            },
-            "conflict": {
-                "drush/drush": "<10"
-            },
-            "suggest": {
-                "drupal/config_split": "Split site configuration for different environments."
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-2.7",
-                    "datestamp": "1727472458",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Fabian Bircher",
-                    "homepage": "https://www.drupal.org/u/bircher",
-                    "email": "opensource@fabianbircher.com",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Nuvole Web",
-                    "homepage": "http://nuvole.org",
-                    "email": "info@nuvole.org",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "pescetti",
-                    "homepage": "https://www.drupal.org/user/436244"
-                }
-            ],
-            "description": "Config Filter allows other modules to interact with a ConfigStorage through filter plugins.",
-            "homepage": "https://www.drupal.org/project/config_filter",
-            "keywords": [
-                "Drupal",
-                "configuration",
-                "configuration management"
-            ],
-            "support": {
-                "source": "https://git.drupalcode.org/project/config_filter",
-                "issues": "https://www.drupal.org/project/issues/config_filter",
-                "slack": "https://drupal.slack.com/archives/C45342CDD"
-            }
         },
         {
             "name": "drupal/config_inspector",
