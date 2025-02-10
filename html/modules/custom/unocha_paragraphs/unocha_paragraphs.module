@@ -529,3 +529,21 @@ function unocha_paragraphs_theme_suggestions_paragraph_alter(array &$suggestions
     }
   }
 }
+
+/**
+ * Implements hook_views_data().
+ */
+function unocha_paragraphs_views_data() {
+  $data = [];
+
+  $data['views']['year_filter'] = [
+    'title' => t('Year filter - Custom Filter'),
+    'filter' => [
+      'title' => t('Year filter - Custom Filter'),
+      'field' => 'created',
+      'id' => 'year_filter',
+    ],
+  ];
+
+  return $data;
+}

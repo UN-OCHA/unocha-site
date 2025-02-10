@@ -64,8 +64,8 @@
 
 @media screen and (min-width: 768px) {
   .views-exposed-form.cd-form .cd-form--inline > .cd-form__item {
-    flex: 1 0 20%;
-    max-width: 20%;
+    flex: 1 0 16%;
+    max-width: 16%;
     padding-block-end: 0;
   }
 
