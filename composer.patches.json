@@ -19,6 +19,9 @@
     "drupal/media_library_extend": {
       "https://www.drupal.org/project/media_library_extend/issues/3467575": "PATCHES/i3467575.patch"
     },
+    "drupal/redirect": {
+      "Support encoded source path": "PATCHES/redirect-encoded-source-path-2884630.patch"
+    },
     "drupal/stage_file_proxy": {
       "Stage file proxy attempts to fetch aggregated JS/CSS": "PATCHES/stage_file_proxy_3372105.patch"
     },
