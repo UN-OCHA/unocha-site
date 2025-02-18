@@ -1,7 +1,7 @@
 {
   "patches": {
     "drupal/amazon_ses": {
-      "Cron fails on amazon_ses when not configured": "PATCHES/amazon_ses-3417090-cron-queue-14.patch"
+      "Cron fails on amazon_ses when not configured": "PATCHES/amazon_ses-cron-queue-3417090-8.patch"
     },
     "drupal/core": {
       "Js optimize error https://www.drupal.org/project/drupal/issues/3416508": "PATCHES/core_js_optimizer.patch"
@@ -23,7 +23,6 @@
       "Stage file proxy attempts to fetch aggregated JS/CSS": "PATCHES/stage_file_proxy_3372105.patch"
     },
     "drupal/user_expire": {
-      "Allow the notification email to be customised": "PATCHES/user_expire-customize-notification-email.patch",
       "Reset expiration when user is reactivated": "PATCHES/user_expire-reset-expiration-on-reactivation.patch"
     },
     "drupal/username_enumeration_prevention": {

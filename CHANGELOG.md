@@ -4,6 +4,28 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [2.3.0](https://github.com/UN-OCHA/unocha-site/compare/v2.2.2...v2.3.0) (2025-02-18)
+
+### Features
+
+* Add year filter for news [#UNO-872](https://https://humanitarian.atlassian.net/browse/UNO-872), [#UNO-872](https://https://humanitarian.atlassian.net/browse/UNO-872) ([e015c8](https://github.com/UN-OCHA/unocha-site/commit/e015c80fb216a6c8a2addbaae7efe360cc194fba), [82438d](https://github.com/UN-OCHA/unocha-site/commit/82438dd5aa5240d185e26193fc93ff640fb36d5e))
+* Allow up to 2 images [#UNO-871](https://https://humanitarian.atlassian.net/browse/UNO-871), [#UNO-871](https://https://humanitarian.atlassian.net/browse/UNO-871) ([67a50c](https://github.com/UN-OCHA/unocha-site/commit/67a50c158fc28256d28d541d23b4631060638717), [b9445f](https://github.com/UN-OCHA/unocha-site/commit/b9445f2ce6692bdb92b565b99295ee686526b867))
+* Reduce spacing from 6rem to 3rem [#UNO-871](https://https://humanitarian.atlassian.net/browse/UNO-871) ([51bc13](https://github.com/UN-OCHA/unocha-site/commit/51bc132615b7eacdc7dd2ef52ed9a09868f50aa9))
+* Social link in new tab [#UNO-874](https://https://humanitarian.atlassian.net/browse/UNO-874) ([5757d9](https://github.com/UN-OCHA/unocha-site/commit/5757d922669703fdd0bb1043746d338369122ce5))
+
+### Bug Fixes
+
+* Avoide stage_file_proxy error as in #3457368 ([e69f85](https://github.com/UN-OCHA/unocha-site/commit/e69f85d795a062503e83721d709bac990a764daf))
+
+### Chores
+
+* Remove config_filter module ([d565a6](https://github.com/UN-OCHA/unocha-site/commit/d565a644cf8a26eb9040325400f20b0d2c51cfd8))
+* Remove google_tag module ([544541](https://github.com/UN-OCHA/unocha-site/commit/5445413bac80d50c8d9fab3a4e7ad40505641122))
+* Remove patch and update user_expire module ([3e1140](https://github.com/UN-OCHA/unocha-site/commit/3e1140e414d8673944f7e49565c01c26bb36571e))
+* Remove unused allowed_formats modules ([2f4b1c](https://github.com/UN-OCHA/unocha-site/commit/2f4b1cc53b93ac14741dd8e20bd0cf666f68107c))
+* Specify imagemagick version ([a1004d](https://github.com/UN-OCHA/unocha-site/commit/a1004d24350900f8fd5654524b54481d86f2f980))
+* Update all outdated drupal/* unocha/* drush/* weitzman/drupal-test-traits packages. ([a339a2](https://github.com/UN-OCHA/unocha-site/commit/a339a23a82713705ca517131c9602655f8732e38), [31c107](https://github.com/UN-OCHA/unocha-site/commit/31c1075fa0bcba8409814e9ce547c0e7e23bee2b), [61e9b5](https://github.com/UN-OCHA/unocha-site/commit/61e9b597df087e188aa9eb220fbcc3015726665e), [aacb32](https://github.com/UN-OCHA/unocha-site/commit/aacb32e134d178c7bcfc67acda2608e59e8f1b9e))
+
 ## [2.2.2](https://github.com/UN-OCHA/unocha-site/compare/v2.2.1...v2.2.2) (2025-01-14)
 
 ### Chores
