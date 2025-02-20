@@ -4,6 +4,13 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [2.3.1](https://github.com/UN-OCHA/unocha-site/compare/v2.3.0...v2.3.1) (2025-02-20)
+
+### Chores
+
+* Remove unused module ([724a2b](https://github.com/UN-OCHA/unocha-site/commit/724a2beaf7f8ca38bf6295464db1ca912ae7b868))
+* Update all outdated drupal/* unocha/* drush/* weitzman/drupal-test-traits packages. ([609816](https://github.com/UN-OCHA/unocha-site/commit/6098167952cc0fb9a613d04ee1e53e3d4da16af7))
+
 ## [2.3.0](https://github.com/UN-OCHA/unocha-site/compare/v2.2.2...v2.3.0) (2025-02-18)
 
 ### Features
