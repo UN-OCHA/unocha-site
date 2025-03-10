@@ -1,19 +1,18 @@
-uuid: 59aee70d-2bc5-4ee0-8ecb-2a173ef1eeb0
+uuid: b80c53c7-7276-4c06-8d9e-26681958ecdb
 langcode: en
 status: true
 dependencies:
   module:
-    - media
     - paragraphs
-id: paragraph.field_image
-field_name: field_image
+id: paragraph.field_caption_override
+field_name: field_caption_override
 entity_type: paragraph
-type: entity_reference
+type: string_long
 settings:
-  target_type: media
+  case_sensitive: false
 module: core
 locked: false
-cardinality: 4
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
