@@ -3,6 +3,9 @@
     "drupal/amazon_ses": {
       "Cron fails on amazon_ses when not configured": "PATCHES/amazon_ses-cron-queue-3417090-8.patch"
     },
+    "drupal/choices": {
+      "D11 compatibility": "https://www.drupal.org/files/issues/2025-02-25/choices-3508796-Drupal11-compatible.patch"
+    },
     "drupal/core": {
       "Js optimize error https://www.drupal.org/project/drupal/issues/3416508": "PATCHES/core_js_optimizer.patch"
     },
@@ -12,12 +15,28 @@
     "drupal/default_content" : {
       "https://www.drupal.org/project/default_content/issues/2885285#comment-15342107": "https://www.drupal.org/files/issues/2023-12-01/i2885285-exporting-menu-link-2.patch"
     },
+    "drupal/dev_mode": {
+      "D11 compatibility - #3429839": "PATCHES/dev_mode-D11-compatibility-3429839.patch"
+    },
     "drupal/imageapi_optimize_webp": {
       "Fix derivatives for webp source images": "PATCHES/imageapi_optimize_webp-webp-source-image.patch",
       "Support imagemagick toolkit": "PATCHES/imageapi_optimize_webp-imagemagick-toolkit.patch"
     },
+    "drupal/maintenance200": {
+      "D11 compatibility - #3431791": "PATCHES/maintenance200-D11-compatibility-3431791.patch"
+    },
     "drupal/media_library_extend": {
+      "D11 compatibility - #3431898": "PATCHES/media_library_extend-D11-compatibility.patch",
       "https://www.drupal.org/project/media_library_extend/issues/3467575": "PATCHES/i3467575.patch"
+    },
+    "unocha/ocha_key_figures": {
+      "Test patch for class change": "PATCHES/ocha_key_figures-class-update.patch"
+    },
+    "drupal/samples": {
+      "D11 compatibility #3434312": "https://www.drupal.org/files/issues/2024-03-24/samples.1.0.0-beta3.rector.patch"
+    },
+    "drupal/social_auth": {
+      "Type Error - #3496656": "PATCHES/social_auth-type-error-3496656.patch"
     },
     "drupal/stage_file_proxy": {
       "Stage file proxy attempts to fetch aggregated JS/CSS": "PATCHES/stage_file_proxy_3372105.patch"

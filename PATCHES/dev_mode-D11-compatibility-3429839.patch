@@ -1,0 +1,36 @@
+From 6a3113486031b58d49997ff73e6aadfebb3d082c Mon Sep 17 00:00:00 2001
+From: Project-Update-bot <updatebot@assosiation.drupal.org>
+Date: Sun, 17 Mar 2024 10:04:54 +0000
+Subject: [PATCH] Automated Project Update Bot fixes from run 11-121090.
+
+---
+ composer.json     | 2 +-
+ dev_mode.info.yml | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/composer.json b/composer.json
+index 998bb1a..1cbda31 100644
+--- a/composer.json
++++ b/composer.json
+@@ -16,6 +16,6 @@
+         "source": "https://git.drupalcode.org/project/dev_mode"
+     },
+     "require": {
+-        "drupal/core": "^8 || ^9 || ^10"
++        "drupal/core": "^8 || ^9 || ^10 || ^11"
+     }
+ }
+diff --git a/dev_mode.info.yml b/dev_mode.info.yml
+index 87a32ee..5287364 100644
+--- a/dev_mode.info.yml
++++ b/dev_mode.info.yml
+@@ -1,5 +1,5 @@
+ name: 'Development Mode'
+ type: module
+ description: 'Enable this module to activate development mode on your Drupal site.'
+-core_version_requirement: ^8 || ^9 || ^10
++core_version_requirement: ^8 || ^9 || ^10 || ^11
+ package: 'Development'
+-- 
+GitLab
+
