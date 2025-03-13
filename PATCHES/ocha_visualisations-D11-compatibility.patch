@@ -1,0 +1,39 @@
+diff --git a/modules/ocha_datawrapper/ocha_datawrapper.info.yml b/modules/ocha_datawrapper/ocha_datawrapper.info.yml
+index b3e6bdd..de7a83a 100644
+--- a/modules/ocha_datawrapper/ocha_datawrapper.info.yml
++++ b/modules/ocha_datawrapper/ocha_datawrapper.info.yml
+@@ -2,7 +2,7 @@ type: module
+ name: OCHA Datawrapper
+ description: 'Handles datawrapper integration.'
+ package: unocha
+-core_version_requirement: ^9 || ^10
++core_version_requirement: ^10 || ^11
+ dependencies:
+   - ocha_visualisations:ocha_visualisations
+   - paragraphs:paragraphs
+diff --git a/modules/ocha_powerbi/ocha_powerbi.info.yml b/modules/ocha_powerbi/ocha_powerbi.info.yml
+index b1fd7aa..066139a 100644
+--- a/modules/ocha_powerbi/ocha_powerbi.info.yml
++++ b/modules/ocha_powerbi/ocha_powerbi.info.yml
+@@ -2,7 +2,7 @@ type: module
+ name: OCHA PowerBi
+ description: 'Handles PowerBi integration.'
+ package: unocha
+-core_version_requirement: ^9 || ^10
++core_version_requirement: ^10 || ^11
+ dependencies:
+   - ocha_visualisations:ocha_visualisations
+   - paragraphs:paragraphs
+diff --git a/modules/ocha_vimeo/ocha_vimeo.info.yml b/modules/ocha_vimeo/ocha_vimeo.info.yml
+index e9805d2..617797f 100644
+--- a/modules/ocha_vimeo/ocha_vimeo.info.yml
++++ b/modules/ocha_vimeo/ocha_vimeo.info.yml
+@@ -2,7 +2,7 @@ type: module
+ name: OCHA vimeo
+ description: 'Handles vimeo integration.'
+ package: unocha
+-core_version_requirement: ^9 || ^10
++core_version_requirement: ^10 || ^11
+ dependencies:
+   - ocha_visualisations:ocha_visualisations
+   - paragraphs:paragraphs
