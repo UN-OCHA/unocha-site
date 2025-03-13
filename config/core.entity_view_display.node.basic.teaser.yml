@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.basic.field_children_menu
     - field.field.node.basic.field_custom_content
     - field.field.node.basic.field_metatags
+    - field.field.node.basic.field_tags
     - node.type.basic
   module:
     - text
@@ -39,5 +40,6 @@ hidden:
   field_children_menu: true
   field_custom_content: true
   field_metatags: true
+  field_tags: true
   langcode: true
   links: true

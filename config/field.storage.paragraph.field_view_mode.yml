@@ -1,0 +1,30 @@
+uuid: 8676198d-fb0b-4da0-b3b2-58601b01652b
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_view_mode
+field_name: field_view_mode
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: title
+      label: 'List of titles'
+    -
+      value: teaser
+      label: 'List of teasers'
+    -
+      value: card
+      label: 'List of cards'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
