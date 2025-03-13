@@ -263,6 +263,24 @@ function unocha_paragraphs_preprocess_paragraph__resources(array &$variables) {
 }
 
 /**
+ * Implements hook_preprocess_paragraph__type().
+ */
+function unocha_paragraphs_preprocess_paragraph__image(array &$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+
+  $caption = '';
+  if ($paragraph->hasField('field_caption_override') && !$paragraph->get('field_caption_override')->isEmpty()) {
+    $caption = $paragraph->get('field_caption_override')->value;
+  }
+
+  $variables['content']['caption'] = [
+    '#type' => 'markup',
+    '#markup' => $caption,
+  ];
+}
+
+/**
  * Get story node entities from the given conditions and limit.
  *
  * @param array $conditions

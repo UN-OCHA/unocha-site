@@ -87,6 +87,6 @@
 
 .paragraph--type--image .field--name-field-image {
   display: grid;
-  grid-template-columns: minmax(150px, max-content) minmax(150px, max-content);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   column-gap: 1rem;
 }

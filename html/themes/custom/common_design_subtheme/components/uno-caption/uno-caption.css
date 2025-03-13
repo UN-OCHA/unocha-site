@@ -40,3 +40,11 @@
     padding: 0 var(--cd-container-padding-xlarge);
   }
 }
+
+.paragraph--common-caption .field--name-field-image .cd-caption {
+  display: none;
+}
+
+.paragraph--common-caption .cd-caption--override {
+  text-align: center;
+}
