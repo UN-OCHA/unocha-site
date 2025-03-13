@@ -1,3 +1,42 @@
+diff --git a/.github/workflows/run-tests.yml b/.github/workflows/run-tests.yml
+index 82900c1..735bf3a 100644
+--- a/.github/workflows/run-tests.yml
++++ b/.github/workflows/run-tests.yml
+@@ -10,7 +10,7 @@ jobs:
+       - name: Setup PHP with PECL extension
+         uses: shivammathur/setup-php@v2
+         with:
+-          php-version: 8.0
++          php-version: 8.3
+           tools: composer
+         env:
+           fail-fast: true
+diff --git a/.github/workflows/run-unittests.yml b/.github/workflows/run-unittests.yml
+index ccd65b7..5960a0e 100644
+--- a/.github/workflows/run-unittests.yml
++++ b/.github/workflows/run-unittests.yml
+@@ -10,7 +10,7 @@ jobs:
+       - name: Setup PHP with PECL extension
+         uses: shivammathur/setup-php@v2
+         with:
+-          php-version: 8.1
++          php-version: 8.3
+           tools: composer
+         env:
+           fail-fast: true
+diff --git a/ocha_key_figures.info.yml b/ocha_key_figures.info.yml
+index 44b6237..2818b99 100644
+--- a/ocha_key_figures.info.yml
++++ b/ocha_key_figures.info.yml
+@@ -1,7 +1,7 @@
+ name: 'OCHA Key Figures'
+ description: 'OCHA Key Figures'
+ type: module
+-core_version_requirement: ^8 || ^9 || ^10
++core_version_requirement: ^11
+ dependencies:
+   - core:options
+ configure: ocha_key_figures.ocha_presences
 diff --git a/src/Controller/WebhookController.php b/src/Controller/WebhookController.php
 index 991c545..481643b 100644
 --- a/src/Controller/WebhookController.php
