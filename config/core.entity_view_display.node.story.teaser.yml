@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.story.field_responses
     - field.field.node.story.field_story_image
     - field.field.node.story.field_story_type
+    - field.field.node.story.field_tags
     - field.field.node.story.field_theme
     - node.type.story
   module:
@@ -46,6 +47,7 @@ hidden:
   field_regions: true
   field_responses: true
   field_story_type: true
+  field_tags: true
   field_theme: true
   langcode: true
   links: true

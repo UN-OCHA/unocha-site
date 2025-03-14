@@ -1,0 +1,10 @@
+uuid: 9712491c-8b87-4a02-a027-740cdd5d8e5d
+langcode: en
+status: true
+dependencies: {  }
+id: list_by_tags
+label: 'List by tags'
+icon_uuid: null
+icon_default: null
+description: 'Create a list of content tagged by one or more terms.'
+behavior_plugins: {  }

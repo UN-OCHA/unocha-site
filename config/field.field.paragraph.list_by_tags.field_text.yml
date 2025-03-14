@@ -1,0 +1,24 @@
+uuid: a0ad7302-2d23-4a52-aaed-2cfd65f53454
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - filter.format.ckeditor
+    - paragraphs.paragraphs_type.list_by_tags
+  module:
+    - text
+id: paragraph.list_by_tags.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: list_by_tags
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - ckeditor
+field_type: text_long

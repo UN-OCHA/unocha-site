@@ -1,0 +1,23 @@
+uuid: d4209a6f-14bb-412a-9710-67625bbd26ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_order_direction
+    - paragraphs.paragraphs_type.list_by_tags
+  module:
+    - options
+id: paragraph.list_by_tags.field_order_direction
+field_name: field_order_direction
+entity_type: paragraph
+bundle: list_by_tags
+label: 'Order direction'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: DESC
+default_value_callback: ''
+settings: {  }
+field_type: list_string
