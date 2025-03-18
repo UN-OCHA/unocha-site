@@ -1,0 +1,47 @@
+uuid: 83829279-c6a1-41dc-bf12-fda2134add7b
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.teasers
+    - field.field.paragraph.list_by_tags.field_limit
+    - field.field.paragraph.list_by_tags.field_order_by
+    - field.field.paragraph.list_by_tags.field_order_direction
+    - field.field.paragraph.list_by_tags.field_tags
+    - field.field.paragraph.list_by_tags.field_text
+    - field.field.paragraph.list_by_tags.field_title
+    - field.field.paragraph.list_by_tags.field_view_mode
+    - paragraphs.paragraphs_type.list_by_tags
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.list_by_tags.teasers
+targetEntityType: paragraph
+bundle: list_by_tags
+mode: teasers
+content:
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_limit: true
+  field_order_by: true
+  field_order_direction: true
+  field_tags: true
+  field_view_mode: true

@@ -1,0 +1,19 @@
+uuid: d70d59a8-d4ef-4f56-b3e5-75b14812b2f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_caption_override
+    - paragraphs.paragraphs_type.image
+id: paragraph.image.field_caption_override
+field_name: field_caption_override
+entity_type: paragraph
+bundle: image
+label: 'Caption (override)'
+description: 'Use this field to specify one caption for all images at once.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

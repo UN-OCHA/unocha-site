@@ -21,6 +21,7 @@ dependencies:
     - taxonomy.vocabulary.event_type
     - taxonomy.vocabulary.office_type
     - taxonomy.vocabulary.story_type
+    - taxonomy.vocabulary.tags
     - taxonomy.vocabulary.theme
   module:
     - content_moderation
@@ -83,6 +84,7 @@ permissions:
   - 'create terms in event_type'
   - 'create terms in office_type'
   - 'create terms in story_type'
+  - 'create terms in tags'
   - 'create terms in theme'
   - 'create url aliases'
   - 'create video media'
@@ -123,6 +125,7 @@ permissions:
   - 'edit terms in event_type'
   - 'edit terms in office_type'
   - 'edit terms in story_type'
+  - 'edit terms in tags'
   - 'edit terms in theme'
   - 'edit what-we-do menu'
   - 'edit where-we-work menu'

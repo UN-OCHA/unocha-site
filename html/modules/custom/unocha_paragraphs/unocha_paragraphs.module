@@ -263,6 +263,78 @@ function unocha_paragraphs_preprocess_paragraph__resources(array &$variables) {
 }
 
 /**
+ * Implements hook_preprocess_paragraph__type().
+ */
+function unocha_paragraphs_preprocess_paragraph__image(array &$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+
+  $caption = '';
+  if ($paragraph->hasField('field_caption_override') && !$paragraph->get('field_caption_override')->isEmpty()) {
+    $caption = $paragraph->get('field_caption_override')->value;
+  }
+
+  $variables['content']['caption'] = [
+    '#type' => 'markup',
+    '#markup' => $caption,
+  ];
+}
+
+/**
+ * Implements hook_preprocess_paragraph__type().
+ */
+function unocha_paragraphs_preprocess_paragraph__list_by_tags(array &$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+  $view_mode = $variables['view_mode'] ?? '';
+
+  // Nothing to do in preview mode.
+  if ($view_mode == 'preview') {
+    return;
+  }
+
+  // Retrieve the closest node parent.
+  $parent = unocha_paragraphs_get_paragraph_parent_node($paragraph);
+  $exclude = [$parent];
+
+  // Get selected tags.
+  $tags = $paragraph->field_tags?->referencedEntities() ?? [];
+  $tag_ids = array_map(function ($tag) {
+    return $tag->id();
+  }, $tags);
+
+  $conditions = [
+    ['field_tags', $tag_ids, 'IN'],
+  ];
+
+  $limit = $paragraph->field_limit->value ?? 3;
+  $order_by = $paragraph->field_order_by?->value ?? 'changed';
+  $order_direction = $paragraph->field_order_direction?->value ?? 'DESC';
+  $paragraph_view_mode = $paragraph->field_view_mode?->value ?? 'title';
+
+  $nodes = unocha_paragraphs_get_content_by_tags($conditions, $limit, $exclude, $order_by, $order_direction);
+
+  if ($paragraph_view_mode == 'title') {
+    $items = [];
+    foreach ($nodes as $node) {
+      $items[] = $node->toLink($node->label());
+    }
+    $variables['content']['nodes'] = [
+      '#theme' => 'item_list',
+      '#items' => $items,
+    ];
+  }
+  else {
+    // Generate the render array.
+    $build = \Drupal::entityTypeManager()
+      ->getViewBuilder('node')
+      ->viewMultiple($nodes, $paragraph_view_mode);
+
+    $variables['content']['nodes'] = $build;
+  }
+}
+
+/**
  * Get story node entities from the given conditions and limit.
  *
  * @param array $conditions
@@ -303,6 +375,49 @@ function unocha_paragraphs_get_stories(array $conditions = [], $limit = 3, array
       }
     }
     $query->condition($or_condition_group);
+  }
+
+  return $storage->loadMultiple($query->execute() ?? []);
+}
+
+/**
+ * Get node entities from the given conditions and limit.
+ *
+ * @param array $conditions
+ *   List of conditions. Each condition has field, value and operator.
+ * @param int $limit
+ *   Number of stories to return.
+ * @param array $exclude
+ *   Stories to exclude.
+ *
+ * @return \Drupal\node\NodeInterface[]
+ *   List of nodes.
+ */
+function unocha_paragraphs_get_content_by_tags(array $conditions = [], $limit = 3, array $exclude = [], $order_by = 'changed', $order_direction = 'DESC') {
+  $storage = \Drupal::entityTypeManager()->getStorage('node');
+
+  $query = $storage
+    ->getQuery()
+    ->accessCheck(TRUE)
+    ->condition('status', 1)
+    ->sort($order_by, $order_direction)
+    ->range(0, $limit);
+
+  // Exclude stories.
+  if (!empty($exclude)) {
+    $excluded_ids = array_map(function ($node) {
+      return $node->id();
+    }, $exclude);
+    $query->condition('nid', $excluded_ids, 'NOT IN');
+  }
+
+  // Additional conditions.
+  if (!empty($conditions)) {
+    foreach ($conditions as $condition) {
+      if (!empty($condition)) {
+        $query->condition(...$condition);
+      }
+    }
   }
 
   return $storage->loadMultiple($query->execute() ?? []);
