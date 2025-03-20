@@ -2,7 +2,7 @@ type: module
 name: OCHA MediaValet
 description: 'Provides integration with MediaValet.'
 package: ocha
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10 || ^11
 dependencies:
   - drupal:media_library
   - media_library_extend:media_library_extend

@@ -1,0 +1,52 @@
+diff --git a/composer.json b/composer.json
+index 2cef18db9b215864269a75a7634e6d3c38fecb6b..debc01ed7f17166c3b4a008859a5873bbda4b993 100644
+--- a/composer.json
++++ b/composer.json
+@@ -4,7 +4,7 @@
+     "description": "Allow extending the media library with alternate sources.",
+     "license": "GPL-2.0-or-later",
+     "require": {
+-        "drupal/core": "^9.3 || ^10"
++        "drupal/core": "^10.1 || ^11"
+     },
+     "minimum-stability": "dev"
+ }
+diff --git a/media_library_extend.info.yml b/media_library_extend.info.yml
+index cbed033f4d1472430210beed83b3fce9659e36e7..0bd8509291bb5e4789cb98893da46ffa8032db6d 100644
+--- a/media_library_extend.info.yml
++++ b/media_library_extend.info.yml
+@@ -1,7 +1,7 @@
+ name: Media Library Extend
+ description: Allow extending the media library with alternate sources.
+ 
+-core_version_requirement: ^9.3 || ^10
++core_version_requirement: ^10.1 || ^11
+ type: module
+ package: Media
+ configure: entity.media_library_pane.collection
+diff --git a/src/Plugin/MediaLibrarySource/ConfigurableLoremPicsum.php b/src/Plugin/MediaLibrarySource/ConfigurableLoremPicsum.php
+index 1aaed0e77eb0edd8ad99dc57bd9ead5385c525e8..7ce62e1b7ac1f1e0a5627abbc20e50d555cd45ae 100644
+--- a/src/Plugin/MediaLibrarySource/ConfigurableLoremPicsum.php
++++ b/src/Plugin/MediaLibrarySource/ConfigurableLoremPicsum.php
+@@ -203,7 +203,7 @@ class ConfigurableLoremPicsum extends MediaLibrarySourceBase {
+       return $entity->id();
+     }
+     catch (TransferException $e) {
+-      watchdog_exception('media_library_extend', $e);
++      \Drupal\Component\Utility\DeprecationHelper::backwardsCompatibleCall(\Drupal::VERSION, '10.1.0', fn() => \Drupal\Core\Utility\Error::logException(\Drupal::logger('media_library_extend'), $e), fn() => watchdog_exception('media_library_extend', $e));
+     }
+   }
+ 
+diff --git a/src/Plugin/MediaLibrarySource/LoremPicsum.php b/src/Plugin/MediaLibrarySource/LoremPicsum.php
+index 43981641d8d41e2dd7c34352650adee41e58d2ad..55b0e2efb17690acce65a04673e9e4a7d0c70cbc 100644
+--- a/src/Plugin/MediaLibrarySource/LoremPicsum.php
++++ b/src/Plugin/MediaLibrarySource/LoremPicsum.php
+@@ -190,7 +190,7 @@ class LoremPicsum extends MediaLibrarySourceBase {
+       return $entity->id();
+     }
+     catch (\Exception $e) {
+-      watchdog_exception('media_library_extend', $e);
++      \Drupal\Component\Utility\DeprecationHelper::backwardsCompatibleCall(\Drupal::VERSION, '10.1.0', fn() => \Drupal\Core\Utility\Error::logException(\Drupal::logger('media_library_extend'), $e), fn() => watchdog_exception('media_library_extend', $e));
+     }
+   }
+ 

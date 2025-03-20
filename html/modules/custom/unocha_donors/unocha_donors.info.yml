@@ -2,7 +2,7 @@ type: module
 name: UNOCHA Donors
 description: 'Handles donors.'
 package: unocha
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10 || ^11
 dependencies:
   - drupal:ocha_key_figures
   - drupal:unocha_utility
