@@ -4,6 +4,29 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [2.4.1](https://github.com/UN-OCHA/unocha-site/compare/v2.4.0...v2.4.1) (2025-03-20)
+
+### Chores
+
+* Update all outdated drupal/* unocha/* drush/* weitzman/drupal-test-traits packages. ([72b711](https://github.com/UN-OCHA/unocha-site/commit/72b7115cb24544190d3b867fe408d322b4605f86))
+
+## [2.4.0](https://github.com/UN-OCHA/unocha-site/compare/v2.3.1...v2.4.0) (2025-03-18)
+
+### Features
+
+* New logo [#UNO-880](https://https://humanitarian.atlassian.net/browse/UNO-880) ([5bf911](https://github.com/UN-OCHA/unocha-site/commit/5bf911c6ef2805bad20fd49a692171babc934ccf))
+* Tag pages, stories [#UNO-878](https://https://humanitarian.atlassian.net/browse/UNO-878) ([d93317](https://github.com/UN-OCHA/unocha-site/commit/d933176d8986dc0dc35d57b30fd78f8ee4004498))
+* Up to 4 images ([ba1f06](https://github.com/UN-OCHA/unocha-site/commit/ba1f06b1d0205d2146ab6d8c8226495faeaab7ce), [5be1b8](https://github.com/UN-OCHA/unocha-site/commit/5be1b8f7942c694da1b8ca471f3e0feb796e864a))
+
+### Chores
+
+* Move core-dev to dev ([ff0039](https://github.com/UN-OCHA/unocha-site/commit/ff00390678c7a4b00961df648345296419b06c71))
+* Update all outdated drupal/* unocha/* drush/* weitzman/drupal-test-traits packages. ([ffb0f8](https://github.com/UN-OCHA/unocha-site/commit/ffb0f801d792ee1bf20cf86590a26057fffa4cf2), [b56104](https://github.com/UN-OCHA/unocha-site/commit/b56104fd849fad22ca82ce985ae3037684ace362), [22323e](https://github.com/UN-OCHA/unocha-site/commit/22323ecd59c0b2096a7d04e18ae304bafd113720))
+
+##### Deps-dev
+
+* Bump axios ([76c766](https://github.com/UN-OCHA/unocha-site/commit/76c766062fb2571cbfb7e875ab48aca631056884))
+
 ## [2.3.1](https://github.com/UN-OCHA/unocha-site/compare/v2.3.0...v2.3.1) (2025-02-20)
 
 ### Chores

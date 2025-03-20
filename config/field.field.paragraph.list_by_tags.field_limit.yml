@@ -1,0 +1,25 @@
+uuid: c67f099b-e08b-4228-979c-ae2cc931a10a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_limit
+    - paragraphs.paragraphs_type.list_by_tags
+id: paragraph.list_by_tags.field_limit
+field_name: field_limit
+entity_type: paragraph
+bundle: list_by_tags
+label: Limit
+description: 'Maximum number of documents to show at once in the list.'
+required: true
+translatable: false
+default_value:
+  -
+    value: 5
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

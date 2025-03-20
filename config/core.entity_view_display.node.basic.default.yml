@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.basic.field_children_menu
     - field.field.node.basic.field_custom_content
     - field.field.node.basic.field_metatags
+    - field.field.node.basic.field_tags
     - node.type.basic
   module:
     - layout_builder
@@ -46,6 +47,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
     region: content
 hidden:
   field_children_menu: true

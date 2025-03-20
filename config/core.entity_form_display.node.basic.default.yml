@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.basic.field_children_menu
     - field.field.node.basic.field_custom_content
     - field.field.node.basic.field_metatags
+    - field.field.node.basic.field_tags
     - node.type.basic
   module:
     - layout_paragraphs
@@ -55,7 +56,9 @@ content:
     weight: 4
     region: content
     settings:
+      view_mode: default
       preview_view_mode: preview
+      form_display_mode: default
       nesting_depth: 2
       require_layouts: 0
       empty_message: 'Placeholder message to display when field is empty'
@@ -67,6 +70,16 @@ content:
     settings:
       sidebar: true
       use_details: true
+    third_party_settings: {  }
+  field_tags:
+    type: entity_reference_autocomplete_tags
+    weight: 28
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select

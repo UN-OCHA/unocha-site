@@ -1,0 +1,23 @@
+uuid: a795e68e-1343-4bfb-96f6-69ebb2b953fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_order_by
+    - paragraphs.paragraphs_type.list_by_tags
+  module:
+    - options
+id: paragraph.list_by_tags.field_order_by
+field_name: field_order_by
+entity_type: paragraph
+bundle: list_by_tags
+label: 'Order by'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: changed
+default_value_callback: ''
+settings: {  }
+field_type: list_string
