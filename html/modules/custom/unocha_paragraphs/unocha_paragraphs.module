@@ -5,6 +5,7 @@
  * Module file for the unocha_paragraphs module.
  */
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
@@ -12,6 +13,7 @@ use Drupal\Core\Menu\MenuLinkInterface;
 use Drupal\Core\Menu\MenuLinkTreeElement;
 use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\Core\Render\Element;
+use Drupal\Core\Template\Attribute;
 use Drupal\Core\Url;
 use Drupal\node\NodeInterface;
 use Drupal\paragraphs\ParagraphInterface;
@@ -284,6 +286,8 @@ function unocha_paragraphs_preprocess_paragraph__image(array &$variables) {
  * Implements hook_preprocess_paragraph__type().
  */
 function unocha_paragraphs_preprocess_paragraph__list_by_tags(array &$variables) {
+  static $pager_ids = [];
+
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = $variables['paragraph'];
   $view_mode = $variables['view_mode'] ?? '';
@@ -312,7 +316,26 @@ function unocha_paragraphs_preprocess_paragraph__list_by_tags(array &$variables)
   $order_direction = $paragraph->field_order_direction?->value ?? 'DESC';
   $paragraph_view_mode = $paragraph->field_view_mode?->value ?? 'title';
 
-  $nodes = unocha_paragraphs_get_content_by_tags($conditions, $limit, $exclude, $order_by, $order_direction);
+  $use_pager = FALSE;
+  $offset = 0;
+
+  /** @var \Drupal\Core\Pager\PagerManagerInterface $pager_manager */
+  $pager_manager = \Drupal::service('pager.manager');
+  if (!isset($pager_ids[$paragraph->id()])) {
+    $pager_ids[$paragraph->id()] = count($pager_ids);
+  }
+  $pager_id = $pager_ids[$paragraph->id()];
+
+  $page = $pager_manager->findPage($pager_id);
+
+  if ($paragraph->hasField('field_use_pager')) {
+    $use_pager = $paragraph->field_use_pager?->value ?? FALSE;
+    if ($use_pager) {
+      $offset = $page * $limit;
+    }
+  }
+
+  $nodes = unocha_paragraphs_get_content_by_tags($conditions, $limit, $exclude, $order_by, $order_direction, $use_pager, $offset, $pager_id);
 
   if ($paragraph_view_mode == 'title') {
     $items = [];
@@ -320,8 +343,15 @@ function unocha_paragraphs_preprocess_paragraph__list_by_tags(array &$variables)
       $items[] = $node->toLink($node->label());
     }
     $variables['content']['nodes'] = [
-      '#theme' => 'item_list',
-      '#items' => $items,
+      'list' => [
+        '#theme' => 'item_list',
+        '#items' => $items,
+      ],
+      'pager' => [
+        '#type' => 'mini_pager',
+        '#pagination_heading_level' => 3,
+        '#element' => $pager_id,
+      ],
     ];
   }
   else {
@@ -330,7 +360,14 @@ function unocha_paragraphs_preprocess_paragraph__list_by_tags(array &$variables)
       ->getViewBuilder('node')
       ->viewMultiple($nodes, $paragraph_view_mode);
 
-    $variables['content']['nodes'] = $build;
+    $variables['content']['nodes'] = [
+      'list' => $build,
+      'pager' => [
+        '#type' => 'mini_pager',
+        '#pagination_heading_level' => 3,
+        '#element' => $pager_id,
+      ],
+    ];
   }
 }
 
@@ -393,15 +430,21 @@ function unocha_paragraphs_get_stories(array $conditions = [], $limit = 3, array
  * @return \Drupal\node\NodeInterface[]
  *   List of nodes.
  */
-function unocha_paragraphs_get_content_by_tags(array $conditions = [], $limit = 3, array $exclude = [], $order_by = 'changed', $order_direction = 'DESC') {
+function unocha_paragraphs_get_content_by_tags(array $conditions = [], $limit = 3, array $exclude = [], $order_by = 'changed', $order_direction = 'DESC', $use_pager = FALSE, $offset = 0, $pager_id = 0) {
   $storage = \Drupal::entityTypeManager()->getStorage('node');
 
   $query = $storage
     ->getQuery()
     ->accessCheck(TRUE)
     ->condition('status', 1)
-    ->sort($order_by, $order_direction)
-    ->range(0, $limit);
+    ->sort($order_by, $order_direction);
+
+  if ($use_pager) {
+    $query->pager($limit, $pager_id);
+  }
+  else {
+    $query->range($offset, $limit);
+  }
 
   // Exclude stories.
   if (!empty($exclude)) {
@@ -661,4 +704,112 @@ function unocha_paragraphs_views_data() {
   ];
 
   return $data;
+}
+
+/**
+ * Prepares variables for pager templates.
+ *
+ * Default template: pager.html.twig.
+ *
+ * Menu callbacks that display paged query results should use #type => pager
+ * to retrieve a pager control so that users can view other results. Format a
+ * list of nearby pages with additional query results.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - pager: A render element containing:
+ *     - #tags: An array of labels for the controls in the pager.
+ *     - #element: An optional integer to distinguish between multiple pagers on
+ *       one page.
+ *     - #pagination_heading_level: An optional heading level for the pager.
+ *     - #parameters: An associative array of query string parameters to append
+ *       to the pager links.
+ *     - #route_parameters: An associative array of the route parameters.
+ *     - #quantity: The number of pages in the list.
+ */
+function template_preprocess_mini_pager(&$variables) {
+  $element = $variables['pager']['#element'];
+  $parameters = $variables['pager']['#parameters'];
+  $route_name = $variables['pager']['#route_name'];
+  $route_parameters = $variables['pager']['#route_parameters'] ?? [];
+
+  /** @var \Drupal\Core\Pager\PagerManagerInterface $pager_manager */
+  $pager_manager = \Drupal::service('pager.manager');
+
+  $pager = $pager_manager->getPager($element);
+
+  // Nothing to do if there is no pager.
+  if (!isset($pager)) {
+    return;
+  }
+
+  $pager_max = $pager->getTotalPages();
+
+  // Nothing to do if there is only one page.
+  if ($pager_max <= 1) {
+    return;
+  }
+
+  $tags = $variables['pager']['#tags'];
+
+  $current_page = $pager->getCurrentPage();
+  $pager_current = $current_page + 1;
+
+  // Create the "first" and "previous" links if we are not on the first page.
+  if ($current_page > 0) {
+    $items['previous'] = [];
+    $items['previous']['attributes'] = new Attribute();
+    $options = [
+      'query' => $pager_manager->getUpdatedParameters($parameters, $element, $current_page - 1),
+    ];
+    $items['previous']['href'] = Url::fromRoute($route_name, $route_parameters, $options)->toString();
+    if (isset($tags[1])) {
+      $items['previous']['text'] = $tags[1];
+    }
+  }
+
+  // Link to current page.
+  $options = [
+    'query' => $pager_manager->getUpdatedParameters($parameters, $element, $current_page),
+  ];
+  $items['pages'][$pager_current]['href'] = Url::fromRoute($route_name, $route_parameters, $options)->toString();
+  $items['pages'][$pager_current]['attributes'] = new Attribute();
+  $items['pages'][$pager_current]['attributes']->setAttribute('aria-current', 'page');
+  $variables['current'] = $pager_current;
+
+  // Create the "next" and "last" links if we are not on the last page.
+  if ($current_page < ($pager_max - 1)) {
+    $items['next'] = [];
+    $items['next']['attributes'] = new Attribute();
+    $options = [
+      'query' => $pager_manager->getUpdatedParameters($parameters, $element, $current_page + 1),
+    ];
+    $items['next']['href'] = Url::fromRoute($route_name, $route_parameters, $options)->toString();
+    if (isset($tags[3])) {
+      $items['next']['text'] = $tags[3];
+    }
+  }
+
+  $variables['items'] = $items;
+  $variables['heading_id'] = Html::getUniqueId('pagination-heading');
+  $variables['pagination_heading_level'] = $variables['pager']['#pagination_heading_level'] ?? 'h4';
+  if (!preg_match('/^h[1-6]$/', $variables['pagination_heading_level'])) {
+    $variables['pagination_heading_level'] = 'h4';
+  }
+
+  // The rendered link needs to play well with any other query parameter used
+  // on the page, like exposed filters, so for the cacheability all query
+  // parameters matter.
+  $variables['#cache']['contexts'][] = 'url.query_args';
+}
+
+/**
+ * Implements hook_theme().
+ */
+function unocha_paragraphs_theme() {
+  return [
+    'mini_pager' => [
+      'render element' => 'pager',
+    ],
+  ];
 }
