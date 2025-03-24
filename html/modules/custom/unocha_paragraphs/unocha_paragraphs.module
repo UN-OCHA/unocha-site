@@ -316,6 +316,8 @@ function unocha_paragraphs_preprocess_paragraph__list_by_tags(array &$variables)
   $order_direction = $paragraph->field_order_direction?->value ?? 'DESC';
   $paragraph_view_mode = $paragraph->field_view_mode?->value ?? 'title';
 
+  $variables['view_mode'] = $paragraph_view_mode;
+
   $use_pager = FALSE;
   $offset = 0;
 

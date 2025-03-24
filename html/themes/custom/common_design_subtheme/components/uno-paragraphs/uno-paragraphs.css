@@ -20,6 +20,7 @@
   }
 }
 
+.paragraph--type--list-by-tags,
 .paragraph--type--image,
 .paragraph--type--text-and-image,
 .paragraph--type--embed,
@@ -43,6 +44,7 @@
 }
 
 @media screen and (min-width: 768px) {
+  .paragraph--type--list-by-tags,
   .paragraph--type--image,
   .paragraph--type--text-and-image,
   .paragraph--type--embed,
