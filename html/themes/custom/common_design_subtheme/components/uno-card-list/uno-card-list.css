@@ -8,6 +8,7 @@
   --uno-card-list-gap-size: 2rem;
 }
 
+.paragraph--type--list-by-tags.paragraph--view-mode--card,
 .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node,
 .view-stories .view-content,
 .uno-stories .uno-stories__content,
@@ -24,6 +25,7 @@
 .view-display-id-regional_responses .view-content {
   gap: 0 var(--uno-card-list-gap-size);
 }
+.paragraph--type--list-by-tags.paragraph--view-mode--card article,
 .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node article,
 .view-stories .view-content article,
 .uno-stories .uno-stories__content article,
@@ -38,6 +40,7 @@
 }
 
 @media screen and (min-width: 480px) {
+  .paragraph--type--list-by-tags.paragraph--view-mode--card,
   .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node,
   .view-stories .view-content,
   .uno-stories .uno-stories__content,
@@ -52,6 +55,7 @@
 }
 
 @media screen and (min-width: 750px) {
+  .paragraph--type--list-by-tags.paragraph--view-mode--card,
   .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node,
   .view-stories .view-content,
   .uno-stories .uno-stories__content,
@@ -82,4 +86,8 @@
 /* Cards in a layout */
 .layout__region .paragraph--type--node.paragraph--view-mode--cards .field--name-field-node {
   display: block;
+}
+
+.paragraph--type--list-by-tags nav.pager {
+  width: 100%;
 }
