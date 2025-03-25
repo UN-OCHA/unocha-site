@@ -274,12 +274,11 @@ function unocha_paragraphs_preprocess_paragraph__image(array &$variables) {
   $caption = '';
   if ($paragraph->hasField('field_caption_override') && !$paragraph->get('field_caption_override')->isEmpty()) {
     $caption = $paragraph->get('field_caption_override')->value;
+    $variables['content']['caption'] = [
+      '#type' => 'markup',
+      '#markup' => $caption,
+    ];
   }
-
-  $variables['content']['caption'] = [
-    '#type' => 'markup',
-    '#markup' => $caption,
-  ];
 }
 
 /**

@@ -42,7 +42,7 @@
 {{ attach_library('common_design_subtheme/uno-caption') }}
 
 {% set common_caption = false %}
-{% if content.caption|length %}
+{% if content.caption|length > 0 %}
   {% set common_caption = true %}
 {% endif %}
 
