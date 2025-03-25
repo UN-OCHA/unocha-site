@@ -38,36 +38,22 @@
  * @ingroup themeable
  */
 #}
-
-{{ attach_library('common_design_subtheme/uno-caption') }}
-
-{% set common_caption = false %}
-{% if content.caption|length > 0 %}
-  {% set common_caption = true %}
-{% endif %}
-
 {%
   set classes = [
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    not paragraph.isPublished() ? 'paragraph--unpublished',
-    common_caption ? 'paragraph--common-caption'
+    not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
+
+{{ attach_library('common_design_subtheme/cd-cards')}}
+{{ attach_library('common_design_subtheme/uno-card-list')}}
+
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content|without('field_caption_override', 'caption') }}
+      {{ content }}
     {% endblock %}
-
-    {% if common_caption %}
-      <div class="cd-caption cd-caption--override">
-        <div class="cd-caption__inner">
-          {{ content.caption }}
-        </div>
-      </div>
-    {% endif %}
   </div>
-
 {% endblock paragraph %}

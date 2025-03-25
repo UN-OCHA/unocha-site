@@ -274,12 +274,11 @@ function unocha_paragraphs_preprocess_paragraph__image(array &$variables) {
   $caption = '';
   if ($paragraph->hasField('field_caption_override') && !$paragraph->get('field_caption_override')->isEmpty()) {
     $caption = $paragraph->get('field_caption_override')->value;
+    $variables['content']['caption'] = [
+      '#type' => 'markup',
+      '#markup' => $caption,
+    ];
   }
-
-  $variables['content']['caption'] = [
-    '#type' => 'markup',
-    '#markup' => $caption,
-  ];
 }
 
 /**
@@ -315,6 +314,8 @@ function unocha_paragraphs_preprocess_paragraph__list_by_tags(array &$variables)
   $order_by = $paragraph->field_order_by?->value ?? 'changed';
   $order_direction = $paragraph->field_order_direction?->value ?? 'DESC';
   $paragraph_view_mode = $paragraph->field_view_mode?->value ?? 'title';
+
+  $variables['view_mode'] = $paragraph_view_mode;
 
   $use_pager = FALSE;
   $offset = 0;
