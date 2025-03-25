@@ -9,6 +9,7 @@ dependencies:
     - field.field.paragraph.list_by_tags.field_tags
     - field.field.paragraph.list_by_tags.field_text
     - field.field.paragraph.list_by_tags.field_title
+    - field.field.paragraph.list_by_tags.field_use_pager
     - field.field.paragraph.list_by_tags.field_view_mode
     - paragraphs.paragraphs_type.list_by_tags
   module:
@@ -38,4 +39,5 @@ hidden:
   field_order_by: true
   field_order_direction: true
   field_tags: true
+  field_use_pager: true
   field_view_mode: true
