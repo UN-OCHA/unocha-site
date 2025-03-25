@@ -9,6 +9,7 @@ dependencies:
     - field.field.paragraph.list_by_tags.field_tags
     - field.field.paragraph.list_by_tags.field_text
     - field.field.paragraph.list_by_tags.field_title
+    - field.field.paragraph.list_by_tags.field_use_pager
     - field.field.paragraph.list_by_tags.field_view_mode
     - paragraphs.paragraphs_type.list_by_tags
   module:
@@ -27,13 +28,13 @@ content:
     third_party_settings: {  }
   field_order_by:
     type: options_select
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_order_direction:
     type: options_select
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -63,9 +64,16 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_use_pager:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_view_mode:
     type: options_select
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }

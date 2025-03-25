@@ -1,0 +1,23 @@
+uuid: 36338399-bf67-4303-9168-794052923e87
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_use_pager
+    - paragraphs.paragraphs_type.list_by_tags
+id: paragraph.list_by_tags.field_use_pager
+field_name: field_use_pager
+entity_type: paragraph
+bundle: list_by_tags
+label: 'Use pager'
+description: 'Add a pager to the output.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
