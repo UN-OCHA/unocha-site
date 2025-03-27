@@ -29,12 +29,6 @@
       "D11 compatibility - #3431898": "PATCHES/media_library_extend-D11-compatibility.patch",
       "https://www.drupal.org/project/media_library_extend/issues/3467575": "PATCHES/i3467575.patch"
     },
-    "unocha/ocha_key_figures": {
-      "Test patch for class change": "PATCHES/ocha_key_figures-class-update.patch"
-    },
-    "unocha/ocha_visualisations": {
-      "D11 compatibility": "PATCHES/ocha_visualisations-D11-compatibility.patch"
-    },
     "drupal/samples": {
       "D11 compatibility #3434312": "https://www.drupal.org/files/issues/2024-03-24/samples.1.0.0-beta3.rector.patch"
     },

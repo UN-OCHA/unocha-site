@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "08a85b97365e8af5d61c8e7ff1a6181c",
+    "content-hash": "9acbd4305192482e623fbc31ee79af45",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -11136,16 +11136,16 @@
         },
         {
             "name": "unocha/ocha_key_figures",
-            "version": "2.1.10",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/ocha_key_figures.git",
-                "reference": "ec43e99fa0f9ce7aab16751d04cc4d26ed704856"
+                "reference": "a7bd5fca65dddcc51f779b0397664675a28da3fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/ocha_key_figures/zipball/ec43e99fa0f9ce7aab16751d04cc4d26ed704856",
-                "reference": "ec43e99fa0f9ce7aab16751d04cc4d26ed704856",
+                "url": "https://api.github.com/repos/UN-OCHA/ocha_key_figures/zipball/a7bd5fca65dddcc51f779b0397664675a28da3fb",
+                "reference": "a7bd5fca65dddcc51f779b0397664675a28da3fb",
                 "shasum": ""
             },
             "require": {
@@ -11159,9 +11159,9 @@
             "description": "UNOCHA Key Figures",
             "support": {
                 "issues": "https://github.com/UN-OCHA/ocha_key_figures/issues",
-                "source": "https://github.com/UN-OCHA/ocha_key_figures/tree/2.1.10"
+                "source": "https://github.com/UN-OCHA/ocha_key_figures/tree/v3.0.0"
             },
-            "time": "2024-01-15T16:01:47+00:00"
+            "time": "2025-03-27T10:00:31+00:00"
         },
         {
             "name": "unocha/ocha_monitoring",
@@ -11226,16 +11226,16 @@
         },
         {
             "name": "unocha/ocha_visualisations",
-            "version": "v0.0.3",
+            "version": "v0.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/ocha_visualisations.git",
-                "reference": "d86e38652859a0ce169ecfb1e0d7c7c135bf517b"
+                "reference": "556ecaaa54c9cb8687d76b2741c91f33d47896fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/ocha_visualisations/zipball/d86e38652859a0ce169ecfb1e0d7c7c135bf517b",
-                "reference": "d86e38652859a0ce169ecfb1e0d7c7c135bf517b",
+                "url": "https://api.github.com/repos/UN-OCHA/ocha_visualisations/zipball/556ecaaa54c9cb8687d76b2741c91f33d47896fd",
+                "reference": "556ecaaa54c9cb8687d76b2741c91f33d47896fd",
                 "shasum": ""
             },
             "require": {
@@ -11249,9 +11249,9 @@
             "description": "UNOCHA visualisations",
             "support": {
                 "issues": "https://github.com/UN-OCHA/ocha_visualisations/issues",
-                "source": "https://github.com/UN-OCHA/ocha_visualisations/tree/v0.0.3"
+                "source": "https://github.com/UN-OCHA/ocha_visualisations/tree/v0.0.4"
             },
-            "time": "2024-11-05T10:04:56+00:00"
+            "time": "2025-03-27T09:52:08+00:00"
         },
         {
             "name": "unocha/un_date",

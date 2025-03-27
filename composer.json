@@ -78,7 +78,7 @@
         "orakili/composer-drupal-info-file-patch-helper": "^1",
         "unocha/common_design": "^9.3",
         "unocha/gtm_barebones": "^1.0",
-        "unocha/ocha_key_figures": "^2.0",
+        "unocha/ocha_key_figures": "^3",
         "unocha/ocha_monitoring": "^1.0",
         "unocha/ocha_search": "^1.0",
         "unocha/ocha_visualisations": "*",
