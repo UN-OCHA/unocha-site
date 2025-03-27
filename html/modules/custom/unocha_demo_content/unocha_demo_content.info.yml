@@ -1,7 +1,7 @@
 name: 'UNOCHA demo content'
 description: Manages demo content.
 type: module
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10 || ^11
 package: 'UNOCHA'
 dependencies:
   - default_content:default_content
