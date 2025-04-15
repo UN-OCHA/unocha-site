@@ -7,6 +7,7 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Http\Exception\CacheableNotFoundHttpException;
 use Drupal\Core\Link;
+use Drupal\Core\StringTranslation\ByteSizeMarkup;
 use Drupal\Core\Url;
 use Drupal\unocha_reliefweb\Helpers\UrlHelper;
 use Drupal\unocha_reliefweb\Services\ReliefWebDocuments;
@@ -238,7 +239,7 @@ class ReliefWebDocumentController extends ControllerBase {
           'label' => $label,
           'description' => '(' . implode(' | ', array_filter([
             mb_strtoupper($extension),
-            format_size($attachment['filesize']),
+            ByteSizeMarkup::create($attachment['filesize']),
             $attachment['description'] ?? '',
           ])) . ')',
         ];
