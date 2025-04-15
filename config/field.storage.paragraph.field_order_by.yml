@@ -15,8 +15,11 @@ settings:
       value: title
       label: Title
     -
+      value: created
+      label: Created
+    -
       value: changed
-      label: 'Authored on'
+      label: 'Authored on (last updated)'
   allowed_values_function: ''
 module: options
 locked: false
