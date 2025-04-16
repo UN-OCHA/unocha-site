@@ -4,6 +4,21 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [2.5.0](https://github.com/UN-OCHA/unocha-site/compare/v2.4.3...v2.5.0) (2025-04-15)
+
+### Features
+
+* New logo [#UNO-880](https://https://humanitarian.atlassian.net/browse/UNO-880) ([39ab6d](https://github.com/UN-OCHA/unocha-site/commit/39ab6d0c80dfba0152d6a926ac8e0b433b5640aa))
+
+### Bug Fixes
+
+* Remove deprecated function ([f9a7ef](https://github.com/UN-OCHA/unocha-site/commit/f9a7efd92c03174f98b1d4e680f295ef9e7b6228))
+
+### Chores
+
+* Bump versions too ([b86fb8](https://github.com/UN-OCHA/unocha-site/commit/b86fb8917e1b91a5c46f8c423c778768c397f447))
+* Update all outdated drupal/* unocha/* drush/* weitzman/drupal-test-traits packages. ([9a5597](https://github.com/UN-OCHA/unocha-site/commit/9a55979e547bfff2676c847bb81ccd3986ce956d))
+
 ## [2.4.1](https://github.com/UN-OCHA/unocha-site/compare/v2.4.0...v2.4.1) (2025-03-20)
 
 ### Chores
