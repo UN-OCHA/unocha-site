@@ -1,4 +1,4 @@
-name: Run Composer Update with Config
+name: Run Composer Update with Scripts
 
 on:
   schedule:
