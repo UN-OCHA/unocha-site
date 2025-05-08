@@ -42,9 +42,7 @@ LABEL info.humanitarianresponse.build.date=$BUILD_DATE \
       info.humanitarianresponse.build.vcs-url=$VCS_URL \
       info.humanitarianresponse.build.vcs-ref=$VCS_REF
 
-RUN mkdir -p /etc/nginx/custom && \
-    # Permit nginx access to the MAPBX_SECRET env variable.
-    sed -i 's/env NGINX_OVERRIDE_PROTOCOL;/env NGINX_OVERRIDE_PROTOCOL;\n\n## Mapbox access token.\nenv MAPBOX_TOKEN;/' /etc/nginx/nginx.conf
+RUN mkdir -p /etc/nginx/custom
 
 COPY --from=builder /srv/www/assets /srv/www/assets
 COPY --from=builder /srv/www/config /srv/www/config
@@ -56,5 +54,7 @@ COPY --from=builder /srv/www/composer.patches.json /srv/www/composer.patches.jso
 COPY --from=builder /srv/www/composer.lock /srv/www/composer.lock
 COPY --from=builder /srv/www/PATCHES /srv/www/PATCHES
 COPY --from=builder /srv/www/scripts /srv/www/scripts
+COPY --from=builder /srv/www/docker/etc/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY --from=builder /srv/www/docker/etc/nginx/custom /etc/nginx/custom/
 COPY --from=builder /srv/www/docker/etc/nginx/sites-enabled/02_mapbox_proxy_cache.conf /etc/nginx/sites-enabled/02_mapbox_proxy_cache.conf
+COPY --from=builder /srv/www/docker/etc/nginx/sites-enabled/03_drupal_legacy_map.conf /etc/nginx/sites-enabled/03_drupal_legacy_map.conf
