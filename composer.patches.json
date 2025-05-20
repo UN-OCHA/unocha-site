@@ -15,9 +15,6 @@
     "drupal/default_content" : {
       "https://www.drupal.org/project/default_content/issues/2885285#comment-15342107": "https://www.drupal.org/files/issues/2023-12-01/i2885285-exporting-menu-link-2.patch"
     },
-    "drupal/dev_mode": {
-      "D11 compatibility - #3429839": "PATCHES/dev_mode-D11-compatibility-3429839.patch"
-    },
     "drupal/imageapi_optimize_webp": {
       "Fix derivatives for webp source images": "PATCHES/imageapi_optimize_webp-webp-source-image.patch",
       "Support imagemagick toolkit": "PATCHES/imageapi_optimize_webp-imagemagick-toolkit.patch"
