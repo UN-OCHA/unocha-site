@@ -4,6 +4,32 @@
 All notable changes to this project will be documented in this file.
 <!--- END HEADER -->
 
+## [2.6.0](https://github.com/UN-OCHA/unocha-site/compare/v2.5.1...v2.6.0) (2025-05-20)
+
+### Features
+
+* Default redir to the home page for an legacy dms links that remain. ([e67968](https://github.com/UN-OCHA/unocha-site/commit/e679682c674620048088b8c9589ad625709078ac))
+
+### Bug Fixes
+
+* Turns out we need an extra config line in the main file. So add a copy. ([121fb8](https://github.com/UN-OCHA/unocha-site/commit/121fb89ffadf908ab18cefcfce218d4fbd9b8efd))
+
+### Chores
+
+* Add csp exception for clarity ([ed1adc](https://github.com/UN-OCHA/unocha-site/commit/ed1adcdf3fa7aa7682de8c0a94af06d9af8a1596))
+* Change action name too ([539d73](https://github.com/UN-OCHA/unocha-site/commit/539d73b01c44ae742fea4a595c293ece7f20a3c0))
+* Map the most popular DMS legacy files to new URLs so we can delete them from disk to stop users accessing the ones that should not be online. ([f9bad8](https://github.com/UN-OCHA/unocha-site/commit/f9bad8e24958499e6ac3001e8938ee59d227c428))
+* Update all outdated drupal/* unocha/* drush/* weitzman/drupal-test-traits packages. ([d196da](https://github.com/UN-OCHA/unocha-site/commit/d196da3495e412b7b3f3489eb8d76fd97bb6cc6a), [d0ecb0](https://github.com/UN-OCHA/unocha-site/commit/d0ecb040c205c78ed16561791af74a014fe7455e), [77af58](https://github.com/UN-OCHA/unocha-site/commit/77af589b6aa9c1fbbcf17484301b1fa1f9f0bc9e))
+* Update dev_mode module ([0106d6](https://github.com/UN-OCHA/unocha-site/commit/0106d6393ea191a2537009cd6d41a551681daa06))
+* Update patch to avoid removed function ([35d3d3](https://github.com/UN-OCHA/unocha-site/commit/35d3d37ad59fa7b0a28f6429f933b4e93be45401))
+* Use standard update action with flag ([3ef2e2](https://github.com/UN-OCHA/unocha-site/commit/3ef2e24efdb41c7022495a74245eadea4cd4b83d))
+* Use the correct action ([b03c63](https://github.com/UN-OCHA/unocha-site/commit/b03c63c85bdc42480f44677a2c600ffe055ad78c))
+* Use the updates job with scripts ([a1d1b9](https://github.com/UN-OCHA/unocha-site/commit/a1d1b998d8a2eb157f8f5e54ab0c010f06245ca0))
+
+##### Deps
+
+* Bump tar-fs and puppeteer ([65aa68](https://github.com/UN-OCHA/unocha-site/commit/65aa689a4bdae619c84874bb2cdabf6d127e4532))
+
 ## [2.5.0](https://github.com/UN-OCHA/unocha-site/compare/v2.4.3...v2.5.0) (2025-04-15)
 
 ### Features
