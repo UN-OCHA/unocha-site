@@ -26,9 +26,6 @@
       "D11 compatibility - #3431898": "PATCHES/media_library_extend-D11-compatibility.patch",
       "https://www.drupal.org/project/media_library_extend/issues/3467575": "PATCHES/i3467575.patch"
     },
-    "drupal/samples": {
-      "D11 compatibility #3434312": "https://www.drupal.org/files/issues/2024-03-24/samples.1.0.0-beta3.rector.patch"
-    },
     "drupal/social_auth": {
       "Type Error - #3496656": "PATCHES/social_auth-type-error-3496656.patch"
     },
