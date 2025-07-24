@@ -118,16 +118,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.351.0",
+            "version": "3.351.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "a7b6ed6936317dc112531ec6f6119418e0575464"
+                "reference": "2f00efa2544d158ea366c1e1174097ef330ec883"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a7b6ed6936317dc112531ec6f6119418e0575464",
-                "reference": "a7b6ed6936317dc112531ec6f6119418e0575464",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/2f00efa2544d158ea366c1e1174097ef330ec883",
+                "reference": "2f00efa2544d158ea366c1e1174097ef330ec883",
                 "shasum": ""
             },
             "require": {
@@ -209,9 +209,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.351.0"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.351.5"
             },
-            "time": "2025-07-16T15:14:44+00:00"
+            "time": "2025-07-23T18:04:16+00:00"
         },
         {
             "name": "bower-asset/choices.js",
@@ -2568,17 +2568,17 @@
         },
         {
             "name": "drupal/environment_indicator",
-            "version": "4.0.24",
+            "version": "4.0.25",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/environment_indicator.git",
-                "reference": "4.0.24"
+                "reference": "4.0.25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/environment_indicator-4.0.24.zip",
-                "reference": "4.0.24",
-                "shasum": "d6a285a2fdd6a801e1f0972704d1bca4629f048f"
+                "url": "https://ftp.drupal.org/files/projects/environment_indicator-4.0.25.zip",
+                "reference": "4.0.25",
+                "shasum": "1bb58f759644efea79a44de2af5986eee9c1966e"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10 || ^11"
@@ -2590,8 +2590,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.0.24",
-                    "datestamp": "1750261053",
+                    "version": "4.0.25",
+                    "datestamp": "1753296518",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3271,7 +3271,7 @@
             "extra": {
                 "drupal": {
                     "version": "7.0.7",
-                    "datestamp": "1752264962",
+                    "datestamp": "1753116879",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5077,17 +5077,17 @@
         },
         {
             "name": "drupal/user_expire",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/user_expire.git",
-                "reference": "2.1.0"
+                "reference": "2.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/user_expire-2.1.0.zip",
-                "reference": "2.1.0",
-                "shasum": "cdaf39f4813d75f65d7a4579631487a3b49604d8"
+                "url": "https://ftp.drupal.org/files/projects/user_expire-2.1.1.zip",
+                "reference": "2.1.1",
+                "shasum": "b914b9421cf7a407491e012bdf27487d59c463ea"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11 || ^12"
@@ -5098,8 +5098,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.0",
-                    "datestamp": "1736892990",
+                    "version": "2.1.1",
+                    "datestamp": "1752780672",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -12070,16 +12070,16 @@
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
-            "version": "v1.1.1",
+            "version": "v1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/composer-installer.git",
-                "reference": "6e0fa428497bf560152ee73ffbb8af5c6a56b0dd"
+                "reference": "e9cf5e4bbf7eeaf9ef5db34938942602838fc2b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/composer-installer/zipball/6e0fa428497bf560152ee73ffbb8af5c6a56b0dd",
-                "reference": "6e0fa428497bf560152ee73ffbb8af5c6a56b0dd",
+                "url": "https://api.github.com/repos/PHPCSStandards/composer-installer/zipball/e9cf5e4bbf7eeaf9ef5db34938942602838fc2b1",
+                "reference": "e9cf5e4bbf7eeaf9ef5db34938942602838fc2b1",
                 "shasum": ""
             },
             "require": {
@@ -12162,7 +12162,7 @@
                     "type": "thanks_dev"
                 }
             ],
-            "time": "2025-06-27T17:24:01+00:00"
+            "time": "2025-07-17T20:45:56+00:00"
         },
         {
             "name": "doctrine/common",
@@ -12774,7 +12774,7 @@
             "extra": {
                 "drupal": {
                     "version": "5.4.0",
-                    "datestamp": "1751916158",
+                    "datestamp": "1752755621",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -15069,16 +15069,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.12.27",
+            "version": "1.12.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "3a6e423c076ab39dfedc307e2ac627ef579db162"
+                "reference": "fcf8b71aeab4e1a1131d1783cef97b23a51b87a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/3a6e423c076ab39dfedc307e2ac627ef579db162",
-                "reference": "3a6e423c076ab39dfedc307e2ac627ef579db162",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/fcf8b71aeab4e1a1131d1783cef97b23a51b87a9",
+                "reference": "fcf8b71aeab4e1a1131d1783cef97b23a51b87a9",
                 "shasum": ""
             },
             "require": {
@@ -15123,7 +15123,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-05-21T20:51:45+00:00"
+            "time": "2025-07-17T17:15:39+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
