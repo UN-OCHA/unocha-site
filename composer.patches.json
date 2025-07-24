@@ -32,9 +32,6 @@
     "drupal/stage_file_proxy": {
       "Stage file proxy attempts to fetch aggregated JS/CSS": "PATCHES/stage_file_proxy_3372105.patch"
     },
-    "drupal/user_expire": {
-      "Reset expiration when user is reactivated": "PATCHES/user_expire-reset-expiration-on-reactivation.patch"
-    },
     "drupal/username_enumeration_prevention": {
       "Avoid leaking the path via Drupal.settings json": "PATCHES/username_enumeration_prevention-user-login-block-form-3312288.patch"
     }
