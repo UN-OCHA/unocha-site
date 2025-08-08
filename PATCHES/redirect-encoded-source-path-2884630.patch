@@ -1,0 +1,44 @@
+diff --git a/src/RedirectRepository.php b/src/RedirectRepository.php
+index db6c569..0afb740 100644
+--- a/src/RedirectRepository.php
++++ b/src/RedirectRepository.php
+@@ -64,16 +64,30 @@ class RedirectRepository {
+    */
+   public function findMatchingRedirect($source_path, array $query = [], $language = Language::LANGCODE_NOT_SPECIFIED) {
+     $source_path = ltrim($source_path, '/');
+-    $hashes = [Redirect::generateHash($source_path, $query, $language)];
+-    if ($language != Language::LANGCODE_NOT_SPECIFIED) {
+-      $hashes[] = Redirect::generateHash($source_path, $query, Language::LANGCODE_NOT_SPECIFIED);
+-    }
+-
+-    // Add a hash without the query string if using passthrough querystrings.
+-    if (!empty($query) && $this->config->get('passthrough_querystring')) {
+-      $hashes[] = Redirect::generateHash($source_path, [], $language);
++    // The redirect hash is generated from the unmodified source path when the
++    // redirect is saved.
++    // As a result, if the original source path was encoded then its hash will
++    // not match the hash for the given source path because it has been decoded.
++    // So we do a lookup for the given source path and its URL encoded versions.
++    $source_paths = array_unique([
++      'raw' => $source_path,
++      'encoded' => str_replace('%2F', '/', rawurlencode($source_path)),
++      'encoded_plus' => str_replace('%2F', '/', urlencode($source_path)),
++    ]);
++
++    $hashes = [];
++    foreach ($source_paths as $path) {
++      $hashes[] = Redirect::generateHash($path, $query, $language);
+       if ($language != Language::LANGCODE_NOT_SPECIFIED) {
+-        $hashes[] = Redirect::generateHash($source_path, [], Language::LANGCODE_NOT_SPECIFIED);
++        $hashes[] = Redirect::generateHash($path, $query, Language::LANGCODE_NOT_SPECIFIED);
++      }
++
++      // Add a hash without the query string if using passthrough querystrings.
++      if (!empty($query) && $this->config->get('passthrough_querystring')) {
++        $hashes[] = Redirect::generateHash($path, [], $language);
++        if ($language != Language::LANGCODE_NOT_SPECIFIED) {
++          $hashes[] = Redirect::generateHash($path, [], Language::LANGCODE_NOT_SPECIFIED);
++        }
+       }
+     }
+ 

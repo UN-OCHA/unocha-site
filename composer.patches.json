@@ -29,6 +29,9 @@
     "drupal/social_auth": {
       "Type Error - #3496656": "PATCHES/social_auth-type-error-3496656.patch"
     },
+    "drupal/redirect": {
+      "Support encoded source path": "PATCHES/redirect-encoded-source-path-2884630.patch"
+    },
     "drupal/stage_file_proxy": {
       "Stage file proxy attempts to fetch aggregated JS/CSS": "PATCHES/stage_file_proxy_3372105.patch"
     },
