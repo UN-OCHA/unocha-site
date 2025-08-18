@@ -1,6 +1,6 @@
 _core:
   default_config_hash: '-QZ1seQJjnMsuxisbsBMiKHJsRblIyIkcMYrv5UF0yc'
-reliefweb_api_url: 'https://api.reliefweb.int/v1'
+reliefweb_api_url: 'https://api.reliefweb.int/v2'
 reliefweb_api_appname: unocha.org
 reliefweb_api_cache_enabled: true
 reliefweb_api_cache_lifetime: 300

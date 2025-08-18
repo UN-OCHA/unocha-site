@@ -3,7 +3,7 @@ _core:
 minimum_lifetime: 86400
 xsl: 1
 prefetch_aliases: 1
-chunk_size: auto
+chunk_size: '25000'
 batch_limit: 100
 path: xmlsitemap
 frontpage_priority: 1.0
