@@ -1,0 +1,21 @@
+uuid: 06255651-d51e-49bc-ac2c-288cb10dd407
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_embed_code
+    - paragraphs.paragraphs_type.ocha_polis
+_core:
+  default_config_hash: g-KGJ9OZ40eFUQ8Pec6mpxu6H9xV2O5VetZnFETMH7M
+id: paragraph.ocha_polis.field_embed_code
+field_name: field_embed_code
+entity_type: paragraph
+bundle: ocha_polis
+label: 'Embed code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

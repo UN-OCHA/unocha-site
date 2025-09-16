@@ -1,0 +1,21 @@
+uuid: d4ea2799-733e-4300-a096-a1fdfc834f3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.ocha_polis
+_core:
+  default_config_hash: yp0bsiF4H5Z9kpPsAFbpoXptAwM8RI-eISKKoZ_ZGs0
+id: paragraph.ocha_polis.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: ocha_polis
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
