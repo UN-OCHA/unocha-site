@@ -1,0 +1,26 @@
+uuid: 3889d03f-3cc2-4e8f-ad18-819f591a1d15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - filter.format.ckeditor
+    - paragraphs.paragraphs_type.ocha_polis
+  module:
+    - text
+_core:
+  default_config_hash: G2d7R9oJnMjAoWUBI1Gpn-U7A2rnErzO_102zYhytN0
+id: paragraph.ocha_polis.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: ocha_polis
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - ckeditor
+field_type: text_long
