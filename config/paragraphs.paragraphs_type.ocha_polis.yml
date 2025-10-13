@@ -1,0 +1,12 @@
+uuid: c530192d-4f0f-4f81-8a6a-ad9e9abef88f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: cp80BXrQKp9nC-_qshQMIZSl13QoCBlAbP7hRowT7u0
+id: ocha_polis
+label: Pol.is
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

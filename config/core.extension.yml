@@ -69,6 +69,7 @@ module:
   ocha_key_figures: 0
   ocha_mediavalet: 0
   ocha_monitoring: 0
+  ocha_polis: 0
   ocha_powerbi: 0
   ocha_search: 0
   ocha_vimeo: 0
