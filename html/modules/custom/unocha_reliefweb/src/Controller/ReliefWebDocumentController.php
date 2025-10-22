@@ -404,11 +404,48 @@ class ReliefWebDocumentController extends ControllerBase {
    *   Throw a 400 when the request doesn't have a valid JSON content.
    */
   public function getRequestContent(Request $request) {
+    // Validate the secret header.
+    $secret = $this->config->get('reliefweb_api_webhook_secret');
+    $signature = $request->headers->get('x-hub-signature-256');
+
+    if (empty($secret) || empty($signature)) {
+      throw new BadRequestHttpException('Missing or invalid webhook signature.');
+    }
+
+    if (!$this->verify($secret, $request->getContent(), $signature)) {
+      throw new BadRequestHttpException('Missing or invalid webhook signature.');
+    }
+
     $content = json_decode($request->getContent(), TRUE);
     if (empty($content) || !is_array($content)) {
       throw new BadRequestHttpException('You have to pass a JSON object');
     }
+
     return $content;
+  }
+
+  /**
+   * Verify the webhook with the stored secret.
+   *
+   * @param string $secret
+   *   The webhook secret.
+   * @param string $payload
+   *   The raw webhook payload.
+   * @param string $signature
+   *   The webhook signature.
+   *
+   * @return bool
+   *   Boolean TRUE for success.
+   */
+  public static function verify($secret, $payload, $signature): bool {
+    [$algorithm, $user_string] = explode('=', $signature);
+    $known_string = hash_hmac($algorithm, $payload, $secret);
+
+    if (!hash_equals($known_string, $user_string)) {
+      return FALSE;
+    }
+
+    return TRUE;
   }
 
 }
