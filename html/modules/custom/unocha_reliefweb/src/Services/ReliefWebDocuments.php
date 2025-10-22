@@ -932,7 +932,7 @@ class ReliefWebDocuments {
    * Performs scheduled cache invalidation for ReliefWeb documents.
    *
    * This method is called during cron runs to invalidate the 'reliefweb' cache
-   * tag, ensuring that outdated ReliefWeb document data is refreshed and up-to-date.
+   * tag, ensuring that outdated ReliefWeb document data is refreshed.
    */
   public function cron() {
     // Invalidate cache tags.
