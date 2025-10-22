@@ -388,7 +388,7 @@ class ReliefWebDocumentController extends ControllerBase {
     // Invalidate the cache for the updated entity.
     $this->getReliefWebDocuments()->invalidateCache($payload['entity_type'], $payload['entity_id']);
 
-    return new JsonResponse('OK');
+    return new JsonResponse(['status' => 'success']);
   }
 
   /**
