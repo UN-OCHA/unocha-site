@@ -406,8 +406,12 @@ class ReliefWebDocumentController extends ControllerBase {
   public function getRequestContent(Request $request) {
     // Validate the secret header.
     $secret = $this->config->get('reliefweb_api_webhook_secret');
-    $signature = $request->headers->get('x-hub-signature-256');
+    if (empty($secret)) {
+      // Explicitly reject requests if the secret is not configured.
+      throw new BadRequestHttpException('Webhook secret is not configured.');
+    }
 
+    $signature = $request->headers->get('x-hub-signature-256');
     if (empty($secret) || empty($signature)) {
       throw new BadRequestHttpException('Missing or invalid webhook signature.');
     }
@@ -416,7 +420,7 @@ class ReliefWebDocumentController extends ControllerBase {
       throw new BadRequestHttpException('Missing or invalid webhook signature.');
     }
 
-    $content = json_decode($request->getContent(), TRUE, 5, JSON_THROW_ON_ERROR);
+    $content = json_decode($request->getContent(), TRUE, flags: \JSON_THROW_ON_ERROR);
     if (empty($content) || !is_array($content)) {
       throw new BadRequestHttpException('You have to pass a JSON object');
     }
@@ -439,7 +443,7 @@ class ReliefWebDocumentController extends ControllerBase {
    */
   public static function verify($secret, $payload, $signature): bool {
     // Validate that the signature contains an '=' delimiter.
-    if (strpos($signature, '=') === FALSE) {
+    if (!str_contains($signature, '=')) {
       return FALSE;
     }
     [$algorithm, $user_string] = explode('=', $signature, 2);
