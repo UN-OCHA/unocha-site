@@ -12,6 +12,9 @@ use Drupal\Core\Url;
 use Drupal\unocha_reliefweb\Helpers\UrlHelper;
 use Drupal\unocha_reliefweb\Services\ReliefWebDocuments;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**
  * Controller for page showing a document retrieved from ReliefWeb.
@@ -359,6 +362,53 @@ class ReliefWebDocumentController extends ControllerBase {
    */
   protected function getReliefWebDocuments() {
     return $this->reliefwebDocuments;
+  }
+
+  /**
+   * Invalidate the cache for publications webhook.
+   */
+  public function invalidateCache(Request $request) {
+    $json = $this->getRequestContent($request);
+
+    // Make sure we have the right event.
+    if (empty($json['event']) || $json['event'] !== 'reliefweb:entity_updated') {
+      throw new BadRequestHttpException('Invalid event type.');
+    }
+
+    $payload = $json['payload'] ?? [];
+    if (empty($payload['entity_type']) || empty($payload['bundle']) || empty($payload['entity_id'])) {
+      throw new BadRequestHttpException('Missing type or id in the request payload.');
+    }
+
+    // Only process nodes.
+    if ($payload['entity_type'] !== 'node') {
+      throw new BadRequestHttpException('Invalid entity type.');
+    }
+
+    // Invalidate the cache for the updated entity.
+    $this->getReliefWebDocuments()->invalidateCache($payload['entity_type'], $payload['entity_id']);
+
+    return new JsonResponse('OK');
+  }
+
+  /**
+   * Get the request content.
+   *
+   * @param \Symfony\Component\HttpFoundation\Request $request
+   *   API Request.
+   *
+   * @return array
+   *   Request content.
+   *
+   * @throw \Symfony\Component\HttpKernel\Exception\BadRequestHttpException
+   *   Throw a 400 when the request doesn't have a valid JSON content.
+   */
+  public function getRequestContent(Request $request) {
+    $content = json_decode($request->getContent(), TRUE);
+    if (empty($content) || !is_array($content)) {
+      throw new BadRequestHttpException('You have to pass a JSON object');
+    }
+    return $content;
   }
 
 }
