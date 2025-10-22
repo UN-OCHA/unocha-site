@@ -400,7 +400,7 @@ class ReliefWebDocumentController extends ControllerBase {
    * @return array
    *   Request content.
    *
-   * @throw \Symfony\Component\HttpKernel\Exception\BadRequestHttpException
+   * @throws \Symfony\Component\HttpKernel\Exception\BadRequestHttpException
    *   Throw a 400 when the request doesn't have a valid JSON content.
    */
   public function getRequestContent(Request $request) {
