@@ -438,7 +438,14 @@ class ReliefWebDocumentController extends ControllerBase {
    *   Boolean TRUE for success.
    */
   public static function verify($secret, $payload, $signature): bool {
-    [$algorithm, $user_string] = explode('=', $signature);
+    // Validate that the signature contains an '=' delimiter.
+    if (strpos($signature, '=') === FALSE) {
+      return FALSE;
+    }
+    [$algorithm, $user_string] = explode('=', $signature, 2);
+    if (empty($algorithm) || empty($user_string)) {
+      return FALSE;
+    }
     $known_string = hash_hmac($algorithm, $payload, $secret);
 
     if (!hash_equals($known_string, $user_string)) {
