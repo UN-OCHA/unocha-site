@@ -935,8 +935,6 @@ class ReliefWebDocuments {
    *   The type of the ReliefWeb document.
    * @param string $id
    *   The ID of the ReliefWeb document.
-   *
-   * @return void
    */
   public function invalidateCache($type, $id) {
     $this->cacheTagsInvalidator->invalidateTags([
