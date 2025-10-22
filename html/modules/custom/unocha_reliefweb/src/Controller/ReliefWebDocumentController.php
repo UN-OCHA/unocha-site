@@ -416,7 +416,7 @@ class ReliefWebDocumentController extends ControllerBase {
       throw new BadRequestHttpException('Missing or invalid webhook signature.');
     }
 
-    $content = json_decode($request->getContent(), TRUE);
+    $content = json_decode($request->getContent(), TRUE, 5, JSON_THROW_ON_ERROR);
     if (empty($content) || !is_array($content)) {
       throw new BadRequestHttpException('You have to pass a JSON object');
     }
