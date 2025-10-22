@@ -122,7 +122,9 @@ class ReliefWebDocumentController extends ControllerBase {
       $content['image'] = $this->renderImage($data['image']);
     }
     if (!empty($data['body-html'])) {
-      $content['body'] = ['#markup' => $data['body-html']];
+      $content['body'] = [
+        '#markup' => $data['body-html'],
+      ];
     }
 
     return [
@@ -130,6 +132,14 @@ class ReliefWebDocumentController extends ControllerBase {
       '#title' => $data['title'],
       '#date' => $data['published'],
       '#content' => $content,
+      '#cache' => [
+        'tags' => [
+          'reliefweb:' . $data['bundle'] . ':' . $data['id'],
+          'reliefweb:' . $data['bundle'],
+          'reliefweb',
+        ],
+        'max-age' => 900,
+      ],
     ];
   }
 

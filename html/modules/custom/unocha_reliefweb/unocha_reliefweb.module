@@ -187,3 +187,10 @@ function unocha_reliefweb_theme() {
 
   return $themes;
 }
+
+/**
+ * Implements hook_cron().
+ */
+function unocha_reliefweb_cron() {
+  \Drupal::service('reliefweb.documents')->cron();
+}

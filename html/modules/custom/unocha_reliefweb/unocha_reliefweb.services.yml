@@ -13,7 +13,7 @@ services:
     arguments: ['@cache.reliefweb_api', '@config.factory', '@datetime.time', '@http_client', '@logger.factory']
   reliefweb.documents:
     class: Drupal\unocha_reliefweb\Services\ReliefWebDocuments
-    arguments: ['@config.factory', '@reliefweb_api.client', '@reliefweb_api.converter', '@logger.factory', '@request_stack', '@string_translation']
+    arguments: ['@config.factory', '@reliefweb_api.client', '@reliefweb_api.converter', '@logger.factory', '@request_stack', '@string_translation', '@cache_tags.invalidator']
   reliefweb.breadcrumb:
     class: Drupal\unocha_reliefweb\Services\ReliefWebBreadcrumbBuilder
     arguments: ['@request_stack', '@controller_resolver', '@language_manager', '@state', '@breadcrumb', '@router']
