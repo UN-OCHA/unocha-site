@@ -378,7 +378,7 @@ class ReliefWebDocumentController extends ControllerBase {
 
     $payload = $json['payload'] ?? [];
     if (empty($payload['entity_type']) || empty($payload['bundle']) || empty($payload['entity_id'])) {
-      throw new BadRequestHttpException('Missing type or id in the request payload.');
+      throw new BadRequestHttpException('Missing parameters in the request payload.');
     }
 
     // Only process nodes.
@@ -413,7 +413,7 @@ class ReliefWebDocumentController extends ControllerBase {
     }
 
     $signature = $request->headers->get('x-hub-signature-256');
-    if (empty($secret) || empty($signature)) {
+    if (empty($signature)) {
       throw new BadRequestHttpException('Missing or invalid webhook signature.');
     }
 

@@ -480,6 +480,12 @@ class ReliefWebApiClient {
 
   /**
    * Construct cache tags for an API result.
+   *
+   * @param string $json
+   *   JSON-encoded API result.
+   *
+   * @return array
+   *   Array of cache tags.
    */
   public static function buildCacheTagsForResult(string $json) {
     $tags = [];
