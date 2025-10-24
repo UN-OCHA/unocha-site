@@ -931,14 +931,17 @@ class ReliefWebDocuments {
   /**
    * Invalidate ReliefWeb documents cache.
    *
-   * @param string $type
-   *   The type of the ReliefWeb document.
+   * @param string $entity_type
+   *   The entity type of the ReliefWeb document.
+   * @param string $bundle
+   *   The bundle of the ReliefWeb document.
    * @param string $id
    *   The ID of the ReliefWeb document.
    */
-  public function invalidateCache($type, $id) {
+  public function invalidateCache($entity_type, $bundle, $id) {
     $this->cacheTagsInvalidator->invalidateTags([
-      'reliefweb:' . $type . ':' . $id,
+      'reliefweb:' . $entity_type . ':' . $bundle . ':' . $id,
+      'reliefweb:' . $entity_type . ':' . $id,
     ]);
   }
 

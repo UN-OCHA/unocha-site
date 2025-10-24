@@ -139,6 +139,7 @@ class ReliefWebDocumentController extends ControllerBase {
         'tags' => [
           'reliefweb:' . $data['bundle'] . ':' . $data['id'],
           'reliefweb:' . $data['bundle'],
+          'reliefweb:node:' . $data['id'],
           'reliefweb',
         ],
         'max-age' => 900,
@@ -386,7 +387,7 @@ class ReliefWebDocumentController extends ControllerBase {
     }
 
     // Invalidate the cache for the updated entity.
-    $this->getReliefWebDocuments()->invalidateCache($payload['entity_type'], $payload['entity_id']);
+    $this->getReliefWebDocuments()->invalidateCache($payload['entity_type'], $payload['bundle'], $payload['entity_id']);
 
     return new JsonResponse(['status' => 'success']);
   }
@@ -420,7 +421,7 @@ class ReliefWebDocumentController extends ControllerBase {
       throw new BadRequestHttpException('Missing or invalid webhook signature.');
     }
 
-    $content = json_decode($request->getContent(), TRUE, flags: \JSON_THROW_ON_ERROR);
+    $content = json_decode($request->getContent(), TRUE);
     if (empty($content) || !is_array($content)) {
       throw new BadRequestHttpException('You have to pass a JSON object');
     }
