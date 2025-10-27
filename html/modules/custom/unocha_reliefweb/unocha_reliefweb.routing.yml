@@ -13,3 +13,13 @@ unocha_reliefweb.breadcrumb.settings:
     _form: '\Drupal\unocha_reliefweb\Form\BreadcrumbSettingsForm'
   requirements:
     _permission: 'administer reliefweb breadcrumbs'
+
+unocha_reliefweb.publications.webhook:
+  path: '/webhook/publications'
+  methods:
+    - POST
+  defaults:
+    _title: 'ReliefWeb Publications Webhook'
+    _controller: '\Drupal\unocha_reliefweb\Controller\ReliefWebDocumentController::invalidateCache'
+  requirements:
+    _permission: 'access content'

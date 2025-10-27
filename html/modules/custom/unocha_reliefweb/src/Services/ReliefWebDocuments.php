@@ -2,6 +2,7 @@
 
 namespace Drupal\unocha_reliefweb\Services;
 
+use Drupal\Core\Cache\CacheTagsInvalidatorInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
@@ -55,6 +56,13 @@ class ReliefWebDocuments {
   protected $requestStack;
 
   /**
+   * Cache invalidator service.
+   *
+   * @var \Drupal\Core\Cache\CacheTagsInvalidatorInterface
+   */
+  protected $cacheTagsInvalidator;
+
+  /**
    * Constructor.
    *
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
@@ -69,6 +77,8 @@ class ReliefWebDocuments {
    *   The request stack.
    * @param \Drupal\Core\StringTranslation\TranslationInterface $string_translation
    *   The translation manager service.
+   * @param \Drupal\Core\Cache\CacheTagsInvalidatorInterface $cache_tags_invalidator
+   *   The cache tags invalidator service.
    */
   public function __construct(
     ConfigFactoryInterface $config_factory,
@@ -77,6 +87,7 @@ class ReliefWebDocuments {
     LoggerChannelFactoryInterface $logger_factory,
     RequestStack $request_stack,
     TranslationInterface $string_translation,
+    CacheTagsInvalidatorInterface $cache_tags_invalidator,
   ) {
     $this->config = $config_factory->get('unocha_reliefweb.settings');
     $this->apiClient = $reliefweb_api_client;
@@ -84,6 +95,7 @@ class ReliefWebDocuments {
     $this->logger = $logger_factory->get('unocha_reliefweb');
     $this->requestStack = $request_stack;
     $this->stringTranslation = $string_translation;
+    $this->cacheTagsInvalidator = $cache_tags_invalidator;
   }
 
   /**
@@ -914,6 +926,23 @@ class ReliefWebDocuments {
    */
   protected function getRequestStack() {
     return $this->requestStack;
+  }
+
+  /**
+   * Invalidate ReliefWeb documents cache.
+   *
+   * @param string $entity_type
+   *   The entity type of the ReliefWeb document.
+   * @param string $bundle
+   *   The bundle of the ReliefWeb document.
+   * @param string $id
+   *   The ID of the ReliefWeb document.
+   */
+  public function invalidateCache($entity_type, $bundle, $id) {
+    $this->cacheTagsInvalidator->invalidateTags([
+      'reliefweb:' . $entity_type . ':' . $bundle . ':' . $id,
+      'reliefweb:' . $entity_type . ':' . $id,
+    ]);
   }
 
 }

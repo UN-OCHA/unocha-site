@@ -29,6 +29,9 @@ unocha_reliefweb.settings:
     reliefweb_api_use_redirects:
       type: boolean
       label: 'Also use the "redirects" field for URL lookups.'
+    reliefweb_api_webhook_secret:
+      type: string
+      label: 'Webhook secret for validating incoming requests.'
 
 field.field_settings.reliefweb_document:
   type: mapping

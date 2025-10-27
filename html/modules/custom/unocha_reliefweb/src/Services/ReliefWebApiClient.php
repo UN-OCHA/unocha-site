@@ -161,6 +161,7 @@ class ReliefWebApiClient {
         // Retrieve the cache id for the query.
         $cache_id = static::getCacheId($query['resource'], $payload);
         $cache_ids[$index] = $cache_id;
+
         // Attempt to retrieve the cached data for the query.
         $cache = $this->cache->get($cache_id);
         if (isset($cache->data)) {
@@ -249,6 +250,8 @@ class ReliefWebApiClient {
       // request in which case $data is NULL.
       if (isset($cache, $cache_ids[$index], $queries[$index]['resource'])) {
         $tags = static::getCacheTags($queries[$index]['resource']);
+        $tags = array_merge($tags, static::buildCacheTagsForResult($data));
+
         $cache_expiration = $this->time->getRequestTime() + $cache_lifetime;
         $this->cache->set($cache_ids[$index], $data, $cache_expiration, $tags);
       }
@@ -472,6 +475,38 @@ class ReliefWebApiClient {
     // @todo review what tags would make sense.
     $tags = static::$cacheTags[$resource] ?? [];
     $tags[] = 'reliefweb_api:' . $resource;
+    return $tags;
+  }
+
+  /**
+   * Construct cache tags for an API result.
+   *
+   * @param string $json
+   *   JSON-encoded API result.
+   *
+   * @return array
+   *   Array of cache tags.
+   */
+  public static function buildCacheTagsForResult(string $json) {
+    $tags = [];
+
+    // Add cache tags for each result.
+    if (!empty($json)) {
+      try {
+        $decoded_data = json_decode($json, TRUE, 512, JSON_THROW_ON_ERROR);
+        if (!empty($decoded_data['data'])) {
+          foreach ($decoded_data['data'] as $item) {
+            if (isset($item['id'])) {
+              $tags[] = 'reliefweb:node:' . $item['id'];
+            }
+          }
+        }
+      }
+      catch (\Exception $exception) {
+        return [];
+      }
+    }
+
     return $tags;
   }
 
