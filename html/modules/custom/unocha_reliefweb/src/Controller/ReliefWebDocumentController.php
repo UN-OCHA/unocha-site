@@ -139,8 +139,6 @@ class ReliefWebDocumentController extends ControllerBase {
         'tags' => [
           'reliefweb:' . $data['bundle'] . ':' . $data['id'],
           'reliefweb:' . $data['bundle'],
-          'reliefweb:node:' . $data['id'],
-          'reliefweb',
         ],
         'max-age' => 900,
       ],
@@ -387,7 +385,7 @@ class ReliefWebDocumentController extends ControllerBase {
     }
 
     // Invalidate the cache for the updated entity.
-    $this->getReliefWebDocuments()->invalidateCache($payload['entity_type'], $payload['bundle'], $payload['entity_id']);
+    $this->getReliefWebDocuments()->invalidateCache($payload['bundle'], $payload['entity_id']);
 
     return new JsonResponse(['status' => 'success']);
   }

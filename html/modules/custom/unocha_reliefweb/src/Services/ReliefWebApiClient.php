@@ -250,7 +250,7 @@ class ReliefWebApiClient {
       // request in which case $data is NULL.
       if (isset($cache, $cache_ids[$index], $queries[$index]['resource'])) {
         $tags = static::getCacheTags($queries[$index]['resource']);
-        $tags = array_merge($tags, static::buildCacheTagsForResult($data));
+        $tags = array_merge($tags, static::buildCacheTagsForResult($data, $queries[$index]['resource']));
 
         $cache_expiration = $this->time->getRequestTime() + $cache_lifetime;
         $this->cache->set($cache_ids[$index], $data, $cache_expiration, $tags);
@@ -483,28 +483,48 @@ class ReliefWebApiClient {
    *
    * @param string $json
    *   JSON-encoded API result.
+   * @param string $resource
+   *   API resource.
    *
    * @return array
    *   Array of cache tags.
    */
-  public static function buildCacheTagsForResult(string $json) {
-    $tags = [];
+  public static function buildCacheTagsForResult(string $json, string $resource) {
+    if (empty($json)) {
+      return [];
+    }
+
+    // Map resource to bundle.
+    $resource_to_bundle = [
+      'updates' => 'report',
+      'reports' => 'report',
+      'jobs' => 'job',
+      'training' => 'training',
+      'disasters' => 'disaster',
+      'countries' => 'country',
+      'themes' => 'theme',
+    ];
+
+    $bundle = $resource_to_bundle[$resource] ?? NULL;
+    if (!$bundle) {
+      return [];
+    }
 
     // Add cache tags for each result.
-    if (!empty($json)) {
-      try {
-        $decoded_data = json_decode($json, TRUE, 512, JSON_THROW_ON_ERROR);
-        if (!empty($decoded_data['data'])) {
-          foreach ($decoded_data['data'] as $item) {
-            if (isset($item['id'])) {
-              $tags[] = 'reliefweb:node:' . $item['id'];
-            }
+    $tags = [];
+    try {
+      $decoded_data = json_decode($json, TRUE, 512, JSON_THROW_ON_ERROR);
+      if (!empty($decoded_data['data'])) {
+        foreach ($decoded_data['data'] as $item) {
+          if (isset($item['id'])) {
+            $tags[] = 'reliefweb:' . $bundle;
+            $tags[] = 'reliefweb:' . $bundle . ':' . $item['id'];
           }
         }
       }
-      catch (\Exception $exception) {
-        return [];
-      }
+    }
+    catch (\Exception $exception) {
+      return [];
     }
 
     return $tags;
