@@ -511,13 +511,12 @@ class ReliefWebApiClient {
     }
 
     // Add cache tags for each result.
-    $tags = [];
+    $tags = ['reliefweb:' . $bundle];
     try {
       $decoded_data = json_decode($json, TRUE, 512, JSON_THROW_ON_ERROR);
       if (!empty($decoded_data['data'])) {
         foreach ($decoded_data['data'] as $item) {
           if (isset($item['id'])) {
-            $tags[] = 'reliefweb:' . $bundle;
             $tags[] = 'reliefweb:' . $bundle . ':' . $item['id'];
           }
         }
