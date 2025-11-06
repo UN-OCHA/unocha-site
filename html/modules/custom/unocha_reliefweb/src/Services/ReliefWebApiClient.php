@@ -250,7 +250,7 @@ class ReliefWebApiClient {
       // request in which case $data is NULL.
       if (isset($cache, $cache_ids[$index], $queries[$index]['resource'])) {
         $tags = static::getCacheTags($queries[$index]['resource']);
-        $tags = array_merge($tags, static::buildCacheTagsForResult($data, $queries[$index]['resource']));
+        $tags = array_merge($tags, static::buildCacheTagsForResult($data ?? '', $queries[$index]['resource']));
 
         $cache_expiration = $this->time->getRequestTime() + $cache_lifetime;
         $this->cache->set($cache_ids[$index], $data, $cache_expiration, $tags);
