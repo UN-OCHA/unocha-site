@@ -3,9 +3,6 @@
     "drupal/amazon_ses": {
       "Cron fails on amazon_ses when not configured": "PATCHES/amazon_ses-cron-queue-3417090-8.patch"
     },
-    "drupal/choices": {
-      "D11 compatibility": "https://www.drupal.org/files/issues/2025-02-25/choices-3508796-Drupal11-compatible.patch"
-    },
     "drupal/core": {
       "Js optimize error https://www.drupal.org/project/drupal/issues/3416508": "PATCHES/core_js_optimizer.patch"
     },
