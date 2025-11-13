@@ -12,6 +12,9 @@ use Drupal\Core\Url;
 use Drupal\unocha_reliefweb\Helpers\UrlHelper;
 use Drupal\unocha_reliefweb\Services\ReliefWebDocuments;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**
  * Controller for page showing a document retrieved from ReliefWeb.
@@ -122,7 +125,9 @@ class ReliefWebDocumentController extends ControllerBase {
       $content['image'] = $this->renderImage($data['image']);
     }
     if (!empty($data['body-html'])) {
-      $content['body'] = ['#markup' => $data['body-html']];
+      $content['body'] = [
+        '#markup' => $data['body-html'],
+      ];
     }
 
     return [
@@ -130,6 +135,13 @@ class ReliefWebDocumentController extends ControllerBase {
       '#title' => $data['title'],
       '#date' => $data['published'],
       '#content' => $content,
+      '#cache' => [
+        'tags' => [
+          'reliefweb:' . $data['bundle'] . ':' . $data['id'],
+          'reliefweb:' . $data['bundle'],
+        ],
+        'max-age' => 900,
+      ],
     ];
   }
 
@@ -349,6 +361,101 @@ class ReliefWebDocumentController extends ControllerBase {
    */
   protected function getReliefWebDocuments() {
     return $this->reliefwebDocuments;
+  }
+
+  /**
+   * Invalidate the cache for publications webhook.
+   */
+  public function invalidateCache(Request $request) {
+    $json = $this->getRequestContent($request);
+
+    // Make sure we have the right event.
+    if (empty($json['event']) || $json['event'] !== 'reliefweb:entity_updated') {
+      throw new BadRequestHttpException('Invalid event type.');
+    }
+
+    $payload = $json['payload'] ?? [];
+    if (empty($payload['entity_type']) || empty($payload['bundle']) || empty($payload['entity_id'])) {
+      throw new BadRequestHttpException('Missing parameters in the request payload.');
+    }
+
+    // Only process nodes.
+    if ($payload['entity_type'] !== 'node') {
+      throw new BadRequestHttpException('Invalid entity type.');
+    }
+
+    // Invalidate the cache for the updated entity.
+    $this->getReliefWebDocuments()->invalidateCache($payload['bundle'], $payload['entity_id']);
+
+    return new JsonResponse(['status' => 'success']);
+  }
+
+  /**
+   * Get the request content.
+   *
+   * @param \Symfony\Component\HttpFoundation\Request $request
+   *   API Request.
+   *
+   * @return array
+   *   Request content.
+   *
+   * @throws \Symfony\Component\HttpKernel\Exception\BadRequestHttpException
+   *   Throw a 400 when the request doesn't have a valid JSON content.
+   */
+  public function getRequestContent(Request $request) {
+    // Validate the secret header.
+    $secret = $this->config->get('reliefweb_api_webhook_secret');
+    if (empty($secret)) {
+      // Explicitly reject requests if the secret is not configured.
+      throw new BadRequestHttpException('Webhook secret is not configured.');
+    }
+
+    $signature = $request->headers->get('x-hub-signature-256');
+    if (empty($signature)) {
+      throw new BadRequestHttpException('Missing or invalid webhook signature.');
+    }
+
+    if (!$this->verify($secret, $request->getContent(), $signature)) {
+      throw new BadRequestHttpException('Missing or invalid webhook signature.');
+    }
+
+    $content = json_decode($request->getContent(), TRUE);
+    if (empty($content) || !is_array($content)) {
+      throw new BadRequestHttpException('You have to pass a JSON object');
+    }
+
+    return $content;
+  }
+
+  /**
+   * Verify the webhook with the stored secret.
+   *
+   * @param string $secret
+   *   The webhook secret.
+   * @param string $payload
+   *   The raw webhook payload.
+   * @param string $signature
+   *   The webhook signature.
+   *
+   * @return bool
+   *   Boolean TRUE for success.
+   */
+  public static function verify($secret, $payload, $signature): bool {
+    // Validate that the signature contains an '=' delimiter.
+    if (!str_contains($signature, '=')) {
+      return FALSE;
+    }
+    [$algorithm, $user_string] = explode('=', $signature, 2);
+    if (empty($algorithm) || empty($user_string)) {
+      return FALSE;
+    }
+    $known_string = hash_hmac($algorithm, $payload, $secret);
+
+    if (!hash_equals($known_string, $user_string)) {
+      return FALSE;
+    }
+
+    return TRUE;
   }
 
 }
