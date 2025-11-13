@@ -11301,16 +11301,16 @@
         },
         {
             "name": "unocha/ocha_visualisations",
-            "version": "v1.0.2",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/ocha_visualisations.git",
-                "reference": "508de79acae11ec733c77a582e692d460bbbc49b"
+                "reference": "dc21c22850ef9f175cf3158711ae8334a23be426"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/ocha_visualisations/zipball/508de79acae11ec733c77a582e692d460bbbc49b",
-                "reference": "508de79acae11ec733c77a582e692d460bbbc49b",
+                "url": "https://api.github.com/repos/UN-OCHA/ocha_visualisations/zipball/dc21c22850ef9f175cf3158711ae8334a23be426",
+                "reference": "dc21c22850ef9f175cf3158711ae8334a23be426",
                 "shasum": ""
             },
             "require": {
@@ -11324,9 +11324,9 @@
             "description": "UNOCHA visualisations",
             "support": {
                 "issues": "https://github.com/UN-OCHA/ocha_visualisations/issues",
-                "source": "https://github.com/UN-OCHA/ocha_visualisations/tree/v1.0.2"
+                "source": "https://github.com/UN-OCHA/ocha_visualisations/tree/v1.0.4"
             },
-            "time": "2025-09-16T09:57:25+00:00"
+            "time": "2025-11-13T09:12:40+00:00"
         },
         {
             "name": "unocha/un_date",
