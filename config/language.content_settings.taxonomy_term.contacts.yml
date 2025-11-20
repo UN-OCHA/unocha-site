@@ -4,11 +4,6 @@ status: true
 dependencies:
   config:
     - taxonomy.vocabulary.contacts
-  module:
-    - content_translation
-third_party_settings:
-  content_translation:
-    enabled: true
 id: taxonomy_term.contacts
 target_entity_type_id: taxonomy_term
 target_bundle: contacts

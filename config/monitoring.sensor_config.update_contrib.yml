@@ -1,11 +1,9 @@
-uuid: 20ab1f9f-aa39-40fc-bd5a-34930b6110b6
+uuid: null
 langcode: en
 status: true
 dependencies:
   module:
     - update
-_core:
-  default_config_hash: '-re8-AFGO4z0a0i4NeTZV5HlEipd-KC9kkLxzgz1mgs'
 id: update_contrib
 label: 'Modules and themes'
 description: 'Available updates for contrib modules and themes'
