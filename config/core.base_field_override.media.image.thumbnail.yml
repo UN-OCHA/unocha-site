@@ -5,14 +5,7 @@ dependencies:
   config:
     - media.type.image
   module:
-    - content_translation
     - image
-third_party_settings:
-  content_translation:
-    translation_sync:
-      alt: alt
-      title: title
-      file: 0
 id: media.image.thumbnail
 field_name: thumbnail
 entity_type: media
