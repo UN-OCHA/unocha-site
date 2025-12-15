@@ -1,0 +1,5 @@
+unocha_paragraphs.figures_admin:
+  route_name: unocha_paragraphs.figures_admin
+  base_route: system.admin_content
+  title: 'OCHA Key Figures'
+  weight: 10

@@ -1,0 +1,7 @@
+unocha_paragraphs.figures_admin:
+  path: '/admin/content/figures'
+  defaults:
+    _controller: '\Drupal\unocha_paragraphs\Controller\FiguresAdminController::listFigures'
+    _title: 'OCHA Key Figures'
+  requirements:
+    _permission: 'access content overview'

@@ -19,6 +19,20 @@ use Drupal\node\NodeInterface;
 use Drupal\paragraphs\ParagraphInterface;
 
 /**
+ * Implements hook_preprocess_paragraph().
+ */
+function unocha_paragraphs_preprocess_paragraph(array &$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+  // Add the paragraph UUID so we can scroll and focus on it when editing
+  // its parent node.
+  // @see \Drupal\unocha_paragraphs\js\node-form-hash-scroll.js
+  if (isset($variables['attributes']) && is_array($variables['attributes'])) {
+    $variables['attributes']['data-paragraph-uuid'] = $paragraph->uuid();
+  }
+}
+
+/**
  * Implements hook_preprocess_paragraph__type().
  */
 function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
@@ -670,6 +684,9 @@ function unocha_paragraphs_form_node_form_alter(array &$form, FormStateInterface
   if (isset($form['sticky'])) {
     $form['sticky']['#access'] = FALSE;
   }
+
+  // Attach JavaScript to scroll to hash fragment after form modifications.
+  $form['#attached']['library'][] = 'unocha_paragraphs/node_form_hash_scroll';
 }
 
 /**
