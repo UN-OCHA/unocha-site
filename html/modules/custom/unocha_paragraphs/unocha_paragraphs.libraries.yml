@@ -1,0 +1,8 @@
+node_form_hash_scroll:
+  js:
+    js/node-form-hash-scroll.js: {}
+
+figures_admin:
+  css:
+    component:
+      css/figures-admin.css: {}
