@@ -16,6 +16,13 @@ dependencies:
     - node.type.resource
     - node.type.response
     - node.type.story
+    - system.menu.events
+    - system.menu.latest
+    - system.menu.main
+    - system.menu.our-priorities
+    - system.menu.take-action
+    - system.menu.what-we-do
+    - system.menu.where-we-work
     - taxonomy.vocabulary.contacts
     - taxonomy.vocabulary.country
     - taxonomy.vocabulary.event_type
@@ -25,11 +32,9 @@ dependencies:
     - taxonomy.vocabulary.theme
   module:
     - content_moderation
-    - content_translation
     - entity_browser
     - filter
     - media
-    - menu_link_content
     - node
     - ocha_datawrapper
     - ocha_key_figures
@@ -69,7 +74,6 @@ permissions:
   - 'administer reliefweb breadcrumbs'
   - 'administer taxonomy'
   - 'create basic content'
-  - 'create content translations'
   - 'create event content'
   - 'create image media'
   - 'create leader content'
@@ -138,28 +142,7 @@ permissions:
   - 'revert resource revisions'
   - 'revert response revisions'
   - 'revert story revisions'
-  - 'translate any entity'
-  - 'translate basic node'
-  - 'translate contacts taxonomy_term'
-  - 'translate country taxonomy_term'
-  - 'translate editable entities'
-  - 'translate event node'
-  - 'translate event_type taxonomy_term'
-  - 'translate image media'
-  - 'translate leader node'
-  - 'translate media_collection node'
-  - 'translate menu_link_content'
-  - 'translate office_type taxonomy_term'
-  - 'translate paragraph'
-  - 'translate region node'
-  - 'translate resource node'
-  - 'translate response node'
-  - 'translate story node'
-  - 'translate story_type taxonomy_term'
-  - 'translate theme taxonomy_term'
-  - 'translate video media'
   - 'update any media'
-  - 'update content translations'
   - 'update media'
   - 'use text format ckeditor'
   - 'use text format text_editor_simple'
