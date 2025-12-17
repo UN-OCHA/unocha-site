@@ -11,7 +11,6 @@ module:
   components: 0
   config: 0
   config_split: 0
-  config_translation: 0
   contact: 0
   content_moderation: 0
   contextual: 0
@@ -48,7 +47,6 @@ module:
   layout_paragraphs: 0
   link: 0
   linkit: 0
-  locale: 0
   mailsystem: 0
   maintenance200: 0
   media: 0
@@ -119,7 +117,6 @@ module:
   xmlsitemap_engines: 0
   pathauto: 1
   xmlsitemap: 1
-  content_translation: 10
   views: 10
   paragraphs: 11
   minimal: 1000
