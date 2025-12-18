@@ -36,6 +36,7 @@ settings:
       properties:
         reversed: false
         startIndex: true
+        styles: true
       multiBlock: true
     ckeditor5_sourceEditing:
       allowed_tags:
@@ -50,8 +51,6 @@ settings:
         - '<h6 id>'
         - '<a hreflang>'
         - '<blockquote cite>'
-        - '<ul type>'
-        - '<ol type>'
         - '<img data-entity-type data-entity-uuid>'
     ckeditor5_style:
       styles:
