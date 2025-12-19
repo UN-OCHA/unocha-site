@@ -118,16 +118,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.368.1",
+            "version": "3.368.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "f7916ea27b5214fa1b4b6ecfa0c3f549b388a70c"
+                "reference": "96397db9a3fd0b5e6b3c52e363b6a55831a93b1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f7916ea27b5214fa1b4b6ecfa0c3f549b388a70c",
-                "reference": "f7916ea27b5214fa1b4b6ecfa0c3f549b388a70c",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/96397db9a3fd0b5e6b3c52e363b6a55831a93b1d",
+                "reference": "96397db9a3fd0b5e6b3c52e363b6a55831a93b1d",
                 "shasum": ""
             },
             "require": {
@@ -209,9 +209,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.368.1"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.368.2"
             },
-            "time": "2025-12-17T19:06:44+00:00"
+            "time": "2025-12-18T19:07:30+00:00"
         },
         {
             "name": "bower-asset/choices.js",
@@ -1585,16 +1585,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "11.3.0",
+            "version": "11.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "ad9d5cd0c36e44373c0b0e30026ffd9ad4cf1974"
+                "reference": "d3e8dd05dc47a8f6ca14713ba4ec1fc52952407d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/ad9d5cd0c36e44373c0b0e30026ffd9ad4cf1974",
-                "reference": "ad9d5cd0c36e44373c0b0e30026ffd9ad4cf1974",
+                "url": "https://api.github.com/repos/drupal/core/zipball/d3e8dd05dc47a8f6ca14713ba4ec1fc52952407d",
+                "reference": "d3e8dd05dc47a8f6ca14713ba4ec1fc52952407d",
                 "shasum": ""
             },
             "require": {
@@ -1752,13 +1752,13 @@
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
             "support": {
-                "source": "https://github.com/drupal/core/tree/11.3.0"
+                "source": "https://github.com/drupal/core/tree/11.3.1"
             },
-            "time": "2025-12-17T11:28:09+00:00"
+            "time": "2025-12-18T14:22:29+00:00"
         },
         {
             "name": "drupal/core-composer-scaffold",
-            "version": "11.3.0",
+            "version": "11.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-composer-scaffold.git",
@@ -1802,13 +1802,13 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-composer-scaffold/tree/11.3.0"
+                "source": "https://github.com/drupal/core-composer-scaffold/tree/11.3.1"
             },
             "time": "2025-10-13T16:03:31+00:00"
         },
         {
             "name": "drupal/core-project-message",
-            "version": "11.3.0",
+            "version": "11.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-project-message.git",
@@ -1843,29 +1843,29 @@
                 "drupal"
             ],
             "support": {
-                "source": "https://github.com/drupal/core-project-message/tree/11.3.0"
+                "source": "https://github.com/drupal/core-project-message/tree/11.3.1"
             },
             "time": "2025-02-03T10:59:29+00:00"
         },
         {
             "name": "drupal/core-recommended",
-            "version": "11.3.0",
+            "version": "11.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-recommended.git",
-                "reference": "03efeaad0da65b2b0c7f8466eabb264bb667dbfa"
+                "reference": "d5dbdd133f14566d34d3f5adb2efe36a8d065b00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/03efeaad0da65b2b0c7f8466eabb264bb667dbfa",
-                "reference": "03efeaad0da65b2b0c7f8466eabb264bb667dbfa",
+                "url": "https://api.github.com/repos/drupal/core-recommended/zipball/d5dbdd133f14566d34d3f5adb2efe36a8d065b00",
+                "reference": "d5dbdd133f14566d34d3f5adb2efe36a8d065b00",
                 "shasum": ""
             },
             "require": {
                 "asm89/stack-cors": "~v2.3.0",
                 "composer/semver": "~3.4.4",
                 "doctrine/lexer": "~3.0.1",
-                "drupal/core": "11.3.0",
+                "drupal/core": "11.3.1",
                 "egulias/email-validator": "~4.0.4",
                 "guzzlehttp/guzzle": "~7.10.0",
                 "guzzlehttp/promises": "~2.3.0",
@@ -1927,9 +1927,9 @@
             ],
             "description": "Core and its dependencies with known-compatible minor versions. Require this project INSTEAD OF drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-recommended/tree/11.3.0"
+                "source": "https://github.com/drupal/core-recommended/tree/11.3.1"
             },
-            "time": "2025-12-17T11:28:09+00:00"
+            "time": "2025-12-18T14:22:29+00:00"
         },
         {
             "name": "drupal/ctools",
@@ -2991,20 +2991,20 @@
         },
         {
             "name": "drupal/key",
-            "version": "1.20.0",
+            "version": "1.21.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/key.git",
-                "reference": "8.x-1.20"
+                "reference": "8.x-1.21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/key-8.x-1.20.zip",
-                "reference": "8.x-1.20",
-                "shasum": "f45415552de129e9976af72224393cd1d1f2ea65"
+                "url": "https://ftp.drupal.org/files/projects/key-8.x-1.21.zip",
+                "reference": "8.x-1.21",
+                "shasum": "1e493e73bd41e70831821929b97bfb43818202fe"
             },
             "require": {
-                "drupal/core": ">=8.9 <12"
+                "drupal/core": "^9.1 || ^10 || ^11"
             },
             "require-dev": {
                 "drush/drush": ">=9"
@@ -3015,8 +3015,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.20",
-                    "datestamp": "1744582168",
+                    "version": "8.x-1.21",
+                    "datestamp": "1766088922",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -12803,7 +12803,7 @@
         },
         {
             "name": "drupal/core-dev",
-            "version": "11.3.0",
+            "version": "11.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core-dev.git",
@@ -12853,7 +12853,7 @@
             ],
             "description": "require-dev dependencies from drupal/drupal; use in addition to drupal/core-recommended to run tests from drupal/core.",
             "support": {
-                "source": "https://github.com/drupal/core-dev/tree/11.3.0"
+                "source": "https://github.com/drupal/core-dev/tree/11.3.1"
             },
             "time": "2025-12-15T09:20:07+00:00"
         },
