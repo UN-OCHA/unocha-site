@@ -36,6 +36,9 @@
 # Ignore docker image build log.
 buildlog.txt
 
+# Ignore local composer cache.
+/.composer
+
 # Ignore local dev directories.
 /shared/
 /database/

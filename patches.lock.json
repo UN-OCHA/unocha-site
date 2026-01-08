@@ -1,0 +1,133 @@
+{
+    "_hash": "65565bcf0cabb766a44106af3b59af221c3223e6307ddd7386e5499e5ce752b9",
+    "patches": {
+        "drupal/core": [
+            {
+                "package": "drupal/core",
+                "description": "Js optimize error https://www.drupal.org/project/drupal/issues/3416508",
+                "url": "PATCHES/core_js_optimizer.patch",
+                "sha256": "e75de4941bcf9329f5b6dddcbb83e43e3593089b4826ef0309eccf3b4b2ca74b",
+                "depth": 2,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            }
+        ],
+        "drupal/datetime_range_timezone": [
+            {
+                "package": "drupal/datetime_range_timezone",
+                "description": "Views integration",
+                "url": "PATCHES/datetime_range_timezone-views-integration.patch",
+                "sha256": "eec773f11ceafce34fe2e10e65cf6e75816b41643928af82effc31467a3e9290",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            }
+        ],
+        "drupal/default_content": [
+            {
+                "package": "drupal/default_content",
+                "description": "https://www.drupal.org/project/default_content/issues/2885285#comment-15342107",
+                "url": "https://www.drupal.org/files/issues/2023-12-01/i2885285-exporting-menu-link-2.patch",
+                "sha256": "d5b70c4963534998183cc8b2d8fb43102e45686feafd156f387e9c90d5cd915c",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            }
+        ],
+        "drupal/imageapi_optimize_webp": [
+            {
+                "package": "drupal/imageapi_optimize_webp",
+                "description": "Fix derivatives for webp source images",
+                "url": "PATCHES/imageapi_optimize_webp-webp-source-image.patch",
+                "sha256": "d569843481f6af47f189e18fc552efd2a2ede1d0ba234676be48e273a52f6653",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            },
+            {
+                "package": "drupal/imageapi_optimize_webp",
+                "description": "Support imagemagick toolkit",
+                "url": "PATCHES/imageapi_optimize_webp-imagemagick-toolkit.patch",
+                "sha256": "187f35fa7b541e310845e404eb8cb057f8586ea56e01867d9651577d3f8638d6",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            }
+        ],
+        "drupal/maintenance200": [
+            {
+                "package": "drupal/maintenance200",
+                "description": "D11 compatibility - #3431791",
+                "url": "PATCHES/maintenance200-D11-compatibility-3431791.patch",
+                "sha256": "a18c917b199168ded802407a11e2d9eb75b1933c75aea4e60701c3ba0f6ea623",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            }
+        ],
+        "drupal/media_library_extend": [
+            {
+                "package": "drupal/media_library_extend",
+                "description": "D11 compatibility - #3431898",
+                "url": "PATCHES/media_library_extend-D11-compatibility.patch",
+                "sha256": "98e95eb32fd7b0861af1931ef63390a93d9afc1748cdf922815d01ce3b575f0a",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            },
+            {
+                "package": "drupal/media_library_extend",
+                "description": "https://www.drupal.org/project/media_library_extend/issues/3467575",
+                "url": "PATCHES/i3467575.patch",
+                "sha256": "0f4d5735b73dbd5054dbc56157e1de3d6c1de7cd3582f0be0edb37b20dfff4f3",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            }
+        ],
+        "drupal/social_auth": [
+            {
+                "package": "drupal/social_auth",
+                "description": "Type Error - #3496656",
+                "url": "PATCHES/social_auth-type-error-3496656.patch",
+                "sha256": "3640ab58ebe8cc368dd9945ad38ee42ce09cfa5873167778e28fc19c4d16572d",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            }
+        ],
+        "drupal/stage_file_proxy": [
+            {
+                "package": "drupal/stage_file_proxy",
+                "description": "Stage file proxy attempts to fetch aggregated JS/CSS",
+                "url": "PATCHES/stage_file_proxy_3372105.patch",
+                "sha256": "14115e97703176a30828b8b1aeee345aa3b7fc4a05aca287f5bd743edbdfe7b1",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            }
+        ],
+        "drupal/username_enumeration_prevention": [
+            {
+                "package": "drupal/username_enumeration_prevention",
+                "description": "Avoid leaking the path via Drupal.settings json",
+                "url": "PATCHES/username_enumeration_prevention-user-login-block-form-3312288.patch",
+                "sha256": "d69c3af6d81a028ee001324682c5ddce14124632b4a83e240cd2f838905ede87",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            }
+        ]
+    }
+}
