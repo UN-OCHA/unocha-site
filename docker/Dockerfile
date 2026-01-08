@@ -11,7 +11,10 @@ COPY . /srv/www
 WORKDIR /srv/www
 
 # Clean up previous composer installation and run new one.
-RUN rm -rf ./vendor && COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --no-interaction
+RUN rm -rf ./vendor && \
+  COMPOSER_ALLOW_SUPERUSER=1 \
+  COMPOSER_MEMORY_LIMIT=-1 \
+  composer install --no-interaction --no-dev --prefer-dist
 
 # Copy settings to default site location.
 RUN cp -a docker/settings.php docker/services.yml docker/memcache.services.yml html/sites/default
@@ -53,6 +56,7 @@ COPY --from=builder /srv/www/composer.json /srv/www/composer.json
 COPY --from=builder /srv/www/composer.patches.json /srv/www/composer.patches.json
 COPY --from=builder /srv/www/composer.lock /srv/www/composer.lock
 COPY --from=builder /srv/www/PATCHES /srv/www/PATCHES
+COPY --from=builder /srv/www/patches.lock.json /srv/www/patches.lock.json
 COPY --from=builder /srv/www/scripts /srv/www/scripts
 COPY --from=builder /srv/www/docker/etc/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY --from=builder /srv/www/docker/etc/nginx/custom /etc/nginx/custom/
