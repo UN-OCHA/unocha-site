@@ -1,7 +1,8 @@
 {
   "patches": {
     "drupal/core": {
-      "Js optimize error https://www.drupal.org/project/drupal/issues/3416508": "PATCHES/core_js_optimizer.patch"
+      "Js optimize error https://www.drupal.org/project/drupal/issues/3416508": "PATCHES/core_js_optimizer.patch",
+      "MenuActiveTrail should ignore disabled menu links": "PATCHES/core-menu_active_trail_diabled_items-11495-45.patch"
     },
     "drupal/datetime_range_timezone": {
       "Views integration": "PATCHES/datetime_range_timezone-views-integration.patch"
