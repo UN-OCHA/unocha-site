@@ -1,17 +1,7 @@
 {
-    "_hash": "04f8c3e5f8cb8fd8b47bcfcfbb47d258073eb45063b424e53b385399c8ce66ff",
+    "_hash": "c6251f92b62f0216e08d049994efa69a5d2e4f65a218e2d556ed645ba2c3655e",
     "patches": {
         "drupal/core": [
-            {
-                "package": "drupal/core",
-                "description": "Js optimize error https://www.drupal.org/project/drupal/issues/3416508",
-                "url": "PATCHES/core_js_optimizer.patch",
-                "sha256": "e75de4941bcf9329f5b6dddcbb83e43e3593089b4826ef0309eccf3b4b2ca74b",
-                "depth": 2,
-                "extra": {
-                    "provenance": "patches-file:composer.patches.json"
-                }
-            },
             {
                 "package": "drupal/core",
                 "description": "MenuActiveTrail should ignore disabled menu links",
