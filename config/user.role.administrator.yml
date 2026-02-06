@@ -10,7 +10,6 @@ dependencies:
     - filter
     - image
     - imageapi_optimize
-    - memcache_admin
     - node
     - path
     - pathauto
@@ -28,7 +27,6 @@ permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access files overview'
-  - 'access memcache statistics'
   - 'access site in maintenance mode'
   - 'access site reports'
   - 'access slab cachedump'
