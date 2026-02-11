@@ -64,7 +64,7 @@ COPY --from=builder /srv/www/docker/etc/nginx/sites-enabled/02_mapbox_proxy_cach
 COPY --from=builder /srv/www/docker/etc/nginx/sites-enabled/03_drupal_legacy_map.conf /etc/nginx/sites-enabled/03_drupal_legacy_map.conf
 
 # Add sshd for debugging.
-RUN apk add --no-cache openssh-server && \
+RUN apk add --no-cache mariadb-connector-c openssh-server && \
     ssh-keygen -A && \
     echo "root:Docker!" | chpasswd && \
     mkdir -p /etc/services.d/sshd
