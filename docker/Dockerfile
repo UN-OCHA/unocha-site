@@ -62,3 +62,14 @@ COPY --from=builder /srv/www/docker/etc/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY --from=builder /srv/www/docker/etc/nginx/custom /etc/nginx/custom/
 COPY --from=builder /srv/www/docker/etc/nginx/sites-enabled/02_mapbox_proxy_cache.conf /etc/nginx/sites-enabled/02_mapbox_proxy_cache.conf
 COPY --from=builder /srv/www/docker/etc/nginx/sites-enabled/03_drupal_legacy_map.conf /etc/nginx/sites-enabled/03_drupal_legacy_map.conf
+
+# Add sshd for debugging.
+RUN apk add --no-cache openssh-server && \
+    ssh-keygen -A && \
+    echo "root:Docker!" | chpasswd && \
+    mkdir -p /etc/services.d/sshd
+
+COPY --from=builder /srv/www/docker/etc/ssh/sshd_config /etc/ssh/sshd_config
+COPY --from=builder /srv/www/docker/etc/services.d/run_sshd /etc/services.d/sshd/run
+
+EXPOSE 80 2222
