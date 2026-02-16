@@ -1,0 +1,77 @@
+diff --git a/core/lib/Drupal/Core/Menu/MenuActiveTrail.php b/core/lib/Drupal/Core/Menu/MenuActiveTrail.php
+index 1ccffde98f89808cd1f6f2637a32b8cfe4cf0602..48143d0ecf62f0bfc33d184b28d17d1d5ba18ca0 100644
+--- a/core/lib/Drupal/Core/Menu/MenuActiveTrail.php
++++ b/core/lib/Drupal/Core/Menu/MenuActiveTrail.php
+@@ -144,7 +144,6 @@ public function getActiveLink($menu_name = NULL) {
+     // service in the container.
+     // The menu links coming from the storage are already sorted by depth,
+     // weight and ID.
+-    $found = NULL;
+     $links = [];
+ 
+     $route_name = $this->routeMatch->getRouteName();
+@@ -167,11 +166,12 @@ public function getActiveLink($menu_name = NULL) {
+       $links = array_merge($links, $this->menuLinkManager->loadLinksByRoute('<front>', [], $menu_name));
+     }
+ 
+-    // Select the first matching link.
+-    if ($links) {
+-      $found = reset($links);
++    // Select the first enabled matching link.
++    foreach ($links as $link) {
++      if ($link->isEnabled()) {
++        return $link;
++      }
+     }
+-    return $found;
+   }
+ 
+ }
+diff --git a/core/tests/Drupal/Tests/Core/Menu/MenuActiveTrailTest.php b/core/tests/Drupal/Tests/Core/Menu/MenuActiveTrailTest.php
+index 1df3643d5648cc38e8f710fa45fefff674ec62e0..b0e0f20876b844df0fdaa9e9f7bf048b5d7283b8 100644
+--- a/core/tests/Drupal/Tests/Core/Menu/MenuActiveTrailTest.php
++++ b/core/tests/Drupal/Tests/Core/Menu/MenuActiveTrailTest.php
+@@ -160,6 +160,43 @@ public static function provider(): array {
+       $link_1_parent_ids,
+     ];
+ 
++    // Test disabled parent link.
++    MenuLinkMock::createMock([
++      'id' => 'baby_llama_link_1',
++      'route_name' => 'baby_llama',
++      'title' => 'Baby llama',
++      'parent' => 'mama_llama_link',
++      'enabled' => FALSE,
++    ]);
++    $link_2 = MenuLinkMock::createMock([
++      'id' => 'baby_llama_link_2',
++      'route_name' => 'baby_llama',
++      'title' => 'Baby llama',
++      'parent' => 'baby_llama_link_1',
++    ]);
++
++    // Skip the "baby_llama_link_1" menu from parent ids as it is disabled.
++    $link_2_parent_ids = ['mama_llama_link', ''];
++    $data[] = [$request, ['baby_llama_link_2' => $link_2], Random::machineName(), $link_2, $link_2_parent_ids];
++
++    // Test disabled child link.
++    MenuLinkMock::createMock([
++      'id' => 'baby_llama_link_1',
++      'route_name' => 'baby_llama',
++      'title' => 'Baby llama',
++      'parent' => 'mama_llama_link',
++    ]);
++    $link_2 = MenuLinkMock::createMock([
++      'id' => 'baby_llama_link_2',
++      'route_name' => 'baby_llama',
++      'title' => 'Baby llama',
++      'parent' => 'baby_llama_link_1',
++      'enabled' => FALSE,
++    ]);
++
++    // No active link is returned when the only matching link is disabled.
++    $data[] = [$request, ['baby_llama_link_2' => $link_2], Random::machineName(), NULL, $empty_active_trail];
++
+     // No active link is returned in case of a 403.
+     $request = new Request();
+     $request->attributes->set('_exception_statuscode', 403);
