@@ -1,0 +1,54 @@
+diff --git a/src/MenuBasedBreadcrumbBuilder.php b/src/MenuBasedBreadcrumbBuilder.php
+index 5e73cdd..12487ff 100644
+--- a/src/MenuBasedBreadcrumbBuilder.php
++++ b/src/MenuBasedBreadcrumbBuilder.php
+@@ -360,25 +360,34 @@ class MenuBasedBreadcrumbBuilder implements BreadcrumbBuilderInterface {
+     // case it's arguable that the node-based pathname would be preferred.)
+     $front_page = $site_config->get('page.front');
+     $front_url = Url::fromUri("internal:$front_page");
+-    $first_url = $links[0]->getUrl();
+-    // If options are set to remove <front>, strip off that link, otherwise
+-    // replace it with a breadcrumb named according to option settings:
+-    if (($first_url->isRouted() && $front_url->isRouted()) &&
+-      ($front_url->getRouteName() === $first_url->getRouteName()) &&
+-      ($front_url->getRouteParameters() === $first_url->getRouteParameters())) {
+-
+-      // According to the confusion hopefully cleared up in issue 2754521, the
+-      // sense of "remove_home" is slightly different than in Menu Breadcrumb:
+-      // we remove any match with <front> rather than replacing it.
+-      if ($this->config->get('remove_home')) {
+-        array_shift($links);
++    if (!empty($links)) {
++      $first_url = $links[0]->getUrl();
++      // If options are set to remove <front>, strip off that link, otherwise
++      // replace it with a breadcrumb named according to option settings:
++      if (($first_url->isRouted() && $front_url->isRouted()) &&
++        ($front_url->getRouteName() === $first_url->getRouteName()) &&
++        ($front_url->getRouteParameters() === $first_url->getRouteParameters())) {
++
++        // According to the confusion hopefully cleared up in issue 2754521, the
++        // sense of "remove_home" is slightly different than in Menu Breadcrumb:
++        // we remove any match with <front> rather than replacing it.
++        if ($this->config->get('remove_home')) {
++          array_shift($links);
++        }
++        elseif ($this->config->get('front_title') != 2) {
++          $links[0] = $home_link;
++        }
+       }
+-      elseif ($this->config->get('front_title') != 2) {
+-        $links[0] = $home_link;
++      else {
++        // If trail *doesn't* begin with the home page, add it if that option set.
++        if ($this->config->get('add_home')) {
++          array_unshift($links, $home_link);
++        }
+       }
+     }
+     else {
+-      // If trail *doesn't* begin with the home page, add it if that option set.
++      // Empty trail (e.g. no menu trail or current page not in trail): add
++      // home link if that option is set.
+       if ($this->config->get('add_home')) {
+         array_unshift($links, $home_link);
+       }

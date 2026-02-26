@@ -1,5 +1,8 @@
 {
   "patches": {
+    "drupal/core": {
+      "MenuActiveTrail should ignore disabled menu links": "PATCHES/core-menu_active_trail_disabled_items-2973515-45.patch"
+    },
     "drupal/datetime_range_timezone": {
       "Views integration": "PATCHES/datetime_range_timezone-views-integration.patch"
     },
@@ -16,6 +19,9 @@
     "drupal/media_library_extend": {
       "D11 compatibility - #3431898": "PATCHES/media_library_extend-D11-compatibility.patch",
       "https://www.drupal.org/project/media_library_extend/issues/3467575": "PATCHES/i3467575.patch"
+    },
+    "drupal/menu_breadcrumb": {
+      "https://www.drupal.org/project/menu_breadcrumb/issues/3567562": "PATCHES/menu_breadcrumb-fix-empty-links-geturl-null-3567562.patch"
     },
     "drupal/social_auth": {
       "Type Error - #3496656": "PATCHES/social_auth-type-error-3496656.patch"
