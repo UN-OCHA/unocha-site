@@ -369,15 +369,7 @@ class NumberFormatter {
    *   Formatted number.
    */
   public static function formatNumberDecimal($number, $langcode) {
-    if (class_exists('\NumberFormatter')) {
-      $formatter = new \NumberFormatter($langcode, \NumberFormatter::DECIMAL);
-      $formatted = $formatter->format($number);
-      if (intl_is_failure($formatter->getErrorCode())) {
-        return $number;
-      }
-      return $formatted;
-    }
-    return number_format($number);
+    return LocalizationHelper::formatNumber($number, $langcode);
   }
 
   /**

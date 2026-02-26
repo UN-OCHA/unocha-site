@@ -228,7 +228,12 @@ class LocalizationHelper {
    */
   protected static function createCollator($language) {
     if (function_exists('collator_create')) {
-      return collator_create($language) ?: FALSE;
+      try {
+        return collator_create($language) ?: FALSE;
+      }
+      catch (\ValueError) {
+        return FALSE;
+      }
     }
     return FALSE;
   }
@@ -245,7 +250,12 @@ class LocalizationHelper {
    */
   protected static function createNumberFormatter($language) {
     if (function_exists('numfmt_create')) {
-      return numfmt_create($language, \NumberFormatter::DECIMAL) ?: FALSE;
+      try {
+        return numfmt_create($language, \NumberFormatter::DECIMAL) ?: FALSE;
+      }
+      catch (\ValueError) {
+        return FALSE;
+      }
     }
     return FALSE;
   }
