@@ -1,5 +1,5 @@
 {
-    "_hash": "f2bdd78f643358c0e647576275ac516c95f26d174623682aa022b049740e7ac9",
+    "_hash": "e11a1cd9ef1f55e6e1ddb3593f0dc0e0959631d9d7b5bcf40cbc1019c55c0c9e",
     "patches": {
         "drupal/datetime_range_timezone": [
             {
@@ -75,6 +75,18 @@
                 "description": "https://www.drupal.org/project/media_library_extend/issues/3467575",
                 "url": "PATCHES/i3467575.patch",
                 "sha256": "0f4d5735b73dbd5054dbc56157e1de3d6c1de7cd3582f0be0edb37b20dfff4f3",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            }
+        ],
+        "drupal/menu_breadcrumb": [
+            {
+                "package": "drupal/menu_breadcrumb",
+                "description": "https://www.drupal.org/project/menu_breadcrumb/issues/3567562",
+                "url": "PATCHES/menu_breadcrumb-fix-empty-links-geturl-null-3567562.patch",
+                "sha256": "978b815c8dea0350db55229c0b2618b18e1dce0b614b756a3c15da07fba73e91",
                 "depth": 1,
                 "extra": {
                     "provenance": "patches-file:composer.patches.json"
