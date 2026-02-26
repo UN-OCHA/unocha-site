@@ -118,16 +118,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.369.37",
+            "version": "3.371.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "bc599ce989b101ee630d5e1a1aeda387632df47b"
+                "reference": "26cd04f9f47ca0d66baa59303f70bff5a5d48706"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/bc599ce989b101ee630d5e1a1aeda387632df47b",
-                "reference": "bc599ce989b101ee630d5e1a1aeda387632df47b",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/26cd04f9f47ca0d66baa59303f70bff5a5d48706",
+                "reference": "26cd04f9f47ca0d66baa59303f70bff5a5d48706",
                 "shasum": ""
             },
             "require": {
@@ -209,9 +209,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.369.37"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.371.1"
             },
-            "time": "2026-02-18T19:16:34+00:00"
+            "time": "2026-02-25T19:05:28+00:00"
         },
         {
             "name": "bower-asset/choices.js",
@@ -2447,17 +2447,17 @@
         },
         {
             "name": "drupal/entity_usage",
-            "version": "2.0.0-beta27",
+            "version": "2.0.0-beta28",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_usage.git",
-                "reference": "8.x-2.0-beta27"
+                "reference": "8.x-2.0-beta28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_usage-8.x-2.0-beta27.zip",
-                "reference": "8.x-2.0-beta27",
-                "shasum": "e0987988e393438f56c0eedb8d8c56a624a52b54"
+                "url": "https://ftp.drupal.org/files/projects/entity_usage-8.x-2.0-beta28.zip",
+                "reference": "8.x-2.0-beta28",
+                "shasum": "7e97367d1c583a41dfab91226e4f688309ae2ce7"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11"
@@ -2478,8 +2478,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-2.0-beta27",
-                    "datestamp": "1771440241",
+                    "version": "8.x-2.0-beta28",
+                    "datestamp": "1771495229",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -3205,17 +3205,17 @@
         },
         {
             "name": "drupal/linkit",
-            "version": "7.0.12",
+            "version": "7.0.13",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/linkit.git",
-                "reference": "7.0.12"
+                "reference": "7.0.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/linkit-7.0.12.zip",
-                "reference": "7.0.12",
-                "shasum": "be60722e708e12be1596a804e816652c3c7ea815"
+                "url": "https://ftp.drupal.org/files/projects/linkit-7.0.13.zip",
+                "reference": "7.0.13",
+                "shasum": "918d001248b4a394eb1c4e097e7d243959280489"
             },
             "require": {
                 "drupal/core": "^10.1 || ^11"
@@ -3223,8 +3223,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "7.0.12",
-                    "datestamp": "1765468273",
+                    "version": "7.0.13",
+                    "datestamp": "1772036178",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -15103,22 +15103,22 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "v1.25.0",
+            "version": "v1.26.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "7ab965042096282307992f1b9abff020095757f0"
+                "reference": "0da07c10d5fe64cd0c748f0523b47599400f2ed1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/7ab965042096282307992f1b9abff020095757f0",
-                "reference": "7ab965042096282307992f1b9abff020095757f0",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/0da07c10d5fe64cd0c748f0523b47599400f2ed1",
+                "reference": "0da07c10d5fe64cd0c748f0523b47599400f2ed1",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.2 || ^2.0",
                 "php": "8.2.* || 8.3.* || 8.4.* || 8.5.*",
-                "phpdocumentor/reflection-docblock": "^5.2",
+                "phpdocumentor/reflection-docblock": "^5.2 || ^6.0",
                 "sebastian/comparator": "^3.0 || ^4.0 || ^5.0 || ^6.0 || ^7.0 || ^8.0",
                 "sebastian/recursion-context": "^3.0 || ^4.0 || ^5.0 || ^6.0 || ^7.0 || ^8.0",
                 "symfony/deprecation-contracts": "^2.5 || ^3.1"
@@ -15168,9 +15168,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phpspec/prophecy/issues",
-                "source": "https://github.com/phpspec/prophecy/tree/v1.25.0"
+                "source": "https://github.com/phpspec/prophecy/tree/v1.26.0"
             },
-            "time": "2026-02-09T11:58:00+00:00"
+            "time": "2026-02-24T15:40:48+00:00"
         },
         {
             "name": "phpspec/prophecy-phpunit",
