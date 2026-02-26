@@ -106,7 +106,9 @@ function unocha_maps_preprocess_paragraph__response_map(array &$variables) {
         $b_active = (int) ($b->field_active_response?->value ?? 0);
 
         if ($a_active === $b_active) {
-          return $collator->compare($a->label(), $b->label());
+          $a_label = $a->label();
+          $b_label = $b->label();
+          return $collator ? $collator->compare($a_label, $b_label) : strcmp($a_label, $b_label);
         }
         return $b_active <=> $a_active;
       });
@@ -167,7 +169,9 @@ function unocha_maps_preprocess_paragraph__response_map(array &$variables) {
           if (!empty($related)) {
             // Sort the related responses alphabetically.
             uasort($related, function ($a, $b) use ($collator) {
-              return $collator->compare($a->label(), $b->label());
+              $a_label = $a->label();
+              $b_label = $b->label();
+              return $collator ? $collator->compare($a_label, $b_label) : strcmp($a_label, $b_label);
             });
 
             $build[$response->id()]['related'] = [
