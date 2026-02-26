@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: youtube
-label: Youtube
+label: YouTube
 provider_url: 'https://www.youtube.com/'
 endpoints:
   -
