@@ -5,9 +5,9 @@
 /**
  * Add in some extras for our Azure test.
  */
-$settings['hash_salt']             = getenv("DRUPAL_HASH_SALT") ?: 'lolsob';
-$settings['deployment_identifier'] = getenv("GIT_SHA") ?: \Drupal::VERSION;
-$settings['config_sync_directory'] = getenv("DRUPAL_CONFIG_SYNC_DIRECTORY") ?: '/srv/www/config';
+$settings['hash_salt']             = getenv("DRUPAL_HASH_SALT") ?? 'lolsob';
+$settings['deployment_identifier'] = getenv("GIT_SHA") ?? \Drupal::VERSION;
+$settings['config_sync_directory'] = getenv("DRUPAL_CONFIG_SYNC_DIRECTORY") ?? '/srv/www/config';
 
 /**
  * The UN-OCHA section.
@@ -26,17 +26,17 @@ $settings['config_sync_directory'] = getenv("DRUPAL_CONFIG_SYNC_DIRECTORY") ?: '
  */
 
 // Populate the database settings with the environment variables if defined.
-$databases['default']['default'] = array_filter([
+$databases['default']['default'] = [
   'database'  => getenv('DRUPAL_DB_DATABASE'),
   'username'  => getenv('DRUPAL_DB_USERNAME'),
   'password'  => getenv('DRUPAL_DB_PASSWORD'),
   'host'      => getenv('DRUPAL_DB_HOST'),
-  'port'      => getenv('DRUPAL_DB_PORT'),
-  'driver'    => getenv('DRUPAL_DB_DRIVER'),
-  'prefix'    => getenv('DRUPAL_DB_PREFIX'),
-  'charset'   => getenv('DRUPAL_DB_CHARSET'),
-  'collation' => getenv('DRUPAL_DB_COLLATION'),
-]);
+  'port'      => getenv('DRUPAL_DB_PORT') ?? 3306,
+  'driver'    => getenv('DRUPAL_DB_DRIVER') ?? 'mysql',
+  'prefix'    => getenv('DRUPAL_DB_PREFIX') ?? ''.
+  'charset'   => getenv('DRUPAL_DB_CHARSET') ?? 'utf8mb4',
+  'collation' => getenv('DRUPAL_DB_COLLATION') ?? 'utf8mb4_general_ci',
+];
 
 /**
  * And some more extras for Azure. We have no Ansible-generated settings snippet.
