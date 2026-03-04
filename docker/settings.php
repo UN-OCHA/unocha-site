@@ -27,15 +27,15 @@ $settings['config_sync_directory'] = getenv("DRUPAL_CONFIG_SYNC_DIRECTORY") ?? '
 
 // Populate the database settings with the environment variables if defined.
 $databases['default']['default'] = [
-  'database'  => getenv('DRUPAL_DB_DATABASE'),
-  'username'  => getenv('DRUPAL_DB_USERNAME'),
-  'password'  => getenv('DRUPAL_DB_PASSWORD'),
-  'host'      => getenv('DRUPAL_DB_HOST'),
-  'port'      => getenv('DRUPAL_DB_PORT') ?? 3306,
-  'driver'    => getenv('DRUPAL_DB_DRIVER') ?? 'mysql',
-  'prefix'    => getenv('DRUPAL_DB_PREFIX') ?? ''.
-  'charset'   => getenv('DRUPAL_DB_CHARSET') ?? 'utf8mb4',
-  'collation' => getenv('DRUPAL_DB_COLLATION') ?? 'utf8mb4_general_ci',
+  'driver'    => getenv('DRUPAL_DATABASE_DRIVER') ?? 'mysql',
+  'username'  => getenv('DRUPAL_DATABASE_USER'),
+  'password'  => getenv('DRUPAL_DATABASE_PASSWORD'),
+  'host'      => getenv('DRUPAL_DATABASE_HOST'),
+  'port'      => getenv('DRUPAL_DATABASE_PORT') ?? 3306,
+  'database'  => getenv('DRUPAL_DATABASE_DB'),
+  'prefix'    => getenv('DRUPAL_DATABASE_PREFIX') ?? '',
+  'charset'   => getenv('DRUPAL_DATABASE_CHARSET') ?? 'utf8mb4',
+  'collation' => getenv('DRUPAL_DATABASE_COLLATION') ?? 'utf8mb4_general_ci',
 ];
 
 /**
