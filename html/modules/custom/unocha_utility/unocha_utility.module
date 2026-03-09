@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Template\Attribute;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements hook_preprocess().
@@ -22,4 +23,83 @@ function unocha_utility_preprocess(array &$variables, $hook) {
       }
     }
   }
+}
+
+/**
+ * Helper to load the configured 404 node if available.
+ *
+ * @return \Drupal\node\NodeInterface|false
+ *   The 404 node if found, FALSE otherwise.
+ */
+function unocha_utility_get_404_node(): NodeInterface|false {
+  static $node;
+
+  if (!isset($node)) {
+    $node = FALSE;
+
+    // Only act on actual 404 responses.
+    $exception = \Drupal::request()->attributes->get('exception');
+    if (!$exception || $exception->getStatusCode() !== 404) {
+      return FALSE;
+    }
+
+    // Check if there is a custom 404 page configured.
+    $path_404 = \Drupal::config('system.site')->get('page.404');
+    if (!$path_404) {
+      return FALSE;
+    }
+
+    // Try to match the path to a node.
+    try {
+      $params = \Drupal::service('router')->match($path_404);
+    }
+    catch (\Exception) {
+      return FALSE;
+    }
+
+    // Check if the node is a valid node.
+    if (!isset($params['node']) || !$params['node'] instanceof NodeInterface) {
+      return FALSE;
+    }
+
+    // Cache the node.
+    $node = $params['node'];
+  }
+
+  return $node;
+}
+
+/**
+ * Implements hook_metatags_alter().
+ */
+function unocha_utility_metatags_alter(array &$metatags, array &$context): void {
+  // Check if we are on the custom 404 page.
+  $node = unocha_utility_get_404_node();
+  if (!$node) {
+    return;
+  }
+
+  // No metatags for 404 pages. This notably prevents leaking the original
+  // entity's metatags into the 404 page. For example, the `current-page` tokens
+  // resolve againt the current request but the 404 node is loaded in a
+  // subrequest.
+  $metatags = [];
+
+  // Just in case, ensure the 404 node is the entity in the context.
+  $context['entity'] = $node;
+}
+
+/**
+ * Implements hook_preprocess_page_title().
+ */
+function unocha_utility_preprocess_page_title(array &$variables): void {
+  // Check if we are on the custom 404 page.
+  $node = unocha_utility_get_404_node();
+  if (!$node) {
+    return;
+  }
+
+  // Replace the title with the 404 node's title instead of the current page's
+  // title which comes from the original request.
+  $variables['title'] = $node->getTitle();
 }
