@@ -23,6 +23,12 @@
     "drupal/menu_breadcrumb": {
       "https://www.drupal.org/project/menu_breadcrumb/issues/3567562": "PATCHES/menu_breadcrumb-fix-empty-links-geturl-null-3567562.patch"
     },
+    "drupal/openid_connect": {
+      "Incorrect context in hook_redirect_logout_alter": "PATCHES/openid_connect-3577436-mr191.patch"
+    },
+    "drupal/openid_connect_windows_aad": {
+      "Prompt schema mismatch with parent plugin": "PATCHES/openid_connect_windows_aad-3577142-mr46.patch"
+    },
     "drupal/social_auth": {
       "Type Error - #3496656": "PATCHES/social_auth-type-error-3496656.patch"
     },
