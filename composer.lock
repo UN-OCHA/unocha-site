@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e4b47beb8332c2a53b49a416be4b9171",
+    "content-hash": "6753fa3a2a0189b3572ae1ad14bf01a7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -218,12 +218,12 @@
             "version": "v10.2.0-patch2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Choices-js/Choices.git",
+                "url": "git@github.com:jshjohnson/Choices.git",
                 "reference": "68d7cad86dbd0603b3c8d2afcb4b05f56f7e9ba7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Choices-js/Choices/zipball/68d7cad86dbd0603b3c8d2afcb4b05f56f7e9ba7",
+                "url": "https://api.github.com/repos/jshjohnson/Choices/zipball/68d7cad86dbd0603b3c8d2afcb4b05f56f7e9ba7",
                 "reference": "68d7cad86dbd0603b3c8d2afcb4b05f56f7e9ba7"
             },
             "type": "bower-asset"
@@ -18407,7 +18407,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.3"
+        "php": ">=8.4"
     },
     "platform-dev": {},
     "plugin-api-version": "2.9.0"
