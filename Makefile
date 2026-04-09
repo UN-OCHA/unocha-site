@@ -1,10 +1,9 @@
 # Variables. Yes.
 DOCKER=docker
-DOCKER_BUILDKIT=0
 
 # The main build recipe.
 build:  clean
-	DOCKER_BUILDKIT=$(DOCKER_BUILDKIT) $(DOCKER) build \
+	$(DOCKER) buildx build \
 				--build-arg BRANCH_ENVIRONMENT=$(NODE_ENV) \
 				--build-arg VCS_REF=`git rev-parse --short HEAD` \
 				--build-arg VCS_URL=`git config --get remote.origin.url | sed 's#git@github.com:#https://github.com/#'` \
