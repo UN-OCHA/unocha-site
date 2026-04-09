@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6753fa3a2a0189b3572ae1ad14bf01a7",
+    "content-hash": "f6579a4d0b872243d60c60921c906238",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3143,17 +3143,11 @@
         },
         {
             "name": "drupal/layout_paragraphs",
-            "version": "2.1.1",
+            "version": "dev-2.1.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/layout_paragraphs.git",
-                "reference": "2.1.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/layout_paragraphs-2.1.1.zip",
-                "reference": "2.1.1",
-                "shasum": "6fc90954c67939933a6eb24000892822715e4f90"
+                "reference": "c97badfb93e6f45b8e9650e2387887e1b22570fa"
             },
             "require": {
                 "drupal/core": "^10 || ^11",
@@ -3162,16 +3156,20 @@
             "require-dev": {
                 "drupal/block_field": "~1.0",
                 "drupal/entity_usage": "2.x-dev",
+                "drupal/field_group": "^3.6",
                 "drupal/paragraphs-paragraphs_library": "*"
             },
             "type": "drupal-module",
             "extra": {
+                "branch-alias": {
+                    "dev-2.1.x": "2.1.x-dev"
+                },
                 "drupal": {
-                    "version": "2.1.1",
-                    "datestamp": "1732724895",
+                    "version": "2.1.1+3-dev",
+                    "datestamp": "1738202068",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -18394,6 +18392,7 @@
         "drupal/default_content": 15,
         "drupal/entity_usage": 10,
         "drupal/imageapi_optimize_binaries": 10,
+        "drupal/layout_paragraphs": 20,
         "drupal/media_library_extend": 15,
         "drupal/menu_breadcrumb": 15,
         "drupal/openid_connect_windows_aad": 10,

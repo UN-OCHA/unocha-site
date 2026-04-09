@@ -44,7 +44,7 @@
         "drupal/imageapi_optimize_binaries": "^1.0@beta",
         "drupal/imageapi_optimize_webp": "^2.0",
         "drupal/imagemagick": "^4",
-        "drupal/layout_paragraphs": "^2.0",
+        "drupal/layout_paragraphs": "2.1.x-dev@dev",
         "drupal/linkit": "^7",
         "drupal/mailsystem": "^4.4",
         "drupal/maintenance200": "^2",
