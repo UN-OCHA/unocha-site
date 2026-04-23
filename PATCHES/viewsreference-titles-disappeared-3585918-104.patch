@@ -1,0 +1,29 @@
+diff --git a/src/Plugin/Field/FieldFormatter/ViewsReferenceLazyFieldFormatter.php b/src/Plugin/Field/FieldFormatter/ViewsReferenceLazyFieldFormatter.php
+index 492c3b633a7ab2f9372cc8ad12b1333a6d782ed5..4623218366b9373aadba8a3420feb6d41fd11c98 100644
+--- a/src/Plugin/Field/FieldFormatter/ViewsReferenceLazyFieldFormatter.php
++++ b/src/Plugin/Field/FieldFormatter/ViewsReferenceLazyFieldFormatter.php
+@@ -157,7 +157,12 @@ class ViewsReferenceLazyFieldFormatter extends FormatterBase implements TrustedC
+ 
+     $unserialized_data = !empty($data) ? unserialize($data, ['allowed_classes' => FALSE]) : [];
+     $unserialized_enabled_settings = !empty($enabled_settings) ? unserialize($enabled_settings, ['allowed_classes' => FALSE]) : [];
+-    $unserialized_enabled_settings = array_filter($unserialized_enabled_settings);
++
++    // No array_filter so we can distinguish bewteen absent settings and disabled settings.
++    // See https://www.drupal.org/project/viewsreference/issues/3224064
++    // See https://www.drupal.org/project/viewsreference/issues/3585918
++    // $unserialized_enabled_settings = array_filter($unserialized_enabled_settings);
++
+     $view = Views::getView($view_name);
+ 
+     // Add an extra check because the view could have been deleted.
+@@ -188,7 +193,9 @@ class ViewsReferenceLazyFieldFormatter extends FormatterBase implements TrustedC
+       if (!empty($view->result) || !empty($view->empty)) {
+         // Add a custom template if the title is available.
+         $title = $view->getTitle();
+-        if (!empty($title) && !empty($unserialized_enabled_settings['title'])) {
++        // If there is a title and the title is set to show *or* there is no saved setting either way, show the title.
++        // See https://www.drupal.org/project/viewsreference/issues/3585918
++        if (!empty($title) && (!isset($unserialized_enabled_settings['title']) || $unserialized_enabled_settings['title'] === 'title')) {
+           // If the title contains tokens, we need to render the view to
+           // populate the rowTokens.
+           if (mb_strpos($title, '{{') !== FALSE) {

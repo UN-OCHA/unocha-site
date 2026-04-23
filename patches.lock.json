@@ -1,5 +1,5 @@
 {
-    "_hash": "881597717782067af1c1f03310a0885ea4755ca1c5db1d2e2fccffcc11402e2d",
+    "_hash": "95b4114334b92998c729a329fcd95dea72d248f76c871c0e2ff174d9d7456e71",
     "patches": {
         "drupal/core": [
             {
@@ -147,6 +147,18 @@
                 "description": "Avoid leaking the path via Drupal.settings json",
                 "url": "PATCHES/username_enumeration_prevention-user-login-block-form-3312288.patch",
                 "sha256": "d69c3af6d81a028ee001324682c5ddce14124632b4a83e240cd2f838905ede87",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            }
+        ],
+        "drupal/viewsreference": [
+            {
+                "package": "drupal/viewsreference",
+                "description": "Block titles have disappeared",
+                "url": "PATCHES/viewsreference-titles-disappeared-3585918-104.patch",
+                "sha256": "2255ffef28b8c020a10f0866cf773df7001b387b980f6a4287c61d43205b311b",
                 "depth": 1,
                 "extra": {
                     "provenance": "patches-file:composer.patches.json"
