@@ -1,3 +1,32 @@
+diff --git a/src/Plugin/Field/FieldFormatter/ViewsReferenceFieldFormatter.php b/src/Plugin/Field/FieldFormatter/ViewsReferenceFieldFormatter.php
+index e20f42e6a464048a4ba0692bcb6eea56dafb737a..ecd94a8f061e485376d9d3950c2d531fc793511f 100644
+--- a/src/Plugin/Field/FieldFormatter/ViewsReferenceFieldFormatter.php
++++ b/src/Plugin/Field/FieldFormatter/ViewsReferenceFieldFormatter.php
+@@ -101,7 +101,12 @@ class ViewsReferenceFieldFormatter extends FormatterBase {
+       }
+ 
+       $view->setDisplay($display_id);
+-      $enabled_settings = array_filter($this->getFieldSetting('enabled_settings') ?? []);
++
++      // No array_filter so we can distinguish bewteen absent settings and disabled settings.
++      // See https://www.drupal.org/project/viewsreference/issues/3224064
++      // See https://www.drupal.org/project/viewsreference/issues/3585918
++      // $enabled_settings = array_filter($this->getFieldSetting('enabled_settings') ?? []);
++      $enabled_settings = $this->getFieldSetting('enabled_settings') ?? [];
+ 
+       // Add properties to the view so our hook_views_pre_build() implementation
+       // can alter the view. This is pretty hacky, but we need this to fix ajax
+@@ -131,7 +136,9 @@ class ViewsReferenceFieldFormatter extends FormatterBase {
+         if (!empty($view->result) || !empty($view->empty) || ($exposed_form_handler?->options['input_required'] ?? FALSE) || !empty($view->exposed_widgets) || !empty($view->header) || !empty($view->footer)) {
+           // Add a custom template if the title is available.
+           $title = $view->getTitle();
+-          if (!empty($title) && !empty($enabled_settings['title'])) {
++          // If there is a title and the title is set to show *or* there is no saved setting either way, show the title.
++          // See https://www.drupal.org/project/viewsreference/issues/3585918
++          if (!empty($title) && (!isset($unserialized_enabled_settings['title']) || $unserialized_enabled_settings['title'] === 'title')) {
+             // If the title contains tokens, we need to render the view to
+             // populate the rowTokens.
+             if (mb_strpos($title, '{{') !== FALSE) {
 diff --git a/src/Plugin/Field/FieldFormatter/ViewsReferenceLazyFieldFormatter.php b/src/Plugin/Field/FieldFormatter/ViewsReferenceLazyFieldFormatter.php
 index 492c3b633a7ab2f9372cc8ad12b1333a6d782ed5..4623218366b9373aadba8a3420feb6d41fd11c98 100644
 --- a/src/Plugin/Field/FieldFormatter/ViewsReferenceLazyFieldFormatter.php
