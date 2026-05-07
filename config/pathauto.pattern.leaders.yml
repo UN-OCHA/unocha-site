@@ -7,7 +7,7 @@ dependencies:
 id: leaders
 label: Leaders
 type: 'canonical_entities:node'
-pattern: '[node:menu-link:parent]/[node:title]'
+pattern: '/[node:menu-link:parent]/[node:title]'
 selection_criteria:
   2b2dab71-ae6b-466b-a109-c5514ebdbd31:
     id: 'entity_bundle:node'

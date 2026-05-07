@@ -7,7 +7,7 @@ dependencies:
 id: basic
 label: Basic
 type: 'canonical_entities:node'
-pattern: '[node:title]'
+pattern: '/[node:title]'
 selection_criteria:
   da8a2be2-1846-48e2-b689-98a32f582c85:
     id: 'entity_bundle:node'
