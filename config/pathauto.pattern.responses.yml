@@ -7,7 +7,7 @@ dependencies:
 id: responses
 label: Responses
 type: 'canonical_entities:node'
-pattern: '[node:title]'
+pattern: '/[node:title]'
 selection_criteria:
   99892cbf-222f-42e8-96a4-c24300f3ddf2:
     id: 'entity_bundle:node'

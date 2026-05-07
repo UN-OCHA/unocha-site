@@ -7,7 +7,7 @@ dependencies:
 id: regions
 label: Regions
 type: 'canonical_entities:node'
-pattern: '[node:title]'
+pattern: '/[node:title]'
 selection_criteria:
   ee290c30-9f67-4a04-ab71-6fd94bf8a17e:
     id: 'entity_bundle:node'
