@@ -34,6 +34,9 @@
     },
     "drupal/username_enumeration_prevention": {
       "Avoid leaking the path via Drupal.settings json": "PATCHES/username_enumeration_prevention-user-login-block-form-3312288.patch"
+    },
+    "drupal/viewsreference": {
+      "Block titles have disappeared": "PATCHES/viewsreference-titles-disappeared-3585918-104.patch"
     }
   }
 }
