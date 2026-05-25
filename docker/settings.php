@@ -26,16 +26,17 @@ $settings['config_sync_directory'] = getenv("DRUPAL_CONFIG_SYNC_DIRECTORY") ?? '
  */
 
 // Populate the database settings with the environment variables if defined.
+
 $databases['default']['default'] = [
-  'driver'    => getenv('DRUPAL_DATABASE_DRIVER') ?? 'mysql',
-  'username'  => getenv("AZURE_MYSQL_USERNAME") ?: getenv('DRUPAL_DATABASE_USER'),
-  'password'  => getenv("AZURE_MYSQL_PASSSWORD") ?: getenv('DRUPAL_DATABASE_PASSWORD'),
-  'host'      => getenv("AZURE_MYSQL_HOST") ?: getenv('DRUPAL_DATABASE_HOST'),
-  'port'      => getenv("AZURE_MYSQL_PORT") ?: getenv('DRUPAL_DATABASE_PORT') ?? 3306,
-  'database'  => getenv("AZURE_MYSQL_DBNAME") ?: getenv('DRUPAL_DATABASE_DB'),
-  'prefix'    => getenv('DRUPAL_DATABASE_PREFIX') ?? '',
-  'charset'   => getenv('DRUPAL_DATABASE_CHARSET') ?? 'utf8mb4',
-  'collation' => getenv('DRUPAL_DATABASE_COLLATION') ?? 'utf8mb4_general_ci',
+  'driver'    => getenv("AZURE_MYSQL_DRIVER")    ?: getenv("DRUPAL_DATABASE_DRIVER")    ?: 'mysql',
+  'username'  => getenv("AZURE_MYSQL_USERNAME")  ?: getenv("DRUPAL_DATABASE_USERNAME")  ?: 'username',
+  'password'  => getenv("AZURE_MYSQL_PASSWORD")  ?: getenv("DRUPAL_DATABASE_PASSWORD")  ?: 'password',
+  'host'      => getenv("AZURE_MYSQL_HOST")      ?: getenv("DRUPAL_DATABASE_HOST")      ?: 'mysql.example.com',
+  'port'      => getenv("AZURE_MYSQL_PORT")      ?: getenv("DRUPAL_DATABASE_PORT")      ?: 3306,
+  'database'  => getenv("AZURE_MYSQL_DBNAME")    ?: getenv("DRUPAL_DATABASE_DB")        ?: 'database',
+  'prefix'    => getenv("AZURE_MYSQL_PREFIX")    ?: getenv("DRUPAL_DATABASE_PREFIX")    ?: '',
+  'charset'   => getenv("AZURE_MYSQL_CHARSET")   ?: getenv("DRUPAL_DATABASE_CHARSET")   ?: 'utf8mb4',
+  'collation' => getenv("AZURE_MYSQL_COLLATION") ?: getenv("DRUPAL_DATABASE_COLLATION") ?: 'utf8mb4_general_ci',
 ];
 
 /**
