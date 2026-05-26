@@ -63,6 +63,11 @@ COPY --from=builder /srv/www/docker/etc/nginx/custom /etc/nginx/custom/
 COPY --from=builder /srv/www/docker/etc/nginx/sites-enabled/02_mapbox_proxy_cache.conf /etc/nginx/sites-enabled/02_mapbox_proxy_cache.conf
 COPY --from=builder /srv/www/docker/etc/nginx/sites-enabled/03_drupal_legacy_map.conf /etc/nginx/sites-enabled/03_drupal_legacy_map.conf
 
+# On Azure, the volume mounts live under /mnt/drupal and we need to link them here.
+RUN mkdir -p /mnt/drupal/private /mnt/drupal/public && \
+    ln -s /mnt/drupal/public /srv/www/html/sites/default/files && \
+    ln -s /mnt/drupal/private /srv/www/html/sites/default/private
+
 # Add sshd for debugging.
 RUN apk add --no-cache mariadb-connector-c openssh-server && \
     ssh-keygen -A && \
