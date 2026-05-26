@@ -67,3 +67,15 @@ $settings['file_chmod_file'] = 0664;
 
 $config['sanitize_input_logging'] = TRUE;
 $settings['make_unused_managed_files_temporary'] = TRUE;
+
+/**
+ * Load everything else from snippets under /mnt/drupal/settings.
+ *
+ * Ideally we turn a lot of this into dynamically loaded config from
+ * a key/value store or a keyvault.
+ */
+if (file_exists('/mnt/drupal/settings')) {
+  foreach (glob('/mnt/drupal/settings/settings.*.php') as $filename) {
+    include $filename;
+  }
+}
