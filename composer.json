@@ -59,6 +59,7 @@
         "drupal/paragraphs_admin": "^1.4",
         "drupal/pathauto": "^1.8",
         "drupal/redirect": "^1.8",
+        "drupal/redis": "^1.11",
         "drupal/samlauth": "^3.8",
         "drupal/samples": "^1.0@beta",
         "drupal/seckit": "^2.0",
