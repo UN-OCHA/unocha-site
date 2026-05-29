@@ -1,5 +1,5 @@
 {
-    "_hash": "c9fe86cc5ba510910451a90c6de2deb4ca02f2777d9e7aaed9a2a94da41d6c9e",
+    "_hash": "05347be8b6e917e66b7451fc7bfa1209b3f7e2598cb4674a7093f40ad4b68b5a",
     "patches": {
         "drupal/core": [
             {
@@ -65,28 +65,6 @@
                 "description": "D11 compatibility - #3431791",
                 "url": "PATCHES/maintenance200-D11-compatibility-3431791.patch",
                 "sha256": "a18c917b199168ded802407a11e2d9eb75b1933c75aea4e60701c3ba0f6ea623",
-                "depth": 1,
-                "extra": {
-                    "provenance": "patches-file:composer.patches.json"
-                }
-            }
-        ],
-        "drupal/media_library_extend": [
-            {
-                "package": "drupal/media_library_extend",
-                "description": "D11 compatibility - #3431898",
-                "url": "PATCHES/media_library_extend-D11-compatibility.patch",
-                "sha256": "98e95eb32fd7b0861af1931ef63390a93d9afc1748cdf922815d01ce3b575f0a",
-                "depth": 1,
-                "extra": {
-                    "provenance": "patches-file:composer.patches.json"
-                }
-            },
-            {
-                "package": "drupal/media_library_extend",
-                "description": "https://www.drupal.org/project/media_library_extend/issues/3467575",
-                "url": "PATCHES/i3467575.patch",
-                "sha256": "0f4d5735b73dbd5054dbc56157e1de3d6c1de7cd3582f0be0edb37b20dfff4f3",
                 "depth": 1,
                 "extra": {
                     "provenance": "patches-file:composer.patches.json"
