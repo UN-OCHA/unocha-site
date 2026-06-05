@@ -5,9 +5,9 @@
 /**
  * Add in some extras for our Azure test.
  */
-$settings['hash_salt']             = getenv("DRUPAL_HASH_SALT") ?? 'lolsob';
-$settings['deployment_identifier'] = getenv("GIT_SHA") ?? \Drupal::VERSION;
-$settings['config_sync_directory'] = getenv("DRUPAL_CONFIG_SYNC_DIRECTORY") ?? '/srv/www/config';
+$settings['hash_salt']             = getenv("DRUPAL_HASH_SALT") ?: 'lolsob';
+$settings['deployment_identifier'] = getenv("GIT_SHA") ?: \Drupal::VERSION;
+$settings['config_sync_directory'] = getenv("DRUPAL_CONFIG_SYNC_DIRECTORY") ?: '/srv/www/config';
 
 /**
  * The UN-OCHA section.
