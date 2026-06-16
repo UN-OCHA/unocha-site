@@ -116,10 +116,10 @@ footer.cd-author {
     right: 0;
   }
 
-  [dir=rtl] .uno-content--custom > a.cd-button {
+  [dir="rtl"] .uno-content--custom > a.cd-button {
     left: 0;
-    right: unset;
-
+    right: auto;
+  }
 }
 
 /* Center Hero images within the cd-bleed container */
