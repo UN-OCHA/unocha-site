@@ -69,7 +69,7 @@ RUN mkdir -p /mnt/drupal/private /mnt/drupal/public && \
     ln -s /mnt/drupal/private /srv/www/html/sites/default/private
 
 # Add rsync and sshd and other tools for seed and debugging.
-RUN apk add --no-cache mariadb-connector-c openssh-server redis rsync && \
+RUN apk add --no-cache inetutils-telnet iputils-tracepath mariadb-connector-c openssh-server openssl redis rsync && \
     ssh-keygen -A && \
     echo "root:Docker!" | chpasswd && \
     mkdir -p /etc/services.d/sshd
