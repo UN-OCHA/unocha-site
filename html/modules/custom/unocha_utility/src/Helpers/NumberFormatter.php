@@ -448,10 +448,10 @@ class NumberFormatter {
         elseif ($n === 2) {
           return 'two';
         }
-        elseif (($n % 100 >= 3) && ($n % 100 <= 10)) {
+        elseif (($i % 100 >= 3) && ($i % 100 <= 10)) {
           return 'few';
         }
-        elseif (($n % 100 >= 11) && ($n % 100 <= 99)) {
+        elseif (($i % 100 >= 11) && ($i % 100 <= 99)) {
           return 'many';
         }
         return 'other';
