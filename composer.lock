@@ -11230,20 +11230,29 @@
         },
         {
             "name": "unocha/ocha_key_figures",
-            "version": "v3.0.0",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UN-OCHA/ocha_key_figures.git",
-                "reference": "a7bd5fca65dddcc51f779b0397664675a28da3fb"
+                "reference": "eb13d2e6828f5ded9175f78aed257e0965d78fb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UN-OCHA/ocha_key_figures/zipball/a7bd5fca65dddcc51f779b0397664675a28da3fb",
-                "reference": "a7bd5fca65dddcc51f779b0397664675a28da3fb",
+                "url": "https://api.github.com/repos/UN-OCHA/ocha_key_figures/zipball/eb13d2e6828f5ded9175f78aed257e0965d78fb5",
+                "reference": "eb13d2e6828f5ded9175f78aed257e0965d78fb5",
                 "shasum": ""
             },
             "require": {
                 "symfony/intl": "^6.2"
+            },
+            "require-dev": {
+                "behat/mink": "^1.13",
+                "phpcompatibility/php-compatibility": "^9.3",
+                "phpspec/prophecy-phpunit": "^2.5",
+                "phpunit/phpunit": "^11.5",
+                "symfony/browser-kit": "^8.1",
+                "symfony/css-selector": "^8.1",
+                "symfony/phpunit-bridge": "^8.1"
             },
             "type": "drupal-module",
             "notification-url": "https://packagist.org/downloads/",
@@ -11253,9 +11262,9 @@
             "description": "UNOCHA Key Figures",
             "support": {
                 "issues": "https://github.com/UN-OCHA/ocha_key_figures/issues",
-                "source": "https://github.com/UN-OCHA/ocha_key_figures/tree/v3.0.0"
+                "source": "https://github.com/UN-OCHA/ocha_key_figures/tree/v3.1.0"
             },
-            "time": "2025-03-27T10:00:31+00:00"
+            "time": "2026-06-18T02:08:37+00:00"
         },
         {
             "name": "unocha/ocha_monitoring",
