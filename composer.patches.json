@@ -1,8 +1,5 @@
 {
   "patches": {
-    "drupal/core": {
-      "MenuActiveTrail should ignore disabled menu links": "PATCHES/core-menu_active_trail_disabled_items-2973515-45.patch"
-    },
     "drupal/datetime_range_timezone": {
       "Views integration": "PATCHES/datetime_range_timezone-views-integration.patch"
     },
