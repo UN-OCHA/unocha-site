@@ -12,11 +12,11 @@ selection_criteria:
   a54ecb6e-1a3b-4e2d-a522-bf126de1bccd:
     id: 'entity_bundle:node'
     negate: false
-    uuid: a54ecb6e-1a3b-4e2d-a522-bf126de1bccd
     context_mapping:
       node: node
     bundles:
       event: event
+    uuid: a54ecb6e-1a3b-4e2d-a522-bf126de1bccd
 selection_logic: and
 weight: -5
 relationships: {  }

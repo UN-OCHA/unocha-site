@@ -12,11 +12,11 @@ selection_criteria:
   028a5761-cb9f-4c93-9dba-34dbb52adee0:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 028a5761-cb9f-4c93-9dba-34dbb52adee0
     context_mapping:
       node: node
     bundles:
       story: story
+    uuid: 028a5761-cb9f-4c93-9dba-34dbb52adee0
 selection_logic: and
 weight: -5
 relationships: {  }
