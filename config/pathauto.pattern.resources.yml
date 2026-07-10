@@ -12,11 +12,11 @@ selection_criteria:
   74b7a80c-01d5-4019-859e-14f85145627a:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 74b7a80c-01d5-4019-859e-14f85145627a
     context_mapping:
       node: node
     bundles:
       resource: resource
+    uuid: 74b7a80c-01d5-4019-859e-14f85145627a
 selection_logic: and
 weight: -5
 relationships: {  }
