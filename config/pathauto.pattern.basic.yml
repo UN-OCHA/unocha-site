@@ -12,11 +12,11 @@ selection_criteria:
   da8a2be2-1846-48e2-b689-98a32f582c85:
     id: 'entity_bundle:node'
     negate: false
-    uuid: da8a2be2-1846-48e2-b689-98a32f582c85
     context_mapping:
       node: node
     bundles:
       basic: basic
+    uuid: da8a2be2-1846-48e2-b689-98a32f582c85
 selection_logic: and
 weight: -5
 relationships: {  }

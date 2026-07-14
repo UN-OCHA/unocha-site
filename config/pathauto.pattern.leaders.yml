@@ -12,11 +12,11 @@ selection_criteria:
   2b2dab71-ae6b-466b-a109-c5514ebdbd31:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 2b2dab71-ae6b-466b-a109-c5514ebdbd31
     context_mapping:
       node: node
     bundles:
       leader: leader
+    uuid: 2b2dab71-ae6b-466b-a109-c5514ebdbd31
 selection_logic: and
 weight: -5
 relationships: {  }

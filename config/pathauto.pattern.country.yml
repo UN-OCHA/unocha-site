@@ -12,11 +12,11 @@ selection_criteria:
   a54beba9-d90e-4b52-83fd-52283a02f5bd:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: a54beba9-d90e-4b52-83fd-52283a02f5bd
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
       country: country
+    uuid: a54beba9-d90e-4b52-83fd-52283a02f5bd
 selection_logic: and
 weight: -5
 relationships: {  }
