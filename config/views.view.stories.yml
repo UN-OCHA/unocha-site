@@ -1115,11 +1115,11 @@ display:
         - taxonomy_term_list
   news_and_stories:
     id: news_and_stories
-    display_title: 'News and Stories'
+    display_title: 'News and stories'
     display_plugin: block
     position: 4
     display_options:
-      title: 'News and Stories'
+      title: 'News and stories'
       empty:
         area_text_custom:
           id: area_text_custom
