@@ -14,6 +14,14 @@
  * @see template_preprocess_menu_local_task()
  */
 #}
+{% if is_active %}
+  {#
+    Set the active class manually because it is only applied when there are
+    no query parameters in the URL otherwise.
+    @see https://www.drupal.org/project/drupal/issues/3527291
+  #}
+  {% set link = link|merge({'#attributes': {'class': 'is-active'}}) %}
+{% endif %}
 {% if element['#link'].title == 'Publications'|t and element['#active'] is not empty %}
   {% set link = link|merge({'#title': 'Latest'|t}) %}
 {% endif %}
