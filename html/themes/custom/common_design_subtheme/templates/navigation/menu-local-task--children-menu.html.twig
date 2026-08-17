@@ -22,7 +22,4 @@
   #}
   {% set link = link|merge({'#attributes': {'class': 'is-active'}}) %}
 {% endif %}
-{% if element['#link'].title == 'Publications'|t and element['#active'] is not empty %}
-  {% set link = link|merge({'#title': 'Latest'|t}) %}
-{% endif %}
 <li{{ attributes }}>{{ link }}</li>

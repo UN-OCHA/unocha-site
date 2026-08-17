@@ -114,6 +114,7 @@ function common_design_subtheme_preprocess_field__field_children_menu(array &$va
   $value = $field_item_list->first()->value;
 
   $links = [];
+  $linked_nodes = [];
   $current_menu_link = NULL;
   $cache_metadata = CacheableMetadata::createFromRenderArray($variables);
   $cache_metadata->addCacheableDependency($entity);
@@ -122,6 +123,7 @@ function common_design_subtheme_preprocess_field__field_children_menu(array &$va
   // We'll display this menu or its parent as tabs.
   if (isset($entity) && $entity->getEntityTypeId() === 'node') {
     $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
+    $node_storage = \Drupal::entityTypeManager()->getStorage('node');
 
     // Get the menu link referencing this node in the main menu.
     $menu_links = $menu_link_manager->loadLinksByRoute('entity.node.canonical', [
@@ -145,7 +147,7 @@ function common_design_subtheme_preprocess_field__field_children_menu(array &$va
           !empty($parent_menu_link->getRouteParameters()['node'])
         ) {
           $node_id = $parent_menu_link->getRouteParameters()['node'];
-          $parent_entity = \Drupal::entityTypeManager()->getStorage('node')->load($node_id);
+          $parent_entity = $node_storage->load($node_id);
 
           if (isset($parent_entity) && $parent_entity->hasField('field_children_menu')) {
             $cache_metadata->addCacheableDependency($parent_entity);
@@ -190,6 +192,24 @@ function common_design_subtheme_preprocess_field__field_children_menu(array &$va
           unset($links[$key]);
         }
       }
+
+      $node_ids = [];
+      foreach ($links as $link) {
+        if ($link->getRouteName() !== 'entity.node.canonical') {
+          continue;
+        }
+        $node_id = $link->getRouteParameters()['node'] ?? NULL;
+        if (!empty($node_id)) {
+          $node_ids[$node_id] = $node_id;
+        }
+      }
+
+      if (!empty($node_ids)) {
+        $linked_nodes = $node_storage->loadMultiple($node_ids);
+        foreach ($linked_nodes as $linked_node) {
+          $cache_metadata->addCacheableDependency($linked_node);
+        }
+      }
     }
   }
 
@@ -199,10 +219,20 @@ function common_design_subtheme_preprocess_field__field_children_menu(array &$va
       '#theme' => 'menu_local_tasks__children_menu',
     ];
     foreach ($links as $link) {
+      $title = $link->getTitle();
+      $node_id = $link->getRouteParameters()['node'] ?? NULL;
+      if (!empty($node_id) &&
+        isset($linked_nodes[$node_id]) &&
+        $linked_nodes[$node_id]->hasField('field_children_menu_title') &&
+        !$linked_nodes[$node_id]->get('field_children_menu_title')->isEmpty()
+      ) {
+        $title = $linked_nodes[$node_id]->get('field_children_menu_title')->value;
+      }
+
       $content['#primary'][] = [
         '#theme' => 'menu_local_task__children_menu',
         '#link' => [
-          'title' => $link->getTitle(),
+          'title' => $title,
           'url' => $link->getUrlObject(),
         ],
         '#weight' => $link->getWeight(),

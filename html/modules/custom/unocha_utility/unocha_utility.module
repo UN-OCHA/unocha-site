@@ -5,6 +5,7 @@
  * Helper functions that applies to a variety of things on UNOCHA.
  */
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Template\Attribute;
 use Drupal\node\NodeInterface;
 
@@ -102,4 +103,25 @@ function unocha_utility_preprocess_page_title(array &$variables): void {
   // Replace the title with the 404 node's title instead of the current page's
   // title which comes from the original request.
   $variables['title'] = $node->getTitle();
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for 'node_form'.
+ *
+ * Show the children menu title override only when the "Children Menu"
+ * checkbox is enabled.
+ */
+function unocha_utility_form_node_form_alter(array &$form, FormStateInterface $form_state, $form_id): void {
+  $entity = $form_state->getFormObject()->getEntity();
+  if (!$entity instanceof NodeInterface || $entity->bundle() !== 'basic') {
+    return;
+  }
+
+  if (isset($form['field_children_menu_title'])) {
+    $form['field_children_menu_title']['#states'] = [
+      'visible' => [
+        ':input[name="field_children_menu[value]"]' => ['checked' => TRUE],
+      ],
+    ];
+  }
 }
