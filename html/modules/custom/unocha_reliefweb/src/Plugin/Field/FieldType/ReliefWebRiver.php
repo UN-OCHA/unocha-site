@@ -3,6 +3,7 @@
 namespace Drupal\unocha_reliefweb\Plugin\Field\FieldType;
 
 use Drupal\Component\Utility\Random;
+use Drupal\Core\Field\Attribute\FieldType;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemBase;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
@@ -12,16 +13,15 @@ use Drupal\Core\TypedData\DataDefinition;
 
 /**
  * Plugin implementation of the 'reliefweb_river' field type.
- *
- * @FieldType(
- *   id = "reliefweb_river",
- *   label = @Translation("ReliefWeb River"),
- *   description = @Translation("A field to display of list of documents from ReliefWeb."),
- *   category = @Translation("ReliefWeb"),
- *   default_widget = "reliefweb_river",
- *   default_formatter = "reliefweb_river",
- * )
  */
+#[FieldType(
+  id: 'reliefweb_river',
+  label: new TranslatableMarkup('ReliefWeb River'),
+  description: new TranslatableMarkup('A field to display of list of documents from ReliefWeb.'),
+  category: 'reliefweb',
+  default_widget: 'reliefweb_river',
+  default_formatter: 'reliefweb_river',
+)]
 class ReliefWebRiver extends FieldItemBase {
 
   /**

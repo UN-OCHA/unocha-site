@@ -180,9 +180,6 @@ form .paragraph--view-mode--preview.paragraph--type--news-and-stories .uno-stori
 form .paragraph--view-mode--preview.paragraph--type--stories .uno-stories__header {
   margin-bottom: 1rem;
 }
-form .paragraph--view-mode--preview.paragraph--type--stories .uno-stories__view_all {
-  display: none;
-}
 form .entities-list article.node--type-story.node--view-mode-card-preview .node__content,
 form .paragraph--view-mode--preview.paragraph--type--stories article.node--type-story.node--view-mode-card .node__content {
   min-width: 220px;

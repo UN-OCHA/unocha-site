@@ -1,0 +1,29 @@
+uuid: 7620b773-86a4-4273-94b9-f2a28e6240fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_view_all_page
+    - node.type.basic
+    - paragraphs.paragraphs_type.stories
+id: paragraph.stories.field_view_all_page
+field_name: field_view_all_page
+entity_type: paragraph
+bundle: stories
+label: 'View all page'
+description: 'Landing page for the View all link. Theme, response, and region filters are added as query parameters. If empty, /latest/news-and-stories is used.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: unocha_paragraphs_stories_view_all_page_default
+settings:
+  handler: 'unocha_paragraphs_news_and_stories_pages:node'
+  handler_settings:
+    target_bundles:
+      basic: basic
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

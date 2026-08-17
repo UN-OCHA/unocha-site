@@ -7,6 +7,8 @@
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Menu\MenuLinkInterface;
@@ -36,6 +38,8 @@ function unocha_paragraphs_preprocess_paragraph(array &$variables) {
  * Implements hook_preprocess_paragraph__type().
  */
 function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
+  $cache_metadata = CacheableMetadata::createFromRenderArray($variables);
+
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = $variables['paragraph'];
   $limit = $paragraph->field_limit->value ?? 3;
@@ -160,9 +164,18 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
 
   // Add the renderable stories.
   if (!empty($stories)) {
-    $view_all_url = Url::fromUserInput('/latest/news-and-stories', [
-      'query' => $view_all_query,
-    ]);
+    $view_all_page = $paragraph->field_view_all_page?->entity;
+    if ($view_all_page instanceof NodeInterface && $view_all_page->access('view')) {
+      $view_all_url = $view_all_page->toUrl('canonical', [
+        'query' => $view_all_query,
+      ]);
+      $cache_metadata->addCacheableDependency($view_all_page);
+    }
+    else {
+      $view_all_url = Url::fromUserInput('/latest/news-and-stories', [
+        'query' => $view_all_query,
+      ]);
+    }
     $variables['content']['view_all'] = Link::fromTextAndUrl(t('View all'), $view_all_url)->toRenderable();
 
     // Generate the render array with the stories.
@@ -205,6 +218,33 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
     }
 
     $variables['content']['stories'] = $build;
+  }
+
+  $cache_metadata->applyTo($variables);
+}
+
+/**
+ * Default value callback for field_view_all_page on stories paragraphs.
+ */
+function unocha_paragraphs_stories_view_all_page_default(FieldableEntityInterface $entity, FieldDefinitionInterface $field_definition) {
+  $alias_manager = \Drupal::service('path_alias.manager');
+  $path = $alias_manager->getPathByAlias('/latest/news-and-stories');
+  if (preg_match('/node\/(\d+)/', $path, $matches)) {
+    return [['target_id' => $matches[1]]];
+  }
+  return [];
+}
+
+/**
+ * Implements hook_entity_reference_selection_alter().
+ *
+ * Field UI lists grouped handlers using base_plugin_label, which core only
+ * sets on derived default plugins.
+ */
+function unocha_paragraphs_entity_reference_selection_alter(array &$definitions) {
+  $id = 'unocha_paragraphs_news_and_stories_pages:node';
+  if (isset($definitions[$id]) && empty($definitions[$id]['base_plugin_label'])) {
+    $definitions[$id]['base_plugin_label'] = $definitions[$id]['label'];
   }
 }
 

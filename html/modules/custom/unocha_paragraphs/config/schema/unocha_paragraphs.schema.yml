@@ -1,0 +1,3 @@
+entity_reference_selection.unocha_paragraphs_news_and_stories_pages:node:
+  type: entity_reference_selection.default:node
+  label: 'News and stories landing pages selection handler settings'
