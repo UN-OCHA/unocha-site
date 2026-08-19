@@ -6,12 +6,17 @@ dependencies:
     - field.storage.paragraph.field_node
     - node.type.story
     - paragraphs.paragraphs_type.stories
+  module:
+    - unocha_paragraphs
+third_party_settings:
+  unocha_paragraphs:
+    max_stored_items: 24
 id: paragraph.stories.field_node
 field_name: field_node
 entity_type: paragraph
 bundle: stories
 label: 'Featured stories'
-description: 'Manually select the stories to feature at the top of the story list. They will be displayed in order and are subject to the selected <em>limit</em>.'
+description: 'Manually select the stories to feature at the top of the story list. They will be displayed in order and are subject to the selected <em>limit</em>. Only the most recently selected stories are kept on save, up to the configured storage maximum.'
 required: false
 translatable: false
 default_value: {  }

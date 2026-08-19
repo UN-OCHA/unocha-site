@@ -1,0 +1,7 @@
+field.field.*.third_party.unocha_paragraphs:
+  type: mapping
+  label: 'UNOCHA Paragraphs field settings'
+  mapping:
+    max_stored_items:
+      type: integer
+      label: 'Maximum stored featured stories'
