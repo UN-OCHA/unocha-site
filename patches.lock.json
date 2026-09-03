@@ -1,5 +1,5 @@
 {
-    "_hash": "fcadcefd1cbbf11220ecbcc64529af34c0525c5d16da276a97283b2cf8416edc",
+    "_hash": "77111f11ee65c484264a6468c220ccc1d9b68ac6fe19d702b9cadb3d618d2865",
     "patches": {
         "drupal/datetime_range_timezone": [
             {
@@ -65,18 +65,6 @@
                 "description": "https://www.drupal.org/project/menu_breadcrumb/issues/3567562",
                 "url": "PATCHES/menu_breadcrumb-fix-empty-links-geturl-null-3567562.patch",
                 "sha256": "978b815c8dea0350db55229c0b2618b18e1dce0b614b756a3c15da07fba73e91",
-                "depth": 1,
-                "extra": {
-                    "provenance": "patches-file:composer.patches.json"
-                }
-            }
-        ],
-        "drupal/openid_connect": [
-            {
-                "package": "drupal/openid_connect",
-                "description": "Incorrect context in hook_redirect_logout_alter",
-                "url": "PATCHES/openid_connect-3577436-mr191.patch",
-                "sha256": "3ab9ffcd23bcaf4f12c1e657a15f349e703ef56694c25bfd13a7b28be4cad42d",
                 "depth": 1,
                 "extra": {
                     "provenance": "patches-file:composer.patches.json"
