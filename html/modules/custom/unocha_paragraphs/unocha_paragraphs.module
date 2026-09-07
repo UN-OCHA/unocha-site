@@ -7,6 +7,7 @@
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Menu\MenuLinkInterface;
@@ -17,6 +18,98 @@ use Drupal\Core\Template\Attribute;
 use Drupal\Core\Url;
 use Drupal\node\NodeInterface;
 use Drupal\paragraphs\ParagraphInterface;
+
+/**
+ * Implements hook_form_field_config_edit_form_alter().
+ */
+function unocha_paragraphs_form_field_config_edit_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  /** @var \Drupal\field\Entity\FieldConfig $field_config */
+  $field_config = $form_state->getFormObject()->getEntity();
+  if ($field_config->getTargetEntityTypeId() !== 'paragraph'
+    || $field_config->getTargetBundle() !== 'stories'
+    || $field_config->getName() !== 'field_node') {
+    return;
+  }
+
+  // Add a third-party setting to configure the maximum number of featured
+  // stories stored on a stories paragraph's field_node field.
+  $form['third_party_settings']['unocha_paragraphs']['max_stored_items'] = [
+    '#type' => 'number',
+    '#title' => t('Maximum stored featured stories'),
+    '#description' => t('On save, only the first N manually selected stories are kept (newest first when using prepend selection). The <em>Limit</em> field still controls how many are displayed.'),
+    '#default_value' => $field_config->getThirdPartySetting(
+      'unocha_paragraphs',
+      'max_stored_items',
+      24
+    ),
+    '#min' => 1,
+    '#required' => TRUE,
+  ];
+
+  $form['#validate'][] = 'unocha_paragraphs_field_config_stories_field_node_validate';
+}
+
+/**
+ * Validates and normalizes stories field_node third-party settings.
+ *
+ * @param array $form
+ *   The form array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state.
+ */
+function unocha_paragraphs_field_config_stories_field_node_validate(array &$form, FormStateInterface $form_state) {
+  $value = $form_state->getValue(['third_party_settings', 'unocha_paragraphs', 'max_stored_items']);
+  if ($value !== NULL && $value !== '') {
+    $form_state->setValue(
+      ['third_party_settings', 'unocha_paragraphs', 'max_stored_items'],
+      (int) $value
+    );
+  }
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function unocha_paragraphs_entity_presave(EntityInterface $entity) {
+  if (!$entity instanceof ParagraphInterface || $entity->bundle() !== 'stories') {
+    return;
+  }
+  unocha_paragraphs_trim_stories_field_node($entity);
+}
+
+/**
+ * Truncates field_node on a stories paragraph to the configured maximum.
+ *
+ * @param \Drupal\paragraphs\ParagraphInterface $paragraph
+ *   The stories paragraph.
+ *
+ * @return bool
+ *   TRUE if values were truncated, FALSE otherwise.
+ */
+function unocha_paragraphs_trim_stories_field_node(ParagraphInterface $paragraph) {
+  if (!$paragraph->hasField('field_node') || $paragraph->get('field_node')->isEmpty()) {
+    return FALSE;
+  }
+
+  $max = (int) $paragraph->getFieldDefinition('field_node')
+    ->getThirdPartySetting(
+      'unocha_paragraphs',
+      'max_stored_items',
+      24
+    );
+  if ($max < 1) {
+    return FALSE;
+  }
+
+  $field = $paragraph->get('field_node');
+  $values = $field->getValue();
+  if (count($values) <= $max) {
+    return FALSE;
+  }
+
+  $field->setValue(array_slice($values, 0, $max));
+  return TRUE;
+}
 
 /**
  * Implements hook_preprocess_paragraph().
