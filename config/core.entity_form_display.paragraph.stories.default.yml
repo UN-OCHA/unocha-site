@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.stories.field_limit
     - field.field.paragraph.stories.field_node
     - field.field.paragraph.stories.field_themes
+    - field.field.paragraph.stories.field_view_all_page
     - field.field.paragraph.stories.field_title
     - field.field.paragraph.stories.paragraph_view_mode
     - paragraphs.paragraphs_type.stories
@@ -27,7 +28,7 @@ content:
     third_party_settings: {  }
   field_node:
     type: entity_browser_entity_reference
-    weight: 4
+    weight: 5
     region: content
     settings:
       entity_browser: stories
@@ -54,6 +55,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_view_all_page:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   paragraph_view_mode:
     type: paragraph_view_mode
     weight: 0
@@ -69,13 +76,13 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 6
+    weight: 7
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   translation:
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
