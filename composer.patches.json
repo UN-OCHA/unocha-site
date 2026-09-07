@@ -16,9 +16,6 @@
     "drupal/menu_breadcrumb": {
       "https://www.drupal.org/project/menu_breadcrumb/issues/3567562": "PATCHES/menu_breadcrumb-fix-empty-links-geturl-null-3567562.patch"
     },
-    "drupal/openid_connect": {
-      "Incorrect context in hook_redirect_logout_alter": "PATCHES/openid_connect-3577436-mr191.patch"
-    },
     "drupal/social_auth": {
       "Type Error - #3496656": "PATCHES/social_auth-type-error-3496656.patch"
     },
@@ -29,7 +26,7 @@
       "Avoid leaking the path via Drupal.settings json": "PATCHES/username_enumeration_prevention-user-login-block-form-3312288.patch"
     },
     "drupal/viewsreference": {
-      "Block titles have disappeared": "PATCHES/viewsreference-titles-disappeared-3585918-104.patch"
+      "[#3585918] Block titles have disappeared": "https://git.drupalcode.org/project/viewsreference/-/merge_requests/104.diff"
     }
   }
 }

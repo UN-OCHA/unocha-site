@@ -1,3 +1,11 @@
 entity_reference_selection.unocha_paragraphs_news_and_stories_pages:node:
   type: entity_reference_selection.default:node
   label: 'News and stories landing pages selection handler settings'
+
+field.field.*.third_party.unocha_paragraphs:
+  type: mapping
+  label: 'UNOCHA Paragraphs field settings'
+  mapping:
+    max_stored_items:
+      type: integer
+      label: 'Maximum stored featured stories'
