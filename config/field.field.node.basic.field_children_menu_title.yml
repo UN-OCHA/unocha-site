@@ -1,0 +1,19 @@
+uuid: 92afba6e-5b7d-43a7-b0df-631ef664cda4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_children_menu_title
+    - node.type.basic
+id: node.basic.field_children_menu_title
+field_name: field_children_menu_title
+entity_type: node
+bundle: basic
+label: 'Children Menu Title'
+description: 'Override the title displayed for this page in the children menu tabs.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
