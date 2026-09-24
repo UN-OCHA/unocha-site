@@ -118,16 +118,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.395.4",
+            "version": "3.397.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "0756c511a913b57ab5415db6136d8c0c250ace15"
+                "reference": "8d2c3adc6ab2d7c6160a9034867cd4bd2b535619"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0756c511a913b57ab5415db6136d8c0c250ace15",
-                "reference": "0756c511a913b57ab5415db6136d8c0c250ace15",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/8d2c3adc6ab2d7c6160a9034867cd4bd2b535619",
+                "reference": "8d2c3adc6ab2d7c6160a9034867cd4bd2b535619",
                 "shasum": ""
             },
             "require": {
@@ -209,9 +209,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.395.4"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.397.0"
             },
-            "time": "2026-09-16T18:39:53+00:00"
+            "time": "2026-09-23T18:07:37+00:00"
         },
         {
             "name": "bower-asset/choices.js",
@@ -1173,27 +1173,25 @@
         },
         {
             "name": "doctrine/lexer",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "31ad66abc0fc9e1a1f2d9bc6a42668d2fbbcd6dd"
+                "reference": "e96fe45e92a54233726014a7cc7340abf29bb14c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/31ad66abc0fc9e1a1f2d9bc6a42668d2fbbcd6dd",
-                "reference": "31ad66abc0fc9e1a1f2d9bc6a42668d2fbbcd6dd",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/e96fe45e92a54233726014a7cc7340abf29bb14c",
+                "reference": "e96fe45e92a54233726014a7cc7340abf29bb14c",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.1"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^12",
-                "phpstan/phpstan": "^1.10",
-                "phpunit/phpunit": "^10.5",
-                "psalm/plugin-phpunit": "^0.18.3",
-                "vimeo/psalm": "^5.21"
+                "doctrine/coding-standard": "^14",
+                "phpstan/phpstan": "^2",
+                "phpunit/phpunit": "^10.5.58 || ^12.5.4"
             },
             "type": "library",
             "autoload": {
@@ -1230,7 +1228,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/lexer/issues",
-                "source": "https://github.com/doctrine/lexer/tree/3.0.1"
+                "source": "https://github.com/doctrine/lexer/tree/3.0.2"
             },
             "funding": [
                 {
@@ -1246,7 +1244,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-02-05T11:56:58+00:00"
+            "time": "2026-06-14T20:44:06+00:00"
         },
         {
             "name": "dompdf/php-font-lib",
@@ -3228,26 +3226,26 @@
         },
         {
             "name": "drupal/linkit",
-            "version": "7.0.16",
+            "version": "7.0.17",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/linkit.git",
-                "reference": "7.0.16"
+                "reference": "7.0.17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/linkit-7.0.16.zip",
-                "reference": "7.0.16",
-                "shasum": "72e598acf5ba56db25989754393bbce6597a29af"
+                "url": "https://ftp.drupal.org/files/projects/linkit-7.0.17.zip",
+                "reference": "7.0.17",
+                "shasum": "114d863a2232e76abd37e7d789fd34afc0e253b2"
             },
             "require": {
-                "drupal/core": "^10.2 || ^11"
+                "drupal/core": "^10.2 || ^11 || ^12"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "7.0.16",
-                    "datestamp": "1781283687",
+                    "version": "7.0.17",
+                    "datestamp": "1789675704",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3268,6 +3266,10 @@
                 {
                     "name": "idebr",
                     "homepage": "https://www.drupal.org/user/1879760"
+                },
+                {
+                    "name": "joegraduate",
+                    "homepage": "https://www.drupal.org/user/789384"
                 },
                 {
                     "name": "johnwebdev",
@@ -11318,16 +11320,16 @@
         },
         {
             "name": "twig/html-extra",
-            "version": "v3.28.0",
+            "version": "v3.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/html-extra.git",
-                "reference": "760893ed7bdd0a381e4e00004c6f6e26ad3881d7"
+                "reference": "7147611979df81edb78baf7d003860b72e335c3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/html-extra/zipball/760893ed7bdd0a381e4e00004c6f6e26ad3881d7",
-                "reference": "760893ed7bdd0a381e4e00004c6f6e26ad3881d7",
+                "url": "https://api.github.com/repos/twigphp/html-extra/zipball/7147611979df81edb78baf7d003860b72e335c3f",
+                "reference": "7147611979df81edb78baf7d003860b72e335c3f",
                 "shasum": ""
             },
             "require": {
@@ -11370,7 +11372,7 @@
                 "twig"
             ],
             "support": {
-                "source": "https://github.com/twigphp/html-extra/tree/v3.28.0"
+                "source": "https://github.com/twigphp/html-extra/tree/v3.29.0"
             },
             "funding": [
                 {
@@ -11382,20 +11384,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-06-25T06:50:01+00:00"
+            "time": "2026-09-06T20:35:36+00:00"
         },
         {
             "name": "twig/twig",
-            "version": "v3.28.0",
+            "version": "v3.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "597c12ed286fb9d1701a36684ce6e0cbe28ebc8b"
+                "reference": "45a3c6e9224c3377a39c7b150bb29d5d97d2c75d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/597c12ed286fb9d1701a36684ce6e0cbe28ebc8b",
-                "reference": "597c12ed286fb9d1701a36684ce6e0cbe28ebc8b",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/45a3c6e9224c3377a39c7b150bb29d5d97d2c75d",
+                "reference": "45a3c6e9224c3377a39c7b150bb29d5d97d2c75d",
                 "shasum": ""
             },
             "require": {
@@ -11450,7 +11452,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.28.0"
+                "source": "https://github.com/twigphp/Twig/tree/v3.29.0"
             },
             "funding": [
                 {
@@ -11462,7 +11464,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-03T20:44:34+00:00"
+            "time": "2026-09-18T09:10:14+00:00"
         },
         {
             "name": "un-ocha/oauth2-hid",
@@ -13184,17 +13186,17 @@
         },
         {
             "name": "drupal/config_inspector",
-            "version": "2.1.11",
+            "version": "2.1.12",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/config_inspector.git",
-                "reference": "2.1.11"
+                "reference": "2.1.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/config_inspector-2.1.11.zip",
-                "reference": "2.1.11",
-                "shasum": "0657af1b9ff014cb69679d9a93e95df03d6f138a"
+                "url": "https://ftp.drupal.org/files/projects/config_inspector-2.1.12.zip",
+                "reference": "2.1.12",
+                "shasum": "bb6b224d0ffd2af908ce68f20a07889333eabd1f"
             },
             "require": {
                 "drupal/core": "^9.2 || ^10 || ^11 || ^12"
@@ -13202,8 +13204,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.11",
-                    "datestamp": "1789569787",
+                    "version": "2.1.12",
+                    "datestamp": "1789648532",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -13470,16 +13472,16 @@
         },
         {
             "name": "google/protobuf",
-            "version": "v5.36.1",
+            "version": "v5.36.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/protocolbuffers/protobuf-php.git",
-                "reference": "d64d16befba8632967f604b9644c0bb8f64cfbc3"
+                "reference": "020bc8e831611869ac387ddd38fbbadd78d15195"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/d64d16befba8632967f604b9644c0bb8f64cfbc3",
-                "reference": "d64d16befba8632967f604b9644c0bb8f64cfbc3",
+                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/020bc8e831611869ac387ddd38fbbadd78d15195",
+                "reference": "020bc8e831611869ac387ddd38fbbadd78d15195",
                 "shasum": ""
             },
             "require": {
@@ -13508,9 +13510,9 @@
                 "proto"
             ],
             "support": {
-                "source": "https://github.com/protocolbuffers/protobuf-php/tree/v5.36.1"
+                "source": "https://github.com/protocolbuffers/protobuf-php/tree/v5.36.2"
             },
-            "time": "2026-08-31T22:07:31+00:00"
+            "time": "2026-09-17T15:56:42+00:00"
         },
         {
             "name": "jangregor/phpstan-prophecy",
