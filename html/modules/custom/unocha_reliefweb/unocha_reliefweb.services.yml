@@ -19,3 +19,8 @@ services:
     arguments: ['@request_stack', '@controller_resolver', '@language_manager', '@state', '@breadcrumb', '@router']
     tags:
       - { name: breadcrumb_builder, priority: 701 }
+  unocha_reliefweb.page_cache_expires_subscriber:
+    class: Drupal\unocha_reliefweb\EventSubscriber\ReliefWebPageCacheExpiresSubscriber
+    arguments: ['@datetime.time']
+    tags:
+      - { name: event_subscriber }

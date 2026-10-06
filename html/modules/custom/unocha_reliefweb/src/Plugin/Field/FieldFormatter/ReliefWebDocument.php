@@ -2,6 +2,7 @@
 
 namespace Drupal\unocha_reliefweb\Plugin\Field\FieldFormatter;
 
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
@@ -138,8 +139,19 @@ class ReliefWebDocument extends FormatterBase {
       $filter = !empty($this->getSetting('ocha_only')) ? NULL : [];
 
       // Get the data for the document.
-      $data = $this->getReliefWebDocuments()->getDocumentDataFromUrl($river, $url, $filter, $white_label);
+      $cacheability = new CacheableMetadata();
+      $data = $this->getReliefWebDocuments()->getDocumentDataFromUrl(
+        $river,
+        $url,
+        $filter,
+        $white_label,
+        $cacheability,
+        'field.document',
+      );
       if (empty($data['entity'])) {
+        $element = [];
+        $cacheability->applyTo($element);
+        $elements[$delta] = $element;
         continue;
       }
 
@@ -147,6 +159,7 @@ class ReliefWebDocument extends FormatterBase {
         '#theme' => 'unocha_reliefweb_river_article__' . $data['river']['bundle'] . '__' . $this->viewMode,
         '#entity' => $data['entity'],
       ];
+      $cacheability->applyTo($element);
 
       $elements[$delta] = $element;
     }
