@@ -83,21 +83,23 @@ class ReliefWebApiConverter {
    *
    * @param string $url
    *   ReliefWeb River URL.
-   * @param int $timeout
-   *   Request timeout.
+   * @param int|null $timeout
+   *   Request timeout in seconds, or NULL to use the config timeout value.
    * @param bool $cache_enabled
    *   Whether to cache the queries or not.
    *
    * @return array
    *   ReliefWeb API payload.
    */
-  public function getApiPayload($url, $timeout = 5, $cache_enabled = TRUE) {
+  public function getApiPayload($url, $timeout = NULL, $cache_enabled = TRUE) {
     $converter_url = $this->config->get('reliefweb_api_converter');
     if (empty($converter_url) || !is_string($converter_url)) {
       $this->logger->error('Missing or invalid ReliefWeb API converter setting');
       return [];
     }
 
+    $timeout ??= (int) ($this->config->get('reliefweb_api_timeout') ?? 5);
+    $timeout = $timeout > 0 ? $timeout : 5;
     $cache_enabled = $cache_enabled && ($this->config->get('reliefweb_api_cache_enabled') ?? TRUE);
     $cache_lifetime = $this->config->get('reliefweb_api_cache_lifetime') ?? 300;
     $verify_ssl = $this->config->get('reliefweb_api_verify_ssl');
@@ -107,7 +109,7 @@ class ReliefWebApiConverter {
       $cache_id = static::getCacheId($url);
       // Attempt to retrieve the cached data for the query.
       $cache = $this->cache->get($cache_id);
-      if (isset($cache->data)) {
+      if (isset($cache->data) && is_array($cache->data) && $cache->data !== []) {
         return $cache->data;
       }
     }
@@ -125,7 +127,6 @@ class ReliefWebApiConverter {
       ]);
     }
     catch (\Exception $exception) {
-      // @todo handle timeouts and skip caching the result in that case?
       $this->logger->error('Exception while requesting the ReliefWeb API converter with @url: @exception', [
         '@url' => $url,
         '@exception' => $exception->getMessage(),
@@ -164,7 +165,9 @@ class ReliefWebApiConverter {
       }
     }
 
-    if ($cache_enabled) {
+    // Cache successful non-empty payloads only. Failed or empty conversions
+    // must not stick in the cache.
+    if ($cache_enabled && $payload !== []) {
       $tags = static::getCacheTags();
       $cache_expiration = $this->time->getRequestTime() + $cache_lifetime;
       $this->cache->set($cache_id, $payload, $cache_expiration, $tags);
