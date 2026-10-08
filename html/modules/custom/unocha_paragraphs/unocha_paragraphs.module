@@ -231,7 +231,11 @@ function unocha_paragraphs_preprocess_paragraph__stories(array &$variables) {
         // Exclude the current story so we can show related ones only.
         $exclude = array_merge($stories, $parent->bundle() === 'story' ? [$parent] : []);
 
-        $conditions[] = $themes_filter;
+        // Avoid pushing an empty array to the conditions, that breaks
+        // the EntityQuery if it is the only condition we have.
+        if (!empty($themes_filter)) {
+          $conditions[] = $themes_filter;
+        }
         $stories += unocha_paragraphs_get_stories($conditions, $limit, $exclude);
       }
     }
