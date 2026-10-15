@@ -2,10 +2,16 @@
 reliefweb_api_url: https://api.reliefweb.int/v1
 # App name parameter to indentify the API requests.
 reliefweb_api_appname: unocha.org
+# Prefix for request-id URL query parameters.
+reliefweb_api_request_id_prefix: unocha
 # Cache the query results.
 reliefweb_api_cache_enabled: true
 # How long to cache the query results.
-reliefweb_api_cache_lifetime: 300
+reliefweb_api_cache_lifetime: 600
+# How long to cache a failed API query before retrying (0 disables).
+reliefweb_api_failure_cache_lifetime: 60
+# Request timeout in seconds (connect + request).
+reliefweb_api_timeout: 5
 # Verify the SSL certificate of the API query performing requests.
 reliefweb_api_verify_ssl: true
 # ReliefWeb site URL.

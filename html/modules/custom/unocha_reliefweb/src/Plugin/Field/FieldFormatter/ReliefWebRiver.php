@@ -2,6 +2,7 @@
 
 namespace Drupal\unocha_reliefweb\Plugin\Field\FieldFormatter;
 
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
@@ -174,8 +175,21 @@ class ReliefWebRiver extends FormatterBase {
 
       $offset = (isset($pager_id) ? $this->pagerManager->findPage($pager_id) : 0) * $limit;
 
-      $data = $this->getReliefWebDocuments()->getRiverDataFromUrl($url, $limit, $offset, NULL, $white_label);
+      $cacheability = new CacheableMetadata();
+      $data = $this->getReliefWebDocuments()->getRiverDataFromUrl(
+        $url,
+        $limit,
+        $offset,
+        NULL,
+        $white_label,
+        $cacheability,
+        'field.river',
+      );
+
       if (empty($data['entities'])) {
+        $element = [];
+        $cacheability->applyTo($element);
+        $elements[$delta] = $element;
         continue;
       }
 
@@ -212,6 +226,7 @@ class ReliefWebRiver extends FormatterBase {
         $element['#results'] = $this->getRiverResults($pager, count($data['entities']));
       }
 
+      $cacheability->applyTo($element);
       $elements[$delta] = $element;
     }
 

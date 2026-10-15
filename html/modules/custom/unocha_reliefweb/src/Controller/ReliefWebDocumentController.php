@@ -43,6 +43,13 @@ class ReliefWebDocumentController extends ControllerBase {
   protected $data;
 
   /**
+   * Cacheability from the API request for the current document.
+   *
+   * @var \Drupal\Core\Cache\CacheableMetadata|null
+   */
+  protected $documentCacheability;
+
+  /**
    * Static cache for the parsed data retrieved from the API.
    *
    * @var array
@@ -130,19 +137,21 @@ class ReliefWebDocumentController extends ControllerBase {
       ];
     }
 
-    return [
+    $build = [
       '#theme' => 'unocha_reliefweb_document',
       '#title' => $data['title'],
       '#date' => $data['published'],
       '#content' => $content,
-      '#cache' => [
-        'tags' => [
-          'reliefweb:' . $data['bundle'] . ':' . $data['id'],
-          'reliefweb:' . $data['bundle'],
-        ],
-        'max-age' => 900,
-      ],
     ];
+
+    $cacheability = $this->documentCacheability ?? new CacheableMetadata();
+    $cacheability->addCacheTags([
+      'reliefweb:' . $data['bundle'] . ':' . $data['id'],
+      'reliefweb:' . $data['bundle'],
+    ]);
+    $cacheability->applyTo($build);
+
+    return $build;
   }
 
   /**
@@ -312,28 +321,44 @@ class ReliefWebDocumentController extends ControllerBase {
       // when building the breadcrumbs.
       // @see Drupal\unocha_reliefweb\Services\ReliefWebBreadcrumbBuilder::build()
       if (!isset(static::$cache[$url])) {
-        static::$cache[$url] = $this->getReliefWebDocuments()->getDocumentDataFromUrl('updates', $url);
+        $cacheability = new CacheableMetadata();
+        static::$cache[$url] = [
+          'result' => $this->getReliefWebDocuments()->getDocumentDataFromUrl(
+            'updates',
+            $url,
+            NULL,
+            TRUE,
+            $cacheability,
+            'publications.document',
+          ),
+          'cacheability' => $cacheability,
+        ];
       }
 
-      $this->data = static::$cache[$url]['entity'] ?? [];
+      $this->data = static::$cache[$url]['result']['entity'] ?? [];
+      $this->documentCacheability = static::$cache[$url]['cacheability'] ?? new CacheableMetadata();
     }
 
-    if (!empty($this->data)) {
-      return $this->data;
-    }
-    else {
+    if (empty($this->data)) {
       $this->throwNotFound();
     }
-    return [];
+
+    return $this->data;
   }
 
   /**
    * Throw a page not found exception.
    */
   protected function throwNotFound() {
-    $max_age = $this->config->get('reliefweb_document_not_found_max_age') ?? 0;
-    $cache_metadata = new CacheableMetadata();
-    $cache_metadata->setCacheMaxAge($max_age);
+    $cache_metadata = $this->documentCacheability ?? new CacheableMetadata();
+    $max_age = $cache_metadata->getCacheMaxAge();
+    $failure_lifetime = (int) ($this->config->get('reliefweb_api_failure_cache_lifetime') ?? 60);
+    // Keep API-failure max-age (0 or the configured failure lifetime). Override
+    // only for genuine empty lookups that used the success cache lifetime.
+    if ($max_age !== 0 && $max_age !== $failure_lifetime) {
+      $max_age = $this->config->get('reliefweb_document_not_found_max_age') ?? $max_age ?? 0;
+      $cache_metadata->setCacheMaxAge($max_age);
+    }
     throw new CacheableNotFoundHttpException($cache_metadata);
   }
 

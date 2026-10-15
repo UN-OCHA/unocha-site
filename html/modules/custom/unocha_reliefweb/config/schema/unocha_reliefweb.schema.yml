@@ -8,12 +8,21 @@ unocha_reliefweb.settings:
     reliefweb_api_appname:
       type: string
       label: 'App name parameter to indentify the API requests.'
+    reliefweb_api_request_id_prefix:
+      type: string
+      label: 'Prefix prepended to request-id URL query parameters for API log attribution.'
     reliefweb_api_cache_enabled:
       type: boolean
       label: 'Cache the API query results.'
     reliefweb_api_cache_lifetime:
       type: integer
       label: 'How long to cache the API query results.'
+    reliefweb_api_failure_cache_lifetime:
+      type: integer
+      label: 'How long to cache a failed API query before retrying (0 disables).'
+    reliefweb_api_timeout:
+      type: integer
+      label: 'Request timeout in seconds for ReliefWeb API HTTP calls.'
     reliefweb_api_verify_ssl:
       type: boolean
       label: 'Verify the SSL certificate of the API query performing requests.'

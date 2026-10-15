@@ -2,6 +2,7 @@
 
 namespace Drupal\unocha_reliefweb\Services;
 
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Cache\CacheTagsInvalidatorInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
@@ -166,12 +167,23 @@ class ReliefWebDocuments {
    *   Optional filter to override the default river one if any.
    * @param bool $white_label
    *   Whether to white label the ReliefWeb article URL or not.
+   * @param \Drupal\Core\Cache\CacheableMetadata|null $cacheability
+   *   Optional cacheability metadata to merge with from the API client.
+   * @param string|null $request_id
+   *   Optional request ID suffix for API log attribution.
    *
    * @return array
    *   An associative array with the river information and the document entity
    *   data usable in templates.
    */
-  public function getDocumentDataFromUrl($river_name, $url, ?array $filter = NULL, $white_label = TRUE) {
+  public function getDocumentDataFromUrl(
+    $river_name,
+    $url,
+    ?array $filter = NULL,
+    $white_label = TRUE,
+    ?CacheableMetadata $cacheability = NULL,
+    ?string $request_id = NULL,
+  ) {
     $river = $this->getRiver($river_name);
     if (empty($river)) {
       return [];
@@ -204,7 +216,7 @@ class ReliefWebDocuments {
       ],
     ];
 
-    $data = $this->getDocumentsFromPayload($river, $payload, 1, $filter, $white_label);
+    $data = $this->getDocumentsFromPayload($river, $payload, 1, $filter, $white_label, $cacheability, $request_id);
 
     return [
       'river' => $river,
@@ -225,12 +237,24 @@ class ReliefWebDocuments {
    *   Optional filter to further limit the document to return.
    * @param bool $white_label
    *   Whether to white label the ReliefWeb article URL or not.
+   * @param \Drupal\Core\Cache\CacheableMetadata|null $cacheability
+   *   Optional cacheability metadata to merge with from the API client.
+   * @param string|null $request_id
+   *   Optional request ID suffix for API log attribution.
    *
    * @return array
    *   An associative array with the river information and the document entities
    *   data usable in templates.
    */
-  public function getRiverDataFromUrl($url, $limit = 5, $offset = 0, ?array $filter = NULL, $white_label = TRUE) {
+  public function getRiverDataFromUrl(
+    $url,
+    $limit = 5,
+    $offset = 0,
+    ?array $filter = NULL,
+    $white_label = TRUE,
+    ?CacheableMetadata $cacheability = NULL,
+    ?string $request_id = NULL,
+  ) {
     $river = $this->getRiverFromUrl($url);
     if (empty($river)) {
       return [];
@@ -245,7 +269,7 @@ class ReliefWebDocuments {
       $payload['offset'] = $offset;
     }
 
-    return $this->getDocumentsFromPayload($river, $payload, $limit, $filter, $white_label);
+    return $this->getDocumentsFromPayload($river, $payload, $limit, $filter, $white_label, $cacheability, $request_id);
   }
 
   /**
@@ -263,12 +287,25 @@ class ReliefWebDocuments {
    *   Optional filter to further limit the document to return.
    * @param bool $white_label
    *   Whether to white label the ReliefWeb article URL or not.
+   * @param \Drupal\Core\Cache\CacheableMetadata|null $cacheability
+   *   Optional cacheability metadata to merge with from the API client.
+   * @param string|null $request_id
+   *   Optional request ID suffix for API log attribution.
    *
    * @return array
    *   An associative array with the river information and the document entities
    *   data usable in templates.
    */
-  public function getRiverDataFromDocumentUrls($river_name, array $urls, $limit = 5, $offset = 0, ?array $filter = NULL, $white_label = TRUE) {
+  public function getRiverDataFromDocumentUrls(
+    $river_name,
+    array $urls,
+    $limit = 5,
+    $offset = 0,
+    ?array $filter = NULL,
+    $white_label = TRUE,
+    ?CacheableMetadata $cacheability = NULL,
+    ?string $request_id = NULL,
+  ) {
     if (empty($urls)) {
       return [];
     }
@@ -311,7 +348,7 @@ class ReliefWebDocuments {
       $payload['offset'] = $offset;
     }
 
-    return $this->getDocumentsFromPayload($river, $payload, $limit, $filter, $white_label);
+    return $this->getDocumentsFromPayload($river, $payload, $limit, $filter, $white_label, $cacheability, $request_id);
   }
 
   /**
@@ -327,13 +364,25 @@ class ReliefWebDocuments {
    *   Optional filter to further limit the document to return.
    * @param bool $white_label
    *   Whether to white label the ReliefWeb article URL or not.
+   * @param \Drupal\Core\Cache\CacheableMetadata|null $cacheability
+   *   Optional cacheability metadata to merge with from the API client.
+   * @param string|null $request_id
+   *   Optional request ID suffix for API log attribution.
    *
    * @return array
    *   An associative array with the river information, the entities data
    *   usable in templates and the total number of resources matching the
    *   payload.
    */
-  protected function getDocumentsFromPayload(array $river, array $payload, $limit, ?array $filter = NULL, $white_label = TRUE) {
+  protected function getDocumentsFromPayload(
+    array $river,
+    array $payload,
+    $limit,
+    ?array $filter = NULL,
+    $white_label = TRUE,
+    ?CacheableMetadata $cacheability = NULL,
+    ?string $request_id = NULL,
+  ) {
     // Set the maximum number of items to return.
     $payload['limit'] = $limit;
 
@@ -367,15 +416,20 @@ class ReliefWebDocuments {
     }
 
     // Get the API data.
-    $data = $this->getApiClient()->request($river['resource'], $payload);
+    $data = $this->getApiClient()->request(
+      $river['resource'],
+      $payload,
+      cacheability: $cacheability,
+      request_id: $request_id,
+    );
 
-    // Parse the API data.
-    $entities = !empty($data) ? call_user_func($river['parse'], $river, $data, $white_label) : [];
+    // Parse the API data. Non-array results mean the API request failed.
+    $entities = is_array($data) ? call_user_func($river['parse'], $river, $data, $white_label) : [];
 
     return [
       'river' => $river,
       'entities' => $entities,
-      'total' => $data['totalCount'] ?? count($entities),
+      'total' => is_array($data) ? ($data['totalCount'] ?? count($entities)) : 0,
     ];
   }
 
