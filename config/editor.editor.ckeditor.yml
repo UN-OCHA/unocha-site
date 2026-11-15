@@ -6,6 +6,7 @@ dependencies:
     - filter.format.ckeditor
   module:
     - ckeditor5
+    - ckeditor_accordion
 format: ckeditor
 editor: ckeditor5
 settings:
@@ -22,6 +23,7 @@ settings:
       - blockQuote
       - heading
       - style
+      - Accordion
       - '|'
       - sourceEditing
   plugins:
@@ -41,7 +43,7 @@ settings:
     ckeditor5_sourceEditing:
       allowed_tags:
         - '<cite>'
-        - '<dl>'
+        - '<dl class="ckeditor-accordion">'
         - '<dt>'
         - '<dd>'
         - '<h2 id>'

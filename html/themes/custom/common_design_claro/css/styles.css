@@ -309,6 +309,7 @@ form .paragraph--view-mode--preview.paragraph--type--media-centre .uno-media-cen
   --cd-orange--light: #fae6d1;
   --cd-alert-color: var(--cd-orange);
   --cd-alert-color-bg: var(--cd-orange--light);
+
   margin: 1rem 0 2rem;
   padding: 1rem;
   color: var(--cd-grey--dark);

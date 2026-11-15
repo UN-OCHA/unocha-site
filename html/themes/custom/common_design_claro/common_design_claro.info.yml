@@ -16,7 +16,6 @@ base theme: claro
 description: 'Extends Claro admin theme'
 alt text: 'Screenshot of Claro, Drupal administration theme.'
 package: Core
-version: VERSION
 core_version_requirement: ^10 || ^11
 libraries:
   - common_design_claro/global-styling
@@ -33,6 +32,13 @@ regions:
   sidebar_first: 'First sidebar'
 regions_hidden:
   - sidebar_first
+
+libraries-override:
+  # Same published accordion styles as the front theme (replaces module cyan CSS).
+  ckeditor_accordion/accordion.frontend:
+    css:
+      theme:
+        css/accordion.frontend.css: ../common_design_subtheme/components/uno-accordion/uno-accordion.css
 
 libraries-extend:
   core/drupal.dialog.ajax:
