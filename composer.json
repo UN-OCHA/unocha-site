@@ -275,6 +275,5 @@
         "pre-pool-create": [
             "scripts\\composer\\DrupalLenientRequirement::changeVersionConstraint"
         ]
-    },
-    "version": "2.6.0"
+    }
 }
