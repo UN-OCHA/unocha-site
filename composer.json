@@ -81,7 +81,7 @@
         "unocha/ocha_key_figures": "^3",
         "unocha/ocha_monitoring": "^1.0",
         "unocha/ocha_search": "^1.0",
-        "unocha/ocha_visualisations": "*",
+        "unocha/ocha_visualisations": "^1.0",
         "unocha/un_date": "^2.0",
         "webflo/drupal-finder": "^1.2.2"
     },
