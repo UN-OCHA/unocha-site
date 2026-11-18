@@ -218,12 +218,12 @@
             "version": "v10.2.0-patch2",
             "source": {
                 "type": "git",
-                "url": "git@github.com:jshjohnson/Choices.git",
+                "url": "https://github.com/Choices-js/Choices.git",
                 "reference": "68d7cad86dbd0603b3c8d2afcb4b05f56f7e9ba7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jshjohnson/Choices/zipball/68d7cad86dbd0603b3c8d2afcb4b05f56f7e9ba7",
+                "url": "https://api.github.com/repos/Choices-js/Choices/zipball/68d7cad86dbd0603b3c8d2afcb4b05f56f7e9ba7",
                 "reference": "68d7cad86dbd0603b3c8d2afcb4b05f56f7e9ba7"
             },
             "type": "bower-asset"
