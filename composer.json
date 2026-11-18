@@ -64,7 +64,7 @@
         "drupal/seckit": "^2.0",
         "drupal/select_a11y": "^3",
         "drupal/simple_menu_permissions": "^3",
-        "drupal/social_auth_hid": "^5",
+        "drupal/social_api": "^4.0",
         "drupal/stable": "^2.0",
         "drupal/stage_file_proxy": "^3",
         "drupal/user_display_name": "^1.1",
