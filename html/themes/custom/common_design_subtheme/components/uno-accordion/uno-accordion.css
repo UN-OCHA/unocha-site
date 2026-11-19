@@ -1,0 +1,194 @@
+/**
+ * CKEditor Accordion — IOM-style stacked cards.
+ *
+ * Resets Common Design description-list flex (dt 25% / dd 75%) and replaces
+ * the module’s cyan chrome with white cards, plus/minus toggles, and gaps.
+ */
+
+.ckeditor-accordion-container {
+  margin: 1.5rem 0;
+}
+
+/* Kill CD typography flex layout on accordion definition lists. */
+.ckeditor-accordion-container > dl,
+.ckeditor-accordion-container > dl.styled {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.ckeditor-accordion-container > dl > dt,
+.ckeditor-accordion-container > dl > dd {
+  display: block;
+  flex: none;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 576px) {
+  .ckeditor-accordion-container > dl,
+  .ckeditor-accordion-container > dl.styled {
+    display: block;
+  }
+
+  .ckeditor-accordion-container > dl > dt,
+  .ckeditor-accordion-container > dl > dd {
+    flex: none;
+    width: 100%;
+    padding: 0;
+  }
+
+  [dir="ltr"] .ckeditor-accordion-container > dl > dt,
+  [dir="rtl"] .ckeditor-accordion-container > dl > dt {
+    padding: 0;
+  }
+
+  [dir="ltr"] .ckeditor-accordion-container > dl > dd,
+  [dir="rtl"] .ckeditor-accordion-container > dl > dd {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+/* Card headers */
+.ckeditor-accordion-container > dl > dt {
+  position: relative;
+  margin-top: 0.75rem;
+  border: 1px solid var(--brand-grey--border, #ccc);
+  background-color: #fff;
+}
+
+.ckeditor-accordion-container > dl > dt:first-child {
+  margin-top: 0;
+}
+
+/* Open header joins its panel as one card */
+.ckeditor-accordion-container > dl > dt.active {
+  border-bottom: 0;
+}
+
+.ckeditor-accordion-container > dl > dt > a,
+.ckeditor-accordion-container > dl > dt > a:not(.button) {
+  position: relative;
+  display: block;
+  padding: 1.25rem 3.5rem 1.25rem 1.25rem;
+  cursor: pointer;
+  transition: color 150ms ease;
+  text-decoration: none;
+  color: var(--brand-default-text-color, #444);
+  border: 0 none;
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.ckeditor-accordion-container > dl > dt > a:hover,
+.ckeditor-accordion-container > dl > dt > a:not(.button):hover {
+  text-decoration: none;
+  color: var(--brand-primary);
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.ckeditor-accordion-container > dl > dt.active > a {
+  color: var(--brand-default-text-color, #444);
+  background-color: transparent;
+}
+
+.ckeditor-accordion-container > dl > dt > a:focus,
+.ckeditor-accordion-container > dl > dt > a:not(.button):focus {
+  outline: 3px solid var(--brand-highlight);
+  outline-offset: -3px;
+}
+
+/* Plus / minus toggle (right side) */
+.ckeditor-accordion-container > dl > dt > a > .ckeditor-accordion-toggle {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: 1.25rem;
+  left: auto;
+  display: block;
+  box-sizing: border-box;
+  width: 0.875rem;
+  height: 0.875rem;
+  padding: 0;
+  transform: translateY(-50%);
+}
+
+.ckeditor-accordion-container > dl > dt > a > .ckeditor-accordion-toggle::before,
+.ckeditor-accordion-container > dl > dt > a > .ckeditor-accordion-toggle::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0.875rem;
+  height: 2px;
+  content: "";
+  transition: transform 200ms ease, opacity 200ms ease;
+  transform: translate(-50%, -50%);
+  background: var(--brand-default-text-color, #444);
+  will-change: transform, opacity;
+}
+
+/* Vertical bar → plus when collapsed */
+.ckeditor-accordion-container > dl > dt > a > .ckeditor-accordion-toggle::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* Expanded → minus (hide vertical bar) */
+.ckeditor-accordion-container > dl > dt.active > a > .ckeditor-accordion-toggle::after {
+  transform: translate(-50%, -50%) rotate(90deg) scaleX(0);
+  opacity: 0;
+}
+
+.ckeditor-accordion-container.no-animations > dl > dt > a > .ckeditor-accordion-toggle::before,
+.ckeditor-accordion-container.no-animations > dl > dt > a > .ckeditor-accordion-toggle::after {
+  transition: initial;
+}
+
+/* Card body — continuous with open header */
+.ckeditor-accordion-container > dl > dd {
+  display: none;
+  margin: 0;
+  padding: 0 1.25rem 1.25rem;
+  color: var(--brand-default-text-color, #444);
+  border: 1px solid var(--brand-grey--border, #ccc);
+  border-top: 0;
+  background-color: #fff;
+  line-height: 1.5;
+}
+
+.ckeditor-accordion-container > dl > dd.active {
+  display: block;
+}
+
+.ckeditor-accordion-container > dl > dd > *:first-child {
+  margin-top: 0;
+}
+
+.ckeditor-accordion-container > dl > dd > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Gap after an open panel before the next card */
+.ckeditor-accordion-container > dl > dd.active {
+  margin-bottom: 0;
+}
+
+[dir="rtl"] .ckeditor-accordion-container > dl > dt > a,
+[dir="rtl"] .ckeditor-accordion-container > dl > dt > a:not(.button) {
+  padding: 1.25rem 1.25rem 1.25rem 3.5rem;
+}
+
+[dir="rtl"] .ckeditor-accordion-container > dl > dt > a > .ckeditor-accordion-toggle {
+  right: auto;
+  left: 1.25rem;
+}

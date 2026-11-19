@@ -1,0 +1,25 @@
+diff --git a/config/schema/ckeditor_accordion.schema.yml b/config/schema/ckeditor_accordion.schema.yml
+new file mode 100644
+index 0000000000000000000000000000000000000000..1e658ebdc7f1a58282f1f677c2868f6fbab8e356
+--- /dev/null
++++ b/config/schema/ckeditor_accordion.schema.yml
+@@ -0,0 +1,19 @@
++ckeditor_accordion.settings:
++  type: config_object
++  label: 'CKEditor Accordion settings'
++  mapping:
++    collapse_all:
++      label: 'Collapse all tabs by default'
++      type: integer
++    keep_rows_open:
++      label: 'Keep accordion rows open when opening another one'
++      type: integer
++    animate_accordion_toggle:
++      label: 'Animate accordion open / close'
++      type: integer
++    open_tabs_with_hash:
++      label: 'Open tabs with hash using anchor links or on page load'
++      type: integer
++    allow_html_in_titles:
++      label: 'Allow HTML in row titles'
++      type: integer
