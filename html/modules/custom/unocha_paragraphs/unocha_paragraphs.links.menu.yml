@@ -3,11 +3,3 @@ unocha_paragraphs.figures_admin:
   description: 'View all figures paragraphs grouped by parent page'
   route_name: unocha_paragraphs.figures_admin
   parent: system.admin_content
-
-
-
-
-
-
-
-

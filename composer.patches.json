@@ -1,5 +1,8 @@
 {
   "patches": {
+    "drupal/ckeditor_accordion": {
+      "Missing schema - #3549297": "PATCHES/ckeditor_accordion-missing-schema-3549297.patch"
+    },
     "drupal/datetime_range_timezone": {
       "Views integration": "PATCHES/datetime_range_timezone-views-integration.patch"
     },

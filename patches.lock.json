@@ -1,6 +1,18 @@
 {
-    "_hash": "129b1ec83d5ac6108499b4db7dbb281ba45303a682dfad0de300f66bf33f28f5",
+    "_hash": "883db60d8a53ea88d206e8db828bc3d0cbf779bf3e0ef71a234772a198479fd7",
     "patches": {
+        "drupal/ckeditor_accordion": [
+            {
+                "package": "drupal/ckeditor_accordion",
+                "description": "Missing schema - #3549297",
+                "url": "PATCHES/ckeditor_accordion-missing-schema-3549297.patch",
+                "sha256": "32a2ba9b7cecc9f4fef53db93e3a468a49668b5b6ee4a5d7ab827a212be369d5",
+                "depth": 1,
+                "extra": {
+                    "provenance": "patches-file:composer.patches.json"
+                }
+            }
+        ],
         "drupal/datetime_range_timezone": [
             {
                 "package": "drupal/datetime_range_timezone",

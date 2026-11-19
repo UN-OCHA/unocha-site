@@ -28,6 +28,7 @@
         "drupal/amazon_ses": "^3.0",
         "drupal/aws": "dev-2.0.x",
         "drupal/choices": "^2.1",
+        "drupal/ckeditor_accordion": "^2.3",
         "drupal/components": "^3.0@beta",
         "drupal/config_split": "^2.0.0@rc",
         "drupal/core-composer-scaffold": "^11",

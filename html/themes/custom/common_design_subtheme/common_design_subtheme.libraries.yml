@@ -71,6 +71,11 @@ rw-river:
     - common_design_subtheme/rw-brand
     - common_design_subtheme/rw-icons
 
+uno-accordion:
+  css:
+    theme:
+      components/uno-accordion/uno-accordion.css: {}
+
 uno-article:
   css:
     component:

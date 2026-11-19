@@ -13,4 +13,3 @@ ocha_mediavalet.video:
     uuid: ''
   requirements:
     _permission: 'access content'
-
