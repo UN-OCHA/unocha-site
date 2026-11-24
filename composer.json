@@ -40,12 +40,12 @@
         "drupal/entity_browser": "^2.9",
         "drupal/entity_usage": "^2.0@beta",
         "drupal/environment_indicator": "^4.0",
-        "drupal/geofield": "^1.53",
+        "drupal/geofield": "^10.3",
         "drupal/honeypot": "^2.1",
         "drupal/imageapi_optimize_binaries": "^1.0@beta",
         "drupal/imageapi_optimize_webp": "^2.0",
         "drupal/imagemagick": "^4",
-        "drupal/layout_paragraphs": "2.1.x-dev@dev",
+        "drupal/layout_paragraphs": "~2",
         "drupal/linkit": "^7",
         "drupal/mailsystem": "^4.4",
         "drupal/maintenance200": "^2",
@@ -82,7 +82,7 @@
         "unocha/ocha_key_figures": "^3",
         "unocha/ocha_monitoring": "^1.0",
         "unocha/ocha_search": "^1.0",
-        "unocha/ocha_visualisations": "*",
+        "unocha/ocha_visualisations": "^1.0",
         "unocha/un_date": "^2.0",
         "webflo/drupal-finder": "^1.2.2"
     },
@@ -276,6 +276,5 @@
         "pre-pool-create": [
             "scripts\\composer\\DrupalLenientRequirement::changeVersionConstraint"
         ]
-    },
-    "version": "2.6.0"
+    }
 }
