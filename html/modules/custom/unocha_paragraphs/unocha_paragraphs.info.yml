@@ -3,4 +3,3 @@ name: UNOCHA Paragraphs
 description: 'Provides alterations to paragraphs.'
 package: unocha
 core_version_requirement: ^10 || ^11
-

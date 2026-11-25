@@ -8,6 +8,7 @@ module:
   breakpoint: 0
   choices: 0
   ckeditor5: 0
+  ckeditor_accordion: 0
   components: 0
   config: 0
   config_split: 0
