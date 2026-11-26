@@ -15,4 +15,9 @@
 
   <rule ref="Drupal" />
   <rule ref="DrupalPractice" />
+
+  <!-- Twig is not PHP. <?xml in templates is an XML declaration, not a short open tag. -->
+  <rule ref="Generic.PHP.DisallowShortOpenTag">
+    <exclude-pattern>*.twig</exclude-pattern>
+  </rule>
 </ruleset>
