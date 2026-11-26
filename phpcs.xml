@@ -2,7 +2,7 @@
 <ruleset name="drupal_core">
   <description>Default PHP CodeSniffer configuration for Drupal core.</description>
   <file>.</file>
-  <arg name="extensions" value="inc,info,install,module,php,profile,test,theme,js,yml"/>
+  <arg name="extensions" value="inc,info,install,module,php,profile,test,theme,js,twig,yml"/>
 
   <!--Exclude third party code.-->
   <exclude-pattern>./vendor/*</exclude-pattern>
