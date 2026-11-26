@@ -1,0 +1,11 @@
+uuid: ce8fde2c-e68b-45c6-957b-2916171952ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.tweet
+id: paragraph.tweet
+target_entity_type_id: paragraph
+target_bundle: tweet
+default_langcode: site_default
+language_alterable: false

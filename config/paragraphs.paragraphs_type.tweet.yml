@@ -1,0 +1,10 @@
+uuid: 5e9a1e46-b385-44eb-ad95-527859a20dcd
+langcode: en
+status: true
+dependencies: {  }
+id: tweet
+label: Tweet
+icon_uuid: null
+icon_default: null
+description: 'Embed a tweet (X post).'
+behavior_plugins: {  }

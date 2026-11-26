@@ -1,0 +1,22 @@
+uuid: 0b752bf3-1420-4970-a118-fc7b29f77ead
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tweet.field_tweet
+    - paragraphs.paragraphs_type.tweet
+id: paragraph.tweet.default
+targetEntityType: paragraph
+bundle: tweet
+mode: default
+content:
+  field_tweet:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
