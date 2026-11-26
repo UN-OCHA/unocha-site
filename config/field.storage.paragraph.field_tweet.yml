@@ -1,0 +1,20 @@
+uuid: 7c1fb8a4-9fb1-460a-84e4-2a995644e421
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.field_tweet
+field_name: field_tweet
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

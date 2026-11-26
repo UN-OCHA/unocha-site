@@ -50,6 +50,7 @@ module:
   mailsystem: 0
   maintenance200: 0
   media: 0
+  media_entity_twitter: 0
   media_library: 0
   media_library_extend: 0
   memcache: 0

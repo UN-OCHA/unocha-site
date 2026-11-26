@@ -1,0 +1,28 @@
+uuid: c0a7cdd9-822a-48e4-b686-e1b051a7e05c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.tweet.field_media_twitter
+    - media.type.tweet
+id: media.tweet.media_library
+targetEntityType: media
+bundle: tweet
+mode: media_library
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_media_twitter: true
+  langcode: true
+  path: true
+  status: true
+  uid: true

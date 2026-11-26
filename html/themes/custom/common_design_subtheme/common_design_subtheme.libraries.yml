@@ -254,6 +254,11 @@ uno-text-image:
     theme:
       components/uno-text-image/uno-text-image.css: {}
 
+uno-tweet:
+  css:
+    theme:
+      components/uno-tweet/uno-tweet.css: {}
+
 uno-typography:
   css:
     component:

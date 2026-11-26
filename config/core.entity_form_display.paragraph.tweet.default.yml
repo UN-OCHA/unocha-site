@@ -1,0 +1,35 @@
+uuid: 14b07ebd-63cd-4b5b-a0d2-9c770a9cdacf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.tweet.field_tweet
+    - paragraphs.paragraphs_type.tweet
+  module:
+    - media_library
+id: paragraph.tweet.default
+targetEntityType: paragraph
+bundle: tweet
+mode: default
+content:
+  field_tweet:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
