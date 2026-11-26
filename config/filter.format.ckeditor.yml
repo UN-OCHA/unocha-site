@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - ckeditor_accordion
     - editor
     - linkit
     - media
@@ -21,8 +20,8 @@ filters:
   filter_align:
     id: filter_align
     provider: filter
-    status: false
-    weight: -41
+    status: true
+    weight: -36
     settings: {  }
   filter_autop:
     id: filter_autop
@@ -42,7 +41,7 @@ filters:
     status: true
     weight: -50
     settings:
-      allowed_html: '<br> <p class="title headline"> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <a class="read-more" hreflang href data-entity-type data-entity-uuid data-entity-substitution> <cite> <dl class="ckeditor-accordion"> <dt> <dd> <blockquote cite> <ul type> <ol type start> <img data-entity-type data-entity-uuid> <strong> <em> <li>'
+      allowed_html: '<br> <p class="title headline"> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <a class="read-more" hreflang href data-entity-type data-entity-uuid data-entity-substitution> <cite> <blockquote cite> <img data-entity-type data-entity-uuid> <strong> <em> <ul type> <ol type start> <li> <drupal-media data-entity-type data-entity-uuid alt data-align> <dl class> <dt> <dd>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_html_escape:
@@ -83,15 +82,17 @@ filters:
     weight: -47
     settings:
       title: true
+      media_substitution: metadata
   media_embed:
     id: media_embed
     provider: media
-    status: false
+    status: true
     weight: -37
     settings:
       default_view_mode: default
       allowed_view_modes: {  }
-      allowed_media_types: {  }
+      allowed_media_types:
+        tweet: tweet
   unocha_external_link_filter:
     id: unocha_external_link_filter
     provider: unocha_utility

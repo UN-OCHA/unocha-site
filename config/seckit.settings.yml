@@ -8,14 +8,14 @@ seckit_xss:
       webkit: false
     report-only: false
     default-src: "'self'"
-    script-src: "'self' 'unsafe-inline' 'unsafe-eval' fonts.googleapis.com www.gstatic.com https://*.google.com https://*.googletagmanager.com *.google-analytics.com https://tagmanager.google.com https://cdn.popupsmart.com  https://cdnjs.cloudflare.com https://cbpfgms.github.io https://connect.facebook.net https://partner.googleadservices.com https://www.googleadservices.com  https://googleads.g.doubleclick.net https://*.clarity.ms https://c.bing.com https://*.awswaf.com"
+    script-src: "'self' 'unsafe-inline' 'unsafe-eval' fonts.googleapis.com www.gstatic.com https://*.google.com https://*.googletagmanager.com *.google-analytics.com https://tagmanager.google.com https://cdn.popupsmart.com  https://cdnjs.cloudflare.com https://cbpfgms.github.io https://connect.facebook.net https://partner.googleadservices.com https://www.googleadservices.com  https://googleads.g.doubleclick.net https://*.clarity.ms https://c.bing.com https://*.awswaf.com  https://platform.twitter.com https://twimg.com"
     object-src: "'none'"
-    style-src: "'self' 'unsafe-inline' https://googletagmanager.com https://tagmanager.google.com fonts.googleapis.com https://www.google.com https://cdnjs.cloudflare.com https://cbpfgms.github.io https://cdn.popupsmart.com https://use.fontawesome.com https://*.clarity.ms https://c.bing.com"
+    style-src: "'self' 'unsafe-inline' https://googletagmanager.com https://tagmanager.google.com fonts.googleapis.com https://www.google.com https://cdnjs.cloudflare.com https://cbpfgms.github.io https://cdn.popupsmart.com https://use.fontawesome.com https://*.clarity.ms https://c.bing.com https://platform.twitter.com"
     img-src: "'self' data: https://*"
     media-src: "'self' data: https://mvsfservicefabricusva.blob.core.windows.net"
-    frame-src: "'self' https://*.googletagmanager.com https://bid.g.doubleclick.net https://td.doubleclick.net https://www.youtube.com https://embed.mediavalet.com *.un.org https://cdnapisec.kaltura.com "
+    frame-src: "'self' https://*.googletagmanager.com https://bid.g.doubleclick.net https://td.doubleclick.net https://www.youtube.com https://embed.mediavalet.com *.un.org https://cdnapisec.kaltura.com https://platform.twitter.com https://syndication.twitter.com"
     frame-ancestors: "'self'"
-    child-src: "'self' blob:"
+    child-src: "'self' blob: https://platform.twitter.com https://syndication.twitter.com"
     font-src: "'self' data: fonts.gstatic.com https://use.fontawesome.com"
     connect-src: "'self' https://*"
     report-uri: /report-csp-violation

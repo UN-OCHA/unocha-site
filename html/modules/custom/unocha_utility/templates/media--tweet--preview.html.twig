@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Placeholder preview of an embedded tweet, used in editing contexts.
+ *
+ * This mimics the look of an actual tweet embed so that editors have an idea of
+ * the final result without loading the remote widget.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - tweet_url: The URL of the tweet.
+ * - tweet_handle: The account handle extracted from the URL (without the @).
+ *
+ * @see unocha_utility_preprocess_media()
+ */
+#}
+<div{{ attributes.addClass('unocha-tweet-preview') }}>
+  <div class="unocha-tweet-preview__header">
+    <span class="unocha-tweet-preview__avatar" aria-hidden="true"></span>
+    <span class="unocha-tweet-preview__account">
+      <span class="unocha-tweet-preview__name">{{ 'Account name'|t }}</span>
+      <span class="unocha-tweet-preview__handle">{% if tweet_handle %}@{{ tweet_handle }}{% else %}@account{% endif %} · {{ 'Follow'|t }}</span>
+    </span>
+    <svg class="unocha-tweet-preview__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+  </div>
+
+  <div class="unocha-tweet-preview__body">
+    <p class="unocha-tweet-preview__text">{{ 'The content of the tweet will be displayed here on the published page.'|t }}</p>
+    <span class="unocha-tweet-preview__line" aria-hidden="true"></span>
+    <span class="unocha-tweet-preview__line unocha-tweet-preview__line--short" aria-hidden="true"></span>
+  </div>
+
+  <div class="unocha-tweet-preview__image" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+  </div>
+
+  <div class="unocha-tweet-preview__url">
+    <span class="unocha-tweet-preview__url-label">{{ 'Tweet URL'|t }}</span>
+    <span class="unocha-tweet-preview__url-value">{{ tweet_url }}</span>
+  </div>
+
+  <div class="unocha-tweet-preview__actions" aria-hidden="true">
+    <span class="unocha-tweet-preview__action unocha-tweet-preview__action--like">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      {{ 'Like'|t }}
+    </span>
+    <span class="unocha-tweet-preview__action unocha-tweet-preview__action--reply">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false"><path d="M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1z"/></svg>
+      {{ 'Reply'|t }}
+    </span>
+    <span class="unocha-tweet-preview__action unocha-tweet-preview__action--link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+      {{ 'Copy link'|t }}
+    </span>
+  </div>
+
+  <div class="unocha-tweet-preview__replies" aria-hidden="true">{{ 'Read replies'|t }}</div>
+</div>

@@ -1,0 +1,28 @@
+uuid: 27cf1a99-bb29-4c4b-acfa-0b24a568133b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.tweet.field_media_twitter
+    - media.type.tweet
+  module:
+    - media_entity_twitter
+id: media.tweet.default
+targetEntityType: media
+bundle: tweet
+mode: default
+content:
+  field_media_twitter:
+    type: twitter_embed
+    label: visually_hidden
+    settings:
+      conversation: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

@@ -5,6 +5,7 @@
  * Helper functions that applies to a variety of things on UNOCHA.
  */
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Template\Attribute;
 use Drupal\node\NodeInterface;
@@ -124,4 +125,93 @@ function unocha_utility_form_node_form_alter(array &$form, FormStateInterface $f
       ],
     ];
   }
+}
+
+/**
+ * Check whether the current request is in an editing (form) context.
+ *
+ * This covers the CKEditor media preview, the layout paragraphs builder and
+ * the administrative pages (node forms, paragraph previews in forms, etc.).
+ *
+ * @return bool
+ *   TRUE if the current request is an editing context.
+ */
+function unocha_utility_is_editing_context(): bool {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if (empty($route_name)) {
+    return FALSE;
+  }
+
+  if ($route_name === 'media.filter.preview' || str_starts_with($route_name, 'layout_paragraphs.builder.')) {
+    return TRUE;
+  }
+
+  return \Drupal::service('router.admin_context')->isAdminRoute();
+}
+
+/**
+ * Implements hook_media_build_defaults_alter().
+ *
+ * Tweets embedded in text via CKEditor vary depending on whether they are
+ * displayed in an editing context or on the actual page, so make sure the
+ * render cache varies by route.
+ */
+function unocha_utility_media_build_defaults_alter(array &$build, EntityInterface $entity, $view_mode): void {
+  if ($entity->bundle() === 'tweet') {
+    $build['#cache']['contexts'][] = 'route.name';
+  }
+}
+
+/**
+ * Implements hook_media_view_mode_alter().
+ *
+ * Use the "preview" view mode for tweets in editing contexts (CKEditor preview,
+ * paragraph previews, forms) and the "default" view mode on the actual pages.
+ */
+function unocha_utility_media_view_mode_alter(string &$view_mode, EntityInterface $entity): void {
+  if ($view_mode === 'default' && $entity->bundle() === 'tweet' && unocha_utility_is_editing_context()) {
+    $view_mode = 'preview';
+  }
+}
+
+/**
+ * Implements hook_preprocess_media().
+ *
+ * Add the media type and view mode classes to the media wrapper so that they
+ * are available whatever the theme rendering the media. This is notably needed
+ * for the CKEditor media previews which are rendered with the default theme
+ * but displayed in the administration theme.
+ */
+function unocha_utility_preprocess_media(array &$variables): void {
+  if (!isset($variables['media'])) {
+    return;
+  }
+  $variables['attributes']['class'][] = 'media';
+  $variables['attributes']['class'][] = 'media--type-' . str_replace('_', '-', $variables['media']->bundle());
+  if (!empty($variables['view_mode'])) {
+    $variables['attributes']['class'][] = 'media--view-mode-' . str_replace('_', '-', $variables['view_mode']);
+  }
+
+  // Extract the information used by the tweet placeholder preview.
+  if ($variables['media']->bundle() === 'tweet' && $variables['media']->hasField('field_media_twitter')) {
+    $url = (string) $variables['media']->get('field_media_twitter')->value;
+    $variables['tweet_url'] = $url;
+    $variables['tweet_handle'] = NULL;
+    if (preg_match('~(?:twitter|x)\.com/([^/?#]+)/status/~i', $url, $matches)) {
+      $variables['tweet_handle'] = $matches[1];
+    }
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function unocha_utility_theme(): array {
+  return [
+    // Placeholder preview of a tweet embed in editing contexts. The template is
+    // used for the "preview" view mode of the "tweet" media type.
+    'media__tweet__preview' => [
+      'base hook' => 'media',
+    ],
+  ];
 }

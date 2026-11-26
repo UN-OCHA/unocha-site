@@ -347,3 +347,211 @@ form .entities-list .item-container.rendered-entity .button {
   grid-template-columns: minmax(150px, max-content) minmax(150px, max-content);
   column-gap: 1rem;
 }
+
+/* Tweet placeholder preview (CKEditor media embed and paragraph previews).
+ * It mimics the look of an embedded tweet so editors get an idea of the final
+ * result. See unocha_utility's media--tweet--preview.html.twig. */
+.unocha-tweet-preview {
+  --tweet-border: #cfd9de;
+  --tweet-text: #0f1419;
+  --tweet-muted: #536471;
+  --tweet-blue: #1d9bf0;
+  --tweet-skeleton: #eff3f4;
+
+  /* Same dimensions as the tweet on the front end (see uno-tweet.css). */
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 550px;
+  margin: 0 0 1rem;
+  padding: 12px 16px;
+  border: 1px solid var(--tweet-border);
+  border-radius: 12px;
+  background-color: #fff;
+  color: var(--tweet-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+/* Alignment, based on the classes added by the CKEditor media plugin (via the
+ * filter_align filter), like on the front end. Left and right aligned tweets
+ * are narrower and float next to the text from the tablet breakpoint. */
+.unocha-tweet-preview.align-left,
+.unocha-tweet-preview.align-right {
+  float: none;
+  max-width: 350px;
+}
+
+.unocha-tweet-preview.align-center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .unocha-tweet-preview.align-left,
+  .unocha-tweet-preview.align-right {
+    width: 350px;
+  }
+
+  .unocha-tweet-preview.align-left {
+    float: left;
+    margin-right: 2rem;
+  }
+
+  .unocha-tweet-preview.align-right {
+    float: right;
+    margin-left: 2rem;
+  }
+}
+
+/* Contain the floated tweet so it doesn't impact the following blocks. */
+.field:has(.unocha-tweet-preview.align-left),
+.field:has(.unocha-tweet-preview.align-right) {
+  display: flow-root;
+}
+
+/* Inside CKEditor, the alignment is handled by the editor on the widget. */
+.ck-content .unocha-tweet-preview.align-left,
+.ck-content .unocha-tweet-preview.align-right,
+.ck-content .unocha-tweet-preview.align-center {
+  float: none;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.unocha-tweet-preview svg {
+  display: block;
+  fill: currentcolor;
+}
+
+.unocha-tweet-preview__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.unocha-tweet-preview__avatar {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--tweet-blue);
+}
+
+.unocha-tweet-preview__account {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.unocha-tweet-preview__name {
+  font-weight: 700;
+}
+
+.unocha-tweet-preview__handle {
+  color: var(--tweet-muted);
+  font-size: 14px;
+}
+
+.unocha-tweet-preview__logo {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+}
+
+.unocha-tweet-preview__body {
+  margin: 12px 0;
+}
+
+.unocha-tweet-preview__text {
+  margin: 0 0 8px;
+  color: var(--tweet-muted);
+  font-size: 18px;
+  font-style: italic;
+}
+
+.unocha-tweet-preview__line {
+  display: block;
+  height: 10px;
+  margin: 8px 0 0;
+  border-radius: 5px;
+  background-color: var(--tweet-skeleton);
+}
+
+.unocha-tweet-preview__line--short {
+  width: 60%;
+}
+
+.unocha-tweet-preview__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--tweet-border);
+  border-radius: 12px;
+  background-color: var(--tweet-skeleton);
+  color: #b9c4cc;
+}
+
+.unocha-tweet-preview__image svg {
+  width: 48px;
+  height: 48px;
+}
+
+.unocha-tweet-preview__url {
+  margin: 12px 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--tweet-border);
+}
+
+.unocha-tweet-preview__url-label {
+  display: block;
+  color: var(--tweet-muted);
+  font-size: 13px;
+}
+
+.unocha-tweet-preview__url-value {
+  color: var(--tweet-blue);
+}
+
+.unocha-tweet-preview__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  color: var(--tweet-muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.unocha-tweet-preview__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.unocha-tweet-preview__action svg {
+  width: 18px;
+  height: 18px;
+}
+
+.unocha-tweet-preview__action--like svg {
+  color: #f91880;
+}
+
+.unocha-tweet-preview__action--reply svg {
+  color: var(--tweet-blue);
+}
+
+.unocha-tweet-preview__replies {
+  margin-top: 12px;
+  padding: 8px 16px;
+  border: 1px solid var(--tweet-border);
+  border-radius: 999px;
+  color: var(--tweet-blue);
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+}

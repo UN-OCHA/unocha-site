@@ -1,0 +1,20 @@
+uuid: d4b50576-643e-4df2-83e0-6322b9762f4d
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity_twitter
+id: core_requirements_media_entity_twitter
+label: 'Module media_entity_twitter'
+description: 'Requirements of the media_entity_twitter module'
+category: Requirements
+plugin_id: core_requirements
+result_class: null
+value_label: null
+value_type: no_value
+caching_time: 3600
+settings:
+  module: media_entity_twitter
+  exclude_keys: {  }
+thresholds:
+  type: none
