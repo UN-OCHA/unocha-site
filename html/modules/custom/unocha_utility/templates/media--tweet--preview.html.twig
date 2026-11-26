@@ -8,8 +8,8 @@
  *
  * Available variables:
  * - attributes: HTML attributes for the containing element.
+ * - name: The media label, entered by editors (defaults to "handle - tweet id").
  * - tweet_url: The URL of the tweet.
- * - tweet_handle: The account handle extracted from the URL (without the @).
  *
  * @see unocha_utility_preprocess_media()
  */
@@ -18,8 +18,7 @@
   <div class="unocha-tweet-preview__header">
     <span class="unocha-tweet-preview__avatar" aria-hidden="true"></span>
     <span class="unocha-tweet-preview__account">
-      <span class="unocha-tweet-preview__name">{{ 'Account name'|t }}</span>
-      <span class="unocha-tweet-preview__handle">{% if tweet_handle %}@{{ tweet_handle }}{% else %}@account{% endif %} · {{ 'Follow'|t }}</span>
+      <span class="unocha-tweet-preview__name">{{ 'Tweet Post Preview'|t }}</span>
     </span>
     <svg class="unocha-tweet-preview__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
   </div>
@@ -35,7 +34,9 @@
   </div>
 
   <div class="unocha-tweet-preview__url">
-    <span class="unocha-tweet-preview__url-label">{{ 'Tweet URL'|t }}</span>
+    {% if name %}
+      <span class="unocha-tweet-preview__media-label">{{ name }}</span>
+    {% endif %}
     <span class="unocha-tweet-preview__url-value">{{ tweet_url }}</span>
   </div>
 

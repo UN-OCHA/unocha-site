@@ -451,11 +451,6 @@ form .entities-list .item-container.rendered-entity .button {
   font-weight: 700;
 }
 
-.unocha-tweet-preview__handle {
-  color: var(--tweet-muted);
-  font-size: 14px;
-}
-
 .unocha-tweet-preview__logo {
   flex: 0 0 auto;
   width: 24px;
@@ -507,10 +502,13 @@ form .entities-list .item-container.rendered-entity .button {
   border-bottom: 1px solid var(--tweet-border);
 }
 
-.unocha-tweet-preview__url-label {
+.unocha-tweet-preview__media-label {
   display: block;
-  color: var(--tweet-muted);
-  font-size: 13px;
+  margin-bottom: 2px;
+  color: var(--tweet-text);
+  font-size: 15px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .unocha-tweet-preview__url-value {

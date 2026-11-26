@@ -192,14 +192,9 @@ function unocha_utility_preprocess_media(array &$variables): void {
     $variables['attributes']['class'][] = 'media--view-mode-' . str_replace('_', '-', $variables['view_mode']);
   }
 
-  // Extract the information used by the tweet placeholder preview.
+  // The tweet URL used by the tweet placeholder preview.
   if ($variables['media']->bundle() === 'tweet' && $variables['media']->hasField('field_media_twitter')) {
-    $url = (string) $variables['media']->get('field_media_twitter')->value;
-    $variables['tweet_url'] = $url;
-    $variables['tweet_handle'] = NULL;
-    if (preg_match('~(?:twitter|x)\.com/([^/?#]+)/status/~i', $url, $matches)) {
-      $variables['tweet_handle'] = $matches[1];
-    }
+    $variables['tweet_url'] = (string) $variables['media']->get('field_media_twitter')->value;
   }
 }
 
