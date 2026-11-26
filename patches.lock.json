@@ -1,5 +1,5 @@
 {
-    "_hash": "883db60d8a53ea88d206e8db828bc3d0cbf779bf3e0ef71a234772a198479fd7",
+    "_hash": "5968ecd41feda824f645996aeda42b5d8a52ec9e4bdd6d385b86f8da38a19aab",
     "patches": {
         "drupal/ckeditor_accordion": [
             {
@@ -65,18 +65,6 @@
                 "description": "D11 compatibility - #3431791",
                 "url": "PATCHES/maintenance200-D11-compatibility-3431791.patch",
                 "sha256": "a18c917b199168ded802407a11e2d9eb75b1933c75aea4e60701c3ba0f6ea623",
-                "depth": 1,
-                "extra": {
-                    "provenance": "patches-file:composer.patches.json"
-                }
-            }
-        ],
-        "drupal/menu_breadcrumb": [
-            {
-                "package": "drupal/menu_breadcrumb",
-                "description": "https://www.drupal.org/project/menu_breadcrumb/issues/3567562",
-                "url": "PATCHES/menu_breadcrumb-fix-empty-links-geturl-null-3567562.patch",
-                "sha256": "978b815c8dea0350db55229c0b2618b18e1dce0b614b756a3c15da07fba73e91",
                 "depth": 1,
                 "extra": {
                     "provenance": "patches-file:composer.patches.json"
